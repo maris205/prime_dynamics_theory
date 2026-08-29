@@ -1,9 +1,70 @@
 # TPC HANDOFF
 
 更新时间：2026-08-29
-交接状态：`BOLD_CHANNEL_V162_TPC309_PROFILE_PREFIX_SHIFT_SENSITIVITY_RELEASED`
+交接状态：`BOLD_CHANNEL_V163_TPC310_CROSS_HOLDOUT_AGGREGATION_ORDER_RELEASED`
 
-TPC-309 current section: profile-prefix shift sensitivity
+TPC-310 current section: cross-holdout aggregation order
+-----------------------------------------------------------------------------------------------
+
+TPC-310 freezes the released TPC-309 profile/completion atlas and audits
+aggregation without selecting a single profile ladder.  It enumerates all
+seven nonempty subsets of `LOW/BASE/HIGH` crossed with all seven nonempty
+subsets of radii `0,1,2`, giving 49 selectors and 147 aggregate observations.
+For each selector it computes pooled MSE (sum completion extrema before
+division), equal-case arithmetic ratio, and equal-case geometric ratio.
+
+The full selector has intervals
+`P=[0.2423655855...,0.3112477031...]` (RIGHT),
+`A=[5.2417686281...,14.4871333704...]` (LEFT), and
+`G=[0.1993188213...,0.8609189559...]` (RIGHT).  Across all 49 selectors the
+class counts (right/left/unresolved) are pooled `42/1/6`, balanced `1/32/16`,
+and geometric `26/0/23`.  Pooled and balanced classes reverse on 29 selectors;
+the full-selector reversal is far from both strict thresholds.
+
+The selector enumeration, independent finite extrema rule, positive interval
+maps, and ratio-of-sums denominator-weighted-mean identity are exact finite
+statements.  The parent inputs are padded float-replay intervals rather than a
+directed-rounding certificate.  The result refutes only the declared universal
+finite claim that the three aggregation maps share one strict class; it does
+not choose a canonical weighting.  TPC-302 target-generation leakage remains
+explicit, and causal identification, profile-independent growing preference,
+uniform asymptotic budget, arithmetic `L2`, fixed-power credit, full Gate B,
+and a twin-prime conclusion remain OPEN/NONE.  The Session-named `propose.md`
+and Route-A/Route-B evaluator files are absent, so no official evaluator pass
+is asserted.
+
+```text
+TPC310_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_CROSS_HOLDOUT_AGGREGATION_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_AGGREGATION_ORDER_OBSTRUCTION_ATLAS
+TPC310_ROUTE_ADVANCE = YES_SCOPED_AGGREGATION_ORDER_OBSTRUCTION
+TPC310_SELECTOR_PROTOCOL = PROVED_EXACT_FINITE
+TPC310_POOLED_EXTREMA = PROVED_EXACT_FINITE
+TPC310_POSITIVE_INTERVAL_MAPS = PROVED_EXACT_FINITE
+TPC310_WEIGHTED_MEAN_IDENTITY = PROVED_EXACT_FINITE
+TPC310_AGGREGATION_ATLAS = NUMERICALLY_REPRODUCED_FINITE_49_SELECTORS_147_AGGREGATES
+TPC310_FULL_SELECTOR_REVERSAL = NUMERICALLY_REPRODUCED_FINITE_POOLED_RIGHT_BALANCED_LEFT_GEOMETRIC_RIGHT
+TPC310_PROFILE_ROBUSTNESS = REFUTED_FINITE_NO_UNIVERSAL_AGGREGATION_CLASS
+TPC310_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC310_CAUSAL_IDENTIFICATION = NONE_AGGREGATION_DIAGNOSTIC_ONLY
+TPC310_FORMAL_INTERVAL_CERTIFICATE = OPEN_PARENT_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC310_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC310_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC310_FIXED_POWER_CREDIT = 0
+TPC310_FULL_GATE_B = OPEN
+TPC310_TWIN_PRIME_RESULT = NONE
+TPC310_STATUS = PROVED_EXACT_FINITE_CROSS_HOLDOUT_AGGREGATION_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_AGGREGATION_ORDER_OBSTRUCTION_ATLAS
+TPC310_ROUND2_CLUE = TEST_PREREGISTERED_STRATIFIED_WEIGHTS_AND_HOLDOUT_REPLICATION_BEFORE_ANY_GLOBAL_PREFERENCE_CLAIM
+```
+
+Strongest positive result: an exact finite selector/aggregation algebra with an
+independent 147-row replay.  Strongest obstruction: pooled and equal-case
+arithmetic aggregation reverse the full-selector orientation.  Open theorem: a
+pre-registered, independently justified weighting or stratification law that
+survives a fresh holdout.
+
+TPC-309 previous section: profile-prefix shift sensitivity
+-----------------------------------------------------------------------------------------------
+
+TPC-309 section: profile-prefix shift sensitivity
 -----------------------------------------------------------------------------------------------
 
 TPC-309 is the direct profile-selection continuation of TPC-308.  It freezes the
@@ -10386,18 +10447,18 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V162/TPC-309 是当前 release；其 producer、independent replay、stress audit 与
+V163/TPC-310 是当前 release；其 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
-当前 curated cascade command set 共 257 对 normal/optimized 命令、514 次
+当前 curated cascade command set 共 261 对 normal/optimized 命令、522 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
 TPC-288 再追加末尾 4 对，TPC-289 再追加末尾 4 对，TPC-290 再追加末尾 4 对，
 TPC-291 再追加末尾 4 对，TPC-292 再追加末尾 4 对，TPC-293 再追加末尾 4 对，
 TPC-294 再追加末尾 4 对，TPC-295 再追加末尾 4 对，TPC-296 再追加末尾 4 对，
-TPC-297 再追加末尾 4 对，TPC-298 再追加末尾 4 对，TPC-299 再追加末尾 4 对，TPC-300 再追加末尾 4 对，TPC-301 再追加末尾 4 对，TPC-302 再追加末尾 4 对，TPC-303 再追加末尾 4 对，TPC-304 再追加末尾 4 对，TPC-305 再追加末尾 4 对，TPC-306 再追加末尾 4 对，TPC-307 再追加末尾 4 对，TPC-308 再追加末尾 4 对，TPC-309 再追加末尾 4 对。V162/TPC-309 的 257 对
+TPC-297 再追加末尾 4 对，TPC-298 再追加末尾 4 对，TPC-299 再追加末尾 4 对，TPC-300 再追加末尾 4 对，TPC-301 再追加末尾 4 对，TPC-302 再追加末尾 4 对，TPC-303 再追加末尾 4 对，TPC-304 再追加末尾 4 对，TPC-305 再追加末尾 4 对，TPC-306 再追加末尾 4 对，TPC-307 再追加末尾 4 对，TPC-308 再追加末尾 4 对，TPC-309 再追加末尾 4 对，TPC-310 再追加末尾 4 对。V163/TPC-310 的 261 对
 registry 已完成增量回归；TPC-289 新增的 4 对已由本项目 bridge 与 standalone tail
 checks 逐项通过；TPC-290、TPC-291、TPC-292 的各 4 对均由各自 bridge 与 standalone
 tail checks 逐项通过；TPC-293 的 4 对也由本项目 bridge 与 standalone tail checks
@@ -10407,7 +10468,7 @@ TPC-295 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过�
 bridge 与 standalone tail checks 逐项通过；TPC-298 的 4 对亦由本项目 bridge 与
 standalone tail checks 逐项通过；TPC-299 的 4 对亦由本项目 bridge 与 standalone
 tail checks 逐项通过；TPC-300 的 4 对亦由本项目 bridge 与 standalone tail
-checks 逐项通过；TPC-301 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-302 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-303 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-304 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-305 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-306 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-307 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-308 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-309 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过。完整 257 对组合未因
+checks 逐项通过；TPC-301 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-302 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-303 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-304 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-305 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-306 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-307 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-308 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-309 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-310 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过。完整 261 对组合未因
 重复计算而再次运行。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
@@ -11092,6 +11153,24 @@ Bridge-B）共 8 次 invocation 均返回零，stderr 为空，normal/optimized 
 byte-identical；Bridge-B 输出 `3 ladders / 54 cases / 162 envelopes / 108,558,1,440
 candidates`，并锁定 LOW/BASE/HIGH 的 agreement 与 discordance-location census。
 
+TPC-310 的项目级 producer、independent replay、aggregation stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-310-cross-holdout-aggregation-order/code/tpc310_cross_holdout_aggregation_order.py --check
+python -O -B papers/tpc-310-cross-holdout-aggregation-order/code/tpc310_cross_holdout_aggregation_order.py --check
+python -B papers/tpc-310-cross-holdout-aggregation-order/experiments/tpc310_independent_checker.py --check
+python -O -B papers/tpc-310-cross-holdout-aggregation-order/experiments/tpc310_independent_checker.py --check
+python -B papers/tpc-310-cross-holdout-aggregation-order/experiments/tpc310_aggregation_stress.py --check
+python -O -B papers/tpc-310-cross-holdout-aggregation-order/experiments/tpc310_aggregation_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc310_cross_holdout_aggregation_order_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc310_cross_holdout_aggregation_order_checker.py --check
+```
+
+TPC-310 增量 tail audit：上述 4 对（producer、independent replay、aggregation stress、
+Bridge-B）共 8 次 invocation 均返回零，stderr 为空，normal/optimized stdout 逐对
+byte-identical；Bridge-B 输出 `49 selectors / 147 aggregates / full pooled:R balanced:L
+geometric:R`，并锁定 `R42/L1/U6`、`R1/L32/U16`、`R26/L0/U23` 三组 class census。
+
 此前 TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
 
 ```bash
@@ -11133,7 +11212,25 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-最新 TPC-309 入口：
+最新 TPC-310 入口：
+
+```text
+papers/tpc-310-cross-holdout-aggregation-order/README.md
+papers/tpc-310-cross-holdout-aggregation-order/PROOF_PACKAGE.md
+papers/tpc-310-cross-holdout-aggregation-order/notes/theorem_ledger.md
+papers/tpc-310-cross-holdout-aggregation-order/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc310_cross_holdout_aggregation_order.md
+research/tpc-big-road/tpc_bridge_b_tpc310_cross_holdout_aggregation_order_checker.py
+```
+
+TPC-310 是当前 aggregation-order obstruction release：冻结 TPC-309 的 162 个
+envelope observations，完成 49 selectors / 147 aggregate rows 的 pooled、balanced
+和 geometric 三路重算；full selector 为 `pooled=RIGHT, balanced=LEFT,
+geometric=RIGHT`。canonical weighting、profile-independent growing preference、
+uniform budget、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。
+
+此前 TPC-309 入口：
 
 ```text
 papers/tpc-309-profile-prefix-shift-sensitivity/README.md

@@ -2,13 +2,44 @@
 
 更新时间：2026-08-29
 
-当前地图版本：V162 / TPC-309
+当前地图版本：V163 / TPC-310
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-309`（`PROVED_EXACT_FINITE_PROFILE_LADDER_SHIFT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_PROFILE_SENSITIVITY_ATLAS`）；
+当前编号锚点：`TPC-310`（`PROVED_EXACT_FINITE_CROSS_HOLDOUT_AGGREGATION_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_AGGREGATION_ORDER_OBSTRUCTION_ATLAS`）；
 对应论文目录为
-`papers/tpc-309-profile-prefix-shift-sensitivity/`。
+`papers/tpc-310-cross-holdout-aggregation-order/`。
+
+TPC-310 是当前地图位置：冻结 TPC-309 的 162 个 profile/completion envelope observations，
+枚举三个 ladders 与三个 completion radii 的全部非空子集，得到 49 个 selectors 与 147
+个 aggregate rows。Pooled MSE、equal-case arithmetic ratio、geometric ratio 在全 selector
+上分别给出 `RIGHT`、`LEFT`、`RIGHT`；前两者的区间为
+`[0.2423655855,0.3112477031]` 与 `[5.2417686281,14.4871333704]`，因此 aggregation
+order/weighting 本身成为新的 finite obstruction。selector/extrema/positive-map algebra
+与 ratio-of-sums weighted-mean identity 是 exact finite；canonical weighting、profile-
+independent growing preference、formal directed rounding、uniform budget、arithmetic `L2`、
+fixed-power credit、full Gate B 与 twin-prime endpoint 仍开放。
+
+```text
+TPC310_ROUTE_ADVANCE = YES_SCOPED_AGGREGATION_ORDER_OBSTRUCTION
+TPC310_SELECTOR_PROTOCOL = PROVED_EXACT_FINITE
+TPC310_POOLED_EXTREMA = PROVED_EXACT_FINITE
+TPC310_POSITIVE_INTERVAL_MAPS = PROVED_EXACT_FINITE
+TPC310_WEIGHTED_MEAN_IDENTITY = PROVED_EXACT_FINITE
+TPC310_AGGREGATION_ATLAS = NUMERICALLY_REPRODUCED_FINITE_49_SELECTORS_147_AGGREGATES
+TPC310_FULL_SELECTOR_REVERSAL = NUMERICALLY_REPRODUCED_FINITE_POOLED_RIGHT_BALANCED_LEFT_GEOMETRIC_RIGHT
+TPC310_PROFILE_ROBUSTNESS = REFUTED_FINITE_NO_UNIVERSAL_AGGREGATION_CLASS
+TPC310_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC310_CAUSAL_IDENTIFICATION = NONE_AGGREGATION_DIAGNOSTIC_ONLY
+TPC310_FORMAL_INTERVAL_CERTIFICATE = OPEN_PARENT_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC310_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC310_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC310_FIXED_POWER_CREDIT = 0
+TPC310_FULL_GATE_B = OPEN
+TPC310_TWIN_PRIME_RESULT = NONE
+TPC310_STATUS = PROVED_EXACT_FINITE_CROSS_HOLDOUT_AGGREGATION_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_AGGREGATION_ORDER_OBSTRUCTION_ATLAS
+TPC310_ROUND2_CLUE = TEST_PREREGISTERED_STRATIFIED_WEIGHTS_AND_HOLDOUT_REPLICATION_BEFORE_ANY_GLOBAL_PREFERENCE_CLAIM
+```
 
 TPC-309 是当前地图位置：承接 TPC-308 的 common-ambient holdout 与 Hamming completion
 envelope，在一个 19-prime cutoff pool 中取相邻的 `LOW/BASE/HIGH` 三个 17-cutoff
@@ -456,8 +487,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V162 / TPC-309
-MAP_LABEL = PROFILE-PREFIX SHIFT SENSITIVITY / DISCORDANCE LOCATION IS NOT INVARIANT
+YOU ARE HERE = V163 / TPC-310
+MAP_LABEL = CROSS-HOLDOUT AGGREGATION ORDER / POOLED VS BALANCED REVERSAL
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -693,6 +724,48 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.104 V163 / TPC-310：cross-holdout aggregation order
+
+TPC-310 冻结 TPC-309 的 162 个 profile/completion envelope observations，不再选择单一
+profile，而是枚举三个 ladders 与三个 completion radii 的全部非空子集。7 个 profile
+subsets 与 7 个 radius subsets 交叉形成 49 个 selectors；每个 selector 同时计算
+pooled-MSE、equal-case arithmetic-ratio 与 geometric-ratio 三种正区间，共 147 个
+aggregate rows。
+
+全量 selector 上 pooled interval 为 `[0.2423655855,0.3112477031]`、class `RIGHT`；
+balanced interval 为 `[5.2417686281,14.4871333704]`、class `LEFT`；geometric interval
+为 `[0.1993188213,0.8609189559]`、class `RIGHT`。49-selector class census 为 pooled
+`42/1/6`、balanced `1/32/16`、geometric `26/0/23`（right/left/unresolved）。这把
+TPC-309 的 profile sensitivity 推进为 aggregation-order obstruction：ratio of sums 是
+denominator-weighted row mean，不能在没有预先固定 weighting law 时宣称一个全局
+preference。
+
+```text
+TPC310_ROUTE_ADVANCE = YES_SCOPED_AGGREGATION_ORDER_OBSTRUCTION
+TPC310_SELECTOR_PROTOCOL = PROVED_EXACT_FINITE
+TPC310_POOLED_EXTREMA = PROVED_EXACT_FINITE
+TPC310_POSITIVE_INTERVAL_MAPS = PROVED_EXACT_FINITE
+TPC310_WEIGHTED_MEAN_IDENTITY = PROVED_EXACT_FINITE
+TPC310_AGGREGATION_ATLAS = NUMERICALLY_REPRODUCED_FINITE_49_SELECTORS_147_AGGREGATES
+TPC310_FULL_SELECTOR_REVERSAL = NUMERICALLY_REPRODUCED_FINITE_POOLED_RIGHT_BALANCED_LEFT_GEOMETRIC_RIGHT
+TPC310_PROFILE_ROBUSTNESS = REFUTED_FINITE_NO_UNIVERSAL_AGGREGATION_CLASS
+TPC310_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC310_CAUSAL_IDENTIFICATION = NONE_AGGREGATION_DIAGNOSTIC_ONLY
+TPC310_FORMAL_INTERVAL_CERTIFICATE = OPEN_PARENT_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC310_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC310_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC310_FIXED_POWER_CREDIT = 0
+TPC310_FULL_GATE_B = OPEN
+TPC310_TWIN_PRIME_RESULT = NONE
+TPC310_STATUS = PROVED_EXACT_FINITE_CROSS_HOLDOUT_AGGREGATION_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_AGGREGATION_ORDER_OBSTRUCTION_ATLAS
+TPC310_ROUND2_CLUE = TEST_PREREGISTERED_STRATIFIED_WEIGHTS_AND_HOLDOUT_REPLICATION_BEFORE_ANY_GLOBAL_PREFERENCE_CLAIM
+```
+
+最强正结果：selector lattice、independent extrema 与 weighted-mean identity 均有
+exact finite proof，并由 147-row replay 锁定。最强 obstruction：pooled 与 equal-case
+arithmetic 在 full selector 上给出相反 strict classes；下一步必须先规定可外部辩护的
+stratified weighting，再做新 holdout replication。
 
 ## 5.103 V162 / TPC-309：profile-prefix shift sensitivity
 
@@ -2206,9 +2279,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V162 / TPC-309                    |
-        | PROFILE-PREFIX SHIFT SENSITIVITY            |
-        | LOW/BASE/HIGH: location not invariant       |
+        | YOU ARE HERE — V163 / TPC-310                    |
+        | CROSS-HOLDOUT AGGREGATION ORDER                 |
+        | POOLED RIGHT / BALANCED LEFT / GEOMETRIC RIGHT  |
         +--------------------------------------------------+
                 |
                 v
@@ -7241,6 +7314,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-29 | V163 / TPC-310 | Bridge A / Gate B：cross-holdout aggregation-order obstruction 已完成；canonical weighting、profile-independent preference、formal directed rounding、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-310` | 冻结 TPC-309 的 162 observations，枚举 49 profile/radius selectors 与 147 aggregate rows；pooled `RIGHT`、balanced `LEFT`、geometric `RIGHT` on full selector，证明 ratio-of-sums 的 denominator-weighted identity；下一步为 pre-registered stratified weights 与 fresh holdout replication |
 | 2026-08-29 | V162 / TPC-309 | Bridge A / Gate B：profile-prefix shift sensitivity 已完成；profile-independent preference、formal directed-rounding certificate、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-309` | 在固定 19-prime pool 中比较 LOW/BASE/HIGH 三个相邻 17-cutoff ladders；54 profile cases、162 envelope observations、候选 `108/558/1440`，BASE 恢复 TPC-308 classes，而 strict discordance location 与 radius-two survival 随 profile 改变；下一步为 cross-holdout aggregation 与 profile robustness audit |
 | 2026-08-29 | V161 / TPC-308 | Bridge A / Gate B：adversarial exclusive-completion envelope 已完成；formal interval certificate、completion generation、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-308` | 冻结 TPC-307 的 common ambient 与 overlap fit，在 18 cells 上枚举 Hamming radii `0,1,2`；54 observations、候选 `36/186/480`，agreement `13/3/2`、`11/2/5`、`10/1/7`，discordance `3->2->1` 且全在 `70->90,e=1`；下一步为 profile-prefix perturbation 与 completion invariance audit |
 | 2026-08-29 | V160 / TPC-307 | Bridge A / Gate B：common-ambient union-shell holdout protocol 已完成；formal directed-rounding enclosure、completion-invariant preference、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-307` | 同一 union ambient `U` 上 overlap-only directional fit 与 exclusive holdout；18 cases / 36 fits / 54 rows 中 `13/3/2` concordant/discordant/unresolved，三处 discordance 均在 `Q=70->90,e=1`；下一步为 completion envelopes 与 prefix perturbation hostile audit |

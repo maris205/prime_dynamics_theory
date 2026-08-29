@@ -9,6 +9,47 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-310 承接 TPC-309，审计 cross-holdout aggregation order 与 profile
+robustness。固定 TPC-309 的 162 个 envelope observations，枚举三个 profile ladders 与
+三个 completion radii 的全部非空子集，得到 49 个 selector、147 个 aggregate rows。
+Pooled MSE 在全 selector 上给出 `RIGHT`，equal-case arithmetic ratio 给出 `LEFT`，
+geometric ratio 给出 `RIGHT`；对应区间分别为
+`[0.2423655855,0.3112477031]`、`[5.2417686281,14.4871333704]`、
+`[0.1993188213,0.8609189559]`。这是远离阈值的 aggregation-order obstruction：不能
+在未预注册 weighting/stratification law 的情况下宣称 profile-independent preference。
+有限 selector、独立 completion extrema、positive interval maps 与 ratio-of-sums
+weighted-mean identity 是 exact finite；parent float replay、directed rounding、causal
+identification、uniform budget、arithmetic `L2`、fixed-power credit、full Gate B 与
+twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC310_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_CROSS_HOLDOUT_AGGREGATION_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_AGGREGATION_ORDER_OBSTRUCTION_ATLAS
+TPC310_ROUTE_ADVANCE = YES_SCOPED_AGGREGATION_ORDER_OBSTRUCTION
+TPC310_SELECTOR_PROTOCOL = PROVED_EXACT_FINITE
+TPC310_POOLED_EXTREMA = PROVED_EXACT_FINITE
+TPC310_POSITIVE_INTERVAL_MAPS = PROVED_EXACT_FINITE
+TPC310_WEIGHTED_MEAN_IDENTITY = PROVED_EXACT_FINITE
+TPC310_AGGREGATION_ATLAS = NUMERICALLY_REPRODUCED_FINITE_49_SELECTORS_147_AGGREGATES
+TPC310_FULL_SELECTOR_REVERSAL = NUMERICALLY_REPRODUCED_FINITE_POOLED_RIGHT_BALANCED_LEFT_GEOMETRIC_RIGHT
+TPC310_PROFILE_ROBUSTNESS = REFUTED_FINITE_NO_UNIVERSAL_AGGREGATION_CLASS
+TPC310_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC310_CAUSAL_IDENTIFICATION = NONE_AGGREGATION_DIAGNOSTIC_ONLY
+TPC310_FORMAL_INTERVAL_CERTIFICATE = OPEN_PARENT_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC310_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC310_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC310_FIXED_POWER_CREDIT = 0
+TPC310_FULL_GATE_B = OPEN
+TPC310_TWIN_PRIME_RESULT = NONE
+TPC310_STATUS = PROVED_EXACT_FINITE_CROSS_HOLDOUT_AGGREGATION_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_AGGREGATION_ORDER_OBSTRUCTION_ATLAS
+TPC310_ROUND2_CLUE = TEST_PREREGISTERED_STRATIFIED_WEIGHTS_AND_HOLDOUT_REPLICATION_BEFORE_ANY_GLOBAL_PREFERENCE_CLAIM
+```
+
+`papers/tpc-310-cross-holdout-aggregation-order` - TPC-310 current project，包含
+49-selector aggregation atlas、独立 replay、精确有理数 stress suite、proof package、
+PDF 与本地 Bridge-B checker。Session-named evaluator files absent，故不宣称 official pass。
+
+TPC-309 阶段状态：
+
 当前主线状态：TPC-309 承接 TPC-308，检验 common-ambient holdout 对 source-profile prefix
 选择的敏感性。在同一个 19-prime cutoff pool 中，使用相邻的 17-cutoff windows
 `LOW/BASE/HIGH`，保持 shell、labels、alignment、exclusive completion protocol 不变，

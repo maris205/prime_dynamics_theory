@@ -3,13 +3,71 @@
 
 更新时间：2026-08-29
 
-状态：**TPC309_PROVED_EXACT_FINITE_PROFILE_LADDER_SHIFT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_PROFILE_SENSITIVITY_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC310_PROVED_EXACT_FINITE_CROSS_HOLDOUT_AGGREGATION_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_AGGREGATION_ORDER_OBSTRUCTION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.103 current：TPC-309 profile-prefix shift sensitivity
+## 0.104 current：TPC-310 cross-holdout aggregation order
+
+项目：`papers/tpc-310-cross-holdout-aggregation-order/`
+
+类型：**PROVED_EXACT_FINITE_CROSS_HOLDOUT_AGGREGATION_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_AGGREGATION_ORDER_OBSTRUCTION_ATLAS**。
+
+TPC-310 冻结 TPC-309 的 profile/completion atlas，不再选择单一 ladder，而是枚举
+`LOW/BASE/HIGH` 的全部 7 个非空 profile subsets 与 `{0,1,2}` 的全部 7 个非空
+radius subsets，形成 49 个 selectors。对每个 selector 同时计算 pooled MSE、equal-case
+arithmetic ratio 与 geometric ratio 三种正区间聚合，共 147 个 aggregate rows。
+
+全 selector（3 ladders、3 radii）上，pooled 区间为
+`[0.2423655855,0.3112477031]`、class `RIGHT`；balanced 区间为
+`[5.2417686281,14.4871333704]`、class `LEFT`；geometric 区间为
+`[0.1993188213,0.8609189559]`、class `RIGHT`。全 49-selector class census 为
+pooled `42/1/6`、balanced `1/32/16`、geometric `26/0/23`（顺序均为
+right/left/unresolved）。因此 pooled 与 equal-case arithmetic 在 29 个 selectors 上
+发生 `RIGHT/LEFT` strict reversal；这不是阈值边界噪声，而是 denominator-weighted 与
+equal-case aggregation 的结构差异。
+
+最强正结果：selector lattice、独立 completion extrema、positive interval maps 与
+`sum a_i/sum b_i` 的 denominator-weighted mean identity 均有 exact finite proof，且
+147 rows 有独立 replay。
+
+最强 obstruction：声明的三种 aggregation maps 没有共同的 finite strict class；在未
+预注册 weighting/stratification law 前，不能把 pooled 的 `RIGHT` 解读为 profile-
+independent preference。
+
+开放定理：是否存在独立算术依据、预先固定且可跨 holdout 复现的 weighting/stratification
+law；formal directed rounding、causal identification、uniform asymptotic budget、
+arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+可复用结构：`parent interval atlas -> nonempty selector lattice -> pooled/balanced/geometric
+maps -> weighted-mean identity -> class/reversal census`。
+
+ROUND2_CLUE：`TEST_PREREGISTERED_STRATIFIED_WEIGHTS_AND_HOLDOUT_REPLICATION_BEFORE_ANY_GLOBAL_PREFERENCE_CLAIM`。
+
+```text
+TPC310_ROUTE_ADVANCE = YES_SCOPED_AGGREGATION_ORDER_OBSTRUCTION
+TPC310_SELECTOR_PROTOCOL = PROVED_EXACT_FINITE
+TPC310_POOLED_EXTREMA = PROVED_EXACT_FINITE
+TPC310_POSITIVE_INTERVAL_MAPS = PROVED_EXACT_FINITE
+TPC310_WEIGHTED_MEAN_IDENTITY = PROVED_EXACT_FINITE
+TPC310_AGGREGATION_ATLAS = NUMERICALLY_REPRODUCED_FINITE_49_SELECTORS_147_AGGREGATES
+TPC310_FULL_SELECTOR_REVERSAL = NUMERICALLY_REPRODUCED_FINITE_POOLED_RIGHT_BALANCED_LEFT_GEOMETRIC_RIGHT
+TPC310_PROFILE_ROBUSTNESS = REFUTED_FINITE_NO_UNIVERSAL_AGGREGATION_CLASS
+TPC310_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC310_CAUSAL_IDENTIFICATION = NONE_AGGREGATION_DIAGNOSTIC_ONLY
+TPC310_FORMAL_INTERVAL_CERTIFICATE = OPEN_PARENT_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC310_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC310_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC310_FIXED_POWER_CREDIT = 0
+TPC310_FULL_GATE_B = OPEN
+TPC310_TWIN_PRIME_RESULT = NONE
+TPC310_STATUS = PROVED_EXACT_FINITE_CROSS_HOLDOUT_AGGREGATION_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_AGGREGATION_ORDER_OBSTRUCTION_ATLAS
+TPC310_ROUND2_CLUE = TEST_PREREGISTERED_STRATIFIED_WEIGHTS_AND_HOLDOUT_REPLICATION_BEFORE_ANY_GLOBAL_PREFERENCE_CLAIM
+```
+
+## 0.103 previous：TPC-309 profile-prefix shift sensitivity
 
 项目：`papers/tpc-309-profile-prefix-shift-sensitivity/`
 

@@ -1,11 +1,51 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-29
-状态：`BOLD_CHANNEL_V162 / PROFILE_PREFIX_SHIFT_SENSITIVITY`
-claim level：`PROVED_EXACT_FINITE_PROFILE_LADDER_SHIFT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_PROFILE_SENSITIVITY_ATLAS`
-编号事实终点：TPC-309；TPC-309 trigger：`true`
+状态：`BOLD_CHANNEL_V163 / CROSS_HOLDOUT_AGGREGATION_ORDER`
+claim level：`PROVED_EXACT_FINITE_CROSS_HOLDOUT_AGGREGATION_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_AGGREGATION_ORDER_OBSTRUCTION_ATLAS`
+编号事实终点：TPC-310；TPC-310 trigger：`true`
 
-当前 TPC-309 入口：proof 为
+当前 TPC-310 入口：proof 为
+`research/tpc-big-road/bridge_b_tpc310_cross_holdout_aggregation_order.md`，checker 为
+`tpc_bridge_b_tpc310_cross_holdout_aggregation_order_checker.py`，编号论文为
+`papers/tpc-310-cross-holdout-aggregation-order/`。它冻结 TPC-309 的 162 个
+profile/completion envelope observations，枚举 7 个非空 profile subsets 与 7 个非空
+radius subsets 的 49 个 selectors，并对每个 selector计算 pooled-MSE、equal-case
+arithmetic-ratio、geometric-ratio 三种 aggregate intervals，共 147 rows。全量 selector
+上 pooled 为 `RIGHT`、balanced 为 `LEFT`、geometric 为 `RIGHT`，前两者区间分别为
+`[0.2423655855,0.3112477031]` 与 `[5.2417686281,14.4871333704]`，形成远离阈值的
+aggregation-order reversal。这是 finite weighting obstruction，不是 causal 或
+asymptotic theorem；canonical weighting、formal directed rounding、uniform budget、
+arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+Session-named evaluator files absent，故不宣称 official pass。
+
+```text
+TPC310_ROUTE_ADVANCE = YES_SCOPED_AGGREGATION_ORDER_OBSTRUCTION
+TPC310_SELECTOR_PROTOCOL = PROVED_EXACT_FINITE
+TPC310_POOLED_EXTREMA = PROVED_EXACT_FINITE
+TPC310_POSITIVE_INTERVAL_MAPS = PROVED_EXACT_FINITE
+TPC310_WEIGHTED_MEAN_IDENTITY = PROVED_EXACT_FINITE
+TPC310_AGGREGATION_ATLAS = NUMERICALLY_REPRODUCED_FINITE_49_SELECTORS_147_AGGREGATES
+TPC310_FULL_SELECTOR_REVERSAL = NUMERICALLY_REPRODUCED_FINITE_POOLED_RIGHT_BALANCED_LEFT_GEOMETRIC_RIGHT
+TPC310_PROFILE_ROBUSTNESS = REFUTED_FINITE_NO_UNIVERSAL_AGGREGATION_CLASS
+TPC310_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC310_CAUSAL_IDENTIFICATION = NONE_AGGREGATION_DIAGNOSTIC_ONLY
+TPC310_FORMAL_INTERVAL_CERTIFICATE = OPEN_PARENT_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC310_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC310_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC310_FIXED_POWER_CREDIT = 0
+TPC310_FULL_GATE_B = OPEN
+TPC310_TWIN_PRIME_RESULT = NONE
+TPC310_STATUS = PROVED_EXACT_FINITE_CROSS_HOLDOUT_AGGREGATION_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_AGGREGATION_ORDER_OBSTRUCTION_ATLAS
+TPC310_ROUND2_CLUE = TEST_PREREGISTERED_STRATIFIED_WEIGHTS_AND_HOLDOUT_REPLICATION_BEFORE_ANY_GLOBAL_PREFERENCE_CLAIM
+```
+
+TPC-310 的 strongest positive 是 exact finite selector/aggregation algebra 与
+weighted-mean identity；strongest obstruction 是 pooled 与 equal-case arithmetic 在
+full selector 上给出相反 strict classes。任何后续 preference claim 都需要先验固定的
+weighting/stratification law 与独立 holdout replication。
+
+此前 TPC-309 入口：proof 为
 `research/tpc-big-road/bridge_b_tpc309_profile_prefix_shift_sensitivity.md`，checker 为
 `tpc_bridge_b_tpc309_profile_prefix_shift_sensitivity_checker.py`，编号论文为
 `papers/tpc-309-profile-prefix-shift-sensitivity/`。它承接 TPC-308 的 common-ambient
