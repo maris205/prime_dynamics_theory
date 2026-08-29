@@ -1,0 +1,52 @@
+# Bridge-B TPC-301 - tolerance and normalization robustness
+
+    TPC301_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_TOLERANCE_MONOTONICITY_AND_HOMOGENEITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_GAP_ROBUSTNESS_ATLAS
+    TPC301_ROUTE_ADVANCE = YES_SCOPED_SINGLE_TOLERANCE_TO_COMMON_PREFIX_ROBUSTNESS_LADDER
+    TPC301_TOLERANCE_MONOTONICITY = PROVED_EXACT_FINITE
+    TPC301_TARGET_HOMOGENEITY = PROVED_EXACT_FINITE
+    TPC301_PREFIX_THRESHOLD_MONOTONICITY = PROVED_EXACT_FINITE
+    TPC301_COMMON_NORMALIZATION_INVARIANCE = PROVED_EXACT_FINITE
+    TPC301_COMMON_GAP_TAU_025 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+    TPC301_COMMON_GAP_TAU_050 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+    TPC301_COMMON_GAP_TAU_075 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+    TPC301_FULL_GAP_TAU_025 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+    TPC301_FULL_GAP_TAU_050 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+    TPC301_FULL_GAP_TAU_075 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+    TPC301_COMMON_WEIGHTED_BUDGET_FLOOR_BETA = NUMERICALLY_CERTIFIED_FINITE_54_OF_54_ABOVE_3E_MINUS_5
+    TPC301_COMMON_WEIGHTED_BUDGET_FLOOR_TRACE = NUMERICALLY_CERTIFIED_FINITE_54_OF_54_ABOVE_3E_MINUS_5
+    TPC301_COMMON_WEIGHTED_BUDGET_FLOOR_FIRST = NUMERICALLY_CERTIFIED_FINITE_54_OF_54_ABOVE_3E_MINUS_5
+    TPC301_COMMON_GAP_NORMALIZATION_CHECKS = NUMERICALLY_CERTIFIED_FINITE_54
+    TPC301_FULL_TOLERANCE_MONOTONICITY_CHECKS = NUMERICALLY_CERTIFIED_FINITE_36
+    TPC301_SHELL_TARGET_COUNT = 219
+    TPC301_INHERITED_GRID_EDGE_COUNT = 1380
+    TPC301_PROFILE_BUDGET_GROWTH = OPEN
+    TPC301_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+    TPC301_FIXED_POWER_CREDIT = 0
+    TPC301_FULL_GATE_B = OPEN
+    TPC301_TWIN_PRIME_RESULT = NONE
+    TPC301_STATUS = PROVED_EXACT_FINITE_TOLERANCE_MONOTONICITY_AND_HOMOGENEITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_GAP_ROBUSTNESS_ATLAS
+    TPC301_ROUND2_CLUE = EXTEND_TOLERANCE_AND_SOURCE_NORMALIZATION_AUDIT_TO_GROWING_SHELLS_AND_ARITHMETIC_L2_INTERFACE
+
+TPC-301 is the hostile continuation of TPC-300.  It keeps the literal
+profile family fixed, varies relative RMS tolerance over 1/4, 1/2, and 3/4,
+and compares the signed weighted target with the all-positive control in the
+same weighted-selected prefix.  Target-specific and full-prefix contexts are
+also retained as controls.
+
+The producer and independent checker cover 18 rows and 324 frontier cases.
+The explicit shell lists contain 219 target edges; the inherited parent
+metadata's 1,380-edge grid count is recorded separately.  The common-prefix
+gap exceeds 10 in every row at all three tolerances, with minima
+155.1685273879, 69.9448236917, and 39.2637006403.  The common weighted
+budget exceeds 3e-5 in 54/54 cases for each of three source normalizers.
+
+This is a finite robustness certificate.  It does not establish a growing
+profile-budget theorem, arithmetic L2, fixed-power credit, full Gate B, or a
+twin-prime result.  The Session-named evaluator files are absent; the local
+proof package, independent source-first replay, stress fixtures, PDF audit,
+and this checker are the fail-closed validation path.
+
+## Local validation
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B research/tpc-big-road/tpc_bridge_b_tpc301_budget_gap_robustness_audit_checker.py --check

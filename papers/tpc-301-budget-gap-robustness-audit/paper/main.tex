@@ -1,0 +1,223 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{proposition}{Proposition}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\R}{\mathbb{R}}
+\title{Tolerance and Source-Normalization Robustness\\
+of the Native Weighted/Positive Budget Gap}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{29 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A finite native-profile audit for the twin-prime dynamical bridge found a
+large source-budget separation between a signed weighted target and an
+all-positive control at one tolerance.  We perform the next hostile test:
+the tolerance is varied over $\tau\in\{1/4,1/2,3/4\}$, both targets are
+evaluated in the same source prefix selected by the weighted target, and
+three source-side normalizations are compared.  The finite budget
+\[
+ B_{k,\tau}(b)=\min\{c^TM_kc:\norm{V_kc-b}_2\leq\tau\norm{b}_2\}
+\]
+has exact tolerance nesting, relative target homogeneity, threshold-prefix
+nesting, and common-prefix normalization invariance.  On 18 frozen rows
+with 219 explicit shell targets, the common-prefix weighted/positive gap is
+above $10$ in every row at every tolerance; its minimum is $155.1685$,
+$69.9448$, and $39.2637$ at the three tolerances.  The weighted budget is
+above $3\cdot10^{-5}$ under each of three normalizations in all 54 cases.
+This is a finite restricted robustness certificate, not an asymptotic
+prime estimate.
+\end{abstract}
+
+\section{Question and finite model}
+
+The preceding releases measured literal source profiles for a finite
+prime-shell dynamical model.  TPC-299 introduced the native source-budget
+frontier, and TPC-300 compiled selected points of that frontier as exact
+finite dual witnesses \cite{tpc300}.  Those results used one normalized RMS
+tolerance and, in their main comparison, target-specific prefixes.  A
+finite obstruction can be misleading if it is caused by a tolerance
+convention or by comparing two targets in different source spaces.
+
+This paper isolates that vulnerability.  Let $S$ be a frozen shell, $A$ the
+physical source-to-shell matrix, and $U_k$ the first $k$ literal cutoff
+profiles.  Put
+\[
+        V_k=A^TU_k,\qquad M_k=U_k^TU_k.
+\]
+For a nonzero target $b$ and $0<\tau<1$, define
+\[
+ B_{k,\tau}(b)
+ =\min\left\{c^TM_kc:
+       \norm{V_kc-b}_2\leq\tau\norm{b}_2\right\}.       \tag{1}
+\]
+The source Gram is positive definite for every tested prefix.  The targets
+are the TPC-299 signed minimum target and the all-one positive control; both
+have entries in $\{-1,1\}$, so $\norm b_2^2=|S|$.
+
+The source profiles are
+\[
+ \beta_z(t)=\lambda(t)-
+ \sum_{\substack{d\leq z\\d\mid t}}\mu(d),\qquad
+ z\in\{3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61\}. \tag{2}
+\]
+All finite matrix entries are formed from rational arithmetic before the
+numerical frontier solve.  The parent metadata contains a 1,380-edge grid
+count; the explicit shell lists used by this release contain 219 target
+edges.  We retain both counts because they refer to different census
+fields.
+
+\section{Finite theorem layer}
+
+\begin{proposition}[Tolerance nesting]
+For fixed $k$ and $0<\tau_1\leq\tau_2<1$,
+\[
+ B_{k,\tau_1}(b)\geq B_{k,\tau_2}(b)
+\]
+whenever both frontiers are feasible.
+\end{proposition}
+
+\begin{proof}
+The feasible set for $\tau_1$ is contained in the feasible set for
+$\tau_2$.  Minimizing the same positive quadratic form over nested sets
+gives the inequality.
+\end{proof}
+
+\begin{proposition}[Relative homogeneity]
+For every nonzero scalar $\alpha$,
+\[
+ B_{k,\tau}(\alpha b)=\alpha^2B_{k,\tau}(b).
+\]
+\end{proposition}
+
+\begin{proof}
+The map $c\mapsto\alpha c$ bijects the feasible set for $b$ with that for
+$\alpha b$, since both the residual and its allowed radius are multiplied
+by $\lvert\alpha\rvert$.  The objective is multiplied by $\alpha^2$.
+\end{proof}
+
+\begin{proposition}[Threshold prefix nesting]
+Let
+\[
+ r_k(b)=\min_c\frac{\norm{V_kc-b}_2}{\norm b_2}
+\]
+and let $k_\tau(b)$ be the first prefix with $r_k(b)\leq\tau$.  Then
+$k_{\tau_2}(b)\leq k_{\tau_1}(b)$ when $\tau_1\leq\tau_2$.
+\end{proposition}
+
+\begin{proof}
+The column spaces are nested as $k$ grows, so their distances from $b$ are
+nonincreasing.  Relaxing the tolerance can therefore only move the first
+feasible index to the left.
+\end{proof}
+
+\begin{proposition}[Common-prefix normalization invariance]
+Let $N_k>0$ depend on the row and prefix but not on the target class.  At a
+common prefix,
+\[
+ \frac{B_{k,\tau}(b_w)/N_k}{B_{k,\tau}(b_+)/N_k}
+ =\frac{B_{k,\tau}(b_w)}{B_{k,\tau}(b_+)}.                  \tag{3}
+\]
+\end{proposition}
+
+\begin{proof}
+The positive scalar $N_k$ cancels.  The common-prefix condition is essential:
+if two targets are assigned different prefixes, their normalizers need not
+be the same.
+\end{proof}
+
+\section{Hostile audit protocol}
+
+For each row and each $\tau\in\{1/4,1/2,3/4\}$, we compute all least-squares
+residual ratios along the 17-profile prefix ladder.  Let $k_w(\tau)$ and
+$k_+(\tau)$ be the first feasible indices for the weighted and positive
+targets.  The audit checks $k_+(\tau)\leq k_w(\tau)$ and uses three contexts:
+\begin{enumerate}
+\item \emph{common weighted prefix}: both targets use $k_w(\tau)$;
+\item \emph{target-specific prefixes}: each target uses its own first
+      feasible prefix;
+\item \emph{full prefix}: both targets use all available profiles.
+\end{enumerate}
+
+At every context we solve (1) by a monotone ridge-parameter bisection at
+60-digit precision.  The producer writes outward decimal intervals.  The
+source normalizers are
+\[
+ N_\beta=\norm{\beta}_2^2,\qquad
+ N_{\rm mean}=\frac{\operatorname{tr}(M_k)}{k},\qquad
+ N_{\rm first}=M_k[1,1].                                      \tag{4}
+\]
+The primary quantity is the weighted/positive ratio at the common weighted
+prefix.  The target-specific and full-prefix results are controls, not
+substitutes for the primary comparison.
+
+\section{Finite results}
+
+The project contains $18$ rows, $219$ explicit shell targets, three
+tolerances, three contexts, and two targets, for $324$ frontier cases.
+Table~\ref{tab:gap} reports the minimum gap over rows.  The full-prefix
+column is a secondary control.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Minimum weighted/positive budget gap over the 18 rows.}
+\label{tab:gap}
+\begin{tabular}{lrrr}
+\toprule
+relative RMS $\tau$ & common prefix & full prefix & common $>10$\\
+\midrule
+$1/4$ & 155.1685273879 & 155.1685273879 & $18/18$\\
+$1/2$ & 69.9448236917 & 47.3501392957 & $18/18$\\
+$3/4$ & 39.2637006403 & 27.7392664825 & $18/18$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The common weighted budget exceeds $3\cdot10^{-5}$ in $54/54$ cases under
+each normalization in (4).  The three common-prefix gap computations agree
+up to the replay precision in all 54 row--tolerance pairs, as predicted by
+Proposition 4.  Full-prefix budgets are nonincreasing as the tolerance is
+relaxed in all 36 target--row checks, and the first-feasible-prefix ordering
+holds in all 54 row--tolerance checks.
+
+The minima are not presented as asymptotic constants.  They summarize a
+frozen finite atlas; in particular, the gap can vary by several orders of
+magnitude across rows.  The useful conclusion is qualitative robustness:
+the separation does not disappear at the stricter or looser tested
+tolerance, nor when the two targets are placed in the same source space.
+
+\section{Reproducibility and claim firewall}
+
+The producer reconstructs the physical matrices and profile Grams from the
+frozen TPC-299 source-first engine.  An independent checker, which does not
+import the TPC-301 producer, repeats every matrix build and frontier solve.
+An exact scalar stress suite verifies the theorem identities in ordinary and
+optimized Python modes.  The canonical certificate records all case
+intervals and aggregate counts.
+
+The finite theorem layer is proved exactly on the declared finite model.  The
+atlas is numerically certified only relative to the declared rows, profiles,
+tolerances, target classes, and source normalizers.  The current project
+does not prove a growing profile-budget bound, arithmetic $L^2$ estimate,
+fixed-power credit, full Gate B, or the twin-prime conjecture.  The
+Session-named Route-A/Route-B evaluator files are absent from the checkout,
+so no official evaluator pass is asserted.
+
+\section*{Conclusion}
+
+The TPC-300 finite native-budget obstruction survives the first natural
+hostile audit.  A next meaningful step is to carry the same common-prefix
+and normalization protocol to growing shells, where the finite theorem
+identities remain valid but the budget and profile dimension must be
+controlled uniformly.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

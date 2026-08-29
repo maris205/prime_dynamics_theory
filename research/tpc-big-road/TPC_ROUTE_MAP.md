@@ -2,24 +2,53 @@
 
 更新时间：2026-08-29
 
-当前地图版本：V153 / TPC-300
+当前地图版本：V154 / TPC-301
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-300`（`PROVED_EXACT_FINITE_NATIVE_BUDGET_DUALITY_AND_RECIPROCAL_MULTIPLIER_CORRECTION_PLUS_NUMERICALLY_CERTIFIED_FINITE_RATIONAL_DUAL_WITNESS_ATLAS`）；
+当前编号锚点：`TPC-301`（`PROVED_EXACT_FINITE_TOLERANCE_MONOTONICITY_AND_HOMOGENEITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_GAP_ROBUSTNESS_ATLAS`）；
 对应论文目录为
-`papers/tpc-300-native-budget-dual-certificate/`。
+`papers/tpc-301-budget-gap-robustness-audit/`。
 
-TPC-300 承接 TPC-299 的 native profile budget frontier，把 primal budget 编译为
-target-space dual certificate。对 `(V^T V+rho M)c_rho=V^T b` 与
-`D_rho=(||b||^2-R^2-b^T Vc_rho)/rho`，严格证明任意正 `rho` 给出
-`D_rho<=B_R(b)`，active finite frontier 上取等号，并校正 `mu=1/rho` 的
-KKT/ridge reciprocal。18-row、1,380-edge finite grid 上，72 个 exact rational
-dual witnesses 全部通过 source-first replay；最小 dual/primal lower-bound ratio
-约为 `0.9999999999999623`，weighted threshold dual obstruction 为 18/18、
-14/18（`9e-5`、`1e-3`），full-prefix `1e-3` 为 11/18。这是 restricted finite
-structural certificate；growing budget、arithmetic `L2`、full Gate B 与 twin-prime
-conclusion 仍 OPEN/NONE，fixed-power credit 为 0。
+TPC-301 承接 TPC-300 的 finite native budget dual certificate，把单一容差下的
+weighted/positive separation 做 hostile audit。相对 RMS `tau=1/4,1/2,3/4` 下，
+weighted 与 all-positive target 在同一个 weighted-selected source prefix 中比较；
+common-prefix gap 的 finite minimum 分别为 `155.1685`、`69.9448`、`39.2637`，
+18/18 rows 在三档容差均超过 10。54 个 row-tolerance cases 在三种 source
+normalization 下的 weighted budget 均超过 `3e-5`，54 个 normalization checks 与
+36 个 full-prefix monotonicity checks 全部通过。显式 shell target 数为 219；父级
+inherited grid count 1,380 单独记录。这是 restricted finite robustness certificate；
+growing profile budget、arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍
+OPEN/NONE，fixed-power credit 为 0。
+
+```text
+TPC301_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_TOLERANCE_MONOTONICITY_AND_HOMOGENEITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_GAP_ROBUSTNESS_ATLAS
+TPC301_ROUTE_ADVANCE = YES_SCOPED_SINGLE_TOLERANCE_TO_COMMON_PREFIX_ROBUSTNESS_LADDER
+TPC301_TOLERANCE_MONOTONICITY = PROVED_EXACT_FINITE
+TPC301_TARGET_HOMOGENEITY = PROVED_EXACT_FINITE
+TPC301_PREFIX_THRESHOLD_MONOTONICITY = PROVED_EXACT_FINITE
+TPC301_COMMON_NORMALIZATION_INVARIANCE = PROVED_EXACT_FINITE
+TPC301_COMMON_GAP_TAU_025 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+TPC301_COMMON_GAP_TAU_050 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+TPC301_COMMON_GAP_TAU_075 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+TPC301_FULL_GAP_TAU_025 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+TPC301_FULL_GAP_TAU_050 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+TPC301_FULL_GAP_TAU_075 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+TPC301_COMMON_WEIGHTED_BUDGET_FLOOR_BETA = NUMERICALLY_CERTIFIED_FINITE_54_OF_54_ABOVE_3E_MINUS_5
+TPC301_COMMON_WEIGHTED_BUDGET_FLOOR_TRACE = NUMERICALLY_CERTIFIED_FINITE_54_OF_54_ABOVE_3E_MINUS_5
+TPC301_COMMON_WEIGHTED_BUDGET_FLOOR_FIRST = NUMERICALLY_CERTIFIED_FINITE_54_OF_54_ABOVE_3E_MINUS_5
+TPC301_COMMON_GAP_NORMALIZATION_CHECKS = NUMERICALLY_CERTIFIED_FINITE_54
+TPC301_FULL_TOLERANCE_MONOTONICITY_CHECKS = NUMERICALLY_CERTIFIED_FINITE_36
+TPC301_SHELL_TARGET_COUNT = 219
+TPC301_INHERITED_GRID_EDGE_COUNT = 1380
+TPC301_PROFILE_BUDGET_GROWTH = OPEN
+TPC301_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC301_FIXED_POWER_CREDIT = 0
+TPC301_FULL_GATE_B = OPEN
+TPC301_TWIN_PRIME_RESULT = NONE
+TPC301_STATUS = PROVED_EXACT_FINITE_TOLERANCE_MONOTONICITY_AND_HOMOGENEITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_GAP_ROBUSTNESS_ATLAS
+TPC301_ROUND2_CLUE = EXTEND_TOLERANCE_AND_SOURCE_NORMALIZATION_AUDIT_TO_GROWING_SHELLS_AND_ARITHMETIC_L2_INTERFACE
+```
 
 ```text
 TPC300_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_NATIVE_BUDGET_DUALITY_AND_RECIPROCAL_MULTIPLIER_CORRECTION_PLUS_NUMERICALLY_CERTIFIED_FINITE_RATIONAL_DUAL_WITNESS_ATLAS
@@ -254,7 +283,7 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V153 / TPC-300
+YOU ARE HERE = V154 / TPC-301
 MAP_LABEL = NATIVE BUDGET DUAL CERTIFICATE / RECIPROCAL KKT-RIDGE FIREWALL
 ```
 
@@ -491,6 +520,50 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.95 V154 / TPC-301：budget-gap robustness audit
+
+TPC-301 是 TPC-300 的 hostile continuation：保留同一 literal 17-profile family，
+把相对 RMS tolerance 扩展为 `1/4,1/2,3/4`，并在每行 weighted target 首个可行的
+common source prefix 中同时比较 weighted 与 all-positive control。target-specific
+prefix 与 full-prefix 只作 secondary controls；源侧归一化使用 `||beta||^2`、
+`tr(M_k)/k` 和 first-profile energy。
+
+finite audit 的显式 shell target 总数为 219，父级 inherited grid count 1,380 作为
+独立 metadata 保留。324 个 frontier cases、54 个 common-prefix normalization
+checks 与 36 个 full-prefix tolerance-monotonicity checks 均通过。common gap 在
+三档容差、18/18 rows 均超过 10，最小值为 `155.1685/69.9448/39.2637`；weighted
+common budget 在三种 normalizer 下 54/54 超过 `3e-5`。这把 TPC-299/TPC-300 的
+single-tolerance finite obstruction 升级为 tolerance/common-space robustness
+obstruction，但没有产生 growing 或 arithmetic credit。
+
+```text
+TPC301_ROUTE_ADVANCE = YES_SCOPED_SINGLE_TOLERANCE_TO_COMMON_PREFIX_ROBUSTNESS_LADDER
+TPC301_TOLERANCE_MONOTONICITY = PROVED_EXACT_FINITE
+TPC301_TARGET_HOMOGENEITY = PROVED_EXACT_FINITE
+TPC301_PREFIX_THRESHOLD_MONOTONICITY = PROVED_EXACT_FINITE
+TPC301_COMMON_NORMALIZATION_INVARIANCE = PROVED_EXACT_FINITE
+TPC301_COMMON_GAP_TAU_025 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+TPC301_COMMON_GAP_TAU_050 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+TPC301_COMMON_GAP_TAU_075 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+TPC301_FULL_GAP_TAU_025 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+TPC301_FULL_GAP_TAU_050 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+TPC301_FULL_GAP_TAU_075 = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_10
+TPC301_COMMON_WEIGHTED_BUDGET_FLOOR_BETA = NUMERICALLY_CERTIFIED_FINITE_54_OF_54_ABOVE_3E_MINUS_5
+TPC301_COMMON_WEIGHTED_BUDGET_FLOOR_TRACE = NUMERICALLY_CERTIFIED_FINITE_54_OF_54_ABOVE_3E_MINUS_5
+TPC301_COMMON_WEIGHTED_BUDGET_FLOOR_FIRST = NUMERICALLY_CERTIFIED_FINITE_54_OF_54_ABOVE_3E_MINUS_5
+TPC301_COMMON_GAP_NORMALIZATION_CHECKS = NUMERICALLY_CERTIFIED_FINITE_54
+TPC301_FULL_TOLERANCE_MONOTONICITY_CHECKS = NUMERICALLY_CERTIFIED_FINITE_36
+TPC301_SHELL_TARGET_COUNT = 219
+TPC301_INHERITED_GRID_EDGE_COUNT = 1380
+TPC301_PROFILE_BUDGET_GROWTH = OPEN
+TPC301_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC301_FIXED_POWER_CREDIT = 0
+TPC301_FULL_GATE_B = OPEN
+TPC301_TWIN_PRIME_RESULT = NONE
+TPC301_STATUS = PROVED_EXACT_FINITE_TOLERANCE_MONOTONICITY_AND_HOMOGENEITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_GAP_ROBUSTNESS_ATLAS
+TPC301_ROUND2_CLUE = EXTEND_TOLERANCE_AND_SOURCE_NORMALIZATION_AUDIT_TO_GROWING_SHELLS_AND_ARITHMETIC_L2_INTERFACE
+```
 
 ## 5.94 V153 / TPC-300：native budget dual certificate
 
@@ -1641,9 +1714,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V153 / TPC-300                    |
-        | NATIVE BUDGET DUAL CERTIFICATE                 |
-        | rational dual witness / KKT-ridge firewall    |
+        | YOU ARE HERE — V154 / TPC-301                    |
+        | BUDGET-GAP ROBUSTNESS AUDIT                    |
+        | tolerance / common-prefix / normalization     |
         +--------------------------------------------------+
                 |
                 v
@@ -6676,6 +6749,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-29 | V154 / TPC-301 | Bridge A / Gate B：native weighted/positive budget gap 已通过 tolerance、common-prefix 与 source-normalization hostile audit；growing profile budget、arithmetic `L2` 与 full Gate B open | `TPC-301` | 严格证明 tolerance nesting、relative homogeneity、threshold-prefix nesting 与 common-prefix normalization invariance；18 rows / 219 explicit shell targets（inherited grid count 1,380 单独记录），324 frontier cases 上三档容差的 common gap 均 18/18 >`10`，weighted common budget 三种 normalizer 均 54/54 >`3e-5`；fixed-power credit 为 0，下一步为 growing-shell robustness 与 arithmetic `L2` interface |
 | 2026-08-29 | V153 / TPC-300 | Bridge A / Gate B：native budget dual certificate 已在有限图上完成；growing profile budget、arithmetic `L2` 与 full Gate B open | `TPC-300` | 严格证明 weak/strong finite duality、`mu=1/rho` reciprocal correction 与 rational dual compiler；18 rows / 1,380 edges 上 72/72 exact dual witnesses 紧度 >`0.999999999`，weighted threshold floors `18/15/14`，full-prefix obstruction `11/18`；fixed-power credit 为 0，下一步为 tolerance/normalization hostile audit |
 | 2026-08-29 | V152 / TPC-299 | Bridge A / Gate B：native profile budget frontier 已在有限图上完成；growing profile budget、arithmetic `L2` 与 full Gate B open | `TPC-299` | 严格证明 QCQP/KKT/ridge budget frontier、budget feasibility iff 与 nested-prefix monotonicity；18 rows / 1,380 edges 上 weighted half-RMS threshold budget 各行 >`9e-5`，14/18 >`1e-3`，full prefix 11/18 >`1e-3`，positive control 18/18 <`1e-4`，gap 18/18 >20；fixed-power credit 为 0，下一步为 exact dual budget witness |
 | 2026-08-29 | V151 / TPC-298 | Bridge A / Gate B：literal source-profile angle/dimension ladder 已在有限图上完成；growing dimension、conditioning/source budget、arithmetic `L2` 与 full Gate B open | `TPC-298` | 严格证明 principal-angle identity 与 nested-prefix monotonicity；17 个 literal cutoff prefixes 在 18 rows 上完成 306 项双模 rank ladder，weighted half-RMS dimension ratio 各行至少 `2/3`，all-positive 各行至多 6，full finite capture 18/18；fixed-power credit 为 0，下一步为 profile dimension 与 least-norm budget/conditioning 联合审计 |
