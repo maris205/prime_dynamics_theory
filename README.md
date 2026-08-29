@@ -9,6 +9,31 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-297 承接 TPC-296 的 native-ray obstruction，把冻结一维 ray 扩展为
+四个真实 Möbius/Euler cutoff profiles `beta_z`（`z=3,5,7,11`）。严格证明受限 source
+correlation image 的正交投影公式与加方向单调性；两模 rank replay 在继承的 18-row grid
+上得到 3-prime shell 为 rank 3、其余 17 行为 rank 4。70 位 replay 显示 all-positive
+target 的 profile RMS 在 18/18 行不超过 `0.15`，但 weighted target 在 17/17 个大 shell
+上仍不低于 `0.6`。因此四维 native-profile span 已有明确正信息，但 weighted direction
+仍被 profile geometry 卡住；growing dimension、principal angle、arithmetic `L2`、
+fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC297_PROJECTION_IDENTITY = PROVED_EXACT_FINITE
+TPC297_NESTED_PROFILE_MONOTONICITY = PROVED_EXACT_FINITE
+TPC297_TWO_MODULUS_IMAGE_RANK = NUMERICALLY_CERTIFIED_FINITE_3_PLUS_4
+TPC297_WEIGHTED_PROFILE_SEPARATION = NUMERICAL_OBSERVATION_17_OF_17_AT_LEAST_0_6
+TPC297_ALL_POSITIVE_PROFILE_CAPTURE = NUMERICAL_OBSERVATION_18_OF_18_AT_MOST_0_15
+TPC297_GROWING_PROFILE_DIMENSION = OPEN
+TPC297_PRINCIPAL_ANGLE_THEOREM = OPEN
+TPC297_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC297_FIXED_POWER_CREDIT = 0
+TPC297_FULL_GATE_B = OPEN
+TPC297_TWIN_PRIME_RESULT = NONE
+```
+
+`tpc-297-literal-source-profile-span-audit` - `PROVED_EXACT_FINITE_RESTRICTED_PROFILE_PROJECTION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_FOUR_CUTOFF_PROFILE_ATLAS` - 四个 literal cutoff source profiles 形成 3/4 维受限像；all-positive 18/18 行被捕获到 RMS `0.15` 内，而 weighted target 在 17 个大 shell 上保留 RMS `0.6` obstruction。
+
 当前主线状态：TPC-296 承接 TPC-295 的 unrestricted finite source-image 结果，继续量化
 source-side least-norm budget 与 native-profile 几何。对 physical column matrix `A`、
 `G=A^T A`，严格证明

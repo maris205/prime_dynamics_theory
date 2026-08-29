@@ -1,7 +1,53 @@
 # TPC HANDOFF
 
-更新时间：2026-08-28
-交接状态：`BOLD_CHANNEL_V149_TPC296_SOURCE_NORM_BUDGET_RELEASED`
+更新时间：2026-08-29
+交接状态：`BOLD_CHANNEL_V150_TPC297_LITERAL_SOURCE_PROFILE_SPAN_RELEASED`
+
+TPC-297 current section: literal source-profile span audit
+-----------------------------------------------------------------------------------------------
+
+TPC-297 follows TPC-296's frozen one-ray obstruction and tests a genuinely
+source-side four-direction family.  For `z` in `{3,5,7,11}`, define
+`beta_z(t)=lambda(t)-sum_{d<=z,d|t} mu(d)`, put these profiles in `U`, and
+let `V=A^T U` for the frozen physical shell matrix.  The exact restricted
+least-squares identity is
+
+`min_c ||Vc-b||^2 = b^T(I-P_V)b`,
+
+and adding a source direction cannot increase the residual.  Two independent
+modular replays give image rank 3 on the three-prime row and rank 4 on all 17
+larger rows.  The 70-digit atlas finds all-positive RMS at most `0.15` on
+18/18 rows, while the weighted target remains at least `0.6` on 17/17
+large-shell rows.  This is a finite profile-dimension advance and obstruction;
+the four cutoffs are an explicit modeling choice, not an asymptotic native
+profile theorem.  Growing dimension, principal angles, source-budget growth,
+arithmetic `L2`, fixed-power credit, full Gate B, and the twin-prime endpoint
+remain open.
+
+```text
+TPC297_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_RESTRICTED_PROFILE_PROJECTION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_FOUR_CUTOFF_PROFILE_ATLAS
+TPC297_ROUTE_ADVANCE = YES_SCOPED_NATIVE_PROFILE_RAY_TO_FOUR_LITERAL_CUTOFF_SPAN
+TPC297_PROJECTION_IDENTITY = PROVED_EXACT_FINITE
+TPC297_NESTED_PROFILE_MONOTONICITY = PROVED_EXACT_FINITE
+TPC297_TWO_MODULUS_IMAGE_RANK = NUMERICALLY_CERTIFIED_FINITE_3_PLUS_4
+TPC297_WEIGHTED_PROFILE_SEPARATION = NUMERICAL_OBSERVATION_17_OF_17_AT_LEAST_0_6
+TPC297_ALL_POSITIVE_PROFILE_CAPTURE = NUMERICAL_OBSERVATION_18_OF_18_AT_MOST_0_15
+TPC297_PROFILE_FAMILY = MODELING_CHOICE_LITERAL_CUTOFFS_3_5_7_11
+TPC297_GROWING_PROFILE_DIMENSION = OPEN
+TPC297_PRINCIPAL_ANGLE_THEOREM = OPEN
+TPC297_SOURCE_BUDGET_GROWTH = OPEN
+TPC297_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC297_FIXED_POWER_CREDIT = 0
+TPC297_FULL_GATE_B = OPEN
+TPC297_TWIN_PRIME_RESULT = NONE
+TPC297_STATUS = PROVED_EXACT_FINITE_RESTRICTED_PROFILE_PROJECTION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_FOUR_CUTOFF_PROFILE_ATLAS
+TPC297_ROUND2_CLUE = TEST_NATIVE_PROFILE_PRINCIPAL_ANGLES_AND_MINIMUM_DIMENSION
+```
+
+The Session-named Route-A/Route-B evaluator files are absent from this
+checkout.  The local proof package, canonical certificate, independent
+source-first replay, stress suite, PDF audit, and Bridge-B checker are the
+fail-closed validation path.
 
 TPC-296 current section: least-norm source budget and native-ray obstruction
 -----------------------------------------------------------------------------------------------
@@ -9738,24 +9784,25 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V149/TPC-296 是当前 release；其 producer、independent replay、stress audit 与
+V150/TPC-297 是当前 release；其 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
-当前 curated cascade command set 共 205 对 normal/optimized 命令、410 次
+当前 curated cascade command set 共 209 对 normal/optimized 命令、418 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
 TPC-288 再追加末尾 4 对，TPC-289 再追加末尾 4 对，TPC-290 再追加末尾 4 对，
 TPC-291 再追加末尾 4 对，TPC-292 再追加末尾 4 对，TPC-293 再追加末尾 4 对，
-TPC-294 再追加末尾 4 对，TPC-295 再追加末尾 4 对，TPC-296 再追加末尾 4 对。
-V149/TPC-296 的 205 对
+TPC-294 再追加末尾 4 对，TPC-295 再追加末尾 4 对，TPC-296 再追加末尾 4 对，
+TPC-297 再追加末尾 4 对。V150/TPC-297 的 209 对
 registry 已完成增量回归；TPC-289 新增的 4 对已由本项目 bridge 与 standalone tail
 checks 逐项通过；TPC-290、TPC-291、TPC-292 的各 4 对均由各自 bridge 与 standalone
 tail checks 逐项通过；TPC-293 的 4 对也由本项目 bridge 与 standalone tail checks
 逐项通过；TPC-294 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过，
 TPC-295 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-296 的
-4 对亦由本项目 bridge 与 standalone tail checks 逐项通过。完整 205 对组合未因
+4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-297 的 4 对亦由本项目
+bridge 与 standalone tail checks 逐项通过。完整 209 对组合未因
 重复计算而再次运行。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
@@ -10269,6 +10316,19 @@ python -B research/tpc-big-road/tpc_bridge_b_tpc296_source_norm_budget_interface
 python -O -B research/tpc-big-road/tpc_bridge_b_tpc296_source_norm_budget_interface_checker.py --check
 ```
 
+TPC-297 的项目级 producer、independent replay、profile stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-297-literal-source-profile-span-audit/code/tpc297_literal_source_profile_span_certificate.py --check
+python -O -B papers/tpc-297-literal-source-profile-span-audit/code/tpc297_literal_source_profile_span_certificate.py --check
+python -B papers/tpc-297-literal-source-profile-span-audit/experiments/tpc297_independent_checker.py
+python -O -B papers/tpc-297-literal-source-profile-span-audit/experiments/tpc297_independent_checker.py
+python -B papers/tpc-297-literal-source-profile-span-audit/experiments/tpc297_profile_stress.py
+python -O -B papers/tpc-297-literal-source-profile-span-audit/experiments/tpc297_profile_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc297_literal_source_profile_span_audit_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc297_literal_source_profile_span_audit_checker.py --check
+```
+
 TPC-282 的项目级 producer、independent replay、attachment stress 与 bridge checker：
 
 ```bash
@@ -10297,7 +10357,18 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-最新 TPC-296 入口：
+最新 TPC-297 入口：
+
+```text
+papers/tpc-297-literal-source-profile-span-audit/README.md
+papers/tpc-297-literal-source-profile-span-audit/PROOF_PACKAGE.md
+papers/tpc-297-literal-source-profile-span-audit/notes/theorem_ledger.md
+papers/tpc-297-literal-source-profile-span-audit/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc297_literal_source_profile_span_audit.md
+research/tpc-big-road/tpc_bridge_b_tpc297_literal_source_profile_span_audit_checker.py
+```
+
+随后读取 TPC-296 入口：
 
 ```text
 papers/tpc-296-source-norm-budget-interface/README.md

@@ -1,9 +1,42 @@
 # TPC distilled map and bold channel
 
-更新时间：2026-08-28
-状态：`BOLD_CHANNEL_V149 / LEAST_NORM_SOURCE_BUDGET_AND_NATIVE_PROFILE_PIER`
-claim level：`PROVED_EXACT_LEAST_NORM_SOURCE_BUDGET_AND_SOURCE_ENERGY_TRADEOFF_PLUS_NUMERICALLY_CERTIFIED_FINITE_COST_PROFILE_ATLAS`
-编号事实终点：TPC-296；TPC-296 trigger：`true`
+更新时间：2026-08-29
+状态：`BOLD_CHANNEL_V150 / LITERAL_SOURCE_PROFILE_SPAN_AUDIT`
+claim level：`PROVED_EXACT_FINITE_RESTRICTED_PROFILE_PROJECTION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_FOUR_CUTOFF_PROFILE_ATLAS`
+编号事实终点：TPC-297；TPC-297 trigger：`true`
+
+当前 TPC-297 入口：proof 为
+`research/tpc-big-road/bridge_b_tpc297_literal_source_profile_span_audit.md`，checker 为
+`tpc_bridge_b_tpc297_literal_source_profile_span_audit_checker.py`，编号论文为
+`papers/tpc-297-literal-source-profile-span-audit/`。它承接 TPC-296 的冻结一维
+`span{A^T beta}` obstruction，改用四个 source-side literal cutoff profiles
+`beta_z(t)=lambda(t)-sum_{d<=z,d|t}mu(d)`（`z=3,5,7,11`）。严格证明受限像
+`V=A^T U` 的 projection identity 与 nested-span monotonicity；两模 rank replay 在
+18 rows 上得到 rank `3+17*4`。70 位独立 replay 显示 all-positive target 的 RMS 在
+18/18 行不超过 `0.15`，weighted target 在 17/17 个大 shell 上仍至少 `0.6`。
+这确认四维 source geometry 有实质正信息，但尚未解释 weighted direction；growing
+dimension、principal angles、source budget、arithmetic `L2`、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE，fixed-power credit 为 0。Session-named evaluator 文件缺失，
+当前仍只记录 local fail-closed validation。
+
+```text
+TPC297_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_RESTRICTED_PROFILE_PROJECTION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_FOUR_CUTOFF_PROFILE_ATLAS
+TPC297_ROUTE_ADVANCE = YES_SCOPED_NATIVE_PROFILE_RAY_TO_FOUR_LITERAL_CUTOFF_SPAN
+TPC297_PROJECTION_IDENTITY = PROVED_EXACT_FINITE
+TPC297_NESTED_PROFILE_MONOTONICITY = PROVED_EXACT_FINITE
+TPC297_TWO_MODULUS_IMAGE_RANK = NUMERICALLY_CERTIFIED_FINITE_3_PLUS_4
+TPC297_WEIGHTED_PROFILE_SEPARATION = NUMERICAL_OBSERVATION_17_OF_17_AT_LEAST_0_6
+TPC297_ALL_POSITIVE_PROFILE_CAPTURE = NUMERICAL_OBSERVATION_18_OF_18_AT_MOST_0_15
+TPC297_PROFILE_FAMILY = MODELING_CHOICE_LITERAL_CUTOFFS_3_5_7_11
+TPC297_GROWING_PROFILE_DIMENSION = OPEN
+TPC297_PRINCIPAL_ANGLE_THEOREM = OPEN
+TPC297_SOURCE_BUDGET_GROWTH = OPEN
+TPC297_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC297_FIXED_POWER_CREDIT = 0
+TPC297_FULL_GATE_B = OPEN
+TPC297_TWIN_PRIME_RESULT = NONE
+TPC297_ROUND2_CLUE = TEST_NATIVE_PROFILE_PRINCIPAL_ANGLES_AND_MINIMUM_DIMENSION
+```
 
 当前 TPC-296 入口：proof 为
 `research/tpc-big-road/bridge_b_tpc296_source_norm_budget_interface.md`，checker 为

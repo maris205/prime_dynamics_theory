@@ -1,14 +1,41 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-08-28
+更新时间：2026-08-29
 
-当前地图版本：V149 / TPC-296
+当前地图版本：V150 / TPC-297
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-296`（`PROVED_EXACT_LEAST_NORM_SOURCE_BUDGET_AND_SOURCE_ENERGY_TRADEOFF_PLUS_NUMERICALLY_CERTIFIED_FINITE_COST_PROFILE_ATLAS`）；
+当前编号锚点：`TPC-297`（`PROVED_EXACT_FINITE_RESTRICTED_PROFILE_PROJECTION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_FOUR_CUTOFF_PROFILE_ATLAS`）；
 对应论文目录为
-`papers/tpc-296-source-norm-budget-interface/`。
+`papers/tpc-297-literal-source-profile-span-audit/`。
+
+TPC-297 承接 TPC-296 的冻结一维 native ray，定义四个 source-side literal cutoff
+profiles `beta_z(t)=lambda(t)-sum_{d<=z,d|t}mu(d)`（`z=3,5,7,11`）。严格证明
+受限像 `V=A^T U` 的 least-squares projection identity 与 nested-span monotonicity；
+两模 rank replay 在继承的 18-row grid 上得到 rank 3（1 行）和 rank 4（17 行）。
+70 位独立 replay 显示 all-positive target 的 profile RMS 在 18/18 行不超过 `0.15`，
+但 weighted target 在 17/17 个大 shell 上仍至少为 `0.6`。因此四维 source span
+已经给出真实正信息，同时把 weighted obstruction 具体化为 profile dimension/angle
+问题；growing dimension、principal angle、source budget、arithmetic `L2`、fixed-power
+credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC297_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_RESTRICTED_PROFILE_PROJECTION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_FOUR_CUTOFF_PROFILE_ATLAS
+TPC297_ROUTE_ADVANCE = YES_SCOPED_NATIVE_PROFILE_RAY_TO_FOUR_LITERAL_CUTOFF_SPAN
+TPC297_PROJECTION_IDENTITY = PROVED_EXACT_FINITE
+TPC297_NESTED_PROFILE_MONOTONICITY = PROVED_EXACT_FINITE
+TPC297_TWO_MODULUS_IMAGE_RANK = NUMERICALLY_CERTIFIED_FINITE_3_PLUS_4
+TPC297_WEIGHTED_PROFILE_SEPARATION = NUMERICAL_OBSERVATION_17_OF_17_AT_LEAST_0_6
+TPC297_ALL_POSITIVE_PROFILE_CAPTURE = NUMERICAL_OBSERVATION_18_OF_18_AT_MOST_0_15
+TPC297_GROWING_PROFILE_DIMENSION = OPEN
+TPC297_PRINCIPAL_ANGLE_THEOREM = OPEN
+TPC297_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC297_FIXED_POWER_CREDIT = 0
+TPC297_FULL_GATE_B = OPEN
+TPC297_TWIN_PRIME_RESULT = NONE
+TPC297_ROUND2_CLUE = TEST_NATIVE_PROFILE_PRINCIPAL_ANGLES_AND_MINIMUM_DIMENSION
+```
 
 TPC-296 承接 TPC-295 的 unrestricted finite source-correlation image，令 physical shell
 vectors 为 rational matrix `A` 的 columns、`G=A^T A`，严格证明 least-norm source cost
@@ -183,8 +210,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V149 / TPC-296
-MAP_LABEL = LEAST-NORM SOURCE BUDGET / NATIVE-PROFILE DIMENSION PIER
+YOU ARE HERE = V150 / TPC-297
+MAP_LABEL = LITERAL FOUR-PROFILE SOURCE SPAN / WEIGHTED-TARGET ANGLE OBSTRUCTION
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -420,6 +447,44 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.91 V150 / TPC-297：literal source-profile span and weighted-angle obstruction
+
+TPC-297 承接 TPC-296 的冻结一维 native ray，首次把“多方向 native profile”写成可审计的
+source-side family，而不是从 target space 反向挑方向。对 `z=3,5,7,11` 定义
+`beta_z(t)=lambda(t)-sum_{d<=z,d|t}mu(d)`，令 `U` 为四列 profile matrix、`A` 为
+TPC-295 冻结 physical shell matrix，并定义 `V=A^T U`。
+
+严格证明任意 target `b` 的受限最小二乘残差为
+`min_c ||Vc-b||^2=b^T(I-P_V)b`，且加入 source direction 不会增加残差。两模 Gaussian
+rank replay 在 18 行上给出 `rank=3` 的三素数小 shell 1 行、`rank=4` 的其余大 shell
+17 行；70 位 replay 与 source-first 独立重放得到 all-positive RMS `<=0.15`（18/18），
+但 weighted target RMS `>=0.6`（17/17 个至少五素数 shell）。这说明四维 source span
+确实比冻结 ray 有额外信息，同时 weighted optimum 仍不在该有限 literal image 中。
+
+```text
+TPC297_ROUTE_ADVANCE = YES_SCOPED_NATIVE_PROFILE_RAY_TO_FOUR_LITERAL_CUTOFF_SPAN
+TPC297_PROJECTION_IDENTITY = PROVED_EXACT_FINITE
+TPC297_NESTED_PROFILE_MONOTONICITY = PROVED_EXACT_FINITE
+TPC297_TWO_MODULUS_IMAGE_RANK = NUMERICALLY_CERTIFIED_FINITE_3_PLUS_4
+TPC297_WEIGHTED_PROFILE_SEPARATION = NUMERICAL_OBSERVATION_17_OF_17_AT_LEAST_0_6
+TPC297_ALL_POSITIVE_PROFILE_CAPTURE = NUMERICAL_OBSERVATION_18_OF_18_AT_MOST_0_15
+TPC297_PROFILE_FAMILY = MODELING_CHOICE_LITERAL_CUTOFFS_3_5_7_11
+TPC297_GROWING_PROFILE_DIMENSION = OPEN
+TPC297_PRINCIPAL_ANGLE_THEOREM = OPEN
+TPC297_SOURCE_BUDGET_GROWTH = OPEN
+TPC297_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC297_FIXED_POWER_CREDIT = 0
+TPC297_FULL_GATE_B = OPEN
+TPC297_TWIN_PRIME_RESULT = NONE
+TPC297_ROUND2_CLUE = TEST_NATIVE_PROFILE_PRINCIPAL_ANGLES_AND_MINIMUM_DIMENSION
+```
+
+最强正结果：四个 literal cutoff directions 在大 shell 上确实形成 rank-4 source image，
+并把 all-positive control 压到很小 residual。最强 obstruction：weighted target 在
+全部 17 个大 shell 上仍与此 image 保持至少 `0.6` 的 normalized RMS 距离。下一关是
+principal-angle/minimum-dimension audit，再接 source-budget growth；不把有限 rank-4
+观察提升成 growing theorem。
 
 ## 5.90 V149 / TPC-296：least-norm source budget and native-ray obstruction
 
@@ -1420,9 +1485,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V149 / TPC-296                    |
-        | LEAST-NORM SOURCE BUDGET                       |
-        | native-profile dimension pier                  |
+        | YOU ARE HERE — V150 / TPC-297                    |
+        | LITERAL FOUR-PROFILE SOURCE SPAN               |
+        | weighted-target angle obstruction              |
         +--------------------------------------------------+
                 |
                 v
