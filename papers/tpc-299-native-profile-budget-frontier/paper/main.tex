@@ -1,0 +1,336 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\B}{\mathcal B}
+
+\title{Native Profile Budget Frontiers\\
+for Finite Twin-Prime Shells}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST)\\
+Wuhan, China}
+\date{29 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The profile-angle ladder of TPC-298 measures when a literal source family
+becomes geometrically expressive, but it does not measure the source norm
+spent by that expression.  We introduce the native profile budget frontier
+\[
+ \B_{k,\tau}(b)=\min\{c^{\mathsf T}M_kc:
+ \norm{V_kc-b}_2\leq\tau\norm{b}_2\},
+ \qquad M_k=U_k^{\mathsf T}U_k,\quad V_k=A^{\mathsf T}U_k,
+ \]
+and prove its exact ridge/KKT representation, feasibility criterion, and
+monotonicity under nested prefixes.  On the inherited 18-row, 1,380-edge
+literal grid, the weighted sign target at normalized RMS $1/2$ requires more
+than $9\cdot10^{-5}\norm{\beta}_2^2$ on every row, more than
+$10^{-3}\norm{\beta}_2^2$ on 14 rows, and more than the latter threshold on
+11 rows even after the full available 17-profile prefix is used.  The
+all-positive control stays below $10^{-4}\norm{\beta}_2^2$ on all 18 rows,
+and the weighted/positive budget ratio exceeds 20 on every row.  These
+are finite restricted-profile diagnostics: no growing budget theorem,
+arithmetic $L^2$ estimate, Gate-B endpoint, or twin-prime conclusion is
+claimed.
+\end{abstract}
+
+\section{Position on the route}
+
+The current finite prime-shell line separates three questions that are easy
+to conflate.  TPC-295 showed that an unrestricted rational source
+correlation map can be onto on the finite grid \cite{tpc295}.  TPC-296
+computed the least-norm cost in that unrestricted ambient source space and
+found cheap witnesses, while a frozen native ray remained poorly aligned
+\cite{tpc296}.  TPC-297 and TPC-298 replaced the ray by literal cutoff
+profiles and measured the resulting image angle and dimension ladder
+\cite{tpc297,tpc298}.  The present paper asks the next minimal question:
+when a profile prefix reaches a target tolerance, what is the norm of the
+actual source vector $U_kc$?
+
+The distinction matters.  A small Euclidean norm of the coefficient vector
+does not imply a small source norm when the profile columns are correlated.
+Conversely, a finite full-rank image can hide a large source budget behind
+the final surjectivity point.  We therefore keep the source Gram matrix in
+the optimization throughout.
+
+\section{Finite physical map and literal source family}
+
+Let $I$ be the frozen integer interval and let
+$S=\{q:Q<q\leq 2Q,\ q\ {\rm prime}\}$.  For a prime $q$, height $H$, and
+kernel exponent $s$, the registered physical column is
+\[
+ (g_q)_u=\sum_{\substack{t\in I\\t\ne u}}
+ qK_{H,s}(u-t)B_q(u,t)\beta_t,\qquad
+ K_{H,s}(v)=\frac{H^{2s}}{(H^2+v^2)^s},
+ \]
+\[
+ B_q(u,t)=\mathbf 1_{q\nmid u}\mathbf 1_{q\nmid t}
+ \left(\mathbf 1_{u\equiv t\pmod q}-\frac1{q-1}\right).
+ \]
+Here $\beta$ is the frozen source profile used to register the physical
+operator.  Put $A=[g_q]_{q\in S}$.
+
+For the ordered literal cutoff list
+\[
+ Z=(3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61),
+ \]
+define
+\[
+ \lambda(t)=
+ \begin{cases}1/j,&t=p^j \text{ for a prime }p,\\0,&\text{otherwise},
+ \end{cases}
+ \qquad
+ \beta_z(t)=\lambda(t)-\sum_{\substack{d\leq z\\d\mid t}}\mu(d).
+ \]
+Let $U_k=[u_{z_1},\ldots,u_{z_k}]$, where
+$(u_z)_t=\beta_z(t)$, and define
+\[
+ V_k=A^{\mathsf T}U_k,\qquad M_k=U_k^{\mathsf T}U_k.
+ \]
+Thus a coefficient vector $c$ produces target $V_kc$ and has actual
+native source budget
+\[
+ \norm{U_kc}_2^2=c^{\mathsf T}M_kc.
+ \]
+The source directions are fixed before inspecting the target.  The weighted
+minimum, unit-edge max-cut, and all-positive vectors below are finite target
+controls inherited from the earlier route stages.
+
+\begin{remark}
+The word literal refers to the displayed finite cutoff formula.  It does
+not assert that this 17-element family is complete, uniform in the shell
+scale, or equivalent to the unrestricted arithmetic source class.
+\end{remark}
+
+\section{Exact budget frontier}
+
+For a nonzero target $b\in\R^{|S|}$ and $0\leq\tau<1$, define
+\[
+ \B_{k,\tau}(b)=
+ \min\left\{c^{\mathsf T}M_kc:
+ \norm{V_kc-b}_2\leq\tau\norm{b}_2\right\}.
+\label{eq:frontier}
+ \]
+If the constraint is infeasible, the value is $+\infty$.  The next theorem
+is the source-budget analogue of the projection identity in TPC-298.
+
+\begin{theorem}[Finite native budget frontier]
+Suppose $M=U^{\mathsf T}U$ is positive definite and $V=A^{\mathsf T}U$.
+Set $R=\tau\norm{b}_2$ with $0\leq R<\norm{b}_2$.  If
+\[
+ \operatorname{dist}(b,\operatorname{col}V)\leq R,
+ \]
+then \eqref{eq:frontier} has a unique minimizer.  If the least-squares
+distance is strictly smaller than $R$, there is a multiplier $\lambda>0$
+such that
+\[
+ c_\lambda=(V^{\mathsf T}V+\lambda M)^{-1}V^{\mathsf T}b,\qquad
+ \norm{Vc_\lambda-b}_2=R,
+ \]
+and $\B_{k,\tau}(b)=c_\lambda^{\mathsf T}Mc_\lambda$.  At the
+least-squares boundary one takes $\lambda=0$.  If the displayed distance
+condition fails, the frontier is infeasible.
+\end{theorem}
+
+\begin{proof}
+Let $y=M^{1/2}c$ and $W=VM^{-1/2}$.  The problem becomes
+\[
+ \min_y\norm{y}_2^2\quad\text{subject to}\quad
+ \norm{Wy-b}_2^2\leq R^2.
+ \]
+The feasible set is closed and convex, and the objective is strictly convex,
+so a feasible problem has a unique minimizer.  When the least-squares
+distance is strictly below $R$, the least-squares point is a strict feasible
+point.  The convex KKT conditions are therefore necessary and sufficient.
+Stationarity for the Lagrangian with multiplier $\lambda$ is
+\[
+ y+\lambda W^{\mathsf T}(Wy-b)=0.
+ \]
+Undoing the change of variables gives
+$(V^{\mathsf T}V+\lambda M)c=V^{\mathsf T}b$.  Complementary slackness
+makes the target constraint active, and the objective becomes
+$c^{\mathsf T}Mc$.  If $R$ is below the projection distance there is no
+feasible point; if equality holds, the least-squares minimizer is already
+optimal and $\lambda=0$.
+\end{proof}
+
+\begin{proposition}[Ridge path and budget feasibility]
+For $\lambda>0$, $V^{\mathsf T}V+\lambda M$ is positive definite.  Along
+the ridge path $c_\lambda$, the residual increases continuously toward
+$\norm{b}_2$ while the source norm decreases toward zero, subject to the
+usual omission of components invisible to $V$.  Consequently a source
+budget $B$ reaches tolerance $\tau$ if and only if
+$B\geq\B_{k,\tau}(b)$.
+\end{proposition}
+
+\begin{proof}
+After whitening, take an SVD of $W$.  If $\sigma_j$ are its nonzero
+singular values and $a_j$ are the target coordinates in the corresponding
+left singular vectors, then
+\[
+ \norm{Wy_\lambda-b}_2^2
+ =\norm{b_\perp}_2^2+
+ \sum_j\left(\frac{\lambda}{\sigma_j^2+\lambda}\right)^2a_j^2,
+ \]
+\[
+ \norm{y_\lambda}_2^2
+ =\sum_j\left(\frac{\sigma_j}{\sigma_j^2+\lambda}\right)^2a_j^2.
+ \]
+The claimed monotonicity and the feasibility criterion follow.
+\end{proof}
+
+\begin{proposition}[Nested-prefix budget monotonicity]
+If $U_k$ is the first $k$ columns of $U_\ell$, then
+\[
+ \B_{\ell,\tau}(b)\leq\B_{k,\tau}(b)
+ \]
+whenever the right-hand side is finite.
+\end{proposition}
+
+\begin{proof}
+Embed any $k$-coefficient vector into the $\ell$-coefficient space by
+appending zeros.  The source vector, target residual, and source budget are
+unchanged.  The larger feasible set can therefore only lower the infimum.
+\end{proof}
+
+\section{Finite audit}
+
+The audit inherits the 18 rows and 1,380 shell edges used by TPC-298.
+Every profile and physical entry is formed over exact rational numbers
+before conversion to 70-digit arithmetic.  For every prefix up to the
+available shell dimension, we record the least-squares residual and the
+actual source norm $c^{\mathsf T}M_kc$.  At the first prefix whose normalized
+RMS is at most $\tau=1/2$, and again at the full available prefix, we solve
+the KKT frontier by deterministic bisection on $\lambda$.
+
+The weighted target is the signed minimum selected by the physical
+magnitude-weighted quadratic control in the preceding releases.  The
+all-positive vector is a deliberately favorable comparison.  Budget ratios
+are divided by the squared norm of the frozen source vector $\beta$; this is
+a declared finite normalization, not an asymptotic scale law.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{TPC-299 finite budget census.}
+\label{tab:census}
+\begin{tabular}{@{}lr@{}}
+\toprule
+quantity & count\\
+\midrule
+rows / shell edges & 18 / 1,380\\
+profile cutoffs / tested prefix entries & 17 / 219\\
+weighted threshold budget $>9\cdot10^{-5}\norm{\beta}^2$ & 18 / 18\\
+weighted threshold budget $>5\cdot10^{-4}\norm{\beta}^2$ & 15 / 18\\
+weighted threshold budget $>10^{-3}\norm{\beta}^2$ & 14 / 18\\
+weighted full-prefix budget $>10^{-3}\norm{\beta}^2$ & 11 / 18\\
+positive threshold budget $<10^{-4}\norm{\beta}^2$ & 18 / 18\\
+weighted/positive threshold budget ratio $>20$ & 18 / 18\\
+fixed-power credit & 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\scriptsize
+\caption{Representative weighted threshold frontiers.  The two budget
+columns are divided by $\norm{\beta}_2^2$; \text{full} uses all available
+profiles.}
+\label{tab:rows}
+\begin{tabular}{@{}rrrrrrr@{}}
+\toprule
+$N$ & $H$ & $Q$ & $\vert S\vert$ & $k_{1/2}^{\rm wt}$
+& $B_{\rm wt}/\norm{\beta}_2^2$ & $B_{\rm full}/\norm{\beta}_2^2$\\
+\midrule
+128&24&9 &3 &2  & $1.268\,10^{-3}$ & $8.319\,10^{-4}$\\
+192&32&16&5 &5  & $2.772\,10^{-3}$ & $2.772\,10^{-3}$\\
+512&58&60&13&9 & $1.039\,10^{-2}$ & $1.240\,10^{-3}$\\
+512&58&90&17&13& $2.170\,10^{-2}$ & $1.915\,10^{-3}$\\
+384&48&70&15&13& $1.318\,10^{-1}$ & $6.449\,10^{-3}$\\
+384&52&70&15&12& $2.640\,10^{-2}$ & $4.782\,10^{-3}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The smallest weighted threshold ratio is approximately
+$9.545\cdot10^{-5}$, while the largest is approximately $1.318\cdot10^{-1}$.
+The largest positive threshold ratio is approximately
+$5.796\cdot10^{-5}$.  The smallest weighted-to-positive ratio is
+approximately $21.849$.  These extrema have comfortable separation from
+the displayed finite thresholds.
+
+\section{Validation and interpretation}
+
+The independent checker reconstructs each physical column in source-first
+order rather than importing the producer's matrix.  It recomputes all 219
+prefix residuals, all first-threshold dimensions, and the KKT frontiers at
+both the threshold and full prefix.  Exact fixtures include a
+one-dimensional active constraint with source budget exactly one, a strict
+budget drop after adding a coordinate, an infeasible projection radius, and
+the zero-source limit.  Normal and optimized interpreter runs agree with
+empty standard error.  The manuscript PDF is checked for parseability,
+embedded fonts, and absence of LaTeX warnings.
+
+The finite result closes a specific ambiguity in the previous dimension
+ladder.  The final prefix may be surjective on a finite shell, but that
+surjectivity does not imply a cheap native source.  In the registered grid,
+the weighted target pays a much larger source budget than the positive
+control at the same target tolerance, and the excess often survives all
+available literal directions.  This is a restricted-profile obstruction,
+not a statement about the unrestricted ambient source map or about every
+possible arithmetic profile.
+
+\section{Claim boundary and conclusion}
+
+The KKT, feasibility, ridge-path, and nesting statements are exact finite
+linear algebra.  The numerical budget counts are certified only for the
+declared literal cutoff ladder, finite rows, frozen physical operator,
+normalization, and target controls.  They do not establish uniform profile
+dimension, bounded source budget, arithmetic $L^2$, a fixed power, Gate B,
+or the twin-prime conjecture.
+
+The reusable route interface is
+\[
+ \text{literal profiles}
+ \longrightarrow A^{\mathsf T}U_k
+ \longrightarrow \text{whitened ridge path}
+ \longrightarrow \B_{k,\tau}(b)
+ \longrightarrow \text{budget obstruction}.
+ \]
+The next natural test is to enlarge the shell/profile scale while preserving
+the source-side definition and to check whether this finite budget gap has
+any uniform shadow.  That is an open question, not a conclusion of this
+paper.
+
+\section*{Reproducibility}
+
+From the project directory run:
+\begin{verbatim}
+export PYTHONDONTWRITEBYTECODE=1
+python -B code/tpc299_native_profile_budget_frontier_certificate.py --check
+python -B experiments/tpc299_independent_checker.py
+python -B experiments/tpc299_budget_stress.py
+\end{verbatim}
+The Session-named Route-A/Route-B evaluator files are absent from this
+checkout.  The theorem ledger, proof package, canonical certificate,
+independent replay, stress suite, PDF audit, and Bridge-B checker are the
+available fail-closed validation path.
+
+\enlargethispage{2\baselineskip}
+\small
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

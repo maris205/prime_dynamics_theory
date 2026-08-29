@@ -1,13 +1,49 @@
-# TPC big road V151 / TPC-298: literal source-profile angle and dimension ladder
+# TPC big road V152 / TPC-299: native profile budget frontier
 
 更新时间：2026-08-29
 
-状态：`TPC298_PROVED_EXACT_FINITE_PRINCIPAL_ANGLE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_PROFILE_DIMENSION_LADDER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC299_PROVED_EXACT_FINITE_PROFILE_BUDGET_KKT_FRONTIER_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_OBSTRUCTION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-298 proof 为
+当前 TPC-299 proof 为
+`bridge_b_tpc299_native_profile_budget_frontier.md`，checker 为
+`tpc_bridge_b_tpc299_native_profile_budget_frontier_checker.py`，编号论文为
+`../../papers/tpc-299-native-profile-budget-frontier/`。
+
+TPC-299 承接 TPC-298 的 17-profile angle/dimension ladder，把目标容差进一步编译成
+实际 native source budget。对 literal prefix `U_k`、物理像 `V_k=A^T U_k` 与 source Gram
+`M_k=U_k^T U_k`，严格证明 quadratically constrained least-norm frontier 的 KKT/ridge
+表达、budget feasibility iff 判据与 nested-prefix budget monotonicity。继承的 18-row、
+1,380-edge finite grid 在 normalized RMS `1/2` 下显示：weighted threshold budget
+>`9e-5||beta||^2`（18/18）、>`5e-4`（15/18）、>`1e-3`（14/18）；即使 full
+17-profile prefix 仍有 11/18 行 >`1e-3`。all-positive control 在 18/18 行
+<`1e-4`，weighted/positive threshold-budget gap 在 18/18 行 >20。这是 restricted
+finite native-budget obstruction；profile-budget growth、arithmetic `L2`、full Gate B
+与 twin-prime theorem 仍 OPEN/NONE，fixed-power credit 为 0。
+
+```text
+TPC299_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_PROFILE_BUDGET_KKT_FRONTIER_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_OBSTRUCTION_ATLAS
+TPC299_ROUTE_ADVANCE = YES_SCOPED_PROFILE_ANGLE_TO_NATIVE_BUDGET_FRONTIER
+TPC299_PROFILE_BUDGET_KKT_FRONTIER = PROVED_EXACT_FINITE
+TPC299_NESTED_BUDGET_MONOTONICITY = PROVED_EXACT_FINITE
+TPC299_WEIGHTED_HALF_RMS_BUDGET_FLOOR = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_9E_MINUS_5
+TPC299_WEIGHTED_HALF_RMS_BUDGET_MID_FLOOR = NUMERICALLY_CERTIFIED_FINITE_15_OF_18_ABOVE_5E_MINUS_4
+TPC299_WEIGHTED_HALF_RMS_BUDGET_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_14_OF_18_ABOVE_1E_MINUS_3
+TPC299_WEIGHTED_FULL_PREFIX_BUDGET_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_11_OF_18_ABOVE_1E_MINUS_3
+TPC299_PLUS_HALF_RMS_BUDGET_CEILING = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_BELOW_1E_MINUS_4
+TPC299_WEIGHTED_PLUS_BUDGET_GAP = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_20
+TPC299_PROFILE_BUDGET_GROWTH = OPEN
+TPC299_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC299_FIXED_POWER_CREDIT = 0
+TPC299_FULL_GATE_B = OPEN
+TPC299_TWIN_PRIME_RESULT = NONE
+TPC299_STATUS = PROVED_EXACT_FINITE_PROFILE_BUDGET_KKT_FRONTIER_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_OBSTRUCTION_ATLAS
+TPC299_ROUND2_CLUE = TEST_BUDGET_CONSTRAINED_PROFILE_FRONTIER_ON_GROWING_SHELLS_AND_SOURCE_NORMALIZATION
+```
+
+此前 TPC-298 proof 为
 `bridge_b_tpc298_profile_angle_dimension_ladder.md`，checker 为
 `tpc_bridge_b_tpc298_profile_angle_dimension_ladder_checker.py`，编号论文为
 `../../papers/tpc-298-profile-angle-dimension-ladder/`。

@@ -9,6 +9,36 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-299 承接 TPC-298 的 profile-angle/dimension ladder，把“达到目标需要
+多少个方向”进一步编译成“实际 native source 向量需要多少预算”。对 literal prefix
+`U_k`、物理像 `V_k=A^T U_k` 与 source Gram `M_k=U_k^T U_k`，严格证明
+quadratically constrained least-norm frontier 的 KKT/ridge 表达、预算可行性 iff 判据与
+nested-prefix budget monotonicity。70 位 producer 与独立 source-first replay 在同一
+18-row、1,380-edge grid 上显示：normalized RMS `1/2` 时 weighted target 的 threshold
+budget 在 18/18 行超过 `9e-5||beta||^2`，15/18 超过 `5e-4`，14/18 超过 `1e-3`；
+即便使用完整 17-profile prefix，仍有 11/18 行超过 `1e-3`。all-positive control 在
+18/18 行低于 `1e-4`，weighted/positive threshold-budget gap 在 18/18 行超过 20。
+这是 restricted finite native-budget obstruction；growing budget theorem、arithmetic
+`L2`、fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```
+TPC299_PROFILE_BUDGET_KKT_FRONTIER = PROVED_EXACT_FINITE
+TPC299_NESTED_BUDGET_MONOTONICITY = PROVED_EXACT_FINITE
+TPC299_WEIGHTED_HALF_RMS_BUDGET_FLOOR = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_9E_MINUS_5
+TPC299_WEIGHTED_HALF_RMS_BUDGET_MID_FLOOR = NUMERICALLY_CERTIFIED_FINITE_15_OF_18_ABOVE_5E_MINUS_4
+TPC299_WEIGHTED_HALF_RMS_BUDGET_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_14_OF_18_ABOVE_1E_MINUS_3
+TPC299_WEIGHTED_FULL_PREFIX_BUDGET_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_11_OF_18_ABOVE_1E_MINUS_3
+TPC299_PLUS_HALF_RMS_BUDGET_CEILING = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_BELOW_1E_MINUS_4
+TPC299_WEIGHTED_PLUS_BUDGET_GAP = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_20
+TPC299_PROFILE_BUDGET_GROWTH = OPEN
+TPC299_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC299_FIXED_POWER_CREDIT = 0
+TPC299_FULL_GATE_B = OPEN
+TPC299_TWIN_PRIME_RESULT = NONE
+```
+
+`tpc-299-native-profile-budget-frontier` - `PROVED_EXACT_FINITE_PROFILE_BUDGET_KKT_FRONTIER_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_OBSTRUCTION_ATLAS` - KKT budget frontier exact；weighted half-RMS budget 在 14/18 个 threshold rows、11/18 个 full-prefix rows 超过 `1e-3`，positive control 18/18 低于 `1e-4`，gap 18/18 超过 20。
+
 当前主线状态：TPC-298 承接 TPC-297，把四个 literal cutoff profiles 扩展为按 cutoff
 排序的 17-profile prefix ladder
 `Z=(3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61)`。严格证明每个受限

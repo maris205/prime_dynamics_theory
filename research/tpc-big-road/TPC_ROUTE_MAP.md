@@ -2,24 +2,42 @@
 
 更新时间：2026-08-29
 
-当前地图版本：V151 / TPC-298
+当前地图版本：V152 / TPC-299
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-298`（`PROVED_EXACT_FINITE_PRINCIPAL_ANGLE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_PROFILE_DIMENSION_LADDER`）；
+当前编号锚点：`TPC-299`（`PROVED_EXACT_FINITE_PROFILE_BUDGET_KKT_FRONTIER_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_OBSTRUCTION_ATLAS`）；
 对应论文目录为
-`papers/tpc-298-profile-angle-dimension-ladder/`。
+`papers/tpc-299-native-profile-budget-frontier/`。
 
-TPC-298 承接 TPC-297 的四个 literal cutoff profiles，按 cutoff 排序形成
-17-profile prefix ladder
-`3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61`。对
-`U_k` 与 `V_k=A^T U_k`，严格证明 projection identity、principal-angle identity
-与 nested-prefix monotonicity；双模 rank replay 在继承的 18-row grid 上完成 306 个
-prefix checks。70 位独立 replay 显示 weighted target 首次达到 half-RMS 至少使用
-shell dimension 的 `2/3`（18/18），all-positive control 至多使用 6 个 profiles
-（18/18），最后一个有限 prefix 在 18/18 行覆盖有限 target space。这是 finite
-dimension/angle advance；growing dimension、conditioning/source budget、arithmetic `L2`、
-fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+TPC-299 承接 TPC-298 的 17-profile angle/dimension ladder，把目标容差编译为实际
+native source budget。令 `V_k=A^T U_k`、`M_k=U_k^T U_k`，严格证明
+`B_(k,tau)(b)=min{c^T M_k c: ||V_kc-b||<=tau||b||}` 的 KKT/ridge frontier、
+budget feasibility iff 判据与 nested-prefix monotonicity。18-row、1,380-edge finite
+grid 的 `tau=1/2` audit 显示 weighted threshold budget 在 18/18 行超过
+`9e-5||beta||^2`，14/18 行超过 `1e-3`，full prefix 仍 11/18；all-positive
+control 在 18/18 行低于 `1e-4`，weighted/positive gap 在 18/18 行超过 20。这是
+restricted finite native-budget obstruction；growing budget、arithmetic `L2`、full
+Gate B 与 twin-prime conclusion 仍 OPEN/NONE，fixed-power credit 为 0。
+
+```text
+TPC299_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_PROFILE_BUDGET_KKT_FRONTIER_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_OBSTRUCTION_ATLAS
+TPC299_ROUTE_ADVANCE = YES_SCOPED_PROFILE_ANGLE_TO_NATIVE_BUDGET_FRONTIER
+TPC299_PROFILE_BUDGET_KKT_FRONTIER = PROVED_EXACT_FINITE
+TPC299_NESTED_BUDGET_MONOTONICITY = PROVED_EXACT_FINITE
+TPC299_WEIGHTED_HALF_RMS_BUDGET_FLOOR = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_9E_MINUS_5
+TPC299_WEIGHTED_HALF_RMS_BUDGET_MID_FLOOR = NUMERICALLY_CERTIFIED_FINITE_15_OF_18_ABOVE_5E_MINUS_4
+TPC299_WEIGHTED_HALF_RMS_BUDGET_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_14_OF_18_ABOVE_1E_MINUS_3
+TPC299_WEIGHTED_FULL_PREFIX_BUDGET_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_11_OF_18_ABOVE_1E_MINUS_3
+TPC299_PLUS_HALF_RMS_BUDGET_CEILING = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_BELOW_1E_MINUS_4
+TPC299_WEIGHTED_PLUS_BUDGET_GAP = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_20
+TPC299_PROFILE_BUDGET_GROWTH = OPEN
+TPC299_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC299_FIXED_POWER_CREDIT = 0
+TPC299_FULL_GATE_B = OPEN
+TPC299_TWIN_PRIME_RESULT = NONE
+TPC299_ROUND2_CLUE = TEST_BUDGET_CONSTRAINED_PROFILE_FRONTIER_ON_GROWING_SHELLS_AND_SOURCE_NORMALIZATION
+```
 
 ```text
 TPC298_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_PRINCIPAL_ANGLE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_PROFILE_DIMENSION_LADDER
@@ -214,8 +232,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V150 / TPC-297
-MAP_LABEL = LITERAL FOUR-PROFILE SOURCE SPAN / WEIGHTED-TARGET ANGLE OBSTRUCTION
+YOU ARE HERE = V152 / TPC-299
+MAP_LABEL = NATIVE PROFILE BUDGET FRONTIER / WEIGHTED-TARGET BUDGET OBSTRUCTION
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -451,6 +469,38 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.93 V152 / TPC-299：native profile budget frontier
+
+TPC-299 把 TPC-298 的 profile dimension/angle ladder 接到实际 source-side budget。
+对 literal prefix `U_k`、物理像 `V_k=A^T U_k` 与 source Gram `M_k=U_k^T U_k`，
+定义
+`B_(k,tau)(b)=min{c^T M_k c: ||V_kc-b||<=tau||b||}`。
+这是 native source norm 的有限 quadratically constrained least-norm 问题；KKT/ridge
+路径、预算可行性的 iff 判据和 prefix budget 单调性均已严格证明。
+
+继承的 18-row / 1,380-edge grid 与 17 个 literal prefixes 完成 producer、independent
+source-first replay、stress 与 Bridge-B checker 的 normal/optimized 双模验证。取
+`tau=1/2` 时，weighted threshold budget 在 18/18 行超过 `9e-5||beta||^2`，
+15/18 超过 `5e-4`，14/18 超过 `1e-3`；full prefix 仍有 11/18 超过 `1e-3`。
+all-positive control 在 18/18 行低于 `1e-4`，weighted/positive gap 在 18/18 行超过
+20。该结果是 restricted finite native-budget obstruction，不是 growing profile-budget
+theorem，也没有 arithmetic `L2` 或 fixed-power credit。
+
+```text
+TPC299_ROUTE_ADVANCE = YES_SCOPED_PROFILE_ANGLE_TO_NATIVE_BUDGET_FRONTIER
+TPC299_PROFILE_BUDGET_KKT_FRONTIER = PROVED_EXACT_FINITE
+TPC299_NESTED_BUDGET_MONOTONICITY = PROVED_EXACT_FINITE
+TPC299_WEIGHTED_HALF_RMS_BUDGET_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_14_OF_18_ABOVE_1E_MINUS_3
+TPC299_WEIGHTED_FULL_PREFIX_BUDGET_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_11_OF_18_ABOVE_1E_MINUS_3
+TPC299_WEIGHTED_PLUS_BUDGET_GAP = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_20
+TPC299_PROFILE_BUDGET_GROWTH = OPEN
+TPC299_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC299_FIXED_POWER_CREDIT = 0
+TPC299_FULL_GATE_B = OPEN
+TPC299_TWIN_PRIME_RESULT = NONE
+TPC299_ROUND2_CLUE = BUILD_AN_EXACT_DUAL_SUPPORTING_HYPERPLANE_CERTIFICATE_FOR_THE_NATIVE_BUDGET_FRONTIER
+```
 
 ## 5.92 V151 / TPC-298：literal source-profile angle and dimension ladder
 
@@ -1532,9 +1582,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V151 / TPC-298                    |
-        | LITERAL PROFILE ANGLE/DIMENSION LADDER         |
-        | weighted half-RMS dimension obstruction        |
+        | YOU ARE HERE — V152 / TPC-299                    |
+        | NATIVE PROFILE BUDGET FRONTIER                 |
+        | weighted half-RMS budget obstruction           |
         +--------------------------------------------------+
                 |
                 v
@@ -6567,6 +6617,8 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-29 | V152 / TPC-299 | Bridge A / Gate B：native profile budget frontier 已在有限图上完成；growing profile budget、arithmetic `L2` 与 full Gate B open | `TPC-299` | 严格证明 QCQP/KKT/ridge budget frontier、budget feasibility iff 与 nested-prefix monotonicity；18 rows / 1,380 edges 上 weighted half-RMS threshold budget 各行 >`9e-5`，14/18 >`1e-3`，full prefix 11/18 >`1e-3`，positive control 18/18 <`1e-4`，gap 18/18 >20；fixed-power credit 为 0，下一步为 exact dual budget witness |
+| 2026-08-29 | V151 / TPC-298 | Bridge A / Gate B：literal source-profile angle/dimension ladder 已在有限图上完成；growing dimension、conditioning/source budget、arithmetic `L2` 与 full Gate B open | `TPC-298` | 严格证明 principal-angle identity 与 nested-prefix monotonicity；17 个 literal cutoff prefixes 在 18 rows 上完成 306 项双模 rank ladder，weighted half-RMS dimension ratio 各行至少 `2/3`，all-positive 各行至多 6，full finite capture 18/18；fixed-power credit 为 0，下一步为 profile dimension 与 least-norm budget/conditioning 联合审计 |
 | 2026-08-29 | V151 / TPC-298 | Bridge A / Gate B：literal source-profile angle/dimension ladder 已在有限图上完成；growing dimension、conditioning/source budget、arithmetic `L2` 与 full Gate B open | `TPC-298` | 严格证明 principal-angle identity 与 nested-prefix monotonicity；17 个 literal cutoff prefixes 在 18 rows 上完成 306 项双模 rank ladder，weighted half-RMS dimension ratio 各行至少 `2/3`，all-positive 各行至多 6，full finite capture 18/18；fixed-power credit 为 0，下一步为 profile dimension 与 least-norm budget/conditioning 联合审计 |
 | 2026-08-28 | V149 / TPC-296 | Bridge A / Gate B：unrestricted least-norm source budget 已在有限图上量化；native profile dimension/image、growing budget、arithmetic `L2` 与 full Gate B open | `TPC-296` | 严格证明 `S_A(b)=b^T G^(-1)b`、budget iff criterion 与 source-energy tradeoff；70 位 replay 在 18 rows / 1,380 edges 上三类 targets 的 unrestricted cost ratio 各 18/18 低于 `1e-3`，但 weighted/max-cut 到 frozen ray 的 RMS 各 18/18 至少 `0.9`；下一步为 restricted profile dimension 与 growing budget |
 | 2026-08-28 | V148 / TPC-295 | Bridge A / Gate B：unrestricted finite source-correlation image 已关闭；native profile、least-norm/growing budget、arithmetic `L2` 与 full Gate B open | `TPC-295` | 严格证明 `G=A^T A` full rank `=>` `A^T` surjective 与 least-norm witness `A G^(-1)b`；18 rows / 1,380 edges 通过两个独立模数的 18/18 full-rank atlas，TPC-294 weighted/min-cut/all-positive targets 均 18/18 unrestricted 可达；下一步为 source norm cost 与 restricted native profile image |
