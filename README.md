@@ -9,6 +9,36 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-298 承接 TPC-297，把四个 literal cutoff profiles 扩展为按 cutoff
+排序的 17-profile prefix ladder
+`Z=(3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61)`。严格证明每个受限
+source image 的 principal-angle identity 与 nested-prefix monotonicity；双模 replay 在
+继承的 18-row、1,380-edge grid 上完成 306 个前缀秩检查。70 位独立 replay 显示 weighted
+target 达到 normalized RMS `1/2` 至少需要 shell dimension 的 `2/3`（18/18），
+all-positive control 至多需要 6 个 profiles（18/18），最后一个有限 prefix 在 18/18
+行达到有限 target 空间。这个结果是 dimension/angle obstruction 的有限审计；growing
+profile theorem、conditioning/source-budget growth、arithmetic `L2`、fixed-power
+credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC298_PROJECTION_IDENTITY = PROVED_EXACT_FINITE
+TPC298_PRINCIPAL_ANGLE_IDENTITY = PROVED_EXACT_FINITE
+TPC298_NESTED_PREFIX_MONOTONICITY = PROVED_EXACT_FINITE
+TPC298_TWO_MODULUS_PREFIX_RANK = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC298_WEIGHTED_HALF_RMS_DIMENSION = NUMERICAL_OBSERVATION_18_OF_18_RATIO_AT_LEAST_2_OVER_3
+TPC298_PLUS_HALF_RMS_DIMENSION = NUMERICAL_OBSERVATION_18_OF_18_AT_MOST_6
+TPC298_FULL_PREFIX_CAPTURE = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC298_GROWING_DIMENSION_THEOREM = OPEN
+TPC298_CONDITIONING_GROWTH = OPEN
+TPC298_SOURCE_BUDGET_GROWTH = OPEN
+TPC298_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC298_FIXED_POWER_CREDIT = 0
+TPC298_FULL_GATE_B = OPEN
+TPC298_TWIN_PRIME_RESULT = NONE
+```
+
+`tpc-298-profile-angle-dimension-ladder` - `PROVED_EXACT_FINITE_PRINCIPAL_ANGLE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_PROFILE_DIMENSION_LADDER` - 17 个 literal cutoff 前缀的 306 项秩阶梯全部通过双模检查；weighted target 的 half-RMS 维度比例在 18/18 行至少为 `2/3`，all-positive 在 18/18 行不超过 6。
+
 当前主线状态：TPC-297 承接 TPC-296 的 native-ray obstruction，把冻结一维 ray 扩展为
 四个真实 Möbius/Euler cutoff profiles `beta_z`（`z=3,5,7,11`）。严格证明受限 source
 correlation image 的正交投影公式与加方向单调性；两模 rank replay 在继承的 18-row grid

@@ -1,0 +1,275 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+
+\title{A Literal Source-Profile Angle and Dimension Ladder\\
+for Finite Twin-Prime Shells}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST)\\
+Wuhan, China}
+\date{29 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-297 replaced a frozen source ray by four literal cutoff profiles, but
+left open how much source dimension is needed to approach a physically
+selected signed target.  We order seventeen literal profiles
+$\beta_z(t)=\lambda(t)-\sum_{d\leq z,\ d\mid t}\mu(d)$ by
+$z=3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61$ and study every
+prefix.  If $A$ is the frozen physical shell matrix, $U_k$ is the first
+$k$ source profiles, and $V_k=A^{\mathsf T}U_k$, we prove that the
+least-squares residual is the sine of the angle from the target to
+$\operatorname{col}(V_k)$, and that it decreases along the nested ladder.
+On the inherited 18-row, 1,380-edge grid, two modular replays certify the
+expected rank $\min(k,|S|)$ for all 306 tested prefixes.  The weighted sign
+target first reaches normalized RMS $1/2$ only after at least two thirds of
+the shell dimension on every row, while the all-positive control reaches the
+same threshold in at most six profiles on every row.  The final finite prefix
+spans every registered target space.  This is a finite dimension/angle atlas,
+not an asymptotic native-profile theorem or a twin-prime result.
+\end{abstract}
+
+\section{Position on the route}
+
+The finite prime-shell line has separated ambient image existence from native
+source geometry.  TPC-294 selected signed targets using the physical Gram
+magnitudes; TPC-295 showed that unrestricted rational source coordinates can
+hit every finite target when the shell Gram is full rank; and TPC-296 found
+that those unrestricted witnesses are cheap while a frozen one-ray proxy is
+poorly aligned \cite{tpc295,tpc296}.  TPC-297 then tested four literal
+cutoffs and found a strong positive control but persistent weighted-target
+separation \cite{tpc297}.
+
+The present paper asks the smallest natural continuation: along an ordered
+literal source family, at what dimension does the target become close?  The
+answer is deliberately comparative.  The all-positive target is captured
+quickly, whereas the magnitude-weighted sign target remains diffuse in the
+profile image until a large fraction of the shell dimension is present.
+
+\section{Literal profiles and the physical map}
+
+For an integer $t$, set
+\[
+ \lambda(t)=\begin{cases}1/j,&t=p^j\text{ for a prime }p,\\0,&
+                         \text{otherwise},\end{cases}\qquad
+ \beta_z(t)=\lambda(t)-\sum_{\substack{d\leq z\\d\mid t}}\mu(d).
+\]
+Let
+\[
+ Z=(3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61)
+\]
+and let $U_k$ contain the first $k$ vectors $u_z=(\beta_z(t))_{t\in I}$.
+The physical columns are frozen from the registered source profile:
+\[
+ (g_q)_u=\sum_{\substack{t\in I\\t\ne u}}
+ qK_{H,s}(u-t)B_q(u,t)\beta_t,
+ \quad
+ B_q(u,t)=\mathbf 1_{q\nmid u}\mathbf 1_{q\nmid t}
+ \left(\mathbf 1_{u\equiv t\pmod q}-\frac1{q-1}\right),
+\]
+where $K_{H,s}(v)=H^{2s}/(H^2+v^2)^s$.  For the prime shell
+$S=\{q:Q<q\leq2Q\}$, write
+\[
+ A=[g_q]_{q\in S},\qquad V_k=A^{\mathsf T}U_k\in\R^{S\times k}.
+\]
+The source directions are selected before the target is inspected.  The
+weighted minimum, unit-edge max-cut, and all-positive vectors are only finite
+target controls in this paper.
+
+\begin{remark}
+The term literal refers to the finite cutoff formula and its source-side
+origin.  It does not claim that this seventeen-element list is the complete
+native profile class, nor that its dimension or conditioning is uniform in
+$N$.
+\end{remark}
+
+\section{Projection, angle, and dimension theorem}
+
+For a full-column-rank prefix define
+\[
+ P_k=V_k(V_k^{\mathsf T}V_k)^{-1}V_k^{\mathsf T},\qquad
+ c_k=(V_k^{\mathsf T}V_k)^{-1}V_k^{\mathsf T}b.
+\]
+
+\begin{theorem}[Finite profile-angle identity]
+For every target $b\in\R^{S}$ and every full-column-rank prefix,
+\[
+ \min_c\norm{V_kc-b}_2^2=b^{\mathsf T}(I-P_k)b.
+\]
+If $\theta_k$ is the angle between the vector $b$ and the subspace
+$\operatorname{col}(V_k)$, then
+\[
+ r_k:=\frac{\min_c\norm{V_kc-b}_2}{\norm b_2}=\sin\theta_k,
+ \qquad \cos^2\theta_k=\frac{b^{\mathsf T}P_kb}{\norm b_2^2}.
+\]
+\end{theorem}
+
+\begin{proof}
+The vector $P_kb$ is the orthogonal projection of $b$ onto
+$\operatorname{col}(V_k)$.  For any $y$ in that subspace,
+$P_kb-y$ is orthogonal to $(I-P_k)b$.  Pythagoras gives
+\[
+ \norm{b-y}_2^2=\norm{(I-P_k)b}_2^2+\norm{P_kb-y}_2^2,
+\]
+with equality at $y=P_kb$.  This proves the least-squares identity.  Dividing
+the same orthogonal decomposition by $\norm b_2^2$ gives the two angle
+relations.
+\end{proof}
+
+\begin{proposition}[Nested prefixes]
+For $k<\ell$, $\operatorname{col}(V_k)\subseteq
+\operatorname{col}(V_\ell)$.  Consequently $r_\ell\leq r_k$ and
+$\theta_\ell\leq\theta_k$.
+\end{proposition}
+
+\begin{proof}
+The columns of $U_k$ are the first columns of $U_\ell$, so the same is true
+after applying the linear map $A^{\mathsf T}$.  Distance to a larger
+subspace cannot increase, and $\arcsin$ is increasing on $[0,1]$.
+\end{proof}
+
+For a threshold $\tau$, the finite dimension statistic is
+\[
+ k_\tau(b)=\min\{k:r_k\leq\tau\}.
+\]
+For a sign target $b\in\{-1,1\}^{|S|}$, $r_k$ is exactly the RMS residual
+after division by $\sqrt{|S|}$.  If the first $|S|$ columns have rank
+$|S|$, then $P_{|S|}=I$ on the target space and the finite residual is zero.
+
+\section{Finite audit and validation}
+
+The audit inherits eight growth rows, four exponent-crossover rows, and six
+source-control rows from the preceding releases.  Each physical and profile
+entry is formed as a rational number.  For every $k=1,\ldots,17$, Gaussian
+elimination modulo $1000000007$ and $998244353$ checks the rank of $V_k$.
+For $k\leq |S|$, 70-digit QR arithmetic computes residuals, principal-angle
+sines, captured fractions, coefficient norms, and nonzero singular-value
+condition numbers.  The final tested prefix is $k=|S|$ on every row.
+
+The independent checker reconstructs physical columns source-first and does
+not import the producer.  It recomputes all rank entries, residual intervals,
+angle identities, monotonicity, and threshold indices.  Exact fixtures test a
+duplicated late column, in-image and out-of-image targets, and the threshold
+bookkeeping.  Normal and optimized interpreter runs must agree with empty
+standard error.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{TPC-298 finite profile-dimension headline.}
+\label{tab:headline}
+\begin{tabular}{@{}lr@{}}
+\toprule
+quantity & count\\
+\midrule
+literal cutoffs / tested prefixes & 17 / 306\\
+rows / shell edges & 18 / 1,380\\
+expected prefix-rank ladder (both moduli) & 18 / 18\\
+weighted half-RMS dimension ratio $\ge 2/3$ & 18 / 18\\
+all-positive half-RMS dimension $\le 6$ & 18 / 18\\
+full-prefix finite target capture & 18 / 18\\
+fixed-power credit & 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\scriptsize
+\caption{Representative prefix-$k=4$ residuals and threshold dimensions.}
+\label{tab:rows}
+\begin{tabular}{@{}rrrrrrr@{}}
+\toprule
+$N$ & $H$ & $Q$ & $s$ & $|S|$ & $k_{1/2}^{\rm wt}$ & $r_4^{\rm wt}$\\
+\midrule
+128&24&9 &2&3 &2 & $0$\\
+192&32&16&2&5 &5 &0.7642\\
+256&38&27&2&7 &6 &0.7051\\
+384&50&40&2&10&8 &0.9931\\
+512&58&60&2&13&9 &0.9501\\
+512&58&90&2&17&13&0.7853\\
+384&48&70&2&15&13&0.7636\\
+384&52&70&2&15&12&0.8653\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The minimum weighted dimension fraction is exactly the declared finite floor
+$2/3$ (attained already on the three-prime row and on several larger rows).
+The all-positive threshold dimensions range from one to two on the larger
+representative rows and never exceed six in the full census.  At the last
+prefix, the rank certificate makes all three finite target controls exactly
+representable in the rational target space; the high-precision residual is a
+roundoff enclosure around zero.
+
+The largest displayed prefix condition upper bound in the certificate is
+approximately $4.24\times10^4$.  This number is recorded as a finite
+conditioning diagnostic, not as a theorem about the moving ladder.
+
+\section{Interpretation and obstruction}
+
+The ladder resolves an ambiguity left by a fixed four-profile snapshot.  The
+positive control is compatible with a low-dimensional literal source image,
+but the physical weighted sign target is not: half-RMS accuracy requires a
+large fraction of the available shell dimension on every registered row.
+This is a geometric statement about the finite map $A^{\mathsf T}U_k$.
+
+The result also explains why the final-prefix zero is not a paradox.  Once
+$k$ reaches the shell size and the prefix has full row rank, the restricted
+finite image is all of $\R^{S}$, just as TPC-295's unrestricted image was.
+The meaningful next question is the simultaneous growth of profile dimension,
+least-norm source cost, and condition number before that trivial finite
+surjectivity point.
+
+\section{Claim boundary and conclusion}
+
+The projection, principal-angle, and nested-prefix statements are exact finite
+linear algebra.  The rank ladder and dimension counts are numerically
+certified finite observations for the declared grid and two moduli.  The
+cutoff list and half-RMS threshold are modeling choices.  Nothing here pays
+arithmetic $L^2$ credit, a fixed power, or a Gate-B endpoint, and no twin
+prime conclusion is claimed.
+
+The reusable interface is
+\[
+ \text{literal source prefixes }U_k
+ \longrightarrow A^{\mathsf T}U_k
+ \longrightarrow P_k
+ \longrightarrow (\text{angle},\text{dimension},\text{budget}).
+\]
+The next route test is to compare the weighted dimension ladder with the
+least-norm source budget and the observed conditioning.
+
+\section*{Reproducibility}
+
+From the project directory run:
+\begin{verbatim}
+export PYTHONDONTWRITEBYTECODE=1
+python -B code/tpc298_profile_angle_dimension_certificate.py --check
+python -B experiments/tpc298_independent_checker.py
+python -B experiments/tpc298_ladder_stress.py
+\end{verbatim}
+The Session-named Route-A/Route-B evaluator files are absent from this
+checkout.  The theorem ledger, proof package, canonical certificate,
+independent replay, stress test, PDF audit, and Bridge-B checker are the
+available fail-closed validation path.
+
+\enlargethispage{3\baselineskip}
+\small
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

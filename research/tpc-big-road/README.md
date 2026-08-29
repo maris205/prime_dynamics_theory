@@ -1,13 +1,50 @@
-# TPC big road V150 / TPC-297: literal source-profile span and weighted-angle obstruction
+# TPC big road V151 / TPC-298: literal source-profile angle and dimension ladder
 
 更新时间：2026-08-29
 
-状态：`TPC297_PROVED_EXACT_FINITE_RESTRICTED_PROFILE_PROJECTION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_FOUR_CUTOFF_PROFILE_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC298_PROVED_EXACT_FINITE_PRINCIPAL_ANGLE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_PROFILE_DIMENSION_LADDER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-297 proof 为
+当前 TPC-298 proof 为
+`bridge_b_tpc298_profile_angle_dimension_ladder.md`，checker 为
+`tpc_bridge_b_tpc298_profile_angle_dimension_ladder_checker.py`，编号论文为
+`../../papers/tpc-298-profile-angle-dimension-ladder/`。
+
+TPC-298 承接 TPC-297 的四个 literal cutoff profiles，按 cutoff 排序形成
+17-profile prefix ladder
+`3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61`。对
+`U_k` 与 `V_k=A^T U_k`，严格证明 projection identity、principal-angle identity
+与 nested-prefix monotonicity；双模 rank replay 在继承的 18-row grid 上完成 306 个
+prefix checks。70 位 producer 与 source-first 独立重放显示 weighted target 首次达到
+half-RMS 至少使用 shell dimension 的 `2/3`（18/18），all-positive control 至多使用
+6 个 profiles（18/18），最后一个有限 prefix 在 18/18 行覆盖有限 target space。这是
+finite dimension/angle advance；growing dimension/conditioning/source budget、arithmetic
+`L2`、full Gate B 与 twin-prime theorem 仍 OPEN/NONE，fixed-power credit 为 0。
+
+```text
+TPC298_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_PRINCIPAL_ANGLE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_PROFILE_DIMENSION_LADDER
+TPC298_ROUTE_ADVANCE = YES_SCOPED_FOUR_PROFILE_SNAPSHOT_TO_COMPLETE_LITERAL_PREFIX_LADDER
+TPC298_PROJECTION_IDENTITY = PROVED_EXACT_FINITE
+TPC298_PRINCIPAL_ANGLE_IDENTITY = PROVED_EXACT_FINITE
+TPC298_NESTED_PREFIX_MONOTONICITY = PROVED_EXACT_FINITE
+TPC298_TWO_MODULUS_PREFIX_RANK = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC298_WEIGHTED_HALF_RMS_DIMENSION = NUMERICAL_OBSERVATION_18_OF_18_RATIO_AT_LEAST_2_OVER_3
+TPC298_PLUS_HALF_RMS_DIMENSION = NUMERICAL_OBSERVATION_18_OF_18_AT_MOST_6
+TPC298_FULL_PREFIX_CAPTURE = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC298_GROWING_DIMENSION_THEOREM = OPEN
+TPC298_CONDITIONING_GROWTH = OPEN
+TPC298_SOURCE_BUDGET_GROWTH = OPEN
+TPC298_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC298_FIXED_POWER_CREDIT = 0
+TPC298_FULL_GATE_B = OPEN
+TPC298_TWIN_PRIME_RESULT = NONE
+TPC298_STATUS = PROVED_EXACT_FINITE_PRINCIPAL_ANGLE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_PROFILE_DIMENSION_LADDER
+TPC298_ROUND2_CLUE = TEST_WEIGHTED_PROFILE_DIMENSION_AGAINST_LEAST_NORM_SOURCE_BUDGET_AND_CONDITIONING
+```
+
+此前 TPC-297 proof 为
 `bridge_b_tpc297_literal_source_profile_span_audit.md`，checker 为
 `tpc_bridge_b_tpc297_literal_source_profile_span_audit_checker.py`，编号论文为
 `../../papers/tpc-297-literal-source-profile-span-audit/`。

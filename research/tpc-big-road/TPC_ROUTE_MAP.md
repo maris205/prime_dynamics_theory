@@ -2,39 +2,43 @@
 
 更新时间：2026-08-29
 
-当前地图版本：V150 / TPC-297
+当前地图版本：V151 / TPC-298
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-297`（`PROVED_EXACT_FINITE_RESTRICTED_PROFILE_PROJECTION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_FOUR_CUTOFF_PROFILE_ATLAS`）；
+当前编号锚点：`TPC-298`（`PROVED_EXACT_FINITE_PRINCIPAL_ANGLE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_PROFILE_DIMENSION_LADDER`）；
 对应论文目录为
-`papers/tpc-297-literal-source-profile-span-audit/`。
+`papers/tpc-298-profile-angle-dimension-ladder/`。
 
-TPC-297 承接 TPC-296 的冻结一维 native ray，定义四个 source-side literal cutoff
-profiles `beta_z(t)=lambda(t)-sum_{d<=z,d|t}mu(d)`（`z=3,5,7,11`）。严格证明
-受限像 `V=A^T U` 的 least-squares projection identity 与 nested-span monotonicity；
-两模 rank replay 在继承的 18-row grid 上得到 rank 3（1 行）和 rank 4（17 行）。
-70 位独立 replay 显示 all-positive target 的 profile RMS 在 18/18 行不超过 `0.15`，
-但 weighted target 在 17/17 个大 shell 上仍至少为 `0.6`。因此四维 source span
-已经给出真实正信息，同时把 weighted obstruction 具体化为 profile dimension/angle
-问题；growing dimension、principal angle、source budget、arithmetic `L2`、fixed-power
-credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+TPC-298 承接 TPC-297 的四个 literal cutoff profiles，按 cutoff 排序形成
+17-profile prefix ladder
+`3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61`。对
+`U_k` 与 `V_k=A^T U_k`，严格证明 projection identity、principal-angle identity
+与 nested-prefix monotonicity；双模 rank replay 在继承的 18-row grid 上完成 306 个
+prefix checks。70 位独立 replay 显示 weighted target 首次达到 half-RMS 至少使用
+shell dimension 的 `2/3`（18/18），all-positive control 至多使用 6 个 profiles
+（18/18），最后一个有限 prefix 在 18/18 行覆盖有限 target space。这是 finite
+dimension/angle advance；growing dimension、conditioning/source budget、arithmetic `L2`、
+fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
 
 ```text
-TPC297_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_RESTRICTED_PROFILE_PROJECTION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_FOUR_CUTOFF_PROFILE_ATLAS
-TPC297_ROUTE_ADVANCE = YES_SCOPED_NATIVE_PROFILE_RAY_TO_FOUR_LITERAL_CUTOFF_SPAN
-TPC297_PROJECTION_IDENTITY = PROVED_EXACT_FINITE
-TPC297_NESTED_PROFILE_MONOTONICITY = PROVED_EXACT_FINITE
-TPC297_TWO_MODULUS_IMAGE_RANK = NUMERICALLY_CERTIFIED_FINITE_3_PLUS_4
-TPC297_WEIGHTED_PROFILE_SEPARATION = NUMERICAL_OBSERVATION_17_OF_17_AT_LEAST_0_6
-TPC297_ALL_POSITIVE_PROFILE_CAPTURE = NUMERICAL_OBSERVATION_18_OF_18_AT_MOST_0_15
-TPC297_GROWING_PROFILE_DIMENSION = OPEN
-TPC297_PRINCIPAL_ANGLE_THEOREM = OPEN
-TPC297_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
-TPC297_FIXED_POWER_CREDIT = 0
-TPC297_FULL_GATE_B = OPEN
-TPC297_TWIN_PRIME_RESULT = NONE
-TPC297_ROUND2_CLUE = TEST_NATIVE_PROFILE_PRINCIPAL_ANGLES_AND_MINIMUM_DIMENSION
+TPC298_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_PRINCIPAL_ANGLE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_PROFILE_DIMENSION_LADDER
+TPC298_ROUTE_ADVANCE = YES_SCOPED_FOUR_PROFILE_SNAPSHOT_TO_COMPLETE_LITERAL_PREFIX_LADDER
+TPC298_PROJECTION_IDENTITY = PROVED_EXACT_FINITE
+TPC298_PRINCIPAL_ANGLE_IDENTITY = PROVED_EXACT_FINITE
+TPC298_NESTED_PREFIX_MONOTONICITY = PROVED_EXACT_FINITE
+TPC298_TWO_MODULUS_PREFIX_RANK = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC298_WEIGHTED_HALF_RMS_DIMENSION = NUMERICAL_OBSERVATION_18_OF_18_RATIO_AT_LEAST_2_OVER_3
+TPC298_PLUS_HALF_RMS_DIMENSION = NUMERICAL_OBSERVATION_18_OF_18_AT_MOST_6
+TPC298_FULL_PREFIX_CAPTURE = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC298_GROWING_DIMENSION_THEOREM = OPEN
+TPC298_CONDITIONING_GROWTH = OPEN
+TPC298_SOURCE_BUDGET_GROWTH = OPEN
+TPC298_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC298_FIXED_POWER_CREDIT = 0
+TPC298_FULL_GATE_B = OPEN
+TPC298_TWIN_PRIME_RESULT = NONE
+TPC298_ROUND2_CLUE = TEST_WEIGHTED_PROFILE_DIMENSION_AGAINST_LEAST_NORM_SOURCE_BUDGET_AND_CONDITIONING
 ```
 
 TPC-296 承接 TPC-295 的 unrestricted finite source-correlation image，令 physical shell
@@ -447,6 +451,49 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.92 V151 / TPC-298：literal source-profile angle and dimension ladder
+
+TPC-298 承接 TPC-297 的四维 literal source span，把固定 snapshot 扩展为按 cutoff
+排序的 17-profile prefix ladder：
+`Z=(3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61)`。
+对每个 prefix `U_k` 与物理映射 `V_k=A^T U_k`，严格证明 least-squares projection、
+principal-angle identity 与 nested-prefix monotonicity。这里的 angle 是 target vector
+到 `col(V_k)` 的有限 Euclidean angle，不能直接外推到 moving-order native profile。
+
+继承的 18-row / 1,380-edge grid 上，双模 Gaussian replay 对 17 个 cutoff prefixes
+共完成 306 个 rank checks，全部符合 `min(k,|S|)`；70 位 QR replay 与独立 source-first
+重放得到：weighted target 首次达到 normalized RMS `1/2` 所需维度比例在 18/18 行
+至少为 `2/3`，all-positive control 在 18/18 行至多为 6 个 profiles，且最后一个
+有限 prefix 在 18/18 行覆盖有限 target space。最大记录的 prefix condition upper
+约为 `4.24e4`，只作为 finite conditioning diagnostic。
+
+```text
+TPC298_ROUTE_ADVANCE = YES_SCOPED_FOUR_PROFILE_SNAPSHOT_TO_COMPLETE_LITERAL_PREFIX_LADDER
+TPC298_PROJECTION_IDENTITY = PROVED_EXACT_FINITE
+TPC298_PRINCIPAL_ANGLE_IDENTITY = PROVED_EXACT_FINITE
+TPC298_NESTED_PREFIX_MONOTONICITY = PROVED_EXACT_FINITE
+TPC298_TWO_MODULUS_PREFIX_RANK = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC298_WEIGHTED_HALF_RMS_DIMENSION = NUMERICAL_OBSERVATION_18_OF_18_RATIO_AT_LEAST_2_OVER_3
+TPC298_PLUS_HALF_RMS_DIMENSION = NUMERICAL_OBSERVATION_18_OF_18_AT_MOST_6
+TPC298_FULL_PREFIX_CAPTURE = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC298_GROWING_DIMENSION_THEOREM = OPEN
+TPC298_CONDITIONING_GROWTH = OPEN
+TPC298_SOURCE_BUDGET_GROWTH = OPEN
+TPC298_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC298_FIXED_POWER_CREDIT = 0
+TPC298_FULL_GATE_B = OPEN
+TPC298_TWIN_PRIME_RESULT = NONE
+TPC298_STATUS = PROVED_EXACT_FINITE_PRINCIPAL_ANGLE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_PROFILE_DIMENSION_LADDER
+TPC298_ROUND2_CLUE = TEST_WEIGHTED_PROFILE_DIMENSION_AGAINST_LEAST_NORM_SOURCE_BUDGET_AND_CONDITIONING
+```
+
+最强正结果：完整 finite prefix-rank ladder 与 finite target-space capture 已被双模、
+高精度和 source-first replay 一起锁定。最强 obstruction：weighted target 的 half-RMS
+精度在所有登记行都需要至少三分之二的 shell dimension，而 positive control 很快
+进入 image。下一关优先把这个 dimension ladder 与 least-norm source budget、condition
+growth 叠加；arithmetic `L2`、fixed-power credit、full Gate B 和 twin-prime conclusion
+仍为 OPEN/NONE。
 
 ## 5.91 V150 / TPC-297：literal source-profile span and weighted-angle obstruction
 
@@ -1485,9 +1532,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V150 / TPC-297                    |
-        | LITERAL FOUR-PROFILE SOURCE SPAN               |
-        | weighted-target angle obstruction              |
+        | YOU ARE HERE — V151 / TPC-298                    |
+        | LITERAL PROFILE ANGLE/DIMENSION LADDER         |
+        | weighted half-RMS dimension obstruction        |
         +--------------------------------------------------+
                 |
                 v
@@ -6520,6 +6567,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-29 | V151 / TPC-298 | Bridge A / Gate B：literal source-profile angle/dimension ladder 已在有限图上完成；growing dimension、conditioning/source budget、arithmetic `L2` 与 full Gate B open | `TPC-298` | 严格证明 principal-angle identity 与 nested-prefix monotonicity；17 个 literal cutoff prefixes 在 18 rows 上完成 306 项双模 rank ladder，weighted half-RMS dimension ratio 各行至少 `2/3`，all-positive 各行至多 6，full finite capture 18/18；fixed-power credit 为 0，下一步为 profile dimension 与 least-norm budget/conditioning 联合审计 |
 | 2026-08-28 | V149 / TPC-296 | Bridge A / Gate B：unrestricted least-norm source budget 已在有限图上量化；native profile dimension/image、growing budget、arithmetic `L2` 与 full Gate B open | `TPC-296` | 严格证明 `S_A(b)=b^T G^(-1)b`、budget iff criterion 与 source-energy tradeoff；70 位 replay 在 18 rows / 1,380 edges 上三类 targets 的 unrestricted cost ratio 各 18/18 低于 `1e-3`，但 weighted/max-cut 到 frozen ray 的 RMS 各 18/18 至少 `0.9`；下一步为 restricted profile dimension 与 growing budget |
 | 2026-08-28 | V148 / TPC-295 | Bridge A / Gate B：unrestricted finite source-correlation image 已关闭；native profile、least-norm/growing budget、arithmetic `L2` 与 full Gate B open | `TPC-295` | 严格证明 `G=A^T A` full rank `=>` `A^T` surjective 与 least-norm witness `A G^(-1)b`；18 rows / 1,380 edges 通过两个独立模数的 18/18 full-rank atlas，TPC-294 weighted/min-cut/all-positive targets 均 18/18 unrestricted 可达；下一步为 source norm cost 与 restricted native profile image |
 | 2026-08-28 | V147 / TPC-294 | Bridge A / Gate B：finite magnitude-weighted signed Rayleigh layer；source-native image、growing weighted theorem、arithmetic `L2` 与 full Gate B open | `TPC-294` | 严格证明 trace-normalized identity、Gram nonnegativity 与 finite global sign enumeration；18 rows / 1,380 edges 完成 18/18 weighted minima `<1`、18/18 all-positive `>1`、18/18 weighted optima different from unit-edge max-cut，13/18 `<=1/4`、8/18 `<=1/10`；下一步为 source-image attainability audit |
