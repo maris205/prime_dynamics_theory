@@ -9,7 +9,37 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-302 将 TPC-301 的 tolerance/common-prefix/source-normalization
+当前主线状态：TPC-303 在 TPC-302 的 growing-shell budget-gap stability 之后，冻结
+`(N,H,z)=(512,58,5)` 与 `Q=50,60,70,90` 的 moving-shell spine，直接测试“shell
+cardinality 增大就迫使 native weighted budget 增大”的 shortcut。两种 kernel exponent、
+三档 tolerance、三种 source normalization 共 54 个相邻 transition 中，区间严格认证
+21 个 descent、33 个 ascent、0 个 unresolved；18/18 parameter series nonmonotone，
+其中 9 个 descent 保持相同 common profile prefix，最强 same-prefix contraction 的
+right/left ratio 小于 `0.284422`（总体最强小于 `0.224974`）。这是 declared finite
+spine 上的 scoped obstruction，不是 asymptotic lower-bound refutation；uniform
+profile-budget growth、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。
+
+```text
+TPC303_MAXIMUM_CLAIM = PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION
+TPC303_ROUTE_ADVANCE = YES_SCOPED_CARDINALITY_ONLY_GROWTH_REFUTATION
+TPC303_INTERVAL_ORDER = PROVED_EXACT_FINITE
+TPC303_CARDINALITY_MONOTONICITY = REFUTED_SCOPED_DECLARED_FINITE_SPINE
+TPC303_TRANSITION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_21_DESCENTS_33_ASCENTS_0_UNRESOLVED
+TPC303_NONMONOTONE_SERIES = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC303_SAME_PREFIX_DESCENTS = NUMERICALLY_CERTIFIED_FINITE_9
+TPC303_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC303_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC303_FIXED_POWER_CREDIT = 0
+TPC303_FULL_GATE_B = OPEN
+TPC303_TWIN_PRIME_RESULT = NONE
+TPC303_STATUS = PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION
+TPC303_ROUND2_CLUE = LOCALIZE_BUDGET_DESCENTS_BY_TRANSPORTING_SIGN_LABELS_ACROSS_OVERLAPPING_SHELLS
+```
+
+`tpc-303-cardinality-monotonicity-obstruction` - `PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION` - 固定 source spine 的 54 个相邻 transition 中 21 descent、33 ascent、0 unresolved，9 个为 same-prefix descent。
+
+TPC-302 将 TPC-301 的 tolerance/common-prefix/source-normalization
 hostile audit 扩展到 TPC-288 的 34-row growing/control grid，并对每行从物理 Gram
 source-first 重编 weighted sign target。`tau=1/4,1/2,3/4` 的 common-prefix gap
 最小值为 `85.3204`、`38.2187`、`39.2637`，34/34 rows 在三档容差均超过 10；102

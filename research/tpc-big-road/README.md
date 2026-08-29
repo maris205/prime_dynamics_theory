@@ -1,13 +1,45 @@
-# TPC big road V155 / TPC-302: growing-shell budget-gap audit
+# TPC big road V156 / TPC-303: fixed-source cardinality-monotonicity obstruction
 
 更新时间：2026-08-29
 
-状态：`TPC302_PROVED_EXACT_FINITE_SOURCE_FIRST_SIGN_ENUMERATION_AND_BUDGET_MONOTONICITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_GRID_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC303_PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-302 proof 为
+当前 TPC-303 proof 为
+`bridge_b_tpc303_cardinality_monotonicity_obstruction.md`，checker 为
+`tpc_bridge_b_tpc303_cardinality_monotonicity_obstruction_checker.py`，编号论文为
+`../../papers/tpc-303-cardinality-monotonicity-obstruction/`。
+
+TPC-303 冻结 `(N,H,z)=(512,58,5)`，沿 `Q=50,60,70,90` 的 moving-shell spine
+测试 cardinality-only native weighted-budget monotonicity。两种 exponent、三档
+tolerance 与三种 source normalization 共 54 个 adjacent transitions，outward
+interval comparison 认证 21 个 strict descents、33 个 strict ascents、0 个 unresolved；
+18/18 parameter series nonmonotone，9 个 descent 的 common profile prefix 保持不变。
+最强 same-prefix contraction 的 right/left ratio 小于 `0.284422`。这是 finite spine
+上的 controlled obstruction，不是 asymptotic lower-bound refutation；uniform
+profile-budget growth、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime
+theorem 仍 OPEN/NONE。
+
+```text
+TPC303_MAXIMUM_CLAIM = PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION
+TPC303_ROUTE_ADVANCE = YES_SCOPED_CARDINALITY_ONLY_GROWTH_REFUTATION
+TPC303_INTERVAL_ORDER = PROVED_EXACT_FINITE
+TPC303_CARDINALITY_MONOTONICITY = REFUTED_SCOPED_DECLARED_FINITE_SPINE
+TPC303_TRANSITION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_21_DESCENTS_33_ASCENTS_0_UNRESOLVED
+TPC303_NONMONOTONE_SERIES = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC303_SAME_PREFIX_DESCENTS = NUMERICALLY_CERTIFIED_FINITE_9
+TPC303_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC303_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC303_FIXED_POWER_CREDIT = 0
+TPC303_FULL_GATE_B = OPEN
+TPC303_TWIN_PRIME_RESULT = NONE
+TPC303_STATUS = PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION
+TPC303_ROUND2_CLUE = LOCALIZE_BUDGET_DESCENTS_BY_TRANSPORTING_SIGN_LABELS_ACROSS_OVERLAPPING_SHELLS
+```
+
+此前 TPC-302 proof 为
 `bridge_b_tpc302_growing_shell_budget_gap_audit.md`，checker 为
 `tpc_bridge_b_tpc302_growing_shell_budget_gap_audit_checker.py`，编号论文为
 `../../papers/tpc-302-growing-shell-budget-gap-audit/`。

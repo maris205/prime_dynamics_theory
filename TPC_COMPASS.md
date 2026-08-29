@@ -1,11 +1,39 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-29
-状态：`BOLD_CHANNEL_V154 / BUDGET_GAP_ROBUSTNESS_AUDIT`
-claim level：`PROVED_EXACT_FINITE_TOLERANCE_MONOTONICITY_AND_HOMOGENEITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_GAP_ROBUSTNESS_ATLAS`
-编号事实终点：TPC-301；TPC-301 trigger：`true`
+状态：`BOLD_CHANNEL_V156 / CARDINALITY_MONOTONICITY_OBSTRUCTION`
+claim level：`PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION`
+编号事实终点：TPC-303；TPC-303 trigger：`true`
 
-当前 TPC-301 入口：proof 为
+当前 TPC-303 入口：proof 为
+`research/tpc-big-road/bridge_b_tpc303_cardinality_monotonicity_obstruction.md`，checker 为
+`tpc_bridge_b_tpc303_cardinality_monotonicity_obstruction_checker.py`，编号论文为
+`papers/tpc-303-cardinality-monotonicity-obstruction/`。它承接 TPC-302 的 finite
+growing-shell budget-gap audit，在固定 `(N,H,z)=(512,58,5)` 的 `Q=50,60,70,90`
+spine 上审计 cardinality-only budget growth。54 个 adjacent transitions 中区间严格
+认证 21 descent、33 ascent、0 unresolved；18/18 parameter series nonmonotone，9 个
+descent 保持相同 common profile prefix。这是 finite scoped obstruction；uniform
+profile-budget growth、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。
+
+```text
+TPC303_MAXIMUM_CLAIM = PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION
+TPC303_ROUTE_ADVANCE = YES_SCOPED_CARDINALITY_ONLY_GROWTH_REFUTATION
+TPC303_INTERVAL_ORDER = PROVED_EXACT_FINITE
+TPC303_CARDINALITY_MONOTONICITY = REFUTED_SCOPED_DECLARED_FINITE_SPINE
+TPC303_TRANSITION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_21_DESCENTS_33_ASCENTS_0_UNRESOLVED
+TPC303_NONMONOTONE_SERIES = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC303_SAME_PREFIX_DESCENTS = NUMERICALLY_CERTIFIED_FINITE_9
+TPC303_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC303_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC303_FIXED_POWER_CREDIT = 0
+TPC303_FULL_GATE_B = OPEN
+TPC303_TWIN_PRIME_RESULT = NONE
+TPC303_STATUS = PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION
+TPC303_ROUND2_CLUE = LOCALIZE_BUDGET_DESCENTS_BY_TRANSPORTING_SIGN_LABELS_ACROSS_OVERLAPPING_SHELLS
+```
+
+此前 TPC-301 入口：proof 为
 `research/tpc-big-road/bridge_b_tpc301_budget_gap_robustness_audit.md`，checker 为
 `tpc_bridge_b_tpc301_budget_gap_robustness_audit_checker.py`，编号论文为
 `papers/tpc-301-budget-gap-robustness-audit/`。它承接 TPC-300 的 finite native

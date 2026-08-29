@@ -2,15 +2,39 @@
 
 更新时间：2026-08-29
 
-当前地图版本：V155 / TPC-302
+当前地图版本：V156 / TPC-303
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-302`（`PROVED_EXACT_FINITE_SOURCE_FIRST_SIGN_ENUMERATION_AND_BUDGET_MONOTONICITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_GRID_AUDIT`）；
+当前编号锚点：`TPC-303`（`PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION`）；
 对应论文目录为
-`papers/tpc-302-growing-shell-budget-gap-audit/`。
+`papers/tpc-303-cardinality-monotonicity-obstruction/`。
 
-TPC-302 是当前地图位置：把 TPC-301 的 finite tolerance/common-prefix audit
+TPC-303 是当前地图位置：在 TPC-302 的 finite growing-grid stability 之后，冻结
+`(N,H,z)=(512,58,5)`，沿 `Q=50,60,70,90` 的 moving-shell spine 检验
+cardinality-only native weighted-budget monotonicity。54 个 adjacent transitions
+中有 21 个 interval-certified descent、33 个 ascent、0 个 unresolved；18/18
+parameter series nonmonotone，9 个 descent 的 common profile prefix 保持不变。
+这是一个 finite scoped obstruction，不能升级成 asymptotic lower-bound refutation；
+uniform profile-budget growth、arithmetic `L2`、full Gate B 与 twin-prime endpoint
+仍开放。
+
+```text
+TPC303_ROUTE_ADVANCE = YES_SCOPED_CARDINALITY_ONLY_GROWTH_REFUTATION
+TPC303_INTERVAL_ORDER = PROVED_EXACT_FINITE
+TPC303_CARDINALITY_MONOTONICITY = REFUTED_SCOPED_DECLARED_FINITE_SPINE
+TPC303_TRANSITION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_21_DESCENTS_33_ASCENTS_0_UNRESOLVED
+TPC303_NONMONOTONE_SERIES = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC303_SAME_PREFIX_DESCENTS = NUMERICALLY_CERTIFIED_FINITE_9
+TPC303_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC303_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC303_FIXED_POWER_CREDIT = 0
+TPC303_FULL_GATE_B = OPEN
+TPC303_TWIN_PRIME_RESULT = NONE
+TPC303_ROUND2_CLUE = LOCALIZE_BUDGET_DESCENTS_BY_TRANSPORTING_SIGN_LABELS_ACROSS_OVERLAPPING_SHELLS
+```
+
+TPC-302 是上一位置：把 TPC-301 的 finite tolerance/common-prefix audit
 推到 TPC-288 的 34-row growing/control grid，并在每行从 physical Gram
 source-first 重编 weighted sign target。430 个显式 shell targets 上，三档容差的
 common gap 均在 34/34 rows 超过 10；三种 normalizer 下 weighted budget floor
@@ -305,7 +329,7 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V155 / TPC-302
+YOU ARE HERE = V156 / TPC-303
 MAP_LABEL = GROWING-SHELL SOURCE-FIRST BUDGET-GAP STABILITY / UNIFORM-BUDGET OPEN GATE
 ```
 
@@ -542,6 +566,39 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.97 V156 / TPC-303：fixed-source cardinality-monotonicity obstruction
+
+TPC-303 是 TPC-302 的自然 hostile follow-up。它不把 finite growing-grid gap
+误读成 growth law，而是冻结 source scale、height 与 cutoff，在 moving Q-shell
+spine 上单独测试 cardinality-only monotonicity。`Q=50,60,70,90` 的 shell
+cardinalities 为 `10,13,15,17`；两种 exponent、三档 tolerance、三种 normalizer
+形成 54 个相邻比较。
+
+```text
+TPC303_MAXIMUM_CLAIM = PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION
+TPC303_ROUTE_ADVANCE = YES_SCOPED_CARDINALITY_ONLY_GROWTH_REFUTATION
+TPC303_INTERVAL_ORDER = PROVED_EXACT_FINITE
+TPC303_CARDINALITY_MONOTONICITY = REFUTED_SCOPED_DECLARED_FINITE_SPINE
+TPC303_TRANSITION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_21_DESCENTS_33_ASCENTS_0_UNRESOLVED
+TPC303_NONMONOTONE_SERIES = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC303_SAME_PREFIX_DESCENTS = NUMERICALLY_CERTIFIED_FINITE_9
+TPC303_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC303_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC303_FIXED_POWER_CREDIT = 0
+TPC303_FULL_GATE_B = OPEN
+TPC303_TWIN_PRIME_RESULT = NONE
+TPC303_STATUS = PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION
+TPC303_ROUND2_CLUE = LOCALIZE_BUDGET_DESCENTS_BY_TRANSPORTING_SIGN_LABELS_ACROSS_OVERLAPPING_SHELLS
+```
+
+outward interval order gives 21 strict descents, 33 strict ascents and no unresolved
+transition. All 18 series are nonmonotone; nine descents have equal common profile
+prefix, with the strongest same-prefix right/left ratio below `0.284422`. The result
+closes cardinality as a finite shortcut, but leaves uniform asymptotic budget growth
+and arithmetic `L2` open. The next bridge is to transport sign labels across overlapping
+shells and localize whether a descent is target-label switching or physical operator
+change.
 
 ## 5.96 V155 / TPC-302：source-first growing-shell budget-gap stability
 
@@ -6814,6 +6871,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-29 | V156 / TPC-303 | Bridge A / Gate B：固定 source spine 上的 cardinality-only native weighted-budget monotonicity 已被 scoped finite obstruction 否定；uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-303` | `(N,H,z)=(512,58,5)`、`Q=50,60,70,90` 上 54 个 adjacent transitions 中 21 descent、33 ascent、0 unresolved；18/18 series nonmonotone，9 个 same-prefix descent，最大同前缀 contraction `<0.284422`；下一步为 overlapping-shell sign-label transport |
 | 2026-08-29 | V155 / TPC-302 | Bridge A / Gate B：source-first growing/control grid 上的 native weighted/positive budget gap 已通过三档 tolerance 与 common-prefix normalization audit；uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-302` | 34 rows、430 explicit shell targets、612 frontier cases；每行从物理 Gram 精确重编 equal-sign weighted label，common gap 三档均 34/34 >`10`，三种 normalizer 的 common weighted budget 102/102 >`1e-5`；fixed-power credit 为 0，下一步为 uniform native-budget growth/反例攻击 |
 | 2026-08-29 | V154 / TPC-301 | Bridge A / Gate B：native weighted/positive budget gap 已通过 tolerance、common-prefix 与 source-normalization hostile audit；growing profile budget、arithmetic `L2` 与 full Gate B open | `TPC-301` | 严格证明 tolerance nesting、relative homogeneity、threshold-prefix nesting 与 common-prefix normalization invariance；18 rows / 219 explicit shell targets（inherited grid count 1,380 单独记录），324 frontier cases 上三档容差的 common gap 均 18/18 >`10`，weighted common budget 三种 normalizer 均 54/54 >`3e-5`；fixed-power credit 为 0，下一步为 growing-shell robustness 与 arithmetic `L2` interface |
 | 2026-08-29 | V153 / TPC-300 | Bridge A / Gate B：native budget dual certificate 已在有限图上完成；growing profile budget、arithmetic `L2` 与 full Gate B open | `TPC-300` | 严格证明 weak/strong finite duality、`mu=1/rho` reciprocal correction 与 rational dual compiler；18 rows / 1,380 edges 上 72/72 exact dual witnesses 紧度 >`0.999999999`，weighted threshold floors `18/15/14`，full-prefix obstruction `11/18`；fixed-power credit 为 0，下一步为 tolerance/normalization hostile audit |

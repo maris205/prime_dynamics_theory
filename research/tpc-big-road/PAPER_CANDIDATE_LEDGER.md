@@ -3,13 +3,57 @@
 
 更新时间：2026-08-29
 
-状态：**TPC302_PROVED_EXACT_FINITE_SOURCE_FIRST_SIGN_ENUMERATION_AND_BUDGET_MONOTONICITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_GRID_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC303_PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.96 当前：TPC-302 growing-shell budget-gap audit
+## 0.97 当前：TPC-303 fixed-source cardinality-monotonicity obstruction
+
+项目：`papers/tpc-303-cardinality-monotonicity-obstruction/`
+
+类型：**PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION**。
+
+TPC-303 承接 TPC-302 的 growing-shell budget-gap stability，冻结
+`(N,H,z)=(512,58,5)`，沿 `Q=50,60,70,90` 的 moving-shell spine 测试一个更强的
+cardinality-only shortcut：shell cardinality 增大是否必然使 native weighted budget
+增大。两种 kernel exponent、三档 relative RMS tolerance 与三种 source normalization
+形成 18 个 parameter series、54 个 adjacent transitions。outward interval criterion
+严格给出 21 个 descents、33 个 ascents、0 个 unresolved；18/18 series 均含 ascent
+与 descent，且 9 个 descent 的 common profile prefix 不变。
+
+最强正结果：该 obstruction 同时出现在全部 exponent/tolerance/normalizer series，
+不是单一 normalization 或单一参数点的异常；interval order 本身是 exact finite
+logic。最强 obstruction：`Q=60\to70` 在 exponent 2、`tau=3/4` 的 same-prefix
+case 中，right/left interval ratio 小于 `0.284422`；总体最强 ratio 小于 `0.224974`。
+
+开放定理：解释 source/profile/target label 如何共同制造 budget descent，并决定在
+何种附加结构下还能恢复 uniform native profile-budget growth。该 finite spine 不是
+asymptotic lower-bound refutation，且 Q-shells 不是 nested inclusion family。
+
+可复用结构：`fixed-source shell spine -> outward interval order -> adjacent transition
+census -> same-prefix descent firewall`。
+
+ROUND2_CLUE：`LOCALIZE_BUDGET_DESCENTS_BY_TRANSPORTING_SIGN_LABELS_ACROSS_OVERLAPPING_SHELLS`。
+
+```text
+TPC303_ROUTE_ADVANCE = YES_SCOPED_CARDINALITY_ONLY_GROWTH_REFUTATION
+TPC303_INTERVAL_ORDER = PROVED_EXACT_FINITE
+TPC303_CARDINALITY_MONOTONICITY = REFUTED_SCOPED_DECLARED_FINITE_SPINE
+TPC303_TRANSITION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_21_DESCENTS_33_ASCENTS_0_UNRESOLVED
+TPC303_NONMONOTONE_SERIES = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC303_SAME_PREFIX_DESCENTS = NUMERICALLY_CERTIFIED_FINITE_9
+TPC303_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC303_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC303_FIXED_POWER_CREDIT = 0
+TPC303_FULL_GATE_B = OPEN
+TPC303_TWIN_PRIME_RESULT = NONE
+TPC303_STATUS = PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION
+TPC303_ROUND2_CLUE = LOCALIZE_BUDGET_DESCENTS_BY_TRANSPORTING_SIGN_LABELS_ACROSS_OVERLAPPING_SHELLS
+```
+
+## 0.96 previous: TPC-302 growing-shell budget-gap audit
 
 项目：`papers/tpc-302-growing-shell-budget-gap-audit/`
 

@@ -1,0 +1,128 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{proposition}{Proposition}
+\title{A Fixed-Source Cardinality-Monotonicity Obstruction\
+for Native Prime-Shell Budgets}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{29 August 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The source-first growing-grid audit of TPC-302 found a stable gap between a
+signed weighted target and an all-positive control, but did not determine how
+the weighted native budget itself changes with shell size.  We test the
+stronger cardinality-only monotonicity shortcut on a fixed source spine:
+$(N,H,z)=(512,58,5)$ and $Q=50,60,70,90$, with shell cardinalities
+$10,13,15,17$.  We use the three TPC-302 relative RMS tolerances, two kernel
+exponents, and three source normalizations.  Outward interval comparisons give
+21 strict descents and 33 strict ascents among 54 adjacent transitions, with no
+unresolved case.  All 18 parameter series are nonmonotone, and nine descents
+occur at an unchanged common profile prefix.  The strongest same-prefix
+contraction is below $0.284422$.  This is a scoped finite obstruction, not a
+refutation of an eventual asymptotic lower bound.
+\end{abstract}
+
+\section{Question}
+
+TPC-302 transported a native weighted/positive budget gap to a 34-row
+growing/control grid and regenerated its signed target from the physical Gram
+matrix \cite{tpc302}.  A tempting next shortcut would be to infer that the
+weighted native budget must grow whenever shell cardinality grows.  Such an
+inference is stronger than the TPC-302 gap statement and needs its own test.
+
+We freeze source scale $N=512$, height $H=58$, comparison cutoff $z=5$, and
+compare the moving shells indexed by $Q=50,60,70,90$.  Their cardinalities are
+$10,13,15,17$.  The shells are not nested; the claim under attack is therefore
+cardinality-only monotonicity, not monotonicity under set inclusion.
+
+For a common profile prefix $k$ and target $b$, TPC-302 uses
+\[
+ B_{k,\tau}(b)=\min\{c^TM_kc:\|V_kc-b\|_2\leq\tau\|b\|_2\}.
+\]
+We read the common-prefix weighted budget, normalized by
+\(\|\beta\|_2^2\), \(\operatorname{tr}(M_k)/k\), or $M_k[1,1]$.
+
+\section{Interval certificate}
+
+\begin{proposition}[Certified order]
+If $B_j\in[L_j,U_j]$ and $B_{j+1}\in[L_{j+1},U_{j+1}]$, then
+$U_{j+1}<L_j$ implies $B_{j+1}<B_j$, while $L_{j+1}>U_j$ implies
+$B_{j+1}>B_j$.
+\end{proposition}
+\begin{proof}
+Every represented value lies between its interval endpoints.  The strict
+endpoint inequalities place the two values in disjoint ordered intervals.
+\end{proof}
+
+\begin{proposition}[Finite scoped refutation]
+One certified descent refutes nondecreasing cardinality-only budget on the
+declared finite Q-spine.
+\end{proposition}
+\begin{proof}
+The definition of nondecreasing requires every adjacent pair to have the
+later value at least the earlier value.  A certified strict descent violates
+that condition.
+\end{proof}
+
+A descent with equal common prefix $k$ is especially informative: it cannot
+be blamed on adding or removing profile directions.  It can still reflect the
+moving physical shell or the source-first change in the signed target.
+
+\section{Results}
+
+\begin{table}[t]
+\centering\small
+\caption{Adjacent transition census on the fixed-source spine.}
+\begin{tabular}{lrrr}
+\toprule
+quantity & count & total & fraction\\
+\midrule
+certified descents & 21 & 54 & $21/54$\\
+certified ascents & 33 & 54 & $33/54$\\
+unresolved overlaps & 0 & 54 & $0/54$\\
+nonmonotone parameter series & 18 & 18 & $18/18$\\
+same-prefix descents & 9 & 54 & $9/54$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The strongest descent overall is the $Q=60\to70$ transition at exponent 2,
+$\tau=1/2$, normalized by $\|\beta\|_2^2$; its right/left interval ratio is
+below $0.224974$.  The strongest same-prefix descent is also $Q=60\to70$ at
+exponent 2 and $\tau=3/4$, with both common prefixes equal to $k=6$ and ratio
+below $0.284422$.  The three normalizers give the same qualitative result,
+and each exponent--tolerance--normalizer series contains both an ascent and a
+descent.
+
+These are interval-certified finite comparisons inherited from a frozen
+source-first certificate.  They do not say that a suitably normalized budget
+cannot eventually obey a lower bound, nor do they turn moving-shell data into
+a nested-shell theorem.
+
+\section{Obstruction and next question}
+
+The result closes a useful but invalid shortcut: shell cardinality alone does
+not control the direction or size of the native weighted budget on this
+declared spine.  The same-prefix cases further show that profile dimension is
+not the only explanation.  The next natural experiment is to transport the
+weighted sign labels across overlapping shells, separating target-label
+switching from the physical operator/shell change.  Uniform profile-budget
+growth, arithmetic $L^2$, fixed-power credit, full Gate B, and a twin-prime
+conclusion remain open.
+
+\section*{Reproducibility and scope}
+
+The canonical TPC-303 certificate stores every interval and transition.  An
+independent checker reconstructs the census from TPC-302 without importing
+the producer, and a stress suite checks the interval logic.  The
+Session-named Route-A/Route-B evaluator files are absent from this checkout;
+no official evaluator pass is asserted.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
