@@ -2,24 +2,53 @@
 
 更新时间：2026-08-29
 
-当前地图版本：V160 / TPC-307
+当前地图版本：V161 / TPC-308
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-307`（`PROVED_EXACT_FINITE_COMMON_AMBIENT_UNION_SHELL_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_BUDGET_HOLDOUT_DISCORDANCE_ATLAS`）；
+当前编号锚点：`TPC-308`（`PROVED_EXACT_FINITE_HAMMING_COMPLETION_ENVELOPE_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_HOLDOUT_STABILITY_ATLAS`）；
 对应论文目录为
-`papers/tpc-307-common-ambient-union-shell-holdout/`。
+`papers/tpc-308-adversarial-exclusive-completion-envelope/`。
 
-TPC-307 是当前地图位置：承接 TPC-306 的 two-way interaction diagnostic，把每个相邻
-shell pair 放进同一个 union ambient `U`，在 overlap `O` 上分别拟合 aligned directional
-targets，并把 `E_left,E_right` 作为 withheld exclusive holdouts。partition、overlap-only
-fit、holdout separation、global-sign invariance 与 common-prefix feasibility 是 exact
-finite。18 cases、36 directional fits、54 normalizer rows 的 numerical replay 给出
-`13 concordant / 3 discordant / 2 unresolved`；三处 discordance 全部在 `Q=70->90`,
-exponent 1 的三个 tolerance。这是 finite completion-stability diagnostic/obstruction，
-不是 causal separation 或 asymptotic theorem；formal directed-rounding enclosure、uniform
-budget growth、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime endpoint
-仍开放。
+TPC-308 是当前地图位置：承接 TPC-307 的 common-ambient overlap-fit/exclusive-holdout
+diagnostic，冻结 fitted predictions、profile prefix 与 budget class，只对两个 exclusive
+holdouts 枚举 Hamming radii `0,1,2` 的全部 binary completions。Hamming protocol、候选
+计数、fixed-prediction extrema、radius monotonicity、radius-zero recovery 与 sign
+invariance 是 exact finite；18 cases 形成 54 envelope observations，候选总数为
+`36/186/480`。agreement 为 `13/3/2`、`11/2/5`、`10/1/7`（对应
+`r=0,1,2` 的 concordant/discordant/unresolved），discordance 从 `3->2->1` 衰减但
+仍有一个在 `Q=70->90,e=1` 存留；全部 discordance 都只在该 final pair。这个结果是
+finite adversarial stability/fragility atlas，不是 causal 或 asymptotic theorem；formal
+directed-rounding enclosure、uniform budget growth、arithmetic `L2`、fixed-power credit、
+full Gate B 与 twin-prime endpoint 仍开放。
+
+```text
+TPC308_ROUTE_ADVANCE = YES_SCOPED_ADVERSARIAL_EXCLUSIVE_COMPLETION_ENVELOPE_AUDIT
+TPC308_HAMMING_ENVELOPE_PROTOCOL = PROVED_EXACT_FINITE
+TPC308_FIXED_PREDICTION_EXTREMA = PROVED_EXACT_FINITE
+TPC308_RADIUS_MONOTONICITY = PROVED_EXACT_FINITE
+TPC308_RADIUS_ZERO_RECOVERY = PROVED_EXACT_FINITE
+TPC308_FINITE_STABILITY_ATLAS = NUMERICALLY_REPRODUCED_FINITE_54_ENVELOPE_OBSERVATIONS
+TPC308_AGREEMENT_R0 = NUMERICALLY_REPRODUCED_FINITE_13_CONCORDANT_3_DISCORDANT_2_UNRESOLVED
+TPC308_AGREEMENT_R1 = NUMERICALLY_REPRODUCED_FINITE_11_CONCORDANT_2_DISCORDANT_5_UNRESOLVED
+TPC308_AGREEMENT_R2 = NUMERICALLY_REPRODUCED_FINITE_10_CONCORDANT_1_DISCORDANT_7_UNRESOLVED
+TPC308_DISCORDANCE_SURVIVAL = NUMERICALLY_REPRODUCED_FINITE_3_TO_2_TO_1_AS_RADIUS_0_TO_2
+TPC308_DISCORDANCE_LOCALIZATION = NUMERICALLY_REPRODUCED_FINITE_FINAL_PAIR_70_TO_90_ONLY
+TPC308_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC308_CAUSAL_IDENTIFICATION = NONE_FIXED_PREDICTION_ENVELOPE_DIAGNOSTIC_ONLY
+TPC308_FORMAL_INTERVAL_CERTIFICATE = OPEN_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC308_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC308_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC308_FIXED_POWER_CREDIT = 0
+TPC308_FULL_GATE_B = OPEN
+TPC308_TWIN_PRIME_RESULT = NONE
+TPC308_STATUS = PROVED_EXACT_FINITE_HAMMING_COMPLETION_ENVELOPE_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_HOLDOUT_STABILITY_ATLAS
+TPC308_ROUND2_CLUE = TEST_PROFILE_PREFIX_PERTURBATION_AND_COMPLETION_INVARIANCE_ON_THE_SURVIVING_DISCORDANCE_CELLS_BEFORE_ANY_PREFERENCE_CLAIM
+```
+
+TPC-307 是上一位置：它先把相邻 shell pair 放进同一个 union ambient `U`，在 overlap
+`O` 上拟合 directional targets，并在 exclusive pieces 上建立 withheld holdout；其
+`13/3/2` native census 是 TPC-308 的 radius-zero parent layer。
 
 ```text
 TPC307_ROUTE_ADVANCE = YES_SCOPED_COMMON_AMBIENT_DIRECTIONAL_HOLDOUT_DIAGNOSTIC
@@ -396,8 +425,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V160 / TPC-307
-MAP_LABEL = COMMON-AMBIENT UNION-SHELL HOLDOUT / COMPLETION-STABILITY OBSTRUCTION LOCALIZED
+YOU ARE HERE = V161 / TPC-308
+MAP_LABEL = ADVERSARIAL EXCLUSIVE-COMPLETION ENVELOPE / FINAL-TRANSITION OBSTRUCTION SURVIVES
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -633,6 +662,50 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.102 V161 / TPC-308：adversarial exclusive-completion envelope
+
+TPC-308 是当前地图的 completion-stability hostile audit。它冻结 TPC-307 的 common
+ambient `U`、overlap-only fit、coefficients、selected profile prefix 与 budget class，
+仅在两个 exclusive holdout 上枚举 Hamming radius `r=0,1,2` 的全部 binary completions。
+有限 Hamming-ball protocol、候选计数、fixed-prediction extrema、radius monotonicity、
+radius-zero recovery 与 global-sign invariance 均为 exact finite。
+
+18 个 parent cells 产生 54 个 envelope observations；候选总数为 `36/186/480`。全局
+agreement（concordant/discordant/unresolved）分别为 `13/3/2`、`11/2/5`、`10/1/7`。
+discordance 从 `3->2->1` 衰减，但 radius two 仍有一个 surviving cell；每一个
+discordance 都定位在 `Q=70->90`, exponent 1。与此同时 unresolved 增至 7，表明扩大的
+completion envelope 会把若干 ratio 推入阈值带。该 atlas 是 numerical replay，不是
+directed-rounding formal certificate，也不是 completion law、causal theorem 或
+asymptotic statement。
+
+```text
+TPC308_ROUTE_ADVANCE = YES_SCOPED_ADVERSARIAL_EXCLUSIVE_COMPLETION_ENVELOPE_AUDIT
+TPC308_HAMMING_ENVELOPE_PROTOCOL = PROVED_EXACT_FINITE
+TPC308_FIXED_PREDICTION_EXTREMA = PROVED_EXACT_FINITE
+TPC308_RADIUS_MONOTONICITY = PROVED_EXACT_FINITE
+TPC308_RADIUS_ZERO_RECOVERY = PROVED_EXACT_FINITE
+TPC308_FINITE_STABILITY_ATLAS = NUMERICALLY_REPRODUCED_FINITE_54_ENVELOPE_OBSERVATIONS
+TPC308_AGREEMENT_R0 = NUMERICALLY_REPRODUCED_FINITE_13_CONCORDANT_3_DISCORDANT_2_UNRESOLVED
+TPC308_AGREEMENT_R1 = NUMERICALLY_REPRODUCED_FINITE_11_CONCORDANT_2_DISCORDANT_5_UNRESOLVED
+TPC308_AGREEMENT_R2 = NUMERICALLY_REPRODUCED_FINITE_10_CONCORDANT_1_DISCORDANT_7_UNRESOLVED
+TPC308_DISCORDANCE_SURVIVAL = NUMERICALLY_REPRODUCED_FINITE_3_TO_2_TO_1_AS_RADIUS_0_TO_2
+TPC308_DISCORDANCE_LOCALIZATION = NUMERICALLY_REPRODUCED_FINITE_FINAL_PAIR_70_TO_90_ONLY
+TPC308_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC308_CAUSAL_IDENTIFICATION = NONE_FIXED_PREDICTION_ENVELOPE_DIAGNOSTIC_ONLY
+TPC308_FORMAL_INTERVAL_CERTIFICATE = OPEN_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC308_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC308_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC308_FIXED_POWER_CREDIT = 0
+TPC308_FULL_GATE_B = OPEN
+TPC308_TWIN_PRIME_RESULT = NONE
+TPC308_STATUS = PROVED_EXACT_FINITE_HAMMING_COMPLETION_ENVELOPE_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_HOLDOUT_STABILITY_ATLAS
+TPC308_ROUND2_CLUE = TEST_PROFILE_PREFIX_PERTURBATION_AND_COMPLETION_INVARIANCE_ON_THE_SURVIVING_DISCORDANCE_CELLS_BEFORE_ANY_PREFERENCE_CLAIM
+```
+
+当前最强正结果是把 exclusive completion sensitivity 变成可证明且可独立复核的有限
+envelope；最强 obstruction 是 final transition 的 discordance 在 radius two 尚未完全
+消失。下一座桥是对 surviving cells 做 profile-prefix perturbation/stability audit。
 
 ## 5.101 V160 / TPC-307：common-ambient union-shell holdout
 
@@ -2061,9 +2134,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V160 / TPC-307                    |
-        | COMMON-AMBIENT UNION-SHELL HOLDOUT            |
-        | 13/3/2 agreement / discordance localized     |
+        | YOU ARE HERE — V161 / TPC-308                    |
+        | ADVERSARIAL EXCLUSIVE-COMPLETION ENVELOPE   |
+        | 13/3/2 -> 11/2/5 -> 10/1/7 by radius        |
         +--------------------------------------------------+
                 |
                 v
@@ -7096,6 +7169,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-29 | V161 / TPC-308 | Bridge A / Gate B：adversarial exclusive-completion envelope 已完成；formal interval certificate、completion generation、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-308` | 冻结 TPC-307 的 common ambient 与 overlap fit，在 18 cells 上枚举 Hamming radii `0,1,2`；54 observations、候选 `36/186/480`，agreement `13/3/2`、`11/2/5`、`10/1/7`，discordance `3->2->1` 且全在 `70->90,e=1`；下一步为 profile-prefix perturbation 与 completion invariance audit |
 | 2026-08-29 | V160 / TPC-307 | Bridge A / Gate B：common-ambient union-shell holdout protocol 已完成；formal directed-rounding enclosure、completion-invariant preference、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-307` | 同一 union ambient `U` 上 overlap-only directional fit 与 exclusive holdout；18 cases / 36 fits / 54 rows 中 `13/3/2` concordant/discordant/unresolved，三处 discordance 均在 `Q=70->90,e=1`；下一步为 completion envelopes 与 prefix perturbation hostile audit |
 | 2026-08-29 | V159 / TPC-306 | Bridge A / Gate B：two-way operator/target interaction decomposition 已完成；common-ambient holdout、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-306` | 四格 operator-by-target table、精确 `m^2-i^2=d_Ld_R` identity 与 row-scaling invariance；18 cases / 54 derived rows 中 target-main `12/18`、interaction `6/18`，中心 `5/6`、same-prefix `3/3`，下一步为 common-ambient union-shell completion 与 interaction stability |
 | 2026-08-29 | V158 / TPC-305 | Bridge A / Gate B：fixed-operator counterfactual target control 已完成；operator interaction、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-305` | 18 个 target-swap cases、36 个 operator tables；中心 `Q=60->70` 的 right-label-cheaper orientation 为 `5/6`，same-prefix 为 `3/3`；外侧 orientation 为 `(left=4,cross=2)` 与 `(left=3,cross=1,home=2)`；下一步为 two-way operator holdout 与 interaction contrast |

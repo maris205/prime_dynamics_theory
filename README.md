@@ -9,6 +9,50 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-308 在 TPC-307 的 common-ambient holdout 上做 adversarial
+exclusive-completion envelope。冻结 overlap fit、coefficients、profile prefix 与 budget
+class，对每个 exclusive holdout 枚举 Hamming radii `r=0,1,2` 的全部 binary completions。
+有限协议、候选计数、fixed-prediction extrema、radius monotonicity、radius-zero recovery
+与 sign invariance 是 exact finite；18 个 parent cases 形成 54 个 envelope observations、
+候选数 `36/186/480`。agreement census 为 `13/3/2`、`11/2/5`、`10/1/7`，分别对应
+`r=0,1,2` 的 concordant/discordant/unresolved；discordance 从 `3→2→1` 衰减但在
+`Q=70→90,e=1` 仍存留，且全部 final-pair localized。这是 completion stability/fragility
+的 finite numerical replay，不是 causal、asymptotic、arithmetic 或 twin-prime theorem；
+formal directed-rounding enclosure、uniform budget、arithmetic `L2`、fixed-power credit、
+full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC308_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_HAMMING_COMPLETION_ENVELOPE_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_HOLDOUT_STABILITY_ATLAS
+TPC308_ROUTE_ADVANCE = YES_SCOPED_ADVERSARIAL_EXCLUSIVE_COMPLETION_ENVELOPE_AUDIT
+TPC308_HAMMING_ENVELOPE_PROTOCOL = PROVED_EXACT_FINITE
+TPC308_FIXED_PREDICTION_EXTREMA = PROVED_EXACT_FINITE
+TPC308_RADIUS_MONOTONICITY = PROVED_EXACT_FINITE
+TPC308_RADIUS_ZERO_RECOVERY = PROVED_EXACT_FINITE
+TPC308_FINITE_STABILITY_ATLAS = NUMERICALLY_REPRODUCED_FINITE_54_ENVELOPE_OBSERVATIONS
+TPC308_AGREEMENT_R0 = NUMERICALLY_REPRODUCED_FINITE_13_CONCORDANT_3_DISCORDANT_2_UNRESOLVED
+TPC308_AGREEMENT_R1 = NUMERICALLY_REPRODUCED_FINITE_11_CONCORDANT_2_DISCORDANT_5_UNRESOLVED
+TPC308_AGREEMENT_R2 = NUMERICALLY_REPRODUCED_FINITE_10_CONCORDANT_1_DISCORDANT_7_UNRESOLVED
+TPC308_DISCORDANCE_SURVIVAL = NUMERICALLY_REPRODUCED_FINITE_3_TO_2_TO_1_AS_RADIUS_0_TO_2
+TPC308_DISCORDANCE_LOCALIZATION = NUMERICALLY_REPRODUCED_FINITE_FINAL_PAIR_70_TO_90_ONLY
+TPC308_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC308_CAUSAL_IDENTIFICATION = NONE_FIXED_PREDICTION_ENVELOPE_DIAGNOSTIC_ONLY
+TPC308_FORMAL_INTERVAL_CERTIFICATE = OPEN_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC308_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC308_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC308_FIXED_POWER_CREDIT = 0
+TPC308_FULL_GATE_B = OPEN
+TPC308_TWIN_PRIME_RESULT = NONE
+TPC308_STATUS = PROVED_EXACT_FINITE_HAMMING_COMPLETION_ENVELOPE_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_HOLDOUT_STABILITY_ATLAS
+TPC308_ROUND2_CLUE = TEST_PROFILE_PREFIX_PERTURBATION_AND_COMPLETION_INVARIANCE_ON_THE_SURVIVING_DISCORDANCE_CELLS_BEFORE_ANY_PREFERENCE_CLAIM
+```
+
+`papers/tpc-308-adversarial-exclusive-completion-envelope` - TPC-308 current project，
+including independent replay, exact stress suite, proof package, PDF and local Bridge-B
+checker. Session-named evaluator files are absent from this checkout; no official evaluator
+pass is asserted.
+
+上一阶段 TPC-307：
+
 当前主线状态：TPC-307 在 TPC-306 的 interaction diagnostic 上构造了 common-ambient
 union-shell holdout。对每个相邻 shell pair 使用同一个 `U` operator，在 overlap `O`
 上分别拟合两种 aligned directional target，并把 `E_left,E_right` 作为 withheld

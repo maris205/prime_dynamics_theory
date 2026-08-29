@@ -1,13 +1,27 @@
-# TPC big road V160 / TPC-307: common-ambient union-shell holdout
+# TPC big road V161 / TPC-308: adversarial exclusive-completion envelope
 
 更新时间：2026-08-29
 
-状态：`TPC307_PROVED_EXACT_FINITE_COMMON_AMBIENT_UNION_SHELL_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_BUDGET_HOLDOUT_DISCORDANCE_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC308_PROVED_EXACT_FINITE_HAMMING_COMPLETION_ENVELOPE_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_HOLDOUT_STABILITY_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-307 proof 为
+当前 TPC-308 proof 为
+`bridge_b_tpc308_adversarial_exclusive_completion_envelope.md`，checker 为
+`tpc_bridge_b_tpc308_adversarial_exclusive_completion_envelope_checker.py`，编号论文为
+`../../papers/tpc-308-adversarial-exclusive-completion-envelope/`。
+
+TPC-308 冻结 TPC-307 的 common ambient、overlap fit、coefficients、profile prefix 与
+budget class，仅在两个 exclusive holdout 上枚举 Hamming radius `0,1,2` 的 binary
+completions。协议、候选计数、fixed-prediction extrema、radius monotonicity、radius-zero
+recovery 与 sign invariance 是 exact finite；18 cases 形成 54 observations，候选总数为
+`36/186/480`，agreement 为 `13/3/2`、`11/2/5`、`10/1/7`，discordance `3->2->1` 且
+仍全部定位在 `70->90,e=1`。这是 finite adversarial stability/fragility atlas，不是
+causal、asymptotic、arithmetic 或 twin-prime theorem；formal interval certificate、uniform
+budget、arithmetic `L2`、fixed-power credit 与 full Gate B 仍 OPEN/NONE。
+
+此前 TPC-307 proof 为
 `bridge_b_tpc307_common_ambient_union_shell_holdout.md`，checker 为
 `tpc_bridge_b_tpc307_common_ambient_union_shell_holdout_checker.py`，编号论文为
 `../../papers/tpc-307-common-ambient-union-shell-holdout/`。

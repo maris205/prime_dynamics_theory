@@ -1,0 +1,288 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=0.88in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\emergencystretch=3em
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\title{Adversarial Exclusive Completions for a\
+Common-Ambient Prime-Shell Holdout}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{29 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The common-ambient union-shell holdout of TPC-307 exposed three finite
+discordances between a constrained source-budget orientation and the error
+on withheld exclusive shell pieces.  We stress that observation with an
+explicit adversarial completion envelope: for each fixed directional
+prediction, enumerate every binary relabelling within Hamming radii
+$r=0,1,2$ on the corresponding exclusive holdout.  The Hamming-ball
+construction, its binomial cardinality, fixed-prediction extrema,
+radius monotonicity, radius-zero recovery, and sign invariance are exact
+finite facts.  On the locked 18-cell twin-prime diagnostic spine, the
+producer and an independent NumPy replay reproduce 54 envelope observations
+and 702 candidate evaluations.  The agreement census changes from
+$13/3/2$ to $11/2/5$ to $10/1/7$ (concordant/discordant/unresolved) as
+$r=0,1,2$; every surviving discordance remains on $Q=70\to90$ with
+kernel exponent one.  The envelope therefore attenuates but does not remove
+the finite obstruction, while widening several cells into the unresolved
+band.  The physical computation is a numerical replay with padded decimal
+enclosures, not a directed-rounding certificate.  No causal, asymptotic,
+arithmetic, or twin-prime conclusion is claimed.
+\end{abstract}
+
+\section{Question and frozen parent object}
+
+TPC-307 placed each adjacent prime-shell pair in one common union ambient
+operator, fitted two aligned directional targets on the overlap, and used
+the exclusive pieces as withheld holdouts \cite{tpc307}.  Its finite atlas
+contained three budget/holdout discordances, all on the final transition
+$70\to90$ at exponent one.  A natural concern is that the native exclusive
+labels might be a particularly favorable or unfavorable completion.  The
+minimal next question is therefore adversarial and finite:
+
+\begin{quote}
+Does the localized discordance survive when each native exclusive label is
+replaced by every nearby binary completion, while the fitted prediction and
+source budget remain fixed?
+\end{quote}
+
+We retain the parent conventions without adding a moving parameter.  The
+source interval is $[257,512]\cap\mathbb Z$, the height is $H=58$, and the
+source comparison cutoff is $z=5$.  The shell spine is
+$Q=(50,60,70,90)$, with adjacent pairs
+$(50,60),(60,70),(70,90)$.  The two literal kernel exponents are $e=1,2$,
+and the relative overlap-fit tolerances are
+$\tau\in\{0.25,0.5,0.75\}$.  The profile matrix has the 17 cutoffs
+
+\[
+  3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61.
+\]
+
+For an adjacent pair, write $U$ for the union shell, $O$ for the overlap,
+and $E_L,E_R$ for the left and right exclusive pieces.  TPC-307 fixes the
+common ambient matrix $V_U$, the overlap-only frontier coefficients
+$c_L,c_R$, and the common prefix
+$k=\max(k_L,k_R)$.  It also fixes the aligned native binary targets
+$h_L\in\{-1,+1\}^{|E_L|}$ and
+$h_R\in\{-1,+1\}^{|E_R|}$.  No TPC-308 completion is fed back into the
+coefficient fit or into the budget comparison.  The source-first labels
+come from the physical-Gram-dependent construction inherited from TPC-302
+\cite{tpc302}; that leakage is retained in the claim firewall.
+
+\section{Completion envelopes}
+
+For a binary vector $h$ of length $m$ and a nonnegative integer $r$, define
+the finite Hamming ball
+\[
+  \mathcal C_r(h)=\{h'\in\{-1,+1\}^m:d_H(h',h)\le r\}.
+\]
+If $y$ is the already fitted prediction on the same exclusive rows, define
+the lower and upper completion losses
+\[
+  L_r^-(y,h)=\min_{h'\in\mathcal C_r(h)}
+       \frac{1}{m}\|y-h'\|_2^2,
+  \qquad
+  L_r^+(y,h)=\max_{h'\in\mathcal C_r(h)}
+       \frac{1}{m}\|y-h'\|_2^2.                         \tag{1}
+\]
+The producer enumerates a flip subset $F$ and changes $h_j$ to $-h_j$ for
+$j\in F$.  Thus the candidate count is
+\[
+  |\mathcal C_r(h)|=
+  \sum_{j=0}^{\min(r,m)} \binom{m}{j}.                  \tag{2}
+\]
+
+\begin{proposition}[Finite envelope algebra]
+For fixed $y$ and binary $h$, the flip-subset enumeration gives the exact
+minimum and maximum in (1).  Further,
+\[
+ L_{r+1}^-(y,h)\le L_r^-(y,h)\le L_r^+(y,h)
+ \le L_{r+1}^+(y,h),                                    \tag{3}
+\]
+and $\mathcal C_0(h)=\{h\}$.  Simultaneously replacing $(y,h)$ by
+$(-y,-h)$ preserves every completion loss.
+\end{proposition}
+
+\begin{proof}
+For any completion $h'$, let
+$F=\{j:h'_j\ne h_j\}$.  Since the coordinates are binary, $h'_j=-h_j$
+exactly on $F$, and the Hamming constraint is $|F|\le r$.  Conversely,
+every such $F$ produces one completion, and the recovered difference set is
+unique.  This proves the bijection and (2), so the finite list contains all
+and only feasible points and its extrema are exact.
+
+The inclusion $\mathcal C_r(h)\subseteq\mathcal C_{r+1}(h)$ gives (3) by
+the elementary monotonicity of a minimum and a maximum under set inclusion.
+The only subset of size at most zero is the empty set, proving the singleton
+claim.  Finally,
+$\|(-y)-(-h')\|_2^2=\|y-h'\|_2^2$, and global negation bijects the two
+completion balls.
+\end{proof}
+
+For positive losses, TPC-308 records the conservative right-over-left
+interval
+\[
+ R_r\in\left[
+ \frac{L_r^-(y_R,h_R)}{L_r^+(y_L,h_L)},
+ \frac{L_r^+(y_R,h_R)}{L_r^-(y_L,h_L)}\right].                  \tag{4}
+\]
+The lower endpoint is not interpreted as a point estimate.  An interval
+wholly below $0.9$ is called right-lower, one wholly above $1.1$ is
+left-lower, and all other intervals are unresolved.
+
+\begin{proposition}[Conditional class soundness]
+If the four losses in (4) are positive and the displayed endpoints are
+valid, then an upper endpoint below $0.9$ implies a strict right-lower
+classification, while a lower endpoint above $1.1$ implies a strict
+left-lower classification.
+\end{proposition}
+
+\begin{proof}
+For positive $a\in[a_-,a_+]$ and $b\in[b_-,b_+]$,
+$a/b\in[a_-/b_+,a_+/b_-]$.  Apply this to the right and left finite loss
+intervals and then use the definitions of the two strict classes.
+\end{proof}
+
+\begin{remark}
+The completion ball is a set of adversarial diagnostics, not a distribution
+and not a model for how arithmetic labels are generated.  In particular,
+(1) does not create causal separation between the physical operator and the
+target.
+\end{remark}
+
+\section{Numerical protocol}
+
+For each of the 18 parent cells, the producer loads the locked TPC-307
+certificate, reconstructs the six union shells, and reuses the two fixed
+predictions.  It applies (1) independently to $E_L$ and $E_R$ at each of
+the three radii.  The exclusive cardinality pairs are $(2,5)$ on
+$50\to60$, $(2,4)$ on $60\to70$, and $(5,7)$ on $70\to90$; each transition
+occurs for six $(e,\tau)$ cells.  Equation (2) consequently predicts the
+aggregate candidate totals $36$, $186$, and $480$ at radii $0$, $1$, and
+$2$.
+
+The parent physical rows are assembled by the literal deleted-diagonal
+formula in vectorized float64 arithmetic.  The parent frontier is then
+replayed at high precision on decimalized entries, and each reported value
+is padded by relative radius $10^{-5}$.  The independent checker does not
+import the TPC-308 producer: it rebuilds the source profiles and physical
+rows from the frozen TPC-268 engine, solves the overlap frontier with a
+separate NumPy implementation, enumerates the flip subsets, and checks the
+published enclosures with a $2\times10^{-3}$ relative replay slack.
+
+This separation supports numerical reproduction of a declared finite object.
+It does not support a formal interval certificate: neither the physical
+matrix construction nor the optimization path is evaluated with directed
+rounding.  The exact statements are therefore limited to the finite
+protocol and its algebraic lemmas.
+
+\section{Results}
+
+Table~\ref{tab:radius} gives the central aggregate result.  The first row
+recovers TPC-307 exactly at the class level, as required by
+$\mathcal C_0(h)=\{h\}$.  Enlarging the completion ball reduces strict
+discordances from three to two to one, but also turns more cells unresolved.
+
+\begin{table}[t]
+\centering\small
+\caption{Agreement census over all 18 cells.}
+\label{tab:radius}
+\begin{tabular}{c r r r r r}
+\toprule
+radius $r$ & envelope observations & candidates & concordant & discordant & unresolved\\
+\midrule
+0 & 18 & 36  & 13 & 3 & 2\\
+1 & 18 & 186 & 11 & 2 & 5\\
+2 & 18 & 480 & 10 & 1 & 7\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The transition localization is shown in Table~\ref{tab:pair}.  No
+discordance occurs on either of the first two transitions at any tested
+radius.  Every discordance is on $70\to90$ and exponent one; the count on
+that transition is $3,2,1$ as the radius increases.
+
+\begin{table}[t]
+\centering\small
+\caption{Discordances by transition and completion radius.}
+\label{tab:pair}
+\begin{tabular}{c r r r}
+\toprule
+transition & $r=0$ & $r=1$ & $r=2$\\
+\midrule
+$50\to60$ & 0 & 0 & 0\\
+$60\to70$ & 0 & 0 & 0\\
+$70\to90$ & 3 & 2 & 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+At radius zero, the final transition's exponent-one ratios for the three
+tolerances are approximately $0.280$, $0.511$, and $1.156$ for the
+holdout diagnostic, while the corresponding budget classes are respectively
+left, left, and right.  These are the three parent discordances.  At radius
+one, the first two remain strict right-lower holdout classes and the third
+becomes unresolved.  At radius two, only the first remains strict
+right-lower; the other two are unresolved.  Thus the adversarial envelope
+does not support a claim that the native discordance is wholly an artifact,
+but it does show that the strength of the class depends materially on the
+allowed completion radius.
+
+The same finite replay produces seven unresolved cells at radius two.  This
+is not a defect in the decision rule: broad extrema genuinely straddle the
+threshold band.  It is evidence that an interval-aware obstruction map is
+more informative here than forcing a binary preference for every completion.
+
+\section{Interpretation and route status}
+
+The strongest positive result is an exact, auditable finite stress protocol:
+the fit geometry and source budget are frozen, the only changed object is a
+specified finite completion set, and the extrema and candidate counts have
+short proofs.  The strongest obstruction is the surviving final-transition
+discordance at radius two.  The strongest caution is the simultaneous growth
+of the unresolved region, which prevents a universal completion preference
+claim.
+
+Several boundaries are important.
+
+\begin{itemize}
+\item The parent labels inherit a physical-Gram-dependent source-first
+      construction from TPC-302; target-generation leakage is not removed.
+\item A finite Hamming envelope is not a probability law, a causal
+      intervention, or an asymptotic family of shell completions.
+\item The padded decimal intervals are numerical replay enclosures, not a
+      directed-rounding proof.
+\item No arithmetic $L^2$ estimate, fixed-power credit, uniform growing
+      budget, full Route-B Gate B, or twin-prime conclusion follows.
+\end{itemize}
+
+The Session-named \texttt{propose.md} and Route-A/Route-B evaluator files
+are absent from this checkout.  Accordingly, no official evaluator pass is
+asserted; the local fail-closed evaluation is recorded in the project route
+note and Bridge-B checker.  The next minimal research question is to perturb
+the finite profile prefix around the selected $k$ on the surviving cells.
+That tests a different stability axis without pretending that the current
+completion family identifies an arithmetic mechanism.
+
+\section*{Reproducibility}
+
+The canonical certificate is
+\texttt{results/tpc308\_certificate.json}.  The producer, independent replay,
+exact rational stress suite, theorem ledger, claim firewall, and Bridge-B
+checker are in the project directory.  Reproduction commands are listed in
+the project README.  All empirical statements in this paper are finite
+observations under the locked protocol and should not be extrapolated to
+growing $N$ or $Q$.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

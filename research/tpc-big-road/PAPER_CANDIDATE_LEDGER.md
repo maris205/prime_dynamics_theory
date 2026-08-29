@@ -3,13 +3,71 @@
 
 更新时间：2026-08-29
 
-状态：**TPC307_PROVED_EXACT_FINITE_COMMON_AMBIENT_UNION_SHELL_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_BUDGET_HOLDOUT_DISCORDANCE_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC308_PROVED_EXACT_FINITE_HAMMING_COMPLETION_ENVELOPE_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_HOLDOUT_STABILITY_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.101 current：TPC-307 common-ambient union-shell holdout
+## 0.102 current：TPC-308 adversarial exclusive-completion envelope
+
+项目：`papers/tpc-308-adversarial-exclusive-completion-envelope/`
+
+类型：**PROVED_EXACT_FINITE_HAMMING_COMPLETION_ENVELOPE_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_HOLDOUT_STABILITY_ATLAS**。
+
+TPC-308 承接 TPC-307 的 common-ambient directional holdout。它冻结 overlap fit、common
+ambient operator、coefficients、selected profile prefix 与 budget preference，只对每个
+exclusive holdout 的 binary labels 做 Hamming 半径 `r=0,1,2` 的 exhaustive completion
+enumeration。Hamming-ball protocol、candidate-count formula、fixed-prediction extrema、
+radius monotonicity、radius-zero recovery 与 global-sign invariance 为 exact finite。
+
+锁定 TPC-307 的 18 个 parent cells 后，得到 54 个 envelope observations 与候选总数
+`36/186/480`。agreement census（concordant/discordant/unresolved）为 `13/3/2`、
+`11/2/5`、`10/1/7`，随半径呈 `3->2->1` 的 discordance attenuation；所有残留
+discordance 仍在 `Q=70->90`、exponent 1，且 radius-two 尚有一个。与此同时 unresolved
+cells 增至 7，说明宽 envelope 会跨越 strict threshold band。producer 与独立 NumPy
+replay 一致，但这是 padded float replay，不是 directed-rounding formal certificate。
+
+最强正结果：把“completion sensitivity”变成可证明、可枚举、可独立复核的有限对象。
+
+最强 obstruction：final transition 的 discordance 在 radius two 仍未完全消失；但其
+强度随 envelope 变宽而衰减，不能宣称 completion-invariant preference。
+
+开放定理：在保留 completion envelope 控制的同时，检验 surviving cells 对 profile-prefix
+perturbation 是否稳定；formal directed-rounding enclosure、completion generation/causal
+identification、uniform asymptotic budget、arithmetic `L2`、fixed-power credit、full Gate B
+与 twin-prime conclusion 仍 OPEN/NONE。
+
+可复用结构：`frozen overlap fit -> binary Hamming balls -> exact finite extrema ->
+conservative ratio interval -> radius stability census`。
+
+ROUND2_CLUE：`TEST_PROFILE_PREFIX_PERTURBATION_AND_COMPLETION_INVARIANCE_ON_THE_SURVIVING_DISCORDANCE_CELLS_BEFORE_ANY_PREFERENCE_CLAIM`。
+
+```text
+TPC308_ROUTE_ADVANCE = YES_SCOPED_ADVERSARIAL_EXCLUSIVE_COMPLETION_ENVELOPE_AUDIT
+TPC308_HAMMING_ENVELOPE_PROTOCOL = PROVED_EXACT_FINITE
+TPC308_FIXED_PREDICTION_EXTREMA = PROVED_EXACT_FINITE
+TPC308_RADIUS_MONOTONICITY = PROVED_EXACT_FINITE
+TPC308_RADIUS_ZERO_RECOVERY = PROVED_EXACT_FINITE
+TPC308_FINITE_STABILITY_ATLAS = NUMERICALLY_REPRODUCED_FINITE_54_ENVELOPE_OBSERVATIONS
+TPC308_AGREEMENT_R0 = NUMERICALLY_REPRODUCED_FINITE_13_CONCORDANT_3_DISCORDANT_2_UNRESOLVED
+TPC308_AGREEMENT_R1 = NUMERICALLY_REPRODUCED_FINITE_11_CONCORDANT_2_DISCORDANT_5_UNRESOLVED
+TPC308_AGREEMENT_R2 = NUMERICALLY_REPRODUCED_FINITE_10_CONCORDANT_1_DISCORDANT_7_UNRESOLVED
+TPC308_DISCORDANCE_SURVIVAL = NUMERICALLY_REPRODUCED_FINITE_3_TO_2_TO_1_AS_RADIUS_0_TO_2
+TPC308_DISCORDANCE_LOCALIZATION = NUMERICALLY_REPRODUCED_FINITE_FINAL_PAIR_70_TO_90_ONLY
+TPC308_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC308_CAUSAL_IDENTIFICATION = NONE_FIXED_PREDICTION_ENVELOPE_DIAGNOSTIC_ONLY
+TPC308_FORMAL_INTERVAL_CERTIFICATE = OPEN_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC308_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC308_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC308_FIXED_POWER_CREDIT = 0
+TPC308_FULL_GATE_B = OPEN
+TPC308_TWIN_PRIME_RESULT = NONE
+TPC308_STATUS = PROVED_EXACT_FINITE_HAMMING_COMPLETION_ENVELOPE_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_HOLDOUT_STABILITY_ATLAS
+TPC308_ROUND2_CLUE = TEST_PROFILE_PREFIX_PERTURBATION_AND_COMPLETION_INVARIANCE_ON_THE_SURVIVING_DISCORDANCE_CELLS_BEFORE_ANY_PREFERENCE_CLAIM
+```
+
+## 0.101 previous：TPC-307 common-ambient union-shell holdout
 
 项目：`papers/tpc-307-common-ambient-union-shell-holdout/`
 
