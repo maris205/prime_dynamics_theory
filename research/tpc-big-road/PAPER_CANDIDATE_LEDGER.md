@@ -3,13 +3,70 @@
 
 更新时间：2026-08-29
 
-状态：**TPC305_PROVED_EXACT_FINITE_COUNTERFACTUAL_TARGET_SWAP_PROTOCOL_PLUS_NUMERICALLY_CERTIFIED_FIXED_OPERATOR_TRANSPORTED_LABEL_BUDGET_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC306_PROVED_EXACT_TWO_WAY_LOG_BUDGET_DECOMPOSITION_AND_DOMINANCE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_TARGET_INTERACTION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.99 current：TPC-305 counterfactual transported-label native budget
+## 0.100 current：TPC-306 two-way operator/target interaction
+
+项目：`papers/tpc-306-two-way-operator-target-interaction/`
+
+类型：**PROVED_EXACT_TWO_WAY_LOG_BUDGET_DECOMPOSITION_AND_DOMINANCE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_TARGET_INTERACTION_ATLAS**。
+
+TPC-306 承接 TPC-305 的 fixed-operator transported-label atlas，将四个正 budget cells
+组织为 operator-by-target table。对共同 target switch 定义
+`d_L=log(B_LR/B_LL)`、`d_R=log(B_RR/B_RL)`，并令
+`m=(d_L+d_R)/2`、`i=(d_L-d_R)/2`。严格证明
+`d_L=m+i`、`d_R=m-i` 与 `m^2-i^2=d_Ld_R`，从而同号 row effects 等价于
+target-main dominance，异号 row effects 等价于 operator-interaction dominance；独立
+正 row scaling 不改变这些量。
+
+锁定 TPC-305 的 18 个 cases 后，三种 source normalizer 形成 54 个 derived rows：
+target-main dominance 为 `12/18`，operator-interaction dominance 为 `6/18`，无
+unresolved。中心 `Q=60->70` 为 `5/6` 对 `1/6`，继承的 same-prefix cases 为
+`3/3` target-main。main-dominant rows 的 `|i|/|m|` 全部低于 `0.88`，
+interaction-dominant rows 全部高于 `1.2`。
+
+最强正结果：两行 operator 差异被显式分解，且有限 atlas 在中心 transition 给出清晰
+的 target-main / interaction separation gap。
+
+最强 obstruction：`6/18` cases 为 interaction-dominant（中心仍有 `1/6`），且
+shell-specific off-overlap completion 与不同 physical operator 使该表尚非 common-
+ambient causal intervention。
+
+开放定理：构造 common-ambient union-shell completion 与 operator holdout，检验该
+interaction gap 是否稳定；uniform asymptotic budget、arithmetic `L2`、fixed-power
+credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+可复用结构：`fixed-operator target swap -> four-cell table -> log effects -> exact
+main/interaction identity -> finite dominance atlas`。
+
+ROUND2_CLUE：`TEST_COMMON_AMBIENT_UNION_SHELL_COMPLETIONS_AND_INTERACTION_STABILITY_BEFORE_ANY_GROWING_TARGET_PREFERENCE_CLAIM`。
+
+```text
+TPC306_ROUTE_ADVANCE = YES_SCOPED_TWO_WAY_INTERACTION_DECOMPOSITION
+TPC306_LOG_DECOMPOSITION = PROVED_EXACT_FINITE
+TPC306_SQUARED_DOMINANCE_IDENTITY = PROVED_EXACT_FINITE
+TPC306_ROW_SCALING_INVARIANCE = PROVED_EXACT_FINITE
+TPC306_DECOMPOSITION_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_CASES_54_ROWS
+TPC306_TARGET_MAIN_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_12_OF_18
+TPC306_INTERACTION_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_6_OF_18
+TPC306_MIDDLE_TARGET_MAIN = NUMERICALLY_CERTIFIED_FINITE_5_OF_6
+TPC306_MIDDLE_SAME_PREFIX_TARGET_MAIN = NUMERICALLY_CERTIFIED_FINITE_3_OF_3
+TPC306_RATIO_GAP = NUMERICALLY_CERTIFIED_FINITE_MAIN_LT_0_88_INTERACTION_GT_1_2
+TPC306_CAUSAL_IDENTIFICATION = OPEN_COMMON_AMBIENT_HOLDOUT
+TPC306_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC306_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC306_FIXED_POWER_CREDIT = 0
+TPC306_FULL_GATE_B = OPEN
+TPC306_TWIN_PRIME_RESULT = NONE
+TPC306_STATUS = PROVED_EXACT_TWO_WAY_LOG_BUDGET_DECOMPOSITION_AND_DOMINANCE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_TARGET_INTERACTION_ATLAS
+TPC306_ROUND2_CLUE = TEST_COMMON_AMBIENT_UNION_SHELL_COMPLETIONS_AND_INTERACTION_STABILITY_BEFORE_ANY_GROWING_TARGET_PREFERENCE_CLAIM
+```
+
+## 0.99 previous：TPC-305 counterfactual transported-label native budget
 
 项目：`papers/tpc-305-counterfactual-transported-label-budget/`
 

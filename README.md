@@ -9,7 +9,44 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-305 承接 TPC-304 的 overlap fracture，构造 full-shell
+当前主线状态：TPC-306 承接 TPC-305 的 fixed-operator target swap，把四个正 budget
+cells 排成 `operator x target` 二维表。令
+`d_L=log(B_LR/B_LL)`、`d_R=log(B_RR/B_RL)`，并定义
+`m=(d_L+d_R)/2`、`i=(d_L-d_R)/2`；严格恒等式 `m^2-i^2=d_L*d_R` 将同号 row
+effect 与 target-main dominance、异号 row effect 与 operator-interaction dominance
+精确对应。锁定的 TPC-305 18 个 cases 经三种 normalizer 展开为 54 个 derived rows：
+target-main 为 `12/18`、interaction 为 `6/18`、无 unresolved；中心
+`Q=60→70` 为 `5/6` 对 `1/6`，继承的 same-prefix 为 `3/3` target-main。所有
+main-dominant rows 的 `|i|/|m|<0.88`，interaction-dominant rows 的该比值均 `>1.2`。
+这是 finite two-way interaction diagnostic，不是 causal separation 或 asymptotic
+theorem；common-ambient holdout、uniform budget、arithmetic `L2`、fixed-power
+credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC306_MAXIMUM_CLAIM = PROVED_EXACT_TWO_WAY_LOG_BUDGET_DECOMPOSITION_AND_DOMINANCE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_TARGET_INTERACTION_ATLAS
+TPC306_ROUTE_ADVANCE = YES_SCOPED_TWO_WAY_INTERACTION_DECOMPOSITION
+TPC306_LOG_DECOMPOSITION = PROVED_EXACT_FINITE
+TPC306_SQUARED_DOMINANCE_IDENTITY = PROVED_EXACT_FINITE
+TPC306_ROW_SCALING_INVARIANCE = PROVED_EXACT_FINITE
+TPC306_DECOMPOSITION_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_CASES_54_ROWS
+TPC306_TARGET_MAIN_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_12_OF_18
+TPC306_INTERACTION_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_6_OF_18
+TPC306_MIDDLE_TARGET_MAIN = NUMERICALLY_CERTIFIED_FINITE_5_OF_6
+TPC306_MIDDLE_SAME_PREFIX_TARGET_MAIN = NUMERICALLY_CERTIFIED_FINITE_3_OF_3
+TPC306_RATIO_GAP = NUMERICALLY_CERTIFIED_FINITE_MAIN_LT_0_88_INTERACTION_GT_1_2
+TPC306_CAUSAL_IDENTIFICATION = OPEN_COMMON_AMBIENT_HOLDOUT
+TPC306_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC306_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC306_FIXED_POWER_CREDIT = 0
+TPC306_FULL_GATE_B = OPEN
+TPC306_TWIN_PRIME_RESULT = NONE
+TPC306_STATUS = PROVED_EXACT_TWO_WAY_LOG_BUDGET_DECOMPOSITION_AND_DOMINANCE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_TARGET_INTERACTION_ATLAS
+TPC306_ROUND2_CLUE = TEST_COMMON_AMBIENT_UNION_SHELL_COMPLETIONS_AND_INTERACTION_STABILITY_BEFORE_ANY_GROWING_TARGET_PREFERENCE_CLAIM
+```
+
+`tpc-306-two-way-operator-target-interaction` - `PROVED_EXACT_TWO_WAY_LOG_BUDGET_DECOMPOSITION_AND_DOMINANCE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_TARGET_INTERACTION_ATLAS` - 四格 log decomposition，有限 atlas 为 target-main `12/18`、interaction `6/18`，中心 `5/6`，same-prefix `3/3`。
+
+此前 TPC-305 承接 TPC-304 的 overlap fracture，构造 full-shell
 counterfactual transported target：在相邻 shell 的公共素数上使用最优 global-sign 对齐
 标签，非公共素数保留 native label；随后在每个固定 physical operator 上，以 native
 与 transported 两者的共同可行 profile prefix 重算 native budget。冻结

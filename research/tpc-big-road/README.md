@@ -1,13 +1,53 @@
-# TPC big road V158 / TPC-305: counterfactual transported-label budget
+# TPC big road V159 / TPC-306: two-way operator/target interaction
 
 更新时间：2026-08-29
 
-状态：`TPC305_PROVED_EXACT_FINITE_COUNTERFACTUAL_TARGET_SWAP_PROTOCOL_PLUS_NUMERICALLY_CERTIFIED_FIXED_OPERATOR_TRANSPORTED_LABEL_BUDGET_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC306_PROVED_EXACT_TWO_WAY_LOG_BUDGET_DECOMPOSITION_AND_DOMINANCE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_TARGET_INTERACTION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-305 proof 为
+当前 TPC-306 proof 为
+`bridge_b_tpc306_two_way_operator_target_interaction.md`，checker 为
+`tpc_bridge_b_tpc306_two_way_operator_target_interaction_checker.py`，编号论文为
+`../../papers/tpc-306-two-way-operator-target-interaction/`。
+
+TPC-306 承接 TPC-305 的 fixed-operator transported-label atlas，将四个正 budget cells
+排成 operator-by-target table。定义
+`d_L=log(B_LR/B_LL)`、`d_R=log(B_RR/B_RL)`、
+`m=(d_L+d_R)/2`、`i=(d_L-d_R)/2`，严格得到
+`m^2-i^2=d_Ld_R`；同号 row effects 等价于 target-main dominance，异号 row effects
+等价于 operator-interaction dominance。锁定的 18 个 parent cases 经三种 normalizer
+形成 54 个 derived rows，target-main 为 `12/18`、interaction 为 `6/18`、无 unresolved；
+中间 `Q=60->70` 为 `5/6` 对 `1/6`，same-prefix 为 `3/3`。main-dominant 的
+`|i|/|m|` 全部小于 `0.88`，interaction-dominant 的全部大于 `1.2`。
+这是 finite two-way interaction diagnostic，不是 causal 或 asymptotic theorem；
+common-ambient holdout、uniform budget、arithmetic `L2`、fixed-power credit、full
+Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC306_MAXIMUM_CLAIM = PROVED_EXACT_TWO_WAY_LOG_BUDGET_DECOMPOSITION_AND_DOMINANCE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_TARGET_INTERACTION_ATLAS
+TPC306_ROUTE_ADVANCE = YES_SCOPED_TWO_WAY_INTERACTION_DECOMPOSITION
+TPC306_LOG_DECOMPOSITION = PROVED_EXACT_FINITE
+TPC306_SQUARED_DOMINANCE_IDENTITY = PROVED_EXACT_FINITE
+TPC306_ROW_SCALING_INVARIANCE = PROVED_EXACT_FINITE
+TPC306_DECOMPOSITION_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_CASES_54_ROWS
+TPC306_TARGET_MAIN_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_12_OF_18
+TPC306_INTERACTION_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_6_OF_18
+TPC306_MIDDLE_TARGET_MAIN = NUMERICALLY_CERTIFIED_FINITE_5_OF_6
+TPC306_MIDDLE_SAME_PREFIX_TARGET_MAIN = NUMERICALLY_CERTIFIED_FINITE_3_OF_3
+TPC306_RATIO_GAP = NUMERICALLY_CERTIFIED_FINITE_MAIN_LT_0_88_INTERACTION_GT_1_2
+TPC306_CAUSAL_IDENTIFICATION = OPEN_COMMON_AMBIENT_HOLDOUT
+TPC306_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC306_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC306_FIXED_POWER_CREDIT = 0
+TPC306_FULL_GATE_B = OPEN
+TPC306_TWIN_PRIME_RESULT = NONE
+TPC306_STATUS = PROVED_EXACT_TWO_WAY_LOG_BUDGET_DECOMPOSITION_AND_DOMINANCE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_TARGET_INTERACTION_ATLAS
+TPC306_ROUND2_CLUE = TEST_COMMON_AMBIENT_UNION_SHELL_COMPLETIONS_AND_INTERACTION_STABILITY_BEFORE_ANY_GROWING_TARGET_PREFERENCE_CLAIM
+```
+
+此前 TPC-305 proof 为
 `bridge_b_tpc305_counterfactual_transported_label_budget.md`，checker 为
 `tpc_bridge_b_tpc305_counterfactual_transported_label_budget_checker.py`，编号论文为
 `../../papers/tpc-305-counterfactual-transported-label-budget/`。

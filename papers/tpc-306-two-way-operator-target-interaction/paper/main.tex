@@ -1,0 +1,197 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=0.92in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{proposition}{Proposition}
+\title{Two-Way Log-Budget Decomposition of\
+Prime-Shell Operator Interaction}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{29 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-305 replaced one shell's source-first target by an aligned neighboring
+label while holding that shell's physical operator fixed.  The resulting
+orientation atlas isolated a within-row target comparison but left the
+two-row operator interaction implicit.  We arrange the four positive budget
+cells as an operator-by-target table and define two log target-switch effects.
+Their mean is a target-main contrast $m$, their half-difference is an operator
+interaction contrast $i$, and the exact identity
+$m^2-i^2=d_Ld_R$ gives a strict dominance test.  Replaying all 18 TPC-305
+cases at three source normalizers yields 54 derived rows: target-main
+dominance occurs in 12 of 18 cases and interaction dominance in 6 of 18, with
+no unresolved case.  At the central $Q=60\to70$ fracture the split is 5/6
+versus 1/6, and all three inherited same-prefix cases are target-main
+dominant.  The finite diagnostic quantifies, but does not remove, the
+common-ambient and causal-identification obstruction.
+\end{abstract}
+
+\section{From a target swap to a two-way table}
+
+TPC-305 is the immediate predecessor of this report \cite{tpc305}.  It holds each physical
+shell/operator fixed, changes the target only on an overlap using the aligned
+neighboring sign label, and retains the native sign off the overlap.  On the
+fixed $(N,H,z)=(512,58,5)$ spine with $Q=50,60,70,90$, it finds five of six
+central cases in which the right-neighbor target is cheaper on both fixed
+operators.  That statement is useful, but two operators still have different
+physical output rows.  A single orientation label therefore hides an
+interaction between operator identity and target identity.
+
+We retain exactly the TPC-305 finite data: two kernel exponents, three
+relative RMS tolerances, three adjacent shell pairs, and three positive source
+normalizers.  No new shell or asymptotic regime is introduced.  For one pair,
+write the four normalized budget cells as
+\[
+\begin{array}{c|cc}
+ & \text{left target} & \text{right target}\\ \hline
+\text{left operator} & B_{LL} & B_{LR}\\
+\text{right operator} & B_{RL} & B_{RR}
+\end{array}                                                     \tag{1}
+\]
+Here ``left target'' means the native left label on the left row and its
+aligned transported completion on the right row; ``right target'' has the
+opposite completion.  Thus (1) is a protocol-level holdout table, with the
+same shell-specific completion convention as TPC-305.
+
+\section{Effects and exact decomposition}
+
+The common intervention is the target switch left $\to$ right.  Its row-wise
+log effects are
+\[
+ d_L=\log\frac{B_{LR}}{B_{LL}},\qquad
+ d_R=\log\frac{B_{RR}}{B_{RL}}.                                  \tag{2}
+\]
+TPC-305 recorded $R_L=B_{LR}/B_{LL}$ and
+$R_R=B_{RL}/B_{RR}$, so $d_L=\log R_L$ and $d_R=-\log R_R$.  Define
+\[
+ m=\frac{d_L+d_R}{2},\qquad
+ i=\frac{d_L-d_R}{2},\qquad
+ q=\frac{|i|}{|m|}.                                               \tag{3}
+\]
+The quantity $m$ measures the target-switch effect averaged over the two
+operator rows; $i$ measures how much that effect changes between rows.
+
+\begin{proposition}[Two-way squared-contrast identity]
+For positive cells in (1),
+\[
+ d_L=m+i,\qquad d_R=m-i,\qquad m^2-i^2=d_Ld_R.                   \tag{4}
+\]
+If both row effects are nonzero, equal signs are equivalent to $|m|>|i|$,
+and opposite signs are equivalent to $|i|>|m|$.
+\end{proposition}
+\begin{proof}
+Adding and subtracting (3) gives the first two identities.  Expanding the
+difference of squares gives
+\[
+ m^2-i^2=\frac{(d_L+d_R)^2-(d_L-d_R)^2}{4}=d_Ld_R.
+\]
+The product on the right is positive exactly for equal nonzero signs and
+negative exactly for opposite signs.  Taking square roots gives the two strict
+inequalities.
+\end{proof}
+
+\begin{proposition}[Row-normalization invariance]
+Independent positive rescalings of the two rows of (1) leave $d_L,d_R,m,i$
+and $q$ unchanged.
+\end{proposition}
+\begin{proof}
+Multiplying both cells in one row by the same positive factor cancels in its
+ratio in (2).  Apply this separately to the two rows.
+\end{proof}
+
+We call $|m|>|i|$ target-main dominance and $|i|>|m|$ interaction dominance.
+The sign of the two effects distinguishes the right-neighbor and left-neighbor
+main preferences.  This terminology is algebraic; it is not a causal claim.
+
+\section{Finite certificate}
+
+The producer reads the locked TPC-305 ratio intervals and applies 80-digit
+logarithmic interval arithmetic with a padding of $10^{-30}$.  The independent
+checker does not import this producer: it replays the logarithms with
+100-digit Decimal arithmetic, verifies all 54 enclosures, checks (4) on the
+printed centers, and reconstructs the case census.  A stress suite exhausts
+625 positive four-cell tables and independent positive row scalings.
+
+Table~\ref{tab:pair} gives the case-level result.  A main-dominant case has
+same-sign row effects; an interaction-dominant case has opposite signs.
+
+\begin{table}[t]
+\centering\small
+\caption{Two-way dominance census over six cases per transition.}
+\label{tab:pair}
+\begin{tabular}{c c c c}
+\toprule
+transition & target-main & interaction & same-prefix main\\
+\midrule
+$50\to60$ & 4 & 2 & 0\\
+$60\to70$ & 5 & 1 & 3\\
+$70\to90$ & 3 & 3 & 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The central six rows are displayed in Table~\ref{tab:central}.  The numbers
+are interval centers; the certificate stores 38-digit endpoints.  The three
+normalizers agree on every strict class.
+
+\begin{table}[t]
+\centering\small
+\caption{Central log effects and contrasts (interval centers).}
+\label{tab:central}
+\begin{tabular}{c c r r r l}
+\toprule
+$e$ & $\tau$ & $m$ & $i$ & $q$ & dominant term\\
+\midrule
+1 & .25 & $-.203481$ & $.500980$ & $2.46205$ & interaction\\
+1 & .50 & $-.209604$ & $-.133643$ & $.637596$ & target-main\\
+1 & .75 & $-1.27333$ & $-.629188$ & $.494130$ & target-main\\
+2 & .25 & $-1.22433$ & $-1.07622$ & $.879029$ & target-main\\
+2 & .50 & $-2.20188$ & $-.636939$ & $.289271$ & target-main\\
+2 & .75 & $-3.19790$ & $-1.85187$ & $.579089$ & target-main\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Across all 36 target-main normalizer rows, the upper endpoint of $q$ is below
+$0.88$.  Across all 18 interaction-dominant normalizer rows, the lower
+endpoint is above $1.2$.  For the three central same-prefix cases the maximum
+upper endpoint is below $0.64$.  Thus the finite atlas has a visible gap
+between the two algebraic regimes rather than a borderline classification.
+
+\section{What this does and does not identify}
+
+The positive result is a compact interaction diagnostic.  TPC-305's central
+five-of-six right-label signal is exactly the five-of-six target-main regime
+in the table, and the same-prefix parent descents remain target-main dominant.
+The identity (4) explains why: both row-wise target effects have the same
+sign, so their mean is larger in magnitude than their half-difference.
+
+The obstruction is not erased.  Six cases have opposite-sign row effects, so
+operator interaction is larger than the mean target contrast; one of these is
+at the central fracture and three occur on the final transition.  Moreover,
+the right and left targets in (1) use native off-overlap completions specific
+to their row.  Consequently the table is not a balanced intervention on a
+single common ambient target vector.  A common union-shell completion and an
+operator holdout are required before interpreting $m$ as a causal effect.
+
+The decomposition also supplies no arithmetic $L^2$ estimate, fixed power
+saving, full Route-B Gate-B theorem, or twin-prime result.  The Session-named
+Route-A/Route-B evaluator files are absent from this checkout, so the claim
+level is the local fail-closed level recorded in the route-evaluation note.
+
+\section*{Reproducibility and next question}
+
+The canonical certificate is
+\texttt{results/tpc306\_certificate.json}.  The producer, independent checker,
+stress suite, and Bridge-B checker are included with the project.  The next
+minimal question is whether the dominance gap survives a common-ambient
+union-shell completion and alternative off-overlap transports.  No claim is
+made that the finite orientation persists as $Q$ or $N$ grows.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

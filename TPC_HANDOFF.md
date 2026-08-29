@@ -1,7 +1,61 @@
 # TPC HANDOFF
 
 更新时间：2026-08-29
-交接状态：`BOLD_CHANNEL_V158_TPC305_COUNTERFACTUAL_TRANSPORTED_LABEL_BUDGET_RELEASED`
+交接状态：`BOLD_CHANNEL_V159_TPC306_TWO_WAY_OPERATOR_TARGET_INTERACTION_RELEASED`
+
+TPC-306 current section: two-way operator/target interaction decomposition
+-----------------------------------------------------------------------------------------------
+
+TPC-306 is the direct structural continuation of TPC-305.  It arranges the
+four positive budget cells as an operator-by-target table,
+`(B_LL,B_LR; B_RL,B_RR)`, and uses the common target switch to define
+`d_L=log(B_LR/B_LL)` and `d_R=log(B_RR/B_RL)`.  The mean
+`m=(d_L+d_R)/2` is the target-main contrast and the half-difference
+`i=(d_L-d_R)/2` is the operator-interaction contrast.  The exact identity
+`m^2-i^2=d_Ld_R` gives the strict same-sign/opposite-sign dominance criterion;
+independent positive row scaling is invariant.
+
+The parent-locked finite atlas has 18 cases and 54 derived normalizer rows.
+Target-main dominance occurs in `12/18` cases and operator-interaction
+dominance in `6/18`, with no unresolved case.  At the central `Q=60->70`
+transition the split is `5/6` versus `1/6`; all `3/3` inherited same-prefix
+cases are target-main dominant.  The finite ratio margins are `|i|/|m|<0.88`
+for every main-dominant row and `>1.2` for every interaction-dominant row.
+
+This is a finite algebraic interaction diagnostic, not a causal intervention:
+the two rows still use different physical operators and shell-specific
+off-overlap completions.  Common-ambient holdout, uniform asymptotic budget,
+arithmetic `L2`, fixed-power credit, full Gate B, and a twin-prime conclusion
+remain OPEN/NONE.  The Session-named Route-A/Route-B evaluator files are absent
+from this checkout, so no official evaluator pass is asserted.
+
+```text
+TPC306_MAXIMUM_CLAIM = PROVED_EXACT_TWO_WAY_LOG_BUDGET_DECOMPOSITION_AND_DOMINANCE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_TARGET_INTERACTION_ATLAS
+TPC306_ROUTE_ADVANCE = YES_SCOPED_TWO_WAY_INTERACTION_DECOMPOSITION
+TPC306_LOG_DECOMPOSITION = PROVED_EXACT_FINITE
+TPC306_SQUARED_DOMINANCE_IDENTITY = PROVED_EXACT_FINITE
+TPC306_ROW_SCALING_INVARIANCE = PROVED_EXACT_FINITE
+TPC306_DECOMPOSITION_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_CASES_54_ROWS
+TPC306_TARGET_MAIN_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_12_OF_18
+TPC306_INTERACTION_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_6_OF_18
+TPC306_MIDDLE_TARGET_MAIN = NUMERICALLY_CERTIFIED_FINITE_5_OF_6
+TPC306_MIDDLE_SAME_PREFIX_TARGET_MAIN = NUMERICALLY_CERTIFIED_FINITE_3_OF_3
+TPC306_RATIO_GAP = NUMERICALLY_CERTIFIED_FINITE_MAIN_LT_0_88_INTERACTION_GT_1_2
+TPC306_CAUSAL_IDENTIFICATION = OPEN_COMMON_AMBIENT_HOLDOUT
+TPC306_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC306_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC306_FIXED_POWER_CREDIT = 0
+TPC306_FULL_GATE_B = OPEN
+TPC306_TWIN_PRIME_RESULT = NONE
+TPC306_STATUS = PROVED_EXACT_TWO_WAY_LOG_BUDGET_DECOMPOSITION_AND_DOMINANCE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_TARGET_INTERACTION_ATLAS
+TPC306_ROUND2_CLUE = TEST_COMMON_AMBIENT_UNION_SHELL_COMPLETIONS_AND_INTERACTION_STABILITY_BEFORE_ANY_GROWING_TARGET_PREFERENCE_CLAIM
+```
+
+The strongest positive result is the exact two-way decomposition with a clear
+finite separation gap.  The strongest obstruction is the `6/18`
+interaction-dominant set, including one central case, so the TPC-305 target
+orientation cannot be interpreted causally yet.  The next minimal question is
+a common-ambient union-shell completion with an operator holdout.
 
 TPC-305 current section: counterfactual transported-label native budget
 -----------------------------------------------------------------------------------------------
@@ -10150,18 +10204,18 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V158/TPC-305 是当前 release；其 producer、independent replay、stress audit 与
+V159/TPC-306 是当前 release；其 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
-当前 curated cascade command set 共 241 对 normal/optimized 命令、482 次
+当前 curated cascade command set 共 245 对 normal/optimized 命令、490 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
 TPC-288 再追加末尾 4 对，TPC-289 再追加末尾 4 对，TPC-290 再追加末尾 4 对，
 TPC-291 再追加末尾 4 对，TPC-292 再追加末尾 4 对，TPC-293 再追加末尾 4 对，
 TPC-294 再追加末尾 4 对，TPC-295 再追加末尾 4 对，TPC-296 再追加末尾 4 对，
-TPC-297 再追加末尾 4 对，TPC-298 再追加末尾 4 对，TPC-299 再追加末尾 4 对，TPC-300 再追加末尾 4 对，TPC-301 再追加末尾 4 对，TPC-302 再追加末尾 4 对，TPC-303 再追加末尾 4 对，TPC-304 再追加末尾 4 对，TPC-305 再追加末尾 4 对。V158/TPC-305 的 241 对
+TPC-297 再追加末尾 4 对，TPC-298 再追加末尾 4 对，TPC-299 再追加末尾 4 对，TPC-300 再追加末尾 4 对，TPC-301 再追加末尾 4 对，TPC-302 再追加末尾 4 对，TPC-303 再追加末尾 4 对，TPC-304 再追加末尾 4 对，TPC-305 再追加末尾 4 对，TPC-306 再追加末尾 4 对。V159/TPC-306 的 245 对
 registry 已完成增量回归；TPC-289 新增的 4 对已由本项目 bridge 与 standalone tail
 checks 逐项通过；TPC-290、TPC-291、TPC-292 的各 4 对均由各自 bridge 与 standalone
 tail checks 逐项通过；TPC-293 的 4 对也由本项目 bridge 与 standalone tail checks
@@ -10171,7 +10225,7 @@ TPC-295 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过�
 bridge 与 standalone tail checks 逐项通过；TPC-298 的 4 对亦由本项目 bridge 与
 standalone tail checks 逐项通过；TPC-299 的 4 对亦由本项目 bridge 与 standalone
 tail checks 逐项通过；TPC-300 的 4 对亦由本项目 bridge 与 standalone tail
-checks 逐项通过；TPC-301 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-302 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-303 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-304 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-305 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过。完整 241 对组合未因
+checks 逐项通过；TPC-301 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-302 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-303 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-304 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-305 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-306 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过。完整 245 对组合未因
 重复计算而再次运行。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
@@ -10789,6 +10843,19 @@ python -B research/tpc-big-road/tpc_bridge_b_tpc305_counterfactual_transported_l
 python -O -B research/tpc-big-road/tpc_bridge_b_tpc305_counterfactual_transported_label_budget_checker.py --check
 ```
 
+TPC-306 的项目级 producer、independent replay、interaction stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-306-two-way-operator-target-interaction/code/tpc306_two_way_operator_target_interaction.py --check
+python -O -B papers/tpc-306-two-way-operator-target-interaction/code/tpc306_two_way_operator_target_interaction.py --check
+python -B papers/tpc-306-two-way-operator-target-interaction/experiments/tpc306_independent_checker.py
+python -O -B papers/tpc-306-two-way-operator-target-interaction/experiments/tpc306_independent_checker.py
+python -B papers/tpc-306-two-way-operator-target-interaction/experiments/tpc306_interaction_stress.py
+python -O -B papers/tpc-306-two-way-operator-target-interaction/experiments/tpc306_interaction_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc306_two_way_operator_target_interaction_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc306_two_way_operator_target_interaction_checker.py --check
+```
+
 此前 TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
 
 ```bash
@@ -10830,7 +10897,18 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-最新 TPC-305 入口：
+最新 TPC-306 入口：
+
+```text
+papers/tpc-306-two-way-operator-target-interaction/README.md
+papers/tpc-306-two-way-operator-target-interaction/PROOF_PACKAGE.md
+papers/tpc-306-two-way-operator-target-interaction/notes/theorem_ledger.md
+papers/tpc-306-two-way-operator-target-interaction/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc306_two_way_operator_target_interaction.md
+research/tpc-big-road/tpc_bridge_b_tpc306_two_way_operator_target_interaction_checker.py
+```
+
+此前 TPC-305 入口：
 
 ```text
 papers/tpc-305-counterfactual-transported-label-budget/README.md

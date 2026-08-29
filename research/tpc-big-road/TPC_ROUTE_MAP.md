@@ -2,38 +2,44 @@
 
 更新时间：2026-08-29
 
-当前地图版本：V158 / TPC-305
+当前地图版本：V159 / TPC-306
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-305`（`PROVED_EXACT_FINITE_COUNTERFACTUAL_TARGET_SWAP_PROTOCOL_PLUS_NUMERICALLY_CERTIFIED_FIXED_OPERATOR_TRANSPORTED_LABEL_BUDGET_ATLAS`）；
+当前编号锚点：`TPC-306`（`PROVED_EXACT_TWO_WAY_LOG_BUDGET_DECOMPOSITION_AND_DOMINANCE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_TARGET_INTERACTION_ATLAS`）；
 对应论文目录为
-`papers/tpc-305-counterfactual-transported-label-budget/`。
+`papers/tpc-306-two-way-operator-target-interaction/`。
 
-TPC-305 是当前地图位置：承接 TPC-304 的 overlap fracture，在每个 full physical
-shell/operator 内只替换 target：公共素数上采用 optimally aligned neighboring label，
-off-overlap 保留 native label，再在 native/transported 两者的共同 feasible profile
-prefix 上重算 constrained budget。18 个 target-swap cases、36 个 fixed-operator
-tables 在三种 normalization 下均有严格一致的 orientation；中心 `Q=60->70` 为
-right-label-cheaper `5/6`、home `1/6`，且 TPC-303 的 same-prefix `3/3` 全为 right。
-这是 finite partial counterfactual control，不是 causal separation 或 asymptotic
-theorem；operator interaction、uniform budget growth、arithmetic `L2`、full Gate B
-与 twin-prime endpoint 仍开放。
+TPC-306 是当前地图位置：承接 TPC-305 的 fixed-operator transported-label atlas，
+把四个正 budget cells 排成 operator-by-target table。定义
+`d_L=log(B_LR/B_LL)`、`d_R=log(B_RR/B_RL)`、`m=(d_L+d_R)/2` 与
+`i=(d_L-d_R)/2`，严格得到 `m^2-i^2=d_Ld_R`；同号 row effects 等价于 target-main
+dominance，异号 row effects 等价于 operator-interaction dominance。18 个 parent cases
+经三种 normalization 形成 54 个 derived rows：target-main `12/18`、interaction
+`6/18`、0 unresolved；中心 `Q=60->70` 为 `5/6` 对 `1/6`，same-prefix 为 `3/3`。
+main-dominant 的 `|i|/|m|` 全部 `<0.88`，interaction-dominant 的全部 `>1.2`。
+这是 finite two-way interaction diagnostic，不是 causal separation 或 asymptotic
+theorem；common-ambient holdout、uniform budget growth、arithmetic `L2`、fixed-power
+credit、full Gate B 与 twin-prime endpoint 仍开放。
 
 ```text
-TPC305_ROUTE_ADVANCE = YES_SCOPED_COUNTERFACTUAL_TARGET_CONTROL
-TPC305_FIXED_OPERATOR_TARGET_SWAP = PROVED_EXACT_FINITE
-TPC305_COUNTERFACTUAL_BUDGET_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_CASES_36_TABLES
-TPC305_MIDDLE_TARGET_ORIENTATION = NUMERICALLY_CERTIFIED_FINITE_RIGHT_LABEL_CHEAPER_5_OF_6
-TPC305_MIDDLE_SAME_PREFIX_ORIENTATION = NUMERICALLY_CERTIFIED_FINITE_RIGHT_LABEL_CHEAPER_3_OF_3
-TPC305_CAUSAL_SEPARATION = PARTIAL_COUNTERFACTUAL_ONLY
-TPC305_OPERATOR_INTERACTION_TERM = OPEN
-TPC305_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
-TPC305_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
-TPC305_FIXED_POWER_CREDIT = 0
-TPC305_FULL_GATE_B = OPEN
-TPC305_TWIN_PRIME_RESULT = NONE
-TPC305_ROUND2_CLUE = TEST_TWO_WAY_OPERATOR_HOLDOUT_AND_INTERACTION_TERM_BEFORE_ANY_CAUSAL_TARGET_OPERATOR_CLAIM
+TPC306_ROUTE_ADVANCE = YES_SCOPED_TWO_WAY_INTERACTION_DECOMPOSITION
+TPC306_LOG_DECOMPOSITION = PROVED_EXACT_FINITE
+TPC306_SQUARED_DOMINANCE_IDENTITY = PROVED_EXACT_FINITE
+TPC306_ROW_SCALING_INVARIANCE = PROVED_EXACT_FINITE
+TPC306_DECOMPOSITION_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_CASES_54_ROWS
+TPC306_TARGET_MAIN_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_12_OF_18
+TPC306_INTERACTION_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_6_OF_18
+TPC306_MIDDLE_TARGET_MAIN = NUMERICALLY_CERTIFIED_FINITE_5_OF_6
+TPC306_MIDDLE_SAME_PREFIX_TARGET_MAIN = NUMERICALLY_CERTIFIED_FINITE_3_OF_3
+TPC306_RATIO_GAP = NUMERICALLY_CERTIFIED_FINITE_MAIN_LT_0_88_INTERACTION_GT_1_2
+TPC306_CAUSAL_IDENTIFICATION = OPEN_COMMON_AMBIENT_HOLDOUT
+TPC306_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC306_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC306_FIXED_POWER_CREDIT = 0
+TPC306_FULL_GATE_B = OPEN
+TPC306_TWIN_PRIME_RESULT = NONE
+TPC306_ROUND2_CLUE = TEST_COMMON_AMBIENT_UNION_SHELL_COMPLETIONS_AND_INTERACTION_STABILITY_BEFORE_ANY_GROWING_TARGET_PREFERENCE_CLAIM
 ```
 
 TPC-304 是上一位置：它把相邻 moving shells 限制到公共素数、消除 global-sign gauge，
@@ -374,8 +380,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V158 / TPC-305
-MAP_LABEL = FIXED-OPERATOR COUNTERFACTUAL TARGET CONTROL / OPERATOR-INTERACTION OPEN GATE
+YOU ARE HERE = V159 / TPC-306
+MAP_LABEL = TWO-WAY OPERATOR/TARGET INTERACTION DECOMPOSITION / COMMON-AMBIENT HOLDOUT OPEN
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -611,6 +617,44 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.100 V159 / TPC-306：two-way operator/target interaction
+
+TPC-306 是 TPC-305 的最小结构延续。它把固定 operator 上 native/transported target
+产生的四个正 budget cells 写成二维表：左/右 operator 为行，left/right target 为列。
+对共同 target switch 定义 `d_L=log(B_LR/B_LL)`、`d_R=log(B_RR/B_RL)`，并以
+`m=(d_L+d_R)/2`、`i=(d_L-d_R)/2` 分离 target-main 与 operator interaction。
+严格恒等式 `m^2-i^2=d_Ld_R` 给出同号/异号 effects 的精确 dominance criterion，且
+独立正 row scaling 不改变分解。
+
+锁定 TPC-305 的 18 cases、三种 normalizer 后，共有 54 个 decomposition rows：
+target-main `12/18`、interaction `6/18`、无 unresolved。中间 `Q=60->70` 为
+`5/6` 对 `1/6`，same-prefix 为 `3/3`；finite ratio atlas 给出 main `<0.88`
+与 interaction `>1.2` 的间隔。这是 finite interaction diagnostic，不是 common-
+ambient causal theorem，也没有提供 arithmetic `L2`、fixed-power credit、full
+Gate B 或 twin-prime conclusion。下一步是 common ambient union-shell completion
+与 interaction stability audit。
+
+```text
+TPC306_ROUTE_ADVANCE = YES_SCOPED_TWO_WAY_INTERACTION_DECOMPOSITION
+TPC306_LOG_DECOMPOSITION = PROVED_EXACT_FINITE
+TPC306_SQUARED_DOMINANCE_IDENTITY = PROVED_EXACT_FINITE
+TPC306_ROW_SCALING_INVARIANCE = PROVED_EXACT_FINITE
+TPC306_DECOMPOSITION_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_CASES_54_ROWS
+TPC306_TARGET_MAIN_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_12_OF_18
+TPC306_INTERACTION_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_6_OF_18
+TPC306_MIDDLE_TARGET_MAIN = NUMERICALLY_CERTIFIED_FINITE_5_OF_6
+TPC306_MIDDLE_SAME_PREFIX_TARGET_MAIN = NUMERICALLY_CERTIFIED_FINITE_3_OF_3
+TPC306_RATIO_GAP = NUMERICALLY_CERTIFIED_FINITE_MAIN_LT_0_88_INTERACTION_GT_1_2
+TPC306_CAUSAL_IDENTIFICATION = OPEN_COMMON_AMBIENT_HOLDOUT
+TPC306_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC306_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC306_FIXED_POWER_CREDIT = 0
+TPC306_FULL_GATE_B = OPEN
+TPC306_TWIN_PRIME_RESULT = NONE
+TPC306_STATUS = PROVED_EXACT_TWO_WAY_LOG_BUDGET_DECOMPOSITION_AND_DOMINANCE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_TARGET_INTERACTION_ATLAS
+TPC306_ROUND2_CLUE = TEST_COMMON_AMBIENT_UNION_SHELL_COMPLETIONS_AND_INTERACTION_STABILITY_BEFORE_ANY_GROWING_TARGET_PREFERENCE_CLAIM
+```
 
 ## 5.99 V158 / TPC-305：counterfactual transported-label native budget
 
@@ -1956,9 +2000,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V154 / TPC-301                    |
-        | BUDGET-GAP ROBUSTNESS AUDIT                    |
-        | tolerance / common-prefix / normalization     |
+        | YOU ARE HERE — V159 / TPC-306                    |
+        | TWO-WAY OPERATOR/TARGET INTERACTION           |
+        | four-cell log decomposition / holdout open   |
         +--------------------------------------------------+
                 |
                 v
@@ -6991,6 +7035,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-29 | V159 / TPC-306 | Bridge A / Gate B：two-way operator/target interaction decomposition 已完成；common-ambient holdout、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-306` | 四格 operator-by-target table、精确 `m^2-i^2=d_Ld_R` identity 与 row-scaling invariance；18 cases / 54 derived rows 中 target-main `12/18`、interaction `6/18`，中心 `5/6`、same-prefix `3/3`，下一步为 common-ambient union-shell completion 与 interaction stability |
 | 2026-08-29 | V158 / TPC-305 | Bridge A / Gate B：fixed-operator counterfactual target control 已完成；operator interaction、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-305` | 18 个 target-swap cases、36 个 operator tables；中心 `Q=60->70` 的 right-label-cheaper orientation 为 `5/6`，same-prefix 为 `3/3`；外侧 orientation 为 `(left=4,cross=2)` 与 `(left=3,cross=1,home=2)`；下一步为 two-way operator holdout 与 interaction contrast |
 | 2026-08-29 | V157 / TPC-304 | Bridge A / Gate B：overlapping-shell sign-label transport 已把 fixed-source budget descent 定位到唯一低相关 transition；causal target/operator separation、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-304` | 六个 transport rows，三组 mean aligned correlation `1/2,1/11,1/2`；`Q=60->70` 为 2/2 exponent fracture，并承载 budget descents `15/18` 与全部 same-prefix descents `9/9`；下一步为 counterfactual transported-label budgets |
 | 2026-08-29 | V156 / TPC-303 | Bridge A / Gate B：固定 source spine 上的 cardinality-only native weighted-budget monotonicity 已被 scoped finite obstruction 否定；uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-303` | `(N,H,z)=(512,58,5)`、`Q=50,60,70,90` 上 54 个 adjacent transitions 中 21 descent、33 ascent、0 unresolved；18/18 series nonmonotone，9 个 same-prefix descent，最大同前缀 contraction `<0.284422`；下一步为 overlapping-shell sign-label transport |
