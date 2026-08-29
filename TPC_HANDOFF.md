@@ -1,7 +1,57 @@
 # TPC HANDOFF
 
 更新时间：2026-08-29
-交接状态：`BOLD_CHANNEL_V154_TPC301_BUDGET_GAP_ROBUSTNESS_AUDIT_RELEASED`
+交接状态：`BOLD_CHANNEL_V155_TPC302_GROWING_SHELL_BUDGET_GAP_AUDIT_RELEASED`
+
+TPC-302 current section: source-first growing-shell budget-gap stability
+-----------------------------------------------------------------------------------------------
+
+TPC-302 is the source-first growing-grid continuation of TPC-301.  It keeps
+the relative RMS ladder `1/4,1/2,3/4`, common-prefix comparison, and three
+source normalizations, but moves from TPC-301's 18 inherited rows to the full
+34-row TPC-288 growth/control grid.  On every row it rebuilds the literal
+physical output Gram and exhaustively compiles the equal-sign weighted target;
+no old 18-row target label is substituted.  The explicit shell target census
+is 430, while the inherited parent metadata's 1,380-edge count remains a
+separate field.
+
+The 612 finite frontier cases show common-prefix weighted/positive gap above
+10 on all 34 rows at all three tolerances.  The minima are `85.3203517096`,
+`38.2186652435`, and `39.2637006403`.  The common weighted budget exceeds
+`1e-5` in all 102 row--tolerance cases under each of the three source
+normalizers.  The exact layer proves Gram PSD, global-sign reduction,
+exhaustive finite enumeration, budget monotonicity, and common-prefix
+normalization cancellation.
+
+```text
+TPC302_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_SOURCE_FIRST_SIGN_ENUMERATION_AND_BUDGET_MONOTONICITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_GRID_AUDIT
+TPC302_ROUTE_ADVANCE = YES_SCOPED_FINITE_GROWING_GRID_SOURCE_FIRST_EXTENSION
+TPC302_SOURCE_FIRST_SIGN_ENUMERATION = PROVED_EXACT_FINITE
+TPC302_PHYSICAL_GRAM_PSD = PROVED_EXACT_FINITE
+TPC302_BUDGET_MONOTONICITY = PROVED_EXACT_FINITE
+TPC302_COMMON_GAP_TAU_025 = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10
+TPC302_COMMON_GAP_TAU_050 = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10
+TPC302_COMMON_GAP_TAU_075 = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10
+TPC302_FULL_GAP_TAU_075 = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10
+TPC302_SOURCE_FIRST_LABELS = NUMERICALLY_CERTIFIED_FINITE_34_OF_34
+TPC302_COMMON_BUDGET_FLOOR = NUMERICALLY_CERTIFIED_FINITE_102_OF_102_PER_NORMALIZATION
+TPC302_EXPLICIT_SHELL_TARGET_COUNT = 430
+TPC302_INHERITED_GRID_EDGE_COUNT = 1380
+TPC302_UNIFORM_GROWING_PROFILE_BUDGET = OPEN
+TPC302_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC302_FIXED_POWER_CREDIT = 0
+TPC302_FULL_GATE_B = OPEN
+TPC302_TWIN_PRIME_RESULT = NONE
+TPC302_STATUS = PROVED_EXACT_FINITE_SOURCE_FIRST_SIGN_ENUMERATION_AND_BUDGET_MONOTONICITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_GRID_AUDIT
+TPC302_ROUND2_CLUE = TEST_UNIFORM_NATIVE_BUDGET_GROWTH_OR_CONSTRUCT_A_GROWING_SHELL_COUNTEREXAMPLE
+```
+
+The strongest positive result is the source-first finite stability itself.
+The strongest obstruction is that it still supplies no uniform profile-budget
+growth or arithmetic `L2` credit.  The next natural project is therefore a
+direct growth-law audit, followed by an adversarial collapse search if the
+finite trend is not monotone.  The Session-named Route-A/Route-B evaluator
+files remain absent from this checkout; no official evaluator pass is claimed.
 
 TPC-301 current section: tolerance and source-normalization robustness
 -----------------------------------------------------------------------------------------------
@@ -9962,18 +10012,18 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V154/TPC-301 是当前 release；其 producer、independent replay、stress audit 与
+V155/TPC-302 是当前 release；其 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
-当前 curated cascade command set 共 225 对 normal/optimized 命令、450 次
+当前 curated cascade command set 共 229 对 normal/optimized 命令、458 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
 TPC-288 再追加末尾 4 对，TPC-289 再追加末尾 4 对，TPC-290 再追加末尾 4 对，
 TPC-291 再追加末尾 4 对，TPC-292 再追加末尾 4 对，TPC-293 再追加末尾 4 对，
 TPC-294 再追加末尾 4 对，TPC-295 再追加末尾 4 对，TPC-296 再追加末尾 4 对，
-TPC-297 再追加末尾 4 对，TPC-298 再追加末尾 4 对，TPC-299 再追加末尾 4 对，TPC-300 再追加末尾 4 对，TPC-301 再追加末尾 4 对。V154/TPC-301 的 225 对
+TPC-297 再追加末尾 4 对，TPC-298 再追加末尾 4 对，TPC-299 再追加末尾 4 对，TPC-300 再追加末尾 4 对，TPC-301 再追加末尾 4 对，TPC-302 再追加末尾 4 对。V155/TPC-302 的 229 对
 registry 已完成增量回归；TPC-289 新增的 4 对已由本项目 bridge 与 standalone tail
 checks 逐项通过；TPC-290、TPC-291、TPC-292 的各 4 对均由各自 bridge 与 standalone
 tail checks 逐项通过；TPC-293 的 4 对也由本项目 bridge 与 standalone tail checks
@@ -9983,7 +10033,7 @@ TPC-295 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过�
 bridge 与 standalone tail checks 逐项通过；TPC-298 的 4 对亦由本项目 bridge 与
 standalone tail checks 逐项通过；TPC-299 的 4 对亦由本项目 bridge 与 standalone
 tail checks 逐项通过；TPC-300 的 4 对亦由本项目 bridge 与 standalone tail
-checks 逐项通过；TPC-301 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过。完整 225 对组合未因
+checks 逐项通过；TPC-301 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-302 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过。完整 229 对组合未因
 重复计算而再次运行。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
@@ -10549,6 +10599,19 @@ python -B research/tpc-big-road/tpc_bridge_b_tpc301_budget_gap_robustness_audit_
 python -O -B research/tpc-big-road/tpc_bridge_b_tpc301_budget_gap_robustness_audit_checker.py --check
 ```
 
+TPC-302 的项目级 producer、independent source-first replay、stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-302-growing-shell-budget-gap-audit/code/tpc302_growing_shell_budget_gap_audit.py --check
+python -O -B papers/tpc-302-growing-shell-budget-gap-audit/code/tpc302_growing_shell_budget_gap_audit.py --check
+python -B papers/tpc-302-growing-shell-budget-gap-audit/experiments/tpc302_independent_checker.py
+python -O -B papers/tpc-302-growing-shell-budget-gap-audit/experiments/tpc302_independent_checker.py
+python -B papers/tpc-302-growing-shell-budget-gap-audit/experiments/tpc302_stress.py
+python -O -B papers/tpc-302-growing-shell-budget-gap-audit/experiments/tpc302_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc302_growing_shell_budget_gap_audit_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc302_growing_shell_budget_gap_audit_checker.py --check
+```
+
 此前 TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
 
 ```bash
@@ -10590,7 +10653,18 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-最新 TPC-301 入口：
+最新 TPC-302 入口：
+
+```text
+papers/tpc-302-growing-shell-budget-gap-audit/README.md
+papers/tpc-302-growing-shell-budget-gap-audit/PROOF_PACKAGE.md
+papers/tpc-302-growing-shell-budget-gap-audit/notes/theorem_ledger.md
+papers/tpc-302-growing-shell-budget-gap-audit/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc302_growing_shell_budget_gap_audit.md
+research/tpc-big-road/tpc_bridge_b_tpc302_growing_shell_budget_gap_audit_checker.py
+```
+
+此前 TPC-301 入口：
 
 ```text
 papers/tpc-301-budget-gap-robustness-audit/README.md

@@ -9,15 +9,39 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-301 承接 TPC-300，做 tolerance/common-prefix/source-normalization
-hostile audit。对 `tau=1/4,1/2,3/4`，weighted 与 all-positive target 在同一个
-weighted-selected prefix 上比较；common-prefix gap 的最小值分别为 `155.1685`、
-`69.9448`、`39.2637`，18/18 rows 在三个容差均超过 10。54 个 row-tolerance cases
-在 `||beta||^2`、`tr(M_k)/k`、first-profile energy 三种源归一化下的 weighted budget
-均超过 `3e-5`；54 个 common-prefix normalization checks 与 36 个 full-prefix
-tolerance checks 全部通过。实际显式 shell target 数为 219；父级 inherited grid count
-1,380 单独记录。该结果是 finite robustness certificate，growing profile-budget、
+当前主线状态：TPC-302 将 TPC-301 的 tolerance/common-prefix/source-normalization
+hostile audit 扩展到 TPC-288 的 34-row growing/control grid，并对每行从物理 Gram
+source-first 重编 weighted sign target。`tau=1/4,1/2,3/4` 的 common-prefix gap
+最小值为 `85.3204`、`38.2187`、`39.2637`，34/34 rows 在三档容差均超过 10；102
+个 row-tolerance cases 在三种 source normalization 下的 weighted budget 均超过
+`1e-5`。显式 shell target 数为 430；父级 inherited grid count 1,380 单独记录。
+这是 finite growing-grid stability certificate，uniform profile-budget growth、
 arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC302_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_SOURCE_FIRST_SIGN_ENUMERATION_AND_BUDGET_MONOTONICITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_GRID_AUDIT
+TPC302_ROUTE_ADVANCE = YES_SCOPED_FINITE_GROWING_GRID_SOURCE_FIRST_EXTENSION
+TPC302_SOURCE_FIRST_SIGN_ENUMERATION = PROVED_EXACT_FINITE
+TPC302_PHYSICAL_GRAM_PSD = PROVED_EXACT_FINITE
+TPC302_BUDGET_MONOTONICITY = PROVED_EXACT_FINITE
+TPC302_COMMON_GAP_TAU_025 = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10
+TPC302_COMMON_GAP_TAU_050 = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10
+TPC302_COMMON_GAP_TAU_075 = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10
+TPC302_FULL_GAP_TAU_075 = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10
+TPC302_SOURCE_FIRST_LABELS = NUMERICALLY_CERTIFIED_FINITE_34_OF_34
+TPC302_COMMON_BUDGET_FLOOR = NUMERICALLY_CERTIFIED_FINITE_102_OF_102_PER_NORMALIZATION
+TPC302_EXPLICIT_SHELL_TARGET_COUNT = 430
+TPC302_INHERITED_GRID_EDGE_COUNT = 1380
+TPC302_UNIFORM_GROWING_PROFILE_BUDGET = OPEN
+TPC302_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC302_FIXED_POWER_CREDIT = 0
+TPC302_FULL_GATE_B = OPEN
+TPC302_TWIN_PRIME_RESULT = NONE
+TPC302_STATUS = PROVED_EXACT_FINITE_SOURCE_FIRST_SIGN_ENUMERATION_AND_BUDGET_MONOTONICITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_GRID_AUDIT
+TPC302_ROUND2_CLUE = TEST_UNIFORM_NATIVE_BUDGET_GROWTH_OR_CONSTRUCT_A_GROWING_SHELL_COUNTEREXAMPLE
+```
+
+`tpc-302-growing-shell-budget-gap-audit` - `PROVED_EXACT_FINITE_SOURCE_FIRST_SIGN_ENUMERATION_AND_BUDGET_MONOTONICITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_GRID_AUDIT` - 34-row source-first growing/control grid，三档容差 common gap 34/34 超过 10，102/102 budget floors per normalization 超过 `1e-5`。
 
 ```text
 TPC301_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_TOLERANCE_MONOTONICITY_AND_HOMOGENEITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_GAP_ROBUSTNESS_ATLAS

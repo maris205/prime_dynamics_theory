@@ -3,13 +3,66 @@
 
 更新时间：2026-08-29
 
-状态：**TPC301_PROVED_EXACT_FINITE_TOLERANCE_MONOTONICITY_AND_HOMOGENEITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_GAP_ROBUSTNESS_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC302_PROVED_EXACT_FINITE_SOURCE_FIRST_SIGN_ENUMERATION_AND_BUDGET_MONOTONICITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_GRID_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.95 当前：TPC-301 budget-gap robustness audit
+## 0.96 当前：TPC-302 growing-shell budget-gap audit
+
+项目：`papers/tpc-302-growing-shell-budget-gap-audit/`
+
+类型：**PROVED_EXACT_FINITE_SOURCE_FIRST_SIGN_ENUMERATION_AND_BUDGET_MONOTONICITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_GRID_AUDIT**。
+
+TPC-302 将 TPC-301 的 tolerance/common-prefix/source-normalization hostile audit
+扩展到 TPC-288 的 34-row growing/control grid。关键变化是 target provenance：每行
+都从 literal physical output Gram 重新穷举 equal-sign classes，生成自己的 weighted
+minimum label，再进入 native profile budget；不借用旧 18-row 标签。34 行共含 430
+个显式 shell targets，父级 1,380-edge metadata 仍单独记录。
+
+在 `tau=1/4,1/2,3/4` 下，common-prefix weighted/positive budget gap 的最小值为
+`85.3203517096`、`38.2186652435`、`39.2637006403`，34/34 rows 在每档均超过 10；
+三种 source normalizer 下 common weighted budget 在 102/102 cases 均超过 `1e-5`。
+这是 finite growing-grid stability certificate，不是 uniform growing theorem。
+
+最强正结果：source-first physical Gram、全符号类精确枚举与 native budget 的同一行
+闭环，且 tolerance/common-prefix/normalization robustness 在 34 行保持。
+
+最强 obstruction：有限 growing-grid 的稳定性仍没有给出 profile budget 随 shell/scale
+增长的统一下界，arithmetic `L2` interface 也没有被支付。
+
+开放定理：证明 uniform native profile-budget growth，或构造第一个 growing-shell
+budget-gap collapse。
+
+可复用结构：`physical Gram -> exact sign target -> literal profile image ->
+constrained native budget frontier`。
+
+ROUND2_CLUE：`TEST_UNIFORM_NATIVE_BUDGET_GROWTH_OR_CONSTRUCT_A_GROWING_SHELL_COUNTEREXAMPLE`。
+
+```text
+TPC302_ROUTE_ADVANCE = YES_SCOPED_FINITE_GROWING_GRID_SOURCE_FIRST_EXTENSION
+TPC302_SOURCE_FIRST_SIGN_ENUMERATION = PROVED_EXACT_FINITE
+TPC302_PHYSICAL_GRAM_PSD = PROVED_EXACT_FINITE
+TPC302_BUDGET_MONOTONICITY = PROVED_EXACT_FINITE
+TPC302_COMMON_GAP_TAU_025 = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10
+TPC302_COMMON_GAP_TAU_050 = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10
+TPC302_COMMON_GAP_TAU_075 = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10
+TPC302_FULL_GAP_TAU_075 = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10
+TPC302_SOURCE_FIRST_LABELS = NUMERICALLY_CERTIFIED_FINITE_34_OF_34
+TPC302_COMMON_BUDGET_FLOOR = NUMERICALLY_CERTIFIED_FINITE_102_OF_102_PER_NORMALIZATION
+TPC302_EXPLICIT_SHELL_TARGET_COUNT = 430
+TPC302_INHERITED_GRID_EDGE_COUNT = 1380
+TPC302_UNIFORM_GROWING_PROFILE_BUDGET = OPEN
+TPC302_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC302_FIXED_POWER_CREDIT = 0
+TPC302_FULL_GATE_B = OPEN
+TPC302_TWIN_PRIME_RESULT = NONE
+TPC302_STATUS = PROVED_EXACT_FINITE_SOURCE_FIRST_SIGN_ENUMERATION_AND_BUDGET_MONOTONICITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_GRID_AUDIT
+TPC302_ROUND2_CLUE = TEST_UNIFORM_NATIVE_BUDGET_GROWTH_OR_CONSTRUCT_A_GROWING_SHELL_COUNTEREXAMPLE
+```
+
+## 0.95 previous: TPC-301 budget-gap robustness audit
 
 项目：`papers/tpc-301-budget-gap-robustness-audit/`
 

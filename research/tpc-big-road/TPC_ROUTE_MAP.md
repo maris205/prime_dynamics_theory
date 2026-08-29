@@ -2,13 +2,35 @@
 
 更新时间：2026-08-29
 
-当前地图版本：V154 / TPC-301
+当前地图版本：V155 / TPC-302
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-301`（`PROVED_EXACT_FINITE_TOLERANCE_MONOTONICITY_AND_HOMOGENEITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_GAP_ROBUSTNESS_ATLAS`）；
+当前编号锚点：`TPC-302`（`PROVED_EXACT_FINITE_SOURCE_FIRST_SIGN_ENUMERATION_AND_BUDGET_MONOTONICITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_GRID_AUDIT`）；
 对应论文目录为
-`papers/tpc-301-budget-gap-robustness-audit/`。
+`papers/tpc-302-growing-shell-budget-gap-audit/`。
+
+TPC-302 是当前地图位置：把 TPC-301 的 finite tolerance/common-prefix audit
+推到 TPC-288 的 34-row growing/control grid，并在每行从 physical Gram
+source-first 重编 weighted sign target。430 个显式 shell targets 上，三档容差的
+common gap 均在 34/34 rows 超过 10；三种 normalizer 下 weighted budget floor
+在 102/102 cases 超过 `1e-5`。这只是 finite growing-grid stability；uniform
+profile-budget growth、arithmetic `L2`、full Gate B 与 twin-prime endpoint 仍开放。
+
+```text
+TPC302_ROUTE_ADVANCE = YES_SCOPED_FINITE_GROWING_GRID_SOURCE_FIRST_EXTENSION
+TPC302_SOURCE_FIRST_SIGN_ENUMERATION = PROVED_EXACT_FINITE
+TPC302_COMMON_GAP = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10_AT_3_TAUS
+TPC302_COMMON_BUDGET_FLOOR = NUMERICALLY_CERTIFIED_FINITE_102_OF_102_PER_NORMALIZATION
+TPC302_EXPLICIT_SHELL_TARGET_COUNT = 430
+TPC302_INHERITED_GRID_EDGE_COUNT = 1380
+TPC302_UNIFORM_GROWING_PROFILE_BUDGET = OPEN
+TPC302_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC302_FIXED_POWER_CREDIT = 0
+TPC302_FULL_GATE_B = OPEN
+TPC302_TWIN_PRIME_RESULT = NONE
+TPC302_ROUND2_CLUE = TEST_UNIFORM_NATIVE_BUDGET_GROWTH_OR_CONSTRUCT_A_GROWING_SHELL_COUNTEREXAMPLE
+```
 
 TPC-301 承接 TPC-300 的 finite native budget dual certificate，把单一容差下的
 weighted/positive separation 做 hostile audit。相对 RMS `tau=1/4,1/2,3/4` 下，
@@ -283,8 +305,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V154 / TPC-301
-MAP_LABEL = BUDGET-GAP ROBUSTNESS / TOLERANCE-COMMON-PREFIX-NORMALIZATION FIREWALL
+YOU ARE HERE = V155 / TPC-302
+MAP_LABEL = GROWING-SHELL SOURCE-FIRST BUDGET-GAP STABILITY / UNIFORM-BUDGET OPEN GATE
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -520,6 +542,49 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.96 V155 / TPC-302：source-first growing-shell budget-gap stability
+
+TPC-302 是 TPC-301 的自然 growing-shell 延续。它保留相对 RMS
+`tau=1/4,1/2,3/4`、common-prefix 与三种 source normalization protocol，
+但把目标网格扩展到 TPC-288 的 34 行（16 growth-path + 18 source controls），
+并对每一行从 literal physical output Gram 重新穷举 equal-sign labels。因而
+weighted target 的来源与被审计的 shell 是同一个 finite object，而不是从旧的
+18-row atlas 借标签。
+
+显式 shell target 总数为 430；父级 inherited metadata 的 1,380-edge count
+单独保留。612 个 frontier cases（34 rows、3 tolerances、3 contexts、2 targets）
+完成 source-first budget replay。common-prefix gap 的最小值在三档容差分别为
+`85.3203517096`、`38.2186652435`、`39.2637006403`，每档均为 34/34 超过 10；
+三种 normalizer 的 common weighted budget 均在 102/102 cases 超过 `1e-5`。
+
+```text
+TPC302_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_SOURCE_FIRST_SIGN_ENUMERATION_AND_BUDGET_MONOTONICITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_GRID_AUDIT
+TPC302_ROUTE_ADVANCE = YES_SCOPED_FINITE_GROWING_GRID_SOURCE_FIRST_EXTENSION
+TPC302_SOURCE_FIRST_SIGN_ENUMERATION = PROVED_EXACT_FINITE
+TPC302_PHYSICAL_GRAM_PSD = PROVED_EXACT_FINITE
+TPC302_BUDGET_MONOTONICITY = PROVED_EXACT_FINITE
+TPC302_COMMON_GAP_TAU_025 = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10
+TPC302_COMMON_GAP_TAU_050 = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10
+TPC302_COMMON_GAP_TAU_075 = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10
+TPC302_FULL_GAP_TAU_075 = NUMERICALLY_CERTIFIED_FINITE_34_OF_34_ABOVE_10
+TPC302_SOURCE_FIRST_LABELS = NUMERICALLY_CERTIFIED_FINITE_34_OF_34
+TPC302_COMMON_BUDGET_FLOOR = NUMERICALLY_CERTIFIED_FINITE_102_OF_102_PER_NORMALIZATION
+TPC302_EXPLICIT_SHELL_TARGET_COUNT = 430
+TPC302_INHERITED_GRID_EDGE_COUNT = 1380
+TPC302_UNIFORM_GROWING_PROFILE_BUDGET = OPEN
+TPC302_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC302_FIXED_POWER_CREDIT = 0
+TPC302_FULL_GATE_B = OPEN
+TPC302_TWIN_PRIME_RESULT = NONE
+TPC302_STATUS = PROVED_EXACT_FINITE_SOURCE_FIRST_SIGN_ENUMERATION_AND_BUDGET_MONOTONICITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_GRID_AUDIT
+TPC302_ROUND2_CLUE = TEST_UNIFORM_NATIVE_BUDGET_GROWTH_OR_CONSTRUCT_A_GROWING_SHELL_COUNTEREXAMPLE
+```
+
+最强正结果：34-row source-first target/budget闭环仍保留三档容差下的 gap。
+最强 obstruction：finite stability没有给出 profile budget 的 uniform growth law，
+也没有支付 arithmetic `L2`。下一关应直接审计 budget 随 shell size、source scale
+和 profile cutoff 的增长/塌缩，而不是再做一层同义 normalization。
 
 ## 5.95 V154 / TPC-301：budget-gap robustness audit
 
@@ -6749,6 +6814,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-29 | V155 / TPC-302 | Bridge A / Gate B：source-first growing/control grid 上的 native weighted/positive budget gap 已通过三档 tolerance 与 common-prefix normalization audit；uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-302` | 34 rows、430 explicit shell targets、612 frontier cases；每行从物理 Gram 精确重编 equal-sign weighted label，common gap 三档均 34/34 >`10`，三种 normalizer 的 common weighted budget 102/102 >`1e-5`；fixed-power credit 为 0，下一步为 uniform native-budget growth/反例攻击 |
 | 2026-08-29 | V154 / TPC-301 | Bridge A / Gate B：native weighted/positive budget gap 已通过 tolerance、common-prefix 与 source-normalization hostile audit；growing profile budget、arithmetic `L2` 与 full Gate B open | `TPC-301` | 严格证明 tolerance nesting、relative homogeneity、threshold-prefix nesting 与 common-prefix normalization invariance；18 rows / 219 explicit shell targets（inherited grid count 1,380 单独记录），324 frontier cases 上三档容差的 common gap 均 18/18 >`10`，weighted common budget 三种 normalizer 均 54/54 >`3e-5`；fixed-power credit 为 0，下一步为 growing-shell robustness 与 arithmetic `L2` interface |
 | 2026-08-29 | V153 / TPC-300 | Bridge A / Gate B：native budget dual certificate 已在有限图上完成；growing profile budget、arithmetic `L2` 与 full Gate B open | `TPC-300` | 严格证明 weak/strong finite duality、`mu=1/rho` reciprocal correction 与 rational dual compiler；18 rows / 1,380 edges 上 72/72 exact dual witnesses 紧度 >`0.999999999`，weighted threshold floors `18/15/14`，full-prefix obstruction `11/18`；fixed-power credit 为 0，下一步为 tolerance/normalization hostile audit |
 | 2026-08-29 | V152 / TPC-299 | Bridge A / Gate B：native profile budget frontier 已在有限图上完成；growing profile budget、arithmetic `L2` 与 full Gate B open | `TPC-299` | 严格证明 QCQP/KKT/ridge budget frontier、budget feasibility iff 与 nested-prefix monotonicity；18 rows / 1,380 edges 上 weighted half-RMS threshold budget 各行 >`9e-5`，14/18 >`1e-3`，full prefix 11/18 >`1e-3`，positive control 18/18 <`1e-4`，gap 18/18 >20；fixed-power credit 为 0，下一步为 exact dual budget witness |
