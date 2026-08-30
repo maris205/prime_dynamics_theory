@@ -1,9 +1,42 @@
 # TPC distilled map and bold channel
 
-更新时间：2026-08-29
-状态：`BOLD_CHANNEL_V164 / STRATIFIED_TAU_HOLDOUT_REPLICATION`
-claim level：`PROVED_EXACT_FINITE_STRATIFIED_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_TAU_SLICE_NONREPLICATION_ATLAS`
-编号事实终点：TPC-311；TPC-311 trigger：`true`
+更新时间：2026-08-30
+状态：`BOLD_CHANNEL_V165 / NEW_SOURCE_SHELL_SEPARATION_ATLAS`
+claim level：`PROVED_EXACT_FINITE_NEW_SOURCE_SHELL_GRAM_AND_SIGN_SEPARATION_ATLAS`
+编号事实终点：TPC-312；TPC-312 trigger：`true`
+
+当前 TPC-312 入口：proof 为
+`research/tpc-big-road/bridge_b_tpc312_new_source_shell_separation.md`，checker 为
+`tpc_bridge_b_tpc312_new_source_shell_separation_checker.py`，编号论文为
+`papers/tpc-312-new-source-shell-separation-atlas/`。它把物理引擎移到新源区间
+`I=(320,640]`，固定 `H=66`、`Q={24,36,54,80}`、exponent `{1,2}`，重建 8 个
+rational Gram rows。84 个 shell targets 上共枚举 37,440 个 global-sign classes；8/8
+Gram 在 `1000000007` 下满秩，8/8 rows 均有 minimum `<1` 与 all-positive maximum `>1`，
+且两条 Q-spine order chains 均严格成立。这是同一锁定引擎内的新 source/parameter rows，
+不是 external independent sample；profile-budget outward rounding、external weighting、
+uniform budget、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime conclusion
+仍 OPEN/NONE。Session-named evaluator files absent，故不宣称 official pass。
+
+```text
+TPC312_ROUTE_ADVANCE = YES_SCOPED_NEW_SOURCE_SHELL_ATLAS
+TPC312_NEW_SOURCE_SHELL_ROWS = PROVED_EXACT_FINITE_8_ROWS
+TPC312_PHYSICAL_GRAM_PSD = PROVED_EXACT_FINITE
+TPC312_RATIONAL_FULL_RANK = PROVED_EXACT_FINITE_8_OF_8
+TPC312_SIGN_EXTREMA = PROVED_EXACT_FINITE_37440_CLASSES
+TPC312_STRICT_SIGN_SEPARATION = PROVED_EXACT_FINITE_8_OF_8
+TPC312_Q_SPINE_ORDERING = PROVED_EXACT_FINITE_4_Q_BY_2_EXPONENTS
+TPC312_FRESHNESS = NEW_SOURCE_SHELL_ROWS_WITHIN_SAME_LOCKED_ENGINE
+TPC312_EXTERNAL_INDEPENDENCE = NONE
+TPC312_PROFILE_BUDGET_INTERVAL_CERTIFICATE = OPEN
+TPC312_EXTERNAL_WEIGHT_JUSTIFICATION = OPEN
+TPC312_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC312_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC312_FIXED_POWER_CREDIT = 0
+TPC312_FULL_GATE_B = OPEN
+TPC312_TWIN_PRIME_RESULT = NONE
+TPC312_STATUS = PROVED_EXACT_FINITE_NEW_SOURCE_SHELL_GRAM_AND_SIGN_SEPARATION_ATLAS
+TPC312_ROUND2_CLUE = CERTIFY_NEW_PANEL_PROFILE_BUDGETS_WITH_OUTWARD_ROUNDING_BEFORE_ANY_HOLDOUT_PREFERENCE_CLAIM
+```
 
 当前 TPC-311 入口：proof 为
 `research/tpc-big-road/bridge_b_tpc311_stratified_tau_holdout_replication.md`，checker 为

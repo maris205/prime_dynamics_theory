@@ -1,14 +1,50 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-08-29
+更新时间：2026-08-30
 
-当前地图版本：V164 / TPC-311
+当前地图版本：V165 / TPC-312
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-311`（`PROVED_EXACT_FINITE_STRATIFIED_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_TAU_SLICE_NONREPLICATION_ATLAS`）；
+当前编号锚点：`TPC-312`（`PROVED_EXACT_FINITE_NEW_SOURCE_SHELL_GRAM_AND_SIGN_SEPARATION_ATLAS`）；
 对应论文目录为
-`papers/tpc-311-stratified-tau-holdout-replication/`。
+`papers/tpc-312-new-source-shell-separation-atlas/`。
+
+TPC-312 是当前地图位置：承接 TPC-311 的 fresh-source-holdout clue，把同一锁定
+literal physical engine 移到新 source interval `I=(320,640]`，固定 `H=66`、
+`Q={24,36,54,80}` 与 exponent `{1,2}`。8 个新 physical Gram rows 共覆盖 84 个
+shell targets 与 37,440 个 global-sign classes；8/8 rows 取得 modular full rank，
+8/8 rows 均有 exact sign minimum `<1` 与 all-positive maximum `>1`，且每个 exponent
+的 minimum 沿 Q spine 严格下降、positive maximum 严格上升。该“新”仅表示同一引擎内
+的新 source indices/parameter rows，不是外部独立物理样本；source-first label leakage、
+profile-budget outward rounding、external weighting、uniform budget、arithmetic `L2`、
+fixed-power credit、full Gate B 与 twin-prime endpoint 仍开放。
+
+```text
+TPC312_ROUTE_ADVANCE = YES_SCOPED_NEW_SOURCE_SHELL_ATLAS
+TPC312_NEW_SOURCE_SHELL_ROWS = PROVED_EXACT_FINITE_8_ROWS
+TPC312_PHYSICAL_GRAM_PSD = PROVED_EXACT_FINITE
+TPC312_RATIONAL_FULL_RANK = PROVED_EXACT_FINITE_8_OF_8
+TPC312_SIGN_EXTREMA = PROVED_EXACT_FINITE_37440_CLASSES
+TPC312_STRICT_SIGN_SEPARATION = PROVED_EXACT_FINITE_8_OF_8
+TPC312_Q_SPINE_ORDERING = PROVED_EXACT_FINITE_4_Q_BY_2_EXPONENTS
+TPC312_FRESHNESS = NEW_SOURCE_SHELL_ROWS_WITHIN_SAME_LOCKED_ENGINE
+TPC312_EXTERNAL_INDEPENDENCE = NONE
+TPC312_PROFILE_BUDGET_INTERVAL_CERTIFICATE = OPEN
+TPC312_EXTERNAL_WEIGHT_JUSTIFICATION = OPEN
+TPC312_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC312_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC312_FIXED_POWER_CREDIT = 0
+TPC312_FULL_GATE_B = OPEN
+TPC312_TWIN_PRIME_RESULT = NONE
+TPC312_STATUS = PROVED_EXACT_FINITE_NEW_SOURCE_SHELL_GRAM_AND_SIGN_SEPARATION_ATLAS
+TPC312_ROUND2_CLUE = CERTIFY_NEW_PANEL_PROFILE_BUDGETS_WITH_OUTWARD_ROUNDING_BEFORE_ANY_HOLDOUT_PREFERENCE_CLAIM
+```
+
+TPC-312 的 strongest positive 是 8/8 新 source-shell rows 的 exact finite sign separation
+与 independent replay；strongest obstruction 是 same-engine source-first target generation
+仍不能提供 external independence 或 canonical weighting。下一关是对这 8 行的 profile
+budget 做 outward-rounded certificate，再决定是否值得进入 locked-weight holdout。
 
 TPC-311 是当前地图位置：承接 TPC-310 的 aggregation-order obstruction，固定一个两阶段
 stratification rule。在每个 `(transition, exponent, tau, radius)` design cell 内先 pool
@@ -529,8 +565,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V164 / TPC-311
-MAP_LABEL = STRATIFIED TAU-SLICE HOLDOUT / NATIVE LEFT VS HOLDOUT RIGHT
+YOU ARE HERE = V165 / TPC-312
+MAP_LABEL = NEW SOURCE-SHELL GRAM ATLAS / EXACT SIGN SEPARATION, BUDGET GATE OPEN
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -766,6 +802,46 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.106 V165 / TPC-312：new source-shell Gram and sign-separation atlas
+
+TPC-312 按 TPC-311 的 route clue 把计算移到一个新 source-shell panel。它固定同一
+literal engine 的新源区间 `I=(320,640]`、`H=66`、`Q={24,36,54,80}` 与 exponent
+`{1,2}`，不导入旧 atlas 的 sign labels。8 个 rows 的 physical output、Gram entry 与
+sign energy 都是 rational；对 global sign quotient 之后共枚举 37,440 个 classes，
+shell targets 共 84 个。
+
+8/8 Gram 在 `1000000007` 下取得 full modular rank，8/8 rows 的 exact minimum `<1`、
+all-positive maximum `>1`；对每个 exponent，minimum 沿四个 Q anchors 严格下降，
+positive maximum 严格上升，且 exponent 2 在每个 Q 上强化分离。这是同一锁定物理引擎
+内的新 source/parameter rows，不是 external independent sample，也不是 growing theorem。
+
+```text
+TPC312_ROUTE_ADVANCE = YES_SCOPED_NEW_SOURCE_SHELL_ATLAS
+TPC312_NEW_SOURCE_SHELL_ROWS = PROVED_EXACT_FINITE_8_ROWS
+TPC312_PHYSICAL_GRAM_PSD = PROVED_EXACT_FINITE
+TPC312_RATIONAL_FULL_RANK = PROVED_EXACT_FINITE_8_OF_8
+TPC312_SIGN_EXTREMA = PROVED_EXACT_FINITE_37440_CLASSES
+TPC312_STRICT_SIGN_SEPARATION = PROVED_EXACT_FINITE_8_OF_8
+TPC312_Q_SPINE_ORDERING = PROVED_EXACT_FINITE_4_Q_BY_2_EXPONENTS
+TPC312_FRESHNESS = NEW_SOURCE_SHELL_ROWS_WITHIN_SAME_LOCKED_ENGINE
+TPC312_EXTERNAL_INDEPENDENCE = NONE
+TPC312_PROFILE_BUDGET_INTERVAL_CERTIFICATE = OPEN
+TPC312_EXTERNAL_WEIGHT_JUSTIFICATION = OPEN
+TPC312_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC312_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC312_FIXED_POWER_CREDIT = 0
+TPC312_FULL_GATE_B = OPEN
+TPC312_TWIN_PRIME_RESULT = NONE
+TPC312_STATUS = PROVED_EXACT_FINITE_NEW_SOURCE_SHELL_GRAM_AND_SIGN_SEPARATION_ATLAS
+TPC312_ROUND2_CLUE = CERTIFY_NEW_PANEL_PROFILE_BUDGETS_WITH_OUTWARD_ROUNDING_BEFORE_ANY_HOLDOUT_PREFERENCE_CLAIM
+```
+
+strongest positive result：new source-shell rows reproduce exact finite cancellation-versus-
+amplification separation with full-rank and independent replay.  strongest obstruction：the
+minimum signs remain source-first Gram-dependent, so no external prediction or canonical weight
+law follows.  open theorem：outward-rounded profile-budget certificate on these rows, followed by
+a genuinely independent holdout if an external weighting law can be justified.
 
 ## 5.105 V164 / TPC-311：declared stratification and tau-slice holdout replication
 
@@ -7404,6 +7480,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-30 | V165 / TPC-312 | Bridge A / Gate B：new source-shell Gram/sign-separation atlas 已完成；profile-budget outward rounding、external weighting、uniform budget、arithmetic `L2` 与 full Gate B open | `TPC-312` | 新源区间 `I=(320,640]`、`H=66`、`Q=24,36,54,80`、exponent `1,2`；8 rows / 84 shell targets / 37,440 sign classes；8/8 modular full rank、8/8 strict separation、Q-spine ordering；下一步为 outward-rounded profile-budget interface |
 | 2026-08-29 | V164 / TPC-311 | Bridge A / Gate B：declared stratification 的 tau-slice holdout replication 已完成；external weighting law、fresh physical holdout、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-311` | 固定 profile-pooled design-cell 与 equal-cell arithmetic rule；54 strata、6 blocks、22 controls；native calibration `LEFT` 在 `tau=.75` held-out slice 反转为 `RIGHT`，all-radius confirmation unresolved；下一步为 fresh source holdout 与 externally justified weighting law |
 | 2026-08-29 | V163 / TPC-310 | Bridge A / Gate B：cross-holdout aggregation-order obstruction 已完成；canonical weighting、profile-independent preference、formal directed rounding、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-310` | 冻结 TPC-309 的 162 observations，枚举 49 profile/radius selectors 与 147 aggregate rows；pooled `RIGHT`、balanced `LEFT`、geometric `RIGHT` on full selector，证明 ratio-of-sums 的 denominator-weighted identity；下一步为 pre-registered stratified weights 与 fresh holdout replication |
 | 2026-08-29 | V162 / TPC-309 | Bridge A / Gate B：profile-prefix shift sensitivity 已完成；profile-independent preference、formal directed-rounding certificate、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-309` | 在固定 19-prime pool 中比较 LOW/BASE/HIGH 三个相邻 17-cutoff ladders；54 profile cases、162 envelope observations、候选 `108/558/1440`，BASE 恢复 TPC-308 classes，而 strict discordance location 与 radius-two survival 随 profile 改变；下一步为 cross-holdout aggregation 与 profile robustness audit |

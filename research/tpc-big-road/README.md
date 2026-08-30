@@ -1,13 +1,48 @@
-# TPC big road V164 / TPC-311: stratified tau-slice holdout replication
+# TPC big road V165 / TPC-312: new source-shell separation atlas
 
-更新时间：2026-08-29
+更新时间：2026-08-30
 
-状态：`TPC311_PROVED_EXACT_FINITE_STRATIFIED_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_TAU_SLICE_NONREPLICATION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC312_PROVED_EXACT_FINITE_NEW_SOURCE_SHELL_GRAM_AND_SIGN_SEPARATION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-311 proof 为
+当前 TPC-312 proof 为
+`bridge_b_tpc312_new_source_shell_separation.md`，checker 为
+`tpc_bridge_b_tpc312_new_source_shell_separation_checker.py`，编号论文为
+`../../papers/tpc-312-new-source-shell-separation-atlas/`。
+
+TPC-312 将 Bridge-B 移到新 source-shell panel：锁定 `I=(320,640]`、`H=66`、
+`Q={24,36,54,80}` 与 exponent `{1,2}`，重建 8 个 literal rational physical Gram rows。
+84 个 shell targets 共枚举 37,440 个 global-sign classes；8/8 rows 在 `1000000007` 下
+满秩，且每行 minimum `<1`、all-positive maximum `>1`，minimum 沿 Q 严格下降、positive
+maximum 严格上升。这里的新颖性只是在同一锁定引擎内使用新 source indices 与新参数行，
+不是 external independent sample；profile-budget outward rounding、external weighting、
+uniform asymptotic budget、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。Session-named evaluator files absent，故不宣称 official pass。
+
+```text
+TPC312_ROUTE_ADVANCE = YES_SCOPED_NEW_SOURCE_SHELL_ATLAS
+TPC312_NEW_SOURCE_SHELL_ROWS = PROVED_EXACT_FINITE_8_ROWS
+TPC312_PHYSICAL_GRAM_PSD = PROVED_EXACT_FINITE
+TPC312_RATIONAL_FULL_RANK = PROVED_EXACT_FINITE_8_OF_8
+TPC312_SIGN_EXTREMA = PROVED_EXACT_FINITE_37440_CLASSES
+TPC312_STRICT_SIGN_SEPARATION = PROVED_EXACT_FINITE_8_OF_8
+TPC312_Q_SPINE_ORDERING = PROVED_EXACT_FINITE_4_Q_BY_2_EXPONENTS
+TPC312_FRESHNESS = NEW_SOURCE_SHELL_ROWS_WITHIN_SAME_LOCKED_ENGINE
+TPC312_EXTERNAL_INDEPENDENCE = NONE
+TPC312_PROFILE_BUDGET_INTERVAL_CERTIFICATE = OPEN
+TPC312_EXTERNAL_WEIGHT_JUSTIFICATION = OPEN
+TPC312_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC312_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC312_FIXED_POWER_CREDIT = 0
+TPC312_FULL_GATE_B = OPEN
+TPC312_TWIN_PRIME_RESULT = NONE
+TPC312_STATUS = PROVED_EXACT_FINITE_NEW_SOURCE_SHELL_GRAM_AND_SIGN_SEPARATION_ATLAS
+TPC312_ROUND2_CLUE = CERTIFY_NEW_PANEL_PROFILE_BUDGETS_WITH_OUTWARD_ROUNDING_BEFORE_ANY_HOLDOUT_PREFERENCE_CLAIM
+```
+
+此前 TPC-311 proof 为
 `bridge_b_tpc311_stratified_tau_holdout_replication.md`，checker 为
 `tpc_bridge_b_tpc311_stratified_tau_holdout_replication_checker.py`，编号论文为
 `../../papers/tpc-311-stratified-tau-holdout-replication/`。

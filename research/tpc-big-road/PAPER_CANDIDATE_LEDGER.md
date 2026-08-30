@@ -1,13 +1,67 @@
 
 # TPC big-road paper candidate ledger
 
-更新时间：2026-08-29
+更新时间：2026-08-30
 
-状态：**TPC311_PROVED_EXACT_FINITE_STRATIFIED_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_TAU_SLICE_NONREPLICATION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC312_PROVED_EXACT_FINITE_NEW_SOURCE_SHELL_GRAM_AND_SIGN_SEPARATION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
+
+## 0.106 current：TPC-312 new source-shell Gram and sign-separation atlas
+
+项目：`papers/tpc-312-new-source-shell-separation-atlas/`
+
+类型：**PROVED_EXACT_FINITE_NEW_SOURCE_SHELL_GRAM_AND_SIGN_SEPARATION_ATLAS**。
+
+TPC-312 按 TPC-311 的 route clue 把物理计算移到新 source-shell panel：同一锁定 literal
+engine 上使用 `I=(320,640]`、`H=66`、`Q={24,36,54,80}` 与 exponent `{1,2}`，共 8 个
+此前未用过的 source/parameter rows。每行的物理输出、Gram entries 与 sign energies 都
+在 `Fraction` 上计算；固定首个 sign 为 `+1` 后，完整 Gray enumeration 共覆盖
+`2(2^5+2^8+2^11+2^14)=37,440` 个 global-sign classes，shell targets 共 84 个。
+
+最强正结果：8/8 Gram 在 `1000000007` 下得到 full modular rank，8/8 行的 exact sign
+minimum `<1`、all-positive maximum `>1`，且对每个 exponent minimum 沿
+`Q=24,36,54,80` 严格下降、positive maximum 严格上升；exponent 2 在每个 Q 上进一步
+扩大这两个方向的分离。
+
+最强 obstruction：这些 sign labels 仍由正在诊断的 physical Gram source-first 生成，
+所以“新”不是 external independent holdout，也不能提供 canonical weighting。profile
+budget 的 outward rounding、uniform growing theorem、arithmetic `L2`、fixed-power credit、
+full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。这里的有限 order 只对锁定的 8 行
+负责，不能外推到 growing shell。
+
+开放定理：在这组 exact physical rows 上完成 outward-rounded profile-budget certificate，
+并在不偷换 source-first labels 的前提下测试 externally justified weighting law 与真正
+独立的 physical holdout。
+
+可复用结构：`literal physical operator -> rational Gram/PSD -> global-sign quotient ->
+exact finite sign atlas -> explicit freshness/leakage firewall`。
+
+ROUND2_CLUE：`CERTIFY_NEW_PANEL_PROFILE_BUDGETS_WITH_OUTWARD_ROUNDING_BEFORE_ANY_HOLDOUT_PREFERENCE_CLAIM`。
+
+```text
+TPC312_ROUTE_ADVANCE = YES_SCOPED_NEW_SOURCE_SHELL_ATLAS
+TPC312_NEW_SOURCE_SHELL_ROWS = PROVED_EXACT_FINITE_8_ROWS
+TPC312_PHYSICAL_GRAM_PSD = PROVED_EXACT_FINITE
+TPC312_RATIONAL_FULL_RANK = PROVED_EXACT_FINITE_8_OF_8
+TPC312_SIGN_EXTREMA = PROVED_EXACT_FINITE_37440_CLASSES
+TPC312_STRICT_SIGN_SEPARATION = PROVED_EXACT_FINITE_8_OF_8
+TPC312_Q_SPINE_ORDERING = PROVED_EXACT_FINITE_4_Q_BY_2_EXPONENTS
+TPC312_FRESHNESS = NEW_SOURCE_SHELL_ROWS_WITHIN_SAME_LOCKED_ENGINE
+TPC312_EXTERNAL_INDEPENDENCE = NONE
+TPC312_PROFILE_BUDGET_INTERVAL_CERTIFICATE = OPEN
+TPC312_EXTERNAL_WEIGHT_JUSTIFICATION = OPEN
+TPC312_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC312_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC312_FIXED_POWER_CREDIT = 0
+TPC312_FULL_GATE_B = OPEN
+TPC312_TWIN_PRIME_RESULT = NONE
+TPC312_STATUS = PROVED_EXACT_FINITE_NEW_SOURCE_SHELL_GRAM_AND_SIGN_SEPARATION_ATLAS
+TPC312_ROUND2_CLUE = CERTIFY_NEW_PANEL_PROFILE_BUDGETS_WITH_OUTWARD_ROUNDING_BEFORE_ANY_HOLDOUT_PREFERENCE_CLAIM
+```
+
 
 ## 0.105 current：TPC-311 declared stratification and tau-slice holdout replication
 
