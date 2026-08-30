@@ -1,13 +1,46 @@
-# TPC big road V167 / TPC-314: externally motivated weight-law audit
+# TPC big road V168 / TPC-315: fresh-source locked-weight holdout
 
 更新时间：2026-08-30
 
-状态：`TPC314_PROVED_EXACT_FINITE_EXTERNALLY_MOTIVATED_WEIGHT_LAW_ENCLOSURE_AND_NEW_PANEL_ROBUSTNESS_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC315_PROVED_EXACT_FINITE_FRESH_SOURCE_LOCKED_WEIGHT_MENU_HOLDOUT_REPLICATION_AND_LAW_ORDER_SHIFT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-314 proof 为
+当前 TPC-315 proof 为
+`bridge_b_tpc315_fresh_source_locked_weight_holdout.md`，checker 为
+`tpc_bridge_b_tpc315_fresh_source_locked_weight_holdout_checker.py`，编号论文为
+`../../papers/tpc-315-fresh-source-locked-weight-holdout/`。
+
+TPC-315 先验证并锁定 TPC-314 的三-law menu，再把同一 literal engine 移到 fresh
+source interval `I=(640,1280]`，重新计算 8 个 `(Q,s)` Gram extrema。48 个 target/law
+cases 完成 directed outward interval replay；24/24 fresh minimum cases 严格低于 1，
+24/24 all-positive controls 严格高于 1。minimum law order 有 3 个 strict types（6/1/1），
+positive control 有 2 个（6/2），所以 coarse class 复现但 canonical amplitude law 受到
+finite obstruction。same-engine holdout 不是 external physical independence；uniform growing
+theorem、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime conclusion 仍
+OPEN/NONE。Session-named evaluator files absent，故不宣称 official pass。
+
+```text
+TPC315_ROUTE_ADVANCE = YES_SCOPED_FRESH_SOURCE_CLASS_REPLICATION_AND_ORDER_OBSTRUCTION
+TPC315_FRESH_SOURCE_TARGET_RECOMPUTATION = PROVED_EXACT_FINITE_8_ROWS
+TPC315_LOCKED_WEIGHT_MENU = PROVED_EXACT_FINITE_PRE_TARGET
+TPC315_MINIMUM_BELOW_ONE = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC315_POSITIVE_ABOVE_ONE = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC315_HOLDOUT_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_8_OF_8
+TPC315_MINIMUM_LAW_ORDER_SHIFT = NUMERICALLY_CERTIFIED_FINITE_3_TYPES
+TPC315_POSITIVE_LAW_ORDER_SHIFT = NUMERICALLY_CERTIFIED_FINITE_2_TYPES
+TPC315_EXTERNAL_INDEPENDENCE = NONE_SAME_LOCKED_ENGINE
+TPC315_CANONICAL_WEIGHTING = OPEN
+TPC315_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC315_FIXED_POWER_CREDIT = 0
+TPC315_FULL_GATE_B = OPEN
+TPC315_TWIN_PRIME_RESULT = NONE
+TPC315_STATUS = PROVED_EXACT_FINITE_FRESH_SOURCE_LOCKED_WEIGHT_MENU_HOLDOUT_REPLICATION_AND_LAW_ORDER_SHIFT
+TPC315_ROUND2_CLUE = PROBE_LITERAL_ARITHMETIC_L2_INTERFACE_ON_THE_FRESH_PANEL_BEFORE_ANY_GROWING_CLAIM
+```
+
+上一位置 TPC-314 proof 为
 `bridge_b_tpc314_canonical_weight_law_audit.md`，checker 为
 `tpc_bridge_b_tpc314_canonical_weight_law_audit_checker.py`，编号论文为
 `../../papers/tpc-314-canonical-weight-law-audit/`。

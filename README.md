@@ -9,6 +9,44 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-315 已将 TPC-314 的三-law menu 在读取新目标前锁定，并把同一
+literal engine 移到 fresh source interval `I=(640,1280]`。8 个 `(Q,s)` rows 的 Gram
+minimum 与 all-positive maximum 均重新由 exact rational sign enumeration 计算；3 个 laws
+与 2 个 targets 共 48 个 cases，24/24 minimum intervals 严格低于 1，24/24 positive
+controls 严格高于 1。log(p) 由 120 项 rational atanh range reduction 与 geometric tail
+outward-enclose，所有 weighted forms 在 `10^-36` grid 上由 independent checker 重放。
+
+粗粒度 separation class 在 fresh panel 上 8/8 复现；细粒度幅度次序并不稳定：minimum
+order 有 3 类（6/1/1），positive control 有 2 类（6/2）。这是 same-engine fresh-source
+holdout 与 canonical-weight obstruction，不是 external physical independence、uniform
+growing theorem、arithmetic `L2`、fixed-power credit、full Gate B 或 twin-prime proof；
+Session-named evaluator files absent，故不宣称 official Route-A/Route-B pass。
+
+TPC315_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_FRESH_SOURCE_LOCKED_WEIGHT_MENU_HOLDOUT_REPLICATION_AND_LAW_ORDER_SHIFT
+TPC315_ROUTE_ADVANCE = YES_SCOPED_FRESH_SOURCE_CLASS_REPLICATION_AND_ORDER_OBSTRUCTION
+TPC315_FRESH_SOURCE_TARGET_RECOMPUTATION = PROVED_EXACT_FINITE_8_ROWS
+TPC315_LOCKED_WEIGHT_MENU = PROVED_EXACT_FINITE_PRE_TARGET
+TPC315_MINIMUM_BELOW_ONE = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC315_POSITIVE_ABOVE_ONE = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC315_HOLDOUT_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_8_OF_8
+TPC315_MINIMUM_LAW_ORDER_SHIFT = NUMERICALLY_CERTIFIED_FINITE_3_TYPES
+TPC315_POSITIVE_LAW_ORDER_SHIFT = NUMERICALLY_CERTIFIED_FINITE_2_TYPES
+TPC315_EXTERNAL_INDEPENDENCE = NONE_SAME_LOCKED_ENGINE
+TPC315_TARGET_GENERATION_LEAKAGE = FRESH_SOURCE_GRAM_DEPENDENT_LABELS
+TPC315_CANONICAL_WEIGHTING = OPEN
+TPC315_FRESH_PHYSICAL_HOLDOUT = NONE_SAME_LOCKED_ENGINE
+TPC315_UNIFORM_GROWING_WEIGHTED_THEOREM = OPEN
+TPC315_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC315_FIXED_POWER_CREDIT = 0
+TPC315_FULL_GATE_B = OPEN
+TPC315_TWIN_PRIME_RESULT = NONE
+TPC315_STATUS = PROVED_EXACT_FINITE_FRESH_SOURCE_LOCKED_WEIGHT_MENU_HOLDOUT_REPLICATION_AND_LAW_ORDER_SHIFT
+TPC315_ROUND2_CLUE = PROBE_LITERAL_ARITHMETIC_L2_INTERFACE_ON_THE_FRESH_PANEL_BEFORE_ANY_GROWING_CLAIM
+
+papers/tpc-315-fresh-source-locked-weight-holdout - TPC-315 current project；含 fresh-source
+locked-menu certificate、exact target recomputation、independent replay、stress suite、PDF
+与 local Bridge-B checker。
+
 当前主线状态：TPC-314 在 TPC-312 的新 source-shell panel 上完成三种 externally
 motivated positive weighting law 的有限审计：counting 1、reduced-residue 1/(p-1)、
 prime von-Mangoldt log(p)。8 个 rows、3 个 laws、2 个 targets 共 48 cases；24/24

@@ -3,13 +3,70 @@
 
 更新时间：2026-08-30
 
-状态：**TPC314_PROVED_EXACT_FINITE_EXTERNALLY_MOTIVATED_WEIGHT_LAW_ENCLOSURE_AND_NEW_PANEL_ROBUSTNESS_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC315_PROVED_EXACT_FINITE_FRESH_SOURCE_LOCKED_WEIGHT_MENU_HOLDOUT_REPLICATION_AND_LAW_ORDER_SHIFT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.108 current：TPC-314 externally motivated weight-law audit
+## 0.109 current：TPC-315 fresh-source locked-weight holdout
+
+项目：papers/tpc-315-fresh-source-locked-weight-holdout/
+
+类型：**PROVED_EXACT_FINITE_FRESH_SOURCE_LOCKED_WEIGHT_MENU_HOLDOUT_REPLICATION_AND_LAW_ORDER_SHIFT**。
+
+TPC-315 承接 TPC-314 的 fresh-source clue。它先验证并锁定 TPC-314 的三-law menu（counting
+`1`、reduced-residue `1/(p-1)`、prime von-Mangoldt `log(p)`），然后把同一 locked literal
+engine 移到 fresh source interval `I=(640,1280]`，重新构造 8 个 `(Q,s)` physical Gram rows。
+每行都在 exact rational arithmetic 上重新枚举 global-sign classes，得到 fresh Gram minimum
+与 all-positive maximum；目标标签不从 TPC-312/TPC-314 继承。三种权的 48 个 finite cases
+经过 `10^-36` directed outward interval replay，24/24 fresh minima 严格低于 1，24/24
+all-positive controls 严格高于 1。
+
+最强正结果：menu 在 fresh target readout 前锁定后，粗粒度 separation class 在 8/8 rows
+复现；producer、independent checker 与 stress suite 的 normal/optimized Bridge-B 检查均通过。
+
+最强 obstruction：幅度的 law ordering 仍不稳定。minimum order 有三种 strict types：
+`VON_MANGOLDT<COUNTING<REDUCED_RESIDUE` 六行、`REDUCED_RESIDUE<COUNTING<VON_MANGOLDT`
+一行、`COUNTING<VON_MANGOLDT<REDUCED_RESIDUE` 一行；positive order 有两种：
+`REDUCED_RESIDUE<COUNTING<VON_MANGOLDT` 六行、`VON_MANGOLDT<REDUCED_RESIDUE<COUNTING`
+两行。因此 fresh class replication 不能识别 canonical amplitude law。
+
+开放定理：literal arithmetic `L2` interface on the fresh panel；uniform growing weighted
+theorem、external physical independence、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。该 holdout 使用同一 engine，且 fresh minimum 仍是 Gram-dependent
+target，故不作外部统计独立或 predictive validation 声明。
+
+可复用结构：`pre-target menu lock -> fresh rational Gram -> exhaustive sign extrema ->
+rational/log interval -> class/order firewall`。
+
+ROUND2_CLUE：PROBE_LITERAL_ARITHMETIC_L2_INTERFACE_ON_THE_FRESH_PANEL_BEFORE_ANY_GROWING_CLAIM。
+
+    TPC315_ROUTE_ADVANCE = YES_SCOPED_FRESH_SOURCE_CLASS_REPLICATION_AND_ORDER_OBSTRUCTION
+    TPC315_FRESH_SOURCE_TARGET_RECOMPUTATION = PROVED_EXACT_FINITE_8_ROWS
+    TPC315_LOCKED_WEIGHT_MENU = PROVED_EXACT_FINITE_PRE_TARGET
+    TPC315_MINIMUM_BELOW_ONE = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC315_POSITIVE_ABOVE_ONE = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC315_HOLDOUT_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_8_OF_8
+    TPC315_MINIMUM_LAW_ORDER_SHIFT = NUMERICALLY_CERTIFIED_FINITE_3_TYPES
+    TPC315_POSITIVE_LAW_ORDER_SHIFT = NUMERICALLY_CERTIFIED_FINITE_2_TYPES
+    TPC315_EXTERNAL_INDEPENDENCE = NONE_SAME_LOCKED_ENGINE
+    TPC315_TARGET_GENERATION_LEAKAGE = FRESH_SOURCE_GRAM_DEPENDENT_LABELS
+    TPC315_CANONICAL_WEIGHTING = OPEN
+    TPC315_FRESH_PHYSICAL_HOLDOUT = NONE_SAME_LOCKED_ENGINE
+    TPC315_UNIFORM_GROWING_WEIGHTED_THEOREM = OPEN
+    TPC315_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+    TPC315_FIXED_POWER_CREDIT = 0
+    TPC315_FULL_GATE_B = OPEN
+    TPC315_TWIN_PRIME_RESULT = NONE
+    TPC315_STATUS = PROVED_EXACT_FINITE_FRESH_SOURCE_LOCKED_WEIGHT_MENU_HOLDOUT_REPLICATION_AND_LAW_ORDER_SHIFT
+    TPC315_STRONGEST_POSITIVE = FRESH_8_OF_8_CLASS_REPLICATION_WITH_48_EXACT_INTERVAL_CASES
+    TPC315_STRONGEST_OBSTRUCTION = FRESH_LAW_ORDER_IS_NOT_STABLE_OR_CANONICAL
+    TPC315_OPEN_THEOREM = LITERAL_ARITHMETIC_L2_BOUND_FOR_THE_FRESH_PHYSICAL_PANEL
+    TPC315_REUSABLE_STRUCTURE = PRE_TARGET_MENU_LOCK_PLUS_FRESH_GRAM_EXTREMUM_AND_OUTWARD_LAW_AUDIT
+    TPC315_ROUND2_CLUE = PROBE_LITERAL_ARITHMETIC_L2_INTERFACE_ON_THE_FRESH_PANEL_BEFORE_ANY_GROWING_CLAIM
+
+## 0.108 previous：TPC-314 externally motivated weight-law audit
 
 项目：papers/tpc-314-canonical-weight-law-audit/
 

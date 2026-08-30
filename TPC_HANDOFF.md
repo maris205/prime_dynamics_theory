@@ -1,9 +1,65 @@
 # TPC HANDOFF
 
 更新时间：2026-08-30
-交接状态：`BOLD_CHANNEL_V167_TPC314_CANONICAL_WEIGHT_LAW_AUDIT_RELEASED`
+交接状态：`BOLD_CHANNEL_V168_TPC315_FRESH_SOURCE_LOCKED_WEIGHT_HOLDOUT_RELEASED`
 
-TPC-314 current section: externally motivated weight-law audit
+TPC-315 current section: fresh-source locked-weight holdout
+-----------------------------------------------------------------------------------------------
+
+TPC-315 承接 TPC-314 的 fresh-source clue：先验证并锁定 TPC-314 的 counting `1`、
+reduced-residue `1/(p-1)` 与 von-Mangoldt `log(p)` 三-law menu，再把同一 locked literal
+engine 移到 fresh source interval `I=(640,1280]`。对 `H=66`、`Q={24,36,54,80}`、
+exponent `{1,2}` 的 8 个 rows，Gram minimum 与 all-positive maximum 都由 exact rational
+sign enumeration 重新计算，minimum labels 不从旧 panel 继承。48 个 law/target cases
+经过 `10^-36` directed-outward interval replay；24/24 fresh minima 严格低于 1，24/24
+positive controls 严格高于 1。
+
+这是 same-engine fresh-source holdout，不是 external physical independence；fresh minimum
+仍由本行 Gram 选择，因而不是 predictive validation。coarse separation class 在 8/8 rows
+复现，但 amplitude law order 仍不稳定：minimum order 有三种 strict types（6/1/1），
+positive control 有两种（6/2）。因此 canonical weighting、uniform growing weighted
+theorem、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime conclusion 继续
+为 OPEN/NONE；Session-named evaluator files absent，故不宣称 official pass。
+
+```text
+TPC315_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_FRESH_SOURCE_LOCKED_WEIGHT_MENU_HOLDOUT_REPLICATION_AND_LAW_ORDER_SHIFT
+TPC315_ROUTE_ADVANCE = YES_SCOPED_FRESH_SOURCE_CLASS_REPLICATION_AND_ORDER_OBSTRUCTION
+TPC315_FRESH_SOURCE_TARGET_RECOMPUTATION = PROVED_EXACT_FINITE_8_ROWS
+TPC315_LOCKED_WEIGHT_MENU = PROVED_EXACT_FINITE_PRE_TARGET
+TPC315_MINIMUM_BELOW_ONE = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC315_POSITIVE_ABOVE_ONE = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC315_HOLDOUT_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_8_OF_8
+TPC315_MINIMUM_LAW_ORDER_SHIFT = NUMERICALLY_CERTIFIED_FINITE_3_TYPES
+TPC315_POSITIVE_LAW_ORDER_SHIFT = NUMERICALLY_CERTIFIED_FINITE_2_TYPES
+TPC315_EXTERNAL_INDEPENDENCE = NONE_SAME_LOCKED_ENGINE
+TPC315_TARGET_GENERATION_LEAKAGE = FRESH_SOURCE_GRAM_DEPENDENT_LABELS
+TPC315_CANONICAL_WEIGHTING = OPEN
+TPC315_FRESH_PHYSICAL_HOLDOUT = NONE_SAME_LOCKED_ENGINE
+TPC315_UNIFORM_GROWING_WEIGHTED_THEOREM = OPEN
+TPC315_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC315_FIXED_POWER_CREDIT = 0
+TPC315_FULL_GATE_B = OPEN
+TPC315_TWIN_PRIME_RESULT = NONE
+TPC315_STATUS = PROVED_EXACT_FINITE_FRESH_SOURCE_LOCKED_WEIGHT_MENU_HOLDOUT_REPLICATION_AND_LAW_ORDER_SHIFT
+TPC315_STRONGEST_POSITIVE = FRESH_8_OF_8_CLASS_REPLICATION_WITH_48_EXACT_INTERVAL_CASES
+TPC315_STRONGEST_OBSTRUCTION = FRESH_LAW_ORDER_IS_NOT_STABLE_OR_CANONICAL
+TPC315_OPEN_THEOREM = LITERAL_ARITHMETIC_L2_BOUND_FOR_THE_FRESH_PHYSICAL_PANEL
+TPC315_REUSABLE_STRUCTURE = PRE_TARGET_MENU_LOCK_PLUS_FRESH_GRAM_EXTREMUM_AND_OUTWARD_LAW_AUDIT
+TPC315_ROUND2_CLUE = PROBE_LITERAL_ARITHMETIC_L2_INTERFACE_ON_THE_FRESH_PANEL_BEFORE_ANY_GROWING_CLAIM
+```
+
+Latest TPC-315 entry:
+
+```text
+papers/tpc-315-fresh-source-locked-weight-holdout/README.md
+papers/tpc-315-fresh-source-locked-weight-holdout/PROOF_PACKAGE.md
+papers/tpc-315-fresh-source-locked-weight-holdout/notes/theorem_ledger.md
+papers/tpc-315-fresh-source-locked-weight-holdout/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc315_fresh_source_locked_weight_holdout.md
+research/tpc-big-road/tpc_bridge_b_tpc315_fresh_source_locked_weight_holdout_checker.py
+```
+
+TPC-314 previous section: externally motivated weight-law audit
 -----------------------------------------------------------------------------------------------
 
 TPC-314 承接 TPC-313 的 weighting-law open gate，冻结 TPC-312 的 8 个 source-shell rows，
@@ -10666,11 +10722,11 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V167/TPC-314 是当前 release；其 producer、independent replay、stress audit 与
+V168/TPC-315 是当前 release；其 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
-当前 curated cascade command set 共 277 对 normal/optimized 命令、554 次
+当前 curated cascade command set 共 281 对 normal/optimized 命令、562 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -10688,7 +10744,8 @@ bridge 与 standalone tail checks 逐项通过；TPC-298 的 4 对亦由本项�
 standalone tail checks 逐项通过；TPC-299 的 4 对亦由本项目 bridge 与 standalone
 tail checks 逐项通过；TPC-300 的 4 对亦由本项目 bridge 与 standalone tail
 checks 逐项通过；TPC-301 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-302 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-303 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-304 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-305 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-306 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-307 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-308 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-309 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-310 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-311 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-312 的 4 对也由本项目 bridge 与 standalone tail checks 逐项通过；TPC-313 的 4 对也由本项目 bridge 与 standalone tail checks 逐项通过。
-TPC-314 的 4 对也由本项目 bridge 与 standalone tail checks 逐项通过；完整 277 对组合未因
+TPC-314 的 4 对也由本项目 bridge 与 standalone tail checks 逐项通过；TPC-315 的 4 对
+也由本项目 bridge 与 standalone tail checks 逐项通过；完整 281 对组合未因
 重复计算而再次运行。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
@@ -11460,7 +11517,25 @@ python -O -B research/tpc-big-road/tpc_bridge_b_tpc314_canonical_weight_law_audi
 
 TPC-314 增量 tail audit：上述 4 对共 8 次 invocation 均返回零，stderr 为空，
 normal/optimized stdout 逐对 byte-identical；Bridge-B 输出 `8 rows / 3 laws / 48 cases / minimum below one = 24 / positive above one = 24`。
-这 4 对是当前 277 对 curated cascade 的最新新增尾部。
+这 4 对是 V167/TPC-314 的新增尾部。
+
+TPC-315 的项目级 producer、independent exact replay、fresh-source stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-315-fresh-source-locked-weight-holdout/code/tpc315_fresh_source_locked_weight_holdout.py --check
+python -O -B papers/tpc-315-fresh-source-locked-weight-holdout/code/tpc315_fresh_source_locked_weight_holdout.py --check
+python -B papers/tpc-315-fresh-source-locked-weight-holdout/experiments/tpc315_independent_checker.py --check
+python -O -B papers/tpc-315-fresh-source-locked-weight-holdout/experiments/tpc315_independent_checker.py --check
+python -B papers/tpc-315-fresh-source-locked-weight-holdout/experiments/tpc315_holdout_stress.py
+python -O -B papers/tpc-315-fresh-source-locked-weight-holdout/experiments/tpc315_holdout_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc315_fresh_source_locked_weight_holdout_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc315_fresh_source_locked_weight_holdout_checker.py --check
+```
+
+上述四对共八次 invocation 已由 Bridge-B 完成：全部返回零、stderr 为空，且
+normal/optimized stdout 逐对 byte-identical。Bridge-B 输出 `8 rows / 3 laws / 48 cases /
+minimum below one = 24 / positive above one = 24 / fresh target rows = 8`。这 4 对是
+V168/TPC-315 的新增尾部。
 
 此前 TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
 
@@ -11502,6 +11577,24 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 ```
 
 随后优先读取：
+
+最新 TPC-315 入口：
+
+```text
+papers/tpc-315-fresh-source-locked-weight-holdout/README.md
+papers/tpc-315-fresh-source-locked-weight-holdout/PROOF_PACKAGE.md
+papers/tpc-315-fresh-source-locked-weight-holdout/notes/theorem_ledger.md
+papers/tpc-315-fresh-source-locked-weight-holdout/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc315_fresh_source_locked_weight_holdout.md
+research/tpc-big-road/tpc_bridge_b_tpc315_fresh_source_locked_weight_holdout_checker.py
+```
+
+TPC-315 是当前 fresh-source locked-weight release：先锁定 TPC-314 三-law menu，再在
+`I=(640,1280]` 上重新计算 8 个 Gram extrema；48 cases 中 24/24 minimum below one、
+24/24 positive above one，且 minimum/positive law-order census 分别为 3/2 types。该
+结果是 same-engine finite class replication 与 canonical amplitude obstruction；literal
+arithmetic `L2`、uniform growing theorem、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。Session evaluator files absent，故不宣称 official pass。
 
 最新 TPC-314 入口：
 
