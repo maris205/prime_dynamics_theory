@@ -3,13 +3,68 @@
 
 更新时间：2026-08-30
 
-状态：**TPC312_PROVED_EXACT_FINITE_NEW_SOURCE_SHELL_GRAM_AND_SIGN_SEPARATION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC313_PROVED_EXACT_FINITE_PROFILE_PREFIX_FEASIBILITY_AND_OUTWARD_INTERVAL_BUDGET_CERTIFICATES_PLUS_NUMERICALLY_CERTIFIED_NEW_PANEL_SEPARATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.106 current：TPC-312 new source-shell Gram and sign-separation atlas
+## 0.107 current：TPC-313 outward-rounded profile-budget interval certificate
+
+项目：`papers/tpc-313-outward-budget-interval-certificate/`
+
+类型：**PROVED_EXACT_FINITE_PROFILE_PREFIX_FEASIBILITY_AND_OUTWARD_INTERVAL_BUDGET_CERTIFICATES_PLUS_NUMERICALLY_CERTIFIED_NEW_PANEL_SEPARATION**。
+
+TPC-313 承接 TPC-312 的 new source-shell atlas，在相同锁定 literal engine 的
+`I=(320,640]`、`H=66`、`Q={24,36,54,80}`、exponent `{1,2}` 上构造 17-column source
+profile image。对每个 row，先用 exact least-squares scan 找到 weighted Gram-minimum
+target 的 first-feasible prefix `k*`（归一化残差 `tau=1/2`），再在同一 `k*` 上同时审计
+minimum target 与 all-positive control。16 个 rational ridge systems 都给出可行 primal
+upper witness 与 weak-dual lower witness；每个 residual、objective、dual、ratio 与 gap
+都经过 `10^-36` decimal grid 的 outward endpoint propagation，并由 independent checker
+逐项重放。
+
+最强正结果：8/8 weighted dual budget ratios 的 outward lower bound 严格高于 `5e-5`，
+8/8 all-positive primal budget ratios 的 outward upper bound 严格低于 `1e-5`，且两者
+使用同一个 common prefix。first-feasible prefix 的 `k*` 依次为
+`6,4,7,7,12,8,13,12`（按 `Q=24,36,54,80`、exponent `1,2` 排列）。
+
+最强 obstruction：这仍是 source-first finite diagnostic；weighted label 来自正在诊断
+的 physical Gram，profile ladder、`tau`、ridge seeds 与 common-prefix rule 也是
+modeling choices。新证书没有创造 external independence、canonical weighting、uniform
+growing budget 或 arithmetic `L2`。
+
+开放定理：在不使用 target-Gram 选择的前提下，固定一个外部可辩护的 weighting law，
+并在 genuinely fresh physical source interval 上完成 holdout replication 与 growing
+budget control；fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+可复用结构：`source profile -> exact image/Gram -> first feasible prefix -> rational
+primal/dual pair -> outward interval -> threshold firewall`。
+
+ROUND2_CLUE：`AUDIT_EXTERNALLY_JUSTIFIED_WEIGHTING_ON_A_FRESH_PHYSICAL_HOLDOUT_AFTER_FORMAL_BUDGET_CERTIFICATION`。
+
+```text
+TPC313_ROUTE_ADVANCE = YES_SCOPED_OUTWARD_PROFILE_BUDGET_CERTIFICATE
+TPC313_PROFILE_PREFIX_FEASIBILITY = PROVED_EXACT_FINITE_8_OF_8
+TPC313_RATIONAL_PRIMAL_WITNESSES = PROVED_EXACT_FINITE_16_OF_16
+TPC313_RATIONAL_DUAL_LOWER_BOUNDS = PROVED_EXACT_FINITE_16_OF_16
+TPC313_OUTWARD_GRID_ENCLOSURES = PROVED_EXACT_FINITE_16_OF_16_GRID_1E_MINUS_36
+TPC313_WEIGHTED_LOWER_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_ABOVE_5E_MINUS_5
+TPC313_POSITIVE_UPPER_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_BELOW_1E_MINUS_5
+TPC313_EXTERNAL_INDEPENDENCE = NONE_SAME_LOCKED_ENGINE
+TPC313_TARGET_GENERATION_LEAKAGE = INHERITED_TPC312_SOURCE_FIRST_GRAM_LABEL
+TPC313_EXTERNAL_WEIGHTING = OPEN
+TPC313_FRESH_PHYSICAL_HOLDOUT = OPEN
+TPC313_UNIFORM_GROWING_BUDGET = OPEN
+TPC313_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC313_FIXED_POWER_CREDIT = 0
+TPC313_FULL_GATE_B = OPEN
+TPC313_TWIN_PRIME_RESULT = NONE
+TPC313_STATUS = PROVED_EXACT_FINITE_PROFILE_PREFIX_FEASIBILITY_AND_OUTWARD_INTERVAL_BUDGET_CERTIFICATES_PLUS_NUMERICALLY_CERTIFIED_NEW_PANEL_SEPARATION
+TPC313_ROUND2_CLUE = AUDIT_EXTERNALLY_JUSTIFIED_WEIGHTING_ON_A_FRESH_PHYSICAL_HOLDOUT_AFTER_FORMAL_BUDGET_CERTIFICATION
+```
+
+## 0.106 previous：TPC-312 new source-shell Gram and sign-separation atlas
 
 项目：`papers/tpc-312-new-source-shell-separation-atlas/`
 

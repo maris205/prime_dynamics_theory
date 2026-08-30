@@ -1,11 +1,46 @@
-# TPC big road V165 / TPC-312: new source-shell separation atlas
+# TPC big road V166 / TPC-313: outward profile-budget certificate
 
 更新时间：2026-08-30
 
-状态：`TPC312_PROVED_EXACT_FINITE_NEW_SOURCE_SHELL_GRAM_AND_SIGN_SEPARATION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC313_PROVED_EXACT_FINITE_PROFILE_PREFIX_FEASIBILITY_AND_OUTWARD_INTERVAL_BUDGET_CERTIFICATES_PLUS_NUMERICALLY_CERTIFIED_NEW_PANEL_SEPARATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
+
+当前 TPC-313 proof 为
+`bridge_b_tpc313_outward_budget_interval_certificate.md`，checker 为
+`tpc_bridge_b_tpc313_outward_budget_interval_certificate_checker.py`，编号论文为
+`../../papers/tpc-313-outward-budget-interval-certificate/`。
+
+TPC-313 在 TPC-312 的新 source-shell panel 上构造 17-column literal profile image，
+对 8 个 `(Q,s)` rows 精确扫描 weighted Gram-minimum target 的 first-feasible prefix。
+在同一 common prefix 上，16 个 rational ridge witnesses 同时给出可行 primal upper bound
+和 weak-dual lower bound；`10^-36` outward grid 的 independent replay 全部闭合。8/8
+weighted dual ratios 严格高于 `5e-5`，8/8 all-positive primal ratios 严格低于 `1e-5`。
+这是 finite source-first budget certificate，不是 external weighting、fresh physical
+holdout、uniform growing theorem、arithmetic `L2` 或 twin-prime result；Session-named
+evaluator files absent，故不宣称 official pass。
+
+```text
+TPC313_ROUTE_ADVANCE = YES_SCOPED_OUTWARD_PROFILE_BUDGET_CERTIFICATE
+TPC313_PROFILE_PREFIX_FEASIBILITY = PROVED_EXACT_FINITE_8_OF_8
+TPC313_RATIONAL_PRIMAL_WITNESSES = PROVED_EXACT_FINITE_16_OF_16
+TPC313_RATIONAL_DUAL_LOWER_BOUNDS = PROVED_EXACT_FINITE_16_OF_16
+TPC313_OUTWARD_GRID_ENCLOSURES = PROVED_EXACT_FINITE_16_OF_16_GRID_1E_MINUS_36
+TPC313_WEIGHTED_LOWER_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_ABOVE_5E_MINUS_5
+TPC313_POSITIVE_UPPER_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_BELOW_1E_MINUS_5
+TPC313_EXTERNAL_INDEPENDENCE = NONE_SAME_LOCKED_ENGINE
+TPC313_TARGET_GENERATION_LEAKAGE = INHERITED_TPC312_SOURCE_FIRST_GRAM_LABEL
+TPC313_EXTERNAL_WEIGHTING = OPEN
+TPC313_FRESH_PHYSICAL_HOLDOUT = OPEN
+TPC313_UNIFORM_GROWING_BUDGET = OPEN
+TPC313_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC313_FIXED_POWER_CREDIT = 0
+TPC313_FULL_GATE_B = OPEN
+TPC313_TWIN_PRIME_RESULT = NONE
+TPC313_STATUS = PROVED_EXACT_FINITE_PROFILE_PREFIX_FEASIBILITY_AND_OUTWARD_INTERVAL_BUDGET_CERTIFICATES_PLUS_NUMERICALLY_CERTIFIED_NEW_PANEL_SEPARATION
+TPC313_ROUND2_CLUE = AUDIT_EXTERNALLY_JUSTIFIED_WEIGHTING_ON_A_FRESH_PHYSICAL_HOLDOUT_AFTER_FORMAL_BUDGET_CERTIFICATION
+```
 
 当前 TPC-312 proof 为
 `bridge_b_tpc312_new_source_shell_separation.md`，checker 为

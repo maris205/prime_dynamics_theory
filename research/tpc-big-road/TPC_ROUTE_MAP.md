@@ -2,13 +2,50 @@
 
 更新时间：2026-08-30
 
-当前地图版本：V165 / TPC-312
+当前地图版本：V166 / TPC-313
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-312`（`PROVED_EXACT_FINITE_NEW_SOURCE_SHELL_GRAM_AND_SIGN_SEPARATION_ATLAS`）；
+当前编号锚点：`TPC-313`（`PROVED_EXACT_FINITE_PROFILE_PREFIX_FEASIBILITY_AND_OUTWARD_INTERVAL_BUDGET_CERTIFICATES_PLUS_NUMERICALLY_CERTIFIED_NEW_PANEL_SEPARATION`）；
 对应论文目录为
-`papers/tpc-312-new-source-shell-separation-atlas/`。
+`papers/tpc-313-outward-budget-interval-certificate/`。
+
+TPC-313 是当前地图位置：承接 TPC-312 的新 source-shell panel，构造 17-column literal
+profile image，并在 8 个 `(Q,s)` rows 上 exact scan weighted Gram-minimum target 的
+first-feasible prefix。对每行的 common prefix，16 个 rational ridge witnesses 同时提供
+primal upper 与 weak-dual lower bound；所有 residual、objective、dual、ratio、gap 都在
+`10^-36` decimal grid 上 outward-rounding，并由 independent replay 复核。8/8 weighted
+dual lower ratios `>5e-5`，8/8 all-positive primal upper ratios `<1e-5`。这是 finite
+source-first budget certificate；target-Gram leakage、external weighting、fresh physical
+holdout、uniform budget、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime
+endpoint 仍开放。
+
+```text
+TPC313_ROUTE_ADVANCE = YES_SCOPED_OUTWARD_PROFILE_BUDGET_CERTIFICATE
+TPC313_PROFILE_PREFIX_FEASIBILITY = PROVED_EXACT_FINITE_8_OF_8
+TPC313_RATIONAL_PRIMAL_WITNESSES = PROVED_EXACT_FINITE_16_OF_16
+TPC313_RATIONAL_DUAL_LOWER_BOUNDS = PROVED_EXACT_FINITE_16_OF_16
+TPC313_OUTWARD_GRID_ENCLOSURES = PROVED_EXACT_FINITE_16_OF_16_GRID_1E_MINUS_36
+TPC313_WEIGHTED_LOWER_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_ABOVE_5E_MINUS_5
+TPC313_POSITIVE_UPPER_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_BELOW_1E_MINUS_5
+TPC313_EXTERNAL_INDEPENDENCE = NONE_SAME_LOCKED_ENGINE
+TPC313_TARGET_GENERATION_LEAKAGE = INHERITED_TPC312_SOURCE_FIRST_GRAM_LABEL
+TPC313_EXTERNAL_WEIGHTING = OPEN
+TPC313_FRESH_PHYSICAL_HOLDOUT = OPEN
+TPC313_UNIFORM_GROWING_BUDGET = OPEN
+TPC313_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC313_FIXED_POWER_CREDIT = 0
+TPC313_FULL_GATE_B = OPEN
+TPC313_TWIN_PRIME_RESULT = NONE
+TPC313_STATUS = PROVED_EXACT_FINITE_PROFILE_PREFIX_FEASIBILITY_AND_OUTWARD_INTERVAL_BUDGET_CERTIFICATES_PLUS_NUMERICALLY_CERTIFIED_NEW_PANEL_SEPARATION
+TPC313_ROUND2_CLUE = AUDIT_EXTERNALLY_JUSTIFIED_WEIGHTING_ON_A_FRESH_PHYSICAL_HOLDOUT_AFTER_FORMAL_BUDGET_CERTIFICATION
+```
+
+TPC-313 的 strongest positive 是在新 source-shell panel 上把 profile-budget interface
+推进到 exact rational primal/dual 与 directed outward interval，且 common-prefix
+threshold separation 为 8/8。strongest obstruction 是 weighted label 仍由同一 physical
+Gram 生成，因此没有 external predictive meaning 或 canonical weighting。下一关是
+externally justified weighting law 与 genuinely fresh physical holdout。
 
 TPC-312 是当前地图位置：承接 TPC-311 的 fresh-source-holdout clue，把同一锁定
 literal physical engine 移到新 source interval `I=(320,640]`，固定 `H=66`、
@@ -565,8 +602,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V165 / TPC-312
-MAP_LABEL = NEW SOURCE-SHELL GRAM ATLAS / EXACT SIGN SEPARATION, BUDGET GATE OPEN
+YOU ARE HERE = V166 / TPC-313
+MAP_LABEL = OUTWARD PROFILE-BUDGET CERTIFICATE / EXTERNAL WEIGHTING GATE OPEN
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -802,6 +839,45 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.107 V166 / TPC-313：outward-rounded profile-budget interval certificate
+
+TPC-313 承接 TPC-312 的新 source-shell Gram atlas，把 profile-budget interface 从
+float-replayed frontier 推进到 exact rational primal/dual witnesses 与 directed outward
+interval。固定 `I=(320,640]`、`H=66`、`Q={24,36,54,80}`、exponent `{1,2}` 与 17-column
+profile ladder；对每个 row，先扫描 weighted Gram-minimum target 的 first-feasible prefix
+`k*`，再在同一 common prefix 上审计 minimum 与 all-positive control。16 个 cases 的
+residual、objective、dual、ratio、gap 都在 `10^-36` grid 上闭合并由 independent replay
+重算；weighted dual lower ratio 在 8/8 rows 中 `>5e-5`，positive primal upper ratio 在
+8/8 rows 中 `<1e-5`。
+
+```text
+TPC313_ROUTE_ADVANCE = YES_SCOPED_OUTWARD_PROFILE_BUDGET_CERTIFICATE
+TPC313_PROFILE_PREFIX_FEASIBILITY = PROVED_EXACT_FINITE_8_OF_8
+TPC313_RATIONAL_PRIMAL_WITNESSES = PROVED_EXACT_FINITE_16_OF_16
+TPC313_RATIONAL_DUAL_LOWER_BOUNDS = PROVED_EXACT_FINITE_16_OF_16
+TPC313_OUTWARD_GRID_ENCLOSURES = PROVED_EXACT_FINITE_16_OF_16_GRID_1E_MINUS_36
+TPC313_WEIGHTED_LOWER_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_ABOVE_5E_MINUS_5
+TPC313_POSITIVE_UPPER_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_BELOW_1E_MINUS_5
+TPC313_COMMON_PREFIX = PROVED_EXACT_FINITE_8_OF_8
+TPC313_EXTERNAL_INDEPENDENCE = NONE_SAME_LOCKED_ENGINE
+TPC313_TARGET_GENERATION_LEAKAGE = INHERITED_TPC312_SOURCE_FIRST_GRAM_LABEL
+TPC313_EXTERNAL_WEIGHTING = OPEN
+TPC313_FRESH_PHYSICAL_HOLDOUT = OPEN
+TPC313_UNIFORM_GROWING_BUDGET = OPEN
+TPC313_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC313_FIXED_POWER_CREDIT = 0
+TPC313_FULL_GATE_B = OPEN
+TPC313_TWIN_PRIME_RESULT = NONE
+TPC313_STATUS = PROVED_EXACT_FINITE_PROFILE_PREFIX_FEASIBILITY_AND_OUTWARD_INTERVAL_BUDGET_CERTIFICATES_PLUS_NUMERICALLY_CERTIFIED_NEW_PANEL_SEPARATION
+TPC313_ROUND2_CLUE = AUDIT_EXTERNALLY_JUSTIFIED_WEIGHTING_ON_A_FRESH_PHYSICAL_HOLDOUT_AFTER_FORMAL_BUDGET_CERTIFICATION
+```
+
+strongest positive：8 个 common-prefix scans、16 个 rational primal/dual witnesses 与
+`10^-36` outward replay 共同把预算层变成可审计 finite interface。strongest obstruction：
+minimum label 仍 source-first Gram-dependent，且所有 weighting choices 仍为 modeling
+choices。open theorem：外部可辩护 weighting law 在 fresh physical holdout 与 growing
+budget 上的稳定性。
 
 ## 5.106 V165 / TPC-312：new source-shell Gram and sign-separation atlas
 
@@ -7480,6 +7556,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-30 | V166 / TPC-313 | Bridge A / Gate B：outward-rounded profile-budget certificate 已完成；external weighting、fresh physical holdout、uniform budget、arithmetic `L2` 与 full Gate B open | `TPC-313` | 在 TPC-312 新 source-shell panel 上完成 8 common prefixes / 16 rational primal-dual witnesses；`10^-36` outward grid independent replay；weighted dual `>5e-5` 与 positive primal `<1e-5` 均为 8/8；下一步为 externally justified weighting 与 fresh holdout |
 | 2026-08-30 | V165 / TPC-312 | Bridge A / Gate B：new source-shell Gram/sign-separation atlas 已完成；profile-budget outward rounding、external weighting、uniform budget、arithmetic `L2` 与 full Gate B open | `TPC-312` | 新源区间 `I=(320,640]`、`H=66`、`Q=24,36,54,80`、exponent `1,2`；8 rows / 84 shell targets / 37,440 sign classes；8/8 modular full rank、8/8 strict separation、Q-spine ordering；下一步为 outward-rounded profile-budget interface |
 | 2026-08-29 | V164 / TPC-311 | Bridge A / Gate B：declared stratification 的 tau-slice holdout replication 已完成；external weighting law、fresh physical holdout、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-311` | 固定 profile-pooled design-cell 与 equal-cell arithmetic rule；54 strata、6 blocks、22 controls；native calibration `LEFT` 在 `tau=.75` held-out slice 反转为 `RIGHT`，all-radius confirmation unresolved；下一步为 fresh source holdout 与 externally justified weighting law |
 | 2026-08-29 | V163 / TPC-310 | Bridge A / Gate B：cross-holdout aggregation-order obstruction 已完成；canonical weighting、profile-independent preference、formal directed rounding、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-310` | 冻结 TPC-309 的 162 observations，枚举 49 profile/radius selectors 与 147 aggregate rows；pooled `RIGHT`、balanced `LEFT`、geometric `RIGHT` on full selector，证明 ratio-of-sums 的 denominator-weighted identity；下一步为 pre-registered stratified weights 与 fresh holdout replication |

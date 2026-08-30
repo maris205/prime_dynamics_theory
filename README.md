@@ -9,6 +9,41 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-313 将 TPC-312 的新 source-shell panel 推进到正式的
+profile-budget interface。对 `I=(320,640]`、`H=66`、`Q={24,36,54,80}` 与
+exponent `{1,2}` 的 8 行，精确扫描 weighted Gram-minimum target 的 first-feasible
+profile prefix；在同一 prefix 上构造 16 个 rational primal/dual witnesses，并用
+`10^-36` outward decimal grid 重放。8/8 weighted dual lower ratios `>5e-5`，8/8
+all-positive primal upper ratios `<1e-5`。这是有限 source-first certificate，不是
+external physical holdout、uniform growing theorem、arithmetic `L2` 或 twin-prime proof。
+
+```text
+TPC313_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_PROFILE_PREFIX_FEASIBILITY_AND_OUTWARD_INTERVAL_BUDGET_CERTIFICATES_PLUS_NUMERICALLY_CERTIFIED_NEW_PANEL_SEPARATION
+TPC313_ROUTE_ADVANCE = YES_SCOPED_OUTWARD_PROFILE_BUDGET_CERTIFICATE
+TPC313_PROFILE_PREFIX_FEASIBILITY = PROVED_EXACT_FINITE_8_OF_8
+TPC313_RATIONAL_PRIMAL_WITNESSES = PROVED_EXACT_FINITE_16_OF_16
+TPC313_RATIONAL_DUAL_LOWER_BOUNDS = PROVED_EXACT_FINITE_16_OF_16
+TPC313_OUTWARD_GRID_ENCLOSURES = PROVED_EXACT_FINITE_16_OF_16_GRID_1E_MINUS_36
+TPC313_WEIGHTED_LOWER_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_ABOVE_5E_MINUS_5
+TPC313_POSITIVE_UPPER_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_BELOW_1E_MINUS_5
+TPC313_EXTERNAL_INDEPENDENCE = NONE_SAME_LOCKED_ENGINE
+TPC313_TARGET_GENERATION_LEAKAGE = INHERITED_TPC312_SOURCE_FIRST_GRAM_LABEL
+TPC313_EXTERNAL_WEIGHTING = OPEN
+TPC313_FRESH_PHYSICAL_HOLDOUT = OPEN
+TPC313_UNIFORM_GROWING_BUDGET = OPEN
+TPC313_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC313_FIXED_POWER_CREDIT = 0
+TPC313_FULL_GATE_B = OPEN
+TPC313_TWIN_PRIME_RESULT = NONE
+TPC313_STATUS = PROVED_EXACT_FINITE_PROFILE_PREFIX_FEASIBILITY_AND_OUTWARD_INTERVAL_BUDGET_CERTIFICATES_PLUS_NUMERICALLY_CERTIFIED_NEW_PANEL_SEPARATION
+TPC313_ROUND2_CLUE = AUDIT_EXTERNALLY_JUSTIFIED_WEIGHTING_ON_A_FRESH_PHYSICAL_HOLDOUT_AFTER_FORMAL_BUDGET_CERTIFICATION
+```
+
+`papers/tpc-313-outward-budget-interval-certificate` - TPC-313 current project，包含
+8 个 common-prefix scans、16 个 exact rational budget witnesses、outward interval
+replay、independent checker、stress suite、proof package、PDF 与本地 Bridge-B checker。
+Session-named evaluator files absent，故不宣称 official pass。
+
 当前主线状态：TPC-312 将 Bridge-B 推进到一个新的 source-shell panel。固定同一 literal
 physical engine 的新源区间 `I=(320,640]`、`H=66`、`Q={24,36,54,80}` 与 exponent
 `{1,2}`，重新构造 8 个 rational physical Gram rows，不导入旧 atlas 的 sign labels。
