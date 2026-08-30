@@ -3,13 +3,64 @@
 
 更新时间：2026-08-30
 
-状态：**TPC313_PROVED_EXACT_FINITE_PROFILE_PREFIX_FEASIBILITY_AND_OUTWARD_INTERVAL_BUDGET_CERTIFICATES_PLUS_NUMERICALLY_CERTIFIED_NEW_PANEL_SEPARATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC314_PROVED_EXACT_FINITE_EXTERNALLY_MOTIVATED_WEIGHT_LAW_ENCLOSURE_AND_NEW_PANEL_ROBUSTNESS_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.107 current：TPC-313 outward-rounded profile-budget interval certificate
+## 0.108 current：TPC-314 externally motivated weight-law audit
+
+项目：papers/tpc-314-canonical-weight-law-audit/
+
+类型：**PROVED_EXACT_FINITE_EXTERNALLY_MOTIVATED_WEIGHT_LAW_ENCLOSURE_AND_NEW_PANEL_ROBUSTNESS_AUDIT**。
+
+TPC-314 承接 TPC-313 的 weighting-law open gate，冻结 TPC-312 的 8 个 source-shell rows，
+在同一 I=(320,640]、H=66、Q={24,36,54,80}、exponent {1,2} 面板上固定审计三种
+正权：counting 1、reduced-residue 1/(p-1) 与 prime von-Mangoldt log(p)。前两种
+权为 rational；log(p) 用 120 项 range-reduced atanh 正项级数与显式 geometric tail
+做 rational enclosure，随后所有 weighted numerator/denominator/ratio 在 10^-36 grid
+上 outward-rounding。共 48 个 target/law cases，24/24 Gram-minimum intervals 严格低于
+1，24/24 all-positive control intervals 严格高于 1。
+
+最强正结果：三种 externally motivated candidate laws 在这组 finite panel 上都保留
+minimum-versus-positive separation，且 logarithmic law 有独立 exact interval replay。
+
+最强 obstruction：幅度不是 law-invariant；minimum law order 在 8 行中有 1 个
+counting < log < reduced-residue crossover，positive control 有 4 种 strict order
+types。因此有限 class robustness 不能选择 canonical weighting，也不能支持“最方便的
+权重就是正确权重”。
+
+开放定理：把相同 weight menu 在 fresh source interval 上先锁定，再重算 physical targets
+并检验 holdout；uniform growing weighted theorem、arithmetic L2、fixed-power credit、
+full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+可复用结构：frozen physical Gram -> declared positive laws -> rational/log interval ->
+weighted ratio -> class/order firewall。
+
+ROUND2_CLUE：REPLICATE_THE_LOCKED_WEIGHT_LAW_MENU_ON_A_FRESH_SOURCE_INTERVAL_WITH_WEIGHTS_FIXED_BEFORE_TARGET_RECOMPUTATION。
+
+    TPC314_ROUTE_ADVANCE = YES_SCOPED_FINITE_WEIGHT_CLASS_ROBUSTNESS
+    TPC314_WEIGHTED_GRAM_IDENTITY = PROVED_EXACT_FINITE
+    TPC314_LOG_ATANH_ENCLOSURE = PROVED_EXACT_FINITE_120_TERMS
+    TPC314_DIRECTED_INTERVAL_PROPAGATION = PROVED_EXACT_FINITE_GRID_1E_MINUS_36
+    TPC314_MINIMUM_BELOW_ONE = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC314_POSITIVE_ABOVE_ONE = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC314_MINIMUM_ORDER = NUMERICALLY_CERTIFIED_FINITE_7_OF_8_LOG_LT_COUNT_LT_RECIP_ONE_CROSSOVER
+    TPC314_POSITIVE_ORDER = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_FOUR_ORDER_TYPES
+    TPC314_EXTERNAL_INDEPENDENCE = NONE_SAME_LOCKED_ENGINE
+    TPC314_TARGET_GENERATION_LEAKAGE = INHERITED_TPC312_SOURCE_FIRST_GRAM_LABEL
+    TPC314_CANONICAL_WEIGHTING = OPEN
+    TPC314_FRESH_PHYSICAL_HOLDOUT = OPEN
+    TPC314_UNIFORM_GROWING_WEIGHTED_THEOREM = OPEN
+    TPC314_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+    TPC314_FIXED_POWER_CREDIT = 0
+    TPC314_FULL_GATE_B = OPEN
+    TPC314_TWIN_PRIME_RESULT = NONE
+    TPC314_STATUS = PROVED_EXACT_FINITE_EXTERNALLY_MOTIVATED_WEIGHT_LAW_ENCLOSURE_AND_NEW_PANEL_ROBUSTNESS_AUDIT
+    TPC314_ROUND2_CLUE = REPLICATE_THE_LOCKED_WEIGHT_LAW_MENU_ON_A_FRESH_SOURCE_INTERVAL_WITH_WEIGHTS_FIXED_BEFORE_TARGET_RECOMPUTATION
+
+## 0.107 previous：TPC-313 outward-rounded profile-budget interval certificate
 
 项目：`papers/tpc-313-outward-budget-interval-certificate/`
 

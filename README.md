@@ -9,6 +9,44 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-314 在 TPC-312 的新 source-shell panel 上完成三种 externally
+motivated positive weighting law 的有限审计：counting 1、reduced-residue 1/(p-1)、
+prime von-Mangoldt log(p)。8 个 rows、3 个 laws、2 个 targets 共 48 cases；24/24
+Gram-minimum intervals 严格低于 1，24/24 all-positive controls 严格高于 1。log(p)
+由 120 项 rational atanh range reduction 与 geometric tail outward-enclose，并在
+10^-36 grid 上由 independent checker 重放。幅度存在 law dependence：minimum order
+有一次 counting/log crossover，positive control 有四种 strict order types。
+
+这是 finite same-engine/source-first robustness audit，不是 canonical weighting theorem、
+external physical holdout、uniform growing theorem、arithmetic L2、fixed-power credit、
+full Gate B 或 twin-prime proof；Session-named evaluator files absent，故不宣称 official
+Route-A/Route-B pass。
+
+TPC314_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_EXTERNALLY_MOTIVATED_WEIGHT_LAW_ENCLOSURE_AND_NEW_PANEL_ROBUSTNESS_AUDIT
+TPC314_ROUTE_ADVANCE = YES_SCOPED_FINITE_WEIGHT_CLASS_ROBUSTNESS
+TPC314_WEIGHTED_GRAM_IDENTITY = PROVED_EXACT_FINITE
+TPC314_LOG_ATANH_ENCLOSURE = PROVED_EXACT_FINITE_120_TERMS
+TPC314_DIRECTED_INTERVAL_PROPAGATION = PROVED_EXACT_FINITE_GRID_1E_MINUS_36
+TPC314_MINIMUM_BELOW_ONE = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC314_POSITIVE_ABOVE_ONE = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC314_MINIMUM_ORDER = NUMERICALLY_CERTIFIED_FINITE_7_OF_8_LOG_LT_COUNT_LT_RECIP_ONE_CROSSOVER
+TPC314_POSITIVE_ORDER = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_FOUR_ORDER_TYPES
+TPC314_EXTERNAL_INDEPENDENCE = NONE_SAME_LOCKED_ENGINE
+TPC314_TARGET_GENERATION_LEAKAGE = INHERITED_TPC312_SOURCE_FIRST_GRAM_LABEL
+TPC314_CANONICAL_WEIGHTING = OPEN
+TPC314_FRESH_PHYSICAL_HOLDOUT = OPEN
+TPC314_UNIFORM_GROWING_WEIGHTED_THEOREM = OPEN
+TPC314_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC314_FIXED_POWER_CREDIT = 0
+TPC314_FULL_GATE_B = OPEN
+TPC314_TWIN_PRIME_RESULT = NONE
+TPC314_STATUS = PROVED_EXACT_FINITE_EXTERNALLY_MOTIVATED_WEIGHT_LAW_ENCLOSURE_AND_NEW_PANEL_ROBUSTNESS_AUDIT
+TPC314_ROUND2_CLUE = REPLICATE_THE_LOCKED_WEIGHT_LAW_MENU_ON_A_FRESH_SOURCE_INTERVAL_WITH_WEIGHTS_FIXED_BEFORE_TARGET_RECOMPUTATION
+
+papers/tpc-314-canonical-weight-law-audit - TPC-314 current project；含
+README、proof/theorem ledger、exact producer、independent checker、stress suite、
+canonical JSON certificate、PDF 与 local Bridge-B checker。
+
 当前主线状态：TPC-313 将 TPC-312 的新 source-shell panel 推进到正式的
 profile-budget interface。对 `I=(320,640]`、`H=66`、`Q={24,36,54,80}` 与
 exponent `{1,2}` 的 8 行，精确扫描 weighted Gram-minimum target 的 first-feasible

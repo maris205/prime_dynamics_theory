@@ -2,23 +2,26 @@
 
 更新时间：2026-08-30
 
-当前地图版本：V166 / TPC-313
+当前地图版本：V167 / TPC-314
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-313`（`PROVED_EXACT_FINITE_PROFILE_PREFIX_FEASIBILITY_AND_OUTWARD_INTERVAL_BUDGET_CERTIFICATES_PLUS_NUMERICALLY_CERTIFIED_NEW_PANEL_SEPARATION`）；
+当前编号锚点：`TPC-314`（`PROVED_EXACT_FINITE_EXTERNALLY_MOTIVATED_WEIGHT_LAW_ENCLOSURE_AND_NEW_PANEL_ROBUSTNESS_AUDIT`）；
 对应论文目录为
-`papers/tpc-313-outward-budget-interval-certificate/`。
+`papers/tpc-314-canonical-weight-law-audit/`。
 
-TPC-313 是当前地图位置：承接 TPC-312 的新 source-shell panel，构造 17-column literal
-profile image，并在 8 个 `(Q,s)` rows 上 exact scan weighted Gram-minimum target 的
-first-feasible prefix。对每行的 common prefix，16 个 rational ridge witnesses 同时提供
-primal upper 与 weak-dual lower bound；所有 residual、objective、dual、ratio、gap 都在
-`10^-36` decimal grid 上 outward-rounding，并由 independent replay 复核。8/8 weighted
-dual lower ratios `>5e-5`，8/8 all-positive primal upper ratios `<1e-5`。这是 finite
-source-first budget certificate；target-Gram leakage、external weighting、fresh physical
-holdout、uniform budget、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime
-endpoint 仍开放。
+TPC-314 是当前地图位置：承接 TPC-313 的 weighting-law open gate，冻结 TPC-312 的 8 个
+source-shell rows，固定审计 counting `1`、reduced-residue `1/(p-1)` 与 von-Mangoldt `log(p)` 三类正权。
+48 个 target/law cases 完成 directed outward replay；24/24 minimum 严格低于 1，24/24
+all-positive controls 严格高于 1。log(p) 由 120 项 rational atanh enclosure 支持；minimum
+law order 有一次 counting/log crossover，positive control 有四种 strict order types。
+这是 same-engine/source-first finite robustness audit，canonical weighting、fresh physical holdout、
+uniform growing weighted theorem、arithmetic `L2`、fixed-power credit、full Gate B 与
+twin-prime endpoint 仍开放，且 Session-named evaluator files absent，故不宣称 official pass。
+
+TPC-313 是上一位置：在同一新 source-shell panel 上完成 profile-budget 的 exact
+primal/dual 与 directed outward certificate；其 external weighting 与 fresh holdout clue
+自然引出本轮 TPC-314。
 
 ```text
 TPC313_ROUTE_ADVANCE = YES_SCOPED_OUTWARD_PROFILE_BUDGET_CERTIFICATE
@@ -602,8 +605,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V166 / TPC-313
-MAP_LABEL = OUTWARD PROFILE-BUDGET CERTIFICATE / EXTERNAL WEIGHTING GATE OPEN
+YOU ARE HERE = V167 / TPC-314
+MAP_LABEL = FINITE WEIGHT-LAW CLASS ROBUSTNESS / FRESH HOLDOUT GATE OPEN
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -839,6 +842,49 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.108 V167 / TPC-314：externally motivated weight-law audit
+
+TPC-314 承接 TPC-313 的 external-weighting open gate。它冻结 TPC-312 的
+I=(320,640]、H=66、Q={24,36,54,80}、exponent {1,2} 八个 source-shell
+rows，声明 counting 1、reduced-residue 1/(p-1)、以及 prime von-Mangoldt
+log(p) 三种正权。前两种权为 rational；最后一种用 120 项 range-reduced
+atanh 正项级数与 geometric tail 做 rational enclosure，并把 weighted
+numerator、denominator 与 ratio 在 10^-36 grid 上向外舍入。
+
+48 个 target/law cases 均由 independent checker 重放：24/24 Gram-minimum
+intervals 严格低于 1，24/24 all-positive controls 严格高于 1。因此三种
+candidate law 在这个 finite panel 上保留 coarse separation class。另一方面，
+幅度并不 law-invariant：minimum order 在 7 行为
+log<count<reduced-residue，在 (Q,s)=(54,1) 发生
+count<log<reduced-residue crossover；positive control 出现四种 strict
+order types。
+
+    TPC314_ROUTE_ADVANCE = YES_SCOPED_FINITE_WEIGHT_CLASS_ROBUSTNESS
+    TPC314_WEIGHTED_GRAM_IDENTITY = PROVED_EXACT_FINITE
+    TPC314_LOG_ATANH_ENCLOSURE = PROVED_EXACT_FINITE_120_TERMS
+    TPC314_DIRECTED_INTERVAL_PROPAGATION = PROVED_EXACT_FINITE_GRID_1E_MINUS_36
+    TPC314_MINIMUM_BELOW_ONE = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC314_POSITIVE_ABOVE_ONE = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC314_MINIMUM_ORDER = NUMERICALLY_CERTIFIED_FINITE_7_OF_8_LOG_LT_COUNT_LT_RECIP_ONE_CROSSOVER
+    TPC314_POSITIVE_ORDER = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_FOUR_ORDER_TYPES
+    TPC314_EXTERNAL_INDEPENDENCE = NONE_SAME_LOCKED_ENGINE
+    TPC314_TARGET_GENERATION_LEAKAGE = INHERITED_TPC312_SOURCE_FIRST_GRAM_LABEL
+    TPC314_CANONICAL_WEIGHTING = OPEN
+    TPC314_FRESH_PHYSICAL_HOLDOUT = OPEN
+    TPC314_UNIFORM_GROWING_WEIGHTED_THEOREM = OPEN
+    TPC314_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+    TPC314_FIXED_POWER_CREDIT = 0
+    TPC314_FULL_GATE_B = OPEN
+    TPC314_TWIN_PRIME_RESULT = NONE
+    TPC314_STATUS = PROVED_EXACT_FINITE_EXTERNALLY_MOTIVATED_WEIGHT_LAW_ENCLOSURE_AND_NEW_PANEL_ROBUSTNESS_AUDIT
+    TPC314_ROUND2_CLUE = REPLICATE_THE_LOCKED_WEIGHT_LAW_MENU_ON_A_FRESH_SOURCE_INTERVAL_WITH_WEIGHTS_FIXED_BEFORE_TARGET_RECOMPUTATION
+
+strongest positive result：固定的三-law menu 在 24 个 minimum 与 24 个
+positive finite cases 上都保留 class，且 log(p) 有 rational outward certificate。
+strongest obstruction：law-dependent amplitude/order 暴露了 canonical weighting 尚未
+被识别。open theorem：把菜单在 fresh source interval 上先锁定，再重算 targets 并做
+holdout；uniform weighted growth 与 arithmetic L2 仍未支付。
 
 ## 5.107 V166 / TPC-313：outward-rounded profile-budget interval certificate
 
@@ -7556,6 +7602,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-30 | V167 / TPC-314 | Bridge A / Gate B：externally motivated weight-law finite robustness 已完成；canonical weighting、fresh physical holdout、uniform weighted theorem、arithmetic L2 与 full Gate B open | TPC-314 | 固定 TPC-312 八个 source-shell rows，审计 counting、reduced-residue、von-Mangoldt 三种正权；48 cases 全部完成 outward log interval replay，24/24 minimum below one、24/24 positive above one；law-dependent amplitude 产生一次 minimum crossover 与四种 positive-order types；下一步为 fresh-source locked-menu replication |
 | 2026-08-30 | V166 / TPC-313 | Bridge A / Gate B：outward-rounded profile-budget certificate 已完成；external weighting、fresh physical holdout、uniform budget、arithmetic `L2` 与 full Gate B open | `TPC-313` | 在 TPC-312 新 source-shell panel 上完成 8 common prefixes / 16 rational primal-dual witnesses；`10^-36` outward grid independent replay；weighted dual `>5e-5` 与 positive primal `<1e-5` 均为 8/8；下一步为 externally justified weighting 与 fresh holdout |
 | 2026-08-30 | V165 / TPC-312 | Bridge A / Gate B：new source-shell Gram/sign-separation atlas 已完成；profile-budget outward rounding、external weighting、uniform budget、arithmetic `L2` 与 full Gate B open | `TPC-312` | 新源区间 `I=(320,640]`、`H=66`、`Q=24,36,54,80`、exponent `1,2`；8 rows / 84 shell targets / 37,440 sign classes；8/8 modular full rank、8/8 strict separation、Q-spine ordering；下一步为 outward-rounded profile-budget interface |
 | 2026-08-29 | V164 / TPC-311 | Bridge A / Gate B：declared stratification 的 tau-slice holdout replication 已完成；external weighting law、fresh physical holdout、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-311` | 固定 profile-pooled design-cell 与 equal-cell arithmetic rule；54 strata、6 blocks、22 controls；native calibration `LEFT` 在 `tau=.75` held-out slice 反转为 `RIGHT`，all-radius confirmation unresolved；下一步为 fresh source holdout 与 externally justified weighting law |
