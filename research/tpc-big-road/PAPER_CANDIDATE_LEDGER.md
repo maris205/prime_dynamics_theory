@@ -3,13 +3,64 @@
 
 更新时间：2026-08-30
 
-状态：**TPC315_PROVED_EXACT_FINITE_FRESH_SOURCE_LOCKED_WEIGHT_MENU_HOLDOUT_REPLICATION_AND_LAW_ORDER_SHIFT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC316_PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.109 current：TPC-315 fresh-source locked-weight holdout
+## 0.110 current：TPC-316 literal arithmetic L2 fresh-panel envelope
+
+项目：papers/tpc-316-literal-arithmetic-l2-fresh-panel/
+
+类型：**PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION**。
+
+TPC-316 承接 TPC-315 的 literal arithmetic `L2` open gate，把同一 TPC-268
+deleted-diagonal centered prime-shell formula 提升为完整的 source-to-output operator
+`A_(Q,s,X): ell^2(I_X)->ell^2(S_Q x I_X)`。在两个 disjoint panels
+`I_640={321,...,640}` 与 `I_1280={641,...,1280}` 上，对
+`Q={24,36,54,80}`、`s={1,2}` 的 16 个 rows，用 exact signed-difference/residue-count
+identity 计算 Hilbert--Schmidt mass，并对每行 5 个坐标列给出 exact lower witnesses。
+
+最强正结果：有限 Frobenius interface
+`N^(-1)||A beta||_2^2 <= (||A||_HS^2/N)||beta||_2^2` 的系数由 exact rational
+counting identity 给出；16/16 rows、80/80 probes 均由 independent replay 重建。
+
+最强 obstruction：normalized Hilbert--Schmidt upper envelope 从 `X=640` 到
+`X=1280` 在 8/8 matched rows 上升，倍率为 1.074367--1.316043；fresh panel 上
+Frobenius/probe ratio 为 517.635--581.975。该上升只作 NUMERICAL_OBSERVATION，不能
+推出 true operator norm 上升；它仅在声明的两面板范围内 REFUTED_SCOPED 了“HS envelope
+是衰减 proxy”的用法。
+
+开放定理：true growing operator-norm estimate、arithmetic cancellation beyond
+Frobenius、canonical normalization、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。该项目使用同一锁定 engine，非 external physical holdout；
+Session-named evaluator files absent，故不宣称 official pass。
+
+可复用结构：`literal matrix -> signed-difference count -> exact HS envelope ->
+coordinate lower witness -> finite sandwich -> growth firewall`。
+
+ROUND2_CLUE：REPLACE_THE_FROBENIUS_ENVELOPE_BY_A_GROWING_OPERATOR_OR_ARITHMETIC_CANCELLATION_ESTIMATE_WITHOUT_IMPORTING_A_POWER_CLAIM。
+
+    TPC316_ROUTE_ADVANCE = YES_SCOPED_LITERAL_FINITE_L2_ENVELOPE
+    TPC316_LITERAL_OPERATOR = PROVED_EXACT_FINITE
+    TPC316_FROBENIUS_L2_ENVELOPE = PROVED_EXACT_FINITE
+    TPC316_DIFFERENCE_RESIDUE_COUNT = PROVED_EXACT_FINITE
+    TPC316_COORDINATE_LOWER_WITNESSES = PROVED_EXACT_FINITE_5_PER_ROW
+    TPC316_ROWS = NUMERICALLY_CERTIFIED_FINITE_16
+    TPC316_PROBES = NUMERICALLY_CERTIFIED_FINITE_80
+    TPC316_NORMALIZED_HS_TWO_SCALE_RISE = NUMERICALLY_CERTIFIED_FINITE_8_OF_8
+    TPC316_FRESH_PANEL_PROBE_GAP = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_ABOVE_517
+    TPC316_HS_DECAY_PROXY = REFUTED_SCOPED_TWO_DECLARED_PANELS
+    TPC316_GROWING_ARITHMETIC_L2 = OPEN
+    TPC316_TRUE_OPERATOR_NORM_DECAY = OPEN
+    TPC316_ARITHMETIC_ADVANCE = NO
+    TPC316_FIXED_POWER_CREDIT = 0
+    TPC316_FULL_GATE_B = OPEN
+    TPC316_TWIN_PRIME_RESULT = NONE
+    TPC316_STATUS = PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION
+
+## 0.109 previous：TPC-315 fresh-source locked-weight holdout
 
 项目：papers/tpc-315-fresh-source-locked-weight-holdout/
 
@@ -5760,6 +5811,7 @@ handoff。
 
 | 日期 | 版本 | 新增可发表单元 | 状态 |
 |---|---|---|---|
+| 2026-08-30 | V169 | literal source-to-output operator、exact signed-difference/residue Hilbert--Schmidt identity、finite Frobenius L2 envelope、80 coordinate lower probes、8/8 normalized-HS two-panel rise 与 fresh-panel gap obstruction | **PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION / TPC-316** |
 | 2026-08-25 | V96 | hard rectangular window 的 harmonic Gram row bound、双边 `1+-epsilon` near-isometry、signed bilinear transfer 与 V59 `x^(-67/200)log x` error | **PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER / TPC-243** |
 | 2026-08-25 | V95 | literal `C_4` phase-energy complete spectrum、sharp fixed-total-energy cross disk、imbalance/Gram defect 与 TPC-241-to-V59 typed no-transfer | **PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER / TPC-242** |
 | 2026-08-24 | V94 | fixed frozen common profile 的 top-prime q-collapsed coefficient与 finite-window explicit liminf，证明 unsigned `1/48` fixed-power sharp up to logarithms | **PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS / TPC-241** |
@@ -5784,6 +5836,11 @@ handoff。
 | 2026-08-19 | V66 | common-source physical profile pullback、gcd/lcm residue aliasing 与 shared-frequency cross-divisor Gram | **PROVED_STRUCTURAL_L1 / TPC-213** |
 
 下一次更新应优先回答：
+
+TPC-316 之后的 immediate priority 是：在同一 literal source-to-output operator 上，寻找
+真正 growing 的 operator-norm estimate 或 arithmetic cancellation；不得把 finite
+Frobenius envelope、coordinate probes 或两面板趋势升级成 asymptotic power claim。
+以下条目保留为既有路线的候选 backlog。
 
 1. 能否对 TPC-213 的 shared rational-frequency clusters，在保留 `mu(d)log(d)/d`、smooth
    `psi`、four-packet signs、zero-axis 与 prime shell 的前提下证明 signed cancellation

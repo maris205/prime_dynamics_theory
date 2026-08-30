@@ -1,9 +1,65 @@
 # TPC HANDOFF
 
 更新时间：2026-08-30
-交接状态：`BOLD_CHANNEL_V168_TPC315_FRESH_SOURCE_LOCKED_WEIGHT_HOLDOUT_RELEASED`
+交接状态：`BOLD_CHANNEL_V169_TPC316_LITERAL_ARITHMETIC_L2_ENVELOPE_RELEASED`
 
-TPC-315 current section: fresh-source locked-weight holdout
+TPC-316 current section: literal arithmetic L2 fresh-panel envelope
+-----------------------------------------------------------------------------------------------
+
+TPC-316 承接 TPC-315 留下的 literal arithmetic `L2` open gate，把同一
+TPC-268 deleted-diagonal centered prime-shell kernel 写成完整的 source-to-output
+operator
+`A_(Q,s,X): ell^2(I_X) -> ell^2(S_Q x I_X)`。固定 `H=66`、`Q={24,36,54,80}`、
+`s={1,2}`，在两个 disjoint source panels
+`I_640={321,...,640}` 与 `I_1280={641,...,1280}` 上共审计 16 rows。
+每行用 exact signed-difference/residue-count identity 计算 Hilbert--Schmidt mass，
+并对 5 个 endpoint-inclusive coordinate columns 给出 exact lower witnesses；总计
+80 个 probes。
+
+最强正结果是一个真实 literal finite interface：对任意有限 source vector `beta`，
+`||A beta||_2^2 <= ||A||_HS^2 ||beta||_2^2`，从而
+`N^(-1)||A beta||_2^2 <= (||A||_HS^2/N)||beta||_2^2`；producer、independent
+replay 与 stress suite 对 16/16 rows 和 80/80 probes 一致。
+
+最强 obstruction 是 growth firewall：normalized Hilbert--Schmidt envelope 从
+`X=640` 到 `X=1280` 在 8/8 matched rows 上升，倍率为
+`1.074367--1.316043`；fresh panel 的 Frobenius/probe gap 为
+`517.635--581.975`。这只是两个声明面板上的 NUMERICAL_OBSERVATION，不能推出
+true operator norm 上升；它 scoped-refutes 了把该 HS envelope 当作衰减 proxy 的
+用法，但没有支付任何 growing arithmetic saving。
+
+因此 true growing operator-norm/cancellation theorem、canonical normalization、
+fixed-power credit、full Gate B 与 twin-prime endpoint 仍为 OPEN/NONE。该项目沿用
+同一 locked engine，不是 external physical holdout；Session-named evaluator files
+仍 absent，故不宣称 official Route-A/Route-B pass。
+
+```text
+TPC316_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION
+TPC316_ROUTE_ADVANCE = YES_SCOPED_LITERAL_FINITE_L2_ENVELOPE
+TPC316_LITERAL_OPERATOR = PROVED_EXACT_FINITE
+TPC316_FROBENIUS_L2_ENVELOPE = PROVED_EXACT_FINITE
+TPC316_DIFFERENCE_RESIDUE_COUNT = PROVED_EXACT_FINITE
+TPC316_COORDINATE_LOWER_WITNESSES = PROVED_EXACT_FINITE_5_PER_ROW
+TPC316_ROWS = NUMERICALLY_CERTIFIED_FINITE_16
+TPC316_PROBES = NUMERICALLY_CERTIFIED_FINITE_80
+TPC316_NORMALIZED_HS_TWO_SCALE_RISE = NUMERICALLY_CERTIFIED_FINITE_8_OF_8
+TPC316_FRESH_PANEL_PROBE_GAP = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_ABOVE_517
+TPC316_HS_DECAY_PROXY = REFUTED_SCOPED_TWO_DECLARED_PANELS
+TPC316_GROWING_ARITHMETIC_L2 = OPEN
+TPC316_TRUE_OPERATOR_NORM_DECAY = OPEN
+TPC316_ARITHMETIC_ADVANCE = NO
+TPC316_FIXED_POWER_CREDIT = 0
+TPC316_FULL_GATE_B = OPEN
+TPC316_TWIN_PRIME_RESULT = NONE
+TPC316_STATUS = PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION
+TPC316_STRONGEST_POSITIVE = EXACT_FINITE_LITERAL_OPERATOR_AND_INDEPENDENT_16_ROW_REPLAY
+TPC316_STRONGEST_OBSTRUCTION = NORMALIZED_HS_ENVELOPE_RISES_ON_8_OF_8_MATCHED_ROWS
+TPC316_OPEN_THEOREM = GROWING_TRUE_OPERATOR_NORM_OR_ARITHMETIC_CANCELLATION_BOUND
+TPC316_REUSABLE_STRUCTURE = LITERAL_MATRIX_TO_DIFFERENCE_COUNT_TO_HS_ENVELOPE_TO_PROBES
+TPC316_ROUND2_CLUE = REPLACE_THE_FROBENIUS_ENVELOPE_BY_A_GROWING_OPERATOR_OR_ARITHMETIC_CANCELLATION_ESTIMATE_WITHOUT_IMPORTING_A_POWER_CLAIM
+```
+
+TPC-315 previous section: fresh-source locked-weight holdout
 -----------------------------------------------------------------------------------------------
 
 TPC-315 承接 TPC-314 的 fresh-source clue：先验证并锁定 TPC-314 的 counting `1`、
@@ -48,7 +104,24 @@ TPC315_REUSABLE_STRUCTURE = PRE_TARGET_MENU_LOCK_PLUS_FRESH_GRAM_EXTREMUM_AND_OU
 TPC315_ROUND2_CLUE = PROBE_LITERAL_ARITHMETIC_L2_INTERFACE_ON_THE_FRESH_PANEL_BEFORE_ANY_GROWING_CLAIM
 ```
 
-Latest TPC-315 entry:
+Latest TPC-316 entry:
+
+```text
+papers/tpc-316-literal-arithmetic-l2-fresh-panel/README.md
+papers/tpc-316-literal-arithmetic-l2-fresh-panel/PROOF_PACKAGE.md
+papers/tpc-316-literal-arithmetic-l2-fresh-panel/notes/theorem_ledger.md
+papers/tpc-316-literal-arithmetic-l2-fresh-panel/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc316_literal_arithmetic_l2.md
+research/tpc-big-road/tpc_bridge_b_tpc316_literal_arithmetic_l2_checker.py
+```
+
+TPC-316 是当前 literal arithmetic L2 fresh-panel release：16 个 finite rows 与 80 个
+coordinate probes 由 exact difference/residue identity 和 independent replay 支持；
+normalized HS envelope 在两面板的 8/8 matched rows 上升，但这只是 scoped finite
+obstruction，true growing operator norm、arithmetic cancellation、fixed-power credit、
+full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+Previous TPC-315 entry:
 
 ```text
 papers/tpc-315-fresh-source-locked-weight-holdout/README.md
@@ -10722,18 +10795,18 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V168/TPC-315 是当前 release；其 producer、independent replay、stress audit 与
+V169/TPC-316 是当前 release；其 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
-当前 curated cascade command set 共 281 对 normal/optimized 命令、562 次
+当前 curated cascade command set 共 285 对 normal/optimized 命令、570 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
 TPC-288 再追加末尾 4 对，TPC-289 再追加末尾 4 对，TPC-290 再追加末尾 4 对，
 TPC-291 再追加末尾 4 对，TPC-292 再追加末尾 4 对，TPC-293 再追加末尾 4 对，
 TPC-294 再追加末尾 4 对，TPC-295 再追加末尾 4 对，TPC-296 再追加末尾 4 对，
-TPC-297 再追加末尾 4 对，TPC-298 再追加末尾 4 对，TPC-299 再追加末尾 4 对，TPC-300 再追加末尾 4 对，TPC-301 再追加末尾 4 对，TPC-302 再追加末尾 4 对，TPC-303 再追加末尾 4 对，TPC-304 再追加末尾 4 对，TPC-305 再追加末尾 4 对，TPC-306 再追加末尾 4 对，TPC-307 再追加末尾 4 对，TPC-308 再追加末尾 4 对，TPC-309 再追加末尾 4 对，TPC-310 再追加末尾 4 对，TPC-311 再追加末尾 4 对。V164/TPC-311 的 265 对
+TPC-297 再追加末尾 4 对，TPC-298 再追加末尾 4 对，TPC-299 再追加末尾 4 对，TPC-300 再追加末尾 4 对，TPC-301 再追加末尾 4 对，TPC-302 再追加末尾 4 对，TPC-303 再追加末尾 4 对，TPC-304 再追加末尾 4 对，TPC-305 再追加末尾 4 对，TPC-306 再追加末尾 4 对，TPC-307 再追加末尾 4 对，TPC-308 再追加末尾 4 对，TPC-309 再追加末尾 4 对，TPC-310 再追加末尾 4 对，TPC-311 再追加末尾 4 对，TPC-312 再追加末尾 4 对，TPC-313 再追加末尾 4 对，TPC-314 再追加末尾 4 对，TPC-315 再追加末尾 4 对，TPC-316 再追加末尾 4 对。V164/TPC-311 的 265 对
 registry 已完成增量回归；TPC-289 新增的 4 对已由本项目 bridge 与 standalone tail
 checks 逐项通过；TPC-290、TPC-291、TPC-292 的各 4 对均由各自 bridge 与 standalone
 tail checks 逐项通过；TPC-293 的 4 对也由本项目 bridge 与 standalone tail checks
@@ -10745,7 +10818,8 @@ standalone tail checks 逐项通过；TPC-299 的 4 对亦由本项目 bridge �
 tail checks 逐项通过；TPC-300 的 4 对亦由本项目 bridge 与 standalone tail
 checks 逐项通过；TPC-301 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-302 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-303 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-304 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-305 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-306 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-307 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-308 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-309 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-310 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-311 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-312 的 4 对也由本项目 bridge 与 standalone tail checks 逐项通过；TPC-313 的 4 对也由本项目 bridge 与 standalone tail checks 逐项通过。
 TPC-314 的 4 对也由本项目 bridge 与 standalone tail checks 逐项通过；TPC-315 的 4 对
-也由本项目 bridge 与 standalone tail checks 逐项通过；完整 281 对组合未因
+也由本项目 bridge 与 standalone tail checks 逐项通过；TPC-316 的 4 对也由本项目
+bridge 与 standalone tail checks 逐项通过；完整 285 对组合未因
 重复计算而再次运行。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
@@ -11536,6 +11610,24 @@ python -O -B research/tpc-big-road/tpc_bridge_b_tpc315_fresh_source_locked_weigh
 normal/optimized stdout 逐对 byte-identical。Bridge-B 输出 `8 rows / 3 laws / 48 cases /
 minimum below one = 24 / positive above one = 24 / fresh target rows = 8`。这 4 对是
 V168/TPC-315 的新增尾部。
+
+TPC-316 的项目级 producer、independent exact replay、literal-L2 stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-316-literal-arithmetic-l2-fresh-panel/code/tpc316_literal_arithmetic_l2_fresh_panel.py --check
+python -O -B papers/tpc-316-literal-arithmetic-l2-fresh-panel/code/tpc316_literal_arithmetic_l2_fresh_panel.py --check
+python -B papers/tpc-316-literal-arithmetic-l2-fresh-panel/experiments/tpc316_independent_checker.py --check
+python -O -B papers/tpc-316-literal-arithmetic-l2-fresh-panel/experiments/tpc316_independent_checker.py --check
+python -B papers/tpc-316-literal-arithmetic-l2-fresh-panel/experiments/tpc316_l2_stress.py
+python -O -B papers/tpc-316-literal-arithmetic-l2-fresh-panel/experiments/tpc316_l2_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc316_literal_arithmetic_l2_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc316_literal_arithmetic_l2_checker.py --check
+```
+
+TPC-316 增量 tail audit：上述 4 对共 8 次 invocation 均应返回零，stderr 为空，
+normal/optimized stdout 逐对 byte-identical；Bridge-B 应输出
+`16 rows / 80 probes / normalized-HS rise = 8`。这 4 对是 V169/TPC-316 的新增
+尾部，且不代表 growing arithmetic `L2` 或官方 Route-A/Route-B 通过。
 
 此前 TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
 

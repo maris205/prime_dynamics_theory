@@ -1,13 +1,53 @@
-# TPC big road V168 / TPC-315: fresh-source locked-weight holdout
+# TPC big road V169 / TPC-316: literal arithmetic L2 fresh-panel envelope
 
 更新时间：2026-08-30
 
-状态：`TPC315_PROVED_EXACT_FINITE_FRESH_SOURCE_LOCKED_WEIGHT_MENU_HOLDOUT_REPLICATION_AND_LAW_ORDER_SHIFT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC316_PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-315 proof 为
+当前 TPC-316 proof 为
+`bridge_b_tpc316_literal_arithmetic_l2.md`，checker 为
+`tpc_bridge_b_tpc316_literal_arithmetic_l2_checker.py`，编号论文为
+`../../papers/tpc-316-literal-arithmetic-l2-fresh-panel/`。
+
+TPC-316 将 TPC-315 留下的 literal arithmetic L2 open gate 实例化为完整的
+source-to-output operator。固定 TPC-268 的 deleted-diagonal centered kernel，在
+`I_640={321,...,640}` 与 `I_1280={641,...,1280}` 上对 16 个 `(X,Q,s)` rows 用
+exact signed-difference/residue-count identity 计算 Hilbert--Schmidt mass，并为每行
+记录 5 个 exact coordinate-column lower witnesses。normalized HS upper envelope 在
+8/8 matched rows 上升（倍率 `1.074367--1.316043`）；fresh panel 的
+Frobenius/probe gap 为 `517.635--581.975`。
+
+这是 finite literal Frobenius envelope 与 scoped two-panel obstruction：true
+operator-norm decay、growing arithmetic L2、external independence、fixed-power credit、
+full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。Session-named evaluator files absent，
+故不宣称 official pass。
+
+```text
+TPC316_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION
+TPC316_ROUTE_ADVANCE = YES_SCOPED_LITERAL_FINITE_L2_ENVELOPE
+TPC316_LITERAL_OPERATOR = PROVED_EXACT_FINITE
+TPC316_FROBENIUS_L2_ENVELOPE = PROVED_EXACT_FINITE
+TPC316_DIFFERENCE_RESIDUE_COUNT = PROVED_EXACT_FINITE
+TPC316_COORDINATE_LOWER_WITNESSES = PROVED_EXACT_FINITE_5_PER_ROW
+TPC316_ROWS = NUMERICALLY_CERTIFIED_FINITE_16
+TPC316_PROBES = NUMERICALLY_CERTIFIED_FINITE_80
+TPC316_NORMALIZED_HS_TWO_SCALE_RISE = NUMERICALLY_CERTIFIED_FINITE_8_OF_8
+TPC316_FRESH_PANEL_PROBE_GAP = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_ABOVE_517
+TPC316_HS_DECAY_PROXY = REFUTED_SCOPED_TWO_DECLARED_PANELS
+TPC316_GROWING_ARITHMETIC_L2 = OPEN
+TPC316_TRUE_OPERATOR_NORM_DECAY = OPEN
+TPC316_ARITHMETIC_ADVANCE = NO
+TPC316_FIXED_POWER_CREDIT = 0
+TPC316_FULL_GATE_B = OPEN
+TPC316_TWIN_PRIME_RESULT = NONE
+TPC316_STATUS = PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION
+TPC316_ROUND2_CLUE = REPLACE_THE_FROBENIUS_ENVELOPE_BY_A_GROWING_OPERATOR_OR_ARITHMETIC_CANCELLATION_ESTIMATE_WITHOUT_IMPORTING_A_POWER_CLAIM
+```
+
+上一位置 TPC-315 proof 为
 `bridge_b_tpc315_fresh_source_locked_weight_holdout.md`，checker 为
 `tpc_bridge_b_tpc315_fresh_source_locked_weight_holdout_checker.py`，编号论文为
 `../../papers/tpc-315-fresh-source-locked-weight-holdout/`。

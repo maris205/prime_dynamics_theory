@@ -1,0 +1,313 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=0.82in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newcommand{\HS}{\operatorname{HS}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+
+\title{A Literal Finite $L^2$ Envelope for the Fresh Prime--Shell Operator}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST)\\
+Wuhan, China}
+\date{30 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The preceding finite prime--shell audit left the source-level arithmetic
+$L^2$ interface open.  We make that interface literal by treating the
+deleted-diagonal centered kernel as a matrix from every source coordinate to
+the $(p,u)$ output coordinates.  Its Hilbert--Schmidt mass is reduced exactly
+to a signed-difference and residue-count sum over rational numbers.  Hence a
+finite Frobenius inequality gives
+\(\frac1N\norm{A\beta}_2^2\leq
+(\norm{A}_{\rm HS}^2/N)\norm{\beta}_2^2\).
+On the disjoint panels $I_{640}=\{321,\ldots,640\}$ and
+$I_{1280}=\{641,\ldots,1280\}$, we certify 16 rows and 80 coordinate
+probes with exact rational digests and independent replay.  The normalized
+Hilbert--Schmidt upper envelope rises in all eight matched $(Q,s)$ rows when
+the scale changes from 640 to 1280, while its fresh-panel ratio to the
+strongest five-point coordinate lower witness exceeds 517 in every row.  This
+is a finite literal $L^2$ envelope and a scoped obstruction to using that
+envelope as a decaying proxy.  It is not a growing operator-norm theorem,
+arithmetic cancellation estimate, Route-B closure, or twin-prime result.
+\end{abstract}
+
+\section{Question and route position}
+
+The TPC-315 release froze a menu of positive weights and moved the physical
+engine to a fresh source interval, but it deliberately did not claim the
+literal source-level $L^2$ estimate needed by the long route.  The natural
+next question is more basic than prime-shell reassembly:
+
+\begin{quote}
+What is the exact finite source-to-output operator behind the physical formula,
+and does its most immediate Hilbert--Schmidt envelope show a scale saving?
+\end{quote}
+
+This question is related to the usual separation of Hilbert--Schmidt and
+spectral norms in analytic number theory; those norms are useful bookkeeping
+objects, not interchangeable asymptotic estimates \cite{montgomeryvaughan,iwankow}.
+We answer it for the locked finite engine and keep the two-panel comparison
+strictly finite.  In particular, a rising Frobenius envelope does not prove
+that the true spectral norm rises, just as a finite upper bound cannot prove a
+future cancellation theorem.
+
+\section{The literal source operator}
+
+For an even scale $X$, let
+\[
+ I_X=\{X/2+1,\ldots,X\},\qquad N_X=|I_X|=X/2,
+\]
+and let
+\[
+ S_Q=\{p: p\text{ prime},\ Q<p\leq 2Q\}.
+\]
+We use $H=66$, $Q\in\{24,36,54,80\}$, and $s\in\{1,2\}$.  Define the
+matrix entry, for $p\in S_Q$ and $u,t\in I_X$, by
+\begin{equation}
+ K_{p,u,t}^{(Q,s,X)}=
+ {\bf 1}_{t\neq u,\;p\nmid ut}\,p
+ \frac{H^{2s}}{(H^2+(u-t)^2)^s}
+ \left({\bf 1}_{u\equiv t\pmod p}-\frac1{p-1}\right).
+ \label{eq:matrix-entry}
+\end{equation}
+The literal operator is
+\begin{equation}
+ (A_{Q,s,X}\beta)_{p,u}=
+ \sum_{t\in I_X}K_{p,u,t}^{(Q,s,X)}\beta_t,
+ \qquad
+ A_{Q,s,X}:\ell^2(I_X)\longrightarrow
+ \ell^2(S_Q\times I_X).
+ \label{eq:operator}
+\end{equation}
+This is the same centered congruence gate and deleted diagonal as in the
+TPC-268 physical engine, but the source vector $\beta$ is now arbitrary.
+TPC-315 instead evaluated the image of one particular source coefficient
+vector and formed a Gram matrix among shell columns \cite{tpc315}.
+
+Every entry in \eqref{eq:matrix-entry} is rational.  The shell cardinalities
+for the four anchors are $6,9,12,15$, so the output dimensions are finite and
+explicit.  No logarithm, floating-point approximation, or source-weight
+choice enters this operator definition.
+
+\section{Two exact finite identities}
+
+\begin{proposition}[Frobenius interface]
+For every finite vector $\beta$,
+\begin{equation}
+ \norm{A_{Q,s,X}\beta}_2^2
+ \leq \norm{A_{Q,s,X}}_{\HS}^2\norm{\beta}_2^2,
+ \qquad
+ \frac1{N_X}\norm{A_{Q,s,X}\beta}_2^2
+ \leq \frac{\norm{A_{Q,s,X}}_{\HS}^2}{N_X}\norm{\beta}_2^2.
+ \label{eq:frobenius}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Apply Cauchy--Schwarz to each output row:
+\[
+ \left|\sum_t K_{p,u,t}\beta_t\right|^2
+ \leq \left(\sum_t|K_{p,u,t}|^2\right)
+       \left(\sum_t|\beta_t|^2\right).
+\]
+Summing over $(p,u)$ gives the first inequality; division by $N_X>0$ gives
+the second.
+\end{proof}
+
+The bound is useful only as an envelope.  It does not assert that the
+right-hand side is close to the induced norm.
+
+\begin{lemma}[Exact difference/residue count]
+Put $I_X=[L,U]\cap\mathbb Z$ and $N=U-L+1$.  For a nonzero signed difference
+$\delta=u-t$, define
+\[
+ J_\delta=[\max(L,L-\delta),\min(U,U-\delta)]\cap\mathbb Z,
+ \qquad m_\delta=|J_\delta|=N-|\delta|.
+\]
+For a prime $p$, let $v_{\delta,p}$ count the pairs in $J_\delta$ for which
+both endpoints are nonzero modulo $p$.  Then
+\[
+ v_{\delta,p}=\begin{cases}
+ m_\delta-\#\{t\in J_\delta:t\equiv0\pmod p\},&p\mid\delta,\\[2mm]
+ m_\delta-\#\{t\in J_\delta:t\equiv0\pmod p\}
+ -\#\{t\in J_\delta:t\equiv-\delta\pmod p\},&p\nmid\delta.
+ \end{cases}
+ \label{eq:valid-count}
+\]
+Consequently,
+\begin{equation}
+ \norm{A_{Q,s,X}}_{\HS}^2
+ =\sum_{p\in S_Q}\sum_{0<|\delta|<N}
+ p^2\left(\frac{H^{2s}}{(H^2+\delta^2)^s}\right)^2
+ c_{\delta,p}^2v_{\delta,p},
+ \label{eq:hs-count}
+\end{equation}
+where
+\[
+ c_{\delta,p}^2=\begin{cases}(p-2)^2/(p-1)^2,&p\mid\delta,\\
+ 1/(p-1)^2,&p\nmid\delta.
+ \end{cases}
+\]
+\end{lemma}
+
+\begin{proof}
+Every pair with difference $\delta$ is uniquely parameterized by its $t$ in
+$J_\delta$.  If $p\mid\delta$, the two endpoints have the same residue, so
+only residue zero is excluded and the centered factor is
+$(1-1/(p-1))=(p-2)/(p-1)$.  Otherwise the endpoint residues zero and
+$-\delta$ are distinct, and the centered factor is $-1/(p-1)$.  Squaring
+removes the sign.  Summing the common kernel factor over the admissible pairs
+proves \eqref{eq:hs-count}.
+\end{proof}
+
+For a coordinate vector $e_t$, define its exact column energy
+\begin{equation}
+ C_t=\norm{A_{Q,s,X}e_t}_2^2
+ =\sum_{p\in S_Q}\sum_{u\in I_X}|K_{p,u,t}^{(Q,s,X)}|^2.
+ \label{eq:column}
+\end{equation}
+Since $\norm{e_t}_2=1$,
+\begin{equation}
+ \norm{A_{Q,s,X}}_{2\to2}^2\geq C_t.
+ \label{eq:column-lower}
+\end{equation}
+The certificate reports five such columns and chooses the largest by exact
+rational comparison.  It never calls that five-point maximum the true
+maximum column energy.
+
+\section{Exact protocol and finite results}
+
+The lower panel is $X=640$, with $I_{640}=\{321,\ldots,640\}$; the fresh
+panel is $X=1280$, with $I_{1280}=\{641,\ldots,1280\}$.  For each row we
+evaluate \eqref{eq:hs-count} using rational arithmetic.  The five columns are
+the endpoint-inclusive offsets
+\[
+ 0,\quad \left\lfloor\frac{N-1}{4}\right\rfloor,\quad
+ \left\lfloor\frac{N-1}{2}\right\rfloor,\quad
+ \left\lfloor\frac{3(N-1)}{4}\right\rfloor,\quad N-1.
+\]
+All exact values are sealed by numerator/denominator SHA-256 digests; decimal
+strings in the certificate are display views.  The independent checker has a
+separate sieve, count implementation, direct small-panel mass replay, and
+direct column calculation.
+
+Table~\ref{tab:fresh} gives the normalized five-point lower witness $L$ and
+the normalized Frobenius upper envelope $U$ on the fresh panel.  The final
+column is $U/L$, not a condition number for the true operator.
+
+\begin{table}[t]
+\centering
+\setlength{\tabcolsep}{5pt}
+\small
+\caption{Fresh-panel exact finite sandwich.  Values are decimal views of
+ rational quantities; all comparisons use the exact values.}
+\label{tab:fresh}
+\begin{tabular}{rrr r r}
+\toprule
+$Q$ & $s$ & $L=C_{\rm probe}/N$ & $U=\norm{A}_{\HS}^2/N$ & $U/L$\\
+\midrule
+24&1&22.641661&12812.266690&565.871\\
+24&2& 9.490073& 5522.980838&581.975\\
+36&1&36.861146&20628.183796&559.619\\
+36&2&11.528590& 6645.774850&576.461\\
+54&1&45.217512&24528.202062&542.449\\
+54&2& 7.861723& 4435.477884&564.187\\
+80&1&42.629523&22066.526605&517.635\\
+80&2& 4.189095& 2341.953723&559.060\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The five-point witnesses are exact lower bounds for the induced norm, but the
+large gaps show that the Frobenius interface is loose at this resolution.
+Table~\ref{tab:scale} compares the normalized upper envelopes across the two
+panels.
+
+\begin{table}[t]
+\centering
+\setlength{\tabcolsep}{5pt}
+\small
+\caption{Two-panel normalized Hilbert--Schmidt comparison.}
+\label{tab:scale}
+\begin{tabular}{rrr r r}
+\toprule
+$Q$ & $s$ & $U_{640}$ & $U_{1280}$ & $U_{1280}/U_{640}$\\
+\midrule
+24&1&11477.141904&12812.266690&1.116329\\
+24&2& 5140.681957& 5522.980838&1.074367\\
+36&1&18026.082081&20628.183796&1.144352\\
+36&2& 6066.399332& 6645.774850&1.095506\\
+54&1&20281.815965&24528.202062&1.209369\\
+54&2& 3909.330416& 4435.477884&1.134588\\
+80&1&16767.332568&22066.526605&1.316043\\
+80&2& 2028.906503& 2341.953723&1.154294\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All eight exact comparison ratios exceed one.  This is a numerically
+certified finite observation, not an asymptotic monotonicity statement.
+
+\section{Interpretation and route firewall}
+
+The positive result is now concrete: the literal finite matrix, rather than a
+typed hypothetical operator, has an exact source-level Frobenius interface.
+The difference-count identity also removes a practical computational
+obstacle; a full matrix need not be materialized to certify its Frobenius
+mass.  This structure can be reused if a future argument supplies a sharper
+spectral or cancellation estimate.
+
+The obstruction is equally important.  On the declared two panels, the
+normalized Frobenius envelope rises in every matched row.  On the fresh panel
+it is at least 517 times the strongest available coordinate lower witness.
+Thus the immediate envelope gives no negative-power credit and does not
+identify the scale of the true operator norm.  The result does not say that a
+future arithmetic cancellation theorem is impossible; it says that such a
+theorem cannot be replaced by this Frobenius calculation.
+
+The physical engine is inherited from TPC-268 and used on both panels, so the
+comparison is not externally independent.  The source coordinates are also a
+finite modeling choice, and no canonical weight law is selected.  The
+Session-named Route-A and Route-B evaluator files were absent from the
+checkout; the local route note and Bridge-B checker are fail-closed fallbacks.
+Accordingly, arithmetic Route-B advance remains \texttt{NO}, fixed-power credit is
+zero, full Gate B is \texttt{OPEN}, and no twin-prime conclusion is claimed.
+
+\section{Conclusion and next gate}
+
+TPC-316 pays a finite literal $L^2$ interface:
+\[
+ N^{-1}\norm{A\beta}_2^2
+ \leq (\norm{A}_{\HS}^2/N)\norm{\beta}_2^2,
+\]
+with the coefficient on the right certified exactly by a residue-count
+formula.  Sixteen rows and eighty coordinate probes are independently
+replayed.  The normalized upper envelope rises in all eight two-panel pairs,
+and the fresh-panel upper/lower gap is large.  The route therefore advances
+from a conditional $L^2$ interface to a literal finite envelope, but stops
+before any growing arithmetic claim.
+
+The next minimal question is to replace the Frobenius envelope by a genuinely
+sharper growing operator estimate, or to expose an explicit arithmetic
+cancellation mechanism that controls the spectral norm while retaining the
+prime-shell and deleted-diagonal structure.
+
+\paragraph{Status.}
+This manuscript is a finite diagnostic release by Liang Wang (HUST).  It does
+not prove the twin-prime conjecture or an equivalent asymptotic statement.
+
+\bibliographystyle{plain}
+\begingroup\small
+\bibliography{references}
+\endgroup
+\end{document}

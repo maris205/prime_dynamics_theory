@@ -2,22 +2,29 @@
 
 更新时间：2026-08-30
 
-当前地图版本：V168 / TPC-315
+当前地图版本：V169 / TPC-316
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-315`（`PROVED_EXACT_FINITE_FRESH_SOURCE_LOCKED_WEIGHT_MENU_HOLDOUT_REPLICATION_AND_LAW_ORDER_SHIFT`）；
+当前编号锚点：`TPC-316`（`PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION`）；
 对应论文目录为
-`papers/tpc-315-fresh-source-locked-weight-holdout/`。
+`papers/tpc-316-literal-arithmetic-l2-fresh-panel/`。
 
-TPC-315 是当前地图位置：先锁定 TPC-314 的三-law menu，再把同一 literal engine 移到
-fresh source interval `I=(640,1280]`，重新构造 8 个 Gram rows 与 fresh sign extrema。
-48 个 target/law cases 完成 directed outward replay；24/24 fresh minima 严格低于 1，
-24/24 all-positive controls 严格高于 1。minimum law order 有 3 类（6/1/1），positive
-control 有 2 类（6/2），因此 coarse class 在 8/8 rows 复现，但 canonical amplitude law
-受到 finite order obstruction。该 holdout 使用同一 locked engine，非 external physical
-sample；arithmetic `L2`、uniform growing weighted theorem、fixed-power credit、full Gate B
-与 twin-prime endpoint 仍开放，且 Session-named evaluator files absent，故不宣称 official pass。
+TPC-316 是当前地图位置：承接 TPC-315 的 literal arithmetic L2 open gate，把同一
+deleted-diagonal centered prime-shell formula 写成完整 source-to-output operator。
+在 `I_640={321,...,640}` 与 `I_1280={641,...,1280}` 两个 disjoint panels 上，对
+`Q={24,36,54,80}`、`s={1,2}` 的 16 个 rows 用 exact signed-difference/residue-count
+identity 计算 Hilbert--Schmidt mass，并对每行 5 个坐标列给出 exact lower witnesses。
+normalized HS upper envelope 从 `X=640` 到 `X=1280` 在 8/8 matched rows 上升，
+倍率为 1.074367--1.316043；fresh panel 的 Frobenius/probe gap 为 517.635--581.975。
+这是 finite literal Frobenius envelope 与 scoped two-panel obstruction，不是 true
+operator-norm decay、growing arithmetic theorem、external holdout 或 twin-prime proof；
+Session-named evaluator files absent，故不宣称 official pass。
+
+TPC-315 是上一位置：先锁定 TPC-314 的三-law menu，再把同一 literal engine 移到
+fresh source interval `I=(640,1280]`，重算 8 个 Gram rows 与 fresh sign extrema；48 个
+target/law cases 中 24/24 minimum below one、24/24 positive above one，minimum/positive
+law-order types 为 3/2。它留下的下一关正是 literal arithmetic L2 interface。
 
 TPC-314 是上一位置：承接 TPC-313 的 weighting-law open gate，冻结 TPC-312 的 8 个
 source-shell rows，固定审计 counting `1`、reduced-residue `1/(p-1)` 与 von-Mangoldt `log(p)` 三类正权。
@@ -31,6 +38,27 @@ twin-prime endpoint 仍开放，且 Session-named evaluator files absent，故�
 TPC-313 是上一位置：在同一新 source-shell panel 上完成 profile-budget 的 exact
 primal/dual 与 directed outward certificate；其 external weighting 与 fresh holdout clue
 自然引出本轮 TPC-314。
+
+```text
+TPC316_ROUTE_ADVANCE = YES_SCOPED_LITERAL_FINITE_L2_ENVELOPE
+TPC316_LITERAL_OPERATOR = PROVED_EXACT_FINITE
+TPC316_FROBENIUS_L2_ENVELOPE = PROVED_EXACT_FINITE
+TPC316_DIFFERENCE_RESIDUE_COUNT = PROVED_EXACT_FINITE
+TPC316_COORDINATE_LOWER_WITNESSES = PROVED_EXACT_FINITE_5_PER_ROW
+TPC316_ROWS = NUMERICALLY_CERTIFIED_FINITE_16
+TPC316_PROBES = NUMERICALLY_CERTIFIED_FINITE_80
+TPC316_NORMALIZED_HS_TWO_SCALE_RISE = NUMERICALLY_CERTIFIED_FINITE_8_OF_8
+TPC316_FRESH_PANEL_PROBE_GAP = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_ABOVE_517
+TPC316_HS_DECAY_PROXY = REFUTED_SCOPED_TWO_DECLARED_PANELS
+TPC316_GROWING_ARITHMETIC_L2 = OPEN
+TPC316_TRUE_OPERATOR_NORM_DECAY = OPEN
+TPC316_ARITHMETIC_ADVANCE = NO
+TPC316_FIXED_POWER_CREDIT = 0
+TPC316_FULL_GATE_B = OPEN
+TPC316_TWIN_PRIME_RESULT = NONE
+TPC316_STATUS = PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION
+TPC316_ROUND2_CLUE = REPLACE_THE_FROBENIUS_ENVELOPE_BY_A_GROWING_OPERATOR_OR_ARITHMETIC_CANCELLATION_ESTIMATE_WITHOUT_IMPORTING_A_POWER_CLAIM
+```
 
 ```text
 TPC315_ROUTE_ADVANCE = YES_SCOPED_FRESH_SOURCE_CLASS_REPLICATION_AND_ORDER_OBSTRUCTION
@@ -638,8 +666,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V168 / TPC-315
-MAP_LABEL = FRESH-SOURCE CLASS REPLICATION / LAW-ORDER OBSTRUCTION / LITERAL L2 GATE OPEN
+YOU ARE HERE = V169 / TPC-316
+MAP_LABEL = LITERAL FINITE L2 ENVELOPE / TWO-SCALE HS OBSTRUCTION / GROWING L2 OPEN
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -875,6 +903,49 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.110 V169 / TPC-316：literal arithmetic L2 fresh-panel envelope
+
+TPC-316 承接 TPC-315 的 literal arithmetic L2 open gate，把同一 TPC-268
+deleted-diagonal centered prime-shell formula 写成完整的 source-to-output operator
+`A_(Q,s,X): ell^2(I_X)->ell^2(S_Q x I_X)`。在两个 disjoint panels
+`I_640={321,...,640}` 与 `I_1280={641,...,1280}` 上，对
+`Q={24,36,54,80}`、`s={1,2}` 的 16 个 rows，用 exact
+signed-difference/residue-count identity 计算 Hilbert--Schmidt mass，并对每行 5 个
+坐标列给出 exact lower witnesses。
+
+这是本关的 strongest positive：finite Frobenius interface
+`N^(-1)||A beta||_2^2 <= (||A||_HS^2/N)||beta||_2^2` 的系数由 exact rational
+counting identity 给出；16/16 rows 与 80/80 probes 均由 independent replay 重建。
+
+strongest obstruction：normalized HS upper envelope 从 `X=640` 到 `X=1280` 在 8/8
+matched rows 上升，倍率为 1.074367--1.316043；fresh panel 的 Frobenius/probe
+ratio 为 517.635--581.975。该趋势只作 NUMERICAL_OBSERVATION，不能推出 true
+operator norm 上升；它只在两个声明面板的范围内 REFUTED_SCOPED 了“HS envelope
+是衰减 proxy”的用法。
+
+该结果使用同一锁定 engine，非 external physical holdout；true growing operator-norm
+estimate、arithmetic cancellation、fixed-power credit、full Gate B 与 twin-prime
+endpoint 仍 OPEN/NONE。Session-named evaluator files absent，故不宣称 official pass。
+
+    TPC316_ROUTE_ADVANCE = YES_SCOPED_LITERAL_FINITE_L2_ENVELOPE
+    TPC316_LITERAL_OPERATOR = PROVED_EXACT_FINITE
+    TPC316_FROBENIUS_L2_ENVELOPE = PROVED_EXACT_FINITE
+    TPC316_DIFFERENCE_RESIDUE_COUNT = PROVED_EXACT_FINITE
+    TPC316_COORDINATE_LOWER_WITNESSES = PROVED_EXACT_FINITE_5_PER_ROW
+    TPC316_ROWS = NUMERICALLY_CERTIFIED_FINITE_16
+    TPC316_PROBES = NUMERICALLY_CERTIFIED_FINITE_80
+    TPC316_NORMALIZED_HS_TWO_SCALE_RISE = NUMERICALLY_CERTIFIED_FINITE_8_OF_8
+    TPC316_FRESH_PANEL_PROBE_GAP = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_ABOVE_517
+    TPC316_HS_DECAY_PROXY = REFUTED_SCOPED_TWO_DECLARED_PANELS
+    TPC316_GROWING_ARITHMETIC_L2 = OPEN
+    TPC316_TRUE_OPERATOR_NORM_DECAY = OPEN
+    TPC316_ARITHMETIC_ADVANCE = NO
+    TPC316_FIXED_POWER_CREDIT = 0
+    TPC316_FULL_GATE_B = OPEN
+    TPC316_TWIN_PRIME_RESULT = NONE
+    TPC316_STATUS = PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION
+    TPC316_ROUND2_CLUE = REPLACE_THE_FROBENIUS_ENVELOPE_BY_A_GROWING_OPERATOR_OR_ARITHMETIC_CANCELLATION_ESTIMATE_WITHOUT_IMPORTING_A_POWER_CLAIM
 
 ## 5.109 V168 / TPC-315：fresh-source locked-weight holdout
 
@@ -7683,6 +7754,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-30 | V169 / TPC-316 | Bridge A / Gate B：literal finite L2 envelope 已完成；true operator-norm decay、growing arithmetic L2、fixed-power credit 与 full Gate B open | `TPC-316` | 将 TPC-315 的 literal source open gate 实例化为 source-to-output operator；两个 disjoint panels 共 16 rows / 80 coordinate probes，exact difference/residue HS identity，8/8 normalized-HS two-scale rise，fresh-panel Frobenius/probe gap >517；下一步为 sharper growing operator或 arithmetic cancellation |
 | 2026-08-30 | V168 / TPC-315 | Bridge A / Gate B：fresh-source locked-weight class replication 已完成；law-order obstruction、external physical independence、literal arithmetic L2 与 full Gate B open | `TPC-315` | 先锁定 TPC-314 三-law menu，再在 `I=(640,1280]` 重算 8 个 Gram targets；48 cases 完成 exact/outward replay，24/24 minimum below one、24/24 positive above one；minimum order 3 types、positive order 2 types；下一步为 fresh-panel literal arithmetic L2 interface audit |
 | 2026-08-30 | V167 / TPC-314 | Bridge A / Gate B：externally motivated weight-law finite robustness 已完成；canonical weighting、fresh physical holdout、uniform weighted theorem、arithmetic L2 与 full Gate B open | TPC-314 | 固定 TPC-312 八个 source-shell rows，审计 counting、reduced-residue、von-Mangoldt 三种正权；48 cases 全部完成 outward log interval replay，24/24 minimum below one、24/24 positive above one；law-dependent amplitude 产生一次 minimum crossover 与四种 positive-order types；下一步为 fresh-source locked-menu replication |
 | 2026-08-30 | V166 / TPC-313 | Bridge A / Gate B：outward-rounded profile-budget certificate 已完成；external weighting、fresh physical holdout、uniform budget、arithmetic `L2` 与 full Gate B open | `TPC-313` | 在 TPC-312 新 source-shell panel 上完成 8 common prefixes / 16 rational primal-dual witnesses；`10^-36` outward grid independent replay；weighted dual `>5e-5` 与 positive primal `<1e-5` 均为 8/8；下一步为 externally justified weighting 与 fresh holdout |
