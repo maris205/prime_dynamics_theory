@@ -9,7 +9,49 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-310 承接 TPC-309，审计 cross-holdout aggregation order 与 profile
+当前主线状态：TPC-311 承接 TPC-310，检验一个声明的两阶段 stratification rule 能否跨
+tolerance slice 复现。固定 TPC-309/TPC-310 的 parent certificates，在每个
+`(transition, exponent, tau, radius)` design cell 内先 pool `LOW/BASE/HIGH` 三个 profile
+ladders，再给每个 design cell 等权。native `r=0` 的 calibration `tau={0.25,0.5}` 区间为
+`[4.0615814676,4.0617439341]`、class `LEFT`；held-out `tau={0.75}` 区间为
+`[0.6818442327,0.6818715070]`、class `RIGHT`，形成 strict finite reversal。将 `r=1,2`
+纳入压力测试后 calibration 仍 `LEFT`，confirmation 变为 `UNRESOLVED`；删除 BASE 会改变
+native calibration class，exponent 1/2 也给出不同方向。这是同一 locked parent 内的
+parameter-slice obstruction，不是 fresh physical replication、externally timestamped
+preregistration、causal、asymptotic、arithmetic 或 twin-prime theorem。
+
+```text
+TPC311_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_STRATIFIED_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_TAU_SLICE_NONREPLICATION_ATLAS
+TPC311_ROUTE_ADVANCE = YES_SCOPED_TAU_SLICE_HOLDOUT_OBSTRUCTION
+TPC311_STRATIFIED_PROTOCOL = PROVED_EXACT_FINITE
+TPC311_PROFILE_POOL_EXTREMA = PROVED_EXACT_FINITE
+TPC311_EQUAL_STRATUM_INTERVAL_MAP = PROVED_EXACT_FINITE
+TPC311_TAU_PARTITION = PROVED_EXACT_FINITE
+TPC311_STRATIFIED_ATLAS = NUMERICALLY_REPRODUCED_FINITE_54_STRATA_6_BLOCKS_22_SENSITIVITY_BLOCKS
+TPC311_NATIVE_TAU_REPLICATION = REFUTED_FINITE_STRICT_CALIBRATION_LEFT_CONFIRMATION_RIGHT
+TPC311_ALL_RADII_TAU_REPLICATION = REFUTED_FINITE_CALIBRATION_LEFT_CONFIRMATION_UNRESOLVED
+TPC311_PROFILE_ROBUSTNESS = REFUTED_FINITE_BASE_OMISSION_CHANGES_NATIVE_CALIBRATION_CLASS
+TPC311_EXPONENT_ROBUSTNESS = REFUTED_FINITE_NATIVE_CALIBRATION_EXPONENT_1_LEFT_EXPONENT_2_RIGHT
+TPC311_REGISTRATION_STATUS = DECLARED_CHILD_PROTOCOL_NOT_EXTERNALLY_TIMESTAMPED_PREREGISTRATION
+TPC311_FRESH_PHYSICAL_HOLDOUT = NONE_SAME_LOCKED_PARENT_ATLAS
+TPC311_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC311_CAUSAL_IDENTIFICATION = NONE_PARAMETER_SLICE_DIAGNOSTIC_ONLY
+TPC311_FORMAL_INTERVAL_CERTIFICATE = OPEN_PARENT_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC311_EXTERNAL_WEIGHT_JUSTIFICATION = OPEN
+TPC311_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC311_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC311_FIXED_POWER_CREDIT = 0
+TPC311_FULL_GATE_B = OPEN
+TPC311_TWIN_PRIME_RESULT = NONE
+TPC311_STATUS = PROVED_EXACT_FINITE_STRATIFIED_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_TAU_SLICE_NONREPLICATION_ATLAS
+TPC311_ROUND2_CLUE = REQUIRE_FRESH_SOURCE_HOLDOUT_AND_EXTERNALLY_JUSTIFIED_WEIGHT_LAW_BEFORE_ANY_GLOBAL_PREFERENCE_CLAIM
+```
+
+`papers/tpc-311-stratified-tau-holdout-replication` - TPC-311 current project，包含
+54-stratum certificate、独立 replay、exact stress suite、proof package、PDF 与本地
+Bridge-B checker。Session-named evaluator files absent，故不宣称 official pass。
+
+此前阶段状态：TPC-310 承接 TPC-309，审计 cross-holdout aggregation order 与 profile
 robustness。固定 TPC-309 的 162 个 envelope observations，枚举三个 profile ladders 与
 三个 completion radii 的全部非空子集，得到 49 个 selector、147 个 aggregate rows。
 Pooled MSE 在全 selector 上给出 `RIGHT`，equal-case arithmetic ratio 给出 `LEFT`，
@@ -44,7 +86,7 @@ TPC310_STATUS = PROVED_EXACT_FINITE_CROSS_HOLDOUT_AGGREGATION_PROTOCOL_PLUS_NUME
 TPC310_ROUND2_CLUE = TEST_PREREGISTERED_STRATIFIED_WEIGHTS_AND_HOLDOUT_REPLICATION_BEFORE_ANY_GLOBAL_PREFERENCE_CLAIM
 ```
 
-`papers/tpc-310-cross-holdout-aggregation-order` - TPC-310 current project，包含
+`papers/tpc-310-cross-holdout-aggregation-order` - TPC-310 previous project，包含
 49-selector aggregation atlas、独立 replay、精确有理数 stress suite、proof package、
 PDF 与本地 Bridge-B checker。Session-named evaluator files absent，故不宣称 official pass。
 

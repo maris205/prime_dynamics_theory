@@ -2,15 +2,57 @@
 
 更新时间：2026-08-29
 
-当前地图版本：V163 / TPC-310
+当前地图版本：V164 / TPC-311
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-310`（`PROVED_EXACT_FINITE_CROSS_HOLDOUT_AGGREGATION_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_AGGREGATION_ORDER_OBSTRUCTION_ATLAS`）；
+当前编号锚点：`TPC-311`（`PROVED_EXACT_FINITE_STRATIFIED_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_TAU_SLICE_NONREPLICATION_ATLAS`）；
 对应论文目录为
-`papers/tpc-310-cross-holdout-aggregation-order/`。
+`papers/tpc-311-stratified-tau-holdout-replication/`。
 
-TPC-310 是当前地图位置：冻结 TPC-309 的 162 个 profile/completion envelope observations，
+TPC-311 是当前地图位置：承接 TPC-310 的 aggregation-order obstruction，固定一个两阶段
+stratification rule。在每个 `(transition, exponent, tau, radius)` design cell 内先 pool
+`LOW/BASE/HIGH` profile ladders，再对 design cells 等权。calibration `tau={0.25,0.5}`
+与 confirmation `tau={0.75}` 不相交；native `r=0` 区间分别为
+`[4.0615814676,4.0617439341]`（`LEFT`）与 `[0.6818442327,0.6818715070]`（`RIGHT`），
+形成 strict finite reversal。all-radius confirmation 为 `UNRESOLVED`，删除 BASE 或分开
+exponent 也改变有限方向。这是同一 locked parent 的 parameter-slice obstruction，不是
+fresh physical replication、externally timestamped preregistration、causal、asymptotic、
+arithmetic 或 twin-prime theorem；external weighting law、fresh physical holdout、uniform
+budget、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime endpoint 仍开放。
+
+```text
+TPC311_ROUTE_ADVANCE = YES_SCOPED_TAU_SLICE_HOLDOUT_OBSTRUCTION
+TPC311_STRATIFIED_PROTOCOL = PROVED_EXACT_FINITE
+TPC311_PROFILE_POOL_EXTREMA = PROVED_EXACT_FINITE
+TPC311_EQUAL_STRATUM_INTERVAL_MAP = PROVED_EXACT_FINITE
+TPC311_TAU_PARTITION = PROVED_EXACT_FINITE
+TPC311_STRATIFIED_ATLAS = NUMERICALLY_REPRODUCED_FINITE_54_STRATA_6_BLOCKS_22_SENSITIVITY_BLOCKS
+TPC311_NATIVE_TAU_REPLICATION = REFUTED_FINITE_STRICT_CALIBRATION_LEFT_CONFIRMATION_RIGHT
+TPC311_ALL_RADII_TAU_REPLICATION = REFUTED_FINITE_CALIBRATION_LEFT_CONFIRMATION_UNRESOLVED
+TPC311_PROFILE_ROBUSTNESS = REFUTED_FINITE_BASE_OMISSION_CHANGES_NATIVE_CALIBRATION_CLASS
+TPC311_EXPONENT_ROBUSTNESS = REFUTED_FINITE_NATIVE_CALIBRATION_EXPONENT_1_LEFT_EXPONENT_2_RIGHT
+TPC311_REGISTRATION_STATUS = DECLARED_CHILD_PROTOCOL_NOT_EXTERNALLY_TIMESTAMPED_PREREGISTRATION
+TPC311_FRESH_PHYSICAL_HOLDOUT = NONE_SAME_LOCKED_PARENT_ATLAS
+TPC311_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC311_CAUSAL_IDENTIFICATION = NONE_PARAMETER_SLICE_DIAGNOSTIC_ONLY
+TPC311_FORMAL_INTERVAL_CERTIFICATE = OPEN_PARENT_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC311_EXTERNAL_WEIGHT_JUSTIFICATION = OPEN
+TPC311_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC311_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC311_FIXED_POWER_CREDIT = 0
+TPC311_FULL_GATE_B = OPEN
+TPC311_TWIN_PRIME_RESULT = NONE
+TPC311_STATUS = PROVED_EXACT_FINITE_STRATIFIED_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_TAU_SLICE_NONREPLICATION_ATLAS
+TPC311_ROUND2_CLUE = REQUIRE_FRESH_SOURCE_HOLDOUT_AND_EXTERNALLY_JUSTIFIED_WEIGHT_LAW_BEFORE_ANY_GLOBAL_PREFERENCE_CLAIM
+```
+
+TPC-311 的 strongest positive 是 exact finite 两阶段 protocol 与独立 54-stratum replay；
+strongest obstruction 是 native calibration 的 `LEFT` 在 held-out `tau=.75` 上反转为
+`RIGHT`，而 adversarial radii 使 confirmation 变为 unresolved。下一桥必须提供外部可
+辩护的 weighting law 与 genuinely fresh physical holdout。
+
+此前 TPC-310 位置：冻结 TPC-309 的 162 个 profile/completion envelope observations，
 枚举三个 ladders 与三个 completion radii 的全部非空子集，得到 49 个 selectors 与 147
 个 aggregate rows。Pooled MSE、equal-case arithmetic ratio、geometric ratio 在全 selector
 上分别给出 `RIGHT`、`LEFT`、`RIGHT`；前两者的区间为
@@ -487,8 +529,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V163 / TPC-310
-MAP_LABEL = CROSS-HOLDOUT AGGREGATION ORDER / POOLED VS BALANCED REVERSAL
+YOU ARE HERE = V164 / TPC-311
+MAP_LABEL = STRATIFIED TAU-SLICE HOLDOUT / NATIVE LEFT VS HOLDOUT RIGHT
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -724,6 +766,54 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.105 V164 / TPC-311：declared stratification and tau-slice holdout replication
+
+TPC-311 承接 TPC-310 的 aggregation-order obstruction，固定一个两阶段 design-balanced
+规则：对每个 `(transition, exponent, tau, radius)` cell 先把 `LOW/BASE/HIGH` 三个
+profile ladders 的 completion extrema pooled，再让每个 design cell 等权。完整 factorial
+有 `3x2x3x3=54` 个 profile-pooled strata、162 个 parent observations；calibration
+`tau={0.25,0.5}` 与 confirmation `tau={0.75}` 是不相交参数切片，native `r=0` 为主，
+`r=1,2` 为 adversarial controls。
+
+native calibration interval 为 `[4.0615814676,4.0617439341]`、class `LEFT`；native
+confirmation interval 为 `[0.6818442327,0.6818715070]`、class `RIGHT`，所以发生 strict
+finite reversal。all-radius calibration 仍 `LEFT`，confirmation 为
+`[0.3840496869,2.9038163322]`、`UNRESOLVED`。删除 BASE 会改变 native calibration class，
+exponent 1/2 也分裂方向。这是同一 locked parent 的 parameter-slice obstruction，不是
+fresh physical replication 或 externally timestamped preregistration。
+
+```text
+TPC311_ROUTE_ADVANCE = YES_SCOPED_TAU_SLICE_HOLDOUT_OBSTRUCTION
+TPC311_STRATIFIED_PROTOCOL = PROVED_EXACT_FINITE
+TPC311_PROFILE_POOL_EXTREMA = PROVED_EXACT_FINITE
+TPC311_EQUAL_STRATUM_INTERVAL_MAP = PROVED_EXACT_FINITE
+TPC311_TAU_PARTITION = PROVED_EXACT_FINITE
+TPC311_STRATIFIED_ATLAS = NUMERICALLY_REPRODUCED_FINITE_54_STRATA_6_BLOCKS_22_SENSITIVITY_BLOCKS
+TPC311_NATIVE_TAU_REPLICATION = REFUTED_FINITE_STRICT_CALIBRATION_LEFT_CONFIRMATION_RIGHT
+TPC311_ALL_RADII_TAU_REPLICATION = REFUTED_FINITE_CALIBRATION_LEFT_CONFIRMATION_UNRESOLVED
+TPC311_PROFILE_ROBUSTNESS = REFUTED_FINITE_BASE_OMISSION_CHANGES_NATIVE_CALIBRATION_CLASS
+TPC311_EXPONENT_ROBUSTNESS = REFUTED_FINITE_NATIVE_CALIBRATION_EXPONENT_1_LEFT_EXPONENT_2_RIGHT
+TPC311_REGISTRATION_STATUS = DECLARED_CHILD_PROTOCOL_NOT_EXTERNALLY_TIMESTAMPED_PREREGISTRATION
+TPC311_FRESH_PHYSICAL_HOLDOUT = NONE_SAME_LOCKED_PARENT_ATLAS
+TPC311_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC311_CAUSAL_IDENTIFICATION = NONE_PARAMETER_SLICE_DIAGNOSTIC_ONLY
+TPC311_FORMAL_INTERVAL_CERTIFICATE = OPEN_PARENT_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC311_EXTERNAL_WEIGHT_JUSTIFICATION = OPEN
+TPC311_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC311_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC311_FIXED_POWER_CREDIT = 0
+TPC311_FULL_GATE_B = OPEN
+TPC311_TWIN_PRIME_RESULT = NONE
+TPC311_STATUS = PROVED_EXACT_FINITE_STRATIFIED_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_TAU_SLICE_NONREPLICATION_ATLAS
+TPC311_ROUND2_CLUE = REQUIRE_FRESH_SOURCE_HOLDOUT_AND_EXTERNALLY_JUSTIFIED_WEIGHT_LAW_BEFORE_ANY_GLOBAL_PREFERENCE_CLAIM
+```
+
+最强正结果：两阶段 finite stratification、profile-pooled extrema 与 equal-cell interval
+map 有 exact proof，并由 independent replay 锁定 54 strata、6 blocks、22 controls。
+最强 obstruction：固定规则的 native calibration `LEFT` 在 `tau=.75` held-out slice 反转为
+`RIGHT`；纳入 adversarial radii 后 confirmation 变为 unresolved。下一步必须转向 fresh
+physical holdout 与 externally justified weighting law。
 
 ## 5.104 V163 / TPC-310：cross-holdout aggregation order
 
@@ -2279,9 +2369,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V163 / TPC-310                    |
-        | CROSS-HOLDOUT AGGREGATION ORDER                 |
-        | POOLED RIGHT / BALANCED LEFT / GEOMETRIC RIGHT  |
+        | YOU ARE HERE — V164 / TPC-311                    |
+        | STRATIFIED TAU-SLICE HOLDOUT REPLICATION       |
+        | NATIVE CALIBRATION LEFT / HOLDOUT RIGHT        |
         +--------------------------------------------------+
                 |
                 v
@@ -7314,6 +7404,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-29 | V164 / TPC-311 | Bridge A / Gate B：declared stratification 的 tau-slice holdout replication 已完成；external weighting law、fresh physical holdout、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-311` | 固定 profile-pooled design-cell 与 equal-cell arithmetic rule；54 strata、6 blocks、22 controls；native calibration `LEFT` 在 `tau=.75` held-out slice 反转为 `RIGHT`，all-radius confirmation unresolved；下一步为 fresh source holdout 与 externally justified weighting law |
 | 2026-08-29 | V163 / TPC-310 | Bridge A / Gate B：cross-holdout aggregation-order obstruction 已完成；canonical weighting、profile-independent preference、formal directed rounding、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-310` | 冻结 TPC-309 的 162 observations，枚举 49 profile/radius selectors 与 147 aggregate rows；pooled `RIGHT`、balanced `LEFT`、geometric `RIGHT` on full selector，证明 ratio-of-sums 的 denominator-weighted identity；下一步为 pre-registered stratified weights 与 fresh holdout replication |
 | 2026-08-29 | V162 / TPC-309 | Bridge A / Gate B：profile-prefix shift sensitivity 已完成；profile-independent preference、formal directed-rounding certificate、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-309` | 在固定 19-prime pool 中比较 LOW/BASE/HIGH 三个相邻 17-cutoff ladders；54 profile cases、162 envelope observations、候选 `108/558/1440`，BASE 恢复 TPC-308 classes，而 strict discordance location 与 radius-two survival 随 profile 改变；下一步为 cross-holdout aggregation 与 profile robustness audit |
 | 2026-08-29 | V161 / TPC-308 | Bridge A / Gate B：adversarial exclusive-completion envelope 已完成；formal interval certificate、completion generation、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-308` | 冻结 TPC-307 的 common ambient 与 overlap fit，在 18 cells 上枚举 Hamming radii `0,1,2`；54 observations、候选 `36/186/480`，agreement `13/3/2`、`11/2/5`、`10/1/7`，discordance `3->2->1` 且全在 `70->90,e=1`；下一步为 profile-prefix perturbation 与 completion invariance audit |

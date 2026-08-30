@@ -3,13 +3,76 @@
 
 更新时间：2026-08-29
 
-状态：**TPC310_PROVED_EXACT_FINITE_CROSS_HOLDOUT_AGGREGATION_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_AGGREGATION_ORDER_OBSTRUCTION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC311_PROVED_EXACT_FINITE_STRATIFIED_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_TAU_SLICE_NONREPLICATION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.104 current：TPC-310 cross-holdout aggregation order
+## 0.105 current：TPC-311 declared stratification and tau-slice holdout replication
+
+项目：`papers/tpc-311-stratified-tau-holdout-replication/`
+
+类型：**PROVED_EXACT_FINITE_STRATIFIED_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_TAU_SLICE_NONREPLICATION_ATLAS**。
+
+TPC-311 承接 TPC-310 的 aggregation-order obstruction，固定一个明确的两阶段规则：先在
+每个 `(transition, exponent, tau, radius)` design cell 内 pool `LOW/BASE/HIGH` 三个
+profile ladders 的 completion extrema，再对 design cells 等权做 arithmetic interval map。
+完整 factorial 有 `3x2x3x3=54` 个 profile-pooled strata、162 个 parent observations。
+calibration 使用 `tau={0.25,0.5}`，confirmation 使用不相交的 `tau={0.75}`；native
+`r=0` 为主结果，`r=1,2` 为压力控制。
+
+native calibration 区间为 `[4.0615814676,4.0617439341]`、class `LEFT`，native
+confirmation 区间为 `[0.6818442327,0.6818715070]`、class `RIGHT`，所以固定规则在该
+finite parameter-slice 上发生 strict reversal。加入全部 radii 后 calibration 仍 `LEFT`，
+confirmation 为 `[0.3840496869,2.9038163322]`、`UNRESOLVED`。删除 BASE 会把 native
+calibration 改为 `RIGHT`，exponent 1 与 2 也给出不同 calibration class。
+
+最强正结果：54-cell 两阶段 protocol、独立 profile extrema 与 equal-stratum interval
+map 有 exact finite proof，并由独立 replay 锁定 54 strata、6 blocks 与 22 sensitivity
+blocks。
+
+最强 obstruction：即使把 weighting rule 明确固定，native calibration 的 `LEFT` 仍不在
+held-out `tau=.75` slice 复现；all-radius stress 进一步扩大为 unresolved。
+
+开放定理：外部可辩护的 weighting law 与 genuinely fresh physical holdout 上的稳定
+profile/exponent/transition/tolerance preference；directed rounding、causal identification、
+uniform asymptotic budget、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。本文的 child protocol 不是 externally timestamped preregistration，
+confirmation 也不是新物理数据。
+
+可复用结构：`profile-pooled design cell -> equal-cell interval map -> disjoint parameter
+slice -> replication classification`。
+
+ROUND2_CLUE：`REQUIRE_FRESH_SOURCE_HOLDOUT_AND_EXTERNALLY_JUSTIFIED_WEIGHT_LAW_BEFORE_ANY_GLOBAL_PREFERENCE_CLAIM`。
+
+```text
+TPC311_ROUTE_ADVANCE = YES_SCOPED_TAU_SLICE_HOLDOUT_OBSTRUCTION
+TPC311_STRATIFIED_PROTOCOL = PROVED_EXACT_FINITE
+TPC311_PROFILE_POOL_EXTREMA = PROVED_EXACT_FINITE
+TPC311_EQUAL_STRATUM_INTERVAL_MAP = PROVED_EXACT_FINITE
+TPC311_TAU_PARTITION = PROVED_EXACT_FINITE
+TPC311_STRATIFIED_ATLAS = NUMERICALLY_REPRODUCED_FINITE_54_STRATA_6_BLOCKS_22_SENSITIVITY_BLOCKS
+TPC311_NATIVE_TAU_REPLICATION = REFUTED_FINITE_STRICT_CALIBRATION_LEFT_CONFIRMATION_RIGHT
+TPC311_ALL_RADII_TAU_REPLICATION = REFUTED_FINITE_CALIBRATION_LEFT_CONFIRMATION_UNRESOLVED
+TPC311_PROFILE_ROBUSTNESS = REFUTED_FINITE_BASE_OMISSION_CHANGES_NATIVE_CALIBRATION_CLASS
+TPC311_EXPONENT_ROBUSTNESS = REFUTED_FINITE_NATIVE_CALIBRATION_EXPONENT_1_LEFT_EXPONENT_2_RIGHT
+TPC311_REGISTRATION_STATUS = DECLARED_CHILD_PROTOCOL_NOT_EXTERNALLY_TIMESTAMPED_PREREGISTRATION
+TPC311_FRESH_PHYSICAL_HOLDOUT = NONE_SAME_LOCKED_PARENT_ATLAS
+TPC311_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC311_CAUSAL_IDENTIFICATION = NONE_PARAMETER_SLICE_DIAGNOSTIC_ONLY
+TPC311_FORMAL_INTERVAL_CERTIFICATE = OPEN_PARENT_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC311_EXTERNAL_WEIGHT_JUSTIFICATION = OPEN
+TPC311_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC311_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC311_FIXED_POWER_CREDIT = 0
+TPC311_FULL_GATE_B = OPEN
+TPC311_TWIN_PRIME_RESULT = NONE
+TPC311_STATUS = PROVED_EXACT_FINITE_STRATIFIED_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_TAU_SLICE_NONREPLICATION_ATLAS
+TPC311_ROUND2_CLUE = REQUIRE_FRESH_SOURCE_HOLDOUT_AND_EXTERNALLY_JUSTIFIED_WEIGHT_LAW_BEFORE_ANY_GLOBAL_PREFERENCE_CLAIM
+```
+
+## 0.104 previous：TPC-310 cross-holdout aggregation order
 
 项目：`papers/tpc-310-cross-holdout-aggregation-order/`
 

@@ -1,0 +1,277 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+
+\title{Declared Stratification and Tolerance-Slice Holdout Replication\\
+       in a Prime-Shell Diagnostic}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST)\\
+Wuhan, China}
+\date{29 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We test whether a single balanced aggregation rule can replicate a finite
+prime-shell preference across a held-out tolerance slice.  The input is the
+locked TPC-309 atlas of three source-backed profile ladders, three adjacent
+shell transitions, two kernel exponents, three tolerances, and three finite
+completion radii.  The declared rule first pools the three profile ladders
+inside each fixed design cell and then gives every design cell equal arithmetic
+weight.  At the primary native radius, the calibration slice
+$\{0.25,0.5\}$ has ratio interval
+$[4.0615814676,4.0617439341]$ and is left-lower, whereas the held-out slice
+$\{0.75\}$ has interval $[0.6818442327,0.6818715070]$ and is right-lower.
+The strict class is therefore reversed.  Including adversarial radii one and
+two leaves the calibration block left-lower but makes the confirmation block
+unresolved.  We prove the finite two-stage interval algebra and independently
+replay 54 strata, six blocks, and 22 sensitivity controls.  This is a scoped
+parameter-slice obstruction on one padded float-replay atlas, not a fresh-data,
+causal, asymptotic, arithmetic, or twin-prime theorem.
+\end{abstract}
+
+\section{Question and route position}
+
+The recent finite diagnostics have progressively separated several sources of
+instability.  TPC-307 introduced a common ambient operator with overlap-only
+fits and exclusive shell holdouts \cite{tpc307}.  TPC-308 enumerated binary
+completion envelopes on those holdouts \cite{tpc308}.  TPC-309 shifted a
+source-backed 17-coordinate profile window through one 19-prime pool and found
+that the location of strict discordance changes with the profile
+\cite{tpc309}.  TPC-310 then showed that pooling losses and averaging row ratios
+can reverse a finite class \cite{tpc310}.
+
+TPC-311 asks the smallest next question suggested by that obstruction: after
+fixing one balanced design rule, does a preference found on two tolerance
+slices survive the third?  The answer is deliberately scoped.  The held-out
+slice below is a disjoint parameter slice of the same locked parent atlas; it
+is not an independent physical sample.  Likewise, the rule is declared in
+this child project but is not an externally timestamped preregistration.
+
+\section{Locked data and notation}
+
+For a profile ladder $j\in\{\mathrm{LOW},\mathrm{BASE},\mathrm{HIGH}\}$,
+transition $q\in\{50\!\to\!60,60\!\to\!70,70\!\to\!90\}$, exponent
+$e\in\{1,2\}$, tolerance $t\in\{0.25,0.5,0.75\}$, and radius
+$r\in\{0,1,2\}$, the TPC-309 certificate supplies positive extrema
+\begin{align*}
+ R_{j,q,e,t,r}^{-}&\le R_{j,q,e,t,r}^{+},\\
+ L_{j,q,e,t,r}^{-}&\le L_{j,q,e,t,r}^{+}.
+\end{align*}
+They are the lower endpoint of the corresponding right/left minimum envelope
+and the upper endpoint of the corresponding maximum envelope.  There are
+\[
+  3\cdot2\cdot3\cdot3=54
+\]
+design cells and three profile rows in each, hence 162 locked parent
+observations.  We do not regenerate labels, shell partitions, physical
+matrices, or completion balls.
+
+The strict class map used throughout is
+\[
+ \mathsf{class}([a,b])=
+ \begin{cases}
+ \mathsf{RIGHT},&b<0.9,\\
+ \mathsf{LEFT},&a>1.1,\\
+ \mathsf{UNRESOLVED},&\text{otherwise.}
+ \end{cases}
+\]
+
+\section{Declared two-stage protocol}
+
+Fix a design cell $s=(q,e,t,r)$.  First pool the replicated profile ladders:
+\begin{equation}
+ P_s=\left[
+ \frac{\sum_j R_{j,s}^{-}}{\sum_j L_{j,s}^{+}},
+ \frac{\sum_j R_{j,s}^{+}}{\sum_j L_{j,s}^{-}}
+ \right].
+ \label{eq:within}
+\end{equation}
+The second stage gives each selected design cell equal weight.  For a nonempty
+block $B$ of cells, set
+\begin{equation}
+ S(B)=\left[
+ \frac{1}{|B|}\sum_{s\in B}P_s^{-},
+ \frac{1}{|B|}\sum_{s\in B}P_s^{+}
+ \right].
+ \label{eq:between}
+\end{equation}
+This removes the loss-scale weights from the profile dimension, while making
+the design-cell weighting explicit rather than implicit.
+
+The calibration block uses $t\in\{0.25,0.5\}$ and the confirmation block uses
+$t=0.75$.  They are disjoint and together cover the declared tolerance grid.
+The primary endpoint is $r=0$, the native completion.  The all-radius blocks
+with $r\in\{0,1,2\}$ are adversarial stress controls, not a second primary
+choice.  We also compute exponent slices, transition slices, leave-one-
+transition controls, and leave-one-ladder controls without changing the
+primary rule.
+
+\section{Finite statements}
+
+\begin{lemma}[Independent finite extrema]
+Let $X_j$ be nonempty finite sets with extrema $x_j^-$ and $x_j^+$.  If the
+choices are independent, then
+\[
+ \min\sum_jx_j=\sum_jx_j^-,\qquad
+ \max\sum_jx_j=\sum_jx_j^+.
+\]
+\end{lemma}
+\begin{proof}
+Termwise endpoint inequalities give both bounds.  Choosing all lower, or all
+upper, endpoints attains the corresponding bound.
+\end{proof}
+
+\begin{proposition}[Soundness of the two-stage map]
+Equations \eqref{eq:within} and \eqref{eq:between} are ordered positive
+interval enclosures for the declared finite operations.
+\end{proposition}
+\begin{proof}
+All four endpoint sums in \eqref{eq:within} are positive.  The lemma gives
+the independent numerator extrema, and quotient monotonicity reverses the
+denominator endpoint, proving the first enclosure.  Each $P_s^-$ is at most
+$P_s^+$; summing these inequalities and dividing by the positive integer
+$|B|$ proves the second enclosure.  The two tolerance sets are visibly
+disjoint and exhaustive on the three-point grid.
+\end{proof}
+
+The finite class relation between calibration $C$ and confirmation $H$ is
+called \emph{strictly replicated} when their strict classes agree, \emph{strictly
+reversed} when one is RIGHT and the other LEFT, and \emph{unresolved-slice}
+otherwise.  This terminology is a finite decision diagnostic, not a
+statistical generalization claim.
+
+\section{Primary results}
+
+The producer and an independent parser/replay agree on all 54 profile-pooled
+strata, six declared blocks, and 22 sensitivity blocks.  Table~\ref{tab:primary}
+gives the primary and stress results.  The native calibration interval lies
+entirely above 1.1, while the native confirmation interval lies entirely below
+0.9.  Their strict classes are consequently opposite by a large margin.
+
+\begin{table}[t]
+\centering\small
+\caption{Declared stratified blocks.}
+\label{tab:primary}
+\begin{tabular}{lrrl}
+\toprule
+Block & Strata & Ratio interval & Class\\
+\midrule
+Calibration, native $r=0$ & 12 & $[4.06158147,4.06174393]$ & Left\\
+Confirmation, native $r=0$ & 6 & $[0.68184423,0.68187151]$ & Right\\
+Full, native $r=0$ & 18 & $[2.93500239,2.93511979]$ & Left\\
+Calibration, all radii & 36 & $[2.82703204,6.58728887]$ & Left\\
+Confirmation, all radii & 18 & $[0.38404969,2.90381633]$ & Unresolved\\
+Full, all radii & 54 & $[2.01270459,5.35946469]$ & Left\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Thus the primary native relation is
+\[
+ \mathsf{LEFT}_{\{0.25,0.5\}}
+ \longrightarrow
+ \mathsf{RIGHT}_{\{0.75\}},
+ \qquad\text{a strict finite reversal.}
+\]
+The all-radius stress relation is not a reversal because the confirmation
+interval widens across the thresholds; it is a failure of strict replication
+with an unresolved held-out slice.
+
+\section{Adversarial localization controls}
+
+The reversal is not evidence that the equal-stratum rule has become canonical.
+The controls locate several remaining dependencies.  At native radius, the
+exponent slices in Table~\ref{tab:exponent} have opposite calibration classes;
+the exponent-one confirmation is unresolved, while exponent two remains
+right-lower.
+
+\begin{table}[t]
+\centering\small
+\caption{Native exponent controls.}
+\label{tab:exponent}
+\begin{tabular}{llcc}
+\toprule
+Exponent & Slice & Ratio interval & Class\\
+\midrule
+1 & calibration & $[7.94756945,7.94788736]$ & Left\\
+1 & confirmation & $[1.06436231,1.06440489]$ & Unresolved\\
+2 & calibration & $[0.17559348,0.17560051]$ & Right\\
+2 & confirmation & $[0.29932615,0.29933813]$ & Right\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The native calibration class is also not profile-subset invariant.  Omitting
+LOW, BASE, or HIGH gives respectively Left, Right, and Left; each corresponding
+confirmation control is Right.  In particular, deleting BASE changes the
+calibration class from the primary Left to Right without altering the
+confirmation slice.  Transition controls show the same localization: the
+calibration classes for $50\to60$, $60\to70$, and $70\to90$ are respectively
+Right, Left, and Right, whereas their confirmation classes are respectively
+Right, Unresolved, and Right.  These are controls on the finite atlas, not
+multiple-testing-adjusted statistical estimates.
+
+\section{Interpretation and obstruction}
+
+The declared rule does accomplish one useful separation.  Within a design cell,
+profile ladders are treated symmetrically; between cells, the factorial design
+is explicit.  The exact proof is therefore reusable whenever a future source
+supplies positive finite extrema with the same independence structure.
+
+It does not solve the problem exposed by TPC-310.  The primary orientation
+does not replicate from the two-point calibration tolerance slice to the
+held-out third tolerance.  Adding completion adversaries makes the held-out
+interval unresolved, and the exponent and profile controls show that the
+finite orientation is still structured by other axes.  A weighting convention
+can be made explicit without becoming arithmetically justified.
+
+There are two important scope boundaries.  First, the confirmation rows come
+from the same locked parent certificate, so this is a parameter-slice holdout,
+not fresh physical data.  Second, the child protocol was declared for this
+release but was not externally timestamped before the broader research
+session.  The result should therefore be read as a reproducible obstruction
+to one fixed rule, not as an unbiased preregistered statistical test.
+
+\section{Claim firewall and conclusion}
+
+The exact claims are the 54-cell census, the independent profile-pooling
+extrema, the positive equal-stratum interval map, and the finite tau partition.
+The numerical claims are a replay of padded float-derived decimal intervals.
+They are not directed-rounding guarantees for the unrounded physical source.
+TPC-302 target-generation leakage remains inherited.  No arithmetic $L^2$
+estimate, fixed-power credit, uniform asymptotic budget, causal identification,
+full Gate-B passage, or twin-prime conclusion is obtained.
+
+The scoped conclusion is:
+\begin{quote}
+For the locked TPC-309 finite atlas, the declared profile-pooled,
+design-equal stratification rule is strictly LEFT on the calibration tolerance
+slice but strictly RIGHT on the native held-out slice $\tau=0.75$.  It does
+not provide a replication-stable global preference.  Closing this obstruction
+requires an externally justified weighting law and a genuinely fresh physical
+holdout.
+\end{quote}
+
+\paragraph{Reproducibility.}
+The canonical certificate is
+\texttt{results/tpc311\_certificate.json}.  The producer, independent replay,
+exact rational stress suite, theorem ledger, claim firewall, and Bridge-B
+checker are included in the project directory.  The Session-named evaluator
+files were absent from the checkout, so no official Route-A or Route-B pass is
+asserted.
+
+\bibliographystyle{plain}
+\begingroup\small
+\bibliography{references}
+\endgroup
+\end{document}
