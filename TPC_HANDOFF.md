@@ -1,5 +1,47 @@
 # TPC HANDOFF
 
+TPC-321 current section: cross-shell spectral-profile stability
+-----------------------------------------------------------------------------------------------
+
+TPC-321 承接 TPC-320 的 trace-normalized ordered profile，保留同一 TPC-268
+deleted-diagonal centered prime-shell operator，并把比较轴转为固定 X、s 下的相邻
+Q 壳层。面板为 X=640,1280,2560、Q={24,36,54,80}、s={1,2}，共 24 rows 和
+18 adjacent-Q comparisons。三条 producer profile path 的九种组合与 independent
+reverse/einsum replay 支持 TV、Lorenz/Ky Fan cumulative distance 在 18/18 上分别
+严格超过 0.03 与 0.02；majorization pattern 为 3 forward、2 reverse、13 mixed。
+
+最强正结果是：去掉 global amplitude 后，完整排序谱 profile 仍对 shell choice
+敏感，最小 outward lower endpoints 为 `0.03212981290619634`（TV）和
+`0.02339722207455566`（Lorenz）。最强 obstruction 是不存在单一 shell-monotone
+majorization direction；这只是在有限面板上 `REFUTED_FINITE_PANEL`，不代表统一渐近
+否定定理。
+
+    TPC321_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT
+    TPC321_ROUTE_ADVANCE = YES_SCOPED_CROSS_SHELL_PROFILE_OBSTRUCTION
+    TPC321_PROFILE_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+    TPC321_TV_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_ALL_GT_0_03
+    TPC321_LORENZ_KS_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_ALL_GT_0_02
+    TPC321_MAJORISATION_PATTERN = NUMERICAL_OBSERVATION_3_FORWARD_2_REVERSE_13_MIXED
+    TPC321_UNIFORM_SHELL_PROFILE = REFUTED_FINITE_PANEL
+    TPC321_UNIFORM_MAJORISATION = REFUTED_FINITE_PANEL
+    TPC321_ARITHMETIC_ADVANCE = NO
+    TPC321_FIXED_POWER_CREDIT = 0
+    TPC321_FULL_GATE_B = OPEN
+    TPC321_TWIN_PRIME_RESULT = NONE
+    TPC321_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT
+    TPC321_STRONGEST_POSITIVE = TRACE_NORMALIZED_FULL_PROFILE_18_OF_18_SEPARATION
+    TPC321_STRONGEST_OBSTRUCTION = MIXED_MAJORISATION_AND_NO_UNIFORM_SHELL_RULE
+    TPC321_OPEN_THEOREM = UNIFORM_SHELL_PROFILE_BOUND_LINKED_TO_SIGNED_REASSEMBLY
+    TPC321_REUSABLE_STRUCTURE = LITERAL_MATRIX_TO_TRACE_PROFILE_TO_CROSS_SHELL_FIREWALL
+    TPC321_ROUND2_CLUE = TEST_SIGNED_PROJECTOR_REASSEMBLY_OR_PROVE_A_UNIFORM_SHELL_PROFILE_BOUND_BEFORE_ANY_ARITHMETIC_POWER_CLAIM
+
+Session-named `propose.md` 与 Route-A/Route-B evaluator files 在本 checkout 中仍不存在；
+项目 proof package、independent replay、stress suite 与 local Bridge-B checker 是
+fail-closed fallback，不能写成 official evaluator pass。
+
+更新时间：2026-08-31
+交接状态：`BOLD_CHANNEL_V174_TPC321_CROSS_SHELL_PROFILE_SEPARATION_RELEASED`
+
 TPC-320 current section: trace-normalized spectral concentration
 -----------------------------------------------------------------------------------------------
 
@@ -10969,9 +11011,10 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V172/TPC-319 是当前 release；其 producer、independent replay、stress audit 与
-finite Ky Fan cluster bridge 已封存。TPC-318、TPC-317、TPC-316 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 301 对 normal/optimized 命令、602 次
+V174/TPC-321 是当前 release；其 producer、independent replay、stress audit 与
+cross-shell profile bridge 已封存。TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
+及更早版本仍按历史顺序保留。
+当前 curated cascade command set 共 305 对 normal/optimized 命令、610 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -10985,9 +11028,10 @@ TPC-306 再追加末尾 4 对，TPC-307 再追加末尾 4 对，TPC-308 再追�
 TPC-309 再追加末尾 4 对，TPC-310 再追加末尾 4 对，TPC-311 再追加末尾 4 对，
 TPC-312 再追加末尾 4 对，TPC-313 再追加末尾 4 对，TPC-314 再追加末尾 4 对，
 TPC-315 再追加末尾 4 对，TPC-316 再追加末尾 4 对，TPC-317 再追加末尾 4 对，
-TPC-318 再追加末尾 4 对，TPC-319 再追加末尾 4 对，TPC-320 再追加末尾 4 对。
-V173/TPC-320 的新增 4 对由
-本项目 bridge 与 standalone tail checks 逐项验证；完整 301 对组合未因重复计算而再次运行。
+TPC-318 再追加末尾 4 对，TPC-319 再追加末尾 4 对，TPC-320 再追加末尾 4 对，
+TPC-321 再追加末尾 4 对。
+V174/TPC-321 的新增 4 对由
+本项目 bridge 与 standalone tail checks 逐项验证；完整 305 对组合未因重复计算而再次运行。
 
 旧的下列句子是历史快照，当前数字由本段覆盖：V169/TPC-316 的 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
@@ -11903,6 +11947,26 @@ stable_rank_growth=16 / participation_growth=16 / fixed_power_credit=0。这 4 �
 V173/TPC-320 的新增尾部；scale-invariant spectral-shape obstruction 不代表
 arithmetic cancellation 或官方 Route-A/Route-B 通过。
 
+TPC-321 的项目级 producer、independent replay、profile stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-321-cross-shell-profile-stability/code/tpc321_cross_shell_profile.py --check
+python -O -B papers/tpc-321-cross-shell-profile-stability/code/tpc321_cross_shell_profile.py --check
+python -B papers/tpc-321-cross-shell-profile-stability/experiments/tpc321_independent_checker.py --check
+python -O -B papers/tpc-321-cross-shell-profile-stability/experiments/tpc321_independent_checker.py --check
+python -B papers/tpc-321-cross-shell-profile-stability/experiments/tpc321_profile_stress.py --check
+python -O -B papers/tpc-321-cross-shell-profile-stability/experiments/tpc321_profile_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc321_cross_shell_profile_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc321_cross_shell_profile_checker.py --check
+```
+
+TPC-321 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 均返回零，
+stderr 为空，normal/optimized stdout 逐对 byte-identical；Bridge-B 输出
+`rows=24 / comparisons=18 / profile_separation=18 / tv_gt_003=18 /
+ks_gt_002=18 / majorization=3/2/13 / fixed_power_credit=0`。这 4 对是
+V174/TPC-321 的新增尾部；cross-shell profile obstruction 不代表 arithmetic
+cancellation 或官方 Route-A/Route-B 通过。
+
 此前 TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
 
 ```bash
@@ -11943,6 +12007,15 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 ```
 
 随后优先读取：
+
+最新 TPC-321 入口：
+
+papers/tpc-321-cross-shell-profile-stability/README.md
+papers/tpc-321-cross-shell-profile-stability/PROOF_PACKAGE.md
+papers/tpc-321-cross-shell-profile-stability/notes/theorem_ledger.md
+papers/tpc-321-cross-shell-profile-stability/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc321_cross_shell_profile.md
+research/tpc-big-road/tpc_bridge_b_tpc321_cross_shell_profile_checker.py
 
 最新 TPC-320 入口：
 

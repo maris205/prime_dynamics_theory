@@ -1,3 +1,43 @@
+# TPC big road V174 / TPC-321: cross-shell spectral-profile stability
+
+## V174 current anchor: TPC-321
+
+更新时间：2026-08-31
+
+当前 TPC-321 proof 为
+bridge_b_tpc321_cross_shell_profile.md，checker 为
+tpc_bridge_b_tpc321_cross_shell_profile_checker.py，编号论文为
+../../papers/tpc-321-cross-shell-profile-stability/。
+
+TPC-321 承接 TPC-320 的 trace-normalized profile，在同一 literal
+deleted-diagonal centered prime-shell Gram 上比较固定 X、s 下的相邻 Q 壳层。面板
+X=640,1280,2560、Q={24,36,54,80}、s={1,2} 有 24 rows 和 18 comparisons；
+TV 与 Lorenz/Ky Fan cumulative distance 的 outward lower endpoints 在 18/18 上
+分别超过 0.03 与 0.02。majorization pattern 为 3 forward、2 reverse、13 mixed，
+所以统一 shell-profile/majorization rule 只在该有限面板上被 refute；它不是渐近
+定理或 arithmetic cancellation。fixed-power credit 为 0，full Gate B 仍 open，
+也不宣称 official Route-A/Route-B pass。
+
+    TPC321_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT
+    TPC321_ROUTE_ADVANCE = YES_SCOPED_CROSS_SHELL_PROFILE_OBSTRUCTION
+    TPC321_PROFILE_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+    TPC321_TV_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_ALL_GT_0_03
+    TPC321_LORENZ_KS_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_ALL_GT_0_02
+    TPC321_MAJORISATION_PATTERN = NUMERICAL_OBSERVATION_3_FORWARD_2_REVERSE_13_MIXED
+    TPC321_UNIFORM_SHELL_PROFILE = REFUTED_FINITE_PANEL
+    TPC321_UNIFORM_MAJORISATION = REFUTED_FINITE_PANEL
+    TPC321_ARITHMETIC_ADVANCE = NO
+    TPC321_FIXED_POWER_CREDIT = 0
+    TPC321_FULL_GATE_B = OPEN
+    TPC321_TWIN_PRIME_RESULT = NONE
+    TPC321_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT
+    TPC321_ROUND2_CLUE = TEST_SIGNED_PROJECTOR_REASSEMBLY_OR_PROVE_A_UNIFORM_SHELL_PROFILE_BOUND_BEFORE_ANY_ARITHMETIC_POWER_CLAIM
+
+TPC-320 remains the previous release and supplies the trace-normalized readout
+used by this cross-shell audit.
+
+---
+
 # TPC big road V173 / TPC-320: trace-normalized spectral concentration
 
 ## V173 current anchor: TPC-320

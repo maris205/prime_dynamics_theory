@@ -9,6 +9,39 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-321 承接 TPC-320 的 trace-normalized spectral profile，在同一
+literal deleted-diagonal centered prime-shell Gram 上把比较轴改为固定 X、s 下的相邻
+prime-shell Q。X=640,1280,2560、Q={24,36,54,80}、s={1,2} 给出 24 行和 18 个
+adjacent-Q comparisons；完整排序 profile 的 total-variation 与 cumulative
+Lorenz/Ky Fan 距离在 18/18 上分别严格超过 0.03 与 0.02。majorization 标签为
+3 个 forward、2 个 reverse、13 个 mixed，故统一 shell-monotone profile rule 在该
+有限面板上被 refute，但不外推为渐近定理。
+
+这是 NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT，且
+trace-normalized profile 的正标量不变性是 PROVED_EXACT_FINITE。它给出同一系统族的
+shell-sensitivity obstruction，不是 arithmetic cancellation、渐近 power theorem 或
+twin-prime result；fixed-power credit 为 0，full Gate B 仍 OPEN。Session-named
+evaluator files absent，故不宣称 official Route-A/Route-B pass。
+
+    TPC321_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT
+    TPC321_ROUTE_ADVANCE = YES_SCOPED_CROSS_SHELL_PROFILE_OBSTRUCTION
+    TPC321_PROFILE_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+    TPC321_TV_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_ALL_GT_0_03
+    TPC321_LORENZ_KS_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_ALL_GT_0_02
+    TPC321_MAJORISATION_PATTERN = NUMERICAL_OBSERVATION_3_FORWARD_2_REVERSE_13_MIXED
+    TPC321_UNIFORM_SHELL_PROFILE = REFUTED_FINITE_PANEL
+    TPC321_UNIFORM_MAJORISATION = REFUTED_FINITE_PANEL
+    TPC321_ARITHMETIC_ADVANCE = NO
+    TPC321_FIXED_POWER_CREDIT = 0
+    TPC321_FULL_GATE_B = OPEN
+    TPC321_TWIN_PRIME_RESULT = NONE
+    TPC321_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT
+    TPC321_ROUND2_CLUE = TEST_SIGNED_PROJECTOR_REASSEMBLY_OR_PROVE_A_UNIFORM_SHELL_PROFILE_BOUND_BEFORE_ANY_ARITHMETIC_POWER_CLAIM
+
+papers/tpc-321-cross-shell-profile-stability - TPC-321 current project；含完整
+trace-normalized ordered-profile distance certificate、majorization obstruction、
+independent reverse/einsum replay、metric stress suite、PDF 与 local Bridge-B checker。
+
 当前主线状态：TPC-320 承接 TPC-319 的 normalization firewall，在完全相同的 literal
 deleted-diagonal centered prime-shell Gram 上改用 trace-normalized spectral measure
 \(C_k=F_k/\operatorname{tr}(G)\)。在

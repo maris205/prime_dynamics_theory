@@ -3,13 +3,63 @@
 
 更新时间：2026-08-31
 
-状态：**TPC320_NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC321_NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.114 current：TPC-320 scale-invariant spectral concentration
+## 0.115 current：TPC-321 cross-shell spectral-profile stability
+
+项目：papers/tpc-321-cross-shell-profile-stability/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT**。
+
+TPC-321 承接 TPC-320 的 trace-normalized readout，仍使用同一 literal
+deleted-diagonal centered prime-shell Gram；比较固定 X、s 下相邻 Q 壳层的完整排序
+profile (p_j=\lambda_j/\operatorname{tr}(G))。在
+X=640,1280,2560、Q={24,36,54,80}、s={1,2} 的 24 rows 上形成 18 个
+adjacent-Q comparisons。对每一对，三条 producer profile path 的九种组合和
+independent reverse/einsum replay 均支持 outward profile-distance intervals；TV 与
+Lorenz/Ky Fan cumulative distance 在 18/18 上分别严格超过 0.03 与 0.02。
+
+最强正结果：去除全局振幅后，完整 ordered spectral profile 仍对壳层选择敏感；
+最小 TV lower endpoint 为 `0.03212981290619634`，最小 cumulative lower endpoint
+为 `0.02339722207455566`。
+
+最强 obstruction：majorization 方向不统一，3 个 comparison 为 forward、2 个为
+reverse、13 个为 mixed。因此 `UNIFORM_SHELL_PROFILE` 与
+`UNIFORM_MAJORISATION` 只在该有限面板上 `REFUTED_FINITE_PANEL`，不能外推成
+所有 X、Q 的否定定理。
+
+开放定理：uniform cross-shell profile bound/limit、signed prime-shell projector
+reassembly、arithmetic cancellation、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。Session-named evaluator files absent，故不宣称 official
+Route-A/Route-B pass。
+
+可复用结构：
+
+    literal blocks -> PSD Gram -> trace-normalized ordered profile
+                     -> cross-shell distance -> majorization firewall
+
+ROUND2_CLUE：
+TEST_SIGNED_PROJECTOR_REASSEMBLY_OR_PROVE_A_UNIFORM_SHELL_PROFILE_BOUND_BEFORE_ANY_ARITHMETIC_POWER_CLAIM。
+
+    TPC321_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT
+    TPC321_ROUTE_ADVANCE = YES_SCOPED_CROSS_SHELL_PROFILE_OBSTRUCTION
+    TPC321_PROFILE_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+    TPC321_TV_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_ALL_GT_0_03
+    TPC321_LORENZ_KS_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_ALL_GT_0_02
+    TPC321_MAJORISATION_PATTERN = NUMERICAL_OBSERVATION_3_FORWARD_2_REVERSE_13_MIXED
+    TPC321_UNIFORM_SHELL_PROFILE = REFUTED_FINITE_PANEL
+    TPC321_UNIFORM_MAJORISATION = REFUTED_FINITE_PANEL
+    TPC321_ARITHMETIC_ADVANCE = NO
+    TPC321_FIXED_POWER_CREDIT = 0
+    TPC321_FULL_GATE_B = OPEN
+    TPC321_TWIN_PRIME_RESULT = NONE
+    TPC321_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT
+
+## 0.114 previous：TPC-320 scale-invariant spectral concentration
 
 项目：papers/tpc-320-trace-normalized-spectral-concentration/
 

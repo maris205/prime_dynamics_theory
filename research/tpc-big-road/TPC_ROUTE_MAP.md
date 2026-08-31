@@ -2,25 +2,28 @@
 
 更新时间：2026-08-31
 
-当前地图版本：V173 / TPC-320
+当前地图版本：V174 / TPC-321
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-320`（`NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT`）；
+当前编号锚点：`TPC-321`（`NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT`）；
 对应论文目录为
-`papers/tpc-320-trace-normalized-spectral-concentration/`。
+`papers/tpc-321-cross-shell-profile-stability/`。
 
-TPC-320 是当前地图位置：承接 TPC-319 的 normalization firewall，在同一 literal
-deleted-diagonal centered prime-shell Gram 上定义 trace-normalized spectral mass
-C_k=F_k/trace(G)。固定 X=640,1280,2560、Q={24,36,54,80}、s={1,2} 的
-24 rows 和五层 k={1,2,4,8,16} 上，双 shell 顺序、双谱路径与有限 Weyl quotient
-guard 支持 80/80 strict concentration decreases。positive-scalar invariance 是
-exact finite identity；stable rank、participation rank 与 entropy 只作有限观察，
-其中 entropy 为 14 增、2 减。uniform spectral law、arithmetic cancellation、
-fixed-power credit 与 full Gate B 仍 open。
+TPC-321 是当前地图位置：承接 TPC-320 的 trace-normalized spectral profile，在同一
+literal deleted-diagonal centered prime-shell Gram 上比较固定 X、s 下的相邻 Q 壳层。
+X=640,1280,2560、Q={24,36,54,80}、s={1,2} 的 24 rows 形成 18 个
+adjacent-Q comparisons；三条 producer profile path 的九种组合与 independent
+reverse/einsum replay 支持 TV 和 Lorenz/Ky Fan cumulative distance 在 18/18 上
+分别严格超过 0.03 与 0.02。majorization pattern 为 3 forward、2 reverse、13 mixed，
+所以统一 shell-profile/majorization rule 在该有限面板上被 refute，但不外推为渐近
+定理；arithmetic cancellation、fixed-power credit 与 full Gate B 仍 open。
+
+TPC-320 是上一地图位置：它的 trace-normalized top-k concentration 与
+positive-scalar invariance 是本关的直接前置结构；本节之后的历史条目保持不变。
 
 TPC-319 是上一地图位置：它的 Ky Fan cluster mass 与 factor-of-two normalization
-firewall 仍作为本关的直接前置结构；本节之后的历史条目保持不变。
+firewall 仍作为更早的直接前置结构；本节之后的历史条目保持不变。
 
 TPC-318 是上一地图位置：承接 TPC-317 的 true operator-norm open gate，直接读取同一
 literal deleted-diagonal centered prime-shell Gram 的最大特征值。固定
@@ -706,8 +709,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V173 / TPC-320
-MAP_LABEL = TRACE-NORMALIZED SPECTRAL CONCENTRATION / PARTICIPATION GROWTH / FULL PROFILE LAW OPEN
+YOU ARE HERE = V174 / TPC-321
+MAP_LABEL = CROSS-SHELL FULL-PROFILE SEPARATION / MAJORIZATION MIXED / SIGNED REASSEMBLY OPEN
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -943,6 +946,45 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.115 V174 / TPC-321：cross-shell spectral-profile stability
+
+TPC-321 承接 TPC-320 的 trace-normalized profile，仍使用同一 literal
+deleted-diagonal centered prime-shell Gram；比较固定 source scale X 与 kernel
+exponent s 下相邻 prime-shell anchors 的完整排序 profile
+`p_j=lambda_j/trace(G)`。在 X=640,1280,2560、Q={24,36,54,80}、s={1,2}
+的 24 rows 上形成 18 个 adjacent-Q comparisons。
+
+对每一对，producer 的 forward/reverse shell accumulation 与 NumPy/SciPy
+profile paths 产生 9 个交叉读数，independent reverse/einsum replay 再次重建。
+TV 和 Lorenz/Ky Fan cumulative distance 的 outward lower endpoints 在 18/18
+上分别严格超过 0.03 与 0.02；最小值为 `0.03212981290619634` 与
+`0.02339722207455566`。majorization pattern 为 3 forward、2 reverse、13 mixed。
+
+strongest positive：trace normalization 去掉 global amplitude 后，完整 ordered
+profile 仍显示 shell sensitivity，这是对 TPC-320 scale-direction readout 的新
+正交检验。
+
+strongest obstruction：不存在单一 shell-monotone majorization direction；但
+`REFUTED_FINITE_PANEL` 只描述这 18 个有限 comparisons，不能推出 uniform
+asymptotic profile theorem。signed prime-shell reassembly、arithmetic cancellation、
+fixed-power credit、full Gate B 与 twin-prime endpoint 仍 open/none。Route-A/B
+evaluator files 在 checkout 中缺失，故只记录 local fail-closed scoped advance。
+
+    TPC321_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT
+    TPC321_ROUTE_ADVANCE = YES_SCOPED_CROSS_SHELL_PROFILE_OBSTRUCTION
+    TPC321_PROFILE_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+    TPC321_TV_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_ALL_GT_0_03
+    TPC321_LORENZ_KS_SEPARATION = NUMERICALLY_CERTIFIED_FINITE_ALL_GT_0_02
+    TPC321_MAJORISATION_PATTERN = NUMERICAL_OBSERVATION_3_FORWARD_2_REVERSE_13_MIXED
+    TPC321_UNIFORM_SHELL_PROFILE = REFUTED_FINITE_PANEL
+    TPC321_UNIFORM_MAJORISATION = REFUTED_FINITE_PANEL
+    TPC321_ARITHMETIC_ADVANCE = NO
+    TPC321_FIXED_POWER_CREDIT = 0
+    TPC321_FULL_GATE_B = OPEN
+    TPC321_TWIN_PRIME_RESULT = NONE
+    TPC321_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT
+    TPC321_ROUND2_CLUE = TEST_SIGNED_PROJECTOR_REASSEMBLY_OR_PROVE_A_UNIFORM_SHELL_PROFILE_BOUND_BEFORE_ANY_ARITHMETIC_POWER_CLAIM
 
 ## 5.114 V173 / TPC-320：trace-normalized spectral concentration
 
@@ -7958,6 +8000,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-31 | V174 / TPC-321 | Bridge A / Gate B：cross-shell full-profile separation 已完成；uniform shell profile、uniform majorization、arithmetic cancellation、fixed-power credit 与 full Gate B open | `TPC-321` | 承接 TPC-320 的 trace-normalized readout；24 rows / 18 adjacent-Q comparisons；TV 与 Lorenz distance 18/18 越过阈值；majorization 3 forward / 2 reverse / 13 mixed；下一步为 signed projector reassembly 或 uniform profile bound |
 | 2026-08-31 | V173 / TPC-320 | Bridge A / Gate B：trace-normalized spectral concentration readout 已完成；full spectral profile、arithmetic cancellation、fixed-power credit 与 full Gate B open | `TPC-320` | 承接 TPC-319 的 normalization firewall；24 rows / 5 k values / 80 strict concentration decreases / 16 stable-rank and participation observations；下一步为跨 shell 的 full-profile stability |
 | 2026-08-31 | V172 / TPC-319 | Bridge A / Gate B：Ky Fan finite cluster readout 与 normalization firewall 已完成；scale-invariant law、arithmetic cancellation、fixed-power credit 与 full Gate B open | `TPC-319` | 承接 TPC-318 的 top-cluster clue；24 rows / 5 cluster sizes / 80 normalized decreases / 80 unnormalized increases；各层 edge-gap census；下一步为 scale-invariant spectral measure 或 source normalization theorem |
 | 2026-08-31 | V171 / TPC-318 | Bridge A / Gate B：finite top-eigenvalue readout 已完成；clustered eigenspace、normalization-invariant growing law、arithmetic cancellation、fixed-power credit 与 full Gate B open | `TPC-318` | 承接 TPC-317 的 true operator-norm open gate；24 rows / 16 adjacent normalized top-eigenvalue decreases / dual solver + residual + Weyl guard；10/24 rows near-degenerate；下一步为 top spectral cluster 与 normalization law audit |
