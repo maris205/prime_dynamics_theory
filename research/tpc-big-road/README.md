@@ -1,4 +1,41 @@
-# TPC big road V172 / TPC-319: Ky Fan cluster normalization firewall
+# TPC big road V173 / TPC-320: trace-normalized spectral concentration
+
+## V173 current anchor: TPC-320
+
+更新时间：2026-08-31
+
+当前 TPC-320 proof 为
+bridge_b_tpc320_trace_normalized_spectral_concentration.md，checker 为
+tpc_bridge_b_tpc320_trace_normalized_spectral_concentration_checker.py，编号论文为
+../../papers/tpc-320-trace-normalized-spectral-concentration/。
+
+TPC-320 承接 TPC-319 的 normalization firewall，在同一 literal
+deleted-diagonal centered prime-shell Gram 上定义 trace-normalized spectral mass
+C_k=F_k/trace(G)。固定 X=640,1280,2560、Q={24,36,54,80}、s={1,2} 的
+24 rows 和 k={1,2,4,8,16} 五层簇大小上，dual shell order、dual spectral path
+与有限 Weyl quotient guard 支持 120 个 concentration intervals；80/80
+adjacent intervals 全部严格下降。positive-scalar invariance 是 exact finite
+identity；stable rank 与 participation rank 的 16/16 增长、以及 entropy 的 14 增
+2 减是有限观察。uniform spectral law、arithmetic cancellation、fixed-power credit
+与 full Gate B 仍 open，故不宣称 official Route-A/Route-B pass。
+
+    TPC320_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT
+    TPC320_ROUTE_ADVANCE = YES_SCOPED_SCALE_INVARIANT_SPECTRAL_READOUT
+    TPC320_CONCENTRATION_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_ROWS_5_K
+    TPC320_CONCENTRATION_DECREASES = NUMERICALLY_CERTIFIED_FINITE_80_OF_80
+    TPC320_SCALE_INVARIANCE = PROVED_EXACT_FINITE
+    TPC320_STABLE_RANK_GROWTH = NUMERICAL_OBSERVATION_FINITE_16_OF_16
+    TPC320_PARTICIPATION_GROWTH = NUMERICAL_OBSERVATION_FINITE_16_OF_16
+    TPC320_ENTROPY_CONTROL = NUMERICAL_OBSERVATION_MIXED
+    TPC320_ARITHMETIC_ADVANCE = NO
+    TPC320_FIXED_POWER_CREDIT = 0
+    TPC320_FULL_GATE_B = OPEN
+    TPC320_TWIN_PRIME_RESULT = NONE
+    TPC320_STATUS = NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT
+    TPC320_ROUND2_CLUE = AUDIT_SPECTRAL_PROFILE_STABILITY_ACROSS_SHELLS_OR_TEST_SIGNED_PROJECTOR_REASSEMBLY_BEFORE_ANY_ARITHMETIC_POWER_CLAIM
+
+TPC-319 remains the previous release and supplies the Ky Fan normalization
+firewall that motivated this scale-invariant readout.
 
 更新时间：2026-08-31
 

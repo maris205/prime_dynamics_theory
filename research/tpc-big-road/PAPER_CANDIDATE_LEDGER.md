@@ -3,11 +3,62 @@
 
 更新时间：2026-08-31
 
-状态：**TPC319_NUMERICALLY_CERTIFIED_FINITE_KY_FAN_CLUSTER_NORMALIZATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC320_NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
+
+## 0.114 current：TPC-320 scale-invariant spectral concentration
+
+项目：papers/tpc-320-trace-normalized-spectral-concentration/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT**。
+
+TPC-320 承接 TPC-319 的 normalization firewall，保留同一 literal
+deleted-diagonal centered prime-shell Gram，改用
+C_k=F_k/trace(G) 的 trace-normalized spectral measure。positive-scalar
+invariance、stable rank、participation rank 与 normalized entropy 的代数关系
+被分开记账：前者为 exact finite identity，后三者的跨尺度读数是有限观察。
+在 X=640,1280,2560、Q={24,36,54,80}、s={1,2} 的 24 rows 和
+k={1,2,4,8,16} 五层簇大小上，双 shell 顺序、双谱路径与有限 Weyl quotient
+guard 给出 120 个 concentration intervals；80/80 相邻 intervals 严格下降。
+
+最强正结果：去除全局振幅与 source-count bookkeeping 后，五层 top-k spectral
+shares 仍在全部 80 个声明 transition 上严格下降；这是一个可复用的
+scale-invariant spectral-shape obstruction。
+
+最强 obstruction：stable rank 与 participation rank 虽在 16/16 transitions
+上升，normalized entropy 却是 mixed（14 增、2 减），且面板只有三个 source
+scales。因此不能从单一谱标量推出 limiting profile、uniform theorem 或
+arithmetic cancellation。
+
+开放定理：uniform spectral-profile law、trace/source normalization 的 arithmetic
+接口、signed prime-shell reassembly、fixed-power credit、full Gate B 与
+twin-prime conclusion 仍 OPEN/NONE。Session-named evaluator files absent，
+故不宣称 official Route-A/Route-B pass。
+
+可复用结构：
+
+    literal matrix -> PSD Gram -> trace-normalized spectral measure
+                   -> outward quotient interval -> adversarial control
+
+ROUND2_CLUE：
+AUDIT_SPECTRAL_PROFILE_STABILITY_ACROSS_SHELLS_OR_TEST_SIGNED_PROJECTOR_REASSEMBLY_BEFORE_ANY_ARITHMETIC_POWER_CLAIM。
+
+    TPC320_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT
+    TPC320_ROUTE_ADVANCE = YES_SCOPED_SCALE_INVARIANT_SPECTRAL_READOUT
+    TPC320_CONCENTRATION_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_ROWS_5_K
+    TPC320_CONCENTRATION_DECREASES = NUMERICALLY_CERTIFIED_FINITE_80_OF_80
+    TPC320_SCALE_INVARIANCE = PROVED_EXACT_FINITE
+    TPC320_STABLE_RANK_GROWTH = NUMERICAL_OBSERVATION_FINITE_16_OF_16
+    TPC320_PARTICIPATION_GROWTH = NUMERICAL_OBSERVATION_FINITE_16_OF_16
+    TPC320_ENTROPY_CONTROL = NUMERICAL_OBSERVATION_MIXED
+    TPC320_ARITHMETIC_ADVANCE = NO
+    TPC320_FIXED_POWER_CREDIT = 0
+    TPC320_FULL_GATE_B = OPEN
+    TPC320_TWIN_PRIME_RESULT = NONE
+    TPC320_STATUS = NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT
 
 ## 0.113 current：TPC-319 Ky Fan cluster masses and normalization firewall
 

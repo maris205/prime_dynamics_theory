@@ -1,11 +1,45 @@
 # TPC distilled map and bold channel
 
-更新时间：2026-08-31
-状态：`BOLD_CHANNEL_V172 / KY_FAN_NORMALIZATION_FIREWALL`
-claim level：`NUMERICALLY_CERTIFIED_FINITE_KY_FAN_CLUSTER_NORMALIZATION_AUDIT`
-编号事实终点：TPC-319；TPC-319 trigger：`true`
+## V173 / TPC-320 current anchor
 
-当前 TPC-319 入口：proof 为
+更新时间：2026-08-31
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc320_trace_normalized_spectral_concentration.md，
+checker 为
+tpc_bridge_b_tpc320_trace_normalized_spectral_concentration_checker.py，编号论文为
+papers/tpc-320-trace-normalized-spectral-concentration/。
+
+TPC-320 承接 TPC-319 的 normalization firewall，在同一 literal deleted-diagonal
+centered prime-shell Gram 上定义 trace-normalized spectral mass
+C_k=F_k/trace(G)。24 rows、五个 k 值、双 shell 顺序与双谱路径给出
+80/80 strict finite concentration decreases；positive-scalar invariance、
+stable rank、participation rank 和 entropy 的状态分别由 exact identity、
+finite observations 与 mixed control 区分记录。uniform spectral law、arithmetic
+cancellation、fixed-power credit 与 full Gate B 仍 open；不宣称 official
+Route-A/Route-B pass。
+
+    TPC320_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT
+    TPC320_ROUTE_ADVANCE = YES_SCOPED_SCALE_INVARIANT_SPECTRAL_READOUT
+    TPC320_CONCENTRATION_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_ROWS_5_K
+    TPC320_CONCENTRATION_DECREASES = NUMERICALLY_CERTIFIED_FINITE_80_OF_80
+    TPC320_SCALE_INVARIANCE = PROVED_EXACT_FINITE
+    TPC320_STABLE_RANK_GROWTH = NUMERICAL_OBSERVATION_FINITE_16_OF_16
+    TPC320_PARTICIPATION_GROWTH = NUMERICAL_OBSERVATION_FINITE_16_OF_16
+    TPC320_ENTROPY_CONTROL = NUMERICAL_OBSERVATION_MIXED
+    TPC320_ARITHMETIC_ADVANCE = NO
+    TPC320_FIXED_POWER_CREDIT = 0
+    TPC320_FULL_GATE_B = OPEN
+    TPC320_TWIN_PRIME_RESULT = NONE
+    TPC320_STATUS = NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT
+    TPC320_ROUND2_CLUE = AUDIT_SPECTRAL_PROFILE_STABILITY_ACROSS_SHELLS_OR_TEST_SIGNED_PROJECTOR_REASSEMBLY_BEFORE_ANY_ARITHMETIC_POWER_CLAIM
+
+更新时间：2026-08-31
+状态：`BOLD_CHANNEL_V173 / TRACE_NORMALIZED_SPECTRAL_CONCENTRATION`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT`
+编号事实终点：TPC-320；TPC-320 trigger：`true`
+
+此前 TPC-319 入口：proof 为
 `research/tpc-big-road/bridge_b_tpc319_kyfan_cluster.md`，checker 为
 `tpc_bridge_b_tpc319_kyfan_cluster_checker.py`，编号论文为
 `papers/tpc-319-kyfan-cluster-normalization-firewall/`。它在 TPC-318 的同一 literal

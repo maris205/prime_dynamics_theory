@@ -9,6 +9,40 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-320 承接 TPC-319 的 normalization firewall，在完全相同的 literal
+deleted-diagonal centered prime-shell Gram 上改用 trace-normalized spectral measure
+\(C_k=F_k/\operatorname{tr}(G)\)。在
+X=640,1280,2560、Q={24,36,54,80}、s={1,2} 的 24 行和
+k={1,2,4,8,16} 五层簇大小上，120 个有限区间与 80 个相邻尺度比较全部通过；
+trace-normalized top-k share 全部严格下降。stable rank 与 participation rank 在
+16/16 transitions 上升，但只记作有限数值观察；normalized entropy 为 mixed control
+(14 增、2 减)，因此不把单一指标扩张成全谱定理。
+
+这是 NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT，
+并且 positive-scalar invariance 是 PROVED_EXACT_FINITE。它是同一系统族中的
+scale-invariant spectral-shape obstruction，不是 arithmetic cancellation、渐近
+power theorem 或 twin-prime result；fixed-power credit 为 0，full Gate B 仍 OPEN。
+Session-named evaluator files absent，故不宣称 official Route-A/Route-B pass。
+
+    TPC320_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT
+    TPC320_ROUTE_ADVANCE = YES_SCOPED_SCALE_INVARIANT_SPECTRAL_READOUT
+    TPC320_CONCENTRATION_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_ROWS_5_K
+    TPC320_CONCENTRATION_DECREASES = NUMERICALLY_CERTIFIED_FINITE_80_OF_80
+    TPC320_SCALE_INVARIANCE = PROVED_EXACT_FINITE
+    TPC320_STABLE_RANK_GROWTH = NUMERICAL_OBSERVATION_FINITE_16_OF_16
+    TPC320_PARTICIPATION_GROWTH = NUMERICAL_OBSERVATION_FINITE_16_OF_16
+    TPC320_ENTROPY_CONTROL = NUMERICAL_OBSERVATION_MIXED
+    TPC320_ARITHMETIC_ADVANCE = NO
+    TPC320_FIXED_POWER_CREDIT = 0
+    TPC320_FULL_GATE_B = OPEN
+    TPC320_TWIN_PRIME_RESULT = NONE
+    TPC320_STATUS = NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT
+    TPC320_ROUND2_CLUE = AUDIT_SPECTRAL_PROFILE_STABILITY_ACROSS_SHELLS_OR_TEST_SIGNED_PROJECTOR_REASSEMBLY_BEFORE_ANY_ARITHMETIC_POWER_CLAIM
+
+papers/tpc-320-trace-normalized-spectral-concentration - TPC-320 current project；含
+exact scale-invariance proof、trace-normalized concentration certificate、independent
+full-spectrum replay、scalar/PSD/Weyl stress suite、PDF 与 local Bridge-B checker。
+
 当前主线状态：TPC-319 承接 TPC-318，将最大特征值推广为 Ky Fan top-\(k\) 簇质量
 \(F_k=\sum_{j\le k}\lambda_j\)，其中 \(k={1,2,4,8,16}\)。在同一
 `X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}` 的 24 行上，5 个簇大小共

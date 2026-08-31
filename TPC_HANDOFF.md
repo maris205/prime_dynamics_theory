@@ -1,7 +1,47 @@
 # TPC HANDOFF
 
+TPC-320 current section: trace-normalized spectral concentration
+-----------------------------------------------------------------------------------------------
+
+TPC-320 承接 TPC-319 的 Ky Fan normalization firewall，保留同一 TPC-268
+deleted-diagonal centered prime-shell operator，并定义
+C_k=F_k/trace(G)、stable rank、participation rank 与 normalized entropy。在
+X=640,1280,2560、Q={24,36,54,80}、s={1,2} 的 24 rows 和
+k={1,2,4,8,16} 五层簇大小上，双 shell 顺序、双谱路径与有限 Weyl quotient
+guard 支持 120 个 concentration intervals；80/80 adjacent intervals 全部
+严格下降。positive-scalar invariance 是 exact finite identity。
+
+最强正结果是去除 global amplitude 与 source-count bookkeeping 后仍保留的
+scale-invariant spectral-shape obstruction。最强 obstruction 是 stable rank 与
+participation rank 虽在 16/16 transitions 上升，normalized entropy 却为 mixed
+（14 增、2 减），且只有三个 source scales；因此 uniform spectral-profile law、
+arithmetic cancellation、fixed-power credit 与 twin-prime endpoint 仍未支付。
+
+    TPC320_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT
+    TPC320_ROUTE_ADVANCE = YES_SCOPED_SCALE_INVARIANT_SPECTRAL_READOUT
+    TPC320_CONCENTRATION_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_ROWS_5_K
+    TPC320_CONCENTRATION_DECREASES = NUMERICALLY_CERTIFIED_FINITE_80_OF_80
+    TPC320_SCALE_INVARIANCE = PROVED_EXACT_FINITE
+    TPC320_STABLE_RANK_GROWTH = NUMERICAL_OBSERVATION_FINITE_16_OF_16
+    TPC320_PARTICIPATION_GROWTH = NUMERICAL_OBSERVATION_FINITE_16_OF_16
+    TPC320_ENTROPY_CONTROL = NUMERICAL_OBSERVATION_MIXED
+    TPC320_ARITHMETIC_ADVANCE = NO
+    TPC320_FIXED_POWER_CREDIT = 0
+    TPC320_FULL_GATE_B = OPEN
+    TPC320_TWIN_PRIME_RESULT = NONE
+    TPC320_STATUS = NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT
+    TPC320_STRONGEST_POSITIVE = TRACE_NORMALIZED_80_OF_80_FINITE_DECREASE
+    TPC320_STRONGEST_OBSTRUCTION = MIXED_ENTROPY_AND_FINITE_PROFILE_SCOPE
+    TPC320_OPEN_THEOREM = UNIFORM_FULL_SPECTRAL_PROFILE_LAW_LINKED_TO_SIGNED_REASSEMBLY
+    TPC320_REUSABLE_STRUCTURE = LITERAL_MATRIX_TO_PSD_GRAM_TO_TRACE_MEASURE_TO_INTERVAL
+    TPC320_ROUND2_CLUE = AUDIT_SPECTRAL_PROFILE_STABILITY_ACROSS_SHELLS_OR_TEST_SIGNED_PROJECTOR_REASSEMBLY_BEFORE_ANY_ARITHMETIC_POWER_CLAIM
+
+Session-named propose.md 与 Route-A/Route-B evaluator files 在本 checkout 中仍不存在；
+项目 proof package、independent replay、stress suite 与 local Bridge-B checker 是
+fail-closed fallback，不能写成 official evaluator pass。
+
 更新时间：2026-08-31
-交接状态：`BOLD_CHANNEL_V172_TPC319_KY_FAN_NORMALIZATION_FIREWALL_RELEASED`
+交接状态：`BOLD_CHANNEL_V173_TPC320_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_RELEASED`
 
 TPC-319 current section: Ky Fan cluster masses and normalization firewall
 -----------------------------------------------------------------------------------------------
@@ -10931,7 +10971,7 @@ certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正
 
 V172/TPC-319 是当前 release；其 producer、independent replay、stress audit 与
 finite Ky Fan cluster bridge 已封存。TPC-318、TPC-317、TPC-316 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 297 对 normal/optimized 命令、594 次
+当前 curated cascade command set 共 301 对 normal/optimized 命令、602 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -10945,8 +10985,9 @@ TPC-306 再追加末尾 4 对，TPC-307 再追加末尾 4 对，TPC-308 再追�
 TPC-309 再追加末尾 4 对，TPC-310 再追加末尾 4 对，TPC-311 再追加末尾 4 对，
 TPC-312 再追加末尾 4 对，TPC-313 再追加末尾 4 对，TPC-314 再追加末尾 4 对，
 TPC-315 再追加末尾 4 对，TPC-316 再追加末尾 4 对，TPC-317 再追加末尾 4 对，
-TPC-318 再追加末尾 4 对，TPC-319 再追加末尾 4 对。V172/TPC-319 的新增 4 对由
-本项目 bridge 与 standalone tail checks 逐项验证；完整 297 对组合未因重复计算而再次运行。
+TPC-318 再追加末尾 4 对，TPC-319 再追加末尾 4 对，TPC-320 再追加末尾 4 对。
+V173/TPC-320 的新增 4 对由
+本项目 bridge 与 standalone tail checks 逐项验证；完整 301 对组合未因重复计算而再次运行。
 
 旧的下列句子是历史快照，当前数字由本段覆盖：V169/TPC-316 的 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
@@ -11842,6 +11883,26 @@ unnormalized_increases=80 / fixed_power_credit=0`。这 4 对是 V172/TPC-319 �
 新增尾部；normalization firewall 不代表 arithmetic cancellation 或官方
 Route-A/Route-B 通过。
 
+TPC-320 的项目级 producer、independent replay、concentration stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-320-trace-normalized-spectral-concentration/code/tpc320_trace_normalized_spectral_concentration.py --check
+python -O -B papers/tpc-320-trace-normalized-spectral-concentration/code/tpc320_trace_normalized_spectral_concentration.py --check
+python -B papers/tpc-320-trace-normalized-spectral-concentration/experiments/tpc320_independent_checker.py --check
+python -O -B papers/tpc-320-trace-normalized-spectral-concentration/experiments/tpc320_independent_checker.py --check
+python -B papers/tpc-320-trace-normalized-spectral-concentration/experiments/tpc320_concentration_stress.py --check
+python -O -B papers/tpc-320-trace-normalized-spectral-concentration/experiments/tpc320_concentration_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc320_trace_normalized_spectral_concentration_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc320_trace_normalized_spectral_concentration_checker.py --check
+```
+
+TPC-320 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 均返回零，
+stderr 为空，normal/optimized stdout 逐对 byte-identical；Bridge-B
+输出 rows=24 / k_values=5 / comparisons=80 / concentration_decreases=80 /
+stable_rank_growth=16 / participation_growth=16 / fixed_power_credit=0。这 4 对是
+V173/TPC-320 的新增尾部；scale-invariant spectral-shape obstruction 不代表
+arithmetic cancellation 或官方 Route-A/Route-B 通过。
+
 此前 TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
 
 ```bash
@@ -11882,6 +11943,15 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 ```
 
 随后优先读取：
+
+最新 TPC-320 入口：
+
+papers/tpc-320-trace-normalized-spectral-concentration/README.md
+papers/tpc-320-trace-normalized-spectral-concentration/PROOF_PACKAGE.md
+papers/tpc-320-trace-normalized-spectral-concentration/notes/theorem_ledger.md
+papers/tpc-320-trace-normalized-spectral-concentration/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc320_trace_normalized_spectral_concentration.md
+research/tpc-big-road/tpc_bridge_b_tpc320_trace_normalized_spectral_concentration_checker.py
 
 最新 TPC-319 入口：
 
