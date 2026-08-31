@@ -3,13 +3,62 @@
 
 更新时间：2026-08-31
 
-状态：**TPC317_NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC318_NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.111 current：TPC-317 Schatten-4 finite prime-shell compression
+## 0.112 current：TPC-318 finite top-eigenvalue prime-shell audit
+
+项目：papers/tpc-318-top-eigenvalue-prime-shell-audit/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT**。
+
+TPC-318 承接 TPC-317 留下的 true operator-norm open gate，保留同一
+deleted-diagonal centered prime-shell operator，直接计算 PSD Gram `G=A^*A` 的最大
+特征值，而不再以 trace power 作为代理。在 `X=640,1280,2560`、
+`Q={24,36,54,80}`、`s={1,2}` 的 24 rows 上，正向/反向 shell 累加、SciPy 对称
+top-two 求解器与 NumPy full `eigvalsh` 均重放；残差与安全 `|K|<=160` 的有限 Weyl
+guard 给出 24/24 finite intervals，16/16 相邻 normalized top-eigenvalue intervals
+严格分离且下降。
+
+最强正结果：真实 top-eigenvalue readout 在有限面板上比 Schatten-4 envelope 更贴近
+目标，并由双 solver、反向 shell 和 a-posteriori residual 三重审计支持。
+
+最强 obstruction：10/24 rows 的相对 top/second gap 小于 `0.01`，最小约
+`0.001704`；因此 top eigenspace 可能成簇，且按 source count 归一化的有限下降不能
+转化为 unnormalized growing power 或 canonical arithmetic eigenvector。该结果是
+same-engine finite numerical audit，不是 external physical holdout。
+
+开放定理：clustered eigenspace 的 uniform stability、normalization-invariant growing
+law、prime-shell signed reassembly、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。Session-named evaluator files absent，故不宣称 official
+Route-A/Route-B pass。
+
+可复用结构：`literal matrix -> PSD Gram -> dual top spectrum -> residual/Weyl interval
+-> normalized trend -> eigenspace-gap firewall`。
+
+ROUND2_CLUE：`AUDIT_THE_TOP_EIGENSPACE_CLUSTER_AND_NORMALIZATION_LAW_BEFORE_ANY_ARITHMETIC_CANCELLATION_PROMOTION`。
+
+    TPC318_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT
+    TPC318_ROUTE_ADVANCE = YES_SCOPED_TOP_EIGENVALUE_READOUT
+    TPC318_TOP_EIGENVALUE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC318_TOP_EIGENVALUE_DECREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+    TPC318_DUAL_SOLVER_AGREEMENT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC318_RESIDUAL_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC318_NEAR_DEGENERACY = NUMERICALLY_CERTIFIED_FINITE_CENSUS
+    TPC318_NORMALIZED_TREND = NUMERICAL_OBSERVATION_FINITE_ONLY
+    TPC318_UNNORMALIZED_POWER = OPEN
+    TPC318_CLUSTERED_EIGENSPACE = OPEN
+    TPC318_ARITHMETIC_CANCELLATION = OPEN
+    TPC318_ARITHMETIC_ADVANCE = NO
+    TPC318_FIXED_POWER_CREDIT = 0
+    TPC318_FULL_GATE_B = OPEN
+    TPC318_TWIN_PRIME_RESULT = NONE
+    TPC318_STATUS = NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT
+
+## 0.111 previous：TPC-317 Schatten-4 finite prime-shell compression
 
 项目：papers/tpc-317-schatten-four-prime-shell-compression/
 

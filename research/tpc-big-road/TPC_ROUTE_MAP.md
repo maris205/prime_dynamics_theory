@@ -2,13 +2,21 @@
 
 更新时间：2026-08-31
 
-当前地图版本：V170 / TPC-317
+当前地图版本：V171 / TPC-318
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-317`（`NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE`）；
+当前编号锚点：`TPC-318`（`NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT`）；
 对应论文目录为
-`papers/tpc-317-schatten-four-prime-shell-compression/`。
+`papers/tpc-318-top-eigenvalue-prime-shell-audit/`。
+
+TPC-318 是当前地图位置：承接 TPC-317 的 true operator-norm open gate，直接读取同一
+literal deleted-diagonal centered prime-shell Gram 的最大特征值。固定
+`X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows 由正反 shell 顺序、
+SciPy/NumPy 双 solver、残差和安全有限 Weyl guard 审计；16 个 adjacent normalized
+top-eigenvalue intervals 全部严格下降。10/24 rows 的相对 top gap 小于 `0.01`，
+所以 clustered eigenspace、normalization-invariant growing law 与 arithmetic
+cancellation 仍是 open；这不是 twin-prime proof，也不产生 fixed-power credit。
 
 TPC-317 是当前地图位置：承接 TPC-316 的 Frobenius/operator-norm 分离，保留同一
 deleted-diagonal centered prime-shell source operator，并将 PSD Gram 的 trace-power
@@ -39,6 +47,25 @@ twin-prime endpoint 仍开放，且 Session-named evaluator files absent，故�
 TPC-313 是上一位置：在同一新 source-shell panel 上完成 profile-budget 的 exact
 primal/dual 与 directed outward certificate；其 external weighting 与 fresh holdout clue
 自然引出本轮 TPC-314。
+
+```text
+TPC318_ROUTE_ADVANCE = YES_SCOPED_TOP_EIGENVALUE_READOUT
+TPC318_TOP_EIGENVALUE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_TOP_EIGENVALUE_DECREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC318_DUAL_SOLVER_AGREEMENT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_RESIDUAL_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_NEAR_DEGENERACY = NUMERICALLY_CERTIFIED_FINITE_CENSUS
+TPC318_NORMALIZED_TREND = NUMERICAL_OBSERVATION_FINITE_ONLY
+TPC318_UNNORMALIZED_POWER = OPEN
+TPC318_CLUSTERED_EIGENSPACE = OPEN
+TPC318_ARITHMETIC_CANCELLATION = OPEN
+TPC318_ARITHMETIC_ADVANCE = NO
+TPC318_FIXED_POWER_CREDIT = 0
+TPC318_FULL_GATE_B = OPEN
+TPC318_TWIN_PRIME_RESULT = NONE
+TPC318_STATUS = NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT
+TPC318_ROUND2_CLUE = AUDIT_THE_TOP_EIGENSPACE_CLUSTER_AND_NORMALIZATION_LAW_BEFORE_ANY_ARITHMETIC_CANCELLATION_PROMOTION
+```
 
 ```text
 TPC316_ROUTE_ADVANCE = YES_SCOPED_LITERAL_FINITE_L2_ENVELOPE
@@ -667,8 +694,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V170 / TPC-317
-MAP_LABEL = FINITE SCHATTEN4 COMPRESSION / FROBENIUS OPPOSITE-TREND FIREWALL / TRUE TOP EIGENVALUE OPEN
+YOU ARE HERE = V171 / TPC-318
+MAP_LABEL = FINITE TOP-EIGENVALUE READOUT / NEAR-DEGENERATE SPECTRAL CLUSTER FIREWALL / NORMALIZATION LAW OPEN
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -904,6 +931,43 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.112 V171 / TPC-318：finite top-eigenvalue prime-shell audit
+
+TPC-318 承接 TPC-317 的 true operator-norm open gate，在同一 literal
+deleted-diagonal centered prime-shell operator 上直接读取 PSD Gram `G=A^*A` 的最大
+特征值。固定 `X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows，
+正向/反向 shell 累加与 SciPy/NumPy 双 solver 均重放；残差和安全 `|K|<=160` 的有限
+Weyl guard 给出 24/24 intervals，16/16 adjacent normalized top-eigenvalue intervals
+严格下降。
+
+这里的 strongest positive 是 finite true-top readout，strongest obstruction 是
+10/24 rows 的 relative top/second gap `<0.01`（最小约 `0.001704`）。因此 clustered
+eigenspace stability、normalization-invariant growing law、arithmetic signed
+reassembly 与 endpoint 仍 OPEN；fixed-power credit 仍为 0。
+
+```text
+TPC318_ROUTE_ADVANCE = YES_SCOPED_TOP_EIGENVALUE_READOUT
+TPC318_TOP_EIGENVALUE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_TOP_EIGENVALUE_DECREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC318_DUAL_SOLVER_AGREEMENT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_RESIDUAL_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_NEAR_DEGENERACY = NUMERICALLY_CERTIFIED_FINITE_CENSUS
+TPC318_NORMALIZED_TREND = NUMERICAL_OBSERVATION_FINITE_ONLY
+TPC318_UNNORMALIZED_POWER = OPEN
+TPC318_CLUSTERED_EIGENSPACE = OPEN
+TPC318_ARITHMETIC_CANCELLATION = OPEN
+TPC318_ARITHMETIC_ADVANCE = NO
+TPC318_FIXED_POWER_CREDIT = 0
+TPC318_FULL_GATE_B = OPEN
+TPC318_TWIN_PRIME_RESULT = NONE
+TPC318_STATUS = NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT
+TPC318_ROUND2_CLUE = AUDIT_THE_TOP_EIGENSPACE_CLUSTER_AND_NORMALIZATION_LAW_BEFORE_ANY_ARITHMETIC_CANCELLATION_PROMOTION
+```
+
+下一关按原地图沿同一算术车道推进：先审计 top spectral cluster 的质量与跨尺度
+稳定性，再决定 normalization 是否是可支付的结构，不能把有限 normalized trend 当作
+渐近 power claim。
 
 ## 5.111 V170 / TPC-317：Schatten-4 finite prime-shell compression
 
@@ -7808,6 +7872,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-31 | V171 / TPC-318 | Bridge A / Gate B：finite top-eigenvalue readout 已完成；clustered eigenspace、normalization-invariant growing law、arithmetic cancellation、fixed-power credit 与 full Gate B open | `TPC-318` | 承接 TPC-317 的 true operator-norm open gate；24 rows / 16 adjacent normalized top-eigenvalue decreases / dual solver + residual + Weyl guard；10/24 rows near-degenerate；下一步为 top spectral cluster 与 normalization law audit |
 | 2026-08-31 | V170 / TPC-317 | Bridge A / Gate B：finite Schatten-4 spectral compression 已完成；true top eigenvalue、growing arithmetic L2、fixed-power credit 与 full Gate B open | `TPC-317` | 承接 TPC-316 的 literal operator，加入 PSD Gram trace-power envelope；24 rows / 16 adjacent Schatten-4 decreases / 16 opposite Frobenius increases，exact small rational trace anchor 与 independent replay；下一步为 true top-eigenvalue 或 trace-power ladder audit |
 | 2026-08-30 | V169 / TPC-316 | Bridge A / Gate B：literal finite L2 envelope 已完成；true operator-norm decay、growing arithmetic L2、fixed-power credit 与 full Gate B open | `TPC-316` | 将 TPC-315 的 literal source open gate 实例化为 source-to-output operator；两个 disjoint panels 共 16 rows / 80 coordinate probes，exact difference/residue HS identity，8/8 normalized-HS two-scale rise，fresh-panel Frobenius/probe gap >517；下一步为 sharper growing operator或 arithmetic cancellation |
 | 2026-08-30 | V168 / TPC-315 | Bridge A / Gate B：fresh-source locked-weight class replication 已完成；law-order obstruction、external physical independence、literal arithmetic L2 与 full Gate B open | `TPC-315` | 先锁定 TPC-314 三-law menu，再在 `I=(640,1280]` 重算 8 个 Gram targets；48 cases 完成 exact/outward replay，24/24 minimum below one、24/24 positive above one；minimum order 3 types、positive order 2 types；下一步为 fresh-panel literal arithmetic L2 interface audit |

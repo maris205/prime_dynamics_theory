@@ -9,6 +9,41 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-318 承接 TPC-317，直接读取同一 deleted-diagonal centered
+prime-shell Gram 的最大特征值。固定 `X=640,1280,2560`、`Q={24,36,54,80}`、
+`s={1,2}` 的 24 行上，双 shell 顺序、SciPy/NumPy 对称求解器和残差/Weyl guard
+共同给出 finite top-eigenvalue audit；16 个相邻 normalized top-eigenvalue intervals
+全部严格下降。另一方面，10/24 行的 top/second gap 小于 `0.01`，最小约为
+`0.001704`，所以归一化有限趋势仍不能支付 unnormalized growing power 或 canonical
+arithmetic eigenvector。
+
+这是 `NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT`，不是渐近定理。它没有
+支付 arithmetic cancellation、fixed-power credit、full Gate B 或 twin-prime endpoint；
+Session-named evaluator files absent，故不宣称 official Route-A/Route-B pass。
+
+```text
+TPC318_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT
+TPC318_ROUTE_ADVANCE = YES_SCOPED_TOP_EIGENVALUE_READOUT
+TPC318_TOP_EIGENVALUE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_TOP_EIGENVALUE_DECREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC318_DUAL_SOLVER_AGREEMENT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_RESIDUAL_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_NEAR_DEGENERACY = NUMERICALLY_CERTIFIED_FINITE_CENSUS
+TPC318_NORMALIZED_TREND = NUMERICAL_OBSERVATION_FINITE_ONLY
+TPC318_UNNORMALIZED_POWER = OPEN
+TPC318_CLUSTERED_EIGENSPACE = OPEN
+TPC318_ARITHMETIC_CANCELLATION = OPEN
+TPC318_ARITHMETIC_ADVANCE = NO
+TPC318_FIXED_POWER_CREDIT = 0
+TPC318_FULL_GATE_B = OPEN
+TPC318_TWIN_PRIME_RESULT = NONE
+TPC318_STATUS = NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT
+TPC318_ROUND2_CLUE = AUDIT_THE_TOP_EIGENSPACE_CLUSTER_AND_NORMALIZATION_LAW_BEFORE_ANY_ARITHMETIC_CANCELLATION_PROMOTION
+```
+
+papers/tpc-318-top-eigenvalue-prime-shell-audit - TPC-318 current project；含 dual
+top-spectrum certificate、independent replay、spectral stress、PDF 与 local Bridge-B checker。
+
 当前主线状态：TPC-317 承接 TPC-316 的 Frobenius/operator-norm 分离，保留同一
 deleted-diagonal centered prime-shell operator，并加入 PSD Gram 的 Schatten-4
 trace-power envelope。对 X=640,1280,2560、Q={24,36,54,80}、s={1,2} 的 24 行，

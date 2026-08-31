@@ -1,9 +1,40 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-31
-状态：`BOLD_CHANNEL_V170 / SCHATTEN4_FINITE_COMPRESSION`
-claim level：`NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE`
-编号事实终点：TPC-317；TPC-317 trigger：`true`
+状态：`BOLD_CHANNEL_V171 / TOP_EIGENVALUE_FINITE_AUDIT`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT`
+编号事实终点：TPC-318；TPC-318 trigger：`true`
+
+当前 TPC-318 入口：proof 为
+`research/tpc-big-road/bridge_b_tpc318_top_eigenvalue.md`，checker 为
+`tpc_bridge_b_tpc318_top_eigenvalue_checker.py`，编号论文为
+`papers/tpc-318-top-eigenvalue-prime-shell-audit/`。它在 TPC-317 的同一 literal
+operator 上直接读取 Gram 最大特征值；24 rows 由正反 shell 顺序、SciPy/NumPy 双路径、
+残差与有限 Weyl guard 审计，16 个 adjacent normalized top-eigenvalue intervals 全部
+严格下降。10/24 rows 的相对 top gap 小于 `0.01`，故 clustered eigenspace、normalization
+law、unnormalized growing estimate 与 arithmetic cancellation 仍 open。该结果是
+finite numerical audit，不能计入 power saving；Session-named evaluator files absent，
+故不宣称 official Route-A/Route-B pass。
+
+```text
+TPC318_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT
+TPC318_ROUTE_ADVANCE = YES_SCOPED_TOP_EIGENVALUE_READOUT
+TPC318_TOP_EIGENVALUE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_TOP_EIGENVALUE_DECREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC318_DUAL_SOLVER_AGREEMENT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_RESIDUAL_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_NEAR_DEGENERACY = NUMERICALLY_CERTIFIED_FINITE_CENSUS
+TPC318_NORMALIZED_TREND = NUMERICAL_OBSERVATION_FINITE_ONLY
+TPC318_UNNORMALIZED_POWER = OPEN
+TPC318_CLUSTERED_EIGENSPACE = OPEN
+TPC318_ARITHMETIC_CANCELLATION = OPEN
+TPC318_ARITHMETIC_ADVANCE = NO
+TPC318_FIXED_POWER_CREDIT = 0
+TPC318_FULL_GATE_B = OPEN
+TPC318_TWIN_PRIME_RESULT = NONE
+TPC318_STATUS = NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT
+TPC318_ROUND2_CLUE = AUDIT_THE_TOP_EIGENSPACE_CLUSTER_AND_NORMALIZATION_LAW_BEFORE_ANY_ARITHMETIC_CANCELLATION_PROMOTION
+```
 
 当前 TPC-317 入口：proof 为
 `research/tpc-big-road/bridge_b_tpc317_schatten_four_checker.md`，checker 为

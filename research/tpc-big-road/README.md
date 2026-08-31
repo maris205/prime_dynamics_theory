@@ -1,16 +1,48 @@
-# TPC big road V170 / TPC-317: Schatten-4 finite prime-shell compression
+# TPC big road V171 / TPC-318: finite top-eigenvalue prime-shell audit
 
 更新时间：2026-08-31
 
-状态：`TPC317_NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC318_NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-317 proof 为
-`bridge_b_tpc317_schatten_four_checker.md`，checker 为
-`tpc_bridge_b_tpc317_schatten_four_checker.py`，编号论文为
-`../../papers/tpc-317-schatten-four-prime-shell-compression/`。
+当前 TPC-318 proof 为
+`bridge_b_tpc318_top_eigenvalue.md`，checker 为
+`tpc_bridge_b_tpc318_top_eigenvalue_checker.py`，编号论文为
+`../../papers/tpc-318-top-eigenvalue-prime-shell-audit/`。
+
+TPC-318 承接 TPC-317 的 Schatten-4/open-top-eigenvalue 分离，在同一 literal
+deleted-diagonal centered prime-shell operator 上直接读取 Gram 最大特征值。在
+`X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows 上，正反 shell 顺序、
+SciPy/NumPy 双路径、残差与有限 Weyl guard 均通过；16 个相邻 normalized top-eigenvalue
+intervals 全部严格下降。10/24 rows 的相对 top/second gap 小于 `0.01`，因此
+clustered eigenspace 与 normalization law 是明确的下一道门。
+
+这是 `NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT`，不是 unnormalized growing
+theorem 或 arithmetic cancellation result；fixed-power credit 为 0，full Gate B 与
+twin-prime conclusion 仍 OPEN/NONE。Session-named evaluator files absent，故不宣称
+official Route-A/Route-B pass。
+
+```text
+TPC318_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT
+TPC318_ROUTE_ADVANCE = YES_SCOPED_TOP_EIGENVALUE_READOUT
+TPC318_TOP_EIGENVALUE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_TOP_EIGENVALUE_DECREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC318_DUAL_SOLVER_AGREEMENT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_RESIDUAL_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_NEAR_DEGENERACY = NUMERICALLY_CERTIFIED_FINITE_CENSUS
+TPC318_NORMALIZED_TREND = NUMERICAL_OBSERVATION_FINITE_ONLY
+TPC318_UNNORMALIZED_POWER = OPEN
+TPC318_CLUSTERED_EIGENSPACE = OPEN
+TPC318_ARITHMETIC_CANCELLATION = OPEN
+TPC318_ARITHMETIC_ADVANCE = NO
+TPC318_FIXED_POWER_CREDIT = 0
+TPC318_FULL_GATE_B = OPEN
+TPC318_TWIN_PRIME_RESULT = NONE
+TPC318_STATUS = NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT
+TPC318_ROUND2_CLUE = AUDIT_THE_TOP_EIGENSPACE_CLUSTER_AND_NORMALIZATION_LAW_BEFORE_ANY_ARITHMETIC_CANCELLATION_PROMOTION
+```
 
 TPC-317 保留 TPC-316 的 deleted-diagonal centered prime-shell source operator，并把
 PSD Gram 的 trace-power链推进到 Schatten-4：

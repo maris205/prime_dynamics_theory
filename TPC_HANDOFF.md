@@ -1,7 +1,51 @@
 # TPC HANDOFF
 
 更新时间：2026-08-31
-交接状态：`BOLD_CHANNEL_V170_TPC317_SCHATTEN4_FINITE_COMPRESSION_RELEASED`
+交接状态：`BOLD_CHANNEL_V171_TPC318_TOP_EIGENVALUE_FINITE_AUDIT_RELEASED`
+
+TPC-318 current section: finite top-eigenvalue prime-shell audit
+-----------------------------------------------------------------------------------------------
+
+TPC-318 承接 TPC-317 留下的 true operator-norm open gate，保留同一
+TPC-268 deleted-diagonal centered prime-shell source operator，直接读取 PSD Gram
+`G=A^*A` 的最大特征值。在 `X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}`
+的 24 rows 上，正反 shell 累加、SciPy/NumPy 双 solver、a-posteriori residual 与
+安全 `|K|<=160` 的有限 Weyl guard 均通过；16 个 adjacent normalized top-eigenvalue
+intervals 全部严格下降。
+
+最强正结果是 finite true-top readout：它直接测量目标谱量，且不依赖单一 eigensolver。
+最强 obstruction 是 10/24 rows 的 relative top/second gap 小于 `0.01`，最小约
+`0.001704`；因此 clustered eigenspace stability、normalization-invariant growing law
+与 arithmetic signed reassembly 仍未支付。该结果没有 fixed-power credit，也没有 twin-prime
+endpoint。
+
+```text
+TPC318_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT
+TPC318_ROUTE_ADVANCE = YES_SCOPED_TOP_EIGENVALUE_READOUT
+TPC318_TOP_EIGENVALUE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_TOP_EIGENVALUE_DECREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC318_DUAL_SOLVER_AGREEMENT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_RESIDUAL_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC318_NEAR_DEGENERACY = NUMERICALLY_CERTIFIED_FINITE_CENSUS
+TPC318_NORMALIZED_TREND = NUMERICAL_OBSERVATION_FINITE_ONLY
+TPC318_UNNORMALIZED_POWER = OPEN
+TPC318_CLUSTERED_EIGENSPACE = OPEN
+TPC318_ARITHMETIC_CANCELLATION = OPEN
+TPC318_ARITHMETIC_ADVANCE = NO
+TPC318_FIXED_POWER_CREDIT = 0
+TPC318_FULL_GATE_B = OPEN
+TPC318_TWIN_PRIME_RESULT = NONE
+TPC318_STATUS = NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT
+TPC318_STRONGEST_POSITIVE = FINITE_TRUE_TOP_READOUT_WITH_DUAL_SOLVER_AND_Weyl_GUARD
+TPC318_STRONGEST_OBSTRUCTION = NEAR_DEGENERATE_TOP_CLUSTER_AND_UNPAID_NORMALIZATION
+TPC318_OPEN_THEOREM = UNIFORM_CLUSTERED_TOP_SPECTRUM_LAW_LINKED_TO_SIGNED_PRIME_REASSEMBLY
+TPC318_REUSABLE_STRUCTURE = LITERAL_MATRIX_TO_PSD_GRAM_TO_DUAL_TOP_SPECTRUM_TO_GAP_FIREWALL
+TPC318_ROUND2_CLUE = AUDIT_THE_TOP_EIGENSPACE_CLUSTER_AND_NORMALIZATION_LAW_BEFORE_ANY_ARITHMETIC_CANCELLATION_PROMOTION
+```
+
+Session-named `propose.md` 与 Route-A/Route-B evaluator files 在本 checkout 中仍不存在；
+项目 proof package、independent replay、stress suite 与 local Bridge-B checker 是
+fail-closed fallback，不能写成 official evaluator pass。
 
 TPC-317 current section: Schatten-4 finite prime-shell compression
 -----------------------------------------------------------------------------------------------
@@ -10841,9 +10885,9 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V170/TPC-317 是当前 release；其 producer、independent replay、stress audit 与
-finite trace-power bridge 已封存。TPC-316 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 289 对 normal/optimized 命令、578 次
+V171/TPC-318 是当前 release；其 producer、independent replay、stress audit 与
+finite top-eigenvalue bridge 已封存。TPC-317、TPC-316 及更早版本仍按历史顺序保留。
+当前 curated cascade command set 共 293 对 normal/optimized 命令、586 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -10856,9 +10900,9 @@ TPC-303 再追加末尾 4 对，TPC-304 再追加末尾 4 对，TPC-305 再追�
 TPC-306 再追加末尾 4 对，TPC-307 再追加末尾 4 对，TPC-308 再追加末尾 4 对，
 TPC-309 再追加末尾 4 对，TPC-310 再追加末尾 4 对，TPC-311 再追加末尾 4 对，
 TPC-312 再追加末尾 4 对，TPC-313 再追加末尾 4 对，TPC-314 再追加末尾 4 对，
-TPC-315 再追加末尾 4 对，TPC-316 再追加末尾 4 对，TPC-317 再追加末尾 4 对。
-V170/TPC-317 的新增 4 对由本项目 bridge 与 standalone tail checks 逐项验证；
-完整 289 对组合未因重复计算而再次运行。
+TPC-315 再追加末尾 4 对，TPC-316 再追加末尾 4 对，TPC-317 再追加末尾 4 对，
+TPC-318 再追加末尾 4 对。V171/TPC-318 的新增 4 对由本项目 bridge 与 standalone
+tail checks 逐项验证；完整 293 对组合未因重复计算而再次运行。
 
 旧的下列句子是历史快照，当前数字由本段覆盖：V169/TPC-316 的 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
@@ -11714,6 +11758,26 @@ fixed_power_credit=0`。这 4 对是 V170/TPC-317 的新增尾部；finite Schat
 compression 不代表 true top-eigenvalue decay、arithmetic cancellation 或官方
 Route-A/Route-B 通过。
 
+TPC-318 的项目级 producer、independent replay、spectral stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-318-top-eigenvalue-prime-shell-audit/code/tpc318_top_eigenvalue_prime_shell_audit.py --check
+python -O -B papers/tpc-318-top-eigenvalue-prime-shell-audit/code/tpc318_top_eigenvalue_prime_shell_audit.py --check
+python -B papers/tpc-318-top-eigenvalue-prime-shell-audit/experiments/tpc318_independent_checker.py --check
+python -O -B papers/tpc-318-top-eigenvalue-prime-shell-audit/experiments/tpc318_independent_checker.py --check
+python -B papers/tpc-318-top-eigenvalue-prime-shell-audit/experiments/tpc318_spectral_stress.py
+python -O -B papers/tpc-318-top-eigenvalue-prime-shell-audit/experiments/tpc318_spectral_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc318_top_eigenvalue_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc318_top_eigenvalue_checker.py --check
+```
+
+TPC-318 增量 tail audit：上述 4 对共 8 次 invocation 均返回零，stderr 为空，
+normal/optimized stdout 逐对 byte-identical；Bridge-B 输出
+`scales=3 / rows=24 / top_decreases=16 / near_degenerate=10 /
+fixed_power_credit=0`。这 4 对是 V171/TPC-318 的新增尾部；finite normalized
+top-eigenvalue decrease 不代表 unnormalized power saving、arithmetic cancellation
+或官方 Route-A/Route-B 通过。
+
 此前 TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
 
 ```bash
@@ -11755,7 +11819,18 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-最新 TPC-317 入口：
+最新 TPC-318 入口：
+
+```text
+papers/tpc-318-top-eigenvalue-prime-shell-audit/README.md
+papers/tpc-318-top-eigenvalue-prime-shell-audit/PROOF_PACKAGE.md
+papers/tpc-318-top-eigenvalue-prime-shell-audit/notes/theorem_ledger.md
+papers/tpc-318-top-eigenvalue-prime-shell-audit/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc318_top_eigenvalue.md
+research/tpc-big-road/tpc_bridge_b_tpc318_top_eigenvalue_checker.py
+```
+
+随后读取 TPC-317 入口：
 
 ```text
 papers/tpc-317-schatten-four-prime-shell-compression/README.md
