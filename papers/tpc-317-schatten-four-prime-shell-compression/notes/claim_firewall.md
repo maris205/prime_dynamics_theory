@@ -11,7 +11,8 @@ REFUTED_SCOPED = the TPC-316 Frobenius mass is not a sharp spectral proxy on
                  the declared finite panels
 HEURISTIC = none used to decide a pass/fail comparison
 CONJECTURE = none
-MODELING_CHOICE = H, shell anchors, exponents, three finite scales, IEEE guard
+MODELING_CHOICE = H, shell anchors, exponents, three finite scales, safe
+                   uniform literal-entry guard |K|<=160, IEEE guard
 OPEN = true top-eigenvalue asymptotic; arithmetic cancellation; canonical
        normalization; fixed-power credit; full Gate B; twin-prime endpoint
 ARITHMETIC_ADVANCE = NO

@@ -63,6 +63,9 @@ EXPONENTS = (1, 2)
 SMALL_INTERVAL = (17, 32)
 SMALL_PRIME = 5
 SMALL_EXPONENT = 1
+# Every declared shell has p <= 157 and the centered factor has modulus at
+# most one, so this is a safe uniform bound for the literal entries.
+A_ENTRY_BOUND = 160.0
 
 
 class CheckFailure(RuntimeError):
@@ -187,13 +190,13 @@ def gram_matrix(scale: int, q0: int, exponent: int,
 def gram_error_budget(n: int, shell_size: int) -> float:
     """Conservative entrywise G error under the binary64 model.
 
-    The bound deliberately uses a coarse |A|<=2 and a 64-u.l.p. entry guard,
+    The bound deliberately uses the safe uniform |A|<=160 and a 64-u.l.p. entry guard,
     then multiplies the accumulated error by eight for matrix symmetrization
     and block accumulation.  The scientific conclusion is still labelled
     finite numerical certification; this is not a formal hardware theorem.
     """
     unit = 2.0 ** -53
-    a_bound = 2.0
+    a_bound = A_ENTRY_BOUND
     a_error = 64.0 * unit * a_bound
     terms = n * shell_size
     gamma = (terms * unit) / (1.0 - terms * unit)
@@ -277,6 +280,7 @@ def trace_metrics(g64: np.ndarray, galt: np.ndarray,
         "effective_rank": display(effective_rank),
         "numeric_error_model": {
             "binary64_unit_roundoff": display(2.0 ** -53, 16),
+            "uniform_entry_bound": display(A_ENTRY_BOUND, 16),
             "entrywise_gram_guard": display(g_error, 16),
             "trace_g2_absolute_guard": display(trace2_error, 16),
             "dual_accumulation": "binary64_forward_and_reverse_shell_order",

@@ -171,8 +171,9 @@ accumulated Gram matrix, in extended scalar precision.
 
 The interval in the certificate combines a coarse entrywise binary64 Gram
 error bound, a block-accumulation and symmetrization guard, the two shell-order
-paths, and a fixed outward display pad.  The guard uses $|K_{p,u,t}|\leq2$,
-which is deliberately much coarser than the actual entries.  Trend decisions
+paths, and a fixed outward display pad.  Since every declared shell has
+$p\leq157$ and the centered factor has modulus at most one, the guard uses the
+safe uniform bound $|K_{p,u,t}|\leq160$.  Trend decisions
 are made only when the larger-scale interval is wholly below (or above) the
 smaller-scale interval.  Thus the reported large-panel status is
 \texttt{NUMERICALLY\_CERTIFIED\_FINITE} under this explicit model, not

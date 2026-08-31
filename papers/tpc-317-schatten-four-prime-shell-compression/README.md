@@ -25,6 +25,10 @@ operator norm decays.  The large-panel values are numerically certified under
 the declared error model; no arithmetic cancellation, fixed-power Route-B
 credit, Gate-B passage, or twin-prime conclusion is claimed.
 
+The propagated floating-point guard uses the safe uniform literal-entry bound
+`|K_{p,u,t}| <= 160` (all declared shell primes satisfy `p <= 157`); it is not
+the smaller heuristic bound used in an earlier draft.
+
 ## What is new relative to TPC-316
 
 * TPC-316 stopped at the Hilbert--Schmidt/Frobenius envelope and explicitly

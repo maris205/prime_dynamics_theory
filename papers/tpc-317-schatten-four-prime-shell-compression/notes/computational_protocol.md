@@ -14,6 +14,8 @@ accumulates the source Gram `G=A^*A`.  It repeats the block accumulation in
 reverse prime-shell order.  The two Gram matrices are symmetrized because the
 exact object is symmetric.  The reported interval contains both reductions,
 the propagated binary64 guard, and a conservative display pad.
+The literal entries satisfy the safe uniform bound `|K_{p,u,t}| <= 160` on all
+declared shells (`p <= 157`); this value is used in the propagated Gram guard.
 
 The label is `NUMERICALLY_CERTIFIED_FINITE`, not `PROVED_EXACT`, for the large
 panels.  The exact rational anchor uses `I={17,...,32}`, one prime `p=5`, and

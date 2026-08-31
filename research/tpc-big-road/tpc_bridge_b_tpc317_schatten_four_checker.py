@@ -27,11 +27,11 @@ STATUS = (
 SCHEMA = "TPC317_SCHATTEN4_PRIME_SHELL_COMPRESSION_V1"
 
 # Sealed after all release artifacts and dynamic documentation are final.
-PRODUCER_SHA256 = "45af83d3661dbbf1154839d335740f3f5698d28299555793f0d62d94b29656dd"
+PRODUCER_SHA256 = "1af42055206886d0012852f42090821309101f6526ce98c08b4eaa163837fe87"
 INDEPENDENT_SHA256 = "e3b8db6d6aaadb147a5f6b863ba0c9db9f97611e3b07ab095531d05241781ad8"
 STRESS_SHA256 = "293fb8e325f7241b0c36d88cb87677fc44334a0940ff1b197a0deed9206be6c1"
-CERTIFICATE_SHA256 = "e0096b03630ca09a52369ba4fc5c6e4321ee919f8bb415c6d9c12cc0e22d6e7c"
-BRIDGE_SHA256 = "ef3147d834af318d833818c56d79ead23c8b1af134aaac41c847e15c08da3b2b"
+CERTIFICATE_SHA256 = "72bb54e0d50523e44b262092f1ad9305654114f16b7db4edbfd1e25caaa9f15a"
+BRIDGE_SHA256 = "4fc4427a4f57bc096adafdfa42370e42beb27755f9ed7890167ad1cfe4732f2c"
 
 REQUIRED = (
     ".gitignore", "README.md", "PAPER_PLAN.md", "DERIVATION_PACKAGE.md",
@@ -118,6 +118,9 @@ def check_files() -> None:
          audit.get("frobenius_strict_increases") == 16 and
          audit.get("fixed_power_credit") == 0 and
          audit.get("growing_operator_theorem") == "OPEN", "finite audit")
+    for row in payload.get("rows", []):
+        need(row.get("metrics", {}).get("numeric_error_model", {}).get(
+            "uniform_entry_bound") == "160", "entry guard")
     firewall = payload.get("claim_firewall", {})
     need(firewall.get("TPC317_SCHATTEN4_IDENTITY") ==
          "PROVED_EXACT_FINITE" and
@@ -160,6 +163,7 @@ def check_bridge_text() -> None:
         "TPC317_ROUND2_CLUE = "
         "AUDIT_THE_TRUE_TOP_EIGENVALUE_OR_A_CERTIFIED_TRACE_POWER_LADDER_"
         "BEFORE_ANY_ARITHMETIC_CANCELLATION_PROMOTION",
+        "TPC317_UNIFORM_ENTRY_GUARD = SAFE_BOUND_160",
     )
     for marker in markers:
         need(marker in text, "bridge marker")
