@@ -1,7 +1,51 @@
 # TPC HANDOFF
 
 更新时间：2026-08-31
-交接状态：`BOLD_CHANNEL_V171_TPC318_TOP_EIGENVALUE_FINITE_AUDIT_RELEASED`
+交接状态：`BOLD_CHANNEL_V172_TPC319_KY_FAN_NORMALIZATION_FIREWALL_RELEASED`
+
+TPC-319 current section: Ky Fan cluster masses and normalization firewall
+-----------------------------------------------------------------------------------------------
+
+TPC-319 承接 TPC-318 的 clustered-top-eigenvalue 与 normalization open gates，保留
+同一 TPC-268 deleted-diagonal centered prime-shell operator，并定义 Gram
+`G=A^*A` 的 Ky Fan 簇质量
+`F_k=sum_{j<=k}lambda_j`，其中 `k={1,2,4,8,16}`。在
+`X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows 上，双 shell
+顺序、双 solver、残差与有限 Weyl guard 支持 120 个 cluster intervals；80/80
+normalized `F_k/N` intervals 严格下降，同时 80/80 unnormalized `F_k` intervals
+严格上升。
+
+最强正结果是 exact Ky Fan variational interpretation 加上五层 finite cluster readout。
+最强 obstruction 是 source count 每次加倍、而所有未归一化倍率都在 `(1,2)`；所以
+`M_k(2N)/M_k(N)=F_k(2N)/(2F_k(N))` 是 normalization firewall，而不是 power saving。
+edge-gap census 在 `k=1,2,4,8,16` 分别为 `10/24,5/24,2/24,4/24,13/24`，一维
+canonical eigenspace 与 uniform normalization law 仍 open；fixed-power credit 为 0，
+也没有 twin-prime endpoint。
+
+`text
+TPC319_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_KY_FAN_CLUSTER_NORMALIZATION_AUDIT
+TPC319_ROUTE_ADVANCE = YES_SCOPED_KY_FAN_CLUSTER_AND_NORMALIZATION_FIREWALL
+TPC319_KY_FAN_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_ROWS_5_K
+TPC319_NORMALIZED_DECREASES = NUMERICALLY_CERTIFIED_FINITE_80_OF_80
+TPC319_UNNORMALIZED_INCREASES = NUMERICALLY_CERTIFIED_FINITE_80_OF_80
+TPC319_NORMALIZATION_FLIP = PROVED_EXACT_FINITE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_80
+TPC319_CLUSTER_GAP_CENSUS = NUMERICAL_OBSERVATION_FINITE
+TPC319_EFFECTIVE_RANK = NUMERICAL_OBSERVATION_FINITE
+TPC319_ARITHMETIC_ADVANCE = NO
+TPC319_FIXED_POWER_CREDIT = 0
+TPC319_FULL_GATE_B = OPEN
+TPC319_TWIN_PRIME_RESULT = NONE
+TPC319_STATUS = NUMERICALLY_CERTIFIED_FINITE_KY_FAN_CLUSTER_NORMALIZATION_AUDIT
+TPC319_STRONGEST_POSITIVE = KY_FAN_VARIATIONAL_CLUSTER_READOUT_WITH_80_BY_80_TREND_CERTIFICATE
+TPC319_STRONGEST_OBSTRUCTION = EXACT_NORMALIZATION_FLIP_AND_NONUNIFORM_CLUSTER_GAPS
+TPC319_OPEN_THEOREM = SCALE_INVARIANT_SPECTRAL_MEASURE_OR_SOURCE_NORMALIZATION_LAW_LINKED_TO_ARITHMETIC_REASSEMBLY
+TPC319_REUSABLE_STRUCTURE = LITERAL_MATRIX_TO_PSD_GRAM_TO_KY_FAN_MASS_TO_NORMALIZATION_FIREWALL
+TPC319_ROUND2_CLUE = AUDIT_A_SCALE_INVARIANT_SPECTRAL_MEASURE_OR_PROVE_A_SOURCE_NORMALIZATION_LAW_BEFORE_ANY_POWER_CLAIM
+`
+
+Session-named `propose.md` 与 Route-A/Route-B evaluator files 在本 checkout 中仍不存在；
+项目 proof package、independent replay、stress suite 与 local Bridge-B checker 是
+fail-closed fallback，不能写成 official evaluator pass。
 
 TPC-318 current section: finite top-eigenvalue prime-shell audit
 -----------------------------------------------------------------------------------------------
@@ -10885,9 +10929,9 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V171/TPC-318 是当前 release；其 producer、independent replay、stress audit 与
-finite top-eigenvalue bridge 已封存。TPC-317、TPC-316 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 293 对 normal/optimized 命令、586 次
+V172/TPC-319 是当前 release；其 producer、independent replay、stress audit 与
+finite Ky Fan cluster bridge 已封存。TPC-318、TPC-317、TPC-316 及更早版本仍按历史顺序保留。
+当前 curated cascade command set 共 297 对 normal/optimized 命令、594 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -10901,8 +10945,8 @@ TPC-306 再追加末尾 4 对，TPC-307 再追加末尾 4 对，TPC-308 再追�
 TPC-309 再追加末尾 4 对，TPC-310 再追加末尾 4 对，TPC-311 再追加末尾 4 对，
 TPC-312 再追加末尾 4 对，TPC-313 再追加末尾 4 对，TPC-314 再追加末尾 4 对，
 TPC-315 再追加末尾 4 对，TPC-316 再追加末尾 4 对，TPC-317 再追加末尾 4 对，
-TPC-318 再追加末尾 4 对。V171/TPC-318 的新增 4 对由本项目 bridge 与 standalone
-tail checks 逐项验证；完整 293 对组合未因重复计算而再次运行。
+TPC-318 再追加末尾 4 对，TPC-319 再追加末尾 4 对。V172/TPC-319 的新增 4 对由
+本项目 bridge 与 standalone tail checks 逐项验证；完整 297 对组合未因重复计算而再次运行。
 
 旧的下列句子是历史快照，当前数字由本段覆盖：V169/TPC-316 的 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
@@ -11778,6 +11822,26 @@ fixed_power_credit=0`。这 4 对是 V171/TPC-318 的新增尾部；finite norma
 top-eigenvalue decrease 不代表 unnormalized power saving、arithmetic cancellation
 或官方 Route-A/Route-B 通过。
 
+TPC-319 的项目级 producer、independent replay、cluster stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-319-kyfan-cluster-normalization-firewall/code/tpc319_kyfan_cluster_normalization.py --check
+python -O -B papers/tpc-319-kyfan-cluster-normalization-firewall/code/tpc319_kyfan_cluster_normalization.py --check
+python -B papers/tpc-319-kyfan-cluster-normalization-firewall/experiments/tpc319_independent_checker.py --check
+python -O -B papers/tpc-319-kyfan-cluster-normalization-firewall/experiments/tpc319_independent_checker.py --check
+python -B papers/tpc-319-kyfan-cluster-normalization-firewall/experiments/tpc319_cluster_stress.py
+python -O -B papers/tpc-319-kyfan-cluster-normalization-firewall/experiments/tpc319_cluster_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc319_kyfan_cluster_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc319_kyfan_cluster_checker.py --check
+```
+
+TPC-319 增量 tail audit：上述 4 对共 8 次 invocation 均返回零，stderr 为空，
+normal/optimized stdout 逐对 byte-identical；Bridge-B 输出
+`rows=24 / k_values=5 / comparisons=80 / normalized_decreases=80 /
+unnormalized_increases=80 / fixed_power_credit=0`。这 4 对是 V172/TPC-319 的
+新增尾部；normalization firewall 不代表 arithmetic cancellation 或官方
+Route-A/Route-B 通过。
+
 此前 TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
 
 ```bash
@@ -11819,7 +11883,18 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-最新 TPC-318 入口：
+最新 TPC-319 入口：
+
+```text
+papers/tpc-319-kyfan-cluster-normalization-firewall/README.md
+papers/tpc-319-kyfan-cluster-normalization-firewall/PROOF_PACKAGE.md
+papers/tpc-319-kyfan-cluster-normalization-firewall/notes/theorem_ledger.md
+papers/tpc-319-kyfan-cluster-normalization-firewall/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc319_kyfan_cluster.md
+research/tpc-big-road/tpc_bridge_b_tpc319_kyfan_cluster_checker.py
+```
+
+随后读取 TPC-318 入口：
 
 ```text
 papers/tpc-318-top-eigenvalue-prime-shell-audit/README.md

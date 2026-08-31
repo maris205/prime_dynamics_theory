@@ -1,16 +1,47 @@
-# TPC big road V171 / TPC-318: finite top-eigenvalue prime-shell audit
+# TPC big road V172 / TPC-319: Ky Fan cluster normalization firewall
 
 更新时间：2026-08-31
 
-状态：`TPC318_NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC319_NUMERICALLY_CERTIFIED_FINITE_KY_FAN_CLUSTER_NORMALIZATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-318 proof 为
-`bridge_b_tpc318_top_eigenvalue.md`，checker 为
-`tpc_bridge_b_tpc318_top_eigenvalue_checker.py`，编号论文为
-`../../papers/tpc-318-top-eigenvalue-prime-shell-audit/`。
+当前 TPC-319 proof 为
+`bridge_b_tpc319_kyfan_cluster.md`，checker 为
+`tpc_bridge_b_tpc319_kyfan_cluster_checker.py`，编号论文为
+`../../papers/tpc-319-kyfan-cluster-normalization-firewall/`。
+
+TPC-319 承接 TPC-318 的 clustered-top-eigenvalue 与 normalization open gates，在同一
+literal deleted-diagonal centered prime-shell Gram 上定义 Ky Fan cluster mass
+`F_k=sum_{j<=k}lambda_j`，审计 `k={1,2,4,8,16}`。固定
+`X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows 上，双 shell 顺序、
+双 solver 和有限 Weyl guard 支持 80/80 normalized decreases 与 80/80 unnormalized
+increases；精确 factor-of-two identity 证明这是 normalization firewall。10/24、
+5/24、2/24、4/24、13/24 的各层 edge-gap census 仍是有限观察，不能推出稳定
+eigenspace 或渐近 theorem。
+
+这是 `NUMERICALLY_CERTIFIED_FINITE_KY_FAN_CLUSTER_NORMALIZATION_AUDIT`，不是
+arithmetic cancellation result；fixed-power credit 为 0，full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。Session-named evaluator files absent，故不宣称 official
+Route-A/Route-B pass。
+
+`text
+TPC319_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_KY_FAN_CLUSTER_NORMALIZATION_AUDIT
+TPC319_ROUTE_ADVANCE = YES_SCOPED_KY_FAN_CLUSTER_AND_NORMALIZATION_FIREWALL
+TPC319_KY_FAN_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_ROWS_5_K
+TPC319_NORMALIZED_DECREASES = NUMERICALLY_CERTIFIED_FINITE_80_OF_80
+TPC319_UNNORMALIZED_INCREASES = NUMERICALLY_CERTIFIED_FINITE_80_OF_80
+TPC319_NORMALIZATION_FLIP = PROVED_EXACT_FINITE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_80
+TPC319_CLUSTER_GAP_CENSUS = NUMERICAL_OBSERVATION_FINITE
+TPC319_EFFECTIVE_RANK = NUMERICAL_OBSERVATION_FINITE
+TPC319_ARITHMETIC_ADVANCE = NO
+TPC319_FIXED_POWER_CREDIT = 0
+TPC319_FULL_GATE_B = OPEN
+TPC319_TWIN_PRIME_RESULT = NONE
+TPC319_STATUS = NUMERICALLY_CERTIFIED_FINITE_KY_FAN_CLUSTER_NORMALIZATION_AUDIT
+TPC319_ROUND2_CLUE = AUDIT_A_SCALE_INVARIANT_SPECTRAL_MEASURE_OR_PROVE_A_SOURCE_NORMALIZATION_LAW_BEFORE_ANY_POWER_CLAIM
+`
 
 TPC-318 承接 TPC-317 的 Schatten-4/open-top-eigenvalue 分离，在同一 literal
 deleted-diagonal centered prime-shell operator 上直接读取 Gram 最大特征值。在

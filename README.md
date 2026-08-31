@@ -9,6 +9,39 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-319 承接 TPC-318，将最大特征值推广为 Ky Fan top-\(k\) 簇质量
+\(F_k=\sum_{j\le k}\lambda_j\)，其中 \(k={1,2,4,8,16}\)。在同一
+`X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}` 的 24 行上，5 个簇大小共
+80 个相邻尺度比较全部显示 normalized \(F_k/N\) 严格下降，同时 unnormalized
+\(F_k\) 全部严格上升；精确的 factor-of-two normalization identity 解释了这个
+方向翻转。gap/effective-rank census 还显示顶端谱簇并非统一的一维对象。
+
+这是 `NUMERICALLY_CERTIFIED_FINITE_KY_FAN_CLUSTER_NORMALIZATION_AUDIT`，贡献是
+有限的 cluster readout 与 normalization firewall，不是 arithmetic cancellation 或
+渐近 power theorem。它没有支付 fixed-power credit、full Gate B 或 twin-prime endpoint；
+Session-named evaluator files absent，故不宣称 official Route-A/Route-B pass。
+
+`text
+TPC319_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_KY_FAN_CLUSTER_NORMALIZATION_AUDIT
+TPC319_ROUTE_ADVANCE = YES_SCOPED_KY_FAN_CLUSTER_AND_NORMALIZATION_FIREWALL
+TPC319_KY_FAN_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_ROWS_5_K
+TPC319_NORMALIZED_DECREASES = NUMERICALLY_CERTIFIED_FINITE_80_OF_80
+TPC319_UNNORMALIZED_INCREASES = NUMERICALLY_CERTIFIED_FINITE_80_OF_80
+TPC319_NORMALIZATION_FLIP = PROVED_EXACT_FINITE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_80
+TPC319_CLUSTER_GAP_CENSUS = NUMERICAL_OBSERVATION_FINITE
+TPC319_EFFECTIVE_RANK = NUMERICAL_OBSERVATION_FINITE
+TPC319_ARITHMETIC_ADVANCE = NO
+TPC319_FIXED_POWER_CREDIT = 0
+TPC319_FULL_GATE_B = OPEN
+TPC319_TWIN_PRIME_RESULT = NONE
+TPC319_STATUS = NUMERICALLY_CERTIFIED_FINITE_KY_FAN_CLUSTER_NORMALIZATION_AUDIT
+TPC319_ROUND2_CLUE = AUDIT_A_SCALE_INVARIANT_SPECTRAL_MEASURE_OR_PROVE_A_SOURCE_NORMALIZATION_LAW_BEFORE_ANY_POWER_CLAIM
+`
+
+papers/tpc-319-kyfan-cluster-normalization-firewall - TPC-319 current project；含
+Ky Fan variational proof、dual finite cluster certificate、normalization flip firewall、
+independent replay、stress suite、PDF 与 local Bridge-B checker。
+
 当前主线状态：TPC-318 承接 TPC-317，直接读取同一 deleted-diagonal centered
 prime-shell Gram 的最大特征值。固定 `X=640,1280,2560`、`Q={24,36,54,80}`、
 `s={1,2}` 的 24 行上，双 shell 顺序、SciPy/NumPy 对称求解器和残差/Weyl guard

@@ -3,13 +3,60 @@
 
 更新时间：2026-08-31
 
-状态：**TPC318_NUMERICALLY_CERTIFIED_FINITE_TOP_EIGENVALUE_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC319_NUMERICALLY_CERTIFIED_FINITE_KY_FAN_CLUSTER_NORMALIZATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.112 current：TPC-318 finite top-eigenvalue prime-shell audit
+## 0.113 current：TPC-319 Ky Fan cluster masses and normalization firewall
+
+项目：papers/tpc-319-kyfan-cluster-normalization-firewall/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_KY_FAN_CLUSTER_NORMALIZATION_AUDIT**。
+
+TPC-319 承接 TPC-318 的 clustered-top-eigenvalue 与 normalization open gates，在同一
+deleted-diagonal centered prime-shell Gram 上定义 Ky Fan 簇质量
+`F_k=sum_{j<=k}lambda_j`，审计 `k={1,2,4,8,16}`。固定
+`X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows，双 shell 顺序、双
+solver、残差与有限 Weyl guard 给出 120 个 cluster intervals。80/80 adjacent
+normalized `F_k/N` intervals 严格下降，同时 80/80 unnormalized `F_k` intervals 严格
+上升。
+
+最强正结果：Ky Fan 量是 rank-k subspace 的 exact variational maximum，因此把单一
+eigenvector readout 提升为具有明确几何意义的 spectral cluster；双向趋势在五个 k
+层级上都得到 finite interval 支持。
+
+最强 obstruction：source count 每次加倍，且所有未归一化倍率都落在 `(1,2)`；精确
+恒等式 `M_k(2N)/M_k(N)=F_k(2N)/(2F_k(N))` 说明 normalized decrease 是
+normalization firewall，不是 arithmetic power saving。edge-gap/effective-rank 仍显示
+一维 canonical eigenspace 不稳定。该结果是 same-engine finite audit，非 external
+physical holdout。
+
+开放定理：scale-invariant spectral measure、uniform cluster normalization law、signed
+prime-shell reassembly、fixed-power credit、full Gate B 与 twin-prime conclusion 仍
+OPEN/NONE。Session-named evaluator files absent，故不宣称 official Route-A/Route-B pass。
+
+可复用结构：`literal matrix -> PSD Gram -> Ky Fan cluster mass -> dual interval ->
+normalization flip -> gap firewall`。
+
+ROUND2_CLUE：`AUDIT_A_SCALE_INVARIANT_SPECTRAL_MEASURE_OR_PROVE_A_SOURCE_NORMALIZATION_LAW_BEFORE_ANY_POWER_CLAIM`。
+
+    TPC319_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_KY_FAN_CLUSTER_NORMALIZATION_AUDIT
+    TPC319_ROUTE_ADVANCE = YES_SCOPED_KY_FAN_CLUSTER_AND_NORMALIZATION_FIREWALL
+    TPC319_KY_FAN_AUDIT = NUMERICALLY_CERTIFIED_FINITE_24_ROWS_5_K
+    TPC319_NORMALIZED_DECREASES = NUMERICALLY_CERTIFIED_FINITE_80_OF_80
+    TPC319_UNNORMALIZED_INCREASES = NUMERICALLY_CERTIFIED_FINITE_80_OF_80
+    TPC319_NORMALIZATION_FLIP = PROVED_EXACT_FINITE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_80
+    TPC319_CLUSTER_GAP_CENSUS = NUMERICAL_OBSERVATION_FINITE
+    TPC319_EFFECTIVE_RANK = NUMERICAL_OBSERVATION_FINITE
+    TPC319_ARITHMETIC_ADVANCE = NO
+    TPC319_FIXED_POWER_CREDIT = 0
+    TPC319_FULL_GATE_B = OPEN
+    TPC319_TWIN_PRIME_RESULT = NONE
+    TPC319_STATUS = NUMERICALLY_CERTIFIED_FINITE_KY_FAN_CLUSTER_NORMALIZATION_AUDIT
+
+## 0.112 previous：TPC-318 finite top-eigenvalue prime-shell audit
 
 项目：papers/tpc-318-top-eigenvalue-prime-shell-audit/
 
