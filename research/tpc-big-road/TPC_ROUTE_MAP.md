@@ -1,25 +1,26 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-08-30
+更新时间：2026-08-31
 
-当前地图版本：V169 / TPC-316
+当前地图版本：V170 / TPC-317
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-316`（`PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION`）；
+当前编号锚点：`TPC-317`（`NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE`）；
 对应论文目录为
-`papers/tpc-316-literal-arithmetic-l2-fresh-panel/`。
+`papers/tpc-317-schatten-four-prime-shell-compression/`。
 
-TPC-316 是当前地图位置：承接 TPC-315 的 literal arithmetic L2 open gate，把同一
-deleted-diagonal centered prime-shell formula 写成完整 source-to-output operator。
-在 `I_640={321,...,640}` 与 `I_1280={641,...,1280}` 两个 disjoint panels 上，对
-`Q={24,36,54,80}`、`s={1,2}` 的 16 个 rows 用 exact signed-difference/residue-count
-identity 计算 Hilbert--Schmidt mass，并对每行 5 个坐标列给出 exact lower witnesses。
-normalized HS upper envelope 从 `X=640` 到 `X=1280` 在 8/8 matched rows 上升，
-倍率为 1.074367--1.316043；fresh panel 的 Frobenius/probe gap 为 517.635--581.975。
-这是 finite literal Frobenius envelope 与 scoped two-panel obstruction，不是 true
-operator-norm decay、growing arithmetic theorem、external holdout 或 twin-prime proof；
-Session-named evaluator files absent，故不宣称 official pass。
+TPC-317 是当前地图位置：承接 TPC-316 的 Frobenius/operator-norm 分离，保留同一
+deleted-diagonal centered prime-shell source operator，并将 PSD Gram 的 trace-power
+链推进到
+`lambda_max(A^*A) <= sqrt(trace((A^*A)^2)) <= trace(A^*A)`。
+在 `X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}` 的 24 个 rows 上，16 个
+相邻 normalized Schatten-4 intervals 全部严格下降，而同一 16 个 normalized
+Frobenius intervals 全部严格上升；小面板的 `trace(G)` 与 `trace(G^2)` 由 exact
+rational arithmetic 锚定，正反 shell 累加与 independent replay 均通过。
+这是 finite spectral compression，不是 true top-eigenvalue decay、growing arithmetic
+theorem、external holdout 或 twin-prime proof；Session-named evaluator files absent，
+故不宣称 official Route-A/Route-B pass。
 
 TPC-315 是上一位置：先锁定 TPC-314 的三-law menu，再把同一 literal engine 移到
 fresh source interval `I=(640,1280]`，重算 8 个 Gram rows 与 fresh sign extrema；48 个
@@ -666,8 +667,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V169 / TPC-316
-MAP_LABEL = LITERAL FINITE L2 ENVELOPE / TWO-SCALE HS OBSTRUCTION / GROWING L2 OPEN
+YOU ARE HERE = V170 / TPC-317
+MAP_LABEL = FINITE SCHATTEN4 COMPRESSION / FROBENIUS OPPOSITE-TREND FIREWALL / TRUE TOP EIGENVALUE OPEN
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -903,6 +904,43 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.111 V170 / TPC-317：Schatten-4 finite prime-shell compression
+
+TPC-317 承接 TPC-316 的 Frobenius/operator-norm 分离，保留同一
+deleted-diagonal centered prime-shell source operator，并对 PSD Gram `G=A^*A`
+使用有限 trace-power 链
+`lambda_max(G) <= sqrt(trace(G^2)) <= trace(G)`。在
+`X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows 上，正向与反向
+shell 累加重放；16 个相邻 Schatten-4 intervals 全部严格下降，而同一 16 个
+normalized Frobenius intervals 全部严格上升。`I={17,...,32}`, `p=5`, `s=1`
+小面板的两个 trace powers 由 exact rational arithmetic 锚定。
+
+这里安装的是一段 finite spectral-compression 桥墩：
+
+```text
+TPC317_ROUTE_ADVANCE = YES_SCOPED_TRACE_POWER_ENVELOPE
+TPC317_SCHATTEN4_IDENTITY = PROVED_EXACT_FINITE
+TPC317_FINITE_L2_ENVELOPE = PROVED_EXACT_FINITE
+TPC317_SMALL_RATIONAL_TRACE_AUDIT = PROVED_EXACT_FINITE
+TPC317_DUAL_PRECISION_ROWS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC317_SCHATTEN4_DECREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC317_FROBENIUS_INCREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC317_FROBENIUS_PROXY = REFUTED_SCOPED_AS_A_SHARP_SPECTRAL_PROXY
+TPC317_TRUE_OPERATOR_NORM = OPEN
+TPC317_ARITHMETIC_CANCELLATION = OPEN
+TPC317_ARITHMETIC_ADVANCE = NO
+TPC317_FIXED_POWER_CREDIT = 0
+TPC317_FULL_GATE_B = OPEN
+TPC317_TWIN_PRIME_RESULT = NONE
+TPC317_STATUS = NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE
+TPC317_ROUND2_CLUE = AUDIT_THE_TRUE_TOP_EIGENVALUE_OR_A_CERTIFIED_TRACE_POWER_LADDER_BEFORE_ANY_ARITHMETIC_CANCELLATION_PROMOTION
+```
+
+最强 obstruction 仍是增长与算术之间的断层：大面板数值尚未给出 true top
+eigenvalue 或 uniform growing estimate，故 16/16 的 Schatten-4 下降不能转化为
+power saving。下一关沿原地图的同一算术车道，优先审计真实最大特征值或可认证的
+trace-power ladder；不改变当前 fixed-power credit 与 Gate-B 状态。
 
 ## 5.110 V169 / TPC-316：literal arithmetic L2 fresh-panel envelope
 
@@ -6579,7 +6617,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V134 / TPC-281：
+截至 V170 / TPC-317（页首与 5.111 为当前覆盖；以下旧条目保留为历史审计）：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -6602,6 +6640,22 @@ TPC278_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
 TPC278_TWIN_PRIME_RESULT = NONE
 TPC278_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION
 TPC278_ROUND2_CLUE = FORMULATE_MINIMAL_SOURCE_LEVEL_COHERENCE_TO_GAIN_THEOREM
+TPC317_ROUTE_ADVANCE = YES_SCOPED_TRACE_POWER_ENVELOPE
+TPC317_SCHATTEN4_IDENTITY = PROVED_EXACT_FINITE
+TPC317_FINITE_L2_ENVELOPE = PROVED_EXACT_FINITE
+TPC317_SMALL_RATIONAL_TRACE_AUDIT = PROVED_EXACT_FINITE
+TPC317_DUAL_PRECISION_ROWS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC317_SCHATTEN4_DECREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC317_FROBENIUS_INCREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC317_FROBENIUS_PROXY = REFUTED_SCOPED_AS_A_SHARP_SPECTRAL_PROXY
+TPC317_TRUE_OPERATOR_NORM = OPEN
+TPC317_ARITHMETIC_CANCELLATION = OPEN
+TPC317_ARITHMETIC_ADVANCE = NO
+TPC317_FIXED_POWER_CREDIT = 0
+TPC317_FULL_GATE_B = OPEN
+TPC317_TWIN_PRIME_RESULT = NONE
+TPC317_STATUS = NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE
+TPC317_ROUND2_CLUE = AUDIT_THE_TRUE_TOP_EIGENVALUE_OR_A_CERTIFIED_TRACE_POWER_LADDER_BEFORE_ANY_ARITHMETIC_CANCELLATION_PROMOTION
 TPC279_ROUTE_ADVANCE = YES_SCOPED_EXACT_COHERENCE_TO_GAIN_CRITERION
 TPC279_EXACT_DEFICIT_IDENTITY = PROVED_EXACT_FINITE
 TPC279_PAIRWISE_COHERENCE_ENVELOPE = PROVED_EXACT_SHARP
@@ -7754,6 +7808,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-31 | V170 / TPC-317 | Bridge A / Gate B：finite Schatten-4 spectral compression 已完成；true top eigenvalue、growing arithmetic L2、fixed-power credit 与 full Gate B open | `TPC-317` | 承接 TPC-316 的 literal operator，加入 PSD Gram trace-power envelope；24 rows / 16 adjacent Schatten-4 decreases / 16 opposite Frobenius increases，exact small rational trace anchor 与 independent replay；下一步为 true top-eigenvalue 或 trace-power ladder audit |
 | 2026-08-30 | V169 / TPC-316 | Bridge A / Gate B：literal finite L2 envelope 已完成；true operator-norm decay、growing arithmetic L2、fixed-power credit 与 full Gate B open | `TPC-316` | 将 TPC-315 的 literal source open gate 实例化为 source-to-output operator；两个 disjoint panels 共 16 rows / 80 coordinate probes，exact difference/residue HS identity，8/8 normalized-HS two-scale rise，fresh-panel Frobenius/probe gap >517；下一步为 sharper growing operator或 arithmetic cancellation |
 | 2026-08-30 | V168 / TPC-315 | Bridge A / Gate B：fresh-source locked-weight class replication 已完成；law-order obstruction、external physical independence、literal arithmetic L2 与 full Gate B open | `TPC-315` | 先锁定 TPC-314 三-law menu，再在 `I=(640,1280]` 重算 8 个 Gram targets；48 cases 完成 exact/outward replay，24/24 minimum below one、24/24 positive above one；minimum order 3 types、positive order 2 types；下一步为 fresh-panel literal arithmetic L2 interface audit |
 | 2026-08-30 | V167 / TPC-314 | Bridge A / Gate B：externally motivated weight-law finite robustness 已完成；canonical weighting、fresh physical holdout、uniform weighted theorem、arithmetic L2 与 full Gate B open | TPC-314 | 固定 TPC-312 八个 source-shell rows，审计 counting、reduced-residue、von-Mangoldt 三种正权；48 cases 全部完成 outward log interval replay，24/24 minimum below one、24/24 positive above one；law-dependent amplitude 产生一次 minimum crossover 与四种 positive-order types；下一步为 fresh-source locked-menu replication |

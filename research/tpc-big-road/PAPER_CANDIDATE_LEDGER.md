@@ -1,15 +1,67 @@
 
 # TPC big-road paper candidate ledger
 
-更新时间：2026-08-30
+更新时间：2026-08-31
 
-状态：**TPC316_PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC317_NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.110 current：TPC-316 literal arithmetic L2 fresh-panel envelope
+## 0.111 current：TPC-317 Schatten-4 finite prime-shell compression
+
+项目：papers/tpc-317-schatten-four-prime-shell-compression/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE**。
+
+TPC-317 承接 TPC-316 的 Frobenius/operator-norm 分离，保留同一
+deleted-diagonal centered prime-shell source operator，并对其 PSD Gram
+`G=A^*A` 使用 trace-power 链
+`lambda_max(G) <= sqrt(trace(G^2)) <= trace(G)`。在
+`X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}` 的 24 个 finite rows 上，
+正向与反向 shell 累加分别重放；16 个相邻尺度的 normalized Schatten-4 intervals
+全部严格下降，而同一 16 个 normalized Frobenius intervals 全部严格上升。小面板
+`I={17,...,32}`, `p=5`, `s=1` 的 `trace(G)` 与 `trace(G^2)` 由 exact rational
+arithmetic 锚定。
+
+最强正结果：得到一个严格有限的、比 Frobenius 更紧的 PSD trace-power `L2`
+envelope，并以 24-row dual-accumulation certificate、independent replay 与 stress
+suite 支持；这是真实的 finite spectral compression，而非把 Frobenius 当作谱范数。
+
+最强 obstruction：大面板的 Schatten-4 结果仍是 declared numerical error model
+下的有限证书，尚未给出 true top eigenvalue 或 uniform growing estimate；因此不能
+把 16/16 的下降升级为 arithmetic power saving。Frobenius 的 opposite trend 只在
+声明面板上 REFUTED_SCOPED 其作为 sharp spectral proxy 的用法。
+
+开放定理：true top-eigenvalue/trace-power growing bound、prime-shell arithmetic
+cancellation、canonical normalization、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。该项目沿用同一 locked engine，非 external physical holdout；
+Session-named evaluator files absent，故不宣称 official Route-A/Route-B pass。
+
+可复用结构：`literal matrix -> PSD Gram -> trace-power sandwich -> outward finite
+interval -> trend firewall`。
+
+ROUND2_CLUE：`AUDIT_THE_TRUE_TOP_EIGENVALUE_OR_A_CERTIFIED_TRACE_POWER_LADDER_BEFORE_ANY_ARITHMETIC_CANCELLATION_PROMOTION`。
+
+    TPC317_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE
+    TPC317_ROUTE_ADVANCE = YES_SCOPED_TRACE_POWER_ENVELOPE
+    TPC317_SCHATTEN4_IDENTITY = PROVED_EXACT_FINITE
+    TPC317_FINITE_L2_ENVELOPE = PROVED_EXACT_FINITE
+    TPC317_SMALL_RATIONAL_TRACE_AUDIT = PROVED_EXACT_FINITE
+    TPC317_DUAL_PRECISION_ROWS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC317_SCHATTEN4_DECREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+    TPC317_FROBENIUS_INCREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+    TPC317_FROBENIUS_PROXY = REFUTED_SCOPED_AS_A_SHARP_SPECTRAL_PROXY
+    TPC317_TRUE_OPERATOR_NORM = OPEN
+    TPC317_ARITHMETIC_CANCELLATION = OPEN
+    TPC317_ARITHMETIC_ADVANCE = NO
+    TPC317_FIXED_POWER_CREDIT = 0
+    TPC317_FULL_GATE_B = OPEN
+    TPC317_TWIN_PRIME_RESULT = NONE
+    TPC317_STATUS = NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE
+
+## 0.110 previous：TPC-316 literal arithmetic L2 fresh-panel envelope
 
 项目：papers/tpc-316-literal-arithmetic-l2-fresh-panel/
 
@@ -5811,6 +5863,7 @@ handoff。
 
 | 日期 | 版本 | 新增可发表单元 | 状态 |
 |---|---|---|---|
+| 2026-08-31 | V170 | PSD Gram trace-power chain、24-row Schatten-4/Frobenius opposite-trend certificate、exact small rational trace anchor、independent replay 与 finite spectral-compression firewall | **NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE / TPC-317** |
 | 2026-08-30 | V169 | literal source-to-output operator、exact signed-difference/residue Hilbert--Schmidt identity、finite Frobenius L2 envelope、80 coordinate lower probes、8/8 normalized-HS two-panel rise 与 fresh-panel gap obstruction | **PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION / TPC-316** |
 | 2026-08-25 | V96 | hard rectangular window 的 harmonic Gram row bound、双边 `1+-epsilon` near-isometry、signed bilinear transfer 与 V59 `x^(-67/200)log x` error | **PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER / TPC-243** |
 | 2026-08-25 | V95 | literal `C_4` phase-energy complete spectrum、sharp fixed-total-energy cross disk、imbalance/Gram defect 与 TPC-241-to-V59 typed no-transfer | **PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER / TPC-242** |

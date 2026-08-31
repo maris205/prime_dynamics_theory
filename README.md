@@ -9,43 +9,46 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-316 承接 TPC-315 的 literal arithmetic L2 open gate，把同一
-deleted-diagonal centered prime-shell公式提升为完整的 source-to-output operator
-A_(Q,s,X): ell^2(I_X) -> ell^2(S_Q x I_X)。在
-I_640={321,...,640} 与 I_1280={641,...,1280} 两个 disjoint panels 上，对
-Q={24,36,54,80}、s={1,2} 的 16 行，用 signed-difference/residue-count identity
-精确计算 Hilbert--Schmidt mass，并对每行 5 个坐标列作 exact lower witness。
-归一化 HS 上界从 640 到 1280 在 8/8 matched rows 上升，倍率为 1.074367--1.316043；
-fresh panel 的 Frobenius/probe gap 为 517.635--581.975。
+当前主线状态：TPC-317 承接 TPC-316 的 Frobenius/operator-norm 分离，保留同一
+deleted-diagonal centered prime-shell operator，并加入 PSD Gram 的 Schatten-4
+trace-power envelope。对 X=640,1280,2560、Q={24,36,54,80}、s={1,2} 的 24 行，
+16 个相邻尺度比较显示 normalized Schatten-4 envelope 全部严格下降，而同一
+normalized Frobenius envelope 全部严格上升；小面板的 trace(G) 与 trace(G^2)
+由 exact rational arithmetic 锚定。
 
-这是 PROVED_EXACT_FINITE 的 literal Frobenius L2 envelope，外加
-NUMERICALLY_CERTIFIED_FINITE 的两尺度 obstruction；两尺度趋势只作
-NUMERICAL_OBSERVATION，不等同于真实 operator norm 的增长。它没有支付 growing
-arithmetic L2、fixed-power credit、full Gate B 或 twin-prime endpoint；同一
-TPC-268 engine 仍在用，非 external physical holdout。Session-named evaluator files
-absent，故不宣称 official Route-A/Route-B pass。
+这是 PROVED_EXACT_FINITE 的有限 trace-power/L2 chain，外加
+NUMERICALLY_CERTIFIED_FINITE 的 24-row opposite-trend certificate；大面板数值不
+等同于 true operator norm 的渐近衰减。它没有支付 growing arithmetic L2、fixed-power
+credit、full Gate B 或 twin-prime endpoint；仍是同一锁定 engine，非 external physical
+holdout。Session-named evaluator files absent，故不宣称 official Route-A/Route-B pass。
 
-TPC316_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION
-TPC316_ROUTE_ADVANCE = YES_SCOPED_LITERAL_FINITE_L2_ENVELOPE
-TPC316_LITERAL_OPERATOR = PROVED_EXACT_FINITE
-TPC316_FROBENIUS_L2_ENVELOPE = PROVED_EXACT_FINITE
-TPC316_DIFFERENCE_RESIDUE_COUNT = PROVED_EXACT_FINITE
-TPC316_COORDINATE_LOWER_WITNESSES = PROVED_EXACT_FINITE_5_PER_ROW
-TPC316_ROWS = NUMERICALLY_CERTIFIED_FINITE_16
-TPC316_PROBES = NUMERICALLY_CERTIFIED_FINITE_80
-TPC316_NORMALIZED_HS_TWO_SCALE_RISE = NUMERICALLY_CERTIFIED_FINITE_8_OF_8
-TPC316_FRESH_PANEL_PROBE_GAP = NUMERICALLY_CERTIFIED_FINITE_8_OF_8_ABOVE_517
-TPC316_HS_DECAY_PROXY = REFUTED_SCOPED_TWO_DECLARED_PANELS
-TPC316_GROWING_ARITHMETIC_L2 = OPEN
-TPC316_TRUE_OPERATOR_NORM_DECAY = OPEN
-TPC316_ARITHMETIC_ADVANCE = NO
-TPC316_FIXED_POWER_CREDIT = 0
-TPC316_FULL_GATE_B = OPEN
-TPC316_TWIN_PRIME_RESULT = NONE
-TPC316_STATUS = PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION
-TPC316_ROUND2_CLUE = REPLACE_THE_FROBENIUS_ENVELOPE_BY_A_GROWING_OPERATOR_OR_ARITHMETIC_CANCELLATION_ESTIMATE_WITHOUT_IMPORTING_A_POWER_CLAIM
+TPC317_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE
+TPC317_ROUTE_ADVANCE = YES_SCOPED_TRACE_POWER_ENVELOPE
+TPC317_SCHATTEN4_IDENTITY = PROVED_EXACT_FINITE
+TPC317_FINITE_L2_ENVELOPE = PROVED_EXACT_FINITE
+TPC317_SMALL_RATIONAL_TRACE_AUDIT = PROVED_EXACT_FINITE
+TPC317_DUAL_PRECISION_ROWS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC317_SCHATTEN4_DECREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC317_FROBENIUS_INCREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC317_FROBENIUS_PROXY = REFUTED_SCOPED_AS_A_SHARP_SPECTRAL_PROXY
+TPC317_TRUE_OPERATOR_NORM = OPEN
+TPC317_ARITHMETIC_CANCELLATION = OPEN
+TPC317_ARITHMETIC_ADVANCE = NO
+TPC317_FIXED_POWER_CREDIT = 0
+TPC317_FULL_GATE_B = OPEN
+TPC317_TWIN_PRIME_RESULT = NONE
+TPC317_STATUS = NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE
+TPC317_ROUND2_CLUE = AUDIT_THE_TRUE_TOP_EIGENVALUE_OR_A_CERTIFIED_TRACE_POWER_LADDER_BEFORE_ANY_ARITHMETIC_CANCELLATION_PROMOTION
 
-papers/tpc-316-literal-arithmetic-l2-fresh-panel - TPC-316 current project；含 literal
+papers/tpc-317-schatten-four-prime-shell-compression - TPC-317 current project；含 finite
+PSD trace-power chain、24-row Schatten-4/Frobenius opposite-trend certificate、exact
+small rational anchor、independent replay、stress suite、PDF 与 local Bridge-B checker。
+
+papers/tpc-316-literal-arithmetic-l2-fresh-panel - 上一项目；含 literal source-to-output
+operator、exact difference/residue HS certificate、80 coordinate probes 与 two-scale
+Frobenius obstruction。
+
+papers/tpc-316-literal-arithmetic-l2-fresh-panel - TPC-316 previous project；含 literal
 source-to-output operator、exact difference/residue HS certificate、80 coordinate probes、
 independent replay、stress suite、PDF 与 local Bridge-B checker。
 

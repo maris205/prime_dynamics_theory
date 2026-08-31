@@ -1,0 +1,38 @@
+# Bridge B — TPC-317 Schatten-4 finite compression
+
+This bridge carries the TPC-317 finite trace-power audit into the living
+prime-shell route map.  It is a scoped diagnostic bridge, not an official
+Route-A or Route-B evaluator; the Session-named evaluator files are absent
+from this checkout.
+
+```text
+TPC317_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE
+TPC317_ROUTE_ADVANCE = YES_SCOPED_TRACE_POWER_ENVELOPE
+TPC317_SCHATTEN4_IDENTITY = PROVED_EXACT_FINITE
+TPC317_FINITE_L2_ENVELOPE = PROVED_EXACT_FINITE
+TPC317_SMALL_RATIONAL_TRACE_AUDIT = PROVED_EXACT_FINITE
+TPC317_DUAL_PRECISION_ROWS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC317_SCHATTEN4_DECREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC317_FROBENIUS_INCREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC317_FROBENIUS_PROXY = REFUTED_SCOPED_AS_A_SHARP_SPECTRAL_PROXY
+TPC317_TRUE_OPERATOR_NORM = OPEN
+TPC317_ARITHMETIC_CANCELLATION = OPEN
+TPC317_FIXED_POWER_CREDIT = 0
+TPC317_ARITHMETIC_ADVANCE = NO
+TPC317_FULL_GATE_B = OPEN
+TPC317_TWIN_PRIME_RESULT = NONE
+TPC317_ROUND2_CLUE = AUDIT_THE_TRUE_TOP_EIGENVALUE_OR_A_CERTIFIED_TRACE_POWER_LADDER_BEFORE_ANY_ARITHMETIC_CANCELLATION_PROMOTION
+```
+
+## Scope
+
+The literal matrix is unchanged from TPC-316.  The new exact statement is
+the finite PSD chain
+
+```text
+lambda_max(A^*A) <= sqrt(trace((A^*A)^2)) <= trace(A^*A).
+```
+
+The certificate covers `X=640,1280,2560`, `Q={24,36,54,80}`, and `s={1,2}`.
+It does not provide a growing estimate, an external physical holdout, a
+signed four-packet reassembly, or an endpoint theorem.

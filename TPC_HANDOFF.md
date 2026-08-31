@@ -1,9 +1,55 @@
 # TPC HANDOFF
 
-更新时间：2026-08-30
-交接状态：`BOLD_CHANNEL_V169_TPC316_LITERAL_ARITHMETIC_L2_ENVELOPE_RELEASED`
+更新时间：2026-08-31
+交接状态：`BOLD_CHANNEL_V170_TPC317_SCHATTEN4_FINITE_COMPRESSION_RELEASED`
 
-TPC-316 current section: literal arithmetic L2 fresh-panel envelope
+TPC-317 current section: Schatten-4 finite prime-shell compression
+-----------------------------------------------------------------------------------------------
+
+TPC-317 承接 TPC-316 的 Frobenius/operator-norm 分离，保留同一
+TPC-268 deleted-diagonal centered prime-shell source operator，并对 PSD Gram
+`G=A^*A` 使用有限 trace-power 链
+`lambda_max(G) <= sqrt(trace(G^2)) <= trace(G)`。在
+`X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows 上，正向与反向
+shell 累加均重放；16 个相邻 normalized Schatten-4 intervals 全部严格下降，而
+同一 16 个 normalized Frobenius intervals 全部严格上升。小面板
+`I={17,...,32}`, `p=5`, `s=1` 的 `trace(G)` 与 `trace(G^2)` 由 exact rational
+arithmetic 锚定。
+
+最强正结果是一个真实的 finite PSD trace-power `L2` interface，并有独立 replay
+与 stress audit 支持。最强 obstruction 是有限性与谱范数之间仍有缺口：大面板
+数值没有给出 true top eigenvalue 或 uniform growing estimate，故 Schatten-4 的
+16/16 下降不能计入 arithmetic power saving。
+
+```text
+TPC317_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE
+TPC317_ROUTE_ADVANCE = YES_SCOPED_TRACE_POWER_ENVELOPE
+TPC317_SCHATTEN4_IDENTITY = PROVED_EXACT_FINITE
+TPC317_FINITE_L2_ENVELOPE = PROVED_EXACT_FINITE
+TPC317_SMALL_RATIONAL_TRACE_AUDIT = PROVED_EXACT_FINITE
+TPC317_DUAL_PRECISION_ROWS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC317_SCHATTEN4_DECREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC317_FROBENIUS_INCREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC317_FROBENIUS_PROXY = REFUTED_SCOPED_AS_A_SHARP_SPECTRAL_PROXY
+TPC317_TRUE_OPERATOR_NORM = OPEN
+TPC317_ARITHMETIC_CANCELLATION = OPEN
+TPC317_ARITHMETIC_ADVANCE = NO
+TPC317_FIXED_POWER_CREDIT = 0
+TPC317_FULL_GATE_B = OPEN
+TPC317_TWIN_PRIME_RESULT = NONE
+TPC317_STATUS = NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE
+TPC317_STRONGEST_POSITIVE = FINITE_PSD_TRACE_POWER_ENVELOPE_WITH_24_ROW_REPLAY
+TPC317_STRONGEST_OBSTRUCTION = TRUE_TOP_EIGENVALUE_AND_GROWING_LAW_UNPAID
+TPC317_OPEN_THEOREM = TRUE_TOP_EIGENVALUE_OR_UNIFORM_TRACE_POWER_GROWING_BOUND
+TPC317_REUSABLE_STRUCTURE = LITERAL_MATRIX_TO_PSD_GRAM_TO_TRACE_POWER_TO_INTERVAL
+TPC317_ROUND2_CLUE = AUDIT_THE_TRUE_TOP_EIGENVALUE_OR_A_CERTIFIED_TRACE_POWER_LADDER_BEFORE_ANY_ARITHMETIC_CANCELLATION_PROMOTION
+```
+
+Session-named `propose.md` 与 Route-A/Route-B evaluator files 在本 checkout 中仍
+不存在；项目 notes、proof package、independent checker、stress suite 与 local
+Bridge-B checker 是 fail-closed fallback，不能写成 official evaluator pass。
+
+TPC-316 previous section: literal arithmetic L2 fresh-panel envelope
 -----------------------------------------------------------------------------------------------
 
 TPC-316 承接 TPC-315 留下的 literal arithmetic `L2` open gate，把同一
@@ -10795,7 +10841,26 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V169/TPC-316 是当前 release；其 producer、independent replay、stress audit 与
+V170/TPC-317 是当前 release；其 producer、independent replay、stress audit 与
+finite trace-power bridge 已封存。TPC-316 及更早版本仍按历史顺序保留。
+当前 curated cascade command set 共 289 对 normal/optimized 命令、578 次
+invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
+4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
+对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
+TPC-288 再追加末尾 4 对，TPC-289 再追加末尾 4 对，TPC-290 再追加末尾 4 对，
+TPC-291 再追加末尾 4 对，TPC-292 再追加末尾 4 对，TPC-293 再追加末尾 4 对，
+TPC-294 再追加末尾 4 对，TPC-295 再追加末尾 4 对，TPC-296 再追加末尾 4 对，
+TPC-297 再追加末尾 4 对，TPC-298 再追加末尾 4 对，TPC-299 再追加末尾 4 对，
+TPC-300 再追加末尾 4 对，TPC-301 再追加末尾 4 对，TPC-302 再追加末尾 4 对，
+TPC-303 再追加末尾 4 对，TPC-304 再追加末尾 4 对，TPC-305 再追加末尾 4 对，
+TPC-306 再追加末尾 4 对，TPC-307 再追加末尾 4 对，TPC-308 再追加末尾 4 对，
+TPC-309 再追加末尾 4 对，TPC-310 再追加末尾 4 对，TPC-311 再追加末尾 4 对，
+TPC-312 再追加末尾 4 对，TPC-313 再追加末尾 4 对，TPC-314 再追加末尾 4 对，
+TPC-315 再追加末尾 4 对，TPC-316 再追加末尾 4 对，TPC-317 再追加末尾 4 对。
+V170/TPC-317 的新增 4 对由本项目 bridge 与 standalone tail checks 逐项验证；
+完整 289 对组合未因重复计算而再次运行。
+
+旧的下列句子是历史快照，当前数字由本段覆盖：V169/TPC-316 的 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
@@ -11629,6 +11694,26 @@ normal/optimized stdout 逐对 byte-identical；Bridge-B 应输出
 `16 rows / 80 probes / normalized-HS rise = 8`。这 4 对是 V169/TPC-316 的新增
 尾部，且不代表 growing arithmetic `L2` 或官方 Route-A/Route-B 通过。
 
+TPC-317 的项目级 producer、independent replay、spectral stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-317-schatten-four-prime-shell-compression/code/tpc317_schatten_four_prime_shell_compression.py --check
+python -O -B papers/tpc-317-schatten-four-prime-shell-compression/code/tpc317_schatten_four_prime_shell_compression.py --check
+python -B papers/tpc-317-schatten-four-prime-shell-compression/experiments/tpc317_independent_checker.py --check
+python -O -B papers/tpc-317-schatten-four-prime-shell-compression/experiments/tpc317_independent_checker.py --check
+python -B papers/tpc-317-schatten-four-prime-shell-compression/experiments/tpc317_spectral_stress.py
+python -O -B papers/tpc-317-schatten-four-prime-shell-compression/experiments/tpc317_spectral_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc317_schatten_four_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc317_schatten_four_checker.py --check
+```
+
+TPC-317 增量 tail audit：上述 4 对共 8 次 invocation 均应返回零，stderr 为空，
+normal/optimized stdout 逐对 byte-identical；Bridge-B 应输出
+`scales=3 / rows=24 / schatten_decreases=16 / frobenius_increases=16 /
+fixed_power_credit=0`。这 4 对是 V170/TPC-317 的新增尾部；finite Schatten-4
+compression 不代表 true top-eigenvalue decay、arithmetic cancellation 或官方
+Route-A/Route-B 通过。
+
 此前 TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
 
 ```bash
@@ -11670,7 +11755,23 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-最新 TPC-315 入口：
+最新 TPC-317 入口：
+
+```text
+papers/tpc-317-schatten-four-prime-shell-compression/README.md
+papers/tpc-317-schatten-four-prime-shell-compression/PROOF_PACKAGE.md
+papers/tpc-317-schatten-four-prime-shell-compression/notes/theorem_ledger.md
+papers/tpc-317-schatten-four-prime-shell-compression/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc317_schatten_four_checker.md
+research/tpc-big-road/tpc_bridge_b_tpc317_schatten_four_checker.py
+```
+
+TPC-317 是当前 finite Schatten-4 trace-power release：24 rows、16 个相邻
+Schatten-4 decreases 与 16 个 Frobenius increases 由双顺序 replay 支持，并有
+exact small rational trace anchor；true top eigenvalue、growing arithmetic `L2`、
+fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+此前 TPC-315 入口：
 
 ```text
 papers/tpc-315-fresh-source-locked-weight-holdout/README.md

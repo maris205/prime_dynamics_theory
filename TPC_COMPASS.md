@@ -1,22 +1,44 @@
 # TPC distilled map and bold channel
 
-更新时间：2026-08-30
-状态：`BOLD_CHANNEL_V169 / LITERAL_FINITE_L2_ENVELOPE`
-claim level：`PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION`
-编号事实终点：TPC-316；TPC-316 trigger：`true`
+更新时间：2026-08-31
+状态：`BOLD_CHANNEL_V170 / SCHATTEN4_FINITE_COMPRESSION`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE`
+编号事实终点：TPC-317；TPC-317 trigger：`true`
 
-当前 TPC-316 入口：proof 为
-`research/tpc-big-road/bridge_b_tpc316_literal_arithmetic_l2.md`，checker 为
-`tpc_bridge_b_tpc316_literal_arithmetic_l2_checker.py`，编号论文为
-`papers/tpc-316-literal-arithmetic-l2-fresh-panel/`。它把同一
-TPC-268 deleted-diagonal centered prime-shell formula 写成完整的
-source-to-output operator，精确重排 16 个 `(X,Q,s)` rows 的 Hilbert--Schmidt mass，
-并对每行五个坐标列给出 exact lower witnesses。`X=640 -> 1280` 的 normalized HS
-上界在 8/8 matched rows 上升，倍率为 `1.074367--1.316043`；fresh panel 的
-Frobenius/probe gap 为 `517.635--581.975`。这是 finite literal envelope 与 scoped
-decay-proxy obstruction，不是 true operator-norm decay、growing arithmetic theorem、
-external holdout 或 twin-prime proof；Session-named evaluator files absent，故不宣称
-official pass。
+当前 TPC-317 入口：proof 为
+`research/tpc-big-road/bridge_b_tpc317_schatten_four_checker.md`，checker 为
+`tpc_bridge_b_tpc317_schatten_four_checker.py`，编号论文为
+`papers/tpc-317-schatten-four-prime-shell-compression/`。它保留 TPC-316 的
+deleted-diagonal centered prime-shell source operator，并用 PSD Gram 的
+`sqrt(trace(G^2))` 替代 Frobenius `trace(G)` 作为有限 L2 envelope。在
+`X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows 上，16 个 adjacent
+Schatten-4 intervals 严格下降，而同一 16 个 Frobenius intervals 严格上升；小面板
+的两个 trace powers 由 exact rational arithmetic 锚定。这是 finite spectral
+compression，不是 true operator-norm decay、growing arithmetic theorem、external
+holdout 或 twin-prime proof；Session-named evaluator files absent，故不宣称 official pass。
+
+```text
+TPC317_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE
+TPC317_ROUTE_ADVANCE = YES_SCOPED_TRACE_POWER_ENVELOPE
+TPC317_SCHATTEN4_IDENTITY = PROVED_EXACT_FINITE
+TPC317_FINITE_L2_ENVELOPE = PROVED_EXACT_FINITE
+TPC317_SMALL_RATIONAL_TRACE_AUDIT = PROVED_EXACT_FINITE
+TPC317_DUAL_PRECISION_ROWS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC317_SCHATTEN4_DECREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC317_FROBENIUS_INCREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC317_FROBENIUS_PROXY = REFUTED_SCOPED_AS_A_SHARP_SPECTRAL_PROXY
+TPC317_TRUE_OPERATOR_NORM = OPEN
+TPC317_ARITHMETIC_CANCELLATION = OPEN
+TPC317_ARITHMETIC_ADVANCE = NO
+TPC317_FIXED_POWER_CREDIT = 0
+TPC317_FULL_GATE_B = OPEN
+TPC317_TWIN_PRIME_RESULT = NONE
+TPC317_STATUS = NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE
+TPC317_ROUND2_CLUE = AUDIT_THE_TRUE_TOP_EIGENVALUE_OR_A_CERTIFIED_TRACE_POWER_LADDER_BEFORE_ANY_ARITHMETIC_CANCELLATION_PROMOTION
+```
+
+TPC-316 remains the immediate predecessor: its normalized Frobenius envelope rose
+on 8/8 two-panel rows, motivating the trace-power replacement below.
 
 ```text
 TPC316_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION

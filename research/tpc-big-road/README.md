@@ -1,16 +1,52 @@
-# TPC big road V169 / TPC-316: literal arithmetic L2 fresh-panel envelope
+# TPC big road V170 / TPC-317: Schatten-4 finite prime-shell compression
 
-更新时间：2026-08-30
+更新时间：2026-08-31
 
-状态：`TPC316_PROVED_EXACT_FINITE_LITERAL_ARITHMETIC_L2_ENVELOPE_PLUS_TWO_SCALE_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC317_NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-316 proof 为
-`bridge_b_tpc316_literal_arithmetic_l2.md`，checker 为
-`tpc_bridge_b_tpc316_literal_arithmetic_l2_checker.py`，编号论文为
-`../../papers/tpc-316-literal-arithmetic-l2-fresh-panel/`。
+当前 TPC-317 proof 为
+`bridge_b_tpc317_schatten_four_checker.md`，checker 为
+`tpc_bridge_b_tpc317_schatten_four_checker.py`，编号论文为
+`../../papers/tpc-317-schatten-four-prime-shell-compression/`。
+
+TPC-317 保留 TPC-316 的 deleted-diagonal centered prime-shell source operator，并把
+PSD Gram 的 trace-power链推进到 Schatten-4：
+`lambda_max(A^*A) <= sqrt(trace((A^*A)^2)) <= trace(A^*A)`。
+在 `X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows 上，16 个相邻
+Schatten-4 intervals 全部严格下降，而同一 16 个 normalized Frobenius intervals
+全部严格上升；小面板的两个 trace powers 由 exact rational arithmetic 锚定，正反
+shell 累加与 independent replay 均通过。
+
+这是 finite spectral-compression result，不是 true operator-norm decay 或 growing
+arithmetic theorem。true top eigenvalue、arithmetic cancellation、fixed-power credit、
+full Gate B 与 twin-prime conclusion 仍 OPEN/NONE；Session-named evaluator files absent，
+故不宣称 official Route-A/Route-B pass。
+
+```text
+TPC317_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE
+TPC317_ROUTE_ADVANCE = YES_SCOPED_TRACE_POWER_ENVELOPE
+TPC317_SCHATTEN4_IDENTITY = PROVED_EXACT_FINITE
+TPC317_FINITE_L2_ENVELOPE = PROVED_EXACT_FINITE
+TPC317_SMALL_RATIONAL_TRACE_AUDIT = PROVED_EXACT_FINITE
+TPC317_DUAL_PRECISION_ROWS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+TPC317_SCHATTEN4_DECREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC317_FROBENIUS_INCREASE = NUMERICALLY_CERTIFIED_FINITE_16_OF_16
+TPC317_FROBENIUS_PROXY = REFUTED_SCOPED_AS_A_SHARP_SPECTRAL_PROXY
+TPC317_TRUE_OPERATOR_NORM = OPEN
+TPC317_ARITHMETIC_CANCELLATION = OPEN
+TPC317_ARITHMETIC_ADVANCE = NO
+TPC317_FIXED_POWER_CREDIT = 0
+TPC317_FULL_GATE_B = OPEN
+TPC317_TWIN_PRIME_RESULT = NONE
+TPC317_STATUS = NUMERICALLY_CERTIFIED_FINITE_SCHATTEN4_COMPRESSION_AND_OPERATOR_ENVELOPE
+TPC317_ROUND2_CLUE = AUDIT_THE_TRUE_TOP_EIGENVALUE_OR_A_CERTIFIED_TRACE_POWER_LADDER_BEFORE_ANY_ARITHMETIC_CANCELLATION_PROMOTION
+```
+
+TPC-316 previous section: literal arithmetic L2 fresh-panel envelope
+-----------------------------------------------------------------------------------------------
 
 TPC-316 将 TPC-315 留下的 literal arithmetic L2 open gate 实例化为完整的
 source-to-output operator。固定 TPC-268 的 deleted-diagonal centered kernel，在
