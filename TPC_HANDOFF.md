@@ -1,6 +1,57 @@
 # TPC HANDOFF
 
-TPC-329 current section: held-out growing source-native placement sensitivity
+TPC-330 current section: multi-permutation response spectrum
+-----------------------------------------------------------------------------------------------
+
+TPC-330 承接 TPC-329，保留两个 held-out origins `28001,36001`、两个 scales
+`4096,8192`、四个 shell anchors、两个 exponents、四个 sign laws 与 hash-locked
+V59 source-native residual。新增五个预声明 coordinate bijections：identity、
+`(3i+11) mod M`、`(5i+17) mod M`、`(7i+29) mod M` 与 reversal `M-1-i`，其中
+`M=N/2`。五个 controls 在 source counts `2048,4096` 上都是 bijections，保持
+source multiset 与 source `L2` norm；32 rows 形成 640 个 law/control observations、
+10 组 pairwise summaries，并保留 64 个 scale-paired records。
+
+最强正结果：三个非平凡 affine controls 的 all-plus `O<0/O>0` census 都是 `0/32`
+negative/positive；identity 与 reversal 都是 `31/1`，且三 affine controls 在
+`32/32` rows 上形成全 positive consensus。all-plus 五-control signature 为
+`negative|positive|positive|positive|negative`（31 rows）与全 positive（1 row）。
+TPC-329 的 `(5,17)` effect 因而在两个新 affine controls 上复现；它不是本 finite
+panel 上单一 permutation 的孤立 accident。
+
+最强 obstruction：source multiset 或 source `L2` norm 不能决定该 physical diagnostic
+的 sign；identity/reversal 的 classification agreement 也不升级为 exact reflection
+symmetry，因为 ratios 仍不同。下一自然问题是 control-average 与 centered
+position-response 的 exact decomposition。growing source-native `L2`、canonical sign、
+strict `1/400` payment、fixed-power credit、full Gate B 与 twin-prime conclusion 仍
+OPEN/NONE。
+
+    TPC330_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM
+    TPC330_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
+    TPC330_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC330_COMPONENT_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC330_MULTI_PERMUTATION_SPECTRUM = NUMERICALLY_CERTIFIED_FINITE_5_CONTROLS
+    TPC330_AFFINE_ALL_PLUS_CONSENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC330_SIGN_AT_SCALE_GROWTH = NUMERICALLY_CERTIFIED_FINITE
+    TPC330_ARITHMETIC_ADVANCE = NO
+    TPC330_FIXED_POWER_CREDIT = 0
+    TPC330_GROWING_SOURCE_NATIVE_L2 = OPEN
+    TPC330_FULL_GATE_B = OPEN
+    TPC330_TWIN_PRIME_RESULT = NONE
+    TPC330_STATUS = NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM
+    TPC330_STRONGEST_POSITIVE = THREE_AFFINE_ALL_PLUS_CONSENSUS_32_OF_32
+    TPC330_STRONGEST_OBSTRUCTION = SOURCE_NORM_ONLY_AND_SINGLE_AFFINE_EXPLANATIONS_REFUTED_SCOPED
+    TPC330_OPEN_THEOREM = CONTROL_AVERAGE_PLUS_CENTERED_POSITION_RESPONSE_BOUND
+    TPC330_REUSABLE_STRUCTURE = LOCKED_SOURCE_TO_FINITE_CONTROL_RESPONSE_SPECTRUM
+    TPC330_ROUND2_CLUE = DECOMPOSE_POSITION_RESPONSE_INTO_AFFINE_REVERSAL_AND_SOURCE_ALIGNED_COMPONENTS
+
+Session-named `propose.md` 与 Route-A/Route-B evaluator files 在本 checkout 中仍不存在；
+proof package、independent replay、stress suite、PDF audit 与 local Bridge-B checker 是
+fail-closed fallback，不能写成 official evaluator pass。
+
+更新时间：2026-09-02
+交接状态：`BOLD_CHANNEL_V183_TPC330_MULTI_PERMUTATION_RESPONSE_SPECTRUM`
+
+TPC-329 previous section: held-out growing source-native placement sensitivity
 -----------------------------------------------------------------------------------------------
 
 TPC-329 承接 TPC-328，把锁定的 V59 source-native residual
@@ -11335,10 +11386,10 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V182/TPC-329 是当前 release；其 producer、independent replay、stress audit 与
-source-native placement-sensitivity bridge 已封存。TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
+V183/TPC-330 是当前 release；其 producer、independent replay、stress audit 与
+multi-permutation response-spectrum bridge 已封存。TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 337 对 normal/optimized 命令、674 次
+当前 curated cascade command set 共 341 对 normal/optimized 命令、682 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -11355,8 +11406,9 @@ TPC-315 再追加末尾 4 对，TPC-316 再追加末尾 4 对，TPC-317 再追�
 TPC-318 再追加末尾 4 对，TPC-319 再追加末尾 4 对，TPC-320 再追加末尾 4 对，
 TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追加末尾 4 对，
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
-TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对。
-V182/TPC-329 的新增 4 对由
+TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
+TPC-330 再追加末尾 4 对。
+V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
@@ -12456,6 +12508,27 @@ exact_anchor=1`。这是 V182/TPC-329 的新增尾部；finite placement sensiti
 不代表 source-uniform growing theorem、arithmetic power saving 或官方 Route-A/Route-B
 通过。
 
+TPC-330 的项目级 producer、independent replay、multi-permutation stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-330-multi-permutation-response-spectrum/code/tpc330_multi_permutation_response_spectrum.py --check
+python -O -B papers/tpc-330-multi-permutation-response-spectrum/code/tpc330_multi_permutation_response_spectrum.py --check
+python -B papers/tpc-330-multi-permutation-response-spectrum/experiments/tpc330_independent_checker.py --check
+python -O -B papers/tpc-330-multi-permutation-response-spectrum/experiments/tpc330_independent_checker.py --check
+python -B papers/tpc-330-multi-permutation-response-spectrum/experiments/tpc330_multi_permutation_stress.py --check
+python -O -B papers/tpc-330-multi-permutation-response-spectrum/experiments/tpc330_multi_permutation_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc330_multi_permutation_response_spectrum_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc330_multi_permutation_response_spectrum_checker.py --check
+```
+
+TPC-330 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 均应返回零，
+stderr 为空，normal/optimized stdout 逐对 byte-identical；Bridge-B 应输出
+`rows=32 / laws=4 / growth_pairs=64 / placement_controls=5 /
+placement_comparisons=640 / affine_all_plus=32/32 / identity_reversal=32/32 /
+exact_anchor=1`。这是 V183/TPC-330 的新增尾部；finite five-control response
+spectrum 不代表 source-uniform growing theorem、arithmetic power saving 或官方
+Route-A/Route-B 通过。
+
 TPC-327 的项目级 producer、independent replay、three-origin stress 与 bridge checker：
 
 ```bash
@@ -12516,6 +12589,23 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 ```
 
 随后优先读取：
+
+最新 TPC-330 入口：
+
+papers/tpc-330-multi-permutation-response-spectrum/README.md
+papers/tpc-330-multi-permutation-response-spectrum/PAPER_PLAN.md
+papers/tpc-330-multi-permutation-response-spectrum/DERIVATION_PACKAGE.md
+papers/tpc-330-multi-permutation-response-spectrum/PROOF_PACKAGE.md
+papers/tpc-330-multi-permutation-response-spectrum/code/tpc330_multi_permutation_response_spectrum.py
+papers/tpc-330-multi-permutation-response-spectrum/experiments/tpc330_independent_checker.py
+papers/tpc-330-multi-permutation-response-spectrum/experiments/tpc330_multi_permutation_stress.py
+papers/tpc-330-multi-permutation-response-spectrum/results/tpc330_certificate.json
+papers/tpc-330-multi-permutation-response-spectrum/notes/theorem_ledger.md
+papers/tpc-330-multi-permutation-response-spectrum/notes/claim_firewall.md
+papers/tpc-330-multi-permutation-response-spectrum/paper/main.tex
+papers/tpc-330-multi-permutation-response-spectrum/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc330_multi_permutation_response_spectrum.md
+research/tpc-big-road/tpc_bridge_b_tpc330_multi_permutation_response_spectrum_checker.py
 
 最新 TPC-329 入口：
 

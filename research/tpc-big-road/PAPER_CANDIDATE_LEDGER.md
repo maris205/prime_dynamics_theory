@@ -1,15 +1,70 @@
 
 # TPC big-road paper candidate ledger
 
-更新时间：2026-09-01
+更新时间：2026-09-02
 
-状态：**TPC329_NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC330_NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.123 current：TPC-329 held-out growing source-native placement audit
+## 0.124 current：TPC-330 multi-permutation response spectrum
+
+项目：papers/tpc-330-multi-permutation-response-spectrum/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM**。
+
+TPC-330 承接 TPC-329，保留两个 held-out origins `28001,36001`、两个 scales
+`4096,8192`、四个 shell anchors、两个 exponents、四个 sign laws 与锁定的 V59
+source-native residual。新增五个预声明的 coordinate bijections：identity、
+`(3i+11) mod M`、`(5i+17) mod M`、`(7i+29) mod M` 与 reversal `M-1-i`，其中
+`M=N/2`。五个 controls 在 source counts `2048,4096` 上都保持 source multiset
+与 `L2` norm，形成 `640` 个 law/control observations、`10` 组 pairwise summaries，
+并保留 `64` 个 two-scale pairings。
+
+最强正结果：三个非平凡 affine controls 的 all-plus off-diagonal sign 都是
+`32/32` positive；identity 与 reversal 都是 `31/32` negative、`1/32` positive。
+因此 TPC-329 的 `(5,17)` effect 在两个新 affine controls 上复现，而不是单一
+permutation 的孤立现象。all-plus 的五-control signatures 为
+`negative|positive|positive|positive|negative`（`31` rows）与全 positive（`1` row）。
+
+最强 obstruction：source multiset 或 source `L2` norm 仍不能决定该 physical
+diagnostic 的 sign；同时“单一 `(5,17)` permutation accident”在本 finite panel
+上被 `REFUTED_SCOPED`。identity/reversal classification 相同但 ratio 仍有差异，
+所以不宣称 exact reflection symmetry。producer、independent reverse-order replay、
+stress、PDF 与 local Bridge-B 组成 finite certificate stack。
+
+开放定理：控制均值与 centered position response 的 exact structural decomposition，
+以及其 source-uniform bound；growing source-native `L2`、canonical sign、strict
+`1/400` payment 与 Route-B Gate B。fixed-power credit 仍为 `0`，twin-prime
+conclusion 为 `NONE`。Session-named evaluator files absent，故不宣称 official
+Route-A/Route-B pass。
+
+可复用结构：
+
+    locked source -> coherent signed Gram -> finite control orbit
+                  -> response spectrum/pairwise geometry -> independent replay/firewall
+
+ROUND2_CLUE：
+DECOMPOSE_POSITION_RESPONSE_INTO_AFFINE_REVERSAL_AND_SOURCE_ALIGNED_COMPONENTS。
+
+    TPC330_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM
+    TPC330_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
+    TPC330_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC330_COMPONENT_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC330_MULTI_PERMUTATION_SPECTRUM = NUMERICALLY_CERTIFIED_FINITE_5_CONTROLS
+    TPC330_AFFINE_ALL_PLUS_CONSENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC330_SIGN_AT_SCALE_GROWTH = NUMERICALLY_CERTIFIED_FINITE
+    TPC330_ARITHMETIC_ADVANCE = NO
+    TPC330_FIXED_POWER_CREDIT = 0
+    TPC330_GROWING_SOURCE_NATIVE_L2 = OPEN
+    TPC330_FULL_GATE_B = OPEN
+    TPC330_TWIN_PRIME_RESULT = NONE
+    TPC330_STATUS = NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM
+    TPC330_ROUND2_CLUE = DECOMPOSE_POSITION_RESPONSE_INTO_AFFINE_REVERSAL_AND_SOURCE_ALIGNED_COMPONENTS
+
+## 0.123 previous：TPC-329 held-out growing source-native placement audit
 
 项目：papers/tpc-329-heldout-growing-source-native-audit/
 

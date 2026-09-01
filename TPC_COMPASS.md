@@ -1,42 +1,42 @@
 # TPC distilled map and bold channel
 
-## V182 / TPC-329 current anchor
+## V183 / TPC-330 current anchor
 
-更新时间：2026-09-01
+更新时间：2026-09-02
 
 当前入口：proof 为
-research/tpc-big-road/bridge_b_tpc329_heldout_growing_source_native_audit.md，checker 为
-tpc_bridge_b_tpc329_heldout_growing_source_native_audit_checker.py，编号论文为
-papers/tpc-329-heldout-growing-source-native-audit/。
+research/tpc-big-road/bridge_b_tpc330_multi_permutation_response_spectrum.md，checker 为
+tpc_bridge_b_tpc330_multi_permutation_response_spectrum_checker.py，编号论文为
+papers/tpc-330-multi-permutation-response-spectrum/。
 
-TPC-329 承接 TPC-328，把锁定的 V59 source-native residual 接到两个新的 origins
-`28001,36001` 与两个更大 scales `4096,8192`。实际 32 rows 的 all-plus
-O<0/O>0 census 为 `31/1`；固定 affine placement null
-`pi(i)=(5*i+17) mod source_count` 保持 source multiset 与 L2 norm，却给出
-`0/32`，并改变 `31/32` 个 all-plus classifications。四法的 actual/permuted
-census 为 `31/1→0/32`、`25/7→30/2`、`32/0→32/0`、`32/0→28/4`；64 个
-scale pairs 与 128 个 placement comparisons 均通过独立重放。
+TPC-330 承接 TPC-329，在同一两个 origins `28001,36001`、两个 scales
+`4096,8192` 与锁定的 V59 source-native residual 上冻结五个 coordinate bijections：
+identity、`(3i+11) mod M`、`(5i+17) mod M`、`(7i+29) mod M` 与 reversal。
+32 rows 形成 640 个 law/control observations 与 10 组 pairwise summaries；三个
+affine controls 的 all-plus census 均为 `0/32`，identity/reversal 均为 `31/1`，
+且三 affine controls 在 `32/32` rows 一致为 positive。
 
-这是 `NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT`，核心是
-finite placement-sensitivity obstruction；不提供 source-uniform growing arithmetic
+这是 `NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM`，核心是
+finite affine-family placement obstruction；不提供 source-uniform growing arithmetic
 L2 theorem、fixed-power credit 或 twin-prime endpoint。Session-named evaluator files
 absent，故只记 local Bridge-B fail-closed，不宣称 official Route-A/Route-B pass。
 
-    TPC329_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT
-    TPC329_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
-    TPC329_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
-    TPC329_COMPONENT_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
-    TPC329_PLACEMENT_NULL = NUMERICALLY_CERTIFIED_FINITE_MULTISET_PRESERVING_CONTROL
-    TPC329_ALL_PLUS_ACTUAL = NUMERICALLY_CERTIFIED_FINITE_31_NEGATIVE_1_POSITIVE
-    TPC329_ALL_PLUS_PERMUTED = NUMERICALLY_CERTIFIED_FINITE_0_NEGATIVE_32_POSITIVE
-    TPC329_PLACEMENT_CHANGES = NUMERICALLY_CERTIFIED_FINITE_31_OF_32
-    TPC329_ARITHMETIC_ADVANCE = NO
-    TPC329_FIXED_POWER_CREDIT = 0
-    TPC329_GROWING_SOURCE_NATIVE_L2 = OPEN
-    TPC329_FULL_GATE_B = OPEN
-    TPC329_TWIN_PRIME_RESULT = NONE
-    TPC329_STATUS = NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT
-    TPC329_ROUND2_CLUE = SEPARATE_SOURCE_NORM_FROM_ARITHMETIC_PLACEMENT_WITH_MULTIPLE_PREDECLARED_CONTROLS
+    TPC330_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM
+    TPC330_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
+    TPC330_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC330_COMPONENT_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC330_MULTI_PERMUTATION_SPECTRUM = NUMERICALLY_CERTIFIED_FINITE_5_CONTROLS
+    TPC330_AFFINE_ALL_PLUS_CONSENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC330_SIGN_AT_SCALE_GROWTH = NUMERICALLY_CERTIFIED_FINITE
+    TPC330_ARITHMETIC_ADVANCE = NO
+    TPC330_FIXED_POWER_CREDIT = 0
+    TPC330_GROWING_SOURCE_NATIVE_L2 = OPEN
+    TPC330_FULL_GATE_B = OPEN
+    TPC330_TWIN_PRIME_RESULT = NONE
+    TPC330_STATUS = NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM
+    TPC330_ROUND2_CLUE = DECOMPOSE_POSITION_RESPONSE_INTO_AFFINE_REVERSAL_AND_SOURCE_ALIGNED_COMPONENTS
+
+## V182 / TPC-329 previous anchor
 
 ## V181 / TPC-328 previous anchor
 

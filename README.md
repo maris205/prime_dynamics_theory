@@ -9,14 +9,36 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-329 承接 TPC-328，在两个新的 source origins={28001,36001}、
-两个更大 scales={4096,8192} 上复核锁定的 V59 source-native residual，并加入
-预声明的 multiset/L2-preserving affine placement null。32 个实际 rows 的 all-plus
-O<0/O>0 census 为 31/1；置换后为 0/32，且 31/32 个 all-plus classifications
-改变。四法的实际/置换 census 分别为 25/7→30/2、32/0→32/0、32/0→28/4；
-64 个 scale-paired records 和 128 个 placement comparisons 均由独立 checker
-重放。这个结果是 finite held-out growth/placement-sensitivity obstruction，不是
+当前主线状态：TPC-330 承接 TPC-329，在同一两个 held-out origins={28001,36001}、
+scales={4096,8192} 与锁定的 V59 source-native residual 上，把单一 placement null
+扩展为五个预声明的 multiset/L2-preserving coordinate bijections。32 个 rows 形成
+640 个 law/control observations 与 10 组 pairwise summaries；三个 odd-affine
+controls 的 all-plus O<0/O>0 census 均为 0/32，identity 与 reversal 均为 31/1。
+all-plus 五-control signature 为 negative|positive|positive|positive|negative（31 rows）
+与全 positive（1 row）。这是 finite multi-permutation placement spectrum，不是
 growing arithmetic theorem、fixed-power credit 或 full Gate B。
+
+    TPC330_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM
+    TPC330_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
+    TPC330_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC330_COMPONENT_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC330_MULTI_PERMUTATION_SPECTRUM = NUMERICALLY_CERTIFIED_FINITE_5_CONTROLS
+    TPC330_AFFINE_ALL_PLUS_CONSENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC330_SIGN_AT_SCALE_GROWTH = NUMERICALLY_CERTIFIED_FINITE
+    TPC330_ARITHMETIC_ADVANCE = NO
+    TPC330_FIXED_POWER_CREDIT = 0
+    TPC330_GROWING_SOURCE_NATIVE_L2 = OPEN
+    TPC330_FULL_GATE_B = OPEN
+    TPC330_TWIN_PRIME_RESULT = NONE
+    TPC330_STATUS = NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM
+    TPC330_ROUND2_CLUE = DECOMPOSE_POSITION_RESPONSE_INTO_AFFINE_REVERSAL_AND_SOURCE_ALIGNED_COMPONENTS
+
+papers/tpc-330-multi-permutation-response-spectrum - TPC-330 当前项目 - 五个预声明
+coordinate controls 的 finite response spectrum、640 条明细、independent replay、
+stress、PDF 与 local Bridge-B checker。
+
+TPC-329（上一位置）仍保留 held-out growing source-native placement obstruction，作为
+TPC-330 的直接 parent lock。
 
     TPC329_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT
     TPC329_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
@@ -36,10 +58,10 @@ growing arithmetic theorem、fixed-power credit 或 full Gate B。
 
 papers/tpc-329-heldout-growing-source-native-audit - TPC-329 当前项目 - held-out 两尺度 source-native 审计与置换 placement obstruction，含 32-row certificate、独立重放、stress、PDF 与 local Bridge-B checker。
 
-TPC-328（上一位置）仍保留 source-native finite Gram cancellation/obstruction
-atlas 及其 96-row certificate，作为 TPC-329 的 parent lock。
+TPC-328（更早位置）仍保留 source-native finite Gram cancellation/obstruction
+atlas 及其 96-row certificate，作为 TPC-329 的祖先 lock。
 
-papers/tpc-328-source-native-l2-cancellation - TPC-328 current project；含 source-native
+papers/tpc-328-source-native-l2-cancellation - TPC-328 previous project；含 source-native
 V59 residual、exact finite Gram decomposition、96-row four-law certificate、independent
 replay、stress suite、PDF 与 local Bridge-B checker。
 
