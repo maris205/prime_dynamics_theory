@@ -1,6 +1,58 @@
 # TPC HANDOFF
 
-TPC-328 current section: source-native arithmetic L2 cancellation and signed-Gram obstruction
+TPC-329 current section: held-out growing source-native placement sensitivity
+-----------------------------------------------------------------------------------------------
+
+TPC-329 承接 TPC-328，把锁定的 V59 source-native residual
+`beta_o^(2)(t)=Lambda(t+2)-b^(2)(t)` 搬到两个此前未使用的 origins
+`28001,36001` 与两个更大 scales `4096,8192`。保留 `H=66`、
+`Q={24,36,54,80}`、`s={1,2}`、literal deleted-diagonal masks 与四个 sign laws，
+形成 32 个 actual rows、64 个 scale-paired records。
+
+本关新增一个预声明 hostile placement control：
+`pi(i)=(5*i+17) mod source_count`。两个 source counts `2048,4096` 都是 2 的幂，
+故该 map 是 bijection，严格保持 source multiset 与 source `L2` norm。actual all-plus
+`O<0/O>0` census 为 `31/1`，placement control 为 `0/32`，且 `31/32` 个
+classifications 改变；四法 actual/permuted census 为
+`31/1→0/32`、`25/7→30/2`、`32/0→32/0`、`32/0→28/4`。两个 component
+controls 为 `32/32` positive，placement comparisons 为 `128`。
+
+这封存的是 finite held-out growth/placement-sensitivity obstruction：该诊断的
+all-plus sign 不能由 source multiset 或 source norm 单独决定。producer、independent
+reverse-order replay、stress、exact rational anchor、PDF audit 与 local Bridge-B
+normal/optimized checker 必须全部通过；没有 source-uniform growing theorem、canonical
+sign、渐近 power saving、fixed-power credit、strict `1/400` payment 或 twin-prime
+conclusion。
+
+    TPC329_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT
+    TPC329_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
+    TPC329_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC329_COMPONENT_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC329_PLACEMENT_NULL = NUMERICALLY_CERTIFIED_FINITE_MULTISET_PRESERVING_CONTROL
+    TPC329_ALL_PLUS_ACTUAL = NUMERICALLY_CERTIFIED_FINITE_31_NEGATIVE_1_POSITIVE
+    TPC329_ALL_PLUS_PERMUTED = NUMERICALLY_CERTIFIED_FINITE_0_NEGATIVE_32_POSITIVE
+    TPC329_PLACEMENT_CHANGES = NUMERICALLY_CERTIFIED_FINITE_31_OF_32
+    TPC329_SIGN_AT_SCALE_GROWTH = NUMERICALLY_CERTIFIED_FINITE
+    TPC329_ARITHMETIC_ADVANCE = NO
+    TPC329_FIXED_POWER_CREDIT = 0
+    TPC329_GROWING_SOURCE_NATIVE_L2 = OPEN
+    TPC329_FULL_GATE_B = OPEN
+    TPC329_TWIN_PRIME_RESULT = NONE
+    TPC329_STATUS = NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT
+    TPC329_STRONGEST_POSITIVE = HELDOUT_GROWTH_PLUS_NORM_PRESERVING_PLACEMENT_REPLAY
+    TPC329_STRONGEST_OBSTRUCTION = ALL_PLUS_SIGN_CHANGES_UNDER_31_OF_32_PLACEMENT_CONTROLS
+    TPC329_OPEN_THEOREM = POSITION_AWARE_SOURCE_UNIFORM_SIGNED_GRAM_BOUND
+    TPC329_REUSABLE_STRUCTURE = SOURCE_NATIVE_ACTUAL_NULL_PAIR_PLUS_GROWTH_AUDIT
+    TPC329_ROUND2_CLUE = SEPARATE_SOURCE_NORM_FROM_ARITHMETIC_PLACEMENT_WITH_MULTIPLE_PREDECLARED_CONTROLS
+
+Session-named `propose.md` 与 Route-A/Route-B evaluator files 在本 checkout 中仍不存在；
+proof package、independent replay、stress suite、PDF audit 与 local Bridge-B checker 是
+fail-closed fallback，不能写成 official evaluator pass。
+
+更新时间：2026-09-01
+交接状态：`BOLD_CHANNEL_V182_TPC329_HELDOUT_PLACEMENT_SENSITIVITY`
+
+TPC-328 previous section: source-native arithmetic L2 cancellation and signed-Gram obstruction
 -----------------------------------------------------------------------------------------------
 
 TPC-328 承接 TPC-327，把锁定的 V59 source-native residual
@@ -11283,10 +11335,10 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V181/TPC-328 是当前 release；其 producer、independent replay、stress audit 与
-source-native signed-Gram bridge 已封存。TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
+V182/TPC-329 是当前 release；其 producer、independent replay、stress audit 与
+source-native placement-sensitivity bridge 已封存。TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 333 对 normal/optimized 命令、666 次
+当前 curated cascade command set 共 337 对 normal/optimized 命令、674 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -11303,9 +11355,9 @@ TPC-315 再追加末尾 4 对，TPC-316 再追加末尾 4 对，TPC-317 再追�
 TPC-318 再追加末尾 4 对，TPC-319 再追加末尾 4 对，TPC-320 再追加末尾 4 对，
 TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追加末尾 4 对，
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
-TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对。
-V181/TPC-328 的新增 4 对由
-本项目 bridge 与 standalone tail checks 逐项验证；完整 325 对组合未因重复计算而再次运行。
+TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对。
+V182/TPC-329 的新增 4 对由
+本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
@@ -12383,6 +12435,27 @@ components=96/96 / exact_anchor=1`。这是 V181/TPC-328 的新增尾部；finit
 source-native cancellation/obstruction 不代表 source-uniform growing theorem、
 arithmetic power saving 或官方 Route-A/Route-B 通过。
 
+TPC-329 的项目级 producer、independent replay、held-out growth stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-329-heldout-growing-source-native-audit/code/tpc329_heldout_growing_source_native_audit.py --check
+python -O -B papers/tpc-329-heldout-growing-source-native-audit/code/tpc329_heldout_growing_source_native_audit.py --check
+python -B papers/tpc-329-heldout-growing-source-native-audit/experiments/tpc329_independent_checker.py --check
+python -O -B papers/tpc-329-heldout-growing-source-native-audit/experiments/tpc329_independent_checker.py --check
+python -B papers/tpc-329-heldout-growing-source-native-audit/experiments/tpc329_heldout_growing_stress.py --check
+python -O -B papers/tpc-329-heldout-growing-source-native-audit/experiments/tpc329_heldout_growing_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc329_heldout_growing_source_native_audit_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc329_heldout_growing_source_native_audit_checker.py --check
+```
+
+TPC-329 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 均应返回零，
+stderr 为空，normal/optimized stdout 逐对 byte-identical；Bridge-B 应输出
+`rows=32 / laws=4 / growth_pairs=64 / placement_comparisons=128 /
+all_plus_actual=31/1 / all_plus_permuted=0/32 / components=32/32 /
+exact_anchor=1`。这是 V182/TPC-329 的新增尾部；finite placement sensitivity
+不代表 source-uniform growing theorem、arithmetic power saving 或官方 Route-A/Route-B
+通过。
+
 TPC-327 的项目级 producer、independent replay、three-origin stress 与 bridge checker：
 
 ```bash
@@ -12443,6 +12516,16 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 ```
 
 随后优先读取：
+
+最新 TPC-329 入口：
+
+papers/tpc-329-heldout-growing-source-native-audit/README.md
+papers/tpc-329-heldout-growing-source-native-audit/PROOF_PACKAGE.md
+papers/tpc-329-heldout-growing-source-native-audit/DERIVATION_PACKAGE.md
+papers/tpc-329-heldout-growing-source-native-audit/notes/theorem_ledger.md
+papers/tpc-329-heldout-growing-source-native-audit/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc329_heldout_growing_source_native_audit.md
+research/tpc-big-road/tpc_bridge_b_tpc329_heldout_growing_source_native_audit_checker.py
 
 最新 TPC-328 入口：
 

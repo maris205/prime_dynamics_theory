@@ -1,41 +1,47 @@
 # TPC distilled map and bold channel
 
-## V181 / TPC-328 current anchor
+## V182 / TPC-329 current anchor
 
 更新时间：2026-09-01
 
 当前入口：proof 为
-research/tpc-big-road/bridge_b_tpc328_source_native_l2_cancellation.md，checker 为
-tpc_bridge_b_tpc328_source_native_l2_cancellation_checker.py，编号论文为
-papers/tpc-328-source-native-l2-cancellation/。
+research/tpc-big-road/bridge_b_tpc329_heldout_growing_source_native_audit.md，checker 为
+tpc_bridge_b_tpc329_heldout_growing_source_native_audit_checker.py，编号论文为
+papers/tpc-329-heldout-growing-source-native-audit/。
 
-TPC-328 承接 TPC-327，把锁定的 V59 source-native residual
-`beta_o^(2)(t)=Lambda(t+2)-b^(2)(t)` 直接接入 literal coherent prime-shell
-operator。对三个 disjoint origins、四档 scales、四个 Q anchors、两个 exponents
-的 96 rows，source-coordinate Gram identity `E=D+O` 是 exact finite；all-plus
-residual 的 O<0/O>0 census 为 81/15，alternating、mod-4、half-split 为 73/23、
-74/22、61/35，均无 unresolved row；两个正 component controls 为 96/96。
+TPC-329 承接 TPC-328，把锁定的 V59 source-native residual 接到两个新的 origins
+`28001,36001` 与两个更大 scales `4096,8192`。实际 32 rows 的 all-plus
+O<0/O>0 census 为 `31/1`；固定 affine placement null
+`pi(i)=(5*i+17) mod source_count` 保持 source multiset 与 L2 norm，却给出
+`0/32`，并改变 `31/32` 个 all-plus classifications。四法的 actual/permuted
+census 为 `31/1→0/32`、`25/7→30/2`、`32/0→32/0`、`32/0→28/4`；64 个
+scale pairs 与 128 个 placement comparisons 均通过独立重放。
 
-这是 `NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_L2_CANCELLATION_ATLAS`，并且四个
-declared laws 在该 finite panel 上都不能提供 `E<=D` 的 uniform contraction。这是
-source-native 的有限 cancellation/obstruction readout，不是 growing arithmetic
+这是 `NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT`，核心是
+finite placement-sensitivity obstruction；不提供 source-uniform growing arithmetic
 L2 theorem、fixed-power credit 或 twin-prime endpoint。Session-named evaluator files
 absent，故只记 local Bridge-B fail-closed，不宣称 official Route-A/Route-B pass。
 
-    TPC328_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_L2_CANCELLATION_ATLAS
-    TPC328_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
-    TPC328_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
-    TPC328_COMPONENT_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_96_OF_96
-    TPC328_ALL_PLUS_CANCELLATION = NUMERICALLY_CERTIFIED_FINITE_81_OF_96
-    TPC328_ALL_PLUS_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_15_OF_96
-    TPC328_NO_UNIFORM_SIGNED_CONTRACTION = REFUTED_SCOPED_FOUR_DECLARED_LAWS
-    TPC328_ARITHMETIC_ADVANCE = NO
-    TPC328_FIXED_POWER_CREDIT = 0
-    TPC328_GROWING_SOURCE_NATIVE_L2 = OPEN
-    TPC328_FULL_GATE_B = OPEN
-    TPC328_TWIN_PRIME_RESULT = NONE
-    TPC328_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_L2_CANCELLATION_ATLAS
-    TPC328_ROUND2_CLUE = TEST_SOURCE_NATIVE_L2_ON_GROWING_ORIGIN_ENSEMBLE_OR_PROVE_SIGNED_GRAM_BOUND
+    TPC329_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT
+    TPC329_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
+    TPC329_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC329_COMPONENT_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC329_PLACEMENT_NULL = NUMERICALLY_CERTIFIED_FINITE_MULTISET_PRESERVING_CONTROL
+    TPC329_ALL_PLUS_ACTUAL = NUMERICALLY_CERTIFIED_FINITE_31_NEGATIVE_1_POSITIVE
+    TPC329_ALL_PLUS_PERMUTED = NUMERICALLY_CERTIFIED_FINITE_0_NEGATIVE_32_POSITIVE
+    TPC329_PLACEMENT_CHANGES = NUMERICALLY_CERTIFIED_FINITE_31_OF_32
+    TPC329_ARITHMETIC_ADVANCE = NO
+    TPC329_FIXED_POWER_CREDIT = 0
+    TPC329_GROWING_SOURCE_NATIVE_L2 = OPEN
+    TPC329_FULL_GATE_B = OPEN
+    TPC329_TWIN_PRIME_RESULT = NONE
+    TPC329_STATUS = NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT
+    TPC329_ROUND2_CLUE = SEPARATE_SOURCE_NORM_FROM_ARITHMETIC_PLACEMENT_WITH_MULTIPLE_PREDECLARED_CONTROLS
+
+## V181 / TPC-328 previous anchor
+
+TPC-328 的 source-native finite Gram cancellation/obstruction atlas 仍保留为本关的
+parent certificate 与 direct engine provenance。
 
 ## V180 / TPC-327 previous anchor
 

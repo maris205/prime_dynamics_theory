@@ -1,0 +1,286 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.76in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,mathtools,array}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\1}{\mathbf 1}
+
+\title{Held-out Growing Source-Native Audits and\\
+  \large Placement Sensitivity in the Twin-Prime Signed-Gram Diagnostic}
+\author{Liang Wang\\School of Mathematics and Statistics\\Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{September 1, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We test whether the source-native finite V59 residual used in the preceding
+signed-Gram release survives a held-out origin/scale change, and whether its
+readout can be explained by source norms alone.  The literal deleted-diagonal
+prime-shell operator is evaluated at two new origins, two larger scales, four
+shell anchors, two kernel exponents, and four fixed sign laws.  The exact finite
+Gram identity separates the energy into a coordinate diagonal and an
+off-diagonal term.  On the actual residual, the all-plus off-diagonal term is
+negative on $31/32$ rows and positive on $1/32$.  A predeclared affine
+permutation preserves the source multiset and Euclidean $L^2$ norm, yet the
+all-plus term is positive on $32/32$ permuted rows, with $31/32$ classifications
+changed.  The two-scale audit has $64$ paired comparisons and all-plus energy
+growth factors in $[1.9663131482417533,2.14326466572482]$.  These are guarded
+finite numerical observations, not a growing arithmetic estimate.  The
+principal contribution is a finite placement-sensitivity obstruction to reading
+the diagnostic from source norm or marginal values alone; no fixed-power
+credit, Route-B gate payment, or twin-prime conclusion is claimed.
+\end{abstract}
+
+\section{Question and contribution}
+
+The current twin-prime route uses a literal centered prime-shell operator.  A
+finite sign pattern can be misleading if it is tested at only one origin or if
+the operator is never exposed to the arithmetic source.  The preceding release
+attached the finite V59 residual to the operator.  We now make the smallest
+natural continuation: hold the operator and source model fixed, move to two
+previously unused origins and larger windows, and add a hostile control that
+preserves the source values as a multiset.
+
+The paper contributes four finite facts.  First, it provides a two-origin,
+two-scale holdout with an explicit scale-pairing audit.  Second, it proves the
+same exact source-coordinate Gram decomposition for every finite row.  Third,
+it applies the fixed affine map
+\[
+  \pi(i)=(5i+17)\pmod M,\qquad M=N/2,
+\]
+to the source coordinates.  Finally, it records the resulting sign contrast:
+the actual and permuted vectors have the same norm and coordinate multiset,
+but their signed-Gram readouts differ sharply.
+
+Every statement below is finite.  A finite row count is not a uniformity
+quantifier, and a growth factor between two scales is not an asymptotic
+exponent.
+
+\section{The literal finite object}
+
+For an origin $o$ and an even scale $N$, let
+\[
+ I_{o,N}=\{o,o+1,\ldots,o+N/2-1\}.
+\]
+The protocol uses
+\[
+ o\in\{28001,36001\},\quad N\in\{4096,8192\},\quad H=66,
+\]
+and $Q\in\{24,36,54,80\}$ with $s\in\{1,2\}$.  For a prime
+$p\in(Q,2Q]$, define
+\begin{equation}\label{eq:block}
+ B_{p,Q,s}(u,t)=
+ \1_{u\ne t}\1_{p\nmid u}\1_{p\nmid t}
+ p\frac{H^{2s}}{(H^2+(u-t)^2)^s}
+ \left(\1_{p\mid u-t}-\frac1{p-1}\right).
+\end{equation}
+The diagonal is deleted before the centered residue factor is applied.  For a
+fixed sign law $e=(e_p)$ on the shell, put
+\[
+ C_e=\sum_{p\in(Q,2Q]}e_pB_{p,Q,s}.
+\]
+The four laws are all-plus, index-alternating, the sign of $p$ modulo $4$,
+and a half split in increasing prime order.
+
+For a finite vector $v=(v_t)_{t\in I_{o,N}}$, define
+\begin{align}
+ E_e(v)&=\|C_ev\|_2^2,\\
+ D_e(v)&=\sum_t v_t^2\|C_ee_t\|_2^2,\\
+ O_e(v)&=E_e(v)-D_e(v).
+\end{align}
+When $D_e(v)>0$, use $R_e(v)=E_e(v)/D_e(v)$.  Thus $R_e<1$ and
+$R_e>1$ mean negative and positive off-diagonal Gram mass, respectively.
+
+\section{Source model and placement control}
+
+The source is the finite V59 comparison model
+\[
+ \Lambda(m)=
+ \begin{cases}
+   \log p,&m=p^k,\\
+   0,&\text{otherwise},
+ \end{cases}
+\]
+and
+\begin{equation}\label{eq:comparison}
+ b^{(2)}(t)=2C_2\,\1_{2\nmid t}
+ \prod_{\substack{p\mid t\\p>2}}\frac{p-1}{p-2},\qquad
+ \beta_o^{(2)}(t)=\Lambda(t+2)-b^{(2)}(t).
+\end{equation}
+The executable certificate evaluates the product through $50000$, with the
+inherited positive tail enclosure, and uses 100-digit Decimal logarithm
+centers with a rational $10^{-70}$ guard.  The resulting midpoint vector is
+used in the float64 matrix replay.
+
+The placement control is not selected after seeing the result.  For both
+$M=2048$ and $M=4096$, $\gcd(5,M)=1$, so $\pi$ is a bijection.  If $P_\pi$ is
+the associated permutation matrix, then
+\[
+ P_\pi^TP_\pi=I,\qquad \|P_\pi v\|_2=\|v\|_2.
+\]
+Thus the actual vector and $P_\pi v$ have identical coordinate multisets and
+norms.  They need not have identical images under $C_e$: the literal
+divisibility masks and distance kernel are not assumed to commute with an
+arbitrary coordinate permutation.
+
+\section{Exact finite identities}
+
+\paragraph{Gram decomposition.}
+The finite product expands as $C_ev=\sum_t v_tC_ee_t$.  Therefore, by
+bilinearity,
+\[
+ E_e(v)=\sum_{t,t'}v_tv_{t'}
+       \langle C_ee_t,C_ee_{t'}\rangle.
+\]
+The terms with $t=t'$ are $D_e(v)$ and the remaining terms are
+\[
+ O_e(v)=\sum_{t\ne t'}v_tv_{t'}
+       \langle C_ee_t,C_ee_{t'}\rangle.
+\]
+Hence $E_e(v)=D_e(v)+O_e(v)$ exactly for every finite vector.  No limiting
+interchange or arithmetic estimate occurs in this step; this is the finite
+Gram expansion in the usual matrix-analysis sense \cite{horn2013matrix}.
+
+\paragraph{Placement identity.}
+The permutation matrix identity above proves norm and multiset preservation.
+On the other hand,
+\[
+ E_e(P_\pi v)=v^TP_\pi^TC_e^TC_eP_\pi v.
+\]
+Equality with $E_e(v)$ for all $v$ would require a commutation property of the
+Gram operator that is not part of the model.  The finite control therefore
+tests coordinate placement while fixing the source norm.
+
+\section{Certificate protocol}
+
+The producer writes canonical JSON containing all $32$ actual rows and their
+placement-control rows.  Each row stores source geometry, shell, matrix shape,
+the two component controls, $E,D,O,R$, and the outward ratio guard.  A row is
+labelled negative when $R+5\cdot10^{-8}<1$, positive when
+$R-5\cdot10^{-8}>1$, and unresolved otherwise.
+
+The independent checker does not import the producer.  It rebuilds the source
+with separate factorization code, accumulates shell blocks in reverse order,
+recomputes actual and permuted metrics, and checks every stored value.  It also
+replays the $64$ scale pairs.  The stress suite checks exact rational Gram
+algebra, source/sign mutations, deleted diagonals, permutation metadata,
+provenance hashes, and the fail-closed claim firewall.  Normal and optimized
+executions must have empty standard error and byte-identical output.
+
+\section{Finite results}
+
+\begin{table}[ht]
+\centering
+\caption{Actual and norm-preserving placement-control censuses.}
+\label{tab:placement}
+\begin{tabular}{lrrrr}
+\toprule
+ & \multicolumn{2}{c}{actual} & \multicolumn{2}{c}{permuted}\\
+sign law & $O<0$ & $O>0$ & $O<0$ & $O>0$\\
+\midrule
+all-plus & 31 & 1 & 0 & 32\\
+alternating index & 25 & 7 & 30 & 2\\
+mod-$4$ character & 32 & 0 & 32 & 0\\
+half split & 32 & 0 & 28 & 4\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+No actual or permuted row is unresolved under the declared guard.  The
+all-plus classification changes on $31/32$ comparisons.  Its maximum absolute
+ratio difference is $3.1669505870381451$; the corresponding maxima for the
+alternating, mod-$4$, and half-split laws are
+$0.2512622344035258$, $0.21527386205638832$, and
+$0.1981450927371966$.
+
+The actual all-plus ratio ranges from $0.57333063185858035$ to
+$1.0091831972566414$.  The component controls remain positive on all rows:
+\[
+ \min R_+(\Lambda(\cdot+2))=1.3668932693626414,\qquad
+ \min R_+(b^{(2)})=3.0441001012913311.
+\]
+This rules out a zero-energy component as an explanation for the finite sign
+contrast, but it does not create an arithmetic estimate.
+
+\subsection{Two-scale audit}
+
+Pairing rows at fixed origin, shell anchor, and exponent gives $64$ law-level
+comparisons from $4096$ to $8192$.  For all-plus, signs persist in $15/16$
+pairs and cross once.  The energy growth factor and base-$2$ log-slope ranges
+are
+\[
+ 1.9663131482417533\leq E_{8192}/E_{4096}
+ \leq2.14326466572482,
+\]
+\[
+ 0.97549309860589706\leq
+ \log_2(E_{8192}/E_{4096})
+ \leq1.0998100153677246.
+\]
+The analogous sign persistence counts are $15/16$, $16/16$, and $16/16$
+for alternating, mod-$4$, and half-split laws.  These two-point slopes are
+reported as numerical observations only.
+
+\section{Exact local anchor}
+
+At $I=[28001,28016]$, $Q=4$, and $s=1$, the shell is $\{5,7\}$.  The exact
+rational vector is
+\[
+ v_t=\1_{t+2\text{ is prime}}-\1_{t\text{ is odd}}.
+\]
+The Fraction calculation gives, after decimal display,
+\[
+ E=582.0014930371829,\qquad
+ D=649.9719408544561,\qquad
+ O=-67.97044781727324,
+\]
+and verifies $E=D+O$ before display.  Reduced numerator/denominator digests
+for all three values are stored in the certificate and independently
+recomputed.  The anchor is a finite arithmetic sanity check, not a claim
+about twin-prime density.
+
+\section{Interpretation and claim boundary}
+
+The strongest finite positive result is the held-out source-native replay plus
+the norm-preserving placement control.  The strongest obstruction is the
+actual/permuted all-plus contrast: identical source multiset and $L^2$ norm do
+not determine the sign of this coordinate-sensitive diagnostic on the released
+panel.  This is a scoped obstruction to a source-norm-only interpretation.
+
+The following remain open or unpaid:
+\begin{itemize}
+  \item a source-uniform growing $L^2$ estimate for the actual residual;
+  \item a canonical arithmetic sign law and placement-aware reassembly bound;
+  \item an operator-norm estimate with the required physical normalization;
+  \item the strict $1/400$ endpoint loss, Route-B Gate B, and any twin-prime
+        conclusion.
+\end{itemize}
+Accordingly,
+\[
+ \texttt{ARITHMETIC\_ADVANCE=NO},\quad
+ \texttt{FIXED\_POWER\_CREDIT=0},\quad
+ \texttt{FULL\_GATE\_B=OPEN},\quad
+ \texttt{TWIN\_PRIME\_RESULT=NONE}.
+\]
+The Session-named Route-A and Route-B evaluator files are absent from this
+checkout; the local Bridge-B checker is a fail-closed fallback and is not an
+official evaluator pass.
+
+\section{Reproducibility}
+
+The source, canonical certificate, independent checker, stress suite, proof
+package, and route ledger are in
+\url{papers/tpc-329-heldout-growing-source-native-audit}.  From the
+repository root, run the commands listed in the project README.  The final
+machine-readable result is the certificate JSON in \texttt{results/}; the
+compiled manuscript is \texttt{paper/paper.pdf}.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

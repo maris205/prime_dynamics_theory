@@ -9,29 +9,35 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-328 承接 TPC-327，把锁定的 V59 source-native arithmetic
-residual 直接送入 coherent prime-shell operator，测量 source-coordinate Gram 的
-off-diagonal 项。对 origins={12001,16001,20001}、N={320,640,1280,2560}、
-Q={24,36,54,80}、s={1,2} 的 96 rows，all-plus residual 的 O<0/O>0 census 为
-81/15，其他三个 predeclared laws 为 73/23、74/22、61/35，均无 unresolved row；
-Lambda 与 comparison component controls 为 96/96。这个结果是 finite source-native
-L2 cancellation/obstruction atlas，不是 growing arithmetic theorem、fixed-power
-credit 或 full Gate B。
+当前主线状态：TPC-329 承接 TPC-328，在两个新的 source origins={28001,36001}、
+两个更大 scales={4096,8192} 上复核锁定的 V59 source-native residual，并加入
+预声明的 multiset/L2-preserving affine placement null。32 个实际 rows 的 all-plus
+O<0/O>0 census 为 31/1；置换后为 0/32，且 31/32 个 all-plus classifications
+改变。四法的实际/置换 census 分别为 25/7→30/2、32/0→32/0、32/0→28/4；
+64 个 scale-paired records 和 128 个 placement comparisons 均由独立 checker
+重放。这个结果是 finite held-out growth/placement-sensitivity obstruction，不是
+growing arithmetic theorem、fixed-power credit 或 full Gate B。
 
-    TPC328_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_L2_CANCELLATION_ATLAS
-    TPC328_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
-    TPC328_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
-    TPC328_COMPONENT_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_96_OF_96
-    TPC328_ALL_PLUS_CANCELLATION = NUMERICALLY_CERTIFIED_FINITE_81_OF_96
-    TPC328_ALL_PLUS_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_15_OF_96
-    TPC328_NO_UNIFORM_SIGNED_CONTRACTION = REFUTED_SCOPED_FOUR_DECLARED_LAWS
-    TPC328_ARITHMETIC_ADVANCE = NO
-    TPC328_FIXED_POWER_CREDIT = 0
-    TPC328_GROWING_SOURCE_NATIVE_L2 = OPEN
-    TPC328_FULL_GATE_B = OPEN
-    TPC328_TWIN_PRIME_RESULT = NONE
-    TPC328_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_L2_CANCELLATION_ATLAS
-    TPC328_ROUND2_CLUE = TEST_SOURCE_NATIVE_L2_ON_GROWING_ORIGIN_ENSEMBLE_OR_PROVE_SIGNED_GRAM_BOUND
+    TPC329_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT
+    TPC329_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
+    TPC329_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC329_COMPONENT_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC329_PLACEMENT_NULL = NUMERICALLY_CERTIFIED_FINITE_MULTISET_PRESERVING_CONTROL
+    TPC329_ALL_PLUS_ACTUAL = NUMERICALLY_CERTIFIED_FINITE_31_NEGATIVE_1_POSITIVE
+    TPC329_ALL_PLUS_PERMUTED = NUMERICALLY_CERTIFIED_FINITE_0_NEGATIVE_32_POSITIVE
+    TPC329_PLACEMENT_CHANGES = NUMERICALLY_CERTIFIED_FINITE_31_OF_32
+    TPC329_ARITHMETIC_ADVANCE = NO
+    TPC329_FIXED_POWER_CREDIT = 0
+    TPC329_GROWING_SOURCE_NATIVE_L2 = OPEN
+    TPC329_FULL_GATE_B = OPEN
+    TPC329_TWIN_PRIME_RESULT = NONE
+    TPC329_STATUS = NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT
+    TPC329_ROUND2_CLUE = SEPARATE_SOURCE_NORM_FROM_ARITHMETIC_PLACEMENT_WITH_MULTIPLE_PREDECLARED_CONTROLS
+
+papers/tpc-329-heldout-growing-source-native-audit - TPC-329 当前项目 - held-out 两尺度 source-native 审计与置换 placement obstruction，含 32-row certificate、独立重放、stress、PDF 与 local Bridge-B checker。
+
+TPC-328（上一位置）仍保留 source-native finite Gram cancellation/obstruction
+atlas 及其 96-row certificate，作为 TPC-329 的 parent lock。
 
 papers/tpc-328-source-native-l2-cancellation - TPC-328 current project；含 source-native
 V59 residual、exact finite Gram decomposition、96-row four-law certificate、independent

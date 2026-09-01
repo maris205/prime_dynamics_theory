@@ -3,13 +3,66 @@
 
 更新时间：2026-09-01
 
-状态：**TPC328_NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_L2_CANCELLATION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC329_NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.122 current：TPC-328 source-native arithmetic `L2` cancellation
+## 0.123 current：TPC-329 held-out growing source-native placement audit
+
+项目：papers/tpc-329-heldout-growing-source-native-audit/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT**。
+
+TPC-329 承接 TPC-328，在两个此前未使用的 origins `28001,36001` 与两个更大
+scales `4096,8192` 上重放锁定的 V59 source-native residual。保留
+`H=66`、`Q={24,36,54,80}`、`s={1,2}`、literal masks 与四个 sign laws，形成
+`32` 个 rows，并在固定 origin/Q/s 下形成 `64` 个 scale-paired records。
+
+最强正结果：实际 all-plus 的 off-diagonal census 为 `31` negative / `1` positive；
+两个 component controls 为 `32/32` positive；all-plus scale signs 在 `15/16`
+pairings 中保持，energy growth factor 为 `1.9663131482...`--`2.1432646657...`。
+更关键的是预声明 affine placement null
+`pi(i)=(5*i+17) mod source_count` 在两个 source counts 上都是 bijection，保持
+source multiset 与 `L2` norm。置换后的 all-plus census 为 `0` negative / `32`
+positive，`31/32` 个 classifications 改变；共完成 `128` 个 placement comparisons。
+
+最强 obstruction：在该 finite panel 上，all-plus off-diagonal sign 不能由 source
+multiset 或 source `L2` norm 单独决定。这个结论是 `REFUTED_SCOPED`，只针对声明的
+operator、source model、permutation 与 finite rows，不外推为随机置换定理或 growing
+arithmetic theorem。
+
+开放定理：position-aware 的 source-uniform signed-Gram bound、canonical arithmetic
+sign、growing source-native `L2` estimate、strict `1/400` payment 与 Route-B Gate B。
+fixed-power credit 仍为 `0`，twin-prime conclusion 为 `NONE`。Session-named
+evaluator files absent，故不宣称 official Route-A/Route-B pass。
+
+可复用结构：
+
+    locked source -> coherent signed Gram -> actual/null placement pair
+                  -> two-scale growth audit -> independent replay/firewall
+
+ROUND2_CLUE：
+SEPARATE_SOURCE_NORM_FROM_ARITHMETIC_PLACEMENT_WITH_MULTIPLE_PREDECLARED_CONTROLS。
+
+    TPC329_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT
+    TPC329_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
+    TPC329_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC329_COMPONENT_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC329_PLACEMENT_NULL = NUMERICALLY_CERTIFIED_FINITE_MULTISET_PRESERVING_CONTROL
+    TPC329_ALL_PLUS_ACTUAL = NUMERICALLY_CERTIFIED_FINITE_31_NEGATIVE_1_POSITIVE
+    TPC329_ALL_PLUS_PERMUTED = NUMERICALLY_CERTIFIED_FINITE_0_NEGATIVE_32_POSITIVE
+    TPC329_PLACEMENT_CHANGES = NUMERICALLY_CERTIFIED_FINITE_31_OF_32
+    TPC329_ARITHMETIC_ADVANCE = NO
+    TPC329_FIXED_POWER_CREDIT = 0
+    TPC329_GROWING_SOURCE_NATIVE_L2 = OPEN
+    TPC329_FULL_GATE_B = OPEN
+    TPC329_TWIN_PRIME_RESULT = NONE
+    TPC329_STATUS = NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT
+    TPC329_ROUND2_CLUE = SEPARATE_SOURCE_NORM_FROM_ARITHMETIC_PLACEMENT_WITH_MULTIPLE_PREDECLARED_CONTROLS
+
+## 0.122 previous：TPC-328 source-native arithmetic `L2` cancellation
 
 项目：papers/tpc-328-source-native-l2-cancellation/
 
