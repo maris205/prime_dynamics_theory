@@ -1,5 +1,56 @@
 # TPC HANDOFF
 
+TPC-322 current section: operator-level signed projector and prime-shell reassembly
+-----------------------------------------------------------------------------------------------
+
+TPC-322 承接 TPC-321 的 cross-shell profile obstruction，保留同一 TPC-268
+deleted-diagonal centered prime-shell block family，并把 sign-labelled reassembly
+写成有类型的 operator interface。令 `A_\oplus v=(B_pv)_p`，
+`E_e v=m^{-1/2}(e_pv)_p`，`P_e=E_eE_e^*`，以及
+`C_e=sum_p e_pB_p`，则精确有
+`||P_eA_\oplus||_HS^2=m^{-1}||C_e||_F^2`。这一区分了 direct-sum energy、
+coherent signed energy 与 sign law，且保留全部 source columns。
+
+在 `X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows 上，producer、
+independent reverse/einsum replay、stress suite 与 local Bridge-B checker 共同通过。
+每行 exhaustive sign search 都找到 `rho<1` 和 `rho>1` 的 sign；all-plus law 为
+`3/24` below、`21/24` above，index-alternating law 为 `21/24` below、`3/24`
+above。极值 ratio 的有限范围为
+`[0.59905756561947343,0.98033069254228578]` 与
+`[1.0122088324409428,6.8711947177741193]`。
+
+最强正结果是 exact finite signed-projector identity 加上 full-source-column finite
+reassembly atlas。最强 obstruction 是有限 sign geometry 没有选出 canonical sign law；
+未归一化 `rho>1` 不违反 contraction，因为真实 projected fraction 是 `rho/m<=1`。
+这不是 Möbius/von Mangoldt 权重，也没有 source-native arithmetic `L2`、渐近 power
+saving、fixed-power credit、strict `1/400` payment 或 twin-prime conclusion。
+
+    TPC322_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS
+    TPC322_ROUTE_ADVANCE = YES_SCOPED_OPERATOR_LEVEL_SIGNED_REASSEMBLY_INTERFACE
+    TPC322_SIGNED_PROJECTOR_IDENTITY = PROVED_EXACT_FINITE
+    TPC322_OPERATOR_REASSEMBLY_ATLAS = NUMERICALLY_CERTIFIED_FINITE_24_ROWS
+    TPC322_MIN_SIGN_EXISTS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC322_MAX_SIGN_EXISTS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC322_ALL_PLUS_LAW = REFUTED_FINITE_PANEL
+    TPC322_ALTERNATING_LAW = REFUTED_FINITE_PANEL
+    TPC322_ARITHMETIC_ADVANCE = NO
+    TPC322_FIXED_POWER_CREDIT = 0
+    TPC322_FULL_GATE_B = OPEN
+    TPC322_TWIN_PRIME_RESULT = NONE
+    TPC322_STATUS = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS
+    TPC322_STRONGEST_POSITIVE = EXACT_SIGNED_PROJECTOR_IDENTITY_PLUS_24_ROW_ATLAS
+    TPC322_STRONGEST_OBSTRUCTION = NO_CANONICAL_FINITE_SIGN_LAW
+    TPC322_OPEN_THEOREM = SOURCE_NATIVE_ARITHMETIC_SIGNED_REASSEMBLY_BOUND
+    TPC322_REUSABLE_STRUCTURE = DIRECT_SUM_TO_DIAGONAL_ISOMETRY_TO_COHERENT_OPERATOR
+    TPC322_ROUND2_CLUE = TEST_CANONICAL_SIGN_LAWS_AGAINST_OPERATOR_SPECTRAL_PROFILES_AND_SOURCE_NATIVE_ARITHMETIC_L2
+
+Session-named `propose.md` 与 Route-A/Route-B evaluator files 在本 checkout 中仍不存在；
+上述 proof package、independent replay、stress suite 与 local Bridge-B checker 是
+fail-closed fallback，不能写成 official evaluator pass。
+
+更新时间：2026-09-01
+交接状态：`BOLD_CHANNEL_V175_TPC322_SIGNED_PROJECTOR_REASSEMBLY_RELEASED`
+
 TPC-321 current section: cross-shell spectral-profile stability
 -----------------------------------------------------------------------------------------------
 
@@ -11011,10 +11062,10 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V174/TPC-321 是当前 release；其 producer、independent replay、stress audit 与
-cross-shell profile bridge 已封存。TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
+V175/TPC-322 是当前 release；其 producer、independent replay、stress audit 与
+signed-projector bridge 已封存。TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 305 对 normal/optimized 命令、610 次
+当前 curated cascade command set 共 309 对 normal/optimized 命令、618 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -11029,9 +11080,9 @@ TPC-309 再追加末尾 4 对，TPC-310 再追加末尾 4 对，TPC-311 再追�
 TPC-312 再追加末尾 4 对，TPC-313 再追加末尾 4 对，TPC-314 再追加末尾 4 对，
 TPC-315 再追加末尾 4 对，TPC-316 再追加末尾 4 对，TPC-317 再追加末尾 4 对，
 TPC-318 再追加末尾 4 对，TPC-319 再追加末尾 4 对，TPC-320 再追加末尾 4 对，
-TPC-321 再追加末尾 4 对。
-V174/TPC-321 的新增 4 对由
-本项目 bridge 与 standalone tail checks 逐项验证；完整 305 对组合未因重复计算而再次运行。
+TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对。
+V175/TPC-322 的新增 4 对由
+本项目 bridge 与 standalone tail checks 逐项验证；完整 309 对组合未因重复计算而再次运行。
 
 旧的下列句子是历史快照，当前数字由本段覆盖：V169/TPC-316 的 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
@@ -11967,6 +12018,26 @@ ks_gt_002=18 / majorization=3/2/13 / fixed_power_credit=0`。这 4 对是
 V174/TPC-321 的新增尾部；cross-shell profile obstruction 不代表 arithmetic
 cancellation 或官方 Route-A/Route-B 通过。
 
+TPC-322 的项目级 producer、independent replay、projector stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-322-signed-projector-reassembly/code/tpc322_signed_projector_reassembly.py --check
+python -O -B papers/tpc-322-signed-projector-reassembly/code/tpc322_signed_projector_reassembly.py --check
+python -B papers/tpc-322-signed-projector-reassembly/experiments/tpc322_independent_checker.py --check
+python -O -B papers/tpc-322-signed-projector-reassembly/experiments/tpc322_independent_checker.py --check
+python -B papers/tpc-322-signed-projector-reassembly/experiments/tpc322_reassembly_stress.py --check
+python -O -B papers/tpc-322-signed-projector-reassembly/experiments/tpc322_reassembly_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc322_signed_projector_reassembly_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc322_signed_projector_reassembly_checker.py --check
+```
+
+TPC-322 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 均返回零，
+stderr 为空，normal/optimized stdout 逐对 byte-identical；Bridge-B 输出
+`rows=24 / min_sign=24/24 / max_sign=24/24 / all_plus=3/21 /
+alternating=21/3`。这 4 对是 V175/TPC-322 的新增尾部；operator-level finite
+signed reassembly 不代表 canonical arithmetic cancellation、fixed-power saving 或
+官方 Route-A/Route-B 通过。
+
 此前 TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
 
 ```bash
@@ -12007,6 +12078,15 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 ```
 
 随后优先读取：
+
+最新 TPC-322 入口：
+
+papers/tpc-322-signed-projector-reassembly/README.md
+papers/tpc-322-signed-projector-reassembly/PROOF_PACKAGE.md
+papers/tpc-322-signed-projector-reassembly/notes/theorem_ledger.md
+papers/tpc-322-signed-projector-reassembly/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc322_signed_projector_reassembly.md
+research/tpc-big-road/tpc_bridge_b_tpc322_signed_projector_reassembly_checker.py
 
 最新 TPC-321 入口：
 

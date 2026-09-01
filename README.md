@@ -9,7 +9,16 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-321 承接 TPC-320 的 trace-normalized spectral profile，在同一
+当前主线状态：TPC-322 承接 TPC-321 的 cross-shell profile obstruction，在同一
+literal deleted-diagonal centered prime-shell blocks 上定义 sign-labelled diagonal
+projector 与 coherent signed reassembly。X=640,1280,2560、Q={24,36,54,80}、s={1,2}
+给出 24 rows；每一行 exhaustive sign search 都找到 contracting 与 amplifying sign，
+而 all-plus law 为 21/24 amplifying、index-alternating law 为 21/24 contracting。
+这是 operator-level finite signed-projector atlas：signed projector identity 为
+PROVED_EXACT_FINITE，但 canonical sign law、source-native arithmetic L2、fixed-power
+credit 与 full Gate B 仍 OPEN，不把有限 sign ratio 写成 arithmetic cancellation。
+
+TPC-321 承接 TPC-320 的 trace-normalized spectral profile，在同一
 literal deleted-diagonal centered prime-shell Gram 上把比较轴改为固定 X、s 下的相邻
 prime-shell Q。X=640,1280,2560、Q={24,36,54,80}、s={1,2} 给出 24 行和 18 个
 adjacent-Q comparisons；完整排序 profile 的 total-variation 与 cumulative
@@ -37,6 +46,10 @@ evaluator files absent，故不宣称 official Route-A/Route-B pass。
     TPC321_TWIN_PRIME_RESULT = NONE
     TPC321_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT
     TPC321_ROUND2_CLUE = TEST_SIGNED_PROJECTOR_REASSEMBLY_OR_PROVE_A_UNIFORM_SHELL_PROFILE_BOUND_BEFORE_ANY_ARITHMETIC_POWER_CLAIM
+
+papers/tpc-322-signed-projector-reassembly - TPC-322 current project；含完整
+operator-level signed projector identity、24-row exhaustive sign atlas、independent
+replay、stress suite、PDF 与 local Bridge-B checker。
 
 papers/tpc-321-cross-shell-profile-stability - TPC-321 current project；含完整
 trace-normalized ordered-profile distance certificate、majorization obstruction、

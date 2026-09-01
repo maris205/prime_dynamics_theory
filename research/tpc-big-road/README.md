@@ -1,4 +1,38 @@
-# TPC big road V174 / TPC-321: cross-shell spectral-profile stability
+# TPC big road V175 / TPC-322: signed projector and prime-shell reassembly
+
+## V175 current anchor: TPC-322
+
+更新时间：2026-09-01
+
+当前 TPC-322 proof 为
+bridge_b_tpc322_signed_projector_reassembly.md，checker 为
+tpc_bridge_b_tpc322_signed_projector_reassembly_checker.py，编号论文为
+../../papers/tpc-322-signed-projector-reassembly/。
+
+TPC-322 承接 TPC-321 的 cross-shell profile obstruction，保留同一 literal
+deleted-diagonal centered prime-shell blocks，并定义 sign-labelled diagonal
+projector。对 24 rows 的 exhaustive sign atlas，每行都有 `rho<1` 与 `rho>1`
+的 sign；all-plus 为 `3/24` below、`21/24` above，index-alternating 为
+`21/24` below、`3/24` above。projector identity 是 exact finite identity，
+但 canonical sign law、arithmetic cancellation、fixed-power credit 与 full Gate B
+仍 open；不宣称 official Route-A/Route-B pass。
+
+    TPC322_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS
+    TPC322_ROUTE_ADVANCE = YES_SCOPED_OPERATOR_LEVEL_SIGNED_REASSEMBLY_INTERFACE
+    TPC322_SIGNED_PROJECTOR_IDENTITY = PROVED_EXACT_FINITE
+    TPC322_OPERATOR_REASSEMBLY_ATLAS = NUMERICALLY_CERTIFIED_FINITE_24_ROWS
+    TPC322_MIN_SIGN_EXISTS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC322_MAX_SIGN_EXISTS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC322_ALL_PLUS_LAW = REFUTED_FINITE_PANEL
+    TPC322_ALTERNATING_LAW = REFUTED_FINITE_PANEL
+    TPC322_ARITHMETIC_ADVANCE = NO
+    TPC322_FIXED_POWER_CREDIT = 0
+    TPC322_FULL_GATE_B = OPEN
+    TPC322_TWIN_PRIME_RESULT = NONE
+    TPC322_STATUS = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS
+    TPC322_ROUND2_CLUE = TEST_CANONICAL_SIGN_LAWS_AGAINST_OPERATOR_SPECTRAL_PROFILES_AND_SOURCE_NATIVE_ARITHMETIC_L2
+
+---
 
 ## V174 current anchor: TPC-321
 

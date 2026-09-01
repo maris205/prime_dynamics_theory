@@ -1,16 +1,24 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-08-31
+更新时间：2026-09-01
 
-当前地图版本：V174 / TPC-321
+当前地图版本：V175 / TPC-322
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-321`（`NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT`）；
+当前编号锚点：`TPC-322`（`NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS`）；
 对应论文目录为
-`papers/tpc-321-cross-shell-profile-stability/`。
+`papers/tpc-322-signed-projector-reassembly/`。
 
-TPC-321 是当前地图位置：承接 TPC-320 的 trace-normalized spectral profile，在同一
+TPC-322 是当前地图位置：承接 TPC-321 的 cross-shell profile obstruction，在同一
+literal deleted-diagonal centered prime-shell blocks 上定义 sign-labelled diagonal
+projector 与 coherent signed reassembly。24 rows 的 exhaustive sign atlas 每行都找到
+`rho<1` 与 `rho>1`；all-plus 为 `3/24` below、`21/24` above，index-alternating
+为 `21/24` below、`3/24` above。projector identity 是 `PROVED_EXACT_FINITE`，但
+canonical sign law、arithmetic cancellation、fixed-power credit 与 full Gate B 仍 open，
+不把有限 sign ratio 当成 twin-prime 进展。
+
+TPC-321 是上一地图位置：承接 TPC-320 的 trace-normalized spectral profile，在同一
 literal deleted-diagonal centered prime-shell Gram 上比较固定 X、s 下的相邻 Q 壳层。
 X=640,1280,2560、Q={24,36,54,80}、s={1,2} 的 24 rows 形成 18 个
 adjacent-Q comparisons；三条 producer profile path 的九种组合与 independent
@@ -709,8 +717,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V174 / TPC-321
-MAP_LABEL = CROSS-SHELL FULL-PROFILE SEPARATION / MAJORIZATION MIXED / SIGNED REASSEMBLY OPEN
+YOU ARE HERE = V175 / TPC-322
+MAP_LABEL = SIGNED PROJECTOR INTERFACE / FINITE SIGN FLEXIBILITY / CANONICAL REASSEMBLY OPEN
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -946,6 +954,45 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.116 V175 / TPC-322：operator-level signed projector and prime-shell reassembly
+
+TPC-322 承接 TPC-321 的 cross-shell profile obstruction，仍使用同一 literal
+deleted-diagonal centered prime-shell block family。把 direct-sum operator
+`A_\oplus v=(B_pv)_p` 投影到 sign-labelled diagonal copy，定义
+`E_e v=m^{-1/2}(e_pv)_p`、`P_e=E_eE_e^*` 与 `C_e=sum_p e_pB_p`，则有精确恒等式
+`||P_eA_\oplus||_HS^2=m^{-1}||C_e||_F^2`。这是把 signed reassembly 从未类型化的
+符号想法推进为一个 operator-level interface。
+
+在 `X={640,1280,2560}`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows 上，producer、
+independent reverse/einsum replay 和 stress suite 共同认证 exhaustive sign atlas；
+每行同时存在 contracting (`rho<1`) 与 amplifying (`rho>1`) sign。all-plus law
+为 `3/24` below、`21/24` above，index-alternating law 为 `21/24` below、`3/24`
+above；极值 ratio ranges 为 `[0.59905756561947343,0.98033069254228578]` 与
+`[1.0122088324409428,6.8711947177741193]`。
+
+strongest positive result：exact finite signed-projector identity 与 full-source-column
+reassembly certificate。
+
+strongest obstruction：finite sign geometry 没有从 all-plus 或 index alternation 中
+选出 canonical law；`rho>1` 只是 unnormalised coherent ratio，实际 projected fraction
+为 `rho/m<=1`，不违反 contraction。canonical arithmetic realization、source-native
+`L2`、fixed-power credit 与 full Gate B 仍 open；不宣称 official Route-A/Route-B pass。
+
+    TPC322_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS
+    TPC322_ROUTE_ADVANCE = YES_SCOPED_OPERATOR_LEVEL_SIGNED_REASSEMBLY_INTERFACE
+    TPC322_SIGNED_PROJECTOR_IDENTITY = PROVED_EXACT_FINITE
+    TPC322_OPERATOR_REASSEMBLY_ATLAS = NUMERICALLY_CERTIFIED_FINITE_24_ROWS
+    TPC322_MIN_SIGN_EXISTS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC322_MAX_SIGN_EXISTS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC322_ALL_PLUS_LAW = REFUTED_FINITE_PANEL
+    TPC322_ALTERNATING_LAW = REFUTED_FINITE_PANEL
+    TPC322_ARITHMETIC_ADVANCE = NO
+    TPC322_FIXED_POWER_CREDIT = 0
+    TPC322_FULL_GATE_B = OPEN
+    TPC322_TWIN_PRIME_RESULT = NONE
+    TPC322_STATUS = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS
+    TPC322_ROUND2_CLUE = TEST_CANONICAL_SIGN_LAWS_AGAINST_OPERATOR_SPECTRAL_PROFILES_AND_SOURCE_NATIVE_ARITHMETIC_L2
 
 ## 5.115 V174 / TPC-321：cross-shell spectral-profile stability
 
@@ -8000,6 +8047,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-01 | V175 / TPC-322 | Bridge A / Gate B：operator-level signed projector interface 已完成；canonical sign law、arithmetic cancellation、fixed-power credit 与 full Gate B open | `TPC-322` | 承接 TPC-321 的 shell-profile obstruction；24 rows exhaustive sign atlas，每行同时有 `rho<1` 与 `rho>1`；all-plus `3/24` below、index-alternating `21/24` below；下一步为 canonical sign law 的 profile 测试与 source-native arithmetic `L2` |
 | 2026-08-31 | V174 / TPC-321 | Bridge A / Gate B：cross-shell full-profile separation 已完成；uniform shell profile、uniform majorization、arithmetic cancellation、fixed-power credit 与 full Gate B open | `TPC-321` | 承接 TPC-320 的 trace-normalized readout；24 rows / 18 adjacent-Q comparisons；TV 与 Lorenz distance 18/18 越过阈值；majorization 3 forward / 2 reverse / 13 mixed；下一步为 signed projector reassembly 或 uniform profile bound |
 | 2026-08-31 | V173 / TPC-320 | Bridge A / Gate B：trace-normalized spectral concentration readout 已完成；full spectral profile、arithmetic cancellation、fixed-power credit 与 full Gate B open | `TPC-320` | 承接 TPC-319 的 normalization firewall；24 rows / 5 k values / 80 strict concentration decreases / 16 stable-rank and participation observations；下一步为跨 shell 的 full-profile stability |
 | 2026-08-31 | V172 / TPC-319 | Bridge A / Gate B：Ky Fan finite cluster readout 与 normalization firewall 已完成；scale-invariant law、arithmetic cancellation、fixed-power credit 与 full Gate B open | `TPC-319` | 承接 TPC-318 的 top-cluster clue；24 rows / 5 cluster sizes / 80 normalized decreases / 80 unnormalized increases；各层 edge-gap census；下一步为 scale-invariant spectral measure 或 source normalization theorem |

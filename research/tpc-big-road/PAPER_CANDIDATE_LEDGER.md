@@ -1,15 +1,71 @@
 
 # TPC big-road paper candidate ledger
 
-更新时间：2026-08-31
+更新时间：2026-09-01
 
-状态：**TPC321_NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC322_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.115 current：TPC-321 cross-shell spectral-profile stability
+## 0.116 current：TPC-322 operator-level signed projector and prime-shell reassembly
+
+项目：papers/tpc-322-signed-projector-reassembly/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS**。
+
+TPC-322 承接 TPC-321 的 cross-shell profile obstruction，保留同一 literal
+deleted-diagonal centered prime-shell block family。令 `A_\oplus v=(B_pv)_p`，并令
+`E_e v=m^{-1/2}(e_pv)_p` 为 sign-labelled diagonal isometry，则
+`P_e=E_eE_e^*` 是正交 projector，且精确有
+`||P_eA_\oplus||_HS^2=m^{-1}||C_e||_F^2`，其中
+`C_e=sum_p e_pB_p`。这把 direct-sum energy、coherent signed energy 与 sign law
+分开，形成可复用的 operator-level reassembly interface。
+
+在 `X={640,1280,2560}`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows 上，producer、
+independent reverse/einsum replay 与 stress suite 共同认证 exhaustive sign atlas：
+每行均存在 `rho<1` 与 `rho>1` 的 sign；极值 ratio 的有限范围分别为
+`[0.59905756561947343,0.98033069254228578]` 与
+`[1.0122088324409428,6.8711947177741193]`。四个 declared laws 中，all-plus
+为 `3/24` below、`21/24` above，index-alternating 为 `21/24` below、`3/24`
+above；因此不存在可由该面板选出的 canonical sign law。
+
+最强正结果：signed diagonal projector 的 exact finite identity 与 full-source-column
+finite reassembly atlas。
+
+最强 obstruction：sign choice 具有真实有限几何自由度；`rho>1` 是未归一化 coherent
+ratio，并不违反 projector contraction，因为实际 projected fraction 是 `rho/m<=1`。
+这不是 Möbius/von Mangoldt 权重，也没有 arithmetic `L2` 或渐近增长结论。
+
+开放定理：canonical sign law 的 source-native arithmetic realization、growing signed
+reassembly bound、fixed-power credit、strict `1/400` payment、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。Session-named evaluator files absent，故不宣称 official
+Route-A/Route-B pass。
+
+可复用结构：
+
+    direct sum blocks -> diagonal isometry -> orthogonal projector
+                         -> coherent signed operator -> block Gram sign atlas
+
+ROUND2_CLUE：
+TEST_CANONICAL_SIGN_LAWS_AGAINST_OPERATOR_SPECTRAL_PROFILES_AND_SOURCE_NATIVE_ARITHMETIC_L2。
+
+    TPC322_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS
+    TPC322_ROUTE_ADVANCE = YES_SCOPED_OPERATOR_LEVEL_SIGNED_REASSEMBLY_INTERFACE
+    TPC322_SIGNED_PROJECTOR_IDENTITY = PROVED_EXACT_FINITE
+    TPC322_OPERATOR_REASSEMBLY_ATLAS = NUMERICALLY_CERTIFIED_FINITE_24_ROWS
+    TPC322_MIN_SIGN_EXISTS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC322_MAX_SIGN_EXISTS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC322_ALL_PLUS_LAW = REFUTED_FINITE_PANEL
+    TPC322_ALTERNATING_LAW = REFUTED_FINITE_PANEL
+    TPC322_ARITHMETIC_ADVANCE = NO
+    TPC322_FIXED_POWER_CREDIT = 0
+    TPC322_FULL_GATE_B = OPEN
+    TPC322_TWIN_PRIME_RESULT = NONE
+    TPC322_STATUS = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS
+
+## 0.115 previous：TPC-321 cross-shell spectral-profile stability
 
 项目：papers/tpc-321-cross-shell-profile-stability/
 

@@ -1,6 +1,43 @@
 # TPC distilled map and bold channel
 
-## V174 / TPC-321 current anchor
+## V175 / TPC-322 current anchor
+
+更新时间：2026-09-01
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc322_signed_projector_reassembly.md，checker 为
+tpc_bridge_b_tpc322_signed_projector_reassembly_checker.py，编号论文为
+papers/tpc-322-signed-projector-reassembly/。
+
+TPC-322 承接 TPC-321 的 shell-sensitive trace-normalized profile，在同一 literal
+deleted-diagonal centered prime-shell blocks 上把 direct-sum output 投影到
+sign-labelled diagonal copy。精确恒等式给出
+`||P_e A_\oplus||_HS^2=m^{-1}||sum_p e_p B_p||_F^2`，并由 24-row exhaustive
+finite atlas 验证每行同时存在 `rho<1` 与 `rho>1` 的 sign。all-plus law 在 3/24
+行低于 1、21/24 行高于 1；index-alternating law 在 21/24 行低于 1、3/24 行高于 1。
+
+这是 `NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS`，
+signed projector identity 为 `PROVED_EXACT_FINITE`。它只证明 operator-level finite
+interface 与 sign-law flexibility；不提供 canonical Möbius sign、source-native
+arithmetic `L2`、渐近 power saving、fixed-power credit 或 twin-prime endpoint。
+Session-named evaluator files absent，故不宣称 official Route-A/Route-B pass。
+
+    TPC322_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS
+    TPC322_ROUTE_ADVANCE = YES_SCOPED_OPERATOR_LEVEL_SIGNED_REASSEMBLY_INTERFACE
+    TPC322_SIGNED_PROJECTOR_IDENTITY = PROVED_EXACT_FINITE
+    TPC322_OPERATOR_REASSEMBLY_ATLAS = NUMERICALLY_CERTIFIED_FINITE_24_ROWS
+    TPC322_MIN_SIGN_EXISTS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC322_MAX_SIGN_EXISTS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC322_ALL_PLUS_LAW = REFUTED_FINITE_PANEL
+    TPC322_ALTERNATING_LAW = REFUTED_FINITE_PANEL
+    TPC322_ARITHMETIC_ADVANCE = NO
+    TPC322_FIXED_POWER_CREDIT = 0
+    TPC322_FULL_GATE_B = OPEN
+    TPC322_TWIN_PRIME_RESULT = NONE
+    TPC322_STATUS = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS
+    TPC322_ROUND2_CLUE = TEST_CANONICAL_SIGN_LAWS_AGAINST_OPERATOR_SPECTRAL_PROFILES_AND_SOURCE_NATIVE_ARITHMETIC_L2
+
+## V174 / TPC-321 previous anchor
 
 更新时间：2026-08-31
 
