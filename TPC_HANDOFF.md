@@ -1,6 +1,47 @@
 # TPC HANDOFF
 
-TPC-325 current section: source-scale ladder profile audit
+TPC-326 current section: cross-origin scale-ladder replication
+-----------------------------------------------------------------------------------------------
+
+TPC-326 承接 TPC-325 的 fixed-origin source-scale ladder，在完全 disjoint 的第二个
+source origin `16001` 上复制同一 TPC-268 deleted-diagonal centered prime-shell block
+family。四个 rungs 的 source counts 仍为 `160,320,640,1280`，保留 `H=66`、
+`Q={24,36,54,80}`、`s={1,2}` 与四个 predeclared sign laws，总计 32 rows。
+新的 all-plus normalized profile 在 32/32 行 majorizes direct profile；profile 与
+energy-side census 和 TPC-325 完全匹配，TV/energy envelope 与 parent 的最大差分别
+为 0.000797...<0.001、0.004552...<0.005。
+
+producer、independent reverse/einsum replay、cross-origin stress suite、exact rational
+anchor 与 local Bridge-B normal/optimized checker 均通过；这封存的是 finite
+cross-origin replication。它不提供 source-uniform growing theorem、source-native
+arithmetic `L2`、canonical sign、渐近 power saving、fixed-power credit、strict
+1/400 payment 或 twin-prime conclusion。
+
+    TPC326_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION
+    TPC326_ROUTE_ADVANCE = YES_SCOPED_CROSS_ORIGIN_SCALE_LADDER_REPLICATION
+    TPC326_CROSS_ORIGIN_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_2_ORIGINS
+    TPC326_ALL_PLUS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC326_CENSUS_MATCH = NUMERICALLY_CERTIFIED_FINITE_PARENT_MATCH
+    TPC326_ENVELOPE_AGREEMENT = NUMERICALLY_CERTIFIED_FINITE_WITHIN_DECLARED_THRESHOLDS
+    TPC326_ARITHMETIC_ADVANCE = NO
+    TPC326_FIXED_POWER_CREDIT = 0
+    TPC326_FULL_GATE_B = OPEN
+    TPC326_TWIN_PRIME_RESULT = NONE
+    TPC326_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION
+    TPC326_STRONGEST_POSITIVE = CROSS_ORIGIN_SCALE_LADDER_REPLICATION_32_OF_32
+    TPC326_STRONGEST_OBSTRUCTION = FINITE_TWO_ORIGIN_MATCH_IS_NOT_SOURCE_UNIFORMITY
+    TPC326_OPEN_THEOREM = MULTI_ORIGIN_GROWING_SCALE_THEOREM_OR_SOURCE_NATIVE_ARITHMETIC_BOUND
+    TPC326_REUSABLE_STRUCTURE = PARENT_LOCKED_LADDER_PLUS_CROSS_ORIGIN_ENVELOPE_FIREWALL
+    TPC326_ROUND2_CLUE = TEST_CROSS_ORIGIN_SCALE_LADDER_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+Session-named `propose.md` 与 Route-A/Route-B evaluator files 在本 checkout 中仍不存在；
+上述 proof package、independent replay、stress suite 与 local Bridge-B checker 是
+fail-closed fallback，不能写成 official evaluator pass。
+
+更新时间：2026-09-01
+交接状态：`BOLD_CHANNEL_V179_TPC326_CROSS_ORIGIN_SCALE_REPLICATION`
+
+TPC-325 previous section: source-scale ladder profile audit
 -----------------------------------------------------------------------------------------------
 
 TPC-325 承接 TPC-324 的 source-location holdout，保留同一 TPC-268
@@ -43,7 +84,7 @@ fail-closed fallback，不能写成 official evaluator pass。
 更新时间：2026-09-01
 交接状态：`BOLD_CHANNEL_V178_TPC325_SOURCE_SCALE_LADDER_RELEASED`
 
-TPC-324 current section: source-location profile holdout replication
+TPC-324 previous section: source-location profile holdout replication
 -----------------------------------------------------------------------------------------------
 
 TPC-324 承接 TPC-323 的 signed profile-majorization readout，保留同一 TPC-268
@@ -11197,10 +11238,10 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V178/TPC-325 是当前 release；其 producer、independent replay、stress audit 与
-source-scale ladder bridge 已封存。TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
+V179/TPC-326 是当前 release；其 producer、independent replay、stress audit 与
+cross-origin scale ladder bridge 已封存。TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 321 对 normal/optimized 命令、642 次
+当前 curated cascade command set 共 325 对 normal/optimized 命令、650 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -11216,7 +11257,7 @@ TPC-312 再追加末尾 4 对，TPC-313 再追加末尾 4 对，TPC-314 再追�
 TPC-315 再追加末尾 4 对，TPC-316 再追加末尾 4 对，TPC-317 再追加末尾 4 对，
 TPC-318 再追加末尾 4 对，TPC-319 再追加末尾 4 对，TPC-320 再追加末尾 4 对，
 TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追加末尾 4 对，
-TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对。
+TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对。
 V178/TPC-325 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；完整 317 对组合未因重复计算而再次运行。
 
@@ -12256,6 +12297,26 @@ energy_envelope=descending`。这 4 对是 V178/TPC-325 的新增尾部；finite
 envelope 不代表 growing arithmetic theorem、fixed-power saving 或官方
 Route-A/Route-B 通过。
 
+TPC-326 的项目级 producer、independent replay、cross-origin stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-326-cross-origin-scale-replication/code/tpc326_cross_origin_scale_replication.py --check
+python -O -B papers/tpc-326-cross-origin-scale-replication/code/tpc326_cross_origin_scale_replication.py --check
+python -B papers/tpc-326-cross-origin-scale-replication/experiments/tpc326_independent_checker.py --check
+python -O -B papers/tpc-326-cross-origin-scale-replication/experiments/tpc326_independent_checker.py --check
+python -B papers/tpc-326-cross-origin-scale-replication/experiments/tpc326_cross_origin_stress.py --check
+python -O -B papers/tpc-326-cross-origin-scale-replication/experiments/tpc326_cross_origin_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc326_cross_origin_scale_replication_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc326_cross_origin_scale_replication_checker.py --check
+```
+
+TPC-326 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 均返回零，
+stderr 为空，normal/optimized stdout 逐对 byte-identical；Bridge-B 输出
+`rows=32 / origins=2 / all_plus=32/32 / census=parent_match /
+envelopes=within_thresholds`。这是本批次第 5 篇的新增尾部；有限跨源 replication
+不代表 source-uniform growing theorem、arithmetic L2、fixed-power saving 或官方
+Route-A/Route-B 通过。
+
 此前 TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
 
 ```bash
@@ -12296,6 +12357,15 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 ```
 
 随后优先读取：
+
+最新 TPC-326 入口：
+
+papers/tpc-326-cross-origin-scale-replication/README.md
+papers/tpc-326-cross-origin-scale-replication/PROOF_PACKAGE.md
+papers/tpc-326-cross-origin-scale-replication/notes/theorem_ledger.md
+papers/tpc-326-cross-origin-scale-replication/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc326_cross_origin_scale_replication.md
+research/tpc-big-road/tpc_bridge_b_tpc326_cross_origin_scale_replication_checker.py
 
 最新 TPC-325 入口：
 

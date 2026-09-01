@@ -3,13 +3,62 @@
 
 更新时间：2026-09-01
 
-状态：**TPC325_NUMERICALLY_CERTIFIED_FINITE_SOURCE_SCALE_LADDER_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC326_NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.119 current：TPC-325 source-scale ladder profile audit
+## 0.120 current：TPC-326 cross-origin scale-ladder replication
+
+项目：papers/tpc-326-cross-origin-scale-replication/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION**。
+
+TPC-326 承接 TPC-325 的 fixed-origin source-scale ladder，在完全 disjoint 的第二个
+source origin 16001 上复制同一 literal deleted-diagonal centered prime-shell operator。
+四个 nested rungs 的 source counts 仍为 160,320,640,1280；H=66、Q={24,36,54,80}、
+s={1,2} 与四个 predeclared sign laws 全部冻结，总计 32 个新 rows。
+
+最强正结果：新的 all-plus normalized profile 在 32/32 行 majorizes direct profile；
+四种 profile-majorization census 与 TPC-325 完全匹配（all-plus 32/0、alternating
+21/11、mod-4 26/6、half-split 23/9），energy-side census 也匹配。新的 TV lower
+envelope 与 energy upper envelope 相对 parent 的最大差分别为
+0.000797...<0.001 与 0.004552...<0.005；producer、independent reverse/einsum、
+cross-origin stress、exact rational anchor、PDF 与 local Bridge-B normal/optimized
+equality 均通过。
+
+最强 obstruction：这是两个有限 origins、四个有限 rungs 的 replication，不是
+uniform-in-source 或 growing-scale theorem。阈值是实验控制而非 analytic error term；
+没有出现 canonical arithmetic sign 或 source-native cancellation。
+
+开放定理：多 origin 的 growing-scale uniform statement，或者真正 source-native signed
+arithmetic L2 bound。fixed-power credit、strict 1/400 payment、full Gate B 与
+twin-prime conclusion 仍 OPEN/NONE。Session-named evaluator files absent，故不宣称
+official Route-A/Route-B pass。
+
+可复用结构：
+
+    parent-locked finite scale ladder
+        + disjoint-origin replication
+        -> census / envelope agreement firewall
+
+ROUND2_CLUE：
+TEST_CROSS_ORIGIN_SCALE_LADDER_OR_SOURCE_NATIVE_ARITHMETIC_L2。
+
+    TPC326_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION
+    TPC326_CROSS_ORIGIN_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_2_ORIGINS
+    TPC326_ALL_PLUS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC326_CENSUS_MATCH = NUMERICALLY_CERTIFIED_FINITE_PARENT_MATCH
+    TPC326_ENVELOPE_AGREEMENT = NUMERICALLY_CERTIFIED_FINITE_WITHIN_DECLARED_THRESHOLDS
+    TPC326_ARITHMETIC_ADVANCE = NO
+    TPC326_FIXED_POWER_CREDIT = 0
+    TPC326_FULL_GATE_B = OPEN
+    TPC326_TWIN_PRIME_RESULT = NONE
+    TPC326_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION
+    TPC326_ROUND2_CLUE = TEST_CROSS_ORIGIN_SCALE_LADDER_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+## 0.119 previous：TPC-325 source-scale ladder profile audit
 
 项目：papers/tpc-325-scale-ladder-profile/
 

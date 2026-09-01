@@ -1,6 +1,45 @@
 # TPC distilled map and bold channel
 
-## V178 / TPC-325 current anchor
+## V179 / TPC-326 current anchor
+
+更新时间：2026-09-01
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc326_cross_origin_scale_replication.md，checker 为
+tpc_bridge_b_tpc326_cross_origin_scale_replication_checker.py，编号论文为
+papers/tpc-326-cross-origin-scale-replication/。
+
+TPC-326 承接 TPC-325 的 source-scale ladder，把同一 literal
+deleted-diagonal centered prime-shell operator 搬到完全 disjoint 的第二个 source
+origin 16001。四个 nested source counts 仍为 160,320,640,1280；H=66、
+Q={24,36,54,80}、s={1,2} 与四个 sign laws 全部冻结。新的 32 rows 中 all-plus
+normalized profile 在 32/32 行 majorizes direct profile，四种 profile/energy census
+与 TPC-325 完全匹配；TV envelope 最大差 0.000797...、energy upper envelope 最大差
+0.004552...，均低于预声明阈值 0.001、0.005。
+
+这是 NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION。它是
+有限 adversarial replication，不是 source-uniform theorem、arithmetic L2、
+fixed-power credit 或 twin-prime endpoint；Session-named evaluator files absent，
+故只记 local Bridge-B fail-closed，不宣称 official Route-A/Route-B pass。
+
+    TPC326_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION
+    TPC326_CROSS_ORIGIN_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_2_ORIGINS
+    TPC326_ALL_PLUS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC326_CENSUS_MATCH = NUMERICALLY_CERTIFIED_FINITE_PARENT_MATCH
+    TPC326_ENVELOPE_AGREEMENT = NUMERICALLY_CERTIFIED_FINITE_WITHIN_DECLARED_THRESHOLDS
+    TPC326_ARITHMETIC_ADVANCE = NO
+    TPC326_FIXED_POWER_CREDIT = 0
+    TPC326_FULL_GATE_B = OPEN
+    TPC326_TWIN_PRIME_RESULT = NONE
+    TPC326_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION
+    TPC326_ROUND2_CLUE = TEST_CROSS_ORIGIN_SCALE_LADDER_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+## V178 / TPC-325 previous anchor
+
+TPC-325 的完整入口与 finite source-scale audit 仍保留在下方；它是本关的直接
+parent certificate 与 engine provenance。
+
+## V178 / TPC-325 release details
 
 更新时间：2026-09-01
 
@@ -212,9 +251,9 @@ Route-A/Route-B pass。
     TPC320_ROUND2_CLUE = AUDIT_SPECTRAL_PROFILE_STABILITY_ACROSS_SHELLS_OR_TEST_SIGNED_PROJECTOR_REASSEMBLY_BEFORE_ANY_ARITHMETIC_POWER_CLAIM
 
 更新时间：2026-09-01
-状态：`BOLD_CHANNEL_V178 / SOURCE_SCALE_LADDER`
-claim level：`NUMERICALLY_CERTIFIED_FINITE_SOURCE_SCALE_LADDER_AUDIT`
-编号事实终点：TPC-325；TPC-325 trigger：`true`
+状态：`BOLD_CHANNEL_V179 / CROSS_ORIGIN_SCALE_REPLICATION`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION`
+编号事实终点：TPC-326；TPC-326 trigger：`true`
 
 此前 TPC-320 入口：proof 为
 `research/tpc-big-road/bridge_b_tpc320_trace_normalized_spectral_concentration.md`，checker 为

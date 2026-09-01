@@ -9,7 +9,32 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-325 承接 TPC-324 的 source-location holdout，在同一
+当前主线状态：TPC-326 承接 TPC-325 的 source-scale ladder，在完全 disjoint 的
+第二个 source origin 16001 重跑同一四档 N={320,640,1280,2560}。保持
+H=66、Q={24,36,54,80}、s={1,2} 和四个 sign laws 不变，32 个新 rows 的
+all-plus normalized profile 在 32/32 行 majorizes direct profile；四种 sign-law
+profile census 与 TPC-325 完全相同，TV/energy envelope 与 parent 的最大差分别为
+0.000797...<0.001、0.004552...<0.005。这是 finite cross-origin replication，
+不是 uniform-in-source theorem、source-native arithmetic L2、fixed-power credit 或
+full Gate B。
+
+    TPC326_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION
+    TPC326_CROSS_ORIGIN_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_2_ORIGINS
+    TPC326_ALL_PLUS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC326_CENSUS_MATCH = NUMERICALLY_CERTIFIED_FINITE_PARENT_MATCH
+    TPC326_ENVELOPE_AGREEMENT = NUMERICALLY_CERTIFIED_FINITE_WITHIN_DECLARED_THRESHOLDS
+    TPC326_ARITHMETIC_ADVANCE = NO
+    TPC326_FIXED_POWER_CREDIT = 0
+    TPC326_FULL_GATE_B = OPEN
+    TPC326_TWIN_PRIME_RESULT = NONE
+    TPC326_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION
+    TPC326_ROUND2_CLUE = TEST_CROSS_ORIGIN_SCALE_LADDER_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+papers/tpc-326-cross-origin-scale-replication - TPC-326 current project；含第二
+disjoint origin 的 32-row cross-origin certificate、independent reverse/einsum replay、
+residue-perturbation stress、PDF 与 local Bridge-B checker。
+
+TPC-325 是上一位置：承接 TPC-324 的 source-location holdout，在同一
 literal deleted-diagonal centered prime-shell blocks 上冻结新 origin `12001`，
 只改变嵌套 source cardinality `160,320,640,1280`。四个 scale rungs 与
 `Q={24,36,54,80}`、`s={1,2}` 形成 32 rows；all-plus normalized profile 在
@@ -31,7 +56,7 @@ Gate B。
     TPC325_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_SCALE_LADDER_AUDIT
     TPC325_ROUND2_CLUE = TEST_SCALE_LADDER_SOURCE_REPLICATION_OR_SOURCE_NATIVE_ARITHMETIC_L2
 
-papers/tpc-325-scale-ladder-profile - TPC-325 current project；含固定 origin 的
+papers/tpc-325-scale-ladder-profile - TPC-325 previous project；含固定 origin 的
 四档 nested scale ladder、32-row profile certificate、independent reverse/einsum
 replay、stress suite、PDF 与 local Bridge-B checker。
 
