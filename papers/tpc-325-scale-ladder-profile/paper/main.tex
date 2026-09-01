@@ -1,0 +1,171 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.78in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,mathtools}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\title{A Finite Source--Scale Ladder for Signed Prime--Shell Spectral Profiles}
+\author{Liang Wang\\School of Mathematics and Statistics\\Huazhong University of Science and Technology (HUST)}
+\date{September 1, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC--324 replicated a finite signed spectral-profile pattern at new source
+locations.  We next ask whether the pattern survives a controlled change of
+source cardinality.  Using the same literal deleted-diagonal centered
+prime-shell blocks, we freeze a new source origin and a nested four-rung
+ladder with source counts $160,320,640,1280$.  Across
+$Q\in\{24,36,54,80\}$ and exponents $s\in\{1,2\}$, the all-plus coherent
+normalized profile majorizes the direct profile on all $32$ rows.  The
+outward lower envelope of profile total variation and the outward upper
+envelope of the coherent energy ratio both decrease strictly across the four
+rungs.  These are finite numerical certificates and observations, not an
+asymptotic theorem, an arithmetic cancellation estimate, or a twin-prime
+result.
+\end{abstract}
+
+\section{Question and claim boundary}
+
+Let $I_N=[12001,12000+N/2]\cap\mathbb Z$ for
+$N\in\{320,640,1280,2560\}$.  Thus the four actual source counts are
+$N/2=160,320,640,1280$, and the intervals are nested.  For a prime
+$p\in(Q,2Q]$, define the literal block
+\begin{equation}
+B_{p,N}^{(s)}(u,t)=p\frac{H^{2s}}{(H^2+(u-t)^2)^s}
+\left({\bf 1}_{p\mid u-t}-\frac1{p-1}\right)
+{\bf 1}_{u\ne t}{\bf 1}_{p\nmid u}{\bf 1}_{p\nmid t},
+\qquad H=66.
+\end{equation}
+The direct and signed Grams are
+\begin{equation}
+G_0(N)=\sum_p B_p^*B_p,\qquad
+G_e(N)=\left(\sum_p e_pB_p\right)^*
+                 \left(\sum_p e_pB_p\right).
+\end{equation}
+We use four predeclared laws: all-plus, index-alternating, the mod-$4$
+character, and half-split signs.
+
+For a positive-trace Gram $G$, let
+\[
+\pi(G)=\left(\frac{\lambda_1(G)}{\operatorname{tr}G},\ldots,
+ \frac{\lambda_n(G)}{\operatorname{tr}G}\right),
+ \qquad \lambda_1\geq\cdots\geq\lambda_n.
+\]
+We say that the signed profile majorizes the direct profile when every
+interior partial-sum difference is nonnegative and at least one is positive.
+The principal claim is deliberately finite:
+\begin{quote}
+\textbf{NUMERICALLY CERTIFIED FINITE:} all-plus majorization on $32/32$
+ladder rows, with a strict descending four-rung diagnostic envelope.
+\end{quote}
+
+\section{Exact structure and protocol}
+
+Every Gram above is of the form $A^*A$ (or a finite sum of such matrices), so
+positive semidefiniteness and positive spectral-profile typing are exact finite
+facts (standard spectral facts are summarized in
+\cite{horn2013matrix}).  Also, for $a>0$, $\pi(aG)=\pi(G)$ while
+$\operatorname{tr}(aG)=a\operatorname{tr}(G)$.  Energy ratio and normalized
+shape are therefore different observables; one cannot be substituted for the
+other.
+
+The scale intervention is source cardinality only: the origin, height, shell
+anchors, exponents, kernel, and sign menu are held fixed.  The producer is
+provenance-locked to the TPC--324 literal engine.  It records forward SciPy,
+forward NumPy, and reverse NumPy accumulation/spectral paths.  A separate
+checker rebuilds the blocks in reverse order with an independent einsum
+implementation.  A stress suite verifies strict nesting, disjointness from
+all prior frozen panels, a nontrivial residue-mask perturbation, the envelope
+trend, and the claim firewall.
+
+\section{Results}
+
+Table~\ref{tab:ladder} gives the all-plus scale envelopes.  Each rung contains
+eight rows (four shell anchors and two exponents).  The prefix lower endpoint
+is positive at every rung; the two displayed envelope columns decrease
+strictly.  The numbers are outward-rounded finite diagnostics.
+
+\begin{table}[ht]
+\centering
+\caption{All-plus finite scale ladder.}
+\label{tab:ladder}
+\small
+\begin{tabular}{rrrrr}
+\toprule
+$N$ & $|I_N|$ & $\min$ prefix lower & $\min$ TV lower & $\max$ energy ratio\\
+\midrule
+320  & 160  & $1.25523\,10^{-5}$ & 0.285851 & 8.900245\\
+640  & 320  & $3.30131\,10^{-4}$ & 0.211205 & 6.868573\\
+1280 & 640  & $6.91139\,10^{-5}$ & 0.190206 & 6.250493\\
+2560 & 1280 & $1.64929\,10^{-5}$ & 0.170135 & 5.999045\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The full profile census is
+\begin{center}
+\small
+\begin{tabular}{lrrr}
+\toprule
+sign law & signed majorizes & mixed & direct majorizes\\
+\midrule
+all-plus & 32 & 0 & 0\\
+alternating index & 21 & 11 & 0\\
+mod-$4$ character & 26 & 6 & 0\\
+half-split & 23 & 9 & 0\\
+\bottomrule
+\end{tabular}
+\end{center}
+The all-plus statement is thus stable over the declared ladder, while the
+alternative laws remain mixed rather than converging to a selected canonical
+arithmetic sign.  The all-plus energy ratio is below one on $4/32$ rows and
+above one on $28/32$ rows.  This crossing is compatible with, and reinforces,
+the amplitude/shape separation.
+
+As a small exact anchor at the new origin, the interval $[12001,12016]$ with
+$Q=4,s=1$ has rational direct and alternating-signed energy digests
+\texttt{b21611...982990} and \texttt{6dd9a7...4a5d6}, respectively.  Their
+decimal energies are approximately $1476.329537716392$ and
+$1631.802032195217$.  The complete numerators and denominators are retained
+in the canonical certificate rather than rounded into the manuscript.
+
+\section{Interpretation and obstruction}
+
+The result advances the route from source-location replication to a
+fixed-origin finite scale audit.  It does not establish that the four-rung
+envelopes have a limit, or that a profile law is uniform for arbitrary source
+intervals.  In particular, the nested intervals change the Hilbert-space
+dimension, so their comparison is not an identity under unitary translation.
+The imported literal engine also contains no Möbius or von Mangoldt weighting.
+
+Accordingly the arithmetic status is
+\begin{equation*}
+\texttt{ARITHMETIC\_ADVANCE = NO},\qquad
+\texttt{FIXED\_POWER\_CREDIT = 0},\qquad
+\texttt{FULL\_GATE\_B = OPEN}.
+\end{equation*}
+The next minimal tests are a disjoint second scale ladder and a source-native
+signed arithmetic $L^2$ estimate.  The Session-named official Route-A and
+Route-B evaluator files are absent from this checkout; the local Bridge-B
+record is therefore fail-closed and makes no official-pass claim.
+
+\section{Reproducibility}
+
+The repository package contains the frozen protocol, derivation and proof
+packages, canonical JSON certificate, independent replay, stress suite, and
+the local Bridge-B checker.  From the repository root, run:
+\begin{verbatim}
+python -B papers/tpc-325-scale-ladder-profile/code/tpc325_scale_ladder_profile.py --check
+python -B papers/tpc-325-scale-ladder-profile/experiments/tpc325_independent_checker.py --check
+python -B papers/tpc-325-scale-ladder-profile/experiments/tpc325_scale_stress.py --check
+\end{verbatim}
+The optimized Python counterparts and the Bridge-B normal/optimized equality
+check are part of the release contract.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

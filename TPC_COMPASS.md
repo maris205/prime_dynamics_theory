@@ -1,6 +1,41 @@
 # TPC distilled map and bold channel
 
-## V177 / TPC-324 current anchor
+## V178 / TPC-325 current anchor
+
+更新时间：2026-09-01
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc325_scale_ladder_profile.md，checker 为
+tpc_bridge_b_tpc325_scale_ladder_profile_checker.py，编号论文为
+papers/tpc-325-scale-ladder-profile/。
+
+TPC-325 承接 TPC-324 的 source-location holdout，在同一 literal
+deleted-diagonal centered prime-shell blocks 上冻结新 origin `12001`，只改变嵌套
+source cardinality `160,320,640,1280`。四个 scale rungs 与
+`Q={24,36,54,80}`、`s={1,2}` 形成 32 rows；all-plus normalized profile 在 32/32
+行 majorizes direct profile。outward lower TV envelope 与 outward upper energy
+envelope 均沿四档严格下降；替代 sign laws 的 majorizing/mixed 计数为
+`21/11`、`26/6`、`23/9`。
+
+这是 `NUMERICALLY_CERTIFIED_FINITE_SOURCE_SCALE_LADDER_AUDIT`；四档趋势仍只是
+finite numerical observation，不提供 uniform growing theorem、source-native
+arithmetic `L2`、fixed-power credit 或 twin-prime endpoint。Session-named evaluator
+files absent，故不宣称 official Route-A/Route-B pass。
+
+    TPC325_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_SCALE_LADDER_AUDIT
+    TPC325_SCALE_LADDER = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_4_SCALES
+    TPC325_ALL_PLUS_SCALE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC325_ALL_PLUS_PROFILE_MAJORISATION = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC325_TV_ENVELOPE = NUMERICAL_OBSERVATION_STRICTLY_DESCENDING_4_SCALES
+    TPC325_ENERGY_ENVELOPE = NUMERICAL_OBSERVATION_STRICTLY_DESCENDING_4_SCALES
+    TPC325_ARITHMETIC_ADVANCE = NO
+    TPC325_FIXED_POWER_CREDIT = 0
+    TPC325_FULL_GATE_B = OPEN
+    TPC325_TWIN_PRIME_RESULT = NONE
+    TPC325_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_SCALE_LADDER_AUDIT
+    TPC325_ROUND2_CLUE = TEST_SCALE_LADDER_SOURCE_REPLICATION_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+## V177 / TPC-324 previous anchor
 
 更新时间：2026-09-01
 
@@ -177,9 +212,9 @@ Route-A/Route-B pass。
     TPC320_ROUND2_CLUE = AUDIT_SPECTRAL_PROFILE_STABILITY_ACROSS_SHELLS_OR_TEST_SIGNED_PROJECTOR_REASSEMBLY_BEFORE_ANY_ARITHMETIC_POWER_CLAIM
 
 更新时间：2026-09-01
-状态：`BOLD_CHANNEL_V177 / SOURCE_PROFILE_HOLDOUT`
-claim level：`NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION`
-编号事实终点：TPC-324；TPC-324 trigger：`true`
+状态：`BOLD_CHANNEL_V178 / SOURCE_SCALE_LADDER`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_SOURCE_SCALE_LADDER_AUDIT`
+编号事实终点：TPC-325；TPC-325 trigger：`true`
 
 此前 TPC-320 入口：proof 为
 `research/tpc-big-road/bridge_b_tpc320_trace_normalized_spectral_concentration.md`，checker 为

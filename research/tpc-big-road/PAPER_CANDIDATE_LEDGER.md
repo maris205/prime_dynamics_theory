@@ -3,13 +3,65 @@
 
 更新时间：2026-09-01
 
-状态：**TPC324_NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC325_NUMERICALLY_CERTIFIED_FINITE_SOURCE_SCALE_LADDER_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.118 current：TPC-324 source-location profile holdout
+## 0.119 current：TPC-325 source-scale ladder profile audit
+
+项目：papers/tpc-325-scale-ladder-profile/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_SOURCE_SCALE_LADDER_AUDIT**。
+
+TPC-325 承接 TPC-324 的 source-location holdout，在同一 literal
+deleted-diagonal centered prime-shell block family 上冻结新 source origin `12001`，
+只改变 nested source cardinality。四个 rungs 为 `N={320,640,1280,2560}`，实际
+source counts 为 `160,320,640,1280`；`H=66`、`Q={24,36,54,80}`、`s={1,2}`
+与四个 predeclared sign laws 保持不变，总计 32 rows。all-plus normalized profile
+在 32/32 行 majorizes direct profile。每个 rung 的 all-plus profile prefix lower
+endpoint 均为正；outward lower TV envelope 与 outward upper energy envelope 都沿
+四档严格下降。
+
+最强正结果：固定 origin 的四档 scale ladder 给出 all-plus `32/32` profile
+majorization，并由三路径 producer、independent reverse/einsum replay、stress suite、
+exact rational anchor、PDF 与 local Bridge-B normal/optimized equality 共同封存。
+
+最强 obstruction：四个有限 rungs 改变了 Hilbert-space dimension；严格下降的 envelope
+只是有限 numerical observation，不能升级为 growing-X limit、uniform-in-source law 或
+arithmetic cancellation。alternative laws 的 majorizing/mixed 计数为 alternating
+`21/11`、mod-4 `26/6`、half-split `23/9`，没有选出 canonical arithmetic sign。
+
+开放定理：disjoint scale replication 或 source-native signed arithmetic `L2`，随后才
+能讨论 uniform promotion。fixed-power credit、strict `1/400` payment、full Gate B 与
+twin-prime conclusion 仍 OPEN/NONE。Session-named evaluator files absent，故不宣称
+official Route-A/Route-B pass。
+
+可复用结构：
+
+    fixed-origin nested source ladder
+        + trace-normalized signed/direct profiles
+        -> finite scale-envelope firewall
+
+ROUND2_CLUE：
+TEST_SCALE_LADDER_SOURCE_REPLICATION_OR_SOURCE_NATIVE_ARITHMETIC_L2。
+
+    TPC325_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_SCALE_LADDER_AUDIT
+    TPC325_ROUTE_ADVANCE = YES_SCOPED_SOURCE_SCALE_LADDER_AUDIT
+    TPC325_SCALE_LADDER = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_4_SCALES
+    TPC325_ALL_PLUS_SCALE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC325_ALL_PLUS_PROFILE_MAJORISATION = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC325_TV_ENVELOPE = NUMERICAL_OBSERVATION_STRICTLY_DESCENDING_4_SCALES
+    TPC325_ENERGY_ENVELOPE = NUMERICAL_OBSERVATION_STRICTLY_DESCENDING_4_SCALES
+    TPC325_ARITHMETIC_ADVANCE = NO
+    TPC325_FIXED_POWER_CREDIT = 0
+    TPC325_FULL_GATE_B = OPEN
+    TPC325_TWIN_PRIME_RESULT = NONE
+    TPC325_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_SCALE_LADDER_AUDIT
+    TPC325_ROUND2_CLUE = TEST_SCALE_LADDER_SOURCE_REPLICATION_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+## 0.118 previous：TPC-324 source-location profile holdout
 
 项目：papers/tpc-324-source-profile-holdout/
 

@@ -9,7 +9,33 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-324 承接 TPC-323 的 profile-majorization readout，在同一
+当前主线状态：TPC-325 承接 TPC-324 的 source-location holdout，在同一
+literal deleted-diagonal centered prime-shell blocks 上冻结新 origin `12001`，
+只改变嵌套 source cardinality `160,320,640,1280`。四个 scale rungs 与
+`Q={24,36,54,80}`、`s={1,2}` 形成 32 rows；all-plus normalized profile 在
+32/32 行 majorizes direct profile，且 outward lower TV envelope 与 outward upper
+energy envelope 均沿四档严格下降。这个结果是 finite source-scale audit；它不提供
+uniform growing theorem、source-native arithmetic L2、fixed-power credit 或 full
+Gate B。
+
+    TPC325_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_SCALE_LADDER_AUDIT
+    TPC325_SCALE_LADDER = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_4_SCALES
+    TPC325_ALL_PLUS_SCALE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC325_ALL_PLUS_PROFILE_MAJORISATION = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC325_TV_ENVELOPE = NUMERICAL_OBSERVATION_STRICTLY_DESCENDING_4_SCALES
+    TPC325_ENERGY_ENVELOPE = NUMERICAL_OBSERVATION_STRICTLY_DESCENDING_4_SCALES
+    TPC325_ARITHMETIC_ADVANCE = NO
+    TPC325_FIXED_POWER_CREDIT = 0
+    TPC325_FULL_GATE_B = OPEN
+    TPC325_TWIN_PRIME_RESULT = NONE
+    TPC325_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_SCALE_LADDER_AUDIT
+    TPC325_ROUND2_CLUE = TEST_SCALE_LADDER_SOURCE_REPLICATION_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+papers/tpc-325-scale-ladder-profile - TPC-325 current project；含固定 origin 的
+四档 nested scale ladder、32-row profile certificate、independent reverse/einsum
+replay、stress suite、PDF 与 local Bridge-B checker。
+
+TPC-324 是上一位置：
 literal deleted-diagonal centered prime-shell blocks 上做预注册的 source-location
 holdout。两个与训练 union 完全 disjoint 的 source panels 共 48 rows；all-plus
 profile 在 48/48 行 majorizes direct profile，且每个 panel 单独为 24/24。alternating、

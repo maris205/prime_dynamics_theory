@@ -1,5 +1,48 @@
 # TPC HANDOFF
 
+TPC-325 current section: source-scale ladder profile audit
+-----------------------------------------------------------------------------------------------
+
+TPC-325 承接 TPC-324 的 source-location holdout，保留同一 TPC-268
+deleted-diagonal centered prime-shell block family，在新 source origin `12001` 上
+只改变 nested source cardinality。四个 rungs 为 `N={320,640,1280,2560}`，实际
+source counts 为 `160,320,640,1280`，并保留 `H=66`、`Q={24,36,54,80}`、
+`s={1,2}` 与四个 predeclared sign laws，总计 32 rows。all-plus normalized profile
+在 32/32 行 majorizes direct profile；每个 rung 的 prefix lower endpoint 均为正，
+outward lower TV envelope 与 outward upper energy envelope 都沿四档严格下降。
+
+producer、independent reverse/einsum replay、scale stress suite 与 local Bridge-B
+normal/optimized checker 均通过；这封存的是 finite source-scale audit。替代 laws
+的 majorizing/mixed 计数为 alternating `21/11`、mod-4 `26/6`、half-split `23/9`。
+四个 finite rungs 改变 Hilbert-space dimension，因此趋势不等于 growing-X limit。
+source-native arithmetic `L2`、canonical arithmetic sign、渐近 power saving、
+fixed-power credit、strict `1/400` payment 与 twin-prime conclusion 仍未支付。
+
+    TPC325_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_SCALE_LADDER_AUDIT
+    TPC325_ROUTE_ADVANCE = YES_SCOPED_SOURCE_SCALE_LADDER_AUDIT
+    TPC325_SCALE_LADDER = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_4_SCALES
+    TPC325_ALL_PLUS_SCALE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC325_ALL_PLUS_PROFILE_MAJORISATION = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC325_TV_ENVELOPE = NUMERICAL_OBSERVATION_STRICTLY_DESCENDING_4_SCALES
+    TPC325_ENERGY_ENVELOPE = NUMERICAL_OBSERVATION_STRICTLY_DESCENDING_4_SCALES
+    TPC325_ARITHMETIC_ADVANCE = NO
+    TPC325_FIXED_POWER_CREDIT = 0
+    TPC325_FULL_GATE_B = OPEN
+    TPC325_TWIN_PRIME_RESULT = NONE
+    TPC325_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_SCALE_LADDER_AUDIT
+    TPC325_STRONGEST_POSITIVE = ALL_PLUS_SCALE_LADDER_MAJORISATION_32_OF_32
+    TPC325_STRONGEST_OBSTRUCTION = FOUR_FINITE_RUNG_TRENDS_DO_NOT_PROVE_A_GROWING_THEOREM
+    TPC325_OPEN_THEOREM = DISJOINT_SCALE_REPLICATION_OR_SOURCE_NATIVE_SIGNED_ARITHMETIC_BOUND
+    TPC325_REUSABLE_STRUCTURE = FIXED_ORIGIN_NESTED_LADDER_PLUS_TRACE_PROFILE_FIREWALL
+    TPC325_ROUND2_CLUE = TEST_SCALE_LADDER_SOURCE_REPLICATION_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+Session-named `propose.md` 与 Route-A/Route-B evaluator files 在本 checkout 中仍不存在；
+上述 proof package、independent replay、stress suite 与 local Bridge-B checker 是
+fail-closed fallback，不能写成 official evaluator pass。
+
+更新时间：2026-09-01
+交接状态：`BOLD_CHANNEL_V178_TPC325_SOURCE_SCALE_LADDER_RELEASED`
+
 TPC-324 current section: source-location profile holdout replication
 -----------------------------------------------------------------------------------------------
 
@@ -11154,10 +11197,10 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V177/TPC-324 是当前 release；其 producer、independent replay、stress audit 与
-source-profile holdout bridge 已封存。TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
+V178/TPC-325 是当前 release；其 producer、independent replay、stress audit 与
+source-scale ladder bridge 已封存。TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 317 对 normal/optimized 命令、634 次
+当前 curated cascade command set 共 321 对 normal/optimized 命令、642 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -11173,9 +11216,9 @@ TPC-312 再追加末尾 4 对，TPC-313 再追加末尾 4 对，TPC-314 再追�
 TPC-315 再追加末尾 4 对，TPC-316 再追加末尾 4 对，TPC-317 再追加末尾 4 对，
 TPC-318 再追加末尾 4 对，TPC-319 再追加末尾 4 对，TPC-320 再追加末尾 4 对，
 TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追加末尾 4 对，
-TPC-324 再追加末尾 4 对。
-V177/TPC-324 的新增 4 对由
-本项目 bridge 与 standalone tail checks 逐项验证；完整 313 对组合未因重复计算而再次运行。
+TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对。
+V178/TPC-325 的新增 4 对由
+本项目 bridge 与 standalone tail checks 逐项验证；完整 317 对组合未因重复计算而再次运行。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
@@ -12193,6 +12236,26 @@ alternative=34/14,42/6,36/12`。这 4 对是 V177/TPC-324 的新增尾部；fini
 source-location replication 不代表 source-native arithmetic cancellation、
 fixed-power saving 或官方 Route-A/Route-B 通过。
 
+TPC-325 的项目级 producer、independent replay、scale stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-325-scale-ladder-profile/code/tpc325_scale_ladder_profile.py --check
+python -O -B papers/tpc-325-scale-ladder-profile/code/tpc325_scale_ladder_profile.py --check
+python -B papers/tpc-325-scale-ladder-profile/experiments/tpc325_independent_checker.py --check
+python -O -B papers/tpc-325-scale-ladder-profile/experiments/tpc325_independent_checker.py --check
+python -B papers/tpc-325-scale-ladder-profile/experiments/tpc325_scale_stress.py --check
+python -O -B papers/tpc-325-scale-ladder-profile/experiments/tpc325_scale_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc325_scale_ladder_profile_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc325_scale_ladder_profile_checker.py --check
+```
+
+TPC-325 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 均返回零，
+stderr 为空，normal/optimized stdout 逐对 byte-identical；Bridge-B 输出
+`rows=32 / scales=4 / all_plus=32/32 / tv_envelope=descending /
+energy_envelope=descending`。这 4 对是 V178/TPC-325 的新增尾部；finite scale
+envelope 不代表 growing arithmetic theorem、fixed-power saving 或官方
+Route-A/Route-B 通过。
+
 此前 TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
 
 ```bash
@@ -12233,6 +12296,15 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 ```
 
 随后优先读取：
+
+最新 TPC-325 入口：
+
+papers/tpc-325-scale-ladder-profile/README.md
+papers/tpc-325-scale-ladder-profile/PROOF_PACKAGE.md
+papers/tpc-325-scale-ladder-profile/notes/theorem_ledger.md
+papers/tpc-325-scale-ladder-profile/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc325_scale_ladder_profile.md
+research/tpc-big-road/tpc_bridge_b_tpc325_scale_ladder_profile_checker.py
 
 最新 TPC-324 入口：
 
