@@ -1,6 +1,61 @@
 # TPC HANDOFF
 
-TPC-330 current section: multi-permutation response spectrum
+TPC-331 current section: control-average and centered position-response decomposition
+-----------------------------------------------------------------------------------------------
+
+TPC-331 承接 TPC-330，把 identity、三个 odd-affine controls 与 reversal 视为一个五元素
+finite control orbit。对 `w_j=P_jv`、`v_bar=mean_j w_j`、`z_j=w_j-v_bar`，任意有限
+quadratic form 都满足
+
+```text
+mean_j q(w_j) = q(v_bar) + mean_j q(z_j).
+```
+
+这条 exact finite identity 同时应用于 signed-Gram energy `E`、coordinate diagonal `D`
+与 off-diagonal `O=E-D`。同一两个 held-out origins `28001,36001`、两个 scales
+`4096,8192`、四个 shell anchors、两个 exponents、四个 sign laws、五个 bijections 与
+hash-locked V59 source-native residual 全部保持不变；32 rows 形成 128 个 law-level
+decomposition observations。
+
+最强正结果：all-plus control-average 与 centered-position components 均为 `32/32`
+positive，coherent mean 为 `31/32` positive；centered component 承载约
+`60.3%--85.2%` 的 finite all-plus energy。三种 decomposition identities 的 exact
+rational anchor、independent reverse-order replay、mutation stress、PDF audit 与 local
+Bridge-B normal/optimized equality 均封存。
+
+最强 obstruction：finite positive response 不能被归因于单一 coherent source-average
+或单一 centered position fluctuation；coherent component 有一条 negative row，而
+centered component 仍承载主要 energy。下一条 theorem 必须同时控制 source-aligned
+与 position-aware components。growing source-native `L2`、canonical sign、strict
+`1/400` payment、fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+    TPC331_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
+    TPC331_EXACT_MEAN_CENTERED_DECOMPOSITION = PROVED_EXACT_FINITE
+    TPC331_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC331_CONTROL_AVERAGE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC331_CENTERED_POSITION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC331_COHERENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_31_OF_32
+    TPC331_NUMERIC_IDENTITY = NUMERICALLY_CERTIFIED_FINITE
+    TPC331_ARITHMETIC_ADVANCE = NO
+    TPC331_FIXED_POWER_CREDIT = 0
+    TPC331_GROWING_SOURCE_NATIVE_L2 = OPEN
+    TPC331_FULL_GATE_B = OPEN
+    TPC331_TWIN_PRIME_RESULT = NONE
+    TPC331_STATUS = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
+    TPC331_STRONGEST_POSITIVE = ALL_PLUS_AVERAGE_AND_CENTERED_32_OF_32
+    TPC331_STRONGEST_OBSTRUCTION = COHERENT_NOT_UNIFORMLY_POSITIVE_AND_CENTERED_ENERGY_DOMINANT
+    TPC331_OPEN_THEOREM = GROWING_SOURCE_NATIVE_L2_WITH_SOURCE_ALIGNED_POSITION_AWARE_SPLIT
+    TPC331_REUSABLE_STRUCTURE = FINITE_CONTROL_ORBIT_TO_EXACT_QUADRATIC_MEAN_CENTER_DECOMPOSITION
+    TPC331_ROUND2_CLUE = TEST_CONTROL_AVERAGE_ON_GROWING_SOURCE_ENSEMBLE_AND_SEPARATE_ARITHMETIC_L2
+
+Session-named `propose.md` 与 Route-A/Route-B evaluator files 在本 checkout 中仍不存在；
+proof package、independent replay、stress suite、PDF audit 与 local Bridge-B checker 是
+fail-closed fallback，不能写成 official evaluator pass。
+
+更新时间：2026-09-02
+交接状态：`BOLD_CHANNEL_V184_TPC331_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION`
+
+TPC-330 previous section: multi-permutation response spectrum
 -----------------------------------------------------------------------------------------------
 
 TPC-330 承接 TPC-329，保留两个 held-out origins `28001,36001`、两个 scales
@@ -11386,10 +11441,10 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V183/TPC-330 是当前 release；其 producer、independent replay、stress audit 与
-multi-permutation response-spectrum bridge 已封存。TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
+V184/TPC-331 是当前 release；其 producer、independent replay、stress audit 与
+control-average / centered-response bridge 已封存。TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 341 对 normal/optimized 命令、682 次
+当前 curated cascade command set 共 345 对 normal/optimized 命令、690 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -11407,9 +11462,13 @@ TPC-318 再追加末尾 4 对，TPC-319 再追加末尾 4 对，TPC-320 再追�
 TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追加末尾 4 对，
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
-TPC-330 再追加末尾 4 对。
+TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
+
+V184/TPC-331 的新增 4 对由本项目 bridge 与 standalone tail checks 逐项验证；其
+finite decomposition 不代表 source-uniform arithmetic `L2` 或 official Route-A/Route-B
+通过。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
@@ -12529,6 +12588,28 @@ exact_anchor=1`。这是 V183/TPC-330 的新增尾部；finite five-control resp
 spectrum 不代表 source-uniform growing theorem、arithmetic power saving 或官方
 Route-A/Route-B 通过。
 
+TPC-331 的项目级 producer、independent replay、three-component stress 与
+control-average / centered-response bridge checker：
+
+```bash
+python -B papers/tpc-331-control-average-centered-response-decomposition/code/tpc331_control_average_centered_response_decomposition.py --check
+python -O -B papers/tpc-331-control-average-centered-response-decomposition/code/tpc331_control_average_centered_response_decomposition.py --check
+python -B papers/tpc-331-control-average-centered-response-decomposition/experiments/tpc331_independent_checker.py --check
+python -O -B papers/tpc-331-control-average-centered-response-decomposition/experiments/tpc331_independent_checker.py --check
+python -B papers/tpc-331-control-average-centered-response-decomposition/experiments/tpc331_control_average_stress.py --check
+python -O -B papers/tpc-331-control-average-centered-response-decomposition/experiments/tpc331_control_average_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc331_control_average_centered_response_decomposition_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc331_control_average_centered_response_decomposition_checker.py --check
+```
+
+TPC-331 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 均要求返回零，
+stderr 为空，normal/optimized stdout 逐对 byte-identical；Bridge-B 应输出
+`rows=32 / laws=4 / decomposition_observations=128 / control_count=5 /
+all_plus_average=32/32 / all_plus_centered=32/32 / all_plus_coherent=31/32 /
+exact_anchor=1`。这是 V184/TPC-331 的新增尾部；finite mean/centered decomposition
+不代表 source-uniform growing theorem、arithmetic power saving 或官方 Route-A/Route-B
+通过。
+
 TPC-327 的项目级 producer、independent replay、three-origin stress 与 bridge checker：
 
 ```bash
@@ -12590,7 +12671,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-最新 TPC-330 入口：
+最新 TPC-331 入口：
+
+papers/tpc-331-control-average-centered-response-decomposition/README.md
+papers/tpc-331-control-average-centered-response-decomposition/PAPER_PLAN.md
+papers/tpc-331-control-average-centered-response-decomposition/DERIVATION_PACKAGE.md
+papers/tpc-331-control-average-centered-response-decomposition/PROOF_PACKAGE.md
+papers/tpc-331-control-average-centered-response-decomposition/code/tpc331_control_average_centered_response_decomposition.py
+papers/tpc-331-control-average-centered-response-decomposition/experiments/tpc331_independent_checker.py
+papers/tpc-331-control-average-centered-response-decomposition/experiments/tpc331_control_average_stress.py
+papers/tpc-331-control-average-centered-response-decomposition/results/tpc331_certificate.json
+papers/tpc-331-control-average-centered-response-decomposition/notes/theorem_ledger.md
+papers/tpc-331-control-average-centered-response-decomposition/notes/claim_firewall.md
+papers/tpc-331-control-average-centered-response-decomposition/notes/computational_protocol.md
+papers/tpc-331-control-average-centered-response-decomposition/notes/route_evaluation.md
+papers/tpc-331-control-average-centered-response-decomposition/paper/main.tex
+papers/tpc-331-control-average-centered-response-decomposition/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc331_control_average_centered_response_decomposition.md
+research/tpc-big-road/tpc_bridge_b_tpc331_control_average_centered_response_decomposition_checker.py
+
+previous TPC-330 入口：
 
 papers/tpc-330-multi-permutation-response-spectrum/README.md
 papers/tpc-330-multi-permutation-response-spectrum/PAPER_PLAN.md

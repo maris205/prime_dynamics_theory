@@ -2,41 +2,45 @@
 
 更新时间：2026-09-02
 
-当前地图版本：V183 / TPC-330
+当前地图版本：V184 / TPC-331
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-330`（`NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM`）；
+当前编号锚点：`TPC-331`（`NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION`）；
 对应论文目录为
-`papers/tpc-330-multi-permutation-response-spectrum/`。
+`papers/tpc-331-control-average-centered-response-decomposition/`。
 
-TPC-330 是当前地图位置：承接 TPC-329，把单一 affine placement null 扩展为五个
-预声明 controls：identity、`(3i+11) mod M`、`(5i+17) mod M`、`(7i+29) mod M`
-与 reversal `M-1-i`。它们都在 source counts `2048,4096` 上保持 source multiset
-与 `L2` norm。32 个 actual rows 形成 `640` 个 law/control observations 与 10 组
-pairwise summaries；三个 affine controls 的 all-plus 都为 `0/32` negative/positive，
-identity 与 reversal 都为 `31/1`，并在 `32/32` rows 上分类相同。all-plus 五-control
-signature 为 `negative|positive|positive|positive|negative`（31 rows）与全 positive
-（1 row）。这是 finite multi-permutation response spectrum 与 placement obstruction，
-不是 source-uniform growing arithmetic `L2` theorem、fixed-power credit 或 twin-prime
-结论。
+TPC-331 是当前地图位置：承接 TPC-330，把五个预声明 coordinate bijections 视为一个
+finite control orbit。对 `w_j=P_jv`、`v_bar=mean_j w_j` 与 `z_j=w_j-v_bar`，任意
+有限 quadratic form 都满足 exact mean/centered identity；energy、coordinate diagonal
+与 off-diagonal response 因而同时分解。锁定两个 origins `28001,36001`、两个 scales
+`4096,8192`、四个 laws 与 V59 source-native residual，32 rows 形成 128 个
+law-level decompositions。all-plus 的 control-average 与 centered-position components
+均为 `32/32` positive，coherent mean 为 `31/32` positive。这里是 finite
+position-response localization，不是 source-uniform growing arithmetic `L2` theorem、
+fixed-power credit 或 twin-prime 结论。
 
 ```text
-TPC330_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM
-TPC330_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
-TPC330_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
-TPC330_COMPONENT_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
-TPC330_MULTI_PERMUTATION_SPECTRUM = NUMERICALLY_CERTIFIED_FINITE_5_CONTROLS
-TPC330_AFFINE_ALL_PLUS_CONSENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
-TPC330_SIGN_AT_SCALE_GROWTH = NUMERICALLY_CERTIFIED_FINITE
-TPC330_ARITHMETIC_ADVANCE = NO
-TPC330_FIXED_POWER_CREDIT = 0
-TPC330_GROWING_SOURCE_NATIVE_L2 = OPEN
-TPC330_FULL_GATE_B = OPEN
-TPC330_TWIN_PRIME_RESULT = NONE
-TPC330_STATUS = NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM
-TPC330_ROUND2_CLUE = DECOMPOSE_POSITION_RESPONSE_INTO_AFFINE_REVERSAL_AND_SOURCE_ALIGNED_COMPONENTS
+TPC331_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
+TPC331_EXACT_MEAN_CENTERED_DECOMPOSITION = PROVED_EXACT_FINITE
+TPC331_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC331_CONTROL_AVERAGE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+TPC331_CENTERED_POSITION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+TPC331_COHERENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_31_OF_32
+TPC331_NUMERIC_IDENTITY = NUMERICALLY_CERTIFIED_FINITE
+TPC331_ARITHMETIC_ADVANCE = NO
+TPC331_FIXED_POWER_CREDIT = 0
+TPC331_GROWING_SOURCE_NATIVE_L2 = OPEN
+TPC331_FULL_GATE_B = OPEN
+TPC331_TWIN_PRIME_RESULT = NONE
+TPC331_STATUS = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
+TPC331_ROUND2_CLUE = TEST_CONTROL_AVERAGE_ON_GROWING_SOURCE_ENSEMBLE_AND_SEPARATE_ARITHMETIC_L2
 ```
+
+## V183 / TPC-330 previous anchor
+
+TPC-330 的 finite affine-family response spectrum 与 placement obstruction 仍是当前
+位置的直接 parent certificate。
 
 ## V182 / TPC-329 previous anchor
 
@@ -767,8 +771,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V183 / TPC-330
-MAP_LABEL = MULTI-PERMUTATION RESPONSE SPECTRUM / POSITION-AWARE L2 OPEN
+YOU ARE HERE = V184 / TPC-331
+MAP_LABEL = CONTROL-AVERAGE / CENTERED POSITION RESPONSE DECOMPOSITION / GROWING L2 OPEN
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -1004,6 +1008,53 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.125 V184 / TPC-331：control-average and centered position-response decomposition
+
+TPC-331 承接 TPC-330，把 identity、三个 odd-affine controls 与 reversal 组成一个
+五元素 finite control orbit。令 `w_j=P_jv`、`v_bar=mean_j w_j`、`z_j=w_j-v_bar`；
+则任意有限 quadratic form 都满足
+`mean_j q(w_j)=q(v_bar)+mean_j q(z_j)`。在同一 literal deleted-diagonal
+centered prime-shell operator、V59 source-native residual、origins `28001,36001`、
+scales `4096,8192`、`Q={24,36,54,80}`、`s={1,2}` 与四个 sign laws 上，TPC-331
+把该恒等式同时应用于 energy `E`、coordinate diagonal `D` 与 off-diagonal
+`O=E-D`，形成 `32*4=128` 个 law-level decomposition observations。
+
+最强正结果：all-plus 的 control-average 与 centered-position components 均为
+`32/32` positive，coherent mean 为 `31/32` positive；coherent energy fraction
+在 `[0.14793771984595222,0.39709863476862445]`，centered fraction 因而在
+`[0.6029013652313755,0.85206228015404784]`。三种 decomposition identity 的
+exact rational anchor 均通过，float64 residual 最大分别为
+`4.76837158203125e-6`、`2.6226043701171875e-6`、`5.9604644775390625e-6`。
+
+最强 obstruction：finite positive response 不能归因于单一 coherent source-average
+或单一 centered position fluctuation；coherent component 仍有一条 negative row，
+而 centered component 承载主要 finite energy。因此下一条 theorem 必须同时控制
+source-aligned 与 position-aware components。该结果不提供 growing source-native
+arithmetic `L2`、canonical sign、fixed-power credit、full Gate B 或 twin-prime endpoint。
+
+这是 `NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION`；
+exact mean/centered identity、finite Gram split、五个 bijections 与 exact rational
+anchor 是 `PROVED_EXACT_FINITE`，有限 census 与 replay 是
+`NUMERICALLY_CERTIFIED_FINITE`。Session-named evaluator files absent，local
+Bridge-B 仅作 fail-closed fallback，不宣称 official Route-A/Route-B pass。
+
+```text
+TPC331_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
+TPC331_EXACT_MEAN_CENTERED_DECOMPOSITION = PROVED_EXACT_FINITE
+TPC331_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC331_CONTROL_AVERAGE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+TPC331_CENTERED_POSITION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+TPC331_COHERENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_31_OF_32
+TPC331_NUMERIC_IDENTITY = NUMERICALLY_CERTIFIED_FINITE
+TPC331_ARITHMETIC_ADVANCE = NO
+TPC331_FIXED_POWER_CREDIT = 0
+TPC331_GROWING_SOURCE_NATIVE_L2 = OPEN
+TPC331_FULL_GATE_B = OPEN
+TPC331_TWIN_PRIME_RESULT = NONE
+TPC331_STATUS = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
+TPC331_ROUND2_CLUE = TEST_CONTROL_AVERAGE_ON_GROWING_SOURCE_ENSEMBLE_AND_SEPARATE_ARITHMETIC_L2
+```
 
 ## 5.124 V183 / TPC-330：multi-permutation response spectrum
 
@@ -3351,9 +3402,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V183 / TPC-330                    |
-        | MULTI-PERMUTATION RESPONSE SPECTRUM           |
-        | AFFINE CONSENSUS / POSITION-AWARE L2 OPEN     |
+        | YOU ARE HERE — V184 / TPC-331                    |
+        | CONTROL-AVERAGE / CENTERED RESPONSE          |
+        | POSITION-AWARE L2 / ARITHMETIC GATES OPEN    |
         +--------------------------------------------------+
                 |
                 v
@@ -3396,13 +3447,13 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V183 / TPC-330。
-TPC-330 在 TPC-329 的单一 affine placement null 之后，固定同一两个 origins、两个
-scales 与 source-native Gram object，加入三个 odd-affine controls、identity 与
-reversal，形成 640 个 law/control observations。三个 affine controls 的 all-plus
-均为 `32/32` positive，而 identity/reversal 均为 `31/1`；这是当前最清晰的 finite
-affine-family placement obstruction。growing arithmetic `L2`、canonical sign 与 full
-Gate B 仍 open。
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V184 / TPC-331。**
+TPC-331 在 TPC-330 的五-control response spectrum 上建立 exact control-average /
+centered position decomposition，形成 128 个 law-level observations；all-plus 的
+average 与 centered components 均为 `32/32` positive，而 coherent mean 为 `31/32`。
+centered component 承载约 `60.3%--85.2%` 的 finite all-plus energy。这里是 finite
+position-response localization；growing arithmetic `L2`、canonical sign 与 full
+Gate B 仍 open，下一步是 growing source ensemble 与分离的 arithmetic `L2`。
 此前的 typed interface 与 attachment firewall 仍由 TPC-281 保留。
 TPC-254 已支付 literal `w` midpoint 到任意固定 log power；TPC-256 支付 literal
 `beta` midpoint 的显式正主项及其负实-leading adjoint scalar；TPC-257 将两个 rank
@@ -7218,7 +7269,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V183 / TPC-330（以下旧条目保留为历史审计）：
+截至 V184 / TPC-331（以下旧条目保留为历史审计）：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -7227,6 +7278,20 @@ FIXED_ATOM_CREDIT = 0
   TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
   FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
   L2 = NONE
+TPC331_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
+TPC331_EXACT_MEAN_CENTERED_DECOMPOSITION = PROVED_EXACT_FINITE
+TPC331_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC331_CONTROL_AVERAGE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+TPC331_CENTERED_POSITION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+TPC331_COHERENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_31_OF_32
+TPC331_NUMERIC_IDENTITY = NUMERICALLY_CERTIFIED_FINITE
+TPC331_ARITHMETIC_ADVANCE = NO
+TPC331_FIXED_POWER_CREDIT = 0
+TPC331_GROWING_SOURCE_NATIVE_L2 = OPEN
+TPC331_FULL_GATE_B = OPEN
+TPC331_TWIN_PRIME_RESULT = NONE
+TPC331_STATUS = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
+TPC331_ROUND2_CLUE = TEST_CONTROL_AVERAGE_ON_GROWING_SOURCE_ENSEMBLE_AND_SEPARATE_ARITHMETIC_L2
 TPC330_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM
 TPC330_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
 TPC330_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
@@ -8090,6 +8155,14 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
+0. **TPC-331 已完成：control-average / centered position-response decomposition**。
+   在 TPC-330 的五-control orbit 上，TPC-331 对 energy、coordinate diagonal 与
+   off-diagonal response 证明 exact mean/centered identity，得到 32 rows、128 个
+   law-level decompositions；all-plus control-average 与 centered components 为
+   `32/32` positive，coherent mean 为 `31/32` positive。centered component 承载
+   约 `60.3%--85.2%` 的 finite all-plus energy，故下一条 theorem 必须同时控制
+   source-aligned 与 position-aware response。不得把 finite localization 升级为
+   growing arithmetic `L2` theorem。
 0. **TPC-330 已完成：multi-permutation response spectrum**。在 TPC-329 的
    source-native signed-Gram interface 上冻结五个 predeclared coordinate bijections，
    得到 32 rows、640 law/control observations、10 组 pairwise summaries 与 64 scale
@@ -8441,6 +8514,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-02 | V184 / TPC-331 | Bridge A / Gate B：control-average / centered position-response decomposition 已完成；growing source-native `L2`、fixed-power credit 与 full Gate B open | `TPC-331` | 承接 TPC-330；五-control orbit 上的 exact mean/centered identity 同时作用于 `E,D,O`，32 rows、128 law-level decompositions；all-plus average/centered 为 `32/32`、coherent 为 `31/32`；下一步为 growing source ensemble 与分离 arithmetic `L2` |
 | 2026-09-02 | V183 / TPC-330 | Bridge A / Gate B：multi-permutation response spectrum 已完成；position-aware source-native `L2`、fixed-power credit 与 full Gate B open | `TPC-330` | 承接 TPC-329；五个 predeclared bijections、32 rows、640 law/control observations、10 组 pairwise summaries；三个 affine controls 的 all-plus 为 `0/32`、identity/reversal 为 `31/1`，affine-family consensus 通过 independent replay；下一步为 control-average / centered position-response decomposition |
 | 2026-09-01 | V182 / TPC-329 | Bridge A / Gate B：held-out source-native placement-sensitivity audit 已完成；growing arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-329` | 承接 TPC-328；两个新 origins、两个更大 scales 的 32 actual rows、64 scale pairs；norm/multiset-preserving affine null 将 all-plus `31/1` 改为 `0/32`，31/32 classifications changed；128 placement comparisons 与 independent replay 通过；下一步为 multiple predeclared controls 或 position-aware decomposition |
 | 2026-09-01 | V181 / TPC-328 | Bridge A / Gate B：source-native signed-Gram finite atlas 已完成；growing arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-328` | 承接 TPC-327；三个 disjoint origins、四档 scales、四个 `Q` anchors、两个 exponents 的 96 rows；all-plus `81/15`，alternating/mod-4/half-split 为 `73/23`、`74/22`、`61/35`；exact finite Gram split 与 96/96 controls 通过；下一步为 growing origin-ensemble `L2` 或 signed-Gram theorem |

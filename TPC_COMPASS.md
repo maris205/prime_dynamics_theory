@@ -1,42 +1,47 @@
 # TPC distilled map and bold channel
 
-## V183 / TPC-330 current anchor
+## V184 / TPC-331 current anchor
 
 更新时间：2026-09-02
 
 当前入口：proof 为
-research/tpc-big-road/bridge_b_tpc330_multi_permutation_response_spectrum.md，checker 为
-tpc_bridge_b_tpc330_multi_permutation_response_spectrum_checker.py，编号论文为
-papers/tpc-330-multi-permutation-response-spectrum/。
+research/tpc-big-road/bridge_b_tpc331_control_average_centered_response_decomposition.md，
+checker 为 tpc_bridge_b_tpc331_control_average_centered_response_decomposition_checker.py，
+编号论文为 papers/tpc-331-control-average-centered-response-decomposition/。
 
-TPC-330 承接 TPC-329，在同一两个 origins `28001,36001`、两个 scales
-`4096,8192` 与锁定的 V59 source-native residual 上冻结五个 coordinate bijections：
-identity、`(3i+11) mod M`、`(5i+17) mod M`、`(7i+29) mod M` 与 reversal。
-32 rows 形成 640 个 law/control observations 与 10 组 pairwise summaries；三个
-affine controls 的 all-plus census 均为 `0/32`，identity/reversal 均为 `31/1`，
-且三 affine controls 在 `32/32` rows 一致为 positive。
+TPC-331 承接 TPC-330，把五个 coordinate bijections 组成一个 finite control orbit。
+对 `w_j=P_jv`、控制均值 `v_bar` 与 centered vectors `z_j=w_j-v_bar`，任意有限
+quadratic form 都满足 exact mean/centered identity；因此 energy、coordinate diagonal
+与 off-diagonal Gram response 同时分解。锁定同一两个 origins `28001,36001`、两个
+scales `4096,8192`、四个 laws 与 V59 source-native residual，32 rows 形成 128 个
+law-level decompositions。all-plus 的 control-average 与 centered-position components
+均为 `32/32` positive，coherent mean 为 `31/32` positive。
 
-这是 `NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM`，核心是
-finite affine-family placement obstruction；不提供 source-uniform growing arithmetic
-L2 theorem、fixed-power credit 或 twin-prime endpoint。Session-named evaluator files
-absent，故只记 local Bridge-B fail-closed，不宣称 official Route-A/Route-B pass。
+这是 `NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION`；
+它把有限正响应定位到 coherent/centered 两个 component，但不提供 growing
+source-native arithmetic `L2`、fixed-power credit、canonical sign 或 twin-prime
+endpoint。Session-named evaluator files absent，故只记 local Bridge-B fail-closed，
+不宣称 official Route-A/Route-B pass。
 
-    TPC330_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM
-    TPC330_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
-    TPC330_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
-    TPC330_COMPONENT_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
-    TPC330_MULTI_PERMUTATION_SPECTRUM = NUMERICALLY_CERTIFIED_FINITE_5_CONTROLS
-    TPC330_AFFINE_ALL_PLUS_CONSENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
-    TPC330_SIGN_AT_SCALE_GROWTH = NUMERICALLY_CERTIFIED_FINITE
-    TPC330_ARITHMETIC_ADVANCE = NO
-    TPC330_FIXED_POWER_CREDIT = 0
-    TPC330_GROWING_SOURCE_NATIVE_L2 = OPEN
-    TPC330_FULL_GATE_B = OPEN
-    TPC330_TWIN_PRIME_RESULT = NONE
-    TPC330_STATUS = NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM
-    TPC330_ROUND2_CLUE = DECOMPOSE_POSITION_RESPONSE_INTO_AFFINE_REVERSAL_AND_SOURCE_ALIGNED_COMPONENTS
+    TPC331_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
+    TPC331_EXACT_MEAN_CENTERED_DECOMPOSITION = PROVED_EXACT_FINITE
+    TPC331_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC331_CONTROL_AVERAGE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC331_CENTERED_POSITION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC331_COHERENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_31_OF_32
+    TPC331_NUMERIC_IDENTITY = NUMERICALLY_CERTIFIED_FINITE
+    TPC331_ARITHMETIC_ADVANCE = NO
+    TPC331_FIXED_POWER_CREDIT = 0
+    TPC331_GROWING_SOURCE_NATIVE_L2 = OPEN
+    TPC331_FULL_GATE_B = OPEN
+    TPC331_TWIN_PRIME_RESULT = NONE
+    TPC331_STATUS = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
+    TPC331_ROUND2_CLUE = TEST_CONTROL_AVERAGE_ON_GROWING_SOURCE_ENSEMBLE_AND_SEPARATE_ARITHMETIC_L2
 
-## V182 / TPC-329 previous anchor
+## V183 / TPC-330 previous anchor
+
+TPC-330 的 affine-family response spectrum 仍是本关的直接 parent certificate 与
+placement-obstruction provenance。
 
 ## V181 / TPC-328 previous anchor
 

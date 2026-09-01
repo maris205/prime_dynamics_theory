@@ -9,14 +9,36 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-330 承接 TPC-329，在同一两个 held-out origins={28001,36001}、
-scales={4096,8192} 与锁定的 V59 source-native residual 上，把单一 placement null
-扩展为五个预声明的 multiset/L2-preserving coordinate bijections。32 个 rows 形成
-640 个 law/control observations 与 10 组 pairwise summaries；三个 odd-affine
-controls 的 all-plus O<0/O>0 census 均为 0/32，identity 与 reversal 均为 31/1。
-all-plus 五-control signature 为 negative|positive|positive|positive|negative（31 rows）
-与全 positive（1 row）。这是 finite multi-permutation placement spectrum，不是
-growing arithmetic theorem、fixed-power credit 或 full Gate B。
+当前主线状态：TPC-331 承接 TPC-330，把五个预声明的 coordinate controls 视为一个
+finite control orbit，并对 energy、coordinate diagonal 与 off-diagonal response 给出
+exact mean/centered decomposition。锁定同一两个 held-out origins={28001,36001}、
+scales={4096,8192}、四个 laws 与 V59 source-native residual；32 个 rows 形成
+128 个 law-level decompositions。all-plus 的 control-average 与 centered-position
+components 都是 32/32 positive，coherent mean 为 31/32 positive。这是 finite
+position-response localization，不是 growing arithmetic theorem、fixed-power credit
+或 full Gate B。
+
+    TPC331_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
+    TPC331_EXACT_MEAN_CENTERED_DECOMPOSITION = PROVED_EXACT_FINITE
+    TPC331_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC331_CONTROL_AVERAGE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC331_CENTERED_POSITION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC331_COHERENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_31_OF_32
+    TPC331_NUMERIC_IDENTITY = NUMERICALLY_CERTIFIED_FINITE
+    TPC331_ARITHMETIC_ADVANCE = NO
+    TPC331_FIXED_POWER_CREDIT = 0
+    TPC331_GROWING_SOURCE_NATIVE_L2 = OPEN
+    TPC331_FULL_GATE_B = OPEN
+    TPC331_TWIN_PRIME_RESULT = NONE
+    TPC331_STATUS = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
+    TPC331_ROUND2_CLUE = TEST_CONTROL_AVERAGE_ON_GROWING_SOURCE_ENSEMBLE_AND_SEPARATE_ARITHMETIC_L2
+
+papers/tpc-331-control-average-centered-response-decomposition - TPC-331 当前项目 -
+五控制 orbit 的 exact mean/centered identity、128 条 decomposition 明细、independent
+replay、stress、PDF 与 local Bridge-B checker。
+
+TPC-330（上一位置）仍保留 affine-family placement obstruction，作为 TPC-331 的
+直接 parent lock。
 
     TPC330_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM
     TPC330_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
@@ -33,7 +55,7 @@ growing arithmetic theorem、fixed-power credit 或 full Gate B。
     TPC330_STATUS = NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM
     TPC330_ROUND2_CLUE = DECOMPOSE_POSITION_RESPONSE_INTO_AFFINE_REVERSAL_AND_SOURCE_ALIGNED_COMPONENTS
 
-papers/tpc-330-multi-permutation-response-spectrum - TPC-330 当前项目 - 五个预声明
+papers/tpc-330-multi-permutation-response-spectrum - TPC-330 previous project - 五个
 coordinate controls 的 finite response spectrum、640 条明细、independent replay、
 stress、PDF 与 local Bridge-B checker。
 
@@ -56,7 +78,7 @@ TPC-330 的直接 parent lock。
     TPC329_STATUS = NUMERICALLY_CERTIFIED_FINITE_HELDOUT_GROWING_SOURCE_NATIVE_AUDIT
     TPC329_ROUND2_CLUE = SEPARATE_SOURCE_NORM_FROM_ARITHMETIC_PLACEMENT_WITH_MULTIPLE_PREDECLARED_CONTROLS
 
-papers/tpc-329-heldout-growing-source-native-audit - TPC-329 当前项目 - held-out 两尺度 source-native 审计与置换 placement obstruction，含 32-row certificate、独立重放、stress、PDF 与 local Bridge-B checker。
+papers/tpc-329-heldout-growing-source-native-audit - TPC-329 previous project - held-out 两尺度 source-native 审计与置换 placement obstruction，含 32-row certificate、独立重放、stress、PDF 与 local Bridge-B checker。
 
 TPC-328（更早位置）仍保留 source-native finite Gram cancellation/obstruction
 atlas 及其 96-row certificate，作为 TPC-329 的祖先 lock。
@@ -87,7 +109,7 @@ full Gate B。
     TPC327_STATUS = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
     TPC327_ROUND2_CLUE = TEST_ORIGIN_ENSEMBLE_SCALE_GROWTH_OR_SOURCE_NATIVE_ARITHMETIC_L2
 
-papers/tpc-327-three-origin-scale-triangulation - TPC-327 current project；含第三
+papers/tpc-327-three-origin-scale-triangulation - TPC-327 previous project；含第三
 disjoint origin 的 32-row certificate、三-origin envelope range、independent replay、
 residue stress、PDF 与 local Bridge-B checker。
 

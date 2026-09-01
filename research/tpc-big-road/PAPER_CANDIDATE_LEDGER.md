@@ -3,13 +3,67 @@
 
 更新时间：2026-09-02
 
-状态：**TPC330_NUMERICALLY_CERTIFIED_FINITE_MULTI_PERMUTATION_RESPONSE_SPECTRUM / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC331_NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.124 current：TPC-330 multi-permutation response spectrum
+## 0.125 current：TPC-331 control-average and centered response decomposition
+
+项目：papers/tpc-331-control-average-centered-response-decomposition/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION**。
+
+TPC-331 承接 TPC-330，把 identity、三个 odd-affine bijections 与 reversal 组成一个
+五元素 finite control orbit。对 `w_j=P_jv`、`̄v=mean_j w_j`、`z_j=w_j-̄v`，任意
+有限 quadratic form 都有
+`mean_j q(w_j)=q(̄v)+mean_j q(z_j)`；这同时应用于 signed-Gram energy `E`、
+coordinate diagonal `D` 与 off-diagonal `O=E-D`。同一两个 held-out origins
+`28001,36001`、两个 scales `4096,8192`、四个 shell anchors、两个 exponents、
+四个 sign laws 与锁定的 V59 source-native residual 全部保持不变，得到 `32` rows、
+`128` 个 law-level decompositions 与一个 exact rational anchor。
+
+最强正结果：all-plus 的 control-average 与 centered-position components 均为
+`32/32` positive，coherent mean 为 `31/32` positive；平均项与 centered 项分别
+承载约 `14.8%--39.7%` 与 `60.3%--85.2%` 的有限 all-plus energy。三种分解身份的
+exact rational anchor 全部通过，float64 identity residual 仍在声明的 guard 内。
+
+最强 obstruction：有限 positive response 不能被简化为“只有 coherent source-average”
+或“只有 centered position”之一；coherent component 有一个 negative row，而
+centered component 仍占主要 energy。因而下一条 source-uniform theorem 必须同时控制
+source-aligned 与 position-aware 两个 component；control averaging 本身不是 arithmetic
+`L2` cancellation。
+
+开放定理：growing source-native `L2`、uniform position-response bound、canonical sign
+law、strict `1/400` payment 与 Route-B Gate B。fixed-power credit 仍为 `0`，twin-prime
+conclusion 为 `NONE`。Session-named evaluator files absent，local Bridge-B 仅作
+fail-closed fallback，不宣称 official Route-A/Route-B pass。
+
+可复用结构：
+
+    locked source -> finite control orbit -> exact quadratic mean/center split
+                  -> E/D/O component census -> independent replay/firewall
+
+ROUND2_CLUE：
+TEST_CONTROL_AVERAGE_ON_GROWING_SOURCE_ENSEMBLE_AND_SEPARATE_ARITHMETIC_L2。
+
+    TPC331_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
+    TPC331_EXACT_MEAN_CENTERED_DECOMPOSITION = PROVED_EXACT_FINITE
+    TPC331_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC331_CONTROL_AVERAGE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC331_CENTERED_POSITION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
+    TPC331_COHERENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_31_OF_32
+    TPC331_NUMERIC_IDENTITY = NUMERICALLY_CERTIFIED_FINITE
+    TPC331_ARITHMETIC_ADVANCE = NO
+    TPC331_FIXED_POWER_CREDIT = 0
+    TPC331_GROWING_SOURCE_NATIVE_L2 = OPEN
+    TPC331_FULL_GATE_B = OPEN
+    TPC331_TWIN_PRIME_RESULT = NONE
+    TPC331_STATUS = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
+    TPC331_ROUND2_CLUE = TEST_CONTROL_AVERAGE_ON_GROWING_SOURCE_ENSEMBLE_AND_SEPARATE_ARITHMETIC_L2
+
+## 0.124 previous：TPC-330 multi-permutation response spectrum
 
 项目：papers/tpc-330-multi-permutation-response-spectrum/
 
