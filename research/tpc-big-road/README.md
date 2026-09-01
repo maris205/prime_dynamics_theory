@@ -1,37 +1,42 @@
-# TPC big road V180 / TPC-327: three-origin scale-ladder triangulation
+# TPC big road V181 / TPC-328: source-native arithmetic `L2` cancellation
 
-## V180 current anchor: TPC-327
+## V181 current anchor: TPC-328
 
 更新时间：2026-09-01
 
-当前 TPC-327 proof 为
-bridge_b_tpc327_three_origin_scale_triangulation.md，checker 为
-tpc_bridge_b_tpc327_three_origin_scale_triangulation_checker.py，编号论文为
-../../papers/tpc-327-three-origin-scale-triangulation/。
+当前 TPC-328 proof 为
+bridge_b_tpc328_source_native_l2_cancellation.md，checker 为
+tpc_bridge_b_tpc328_source_native_l2_cancellation_checker.py，编号论文为
+../../papers/tpc-328-source-native-l2-cancellation/。
 
-TPC-327 承接 TPC-326，在完全 disjoint 的第三个 source origin `20001` 上复制同一
-四档 source-scale ladder，并将 `12001`、`16001`、`20001` 三个 origin 的
-all-plus envelope 做 pooled triangulation。新的 32 rows 中 all-plus profile 在
-32/32 行 majorizes direct profile；四种 profile/energy census 与两个父面板都匹配。
-三-origin 最大 TV/energy range 分别为 `0.0007970083<0.001`、
-`0.0045518412<0.005`，且每个尺度的 range 均非零。
+TPC-328 承接 TPC-327，把锁定的 V59 source-native residual
+`beta_o^(2)(t)=Lambda(t+2)-b^(2)(t)` 直接接入 literal coherent prime-shell
+operator。对三个 disjoint origins、四档 scales、四个 Q anchors、两个 exponents
+的 96 rows，source-coordinate Gram identity `E=D+O` 是 exact finite；all-plus
+residual 的 O<0/O>0 census 为 81/15，alternating、mod-4、half-split 为 73/23、
+74/22、61/35，均无 unresolved row；两个正 component controls 为 96/96。
 
-这是 `NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION`；它只是有限
-三源 adversarial triangulation，不提供 source-uniform growing theorem、source-native
-arithmetic L2、fixed-power credit 或 twin-prime endpoint。Session-named evaluator files
+这是 `NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_L2_CANCELLATION_ATLAS`；它是
+source-native 的有限 cancellation/obstruction readout，不提供 growing arithmetic
+L2 theorem、fixed-power credit 或 twin-prime endpoint。Session-named evaluator files
 absent，故不宣称 official Route-A/Route-B pass。
 
-    TPC327_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
-    TPC327_THREE_ORIGIN_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_3_ORIGINS
-    TPC327_ALL_PLUS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_OF_32_NEW_ORIGIN
-    TPC327_CENSUS_MATCH = NUMERICALLY_CERTIFIED_FINITE_MATCH_TO_BOTH_PARENTS
-    TPC327_ENVELOPE_TRIANGULATION = NUMERICALLY_CERTIFIED_FINITE_WITHIN_DECLARED_THRESHOLDS
-    TPC327_ARITHMETIC_ADVANCE = NO
-    TPC327_FIXED_POWER_CREDIT = 0
-    TPC327_FULL_GATE_B = OPEN
-    TPC327_TWIN_PRIME_RESULT = NONE
-    TPC327_STATUS = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
-    TPC327_ROUND2_CLUE = TEST_ORIGIN_ENSEMBLE_SCALE_GROWTH_OR_SOURCE_NATIVE_ARITHMETIC_L2
+    TPC328_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_L2_CANCELLATION_ATLAS
+    TPC328_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
+    TPC328_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC328_COMPONENT_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_96_OF_96
+    TPC328_ALL_PLUS_CANCELLATION = NUMERICALLY_CERTIFIED_FINITE_81_OF_96
+    TPC328_ALL_PLUS_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_15_OF_96
+    TPC328_NO_UNIFORM_SIGNED_CONTRACTION = REFUTED_SCOPED_FOUR_DECLARED_LAWS
+    TPC328_ARITHMETIC_ADVANCE = NO
+    TPC328_FIXED_POWER_CREDIT = 0
+    TPC328_GROWING_SOURCE_NATIVE_L2 = OPEN
+    TPC328_FULL_GATE_B = OPEN
+    TPC328_TWIN_PRIME_RESULT = NONE
+    TPC328_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_L2_CANCELLATION_ATLAS
+    TPC328_ROUND2_CLUE = TEST_SOURCE_NATIVE_L2_ON_GROWING_ORIGIN_ENSEMBLE_OR_PROVE_SIGNED_GRAM_BOUND
+
+## V180 previous anchor: TPC-327
 
 ## V179 previous anchor: TPC-326
 

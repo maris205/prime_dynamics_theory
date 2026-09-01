@@ -3,13 +3,69 @@
 
 更新时间：2026-09-01
 
-状态：**TPC327_NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC328_NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_L2_CANCELLATION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.121 current：TPC-327 three-origin scale-ladder triangulation
+## 0.122 current：TPC-328 source-native arithmetic `L2` cancellation
+
+项目：papers/tpc-328-source-native-l2-cancellation/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_L2_CANCELLATION_ATLAS**。
+
+TPC-328 承接 TPC-327，把锁定的 V59 source-native residual
+`beta_o^(2)(t)=Lambda(t+2)-b^(2)(t)` 直接送入同一 literal deleted-diagonal
+centered prime-shell operator。对 origins `12001,16001,20001`、scales
+`320,640,1280,2560`、`Q={24,36,54,80}` 与 `s={1,2}`，共完成 `96` 个
+source-native rows。对任意有限 vector，`E_e(v)=D_e(v)+O_e(v)` 的 source-coordinate
+Gram decomposition 是 `PROVED_EXACT_FINITE`；V59 source formula 在声明的有限
+Euler/log enclosure 下是 `PROVED_EXACT_FINITE_DECLARED_MODEL`。
+
+最强正结果：实际 arithmetic residual 首次接入 coherent operator；四个 declared
+sign laws 的 `E/D` 与 off-diagonal sign 全部由独立 reverse-order replay 重算。all-plus
+residual 的 `O<0/O>0` 为 `81/15`，alternating、mod-4、half-split 分别为
+`73/23`、`74/22`、`61/35`，均无 unresolved row；Lambda 与 comparison component
+controls 均为 `96/96` positive。exact anchor `[20001,20016]`, `Q=4`, `s=1`
+保存三项有理 Gram digest，stress、PDF 与 local Bridge-B normal/optimized equality
+均通过。
+
+最强 obstruction：四个预注册 sign laws 都有 positive off-diagonal rows，因此
+`E_e(beta)<=D_e(beta)` 不能作为该有限面板上的 uniform contraction；all-plus 的
+`15/96` positive rows 尤其直接。这个结论是 `REFUTED_SCOPED`，不否定其他 sign、
+其他 normalization 或 growing theorem。
+
+开放定理：source-uniform growing arithmetic `L2` bound、canonical arithmetic sign、
+literal operator-norm estimate、strict `1/400` payment 与 Route-B Gate B。fixed-power
+credit 仍为 `0`，twin-prime conclusion 为 `NONE`。Session-named evaluator files absent，
+故不宣称 official Route-A/Route-B pass。
+
+可复用结构：
+
+    source-native V59 residual
+        + coherent prime-shell matrix
+        -> exact coordinate Gram split and guarded finite sign atlas
+
+ROUND2_CLUE：
+TEST_SOURCE_NATIVE_L2_ON_GROWING_ORIGIN_ENSEMBLE_OR_PROVE_SIGNED_GRAM_BOUND。
+
+    TPC328_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_L2_CANCELLATION_ATLAS
+    TPC328_EXACT_GRAM_DECOMPOSITION = PROVED_EXACT_FINITE
+    TPC328_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC328_COMPONENT_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_96_OF_96
+    TPC328_ALL_PLUS_CANCELLATION = NUMERICALLY_CERTIFIED_FINITE_81_OF_96
+    TPC328_ALL_PLUS_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_15_OF_96
+    TPC328_NO_UNIFORM_SIGNED_CONTRACTION = REFUTED_SCOPED_FOUR_DECLARED_LAWS
+    TPC328_ARITHMETIC_ADVANCE = NO
+    TPC328_FIXED_POWER_CREDIT = 0
+    TPC328_GROWING_SOURCE_NATIVE_L2 = OPEN
+    TPC328_FULL_GATE_B = OPEN
+    TPC328_TWIN_PRIME_RESULT = NONE
+    TPC328_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_L2_CANCELLATION_ATLAS
+    TPC328_ROUND2_CLUE = TEST_SOURCE_NATIVE_L2_ON_GROWING_ORIGIN_ENSEMBLE_OR_PROVE_SIGNED_GRAM_BOUND
+
+## 0.121 previous：TPC-327 three-origin scale-ladder triangulation
 
 项目：papers/tpc-327-three-origin-scale-triangulation/
 
