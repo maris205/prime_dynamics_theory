@@ -3,13 +3,67 @@
 
 更新时间：2026-09-01
 
-状态：**TPC322_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC323_NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.116 current：TPC-322 operator-level signed projector and prime-shell reassembly
+## 0.117 current：TPC-323 signed profile majorization and amplitude--shape separation
+
+项目：papers/tpc-323-signed-profile-majorization/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT**。
+
+TPC-323 承接 TPC-322 的 signed-projector interface，仍使用同一 literal
+deleted-diagonal centered prime-shell block family。对 direct Gram
+`G_direct=sum_p B_p^T B_p` 与 coherent signed Gram
+`G_e=(sum_p e_pB_p)^T(sum_p e_pB_p)`，同时记录能量比
+`rho_e=tr(G_e)/tr(G_direct)` 与归一化 profile
+`pi(G)=spectrum(G)/tr(G)`。exact trace/profile factorisation 证明总振幅与谱形状
+是两个不同坐标。
+
+在 `X={640,1280,2560}`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows 上，all-plus
+profile 在 24/24 行严格 majorizes direct profile；alternating、mod-4、half-split
+三条 declared laws 的 majorizing/mixed 计数分别为 17/7、21/3、18/6。all-plus
+未归一化 energy ratio 却为 3/24 below、21/24 above，故有限面板明确显示
+amplitude/shape decoupling。
+
+最强正结果：exact finite trace/profile factorisation 与 all-plus 24/24 profile
+majorization certificate，并由 producer、independent reverse/einsum replay、stress
+suite、PDF 和 local Bridge-B normal/optimized equality 共同封存。
+
+最强 obstruction：profile selection 仍只是四个预声明有限 sign laws 与一个有限面板
+上的 numerical observation；它没有构造 canonical Möbius/von Mangoldt sign，也没有
+source-native arithmetic `L2`、渐近增长 bound 或 twin-prime conclusion。
+
+开放定理：fresh source/profile holdout 或 source-native signed arithmetic bound，随后
+才能讨论 fixed-power credit、strict `1/400` payment 与 full Gate B。Session-named
+evaluator files absent，故不宣称 official Route-A/Route-B pass。
+
+可复用结构：
+
+    signed projector -> coherent Gram -> trace ratio (amplitude)
+                         + normalized ordered spectrum (shape)
+                         -> majorization / law-selection firewall
+
+ROUND2_CLUE：
+TEST_PROFILE_MAJORISATION_HOLDOUT_OR_SOURCE_NATIVE_ARITHMETIC_L2。
+
+    TPC323_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT
+    TPC323_ROUTE_ADVANCE = YES_SCOPED_FINITE_SIGNED_PROFILE_READOUT
+    TPC323_SIGNED_PROFILE_FACTORISATION = PROVED_EXACT_FINITE
+    TPC323_ALL_PLUS_PROFILE_MAJORISATION = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC323_ALTERNATIVE_PROFILE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_24_ROWS
+    TPC323_NAMED_LAW_SELECTION = NUMERICAL_OBSERVATION_ALL_PLUS_UNIQUE_ON_PANEL
+    TPC323_AMPLITUDE_SHAPE_DECOUPLING = NUMERICALLY_CERTIFIED_FINITE_ALL_PLUS_3_BELOW_21_ABOVE
+    TPC323_ARITHMETIC_ADVANCE = NO
+    TPC323_FIXED_POWER_CREDIT = 0
+    TPC323_FULL_GATE_B = OPEN
+    TPC323_TWIN_PRIME_RESULT = NONE
+    TPC323_STATUS = NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT
+
+## 0.116 previous：TPC-322 operator-level signed projector and prime-shell reassembly
 
 项目：papers/tpc-322-signed-projector-reassembly/
 

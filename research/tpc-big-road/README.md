@@ -1,36 +1,43 @@
-# TPC big road V175 / TPC-322: signed projector and prime-shell reassembly
+# TPC big road V176 / TPC-323: signed profile majorization and amplitude--shape separation
 
-## V175 current anchor: TPC-322
+## V176 current anchor: TPC-323
 
 更新时间：2026-09-01
 
-当前 TPC-322 proof 为
-bridge_b_tpc322_signed_projector_reassembly.md，checker 为
-tpc_bridge_b_tpc322_signed_projector_reassembly_checker.py，编号论文为
-../../papers/tpc-322-signed-projector-reassembly/。
+当前 TPC-323 proof 为
+bridge_b_tpc323_signed_profile_majorization.md，checker 为
+tpc_bridge_b_tpc323_signed_profile_majorization_checker.py，编号论文为
+../../papers/tpc-323-signed-profile-majorization/。
 
-TPC-322 承接 TPC-321 的 cross-shell profile obstruction，保留同一 literal
-deleted-diagonal centered prime-shell blocks，并定义 sign-labelled diagonal
-projector。对 24 rows 的 exhaustive sign atlas，每行都有 `rho<1` 与 `rho>1`
-的 sign；all-plus 为 `3/24` below、`21/24` above，index-alternating 为
-`21/24` below、`3/24` above。projector identity 是 exact finite identity，
-但 canonical sign law、arithmetic cancellation、fixed-power credit 与 full Gate B
-仍 open；不宣称 official Route-A/Route-B pass。
+TPC-323 承接 TPC-322 的 signed-projector interface，保留同一 literal
+deleted-diagonal centered prime-shell blocks，并把总能量 ratio 与归一化谱 profile
+分开读取。对 `X={640,1280,2560}`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows，
+all-plus coherent Gram 的 normalized profile 在 24/24 行 majorizes direct profile；
+alternating、mod-4、half-split 的 majorizing/mixed 计数分别为 17/7、21/3、18/6。
+all-plus energy ratio 同时为 3/24 below、21/24 above，形成 finite amplitude/shape
+decoupling。profile factorisation 是 exact finite identity，但 arithmetic cancellation、
+fixed-power credit 与 full Gate B 仍 open；不宣称 official Route-A/Route-B pass。
 
-    TPC322_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS
-    TPC322_ROUTE_ADVANCE = YES_SCOPED_OPERATOR_LEVEL_SIGNED_REASSEMBLY_INTERFACE
-    TPC322_SIGNED_PROJECTOR_IDENTITY = PROVED_EXACT_FINITE
-    TPC322_OPERATOR_REASSEMBLY_ATLAS = NUMERICALLY_CERTIFIED_FINITE_24_ROWS
-    TPC322_MIN_SIGN_EXISTS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
-    TPC322_MAX_SIGN_EXISTS = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
-    TPC322_ALL_PLUS_LAW = REFUTED_FINITE_PANEL
-    TPC322_ALTERNATING_LAW = REFUTED_FINITE_PANEL
-    TPC322_ARITHMETIC_ADVANCE = NO
-    TPC322_FIXED_POWER_CREDIT = 0
-    TPC322_FULL_GATE_B = OPEN
-    TPC322_TWIN_PRIME_RESULT = NONE
-    TPC322_STATUS = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS
-    TPC322_ROUND2_CLUE = TEST_CANONICAL_SIGN_LAWS_AGAINST_OPERATOR_SPECTRAL_PROFILES_AND_SOURCE_NATIVE_ARITHMETIC_L2
+    TPC323_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT
+    TPC323_ROUTE_ADVANCE = YES_SCOPED_FINITE_SIGNED_PROFILE_READOUT
+    TPC323_SIGNED_PROFILE_FACTORISATION = PROVED_EXACT_FINITE
+    TPC323_ALL_PLUS_PROFILE_MAJORISATION = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC323_ALTERNATIVE_PROFILE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_24_ROWS
+    TPC323_NAMED_LAW_SELECTION = NUMERICAL_OBSERVATION_ALL_PLUS_UNIQUE_ON_PANEL
+    TPC323_AMPLITUDE_SHAPE_DECOUPLING = NUMERICALLY_CERTIFIED_FINITE_ALL_PLUS_3_BELOW_21_ABOVE
+    TPC323_ARITHMETIC_ADVANCE = NO
+    TPC323_FIXED_POWER_CREDIT = 0
+    TPC323_FULL_GATE_B = OPEN
+    TPC323_TWIN_PRIME_RESULT = NONE
+    TPC323_STATUS = NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT
+    TPC323_ROUND2_CLUE = TEST_PROFILE_MAJORISATION_HOLDOUT_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+---
+
+## V175 previous anchor: TPC-322
+
+TPC-322 remains the previous signed-projector release and supplies the typed
+direct-sum-to-diagonal interface used by TPC-323.
 
 ---
 

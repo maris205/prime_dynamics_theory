@@ -1,5 +1,53 @@
 # TPC HANDOFF
 
+TPC-323 current section: signed profile majorization and amplitude--shape separation
+-----------------------------------------------------------------------------------------------
+
+TPC-323 承接 TPC-322 的 operator-level signed-projector interface，保留同一 TPC-268
+deleted-diagonal centered prime-shell block family，并把 coherent signed Gram 的总能量
+与归一化谱形状分成两个可审计坐标。令 `G_direct=sum_p B_p^T B_p`、
+`G_e=(sum_p e_pB_p)^T(sum_p e_pB_p)`，定义
+`rho_e=tr(G_e)/tr(G_direct)` 与 `pi(G)=lambda(G)/tr(G)`；trace/profile factorisation
+是 exact finite identity。
+
+在 `X=640,1280,2560`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows 上，producer、
+independent reverse/einsum replay、stress suite 与 local Bridge-B checker 均通过。
+all-plus profile 在 24/24 行 majorizes direct profile；alternating、mod-4、half-split
+的 majorizing/mixed 计数分别为 `17/7`、`21/3`、`18/6`。all-plus 未归一化 energy
+ratio 却在 `3/24` 行低于 1、`21/24` 行高于 1，形成有限 amplitude/shape
+decoupling。
+
+最强正结果是 exact finite profile factorisation 加上 all-plus 的 24/24 finite
+majorization readout。最强 obstruction 是该选择只在四个预声明 sign laws 与当前有限
+panel 上成立，不能升级为 canonical arithmetic sign；source-native arithmetic `L2`、
+渐近 power saving、fixed-power credit、strict `1/400` payment 与 twin-prime conclusion
+仍未支付。
+
+    TPC323_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT
+    TPC323_ROUTE_ADVANCE = YES_SCOPED_FINITE_SIGNED_PROFILE_READOUT
+    TPC323_SIGNED_PROFILE_FACTORISATION = PROVED_EXACT_FINITE
+    TPC323_ALL_PLUS_PROFILE_MAJORISATION = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC323_ALTERNATIVE_PROFILE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_24_ROWS
+    TPC323_NAMED_LAW_SELECTION = NUMERICAL_OBSERVATION_ALL_PLUS_UNIQUE_ON_PANEL
+    TPC323_AMPLITUDE_SHAPE_DECOUPLING = NUMERICALLY_CERTIFIED_FINITE_ALL_PLUS_3_BELOW_21_ABOVE
+    TPC323_ARITHMETIC_ADVANCE = NO
+    TPC323_FIXED_POWER_CREDIT = 0
+    TPC323_FULL_GATE_B = OPEN
+    TPC323_TWIN_PRIME_RESULT = NONE
+    TPC323_STATUS = NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT
+    TPC323_STRONGEST_POSITIVE = ALL_PLUS_SIGNED_PROFILE_MAJORISATION_24_OF_24
+    TPC323_STRONGEST_OBSTRUCTION = ENERGY_CROSSING_DOES_NOT_SELECT_PROFILE_AND_ALTERNATIVES_MIX
+    TPC323_OPEN_THEOREM = FRESH_PROFILE_HOLDOUT_OR_SOURCE_NATIVE_SIGNED_ARITHMETIC_BOUND
+    TPC323_REUSABLE_STRUCTURE = TRACE_RATIO_AMPLITUDE_PLUS_NORMALISED_PROFILE_SHAPE
+    TPC323_ROUND2_CLUE = TEST_PROFILE_MAJORISATION_HOLDOUT_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+Session-named `propose.md` 与 Route-A/Route-B evaluator files 在本 checkout 中仍不存在；
+上述 proof package、independent replay、stress suite 与 local Bridge-B checker 是
+fail-closed fallback，不能写成 official evaluator pass。
+
+更新时间：2026-09-01
+交接状态：`BOLD_CHANNEL_V176_TPC323_SIGNED_PROFILE_MAJORISATION_RELEASED`
+
 TPC-322 current section: operator-level signed projector and prime-shell reassembly
 -----------------------------------------------------------------------------------------------
 
@@ -11062,10 +11110,10 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V175/TPC-322 是当前 release；其 producer、independent replay、stress audit 与
-signed-projector bridge 已封存。TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
+V176/TPC-323 是当前 release；其 producer、independent replay、stress audit 与
+signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 309 对 normal/optimized 命令、618 次
+当前 curated cascade command set 共 313 对 normal/optimized 命令、626 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -11080,8 +11128,8 @@ TPC-309 再追加末尾 4 对，TPC-310 再追加末尾 4 对，TPC-311 再追�
 TPC-312 再追加末尾 4 对，TPC-313 再追加末尾 4 对，TPC-314 再追加末尾 4 对，
 TPC-315 再追加末尾 4 对，TPC-316 再追加末尾 4 对，TPC-317 再追加末尾 4 对，
 TPC-318 再追加末尾 4 对，TPC-319 再追加末尾 4 对，TPC-320 再追加末尾 4 对，
-TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对。
-V175/TPC-322 的新增 4 对由
+TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追加末尾 4 对。
+V176/TPC-323 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；完整 309 对组合未因重复计算而再次运行。
 
 旧的下列句子是历史快照，当前数字由本段覆盖：V169/TPC-316 的 producer、independent replay、stress audit 与
@@ -12038,6 +12086,26 @@ alternating=21/3`。这 4 对是 V175/TPC-322 的新增尾部；operator-level f
 signed reassembly 不代表 canonical arithmetic cancellation、fixed-power saving 或
 官方 Route-A/Route-B 通过。
 
+TPC-323 的项目级 producer、independent replay、profile stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-323-signed-profile-majorization/code/tpc323_signed_profile_majorization.py --check
+python -O -B papers/tpc-323-signed-profile-majorization/code/tpc323_signed_profile_majorization.py --check
+python -B papers/tpc-323-signed-profile-majorization/experiments/tpc323_independent_checker.py --check
+python -O -B papers/tpc-323-signed-profile-majorization/experiments/tpc323_independent_checker.py --check
+python -B papers/tpc-323-signed-profile-majorization/experiments/tpc323_profile_stress.py --check
+python -O -B papers/tpc-323-signed-profile-majorization/experiments/tpc323_profile_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc323_signed_profile_majorization_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc323_signed_profile_majorization_checker.py --check
+```
+
+TPC-323 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 均返回零，
+stderr 为空，normal/optimized stdout 逐对 byte-identical；Bridge-B 输出
+`rows=24 / all_plus_profile=24/24 / alternating=17/7 / mod4=21/3 /
+half_split=18/6`。这 4 对是 V176/TPC-323 的新增尾部；finite profile
+majorization 不代表 canonical arithmetic cancellation、fixed-power saving 或
+官方 Route-A/Route-B 通过。
+
 此前 TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
 
 ```bash
@@ -12078,6 +12146,15 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 ```
 
 随后优先读取：
+
+最新 TPC-323 入口：
+
+papers/tpc-323-signed-profile-majorization/README.md
+papers/tpc-323-signed-profile-majorization/PROOF_PACKAGE.md
+papers/tpc-323-signed-profile-majorization/notes/theorem_ledger.md
+papers/tpc-323-signed-profile-majorization/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc323_signed_profile_majorization.md
+research/tpc-big-road/tpc_bridge_b_tpc323_signed_profile_majorization_checker.py
 
 最新 TPC-322 入口：
 

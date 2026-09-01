@@ -2,15 +2,24 @@
 
 更新时间：2026-09-01
 
-当前地图版本：V175 / TPC-322
+当前地图版本：V176 / TPC-323
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-322`（`NUMERICALLY_CERTIFIED_FINITE_OPERATOR_LEVEL_SIGNED_PROJECTOR_REASSEMBLY_ATLAS`）；
+当前编号锚点：`TPC-323`（`NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT`）；
 对应论文目录为
-`papers/tpc-322-signed-projector-reassembly/`。
+`papers/tpc-323-signed-profile-majorization/`。
 
-TPC-322 是当前地图位置：承接 TPC-321 的 cross-shell profile obstruction，在同一
+TPC-323 是当前地图位置：承接 TPC-322 的 signed-projector interface，在同一 literal
+deleted-diagonal centered prime-shell blocks 上分离 coherent energy ratio 与
+trace-normalized spectral shape。24 rows 上 all-plus profile 在 24/24 行 majorizes
+direct profile；alternating、mod-4、half-split 的 majorizing/mixed 计数分别为
+17/7、21/3、18/6。all-plus energy ratio 同时为 3/24 below、21/24 above，形成
+finite amplitude/shape decoupling。profile factorisation 是 `PROVED_EXACT_FINITE`，
+但 arithmetic `L2`、canonical arithmetic sign、fixed-power credit 与 full Gate B
+仍 open；该有限观察不等于 twin-prime 进展。
+
+TPC-322 是上一地图位置：承接 TPC-321 的 cross-shell profile obstruction，在同一
 literal deleted-diagonal centered prime-shell blocks 上定义 sign-labelled diagonal
 projector 与 coherent signed reassembly。24 rows 的 exhaustive sign atlas 每行都找到
 `rho<1` 与 `rho>1`；all-plus 为 `3/24` below、`21/24` above，index-alternating
@@ -717,8 +726,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V175 / TPC-322
-MAP_LABEL = SIGNED PROJECTOR INTERFACE / FINITE SIGN FLEXIBILITY / CANONICAL REASSEMBLY OPEN
+YOU ARE HERE = V176 / TPC-323
+MAP_LABEL = SIGNED PROFILE MAJORISATION / AMPLITUDE--SHAPE DECOUPLING / HOLDOUT OR ARITHMETIC L2 OPEN
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -954,6 +963,42 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.117 V176 / TPC-323：signed profile majorization and amplitude--shape separation
+
+TPC-323 承接 TPC-322 的 operator-level signed-projector interface，仍使用同一 literal
+deleted-diagonal centered prime-shell block family。令
+`G_direct=sum_p B_p^T B_p`、`G_e=(sum_p e_pB_p)^T(sum_p e_pB_p)`，并定义
+`rho_e=tr(G_e)/tr(G_direct)` 与 `pi(G)=lambda(G)/tr(G)`。trace/profile
+factorisation 是 exact finite identity，因而把 amplitude 与 normalized shape 分成
+两个坐标。
+
+在 `X={640,1280,2560}`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows 上，all-plus
+profile 在 24/24 行 majorizes direct profile；alternating、mod-4、half-split 的
+majorizing/mixed 计数为 17/7、21/3、18/6。all-plus energy ratio 为 3/24 below、
+21/24 above。producer、independent reverse/einsum replay、stress suite 与 local
+Bridge-B checker 的 normal/optimized 输出均一致。
+
+这是 `NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT`，其 strongest
+positive 是 all-plus 24/24 finite profile readout；strongest obstruction 是四个
+predeclared law 与有限 panel 尚不足以定义 arithmetic canonical sign。fresh profile
+holdout、source-native arithmetic `L2`、fixed-power credit、strict `1/400` payment、
+full Gate B 与 twin-prime endpoint 仍 OPEN/NONE。Session-named evaluator files absent，
+故不宣称 official Route-A/Route-B pass。
+
+    TPC323_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT
+    TPC323_ROUTE_ADVANCE = YES_SCOPED_FINITE_SIGNED_PROFILE_READOUT
+    TPC323_SIGNED_PROFILE_FACTORISATION = PROVED_EXACT_FINITE
+    TPC323_ALL_PLUS_PROFILE_MAJORISATION = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC323_ALTERNATIVE_PROFILE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_24_ROWS
+    TPC323_NAMED_LAW_SELECTION = NUMERICAL_OBSERVATION_ALL_PLUS_UNIQUE_ON_PANEL
+    TPC323_AMPLITUDE_SHAPE_DECOUPLING = NUMERICALLY_CERTIFIED_FINITE_ALL_PLUS_3_BELOW_21_ABOVE
+    TPC323_ARITHMETIC_ADVANCE = NO
+    TPC323_FIXED_POWER_CREDIT = 0
+    TPC323_FULL_GATE_B = OPEN
+    TPC323_TWIN_PRIME_RESULT = NONE
+    TPC323_STATUS = NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT
+    TPC323_ROUND2_CLUE = TEST_PROFILE_MAJORISATION_HOLDOUT_OR_SOURCE_NATIVE_ARITHMETIC_L2
 
 ## 5.116 V175 / TPC-322：operator-level signed projector and prime-shell reassembly
 
@@ -8047,6 +8092,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-01 | V176 / TPC-323 | Bridge A / Gate B：signed profile majorization readout 已完成；source-native arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-323` | 承接 TPC-322 的 signed-projector interface；24 rows 上 all-plus profile `24/24` majorizes direct，alternating/mod-4/half-split 为 `17/7`、`21/3`、`18/6`；energy ratio 与 profile shape 解耦；下一步为 fresh profile holdout 或 source-native arithmetic `L2` |
 | 2026-09-01 | V175 / TPC-322 | Bridge A / Gate B：operator-level signed projector interface 已完成；canonical sign law、arithmetic cancellation、fixed-power credit 与 full Gate B open | `TPC-322` | 承接 TPC-321 的 shell-profile obstruction；24 rows exhaustive sign atlas，每行同时有 `rho<1` 与 `rho>1`；all-plus `3/24` below、index-alternating `21/24` below；下一步为 canonical sign law 的 profile 测试与 source-native arithmetic `L2` |
 | 2026-08-31 | V174 / TPC-321 | Bridge A / Gate B：cross-shell full-profile separation 已完成；uniform shell profile、uniform majorization、arithmetic cancellation、fixed-power credit 与 full Gate B open | `TPC-321` | 承接 TPC-320 的 trace-normalized readout；24 rows / 18 adjacent-Q comparisons；TV 与 Lorenz distance 18/18 越过阈值；majorization 3 forward / 2 reverse / 13 mixed；下一步为 signed projector reassembly 或 uniform profile bound |
 | 2026-08-31 | V173 / TPC-320 | Bridge A / Gate B：trace-normalized spectral concentration readout 已完成；full spectral profile、arithmetic cancellation、fixed-power credit 与 full Gate B open | `TPC-320` | 承接 TPC-319 的 normalization firewall；24 rows / 5 k values / 80 strict concentration decreases / 16 stable-rank and participation observations；下一步为跨 shell 的 full-profile stability |

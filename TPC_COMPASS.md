@@ -1,6 +1,43 @@
 # TPC distilled map and bold channel
 
-## V175 / TPC-322 current anchor
+## V176 / TPC-323 current anchor
+
+更新时间：2026-09-01
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc323_signed_profile_majorization.md，checker 为
+tpc_bridge_b_tpc323_signed_profile_majorization_checker.py，编号论文为
+papers/tpc-323-signed-profile-majorization/。
+
+TPC-323 承接 TPC-322 的 signed-projector interface，在同一 literal
+deleted-diagonal centered prime-shell blocks 上把总能量 ratio 与归一化谱 profile
+分开读取。对 `X={640,1280,2560}`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows，
+all-plus coherent Gram 的 normalized profile 在 24/24 行 majorizes direct profile；
+alternating、mod-4、half-split 三个 declared laws 的 majorizing/mixed 计数分别为
+17/7、21/3、18/6。all-plus energy ratio 同时为 3/24 below、21/24 above，说明
+amplitude 与 shape 不是同一个读数。
+
+这是 `NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT`；
+trace/profile factorisation 是 `PROVED_EXACT_FINITE`，但结果仍是有限
+operator-level profile audit，不提供 source-native arithmetic `L2`、渐近 power
+saving、fixed-power credit 或 twin-prime endpoint。Session-named evaluator files
+absent，故不宣称 official Route-A/Route-B pass。
+
+    TPC323_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT
+    TPC323_ROUTE_ADVANCE = YES_SCOPED_FINITE_SIGNED_PROFILE_READOUT
+    TPC323_SIGNED_PROFILE_FACTORISATION = PROVED_EXACT_FINITE
+    TPC323_ALL_PLUS_PROFILE_MAJORISATION = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC323_ALTERNATIVE_PROFILE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_24_ROWS
+    TPC323_NAMED_LAW_SELECTION = NUMERICAL_OBSERVATION_ALL_PLUS_UNIQUE_ON_PANEL
+    TPC323_AMPLITUDE_SHAPE_DECOUPLING = NUMERICALLY_CERTIFIED_FINITE_ALL_PLUS_3_BELOW_21_ABOVE
+    TPC323_ARITHMETIC_ADVANCE = NO
+    TPC323_FIXED_POWER_CREDIT = 0
+    TPC323_FULL_GATE_B = OPEN
+    TPC323_TWIN_PRIME_RESULT = NONE
+    TPC323_STATUS = NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT
+    TPC323_ROUND2_CLUE = TEST_PROFILE_MAJORISATION_HOLDOUT_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+## V175 / TPC-322 previous anchor
 
 更新时间：2026-09-01
 
@@ -103,10 +140,10 @@ Route-A/Route-B pass。
     TPC320_STATUS = NUMERICALLY_CERTIFIED_FINITE_TRACE_NORMALIZED_SPECTRAL_CONCENTRATION_AUDIT
     TPC320_ROUND2_CLUE = AUDIT_SPECTRAL_PROFILE_STABILITY_ACROSS_SHELLS_OR_TEST_SIGNED_PROJECTOR_REASSEMBLY_BEFORE_ANY_ARITHMETIC_POWER_CLAIM
 
-更新时间：2026-08-31
-状态：`BOLD_CHANNEL_V174 / CROSS_SHELL_PROFILE_STABILITY`
-claim level：`NUMERICALLY_CERTIFIED_FINITE_CROSS_SHELL_PROFILE_SEPARATION_AUDIT`
-编号事实终点：TPC-321；TPC-321 trigger：`true`
+更新时间：2026-09-01
+状态：`BOLD_CHANNEL_V176 / SIGNED_PROFILE_MAJORISATION`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT`
+编号事实终点：TPC-323；TPC-323 trigger：`true`
 
 此前 TPC-320 入口：proof 为
 `research/tpc-big-road/bridge_b_tpc320_trace_normalized_spectral_concentration.md`，checker 为

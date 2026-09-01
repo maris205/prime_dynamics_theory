@@ -9,14 +9,34 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-322 承接 TPC-321 的 cross-shell profile obstruction，在同一
-literal deleted-diagonal centered prime-shell blocks 上定义 sign-labelled diagonal
-projector 与 coherent signed reassembly。X=640,1280,2560、Q={24,36,54,80}、s={1,2}
-给出 24 rows；每一行 exhaustive sign search 都找到 contracting 与 amplifying sign，
-而 all-plus law 为 21/24 amplifying、index-alternating law 为 21/24 contracting。
-这是 operator-level finite signed-projector atlas：signed projector identity 为
-PROVED_EXACT_FINITE，但 canonical sign law、source-native arithmetic L2、fixed-power
-credit 与 full Gate B 仍 OPEN，不把有限 sign ratio 写成 arithmetic cancellation。
+当前主线状态：TPC-323 承接 TPC-322 的 signed-projector interface，在同一
+literal deleted-diagonal centered prime-shell blocks 上加入 trace-normalized
+spectral profile。X=640,1280,2560、Q={24,36,54,80}、s={1,2} 的 24 rows 上，
+all-plus coherent Gram 在每一行都 majorizes direct Gram 的归一化谱 profile；
+alternating、mod-4、half-split 三个 declared laws 的 mixed 行数分别为 7、3、6。
+all-plus 的未归一化 energy ratio 却在 3/24 行低于 1、21/24 行高于 1，形成明确的
+amplitude/shape decoupling。这个结果是 finite operator-level audit：profile
+factorisation 为 PROVED_EXACT_FINITE，但 source-native arithmetic L2、渐近 power
+saving、fixed-power credit 与 full Gate B 仍 OPEN，不把有限 profile 规律写成
+arithmetic cancellation。
+
+    TPC323_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT
+    TPC323_ROUTE_ADVANCE = YES_SCOPED_FINITE_SIGNED_PROFILE_READOUT
+    TPC323_SIGNED_PROFILE_FACTORISATION = PROVED_EXACT_FINITE
+    TPC323_ALL_PLUS_PROFILE_MAJORISATION = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
+    TPC323_ALTERNATIVE_PROFILE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_24_ROWS
+    TPC323_NAMED_LAW_SELECTION = NUMERICAL_OBSERVATION_ALL_PLUS_UNIQUE_ON_PANEL
+    TPC323_AMPLITUDE_SHAPE_DECOUPLING = NUMERICALLY_CERTIFIED_FINITE_ALL_PLUS_3_BELOW_21_ABOVE
+    TPC323_ARITHMETIC_ADVANCE = NO
+    TPC323_FIXED_POWER_CREDIT = 0
+    TPC323_FULL_GATE_B = OPEN
+    TPC323_TWIN_PRIME_RESULT = NONE
+    TPC323_STATUS = NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT
+    TPC323_ROUND2_CLUE = TEST_PROFILE_MAJORISATION_HOLDOUT_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+papers/tpc-323-signed-profile-majorization - TPC-323 current project；含 exact
+trace/profile factorisation、24-row signed-profile certificate、independent replay、
+stress suite、PDF 与 local Bridge-B checker。
 
 TPC-321 承接 TPC-320 的 trace-normalized spectral profile，在同一
 literal deleted-diagonal centered prime-shell Gram 上把比较轴改为固定 X、s 下的相邻
