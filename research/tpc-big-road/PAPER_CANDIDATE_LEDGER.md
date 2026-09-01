@@ -3,13 +3,61 @@
 
 更新时间：2026-09-01
 
-状态：**TPC326_NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC327_NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.120 current：TPC-326 cross-origin scale-ladder replication
+## 0.121 current：TPC-327 three-origin scale-ladder triangulation
+
+项目：papers/tpc-327-three-origin-scale-triangulation/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION**。
+
+TPC-327 承接 TPC-326，在第三个完全 disjoint 的 source origin `20001` 上复制同一
+literal deleted-diagonal centered prime-shell operator 的四档 source-scale ladder。
+新 origin 的 source counts 仍为 `160,320,640,1280`；`H=66`、`Q={24,36,54,80}`、
+`s={1,2}` 与四个 predeclared sign laws 全部冻结，总计 32 个新 rows。与前两个
+origin `12001`、`16001` 合并后，首次得到三-origin pooled envelope range。
+
+最强正结果：新 origin 的 all-plus normalized profile 在 32/32 行 majorizes direct
+profile；四种 profile-majorization 与 energy-side census 同时匹配两个 parent。
+三-origin 各尺度 range 均非零，最大 TV range 为 `0.0007970083<0.001`，最大 energy
+range 为 `0.0045518412<0.005`。producer、independent reverse/einsum、stress、exact
+rational anchor、PDF 与 local Bridge-B normal/optimized equality 均通过。
+
+最强 obstruction：三组有限 origins 和四组有限 rungs 只给出 finite triangulation，
+不能升级为 source-uniform 或 growing theorem；继承阈值是 finite controls，不是
+analytic error term。没有 canonical arithmetic sign 或 source-native cancellation。
+
+开放定理：origin-ensemble 的 growing-scale uniform bound，或者真正 source-native
+signed arithmetic `L2` bound。fixed-power credit、strict `1/400` payment、full Gate B
+与 twin-prime conclusion 仍 OPEN/NONE。Session-named evaluator files absent，故不宣称
+official Route-A/Route-B pass。
+
+可复用结构：
+
+    parent-locked finite ladders at three disjoint origins
+        + pooled per-scale ranges
+        -> non-vacuous finite triangulation firewall
+
+ROUND2_CLUE：
+TEST_ORIGIN_ENSEMBLE_SCALE_GROWTH_OR_SOURCE_NATIVE_ARITHMETIC_L2。
+
+    TPC327_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
+    TPC327_THREE_ORIGIN_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_3_ORIGINS
+    TPC327_ALL_PLUS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_OF_32_NEW_ORIGIN
+    TPC327_CENSUS_MATCH = NUMERICALLY_CERTIFIED_FINITE_MATCH_TO_BOTH_PARENTS
+    TPC327_ENVELOPE_TRIANGULATION = NUMERICALLY_CERTIFIED_FINITE_WITHIN_DECLARED_THRESHOLDS
+    TPC327_ARITHMETIC_ADVANCE = NO
+    TPC327_FIXED_POWER_CREDIT = 0
+    TPC327_FULL_GATE_B = OPEN
+    TPC327_TWIN_PRIME_RESULT = NONE
+    TPC327_STATUS = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
+    TPC327_ROUND2_CLUE = TEST_ORIGIN_ENSEMBLE_SCALE_GROWTH_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+## 0.120 previous：TPC-326 cross-origin scale-ladder replication
 
 项目：papers/tpc-326-cross-origin-scale-replication/
 

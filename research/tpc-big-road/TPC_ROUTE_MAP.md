@@ -2,26 +2,46 @@
 
 更新时间：2026-09-01
 
-当前地图版本：V179 / TPC-326
+当前地图版本：V180 / TPC-327
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-326`（`NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION`）；
+当前编号锚点：`TPC-327`（`NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION`）；
 对应论文目录为
-`papers/tpc-326-cross-origin-scale-replication/`。
+`papers/tpc-327-three-origin-scale-triangulation/`。
 
-TPC-326 是当前地图位置：承接 TPC-325 的 source-scale ladder，在完全 disjoint 的
-第二个 source origin `16001` 重跑同一四档 source counts `160,320,640,1280`。
-`H=66`、`Q={24,36,54,80}`、`s={1,2}`、literal blocks 与四个 sign laws 全部冻结；
-新 32 rows 的 all-plus normalized profile 在 32/32 行 majorizes direct profile，四种
-profile/energy census 与 parent 完全匹配。TV lower envelope 与 energy upper envelope
-相对 parent 的最大差分别为 `0.000797...<0.001`、`0.004552...<0.005`。这是 finite
-cross-origin replication，不是 arithmetic `L2`、渐近 power saving、fixed-power
+TPC-327 是当前地图位置：承接 TPC-326，在完全 disjoint 的第三个 source origin
+`20001` 重跑同一四档 source counts `160,320,640,1280`，并将 `12001`、`16001`、
+`20001` 三个 origin 的 all-plus envelope 做 pooled triangulation。`H=66`、
+`Q={24,36,54,80}`、`s={1,2}`、literal blocks 与四个 sign laws 全部冻结；新 32
+rows 的 all-plus normalized profile 在 32/32 行 majorizes direct profile，四种
+profile/energy census 与两个父面板都匹配。三-origin 最大 TV/energy range 分别为
+`0.000797...<0.001`、`0.004552...<0.005`，且各尺度 spread 非零。这是 finite
+three-origin triangulation，不是 arithmetic `L2`、渐近 power saving、fixed-power
 credit 或 twin-prime 结论。
 
-TPC-325 是上一地图位置：它的 fixed-origin four-rung scale audit 与本关的 parent
-certificate/engine lock 直接相连；TPC-324 是更前一地图位置，它的双 source-location holdout 与 conditional translation
-covariance 仍作为本关的直接前置结构；本节之后的历史条目保持不变。
+```text
+TPC327_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
+TPC327_ROUTE_ADVANCE = YES_SCOPED_THREE_ORIGIN_SCALE_TRIANGULATION
+TPC327_THREE_ORIGIN_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_3_ORIGINS
+TPC327_ALL_PLUS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_OF_32_NEW_ORIGIN
+TPC327_CENSUS_MATCH = NUMERICALLY_CERTIFIED_FINITE_MATCH_TO_BOTH_PARENTS
+TPC327_ENVELOPE_TRIANGULATION = NUMERICALLY_CERTIFIED_FINITE_WITHIN_DECLARED_THRESHOLDS
+TPC327_ARITHMETIC_ADVANCE = NO
+TPC327_FIXED_POWER_CREDIT = 0
+TPC327_FULL_GATE_B = OPEN
+TPC327_TWIN_PRIME_RESULT = NONE
+TPC327_STATUS = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
+TPC327_ROUND2_CLUE = TEST_ORIGIN_ENSEMBLE_SCALE_GROWTH_OR_SOURCE_NATIVE_ARITHMETIC_L2
+```
+
+TPC-326 是上一地图位置：它的 second-origin replication 是本关的直接 parent
+certificate 与 engine lock；本节之后的历史条目保持不变。
+
+TPC-326 是上一地图位置：它的 second-origin replication 与本关的 parent
+certificate/engine lock 直接相连；TPC-325 是更前一地图位置，它的 fixed-origin
+four-rung scale audit 仍保留为祖先证书；TPC-324 的双 source-location holdout 与
+conditional translation covariance 继续作为更早前置结构；本节之后的历史条目保持不变。
 
 TPC-322 是上一地图位置：承接 TPC-321 的 cross-shell profile obstruction，在同一
 literal deleted-diagonal centered prime-shell blocks 上定义 sign-labelled diagonal
@@ -730,8 +750,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V179 / TPC-326
-MAP_LABEL = CROSS-ORIGIN SCALE-LADDER REPLICATION / SOURCE-UNIFORMITY OR ARITHMETIC L2 OPEN
+YOU ARE HERE = V180 / TPC-327
+MAP_LABEL = THREE-ORIGIN SCALE-LADDER TRIANGULATION / SOURCE-UNIFORMITY OR ARITHMETIC L2 OPEN
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -967,6 +987,35 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.121 V180 / TPC-327：three-origin scale-ladder triangulation
+
+TPC-327 承接 TPC-326 的 second-origin finite replication，把同一四档 ladder 搬到
+完全 disjoint 的第三个 source origin `20001`，并首次在同一证书中汇总三个 origin
+`12001,16001,20001` 的逐尺度 envelope range。新 panel 有 32 rows、all-plus
+profile majorization `32/32`，四-law profile/energy census 与两个 parent 都匹配。
+三-origin 最大 TV range 为 `0.0007970083<0.001`，最大 energy range 为
+`0.0045518412<0.005`，且每个尺度的 spread 非零。
+
+```text
+TPC327_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
+TPC327_ROUTE_ADVANCE = YES_SCOPED_THREE_ORIGIN_SCALE_TRIANGULATION
+TPC327_THREE_ORIGIN_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_3_ORIGINS
+TPC327_ALL_PLUS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_OF_32_NEW_ORIGIN
+TPC327_CENSUS_MATCH = NUMERICALLY_CERTIFIED_FINITE_MATCH_TO_BOTH_PARENTS
+TPC327_ENVELOPE_TRIANGULATION = NUMERICALLY_CERTIFIED_FINITE_WITHIN_DECLARED_THRESHOLDS
+TPC327_ARITHMETIC_ADVANCE = NO
+TPC327_FIXED_POWER_CREDIT = 0
+TPC327_FULL_GATE_B = OPEN
+TPC327_TWIN_PRIME_RESULT = NONE
+TPC327_STATUS = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
+TPC327_ROUND2_CLUE = TEST_ORIGIN_ENSEMBLE_SCALE_GROWTH_OR_SOURCE_NATIVE_ARITHMETIC_L2
+```
+
+最强正结果是三-origin finite envelope triangulation；最强 obstruction 是三个有限
+origins 与四个有限 rungs 仍不产生 source-uniform growing theorem。source-native
+arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime endpoint 仍 open。
+Session-named evaluator files absent，故不宣称 official Route-A/Route-B pass。
 
 ## 5.120 V179 / TPC-326：cross-origin scale-ladder replication
 
@@ -8205,6 +8254,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-01 | V180 / TPC-327 | Bridge A / Gate B：three-origin scale-ladder triangulation 已完成；source-native arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-327` | 承接 TPC-326；第三个 disjoint origin `20001` 上 32 rows 的 all-plus profile `32/32`，四-law census 与两个 parent 匹配；三-origin 最大 TV/energy range 低于 `0.001`/`0.005` 且非零；下一步为 origin-ensemble scale growth 或 source-native arithmetic `L2` |
 | 2026-09-01 | V179 / TPC-326 | Bridge A / Gate B：cross-origin scale-ladder replication 已完成；source-native arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-326` | 承接 TPC-325 的 fixed-origin ladder；第二个 disjoint origin `16001` 上 32 rows 的 all-plus profile `32/32`，四种 profile/energy census 与 parent 匹配，TV/energy envelope 差异低于 `0.001`/`0.005`；下一步为更多 origin replication 或 source-native arithmetic `L2` |
 | 2026-09-01 | V178 / TPC-325 | Bridge A / Gate B：source-scale ladder profile audit 已完成；source-native arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-325` | 承接 TPC-324 的 source-location holdout；新 origin `12001` 上四档 nested source counts `160,320,640,1280`，32 rows 的 all-plus profile `32/32`；TV lower envelope 与 energy upper envelope 严格四档下降；下一步为 disjoint scale replication 或 source-native arithmetic `L2` |
 | 2026-09-01 | V177 / TPC-324 | Bridge A / Gate B：source-location profile holdout replication 已完成；source-native arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-324` | 承接 TPC-323 的 profile-majorization readout；两个 disjoint holdout panels 共 48 rows，all-plus `48/48` 且每 panel `24/24`；alternating/mod-4/half-split 为 `34/14`、`42/6`、`36/12`；下一步为 holdout scale ladder 或 source-native arithmetic `L2` |

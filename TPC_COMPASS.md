@@ -1,8 +1,39 @@
 # TPC distilled map and bold channel
 
-## V179 / TPC-326 current anchor
+## V180 / TPC-327 current anchor
 
 更新时间：2026-09-01
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc327_three_origin_scale_triangulation.md，checker 为
+tpc_bridge_b_tpc327_three_origin_scale_triangulation_checker.py，编号论文为
+papers/tpc-327-three-origin-scale-triangulation/。
+
+TPC-327 承接 TPC-326，在完全 disjoint 的第三个 source origin 20001 上重跑同一
+四档 source-scale ladder，并将 12001、16001、20001 三个 origin 的 all-plus
+envelope 汇总为 finite triangulation。新的 32 rows 中 all-plus normalized profile
+在 32/32 行 majorizes direct profile；四种 profile/energy census 同时匹配两个父面板。
+三-origin 最大 TV range 为 0.000797...<0.001，最大 energy range 为
+0.004552...<0.005，且逐尺度 spread 非零。
+
+这是 NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION；它是有限三源
+adversarial triangulation，不是 source-uniform theorem、arithmetic L2、fixed-power
+credit 或 twin-prime endpoint。Session-named evaluator files absent，故只记 local
+Bridge-B fail-closed，不宣称 official Route-A/Route-B pass。
+
+    TPC327_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
+    TPC327_THREE_ORIGIN_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_3_ORIGINS
+    TPC327_ALL_PLUS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_OF_32_NEW_ORIGIN
+    TPC327_CENSUS_MATCH = NUMERICALLY_CERTIFIED_FINITE_MATCH_TO_BOTH_PARENTS
+    TPC327_ENVELOPE_TRIANGULATION = NUMERICALLY_CERTIFIED_FINITE_WITHIN_DECLARED_THRESHOLDS
+    TPC327_ARITHMETIC_ADVANCE = NO
+    TPC327_FIXED_POWER_CREDIT = 0
+    TPC327_FULL_GATE_B = OPEN
+    TPC327_TWIN_PRIME_RESULT = NONE
+    TPC327_STATUS = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
+    TPC327_ROUND2_CLUE = TEST_ORIGIN_ENSEMBLE_SCALE_GROWTH_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+## V179 / TPC-326 previous anchor
 
 当前入口：proof 为
 research/tpc-big-road/bridge_b_tpc326_cross_origin_scale_replication.md，checker 为
@@ -251,9 +282,27 @@ Route-A/Route-B pass。
     TPC320_ROUND2_CLUE = AUDIT_SPECTRAL_PROFILE_STABILITY_ACROSS_SHELLS_OR_TEST_SIGNED_PROJECTOR_REASSEMBLY_BEFORE_ANY_ARITHMETIC_POWER_CLAIM
 
 更新时间：2026-09-01
-状态：`BOLD_CHANNEL_V179 / CROSS_ORIGIN_SCALE_REPLICATION`
-claim level：`NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION`
-编号事实终点：TPC-326；TPC-326 trigger：`true`
+状态：`BOLD_CHANNEL_V180 / THREE_ORIGIN_SCALE_TRIANGULATION`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION`
+编号事实终点：TPC-327；TPC-327 trigger：`true`
+
+TPC-327 的三源 pooled readout：第三 origin `20001` 的新 32 rows 保持 all-plus
+profile majorization `32/32`，四-law profile/energy census 与 `12001`、`16001`
+两个父 origin 都匹配；三-origin 最大 TV/energy range 为
+`0.000797...<0.001`、`0.004552...<0.005`。这是 finite triangulation，
+source-native arithmetic `L2`、fixed-power credit 与 full Gate B 仍 open。
+
+    TPC327_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
+    TPC327_THREE_ORIGIN_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_3_ORIGINS
+    TPC327_ALL_PLUS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_OF_32_NEW_ORIGIN
+    TPC327_CENSUS_MATCH = NUMERICALLY_CERTIFIED_FINITE_MATCH_TO_BOTH_PARENTS
+    TPC327_ENVELOPE_TRIANGULATION = NUMERICALLY_CERTIFIED_FINITE_WITHIN_DECLARED_THRESHOLDS
+    TPC327_ARITHMETIC_ADVANCE = NO
+    TPC327_FIXED_POWER_CREDIT = 0
+    TPC327_FULL_GATE_B = OPEN
+    TPC327_TWIN_PRIME_RESULT = NONE
+    TPC327_STATUS = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
+    TPC327_ROUND2_CLUE = TEST_ORIGIN_ENSEMBLE_SCALE_GROWTH_OR_SOURCE_NATIVE_ARITHMETIC_L2
 
 此前 TPC-320 入口：proof 为
 `research/tpc-big-road/bridge_b_tpc320_trace_normalized_spectral_concentration.md`，checker 为

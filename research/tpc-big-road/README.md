@@ -1,10 +1,41 @@
-# TPC big road V179 / TPC-326: cross-origin scale-ladder replication
+# TPC big road V180 / TPC-327: three-origin scale-ladder triangulation
 
-## V179 current anchor: TPC-326
+## V180 current anchor: TPC-327
 
 更新时间：2026-09-01
 
-当前 TPC-326 proof 为
+当前 TPC-327 proof 为
+bridge_b_tpc327_three_origin_scale_triangulation.md，checker 为
+tpc_bridge_b_tpc327_three_origin_scale_triangulation_checker.py，编号论文为
+../../papers/tpc-327-three-origin-scale-triangulation/。
+
+TPC-327 承接 TPC-326，在完全 disjoint 的第三个 source origin `20001` 上复制同一
+四档 source-scale ladder，并将 `12001`、`16001`、`20001` 三个 origin 的
+all-plus envelope 做 pooled triangulation。新的 32 rows 中 all-plus profile 在
+32/32 行 majorizes direct profile；四种 profile/energy census 与两个父面板都匹配。
+三-origin 最大 TV/energy range 分别为 `0.0007970083<0.001`、
+`0.0045518412<0.005`，且每个尺度的 range 均非零。
+
+这是 `NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION`；它只是有限
+三源 adversarial triangulation，不提供 source-uniform growing theorem、source-native
+arithmetic L2、fixed-power credit 或 twin-prime endpoint。Session-named evaluator files
+absent，故不宣称 official Route-A/Route-B pass。
+
+    TPC327_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
+    TPC327_THREE_ORIGIN_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_3_ORIGINS
+    TPC327_ALL_PLUS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_OF_32_NEW_ORIGIN
+    TPC327_CENSUS_MATCH = NUMERICALLY_CERTIFIED_FINITE_MATCH_TO_BOTH_PARENTS
+    TPC327_ENVELOPE_TRIANGULATION = NUMERICALLY_CERTIFIED_FINITE_WITHIN_DECLARED_THRESHOLDS
+    TPC327_ARITHMETIC_ADVANCE = NO
+    TPC327_FIXED_POWER_CREDIT = 0
+    TPC327_FULL_GATE_B = OPEN
+    TPC327_TWIN_PRIME_RESULT = NONE
+    TPC327_STATUS = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
+    TPC327_ROUND2_CLUE = TEST_ORIGIN_ENSEMBLE_SCALE_GROWTH_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+## V179 previous anchor: TPC-326
+
+TPC-326 proof 为
 bridge_b_tpc326_cross_origin_scale_replication.md，checker 为
 tpc_bridge_b_tpc326_cross_origin_scale_replication_checker.py，编号论文为
 ../../papers/tpc-326-cross-origin-scale-replication/。

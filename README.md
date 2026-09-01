@@ -9,14 +9,31 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-326 承接 TPC-325 的 source-scale ladder，在完全 disjoint 的
-第二个 source origin 16001 重跑同一四档 N={320,640,1280,2560}。保持
-H=66、Q={24,36,54,80}、s={1,2} 和四个 sign laws 不变，32 个新 rows 的
-all-plus normalized profile 在 32/32 行 majorizes direct profile；四种 sign-law
-profile census 与 TPC-325 完全相同，TV/energy envelope 与 parent 的最大差分别为
-0.000797...<0.001、0.004552...<0.005。这是 finite cross-origin replication，
+当前主线状态：TPC-327 承接 TPC-326，在第三个完全 disjoint 的 source origin
+20001 重跑同一四档 N={320,640,1280,2560}，并把 12001、16001、20001
+三个 origin 的 envelope 合并成 finite triangulation。保持 H=66、
+Q={24,36,54,80}、s={1,2} 和四个 sign laws 不变；第三 origin 的 32 个 rows
+all-plus normalized profile 在 32/32 行 majorizes direct profile，四种 profile/
+energy census 同时匹配两个父面板。三-origin 最大 TV/energy range 分别为
+0.000797...<0.001、0.004552...<0.005。这是 finite three-origin triangulation，
 不是 uniform-in-source theorem、source-native arithmetic L2、fixed-power credit 或
 full Gate B。
+
+    TPC327_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
+    TPC327_THREE_ORIGIN_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_3_ORIGINS
+    TPC327_ALL_PLUS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_OF_32_NEW_ORIGIN
+    TPC327_CENSUS_MATCH = NUMERICALLY_CERTIFIED_FINITE_MATCH_TO_BOTH_PARENTS
+    TPC327_ENVELOPE_TRIANGULATION = NUMERICALLY_CERTIFIED_FINITE_WITHIN_DECLARED_THRESHOLDS
+    TPC327_ARITHMETIC_ADVANCE = NO
+    TPC327_FIXED_POWER_CREDIT = 0
+    TPC327_FULL_GATE_B = OPEN
+    TPC327_TWIN_PRIME_RESULT = NONE
+    TPC327_STATUS = NUMERICALLY_CERTIFIED_FINITE_THREE_ORIGIN_SCALE_TRIANGULATION
+    TPC327_ROUND2_CLUE = TEST_ORIGIN_ENSEMBLE_SCALE_GROWTH_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+papers/tpc-327-three-origin-scale-triangulation - TPC-327 current project；含第三
+disjoint origin 的 32-row certificate、三-origin envelope range、independent replay、
+residue stress、PDF 与 local Bridge-B checker。
 
     TPC326_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION
     TPC326_CROSS_ORIGIN_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_32_ROWS_2_ORIGINS
@@ -30,7 +47,7 @@ full Gate B。
     TPC326_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_ORIGIN_SCALE_LADDER_REPLICATION
     TPC326_ROUND2_CLUE = TEST_CROSS_ORIGIN_SCALE_LADDER_OR_SOURCE_NATIVE_ARITHMETIC_L2
 
-papers/tpc-326-cross-origin-scale-replication - TPC-326 current project；含第二
+papers/tpc-326-cross-origin-scale-replication - TPC-326 previous project；含第二
 disjoint origin 的 32-row cross-origin certificate、independent reverse/einsum replay、
 residue-perturbation stress、PDF 与 local Bridge-B checker。
 
