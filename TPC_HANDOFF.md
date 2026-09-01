@@ -1,5 +1,49 @@
 # TPC HANDOFF
 
+TPC-324 current section: source-location profile holdout replication
+-----------------------------------------------------------------------------------------------
+
+TPC-324 承接 TPC-323 的 signed profile-majorization readout，保留同一 TPC-268
+deleted-diagonal centered prime-shell block family，只改变 source location。两个与
+TPC-323 training union 以及彼此完全 disjoint 的 holdout panels 共 48 rows；每个
+panel 的 source counts 为 `320,640,1280`，并保留 `H=66`、`Q={24,36,54,80}`、
+`s={1,2}` 与四个 predeclared sign laws。all-plus normalized profile 在每个 panel
+24/24、合计 48/48 行 majorizes direct profile；alternating、mod-4、half-split 的
+majorizing/mixed 计数分别为 `34/14`、`42/6`、`36/12`。all-plus energy ratio
+为 `6/48` below、`42/48` above。
+
+producer、independent reverse/einsum replay、holdout stress suite 与 local Bridge-B
+normal/optimized checker 均通过；这封存的是 finite source-location replication。
+conditional translation covariance 是 `PROVED_EXACT_FINITE_CONDITIONAL`，但所选
+gap-offset 改变了 active residue mask，因此不能把结果归因于简单共同倍数平移。
+source-native arithmetic `L2`、canonical arithmetic sign、渐近 power saving、
+fixed-power credit、strict `1/400` payment 与 twin-prime conclusion 仍未支付。
+
+    TPC324_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION
+    TPC324_ROUTE_ADVANCE = YES_SCOPED_SOURCE_LOCATION_HOLDOUT_REPLICATION
+    TPC324_SOURCE_LOCATION_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_48_ROWS_2_PANELS
+    TPC324_ALL_PLUS_PROFILE_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_48_OF_48
+    TPC324_PER_PANEL_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_24_OF_24_EACH
+    TPC324_ALTERNATIVE_PROFILE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_48_ROWS
+    TPC324_TRANSLATION_COVARIANCE = PROVED_EXACT_FINITE_CONDITIONAL
+    TPC324_ARITHMETIC_ADVANCE = NO
+    TPC324_FIXED_POWER_CREDIT = 0
+    TPC324_FULL_GATE_B = OPEN
+    TPC324_TWIN_PRIME_RESULT = NONE
+    TPC324_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION
+    TPC324_STRONGEST_POSITIVE = TWO_PANEL_ALL_PLUS_PROFILE_REPLICATION_48_OF_48
+    TPC324_STRONGEST_OBSTRUCTION = FINITE_REPLICATION_IS_NOT_SOURCE_NATIVE_ARITHMETIC_THEOREM
+    TPC324_OPEN_THEOREM = HOLDOUT_SCALE_LADDER_OR_SOURCE_NATIVE_SIGNED_ARITHMETIC_BOUND
+    TPC324_REUSABLE_STRUCTURE = CONDITIONAL_TRANSLATION_COVARIANCE_PLUS_RESIDUE_SENSITIVE_HOLDOUT
+    TPC324_ROUND2_CLUE = TEST_HOLDOUT_SCALE_LADDER_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+Session-named `propose.md` 与 Route-A/Route-B evaluator files 在本 checkout 中仍不存在；
+上述 proof package、independent replay、stress suite 与 local Bridge-B checker 是
+fail-closed fallback，不能写成 official evaluator pass。
+
+更新时间：2026-09-01
+交接状态：`BOLD_CHANNEL_V177_TPC324_SOURCE_PROFILE_HOLDOUT_RELEASED`
+
 TPC-323 current section: signed profile majorization and amplitude--shape separation
 -----------------------------------------------------------------------------------------------
 
@@ -11110,7 +11154,30 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V176/TPC-323 是当前 release；其 producer、independent replay、stress audit 与
+V177/TPC-324 是当前 release；其 producer、independent replay、stress audit 与
+source-profile holdout bridge 已封存。TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
+及更早版本仍按历史顺序保留。
+当前 curated cascade command set 共 317 对 normal/optimized 命令、634 次
+invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
+4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
+对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
+TPC-288 再追加末尾 4 对，TPC-289 再追加末尾 4 对，TPC-290 再追加末尾 4 对，
+TPC-291 再追加末尾 4 对，TPC-292 再追加末尾 4 对，TPC-293 再追加末尾 4 对，
+TPC-294 再追加末尾 4 对，TPC-295 再追加末尾 4 对，TPC-296 再追加末尾 4 对，
+TPC-297 再追加末尾 4 对，TPC-298 再追加末尾 4 对，TPC-299 再追加末尾 4 对，
+TPC-300 再追加末尾 4 对，TPC-301 再追加末尾 4 对，TPC-302 再追加末尾 4 对，
+TPC-303 再追加末尾 4 对，TPC-304 再追加末尾 4 对，TPC-305 再追加末尾 4 对，
+TPC-306 再追加末尾 4 对，TPC-307 再追加末尾 4 对，TPC-308 再追加末尾 4 对，
+TPC-309 再追加末尾 4 对，TPC-310 再追加末尾 4 对，TPC-311 再追加末尾 4 对，
+TPC-312 再追加末尾 4 对，TPC-313 再追加末尾 4 对，TPC-314 再追加末尾 4 对，
+TPC-315 再追加末尾 4 对，TPC-316 再追加末尾 4 对，TPC-317 再追加末尾 4 对，
+TPC-318 再追加末尾 4 对，TPC-319 再追加末尾 4 对，TPC-320 再追加末尾 4 对，
+TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追加末尾 4 对，
+TPC-324 再追加末尾 4 对。
+V177/TPC-324 的新增 4 对由
+本项目 bridge 与 standalone tail checks 逐项验证；完整 313 对组合未因重复计算而再次运行。
+
+旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
 当前 curated cascade command set 共 313 对 normal/optimized 命令、626 次
@@ -12106,6 +12173,26 @@ half_split=18/6`。这 4 对是 V176/TPC-323 的新增尾部；finite profile
 majorization 不代表 canonical arithmetic cancellation、fixed-power saving 或
 官方 Route-A/Route-B 通过。
 
+TPC-324 的项目级 producer、independent replay、holdout stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-324-source-profile-holdout/code/tpc324_source_profile_holdout.py --check
+python -O -B papers/tpc-324-source-profile-holdout/code/tpc324_source_profile_holdout.py --check
+python -B papers/tpc-324-source-profile-holdout/experiments/tpc324_independent_checker.py --check
+python -O -B papers/tpc-324-source-profile-holdout/experiments/tpc324_independent_checker.py --check
+python -B papers/tpc-324-source-profile-holdout/experiments/tpc324_holdout_stress.py --check
+python -O -B papers/tpc-324-source-profile-holdout/experiments/tpc324_holdout_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc324_source_profile_holdout_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc324_source_profile_holdout_checker.py --check
+```
+
+TPC-324 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 均返回零，
+stderr 为空，normal/optimized stdout 逐对 byte-identical；Bridge-B 输出
+`rows=48 / panels=2 / all_plus_profile=48/48 / per_panel=24/24 /
+alternative=34/14,42/6,36/12`。这 4 对是 V177/TPC-324 的新增尾部；finite
+source-location replication 不代表 source-native arithmetic cancellation、
+fixed-power saving 或官方 Route-A/Route-B 通过。
+
 此前 TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
 
 ```bash
@@ -12146,6 +12233,15 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 ```
 
 随后优先读取：
+
+最新 TPC-324 入口：
+
+papers/tpc-324-source-profile-holdout/README.md
+papers/tpc-324-source-profile-holdout/PROOF_PACKAGE.md
+papers/tpc-324-source-profile-holdout/notes/theorem_ledger.md
+papers/tpc-324-source-profile-holdout/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc324_source_profile_holdout.md
+research/tpc-big-road/tpc_bridge_b_tpc324_source_profile_holdout_checker.py
 
 最新 TPC-323 入口：
 

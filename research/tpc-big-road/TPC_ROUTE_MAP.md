@@ -2,22 +2,26 @@
 
 更新时间：2026-09-01
 
-当前地图版本：V176 / TPC-323
+当前地图版本：V177 / TPC-324
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-323`（`NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT`）；
+当前编号锚点：`TPC-324`（`NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION`）；
 对应论文目录为
-`papers/tpc-323-signed-profile-majorization/`。
+`papers/tpc-324-source-profile-holdout/`。
 
-TPC-323 是当前地图位置：承接 TPC-322 的 signed-projector interface，在同一 literal
-deleted-diagonal centered prime-shell blocks 上分离 coherent energy ratio 与
-trace-normalized spectral shape。24 rows 上 all-plus profile 在 24/24 行 majorizes
-direct profile；alternating、mod-4、half-split 的 majorizing/mixed 计数分别为
-17/7、21/3、18/6。all-plus energy ratio 同时为 3/24 below、21/24 above，形成
-finite amplitude/shape decoupling。profile factorisation 是 `PROVED_EXACT_FINITE`，
-但 arithmetic `L2`、canonical arithmetic sign、fixed-power credit 与 full Gate B
-仍 open；该有限观察不等于 twin-prime 进展。
+TPC-324 是当前地图位置：承接 TPC-323 的 signed profile majorization，在同一 literal
+deleted-diagonal centered prime-shell blocks 上只改变 source location。两个与
+TPC-323 training union disjoint 的 holdout panels 共 48 rows；all-plus normalized
+profile 在 48/48 行 majorizes direct profile，且每个 panel 都是 24/24。alternating、
+mod-4、half-split 的 majorizing/mixed 计数为 34/14、42/6、36/12，和 parent panel
+完全相同；all-plus energy ratio 为 6/48 below、42/48 above。这是 finite
+source-location replication：conditional translation covariance 为
+`PROVED_EXACT_FINITE_CONDITIONAL`，但 arithmetic `L2`、渐近 power saving、
+fixed-power credit 与 full Gate B 仍 open；该有限观察不等于 twin-prime 进展。
+
+TPC-323 是上一地图位置：它的 exact trace/profile factorisation 与 24-row
+profile-majorization readout 仍作为本关的直接前置结构；本节之后的历史条目保持不变。
 
 TPC-322 是上一地图位置：承接 TPC-321 的 cross-shell profile obstruction，在同一
 literal deleted-diagonal centered prime-shell blocks 上定义 sign-labelled diagonal
@@ -726,8 +730,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V176 / TPC-323
-MAP_LABEL = SIGNED PROFILE MAJORISATION / AMPLITUDE--SHAPE DECOUPLING / HOLDOUT OR ARITHMETIC L2 OPEN
+YOU ARE HERE = V177 / TPC-324
+MAP_LABEL = SOURCE-LOCATION PROFILE HOLDOUT REPLICATION / SCALE LADDER OR ARITHMETIC L2 OPEN
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -963,6 +967,43 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.118 V177 / TPC-324：source-location profile holdout
+
+TPC-324 承接 TPC-323 的 signed profile majorization，在同一 literal
+deleted-diagonal centered prime-shell block family 上只改变 source location。它冻结
+两个新的、彼此以及与 TPC-323 training union 完全 disjoint 的 source panels；每个
+panel 保留 source counts `320,640,1280`、`H=66`、`Q={24,36,54,80}`、`s={1,2}`
+与四个 predeclared sign laws，总计 48 rows。all-plus normalized profile 在每个
+panel 的 24/24 行、合计 48/48 行 majorizes direct profile；alternating、mod-4、
+half-split 的合计 majorizing/mixed 计数为 `34/14`、`42/6`、`36/12`，all-plus
+energy ratio 为 `6/48` below、`42/48` above。
+
+最强正结果是 source-location holdout 对 parent profile-majorization census 的
+有限复制，并由 producer、independent reverse/einsum replay、stress suite 与
+Bridge-B normal/optimized equality 封存。最强 obstruction 是有限复制不等于
+uniform-in-source 或 growing-X theorem；conditional translation covariance 只覆盖
+共同被 active shell primes 整除的位移，所选 gap-offset 改变了 residue mask。
+
+```text
+TPC324_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION
+TPC324_ROUTE_ADVANCE = YES_SCOPED_SOURCE_LOCATION_HOLDOUT_REPLICATION
+TPC324_SOURCE_LOCATION_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_48_ROWS_2_PANELS
+TPC324_ALL_PLUS_PROFILE_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_48_OF_48
+TPC324_PER_PANEL_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_24_OF_24_EACH
+TPC324_ALTERNATIVE_PROFILE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_48_ROWS
+TPC324_TRANSLATION_COVARIANCE = PROVED_EXACT_FINITE_CONDITIONAL
+TPC324_ARITHMETIC_ADVANCE = NO
+TPC324_FIXED_POWER_CREDIT = 0
+TPC324_FULL_GATE_B = OPEN
+TPC324_TWIN_PRIME_RESULT = NONE
+TPC324_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION
+TPC324_ROUND2_CLUE = TEST_HOLDOUT_SCALE_LADDER_OR_SOURCE_NATIVE_ARITHMETIC_L2
+```
+
+TPC-324 的下一步是把 source-location replication 改成预注册的 scale ladder，或
+直接攻击 source-native signed arithmetic `L2`；在此之前不支付 fixed-power credit，
+也不宣称 official Route-A/Route-B pass。
 
 ## 5.117 V176 / TPC-323：signed profile majorization and amplitude--shape separation
 
@@ -8092,6 +8133,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-01 | V177 / TPC-324 | Bridge A / Gate B：source-location profile holdout replication 已完成；source-native arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-324` | 承接 TPC-323 的 profile-majorization readout；两个 disjoint holdout panels 共 48 rows，all-plus `48/48` 且每 panel `24/24`；alternating/mod-4/half-split 为 `34/14`、`42/6`、`36/12`；下一步为 holdout scale ladder 或 source-native arithmetic `L2` |
 | 2026-09-01 | V176 / TPC-323 | Bridge A / Gate B：signed profile majorization readout 已完成；source-native arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-323` | 承接 TPC-322 的 signed-projector interface；24 rows 上 all-plus profile `24/24` majorizes direct，alternating/mod-4/half-split 为 `17/7`、`21/3`、`18/6`；energy ratio 与 profile shape 解耦；下一步为 fresh profile holdout 或 source-native arithmetic `L2` |
 | 2026-09-01 | V175 / TPC-322 | Bridge A / Gate B：operator-level signed projector interface 已完成；canonical sign law、arithmetic cancellation、fixed-power credit 与 full Gate B open | `TPC-322` | 承接 TPC-321 的 shell-profile obstruction；24 rows exhaustive sign atlas，每行同时有 `rho<1` 与 `rho>1`；all-plus `3/24` below、index-alternating `21/24` below；下一步为 canonical sign law 的 profile 测试与 source-native arithmetic `L2` |
 | 2026-08-31 | V174 / TPC-321 | Bridge A / Gate B：cross-shell full-profile separation 已完成；uniform shell profile、uniform majorization、arithmetic cancellation、fixed-power credit 与 full Gate B open | `TPC-321` | 承接 TPC-320 的 trace-normalized readout；24 rows / 18 adjacent-Q comparisons；TV 与 Lorenz distance 18/18 越过阈值；majorization 3 forward / 2 reverse / 13 mixed；下一步为 signed projector reassembly 或 uniform profile bound |

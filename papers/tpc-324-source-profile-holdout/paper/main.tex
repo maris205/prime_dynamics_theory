@@ -1,0 +1,222 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.78in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newcommand{\PP}{\mathcal P}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\R}{\mathbb R}
+
+\title{A Source--Location Holdout for Signed Prime--Shell Spectral Profiles}
+\author{Liang Wang\\
+School of Mathematics and Statistics, Huazhong University of Science and Technology\\
+Wuhan, China}
+\date{1 September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We test whether the finite trace-normalized spectral-profile
+majorization pattern found in TPC-323 is tied to its source location.
+Keeping the deleted diagonal, height, prime-shell anchors, kernel
+exponents, and four sign laws fixed, we move the source coordinates to two
+pre-registered panels disjoint from the parent panel.  The all-plus coherent
+profile majorizes the direct profile on all 48 holdout rows, with 24 out of
+24 rows on each panel.  The three alternative laws reproduce the parent
+census, with majorizing/mixed counts 34/14, 42/6, and 36/12 in aggregate.
+We prove the elementary conditional translation-covariance identity and
+verify that the selected offsets are not covered by it.  The result is a
+finite, independently replayed source-location replication; it supplies no
+source-native arithmetic $L^2$ estimate, asymptotic power saving, or twin
+prime theorem.
+\end{abstract}
+
+\section{Question and scope}
+
+The preceding signed-projector audit separated coherent energy from spectral
+shape.  On its training panel, the all-plus law had a strict
+trace-normalized profile-majorization label on every row, even though its
+unnormalized energy crossed the direct energy.  A natural next question is
+whether this profile signal survives a change of source location.  Such a
+test is useful because the literal blocks contain both difference kernels and
+absolute residue masks.
+
+This paper makes one controlled intervention.  The source cardinalities and
+all other parameters are unchanged; only the integer intervals are moved.
+The conclusion is deliberately finite.  In particular, ``replication''
+below means a frozen recomputation with an independent implementation, not an
+independence theorem for prime events.
+
+\section{Literal block family}
+
+For a finite interval $I\subset\mathbb Z$, $p\in\PP_Q$ and $s\in\{1,2\}$,
+we use the same block as the parent audit:
+\begin{equation}
+ B_{p,I}^{(s)}(u,t)=p\frac{H^{2s}}{(H^2+(u-t)^2)^s}
+ 1_{u\ne t}1_{p\nmid u}1_{p\nmid t}
+ \left(1_{u\equiv t\pmod p}-\frac{1}{p-1}\right),
+ \label{eq:block}
+\end{equation}
+where $H=66$ and
+\[
+ \PP_Q=\{p: Q<p\leq 2Q,\ p\text{ prime}\},\qquad
+ Q\in\{24,36,54,80\}.
+\]
+The direct and coherent Gram matrices are
+\begin{equation}
+ G_0=\sum_{p\in\PP_Q}B_p^*B_p,
+ \qquad
+ C_e=\sum_{p\in\PP_Q}e_pB_p,
+ \qquad G_e=C_e^*C_e,
+ \label{eq:grams}
+\end{equation}
+where $e_p\in\{+1,-1\}$.  We compare the energy ratio
+\[
+ \rho_e=\frac{\tr(G_e)}{\tr(G_0)}
+\]
+with the normalized, descending spectral profile
+\[
+ \pi(G)=\frac{(\lambda_1(G),\ldots,\lambda_n(G))}{\tr(G)}.
+\]
+The label $G_e\succcurlyeq_\pi G_0$ means that every interior prefix of
+$\pi(G_e)-\pi(G_0)$ is nonnegative and at least one is positive; this is the
+usual finite majorization convention \cite{marshall2011,bhatia1997}.
+
+\section{An exact covariance control}
+
+The source shift can sometimes be invisible to the literal block.  We state
+the precise condition so that it is not confused with the numerical result.
+
+\begin{proposition}[conditional translation covariance]
+Let $d$ be divisible by every prime in $\PP_Q$, and let
+$T_d:\ell^2(I)\to\ell^2(I+d)$ relabel coordinates by
+$(T_df)(u+d)=f(u)$.  Then
+\[
+ B_{p,I+d}^{(s)}=T_dB_{p,I}^{(s)}T_d^{-1},\quad
+ G_0(I+d)=T_dG_0(I)T_d^{-1},\quad
+ G_e(I+d)=T_dG_e(I)T_d^{-1}.
+\]
+Consequently $\rho_e$ and $\pi(G)$ are unchanged.
+\end{proposition}
+
+\begin{proof}
+Under $u\mapsto u+d$ and $t\mapsto t+d$, the difference $u-t$ and the
+deleted-diagonal indicator are unchanged.  Divisibility of $d$ by $p$ gives
+$u+d\equiv u$ and $t+d\equiv t\pmod p$, so both residue indicators and both
+deleted divisibility masks are unchanged.  Equation~\eqref{eq:block} thus
+conjugates entry by entry.  The Gram identities follow by summation, and
+unitary conjugation preserves eigenvalues and trace.
+\end{proof}
+
+The holdout shifts are not common multiples of the complete active shells;
+the stress suite also exhibits changed residue masks.  Thus Proposition 1 is
+an exact reusable control, not a reason to identify the two panels with the
+parent calculation.
+
+\section{Frozen holdout protocol}
+
+TPC-323 used $[321,640]$, $[641,1280]$, and $[1281,2560]$.  Before running
+the holdout computation we fixed the two source panels in Table~\ref{tab:panels}.
+The first is the natural continuation; the second inserts gaps.  Their
+cardinalities are respectively $320$, $640$, and $1280$, and no source
+integer overlaps the parent union or the other holdout panel.
+
+\begin{table}[t]
+\centering
+\caption{Frozen source-location panels.}
+\label{tab:panels}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Panel & $n=320$ & $n=640$ & $n=1280$\\
+\midrule
+continuation & $[2561,2880]$ & $[2881,3520]$ & $[3521,4800]$\\
+gap-offset & $[5001,5320]$ & $[6001,6640]$ & $[8001,9280]$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For each of the $2\times3\times4\times2=48$ rows we retain forward matrix
+accumulation, reverse $\texttt{einsum}$ accumulation, and SciPy/NumPy
+profile paths.  Scalar intervals expand path extrema by $10^{-12}$ and the
+majorization tolerance is $10^{-10}$.  An independently written checker
+rebuilds the literal blocks in reverse order.  It validates metrics and
+outward intervals rather than requiring last-bit equality of long floating
+profile digests across LAPACK builds.
+
+\section{Results}
+
+Table~\ref{tab:census} gives the profile census.  Each pair is
+``majorizing/mixed''; no reverse-only or unresolved row occurred.  The
+per-panel counts are identical, so the aggregate is not produced by one
+exceptional source interval.
+
+\begin{table}[t]
+\centering
+\caption{Finite profile census on the two holdouts.}
+\label{tab:census}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Panel & Rows & all-plus & alternating & mod-4 & half-split\\
+\midrule
+continuation & 24 & 24/0 & 17/7 & 21/3 & 18/6\\
+gap-offset & 24 & 24/0 & 17/7 & 21/3 & 18/6\\
+\midrule
+aggregate & 48 & 48/0 & 34/14 & 42/6 & 36/12\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The strict all-plus prefix lower endpoint over all rows is
+\[
+ 1.647473532339078\times 10^{-5}>0.
+\]
+The all-plus energy ratio is below one on 6 rows and above one on 42 rows.
+Thus the holdout strengthens the amplitude--shape distinction: profile
+majorization is stable across the two source locations while the energy
+coordinate still crosses the direct baseline.  The finite alternative-law
+census also matches the 24-row parent proportions exactly.
+
+As an exact small anchor, the fresh interval $[4001,4016]$ with $Q=4$ and
+$s=1$ has positive direct and alternating signed rational energies.  Their
+full SHA-256 digests are stored in the machine-readable certificate and are
+recomputed by the independent checker (prefixes
+\texttt{97225bdb} and \texttt{b475bf82}, respectively).
+
+\section{Interpretation and firewall}
+
+The strongest positive statement is a two-panel, 48-row source-location
+replication of the all-plus normalized profile label, backed by an exact
+conditional covariance lemma and independent replay.  The strongest
+obstruction is equally important: replication of a finite profile pattern
+does not provide a source-native arithmetic representation of the signs.
+The four laws are geometric probes, not Möbius or von Mangoldt weights.
+
+Accordingly, the status of this paper is
+\[
+\texttt{NUMERICALLY\_CERTIFIED\_FINITE\_SOURCE\_LOCATION\_HOLDOUT\_REPLICATION}.
+\]
+It earns no fixed-power credit.  A uniform scale theorem, canonical
+arithmetic sign law, source-native signed $L^2$ estimate, strict $1/400$
+payment, and the twin-prime endpoint remain open.  The Session-named
+\texttt{propose.md} and official Route-A/Route-B evaluator files are absent
+from this checkout; the included local Bridge-B checker is fail-closed.
+
+\section{Conclusion and next route}
+
+The all-plus profile signal is not confined to the parent source interval:
+it survives both a natural continuation and a separated residue-sensitive
+holdout.  The next economical test is a new scale ladder, followed by an
+attempt to express the signed profile in a source-native arithmetic $L^2$
+interface.  Until such a theorem exists, the result should be read as a
+map-level structural island rather than progress toward a twin-prime proof.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

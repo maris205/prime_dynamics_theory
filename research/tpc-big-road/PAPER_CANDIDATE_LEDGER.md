@@ -3,13 +3,65 @@
 
 更新时间：2026-09-01
 
-状态：**TPC323_NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC324_NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.117 current：TPC-323 signed profile majorization and amplitude--shape separation
+## 0.118 current：TPC-324 source-location profile holdout
+
+项目：papers/tpc-324-source-profile-holdout/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION**。
+
+TPC-324 承接 TPC-323 的 signed profile majorization，在同一 literal
+deleted-diagonal centered prime-shell block family 上冻结两个新的、彼此以及与
+TPC-323 training union 完全 disjoint 的 source panels。每个 panel 的 source counts
+为 `320,640,1280`，并保留 `H=66`、`Q={24,36,54,80}`、`s={1,2}` 与四个
+predeclared sign laws；总计 48 rows。all-plus normalized profile 在两个 panel
+各自 24/24、合计 48/48 行 majorizes direct profile；alternating、mod-4、half-split
+的合计 majorizing/mixed 计数为 `34/14`、`42/6`、`36/12`，all-plus energy ratio
+为 `6/48` below、`42/48` above。
+
+最强正结果：两个 source-location holdout 对 parent profile-majorization 读数给出
+同一有限 census，且由 producer、independent replay、stress suite、PDF 与 local
+Bridge-B normal/optimized equality 共同封存。
+
+最强 obstruction：这是有限 source-location replication，而不是 uniform-in-source
+或 growing-X theorem；conditional translation covariance 只覆盖共同被所有 shell
+素数整除的位移，所选 gap-offset 改变了至少一个 active residue mask。结果仍没有
+canonical arithmetic sign、source-native arithmetic `L2`、渐近 power saving、
+fixed-power credit 或 twin-prime conclusion。
+
+开放定理：holdout scale ladder 或 source-native signed arithmetic bound，随后才可
+讨论 arithmetic promotion。Session-named evaluator files absent，故不宣称 official
+Route-A/Route-B pass。
+
+可复用结构：
+
+    conditional translation covariance
+        + residue-sensitive source-location holdout
+        -> profile replication / arithmetic-uniformity firewall
+
+ROUND2_CLUE：
+TEST_HOLDOUT_SCALE_LADDER_OR_SOURCE_NATIVE_ARITHMETIC_L2。
+
+    TPC324_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION
+    TPC324_ROUTE_ADVANCE = YES_SCOPED_SOURCE_LOCATION_HOLDOUT_REPLICATION
+    TPC324_SOURCE_LOCATION_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_48_ROWS_2_PANELS
+    TPC324_ALL_PLUS_PROFILE_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_48_OF_48
+    TPC324_PER_PANEL_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_24_OF_24_EACH
+    TPC324_ALTERNATIVE_PROFILE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_48_ROWS
+    TPC324_TRANSLATION_COVARIANCE = PROVED_EXACT_FINITE_CONDITIONAL
+    TPC324_ARITHMETIC_ADVANCE = NO
+    TPC324_FIXED_POWER_CREDIT = 0
+    TPC324_FULL_GATE_B = OPEN
+    TPC324_TWIN_PRIME_RESULT = NONE
+    TPC324_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION
+    TPC324_ROUND2_CLUE = TEST_HOLDOUT_SCALE_LADDER_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+## 0.117 previous：TPC-323 signed profile majorization and amplitude--shape separation
 
 项目：papers/tpc-323-signed-profile-majorization/
 

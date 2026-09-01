@@ -9,16 +9,33 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-323 承接 TPC-322 的 signed-projector interface，在同一
-literal deleted-diagonal centered prime-shell blocks 上加入 trace-normalized
-spectral profile。X=640,1280,2560、Q={24,36,54,80}、s={1,2} 的 24 rows 上，
-all-plus coherent Gram 在每一行都 majorizes direct Gram 的归一化谱 profile；
-alternating、mod-4、half-split 三个 declared laws 的 mixed 行数分别为 7、3、6。
-all-plus 的未归一化 energy ratio 却在 3/24 行低于 1、21/24 行高于 1，形成明确的
-amplitude/shape decoupling。这个结果是 finite operator-level audit：profile
-factorisation 为 PROVED_EXACT_FINITE，但 source-native arithmetic L2、渐近 power
-saving、fixed-power credit 与 full Gate B 仍 OPEN，不把有限 profile 规律写成
-arithmetic cancellation。
+当前主线状态：TPC-324 承接 TPC-323 的 profile-majorization readout，在同一
+literal deleted-diagonal centered prime-shell blocks 上做预注册的 source-location
+holdout。两个与训练 union 完全 disjoint 的 source panels 共 48 rows；all-plus
+profile 在 48/48 行 majorizes direct profile，且每个 panel 单独为 24/24。alternating、
+mod-4、half-split 的 majorizing/mixed 计数为 34/14、42/6、36/12，复现了 parent
+panel 的比例；all-plus energy ratio 仍为 6/48 below、42/48 above。这个结果是
+finite source-location replication：conditional translation covariance 为
+PROVED_EXACT_FINITE，但 source-native arithmetic L2、渐近 power saving、fixed-power
+credit 与 full Gate B 仍 OPEN，不把 holdout 复现写成 arithmetic cancellation。
+
+    TPC324_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION
+    TPC324_ROUTE_ADVANCE = YES_SCOPED_SOURCE_LOCATION_HOLDOUT_REPLICATION
+    TPC324_SOURCE_LOCATION_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_48_ROWS_2_PANELS
+    TPC324_ALL_PLUS_PROFILE_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_48_OF_48
+    TPC324_PER_PANEL_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_24_OF_24_EACH
+    TPC324_ALTERNATIVE_PROFILE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_48_ROWS
+    TPC324_TRANSLATION_COVARIANCE = PROVED_EXACT_FINITE_CONDITIONAL
+    TPC324_ARITHMETIC_ADVANCE = NO
+    TPC324_FIXED_POWER_CREDIT = 0
+    TPC324_FULL_GATE_B = OPEN
+    TPC324_TWIN_PRIME_RESULT = NONE
+    TPC324_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION
+    TPC324_ROUND2_CLUE = TEST_HOLDOUT_SCALE_LADDER_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+papers/tpc-324-source-profile-holdout - TPC-324 current project；含 exact conditional
+translation covariance、双 source-location holdout、48-row profile certificate、
+independent replay、stress suite、PDF 与 local Bridge-B checker。
 
     TPC323_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT
     TPC323_ROUTE_ADVANCE = YES_SCOPED_FINITE_SIGNED_PROFILE_READOUT

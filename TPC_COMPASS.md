@@ -1,6 +1,42 @@
 # TPC distilled map and bold channel
 
-## V176 / TPC-323 current anchor
+## V177 / TPC-324 current anchor
+
+更新时间：2026-09-01
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc324_source_profile_holdout.md，checker 为
+tpc_bridge_b_tpc324_source_profile_holdout_checker.py，编号论文为
+papers/tpc-324-source-profile-holdout/。
+
+TPC-324 承接 TPC-323 的 signed profile majorization，在同一 literal
+deleted-diagonal centered prime-shell blocks 上只改变 source location。两个与
+TPC-323 training union disjoint 的 holdout panels 共 48 rows；all-plus normalized
+profile 在 48/48 行 majorizes direct profile，且每个 panel 都是 24/24。alternating、
+mod-4、half-split 的 majorizing/mixed 计数为 34/14、42/6、36/12，和 parent panel
+完全相同；all-plus energy ratio 为 6/48 below、42/48 above。
+
+这是 `NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION`；
+conditional translation covariance 是 `PROVED_EXACT_FINITE_CONDITIONAL`，但 holdout
+复现仍是有限数值结果，不提供 source-native arithmetic `L2`、渐近 power saving、
+fixed-power credit 或 twin-prime endpoint。Session-named evaluator files absent，故
+不宣称 official Route-A/Route-B pass。
+
+    TPC324_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION
+    TPC324_ROUTE_ADVANCE = YES_SCOPED_SOURCE_LOCATION_HOLDOUT_REPLICATION
+    TPC324_SOURCE_LOCATION_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_48_ROWS_2_PANELS
+    TPC324_ALL_PLUS_PROFILE_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_48_OF_48
+    TPC324_PER_PANEL_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_24_OF_24_EACH
+    TPC324_ALTERNATIVE_PROFILE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_48_ROWS
+    TPC324_TRANSLATION_COVARIANCE = PROVED_EXACT_FINITE_CONDITIONAL
+    TPC324_ARITHMETIC_ADVANCE = NO
+    TPC324_FIXED_POWER_CREDIT = 0
+    TPC324_FULL_GATE_B = OPEN
+    TPC324_TWIN_PRIME_RESULT = NONE
+    TPC324_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION
+    TPC324_ROUND2_CLUE = TEST_HOLDOUT_SCALE_LADDER_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+## V176 / TPC-323 previous anchor
 
 更新时间：2026-09-01
 
@@ -141,9 +177,9 @@ Route-A/Route-B pass。
     TPC320_ROUND2_CLUE = AUDIT_SPECTRAL_PROFILE_STABILITY_ACROSS_SHELLS_OR_TEST_SIGNED_PROJECTOR_REASSEMBLY_BEFORE_ANY_ARITHMETIC_POWER_CLAIM
 
 更新时间：2026-09-01
-状态：`BOLD_CHANNEL_V176 / SIGNED_PROFILE_MAJORISATION`
-claim level：`NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT`
-编号事实终点：TPC-323；TPC-323 trigger：`true`
+状态：`BOLD_CHANNEL_V177 / SOURCE_PROFILE_HOLDOUT`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION`
+编号事实终点：TPC-324；TPC-324 trigger：`true`
 
 此前 TPC-320 入口：proof 为
 `research/tpc-big-road/bridge_b_tpc320_trace_normalized_spectral_concentration.md`，checker 为

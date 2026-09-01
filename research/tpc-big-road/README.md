@@ -1,36 +1,54 @@
-# TPC big road V176 / TPC-323: signed profile majorization and amplitude--shape separation
+# TPC big road V177 / TPC-324: source-location profile holdout
 
-## V176 current anchor: TPC-323
+## V177 current anchor: TPC-324
 
 更新时间：2026-09-01
 
-当前 TPC-323 proof 为
+当前 TPC-324 proof 为
+bridge_b_tpc324_source_profile_holdout.md，checker 为
+tpc_bridge_b_tpc324_source_profile_holdout_checker.py，编号论文为
+../../papers/tpc-324-source-profile-holdout/。
+
+TPC-324 承接 TPC-323 的 signed profile majorization，在同一 literal
+deleted-diagonal centered prime-shell blocks 上只改变 source location。两个与
+TPC-323 training union disjoint 的 holdout panels 共 48 rows；all-plus normalized
+profile 在 48/48 行 majorizes direct profile，且每个 panel 都是 24/24。alternating、
+mod-4、half-split 的 majorizing/mixed 计数为 34/14、42/6、36/12，和 parent panel
+完全相同；all-plus energy ratio 为 6/48 below、42/48 above。
+
+这是 `NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION`；conditional
+translation covariance 是 `PROVED_EXACT_FINITE_CONDITIONAL`，但 holdout 复现仍是
+有限数值结果，不提供 source-native arithmetic `L2`、渐近 power saving、fixed-power
+credit 或 twin-prime endpoint。Session-named evaluator files absent，故不宣称
+official Route-A/Route-B pass。
+
+    TPC324_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION
+    TPC324_ROUTE_ADVANCE = YES_SCOPED_SOURCE_LOCATION_HOLDOUT_REPLICATION
+    TPC324_SOURCE_LOCATION_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_48_ROWS_2_PANELS
+    TPC324_ALL_PLUS_PROFILE_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_48_OF_48
+    TPC324_PER_PANEL_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_24_OF_24_EACH
+    TPC324_ALTERNATIVE_PROFILE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_48_ROWS
+    TPC324_TRANSLATION_COVARIANCE = PROVED_EXACT_FINITE_CONDITIONAL
+    TPC324_ARITHMETIC_ADVANCE = NO
+    TPC324_FIXED_POWER_CREDIT = 0
+    TPC324_FULL_GATE_B = OPEN
+    TPC324_TWIN_PRIME_RESULT = NONE
+    TPC324_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_LOCATION_HOLDOUT_REPLICATION
+    TPC324_ROUND2_CLUE = TEST_HOLDOUT_SCALE_LADDER_OR_SOURCE_NATIVE_ARITHMETIC_L2
+
+---
+
+## V176 previous anchor: TPC-323
+
+更新时间：2026-09-01
+
+TPC-323 proof 为
 bridge_b_tpc323_signed_profile_majorization.md，checker 为
 tpc_bridge_b_tpc323_signed_profile_majorization_checker.py，编号论文为
 ../../papers/tpc-323-signed-profile-majorization/。
 
-TPC-323 承接 TPC-322 的 signed-projector interface，保留同一 literal
-deleted-diagonal centered prime-shell blocks，并把总能量 ratio 与归一化谱 profile
-分开读取。对 `X={640,1280,2560}`、`Q={24,36,54,80}`、`s={1,2}` 的 24 rows，
-all-plus coherent Gram 的 normalized profile 在 24/24 行 majorizes direct profile；
-alternating、mod-4、half-split 的 majorizing/mixed 计数分别为 17/7、21/3、18/6。
-all-plus energy ratio 同时为 3/24 below、21/24 above，形成 finite amplitude/shape
-decoupling。profile factorisation 是 exact finite identity，但 arithmetic cancellation、
-fixed-power credit 与 full Gate B 仍 open；不宣称 official Route-A/Route-B pass。
-
-    TPC323_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT
-    TPC323_ROUTE_ADVANCE = YES_SCOPED_FINITE_SIGNED_PROFILE_READOUT
-    TPC323_SIGNED_PROFILE_FACTORISATION = PROVED_EXACT_FINITE
-    TPC323_ALL_PLUS_PROFILE_MAJORISATION = NUMERICALLY_CERTIFIED_FINITE_24_OF_24
-    TPC323_ALTERNATIVE_PROFILE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_24_ROWS
-    TPC323_NAMED_LAW_SELECTION = NUMERICAL_OBSERVATION_ALL_PLUS_UNIQUE_ON_PANEL
-    TPC323_AMPLITUDE_SHAPE_DECOUPLING = NUMERICALLY_CERTIFIED_FINITE_ALL_PLUS_3_BELOW_21_ABOVE
-    TPC323_ARITHMETIC_ADVANCE = NO
-    TPC323_FIXED_POWER_CREDIT = 0
-    TPC323_FULL_GATE_B = OPEN
-    TPC323_TWIN_PRIME_RESULT = NONE
-    TPC323_STATUS = NUMERICALLY_CERTIFIED_FINITE_SIGNED_PROFILE_MAJORISATION_AUDIT
-    TPC323_ROUND2_CLUE = TEST_PROFILE_MAJORISATION_HOLDOUT_OR_SOURCE_NATIVE_ARITHMETIC_L2
+TPC-323 的 signed profile factorisation、24-row majorization readout 与
+amplitude/shape separation 仍按下方历史记录保留。
 
 ---
 
