@@ -1,6 +1,67 @@
 # TPC HANDOFF
 
-TPC-345 current section: principal-angle / Grassmann stability audit
+TPC-346 current section: third-panel hostile replication and finite route freeze
+-----------------------------------------------------------------------------------------------
+
+TPC-346 adds the predeclared disjoint fresh panel [44097,44609,45217] to the
+locked TPC-341/TPC-342 parent panels, preserving the all-plus Q=54, exponent 1,
+H=66, scale 1024, nine controls, four source categories, and raw/equal-row
+weightings.  The finite census is 3 panels, 9 rows, 324 raw records, and 261
+nonempty records.
+
+Fresh-panel own-fit retention is 0.3159173453264 (raw) and 0.3294074740697
+ (equal-row); shared three-panel retention is 0.3419067441273 and
+0.356412350685.  The panel-adaptive block model reaches 0.2999630725662
+under raw weighting but 0.3222362713305 under equal-row weighting.
+All six directed predictions, all three leave-one-panel-out predictions,
+and all nine fresh control-LOO projections exceed 0.30 under both weightings.
+
+The shared-to-adaptive nesting and projection/Pythagorean identities are
+PROVED_EXACT_FINITE_DECLARED_MODEL.  Fresh own-fit, weighting stability,
+third-panel transfer, and control-LOO are REFUTED_SCOPED.  The raw adaptive
+crossing is NUMERICALLY_CERTIFIED_FINITE_SCOPED_PASS only; it is not a
+transferable law.  This freezes the declared panel-adaptive branch, not
+the whole TPC session and not every possible future nuisance model.
+
+    TPC346_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION
+    TPC346_NESTED_MODEL_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC346_FRESH_PANEL_OWN_FIT = REFUTED_SCOPED
+    TPC346_PANEL_ADAPTIVE_RAW = NUMERICALLY_CERTIFIED_FINITE_SCOPED_PASS
+    TPC346_PANEL_ADAPTIVE_EQUAL_ROW = REFUTED_SCOPED
+    TPC346_PANEL_ADAPTIVE_WEIGHTING_STABILITY = REFUTED_SCOPED
+    TPC346_THIRD_PANEL_TRANSFER = REFUTED_SCOPED
+    TPC346_ARITHMETIC_ADVANCE = NO
+    TPC346_FIXED_POWER_CREDIT = 0
+    TPC346_SOURCE_UNIFORM_L2 = OPEN
+    TPC346_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC346_FULL_GATE_B = OPEN
+    TPC346_TWIN_PRIME_RESULT = NONE
+    TPC346_STRONGEST_POSITIVE = FRESH_THIRD_PANEL_REPLAY_PLUS_EXACT_NESTING
+    TPC346_STRONGEST_OBSTRUCTION = WEIGHTING_AND_TRANSFER_FAILURE
+    TPC346_OPEN_THEOREM = SOURCE_UNIFORM_ARITHMETIC_L2
+    TPC346_REUSABLE_STRUCTURE = PARENT_STACK_TO_FRESH_PANEL_TO_TRANSFER_AUDIT
+    TPC346_ROUND2_CLUE = FREEZE_PANEL_ADAPTIVE_ROUTE_AND_RETURN_TO_ARITHMETIC_L2
+    TPC346_STATUS = NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION
+
+The Session-named propose.md and Route-A/Route-B evaluator files are absent in
+this checkout.  The local Bridge-B wrapper is fail-closed and is not an official
+evaluator pass.  No arithmetic estimate, fixed-power credit, strict 1/400
+payment, or twin-prime conclusion is licensed.
+
+TPC-346 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-346-third-panel-hostile-replication/code/tpc346_third_panel_hostile_replication.py --write
+    python -B papers/tpc-346-third-panel-hostile-replication/code/tpc346_third_panel_hostile_replication.py --check
+    python -O -B papers/tpc-346-third-panel-hostile-replication/code/tpc346_third_panel_hostile_replication.py --check
+    python -B papers/tpc-346-third-panel-hostile-replication/experiments/tpc346_independent_checker.py
+    python -O -B papers/tpc-346-third-panel-hostile-replication/experiments/tpc346_independent_checker.py
+    python -B papers/tpc-346-third-panel-hostile-replication/experiments/tpc346_hostile_stress.py
+    python -O -B papers/tpc-346-third-panel-hostile-replication/experiments/tpc346_hostile_stress.py
+    python -B research/tpc-big-road/tpc_bridge_b_tpc346_third_panel_hostile_replication_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc346_third_panel_hostile_replication_checker.py --check
+
+TPC-345 previous section: principal-angle / Grassmann stability audit
 -----------------------------------------------------------------------------------------------
 
 TPC-345 follows the TPC-344 weighting-sensitive panel-contrast repair and
@@ -11835,12 +11896,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V198/TPC-345 是当前 release；其 producer、reverse-shell independent replay、stress
-audit 与 principal-angle/Grassmann bridge 已封存。TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
+V199/TPC-346 是当前 release；其 producer、reverse-shell independent replay、stress
+audit 与 third-panel hostile-replication bridge 已封存。TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
 TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
 TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 401 对 normal/optimized 命令、802 次
+当前 curated cascade command set 共 405 对 normal/optimized 命令、810 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -11859,7 +11920,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -11892,6 +11953,11 @@ arithmetic `L2`、fixed-power saving 或 official evaluator pass。
 V198/TPC-345 的新增 4 对由 project producer、reverse-shell independent checker、
 geometry stress 与 local Bridge-B checker 逐项验证；其 finite principal-angle
 geometry 不代表 canonical weighting-stable law、source-uniform arithmetic `L2`、
+fixed-power saving 或 official evaluator pass。
+
+V199/TPC-346 的新增 4 对由 project producer、reverse-shell independent checker、
+hostile stress 与 local Bridge-B checker 逐项验证；其 fresh third-panel finite
+freeze 不代表 universal panel impossibility、source-uniform arithmetic `L2`、
 fixed-power saving 或 official evaluator pass。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
@@ -13301,6 +13367,27 @@ equal_cosines=0.9144519860,0.0787084493`。这是 V198 的 finite subspace-geome
 audit，不代表 canonical weighting law、source-uniform arithmetic `L2`、fixed-power
 saving 或 twin-prime conclusion。
 
+TPC-346 的项目级 producer、reverse-shell independent replay、hostile stress 与
+bridge checker：
+
+```bash
+python -B papers/tpc-346-third-panel-hostile-replication/code/tpc346_third_panel_hostile_replication.py --check
+python -O -B papers/tpc-346-third-panel-hostile-replication/code/tpc346_third_panel_hostile_replication.py --check
+python -B papers/tpc-346-third-panel-hostile-replication/experiments/tpc346_independent_checker.py
+python -O -B papers/tpc-346-third-panel-hostile-replication/experiments/tpc346_independent_checker.py
+python -B papers/tpc-346-third-panel-hostile-replication/experiments/tpc346_hostile_stress.py
+python -O -B papers/tpc-346-third-panel-hostile-replication/experiments/tpc346_hostile_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc346_third_panel_hostile_replication_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc346_third_panel_hostile_replication_checker.py --check
+```
+
+TPC-346 增量 tail audit：4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `panels=3 / rows=9 / raw_records=324 /
+nonempty=261 / adaptive_raw=0.2999630726 / adaptive_equal_row=0.3222362713 /
+fresh_loo_pairs=18`。这是 V199 的 finite third-panel hostile replication；其
+panel-adaptive freeze 不代表 universal impossibility、source-uniform arithmetic
+`L2`、fixed-power saving 或 official evaluator pass。
+
 TPC-327 的项目级 producer、independent replay、three-origin stress 与 bridge checker：
 
 ```bash
@@ -13362,7 +13449,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-345 current release 入口：
+TPC-346 current release 入口：
+
+papers/tpc-346-third-panel-hostile-replication/README.md
+papers/tpc-346-third-panel-hostile-replication/PAPER_PLAN.md
+papers/tpc-346-third-panel-hostile-replication/DERIVATION_PACKAGE.md
+papers/tpc-346-third-panel-hostile-replication/PROOF_PACKAGE.md
+papers/tpc-346-third-panel-hostile-replication/code/tpc346_third_panel_hostile_replication.py
+papers/tpc-346-third-panel-hostile-replication/experiments/tpc346_independent_checker.py
+papers/tpc-346-third-panel-hostile-replication/experiments/tpc346_hostile_stress.py
+papers/tpc-346-third-panel-hostile-replication/results/tpc346_certificate.json
+papers/tpc-346-third-panel-hostile-replication/notes/theorem_ledger.md
+papers/tpc-346-third-panel-hostile-replication/notes/claim_firewall.md
+papers/tpc-346-third-panel-hostile-replication/notes/computational_protocol.md
+papers/tpc-346-third-panel-hostile-replication/notes/route_evaluation.md
+papers/tpc-346-third-panel-hostile-replication/paper/main.tex
+papers/tpc-346-third-panel-hostile-replication/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc346_third_panel_hostile_replication.md
+research/tpc-big-road/tpc_bridge_b_tpc346_third_panel_hostile_replication_checker.py
+
+TPC-345 previous release 入口：
 
 papers/tpc-345-principal-angle-grassmann-audit/README.md
 papers/tpc-345-principal-angle-grassmann-audit/PAPER_PLAN.md

@@ -2,43 +2,48 @@
 
 更新时间：2026-09-02
 
-当前地图版本：V198 / TPC-345
+当前地图版本：V199 / TPC-346
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-345`（`NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT`）；
+当前编号锚点：`TPC-346`（`NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION`）；
 对应论文目录为
-`papers/tpc-345-principal-angle-grassmann-audit/`。
+`papers/tpc-346-third-panel-hostile-replication/`。
 
-TPC-345 是当前地图位置：它承接 TPC-344 的 weighting-sensitive partial repair，
-直接比较 TPC-341/TPC-342 两个 nuisance column spaces 的 principal angles 与
-orthogonal projectors。raw principal cosines 为 0.9957018010、0.0799456793，
-equal-row 为 0.9144519860、0.0787084493；第一主角从 5.3142° 移到 23.8720°。
-双向 target transfer 在两种 weighting 下均不能同时满足 retention < 0.30，
-而 18 个 leave-one-control-out pairs 保留 near-orthogonal transverse mismatch。
-这是 basis-invariant finite geometry obstruction，不是 canonical arithmetic law。
+TPC-346 是当前地图位置：它承接 TPC-345 的 basis-invariant finite geometry，加入
+预声明、disjoint、cutoff-safe 的第三 panel `[44097,44609,45217]`。fresh own-fit
+retention 为 `0.3159173453/0.3294074741`，三 panel adaptive retention 为
+`0.2999630726/0.3222362713`（raw/equal-row）；six directed predictions、
+three leave-one-panel-out predictions 与 eighteen fresh control-LOO projections
+全部超过 `0.30`。这是对声明的 panel-adaptive branch 的 finite scoped freeze，
+不是 universal arithmetic no-go。
 
 本关仍没有 arithmetic advance；source-uniform `L2`、uniform masked operator bound、
 fixed-power credit 与 twin-prime endpoint 继续 open。
 
 ```text
-YOU ARE HERE = V198 / TPC-345
-TPC345_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
-TPC345_PRINCIPAL_ANGLE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-TPC345_BASIS_INVARIANCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-TPC345_RAW_DOMINANT_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-TPC345_TRANSVERSE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-TPC345_WEIGHTING_STABILITY = REFUTED_SCOPED
-TPC345_MUTUAL_TRANSFER = REFUTED_SCOPED
-TPC345_RANK_MISMATCH = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-TPC345_ARITHMETIC_ADVANCE = NO
-TPC345_FIXED_POWER_CREDIT = 0
-TPC345_SOURCE_UNIFORM_L2 = OPEN
-TPC345_FULL_GATE_B = OPEN
-TPC345_TWIN_PRIME_RESULT = NONE
-TPC345_STATUS = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
-TPC345_ROUND2_CLUE = FINITE_NO_GO_OR_FREEZE_PANEL_ADAPTIVE_ROUTE
+YOU ARE HERE = V199 / TPC-346
+TPC346_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION
+TPC346_NESTED_MODEL_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC346_FRESH_PANEL_OWN_FIT = REFUTED_SCOPED
+TPC346_PANEL_ADAPTIVE_RAW = NUMERICALLY_CERTIFIED_FINITE_SCOPED_PASS
+TPC346_PANEL_ADAPTIVE_EQUAL_ROW = REFUTED_SCOPED
+TPC346_PANEL_ADAPTIVE_WEIGHTING_STABILITY = REFUTED_SCOPED
+TPC346_THIRD_PANEL_TRANSFER = REFUTED_SCOPED
+TPC346_ARITHMETIC_ADVANCE = NO
+TPC346_FIXED_POWER_CREDIT = 0
+TPC346_SOURCE_UNIFORM_L2 = OPEN
+TPC346_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+TPC346_FULL_GATE_B = OPEN
+TPC346_TWIN_PRIME_RESULT = NONE
+TPC346_STATUS = NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION
+TPC346_ROUND2_CLUE = FREEZE_PANEL_ADAPTIVE_ROUTE_AND_RETURN_TO_ARITHMETIC_L2
 ```
+
+## V198 / TPC-345 previous anchor
+
+TPC-345 的 principal-angle/Grassmann geometry 是 TPC-346 的 parent lock；raw 第一
+主角为 `5.3142°`，equal-row 第一主角为 `23.8720°`，双向 transfer scoped refuted。
 
 ## V197 / TPC-344 previous anchor
 
@@ -1242,6 +1247,47 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.130 V199 / TPC-346：third-panel hostile replication
+
+TPC-346 在 TPC-345 的 basis-invariant geometry 之后加入一个预声明、disjoint、
+cutoff-safe 的 fresh third panel `[44097,44609,45217]`，并保持同一 all-plus
+`Q=54`、exponent `1`、`H=66`、scale `1024`、9 controls 与 4 source categories。
+三 panel 共 9 rows、324 raw records、261 nonempty records。fresh own-fit retention
+为 `0.3159173453`（raw）和 `0.3294074741`（equal-row）；shared three-panel
+retention 为 `0.3419067441` 和 `0.3564123507`。
+
+panel-adaptive block model 的 raw retention 为 `0.2999630726`，但 equal-row 为
+`0.3222362713`，因此 raw crossing 不是 weighting-stable law。六个 directed
+predictions、三个 leave-one-panel-out predictions 与九个 fresh control-LOO
+projections 在两种 weighting 下均超过 `0.30`。shared-to-adaptive nesting 与
+projection/Pythagorean identities 是 exact finite linear algebra；第三面板结果
+只支持对声明的 panel-adaptive branch 做 finite scoped freeze，不支持 universal
+no-go 或 arithmetic promotion。
+
+```text
+TPC346_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION
+TPC346_NESTED_MODEL_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC346_FRESH_PANEL_OWN_FIT = REFUTED_SCOPED
+TPC346_PANEL_ADAPTIVE_RAW = NUMERICALLY_CERTIFIED_FINITE_SCOPED_PASS
+TPC346_PANEL_ADAPTIVE_EQUAL_ROW = REFUTED_SCOPED
+TPC346_PANEL_ADAPTIVE_WEIGHTING_STABILITY = REFUTED_SCOPED
+TPC346_THIRD_PANEL_TRANSFER = REFUTED_SCOPED
+TPC346_ARITHMETIC_ADVANCE = NO
+TPC346_FIXED_POWER_CREDIT = 0
+TPC346_SOURCE_UNIFORM_L2 = OPEN
+TPC346_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+TPC346_FULL_GATE_B = OPEN
+TPC346_TWIN_PRIME_RESULT = NONE
+TPC346_STATUS = NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION
+TPC346_ROUND2_CLUE = FREEZE_PANEL_ADAPTIVE_ROUTE_AND_RETURN_TO_ARITHMETIC_L2
+```
+
+strongest positive result：fresh third-panel hostile protocol、nested finite identity、
+raw narrow crossing 与 reverse-shell replay 均通过；strongest obstruction：fresh
+own-fit、equal-row adaptive fit、transfer、leave-one-panel-out 与 control-LOO 均
+拒绝稳定低残差解释。open theorem 仍是 source-uniform arithmetic `L2` 与其
+后续 Gate-B 接口；fixed-power credit 为 0。
 
 ## 5.129 V198 / TPC-345：principal-angle / Grassmann stability audit
 
@@ -3797,9 +3843,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V195 / TPC-342                    |
-        | INDEPENDENT FRESH-PANEL REPRODUCTION         |
-        | CONTROL STABILITY OBSTRUCTION / GATES OPEN   |
+        | YOU ARE HERE — V199 / TPC-346                    |
+        | THIRD-PANEL HOSTILE REPLICATION / FREEZE     |
+        | ARITHMETIC L2 AND GATES STILL OPEN           |
         +--------------------------------------------------+
                 |
                 v
@@ -8909,7 +8955,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
-| 2026-09-02 | V198 / TPC-345 | Bridge A / Gate B：principal-angle / Grassmann stability audit 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-345` | 承接 TPC-344；两个 locked nuisance subspaces 的 raw principal cosines 为 `0.9957/0.07995`，equal-row 为 `0.9145/0.07871`；第一主角移动 `18.56°`，18 个 LOO angle pairs 保留 transverse mismatch，mutual transfer scoped refuted；下一步为第三 panel hostile replication / finite freeze test |
+| 2026-09-02 | V199 / TPC-346 | Bridge A / Gate B：third-panel hostile replication 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-346` | 承接 TPC-345；三 panels、9 rows、324 raw records、261 nonempty；fresh own-fit `0.3159/0.3294`，adaptive `0.3000/0.3222`（raw/equal-row），transfer 与 control-LOO scoped refuted；仅冻结 panel-adaptive finite branch，下一步返回 arithmetic `L2` interface |
 | 2026-09-02 | V197 / TPC-344 | Bridge A / Gate B：panel-contrast nuisance-basis audit 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-344` | 承接 TPC-343；六 rows、216 raw records、18 contrast holdouts 与 4 cross-fits；raw contrast retention `0.2962` 但 equal-row `0.3187`，weighting stability 与 low-residual transfer scoped refuted；下一步为 principal-angle/Grassmann stability audit |
 | 2026-09-02 | V196 / TPC-343 | Bridge A / Gate B：cross-panel shared-nuisance meta-certificate 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-343` | 承接 TPC-342；六 rows、216 raw records、54 leave-one-control-out records；shared retention `0.3198/0.3549` 均越过 `0.30`，下一步为 alternative nuisance basis 或 principal-angle audit |
 | 2026-09-02 | V195 / TPC-342 | Bridge A / Gate B：independent fresh-panel reproduction 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-342` | 锁定 TPC-341 protocol；三个 disjoint windows、108 raw records、27 leave-one-control-out tests；样本内 retention `0.270--0.296`，held-out retention `0.589--0.943`，27/27 再现 control-stability obstruction；下一步为 cross-panel meta certificate |

@@ -3,11 +3,66 @@
 
 更新时间：2026-09-02
 
-状态：**TPC345_NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC346_NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
+
+## 0.140 current：TPC-346 third-panel hostile replication
+
+项目：papers/tpc-346-third-panel-hostile-replication/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION**。
+
+TPC-346 承接 TPC-345 的 basis-invariant finite geometry，加入预声明、disjoint、
+cutoff-safe 的第三 panel `[44097,44609,45217]`，并保持 TPC-340 的 all-plus
+`Q=54`、kernel exponent `1`、`H=66`、scale `1024`、9 controls、4 source
+categories 与两个 row weightings。三 panel 共 9 rows、324 raw records，261 条
+nonempty。fresh panel own-fit retention 为 `0.3159173453264`（raw）与
+`0.3294074740697`（equal-row）；shared three-panel retention 为
+`0.3419067441273` 与 `0.356412350685`。
+
+panel-adaptive block model 的 raw retention 为 `0.2999630725662`，但 equal-row
+为 `0.3222362713305`，所以 raw crossing 不是 weighting-stable law。6 个 directed
+panel predictions、3 个 leave-one-panel-out predictions 与 9 个 fresh control-LOO
+projections 在两种 weighting 下均超过 `0.30`。shared-to-adaptive nesting、
+projection/Pythagorean identities 与有限模型的 exact algebra 已在 proof package
+中写明；这不赋予额外 arithmetic meaning。
+
+最强正结果：一个完全独立 fresh third panel 的全量 hostile protocol、nested finite
+identity、raw narrow crossing 与 reverse-shell replay 均可复现。
+
+最强 obstruction：fresh own-fit、equal-row adaptive fit、第三面板 transfer、
+leave-one-panel-out 与 fresh control-LOO 全部拒绝稳定低残差解释；因此只对声明的
+panel-adaptive branch 做 finite scoped freeze，不外推 universal no-go。
+
+开放定理：source-uniform arithmetic `L2`、uniform masked operator bound、strict
+`1/400` payment、fixed-power saving 与 full Route-B Gate B。fixed-power credit 为
+`0`，twin-prime conclusion 为 `NONE`；官方 evaluator 文件缺失，仅有 local
+fail-closed Bridge-B。
+
+可复用结构：
+
+    parent panels -> fresh disjoint panel -> shared/adaptive nesting
+                    -> weighting audit -> transfer and control-LOO freeze
+
+ROUND2_CLUE：`FREEZE_PANEL_ADAPTIVE_ROUTE_AND_RETURN_TO_ARITHMETIC_L2`。
+
+    TPC346_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION
+    TPC346_NESTED_MODEL_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC346_FRESH_PANEL_OWN_FIT = REFUTED_SCOPED
+    TPC346_PANEL_ADAPTIVE_RAW = NUMERICALLY_CERTIFIED_FINITE_SCOPED_PASS
+    TPC346_PANEL_ADAPTIVE_EQUAL_ROW = REFUTED_SCOPED
+    TPC346_PANEL_ADAPTIVE_WEIGHTING_STABILITY = REFUTED_SCOPED
+    TPC346_THIRD_PANEL_TRANSFER = REFUTED_SCOPED
+    TPC346_ARITHMETIC_ADVANCE = NO
+    TPC346_FIXED_POWER_CREDIT = 0
+    TPC346_SOURCE_UNIFORM_L2 = OPEN
+    TPC346_FULL_GATE_B = OPEN
+    TPC346_TWIN_PRIME_RESULT = NONE
+    TPC346_STATUS = NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION
+    TPC346_ROUND2_CLUE = FREEZE_PANEL_ADAPTIVE_ROUTE_AND_RETURN_TO_ARITHMETIC_L2
 
 ## 0.139 current：TPC-345 principal-angle / Grassmann stability audit
 

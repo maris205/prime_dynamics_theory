@@ -1,42 +1,47 @@
-# TPC big road V198 / TPC-345: principal-angle / Grassmann audit
+# TPC big road V199 / TPC-346: third-panel hostile replication
 
-## V198 current anchor: TPC-345
+## V199 current anchor: TPC-346
 
 更新时间：2026-09-02
 
-当前 TPC-345 proof 为
-bridge_b_tpc345_principal_angle_grassmann_audit.md，checker 为
-tpc_bridge_b_tpc345_principal_angle_grassmann_audit_checker.py，编号论文为
-../../papers/tpc-345-principal-angle-grassmann-audit/。
+当前 TPC-346 proof 为
+bridge_b_tpc346_third_panel_hostile_replication.md，checker 为
+tpc_bridge_b_tpc346_third_panel_hostile_replication_checker.py，编号论文为
+../../papers/tpc-346-third-panel-hostile-replication/。
 
-TPC-345 在 TPC-344 的 weighting-sensitive panel-contrast repair 后，直接比较
-两个 panel nuisance column spaces。raw principal cosines 为
-`0.9957018010, 0.0799456793`，equal-row 为 `0.9144519860, 0.0787084493`；
-第一主角从 `5.3142°` 移到 `23.8720°`。两种 weighting 的 mutual target transfer
-均未使双向 retention 同时低于 `0.30`；18 个 leave-one-control-out comparisons
-继续保留 near-orthogonal transverse direction。
+TPC-346 在 TPC-345 的 coordinate-free geometry 后加入 disjoint fresh third panel
+`[44097,44609,45217]`。fresh own-fit retention 为
+`0.3159173453/0.3294074741`，三 panel adaptive retention 为
+`0.2999630726/0.3222362713`（raw/equal-row）；six directed predictions、
+three leave-one-panel-out predictions 与 eighteen fresh control-LOO projections
+全部超过 `0.30`。
 
-这是 `NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT`；坐标 shear
-不改变 projectors/principal cosines 的有限 identity 已复核，weighting stability 与
-mutual transfer 均 refuted scoped。source-uniform arithmetic `L2`、uniform masked operator bound、
-fixed-power credit 与 twin-prime endpoint 仍 open。Session-named evaluator files absent，
-故不宣称 official Route-A/Route-B pass。
+这是 `NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION`；shared-to-adaptive
+nested identity 与 projection identity 为 exact finite linear algebra，fresh own-fit、
+weighting stability 与 transfer 均为 scoped finite obstruction。只冻结声明的
+panel-adaptive branch，不外推为 universal no-go。source-uniform arithmetic `L2`、
+uniform masked operator bound、fixed-power credit 与 twin-prime endpoint 仍 open。
+Session-named evaluator files absent，故不宣称 official Route-A/Route-B pass。
 
-    TPC345_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
-    TPC345_PRINCIPAL_ANGLE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-    TPC345_BASIS_INVARIANCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC345_RAW_DOMINANT_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC345_TRANSVERSE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC345_WEIGHTING_STABILITY = REFUTED_SCOPED
-    TPC345_MUTUAL_TRANSFER = REFUTED_SCOPED
-    TPC345_RANK_MISMATCH = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC345_ARITHMETIC_ADVANCE = NO
-    TPC345_FIXED_POWER_CREDIT = 0
-    TPC345_SOURCE_UNIFORM_L2 = OPEN
-    TPC345_FULL_GATE_B = OPEN
-    TPC345_TWIN_PRIME_RESULT = NONE
-    TPC345_STATUS = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
-    TPC345_ROUND2_CLUE = FINITE_NO_GO_OR_FREEZE_PANEL_ADAPTIVE_ROUTE
+    TPC346_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION
+    TPC346_NESTED_MODEL_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC346_FRESH_PANEL_OWN_FIT = REFUTED_SCOPED
+    TPC346_PANEL_ADAPTIVE_RAW = NUMERICALLY_CERTIFIED_FINITE_SCOPED_PASS
+    TPC346_PANEL_ADAPTIVE_EQUAL_ROW = REFUTED_SCOPED
+    TPC346_PANEL_ADAPTIVE_WEIGHTING_STABILITY = REFUTED_SCOPED
+    TPC346_THIRD_PANEL_TRANSFER = REFUTED_SCOPED
+    TPC346_ARITHMETIC_ADVANCE = NO
+    TPC346_FIXED_POWER_CREDIT = 0
+    TPC346_SOURCE_UNIFORM_L2 = OPEN
+    TPC346_FULL_GATE_B = OPEN
+    TPC346_TWIN_PRIME_RESULT = NONE
+    TPC346_STATUS = NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION
+    TPC346_ROUND2_CLUE = FREEZE_PANEL_ADAPTIVE_ROUTE_AND_RETURN_TO_ARITHMETIC_L2
+
+## V198 previous anchor: TPC-345
+
+TPC-345 的 principal-angle/Grassmann audit 是本关的 parent lock；其 raw/equal-row
+第一主角为 `5.3142°/23.8720°`，双向 transfer scoped refuted。
 
 ## V197 previous anchor: TPC-344
 

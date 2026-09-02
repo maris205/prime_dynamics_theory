@@ -1,43 +1,49 @@
 # TPC distilled map and bold channel
 
-## V198 / TPC-345 current anchor
+## V199 / TPC-346 current anchor
 
 更新时间：2026-09-02
 
 当前入口：proof 为
-research/tpc-big-road/bridge_b_tpc345_principal_angle_grassmann_audit.md，checker 为
-tpc_bridge_b_tpc345_principal_angle_grassmann_audit_checker.py，编号论文为
-papers/tpc-345-principal-angle-grassmann-audit/。
+research/tpc-big-road/bridge_b_tpc346_third_panel_hostile_replication.md，checker 为
+tpc_bridge_b_tpc346_third_panel_hostile_replication_checker.py，编号论文为
+papers/tpc-346-third-panel-hostile-replication/。
 
-TPC-345 在 TPC-344 的 panel-contrast partial repair 后，把比较提升为坐标无关的
-principal-angle/Grassmann 审计。raw weighting 的两个 principal cosines 为
-`0.9957018010, 0.0799456793`，equal-row 为 `0.9144519860, 0.0787084493`；
-第一主角从 `5.3142°` 移到 `23.8720°`。四个跨 panel target-transfer retentions
-在两种权重下均不能同时低于 `0.30`，18 个 leave-one-control-out 复核保留了
-强 dominant alignment 与近正交 transverse mismatch。
+TPC-346 在 TPC-345 的 basis-invariant geometry 后加入预声明的 disjoint fresh
+third panel `[44097,44609,45217]`。fresh own-fit retention 为
+`0.3159173453/0.3294074741`（raw/equal-row），三 panel adaptive retention 为
+`0.2999630726/0.3222362713`；因此 raw crossing 不具 weighting stability。
+六个 directed predictions、三个 leave-one-panel-out predictions 与十八个 fresh
+control-LOO projections 全部超过 `0.30`。
 
-这是 `NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT`；principal-angle
-与 projector identity 属于 exact finite linear algebra，basis invariance、dominant/
-transverse finite diagnostics 通过；weighting stability 与 mutual transfer 均
-refuted scoped。source-uniform arithmetic `L2`、uniform masked operator bound、
-fixed-power credit 与 twin-prime endpoint 仍 open。Session-named evaluator files absent，
-故只记 local Bridge-B fail-closed，不宣称 official Route-A/Route-B pass。
+这是 `NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION`；shared-to-adaptive
+nested identity 与 projection identities 是 exact finite linear algebra，fresh own-fit、
+weighting stability、third-panel transfer 与 control-LOO 均为 scoped finite
+obstruction。panel-adaptive branch 仅作 finite freeze；source-uniform arithmetic `L2`、
+uniform masked operator bound、fixed-power credit 与 twin-prime endpoint 仍 open。
+Session-named evaluator files absent，故只记 local Bridge-B fail-closed，不宣称
+official Route-A/Route-B pass。
 
-    TPC345_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
-    TPC345_PRINCIPAL_ANGLE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-    TPC345_BASIS_INVARIANCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC345_RAW_DOMINANT_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC345_TRANSVERSE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC345_WEIGHTING_STABILITY = REFUTED_SCOPED
-    TPC345_MUTUAL_TRANSFER = REFUTED_SCOPED
-    TPC345_RANK_MISMATCH = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC345_ARITHMETIC_ADVANCE = NO
-    TPC345_FIXED_POWER_CREDIT = 0
-    TPC345_SOURCE_UNIFORM_L2 = OPEN
-    TPC345_FULL_GATE_B = OPEN
-    TPC345_TWIN_PRIME_RESULT = NONE
-    TPC345_STATUS = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
-    TPC345_ROUND2_CLUE = FINITE_NO_GO_OR_FREEZE_PANEL_ADAPTIVE_ROUTE
+    TPC346_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION
+    TPC346_NESTED_MODEL_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC346_FRESH_PANEL_OWN_FIT = REFUTED_SCOPED
+    TPC346_PANEL_ADAPTIVE_RAW = NUMERICALLY_CERTIFIED_FINITE_SCOPED_PASS
+    TPC346_PANEL_ADAPTIVE_EQUAL_ROW = REFUTED_SCOPED
+    TPC346_PANEL_ADAPTIVE_WEIGHTING_STABILITY = REFUTED_SCOPED
+    TPC346_THIRD_PANEL_TRANSFER = REFUTED_SCOPED
+    TPC346_ARITHMETIC_ADVANCE = NO
+    TPC346_FIXED_POWER_CREDIT = 0
+    TPC346_SOURCE_UNIFORM_L2 = OPEN
+    TPC346_FULL_GATE_B = OPEN
+    TPC346_TWIN_PRIME_RESULT = NONE
+    TPC346_STATUS = NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION
+    TPC346_ROUND2_CLUE = FREEZE_PANEL_ADAPTIVE_ROUTE_AND_RETURN_TO_ARITHMETIC_L2
+
+## V198 / TPC-345 previous anchor
+
+TPC-345 的 principal-angle/Grassmann geometry 仍作为 TPC-346 的 parent lock：
+raw 第一主角 `5.3142°`、equal-row 第一主角 `23.8720°`，双向 transfer 与
+weighting-stability 均已 scoped refute。
 
 ## V197 / TPC-344 previous anchor
 
