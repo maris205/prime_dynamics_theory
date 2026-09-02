@@ -1,6 +1,68 @@
 # TPC HANDOFF
 
-TPC-349 current section: prime-balanced signed incidence witness for the divisibility-mask defect
+TPC-350 current section: fresh-growth and shell-scale replication of signed incidence witnesses
+---------------------------------------------------------------------------------------------------------
+
+TPC-350 is the current sealed release.  It carries the exact zero-sum
+prime-incidence Gram lower-witness interface from TPC-349 to three fresh,
+disjoint origins `60097,72097,84097`, four source lengths `256,512,1024,2048`,
+four shell anchors `Q=36,80,128,256`, two kernel exponents, and two source
+laws (`all_plus`, `alternating_index`).  The frozen panel has `192` rows and
+`48` fixed `(origin,Q,exponent,law)` length series.
+
+The finite result is reproducible: all `192/192` signed witnesses have
+positive response; the signed/defect ratio is `0.0657381187306--0.8797933448`
+with mean `0.492863038063`; support is `24--294`; `70/192` rows beat the
+TPC-349 coordinate baseline and `91/192` reach half the defect norm.  The
+incidence-Gram replay error is at most `1.06581410364e-14`.  The scale audit
+also records `24/48` nondecreasing length series; at `Q=256`, all 48 rows are
+below half-defect.  Thus fresh finite replication is positive, while a
+universal quarter-floor and universal monotone-growth statement are both
+`REFUTED_SCOPED`.
+
+The word “growth” is finite protocol language only.  The exact incidence
+identity, balanced-sum rule, and induced-norm lower-witness inequality are
+`PROVED_EXACT_FINITE` in the declared model; the census is
+`NUMERICALLY_CERTIFIED_FINITE`.  No source-uniform arithmetic `L2`, uniform
+masked-operator theorem, fixed-power credit, Route-B reassembly, or twin-prime
+conclusion is licensed.  The Session-named official evaluator files are still
+absent; the local Bridge-B is fail-closed fallback evidence, not an official
+Route-A/Route-B pass.
+
+    TPC350_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT
+    TPC350_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+    TPC350_FRESH_GROWTH_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+    TPC350_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+    TPC350_SIGNED_TO_DEFECT_FLOOR = NUMERICALLY_CERTIFIED_FINITE_0.0657381187306
+    TPC350_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_70_OF_192
+    TPC350_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_91_OF_192
+    TPC350_NONDECREASING_GROWTH_SERIES = NUMERICALLY_CERTIFIED_FINITE_24_OF_48
+    TPC350_UNIFORM_QUARTER_FLOOR = REFUTED_SCOPED
+    TPC350_ARITHMETIC_ADVANCE = NO
+    TPC350_FIXED_POWER_CREDIT = 0
+    TPC350_FULL_GATE_B = OPEN
+    TPC350_TWIN_PRIME_RESULT = NONE
+    TPC350_STRONGEST_POSITIVE = FRESH_PANEL_REPLICATION_OF_EXACT_BALANCED_GRAM_WITNESS
+    TPC350_STRONGEST_OBSTRUCTION = HIGH_SHELL_SCALE_COLLAPSES_FINITE_FLOOR_AND_MONOTONICITY
+    TPC350_OPEN_THEOREM = PREDECLARED_SCALE_ADAPTIVE_ZERO_SUM_CONTRAST_OR_SOURCE_NATIVE_MASKED_L2
+    TPC350_REUSABLE_STRUCTURE = FRESH_ORIGINS_PLUS_LENGTH_AND_SHELL_LADDERS_TO_SCALE_OBSTRUCTION
+    TPC350_ROUND2_CLUE = TEST_SCALE_ADAPTIVE_ZERO_SUM_CONTRAST_ON_HIGH_SHELLS
+    TPC350_STATUS = PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT
+
+TPC-350 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-350-fresh-growth-signed-incidence/code/tpc350_fresh_growth_signed_incidence.py --write
+    python -B papers/tpc-350-fresh-growth-signed-incidence/code/tpc350_fresh_growth_signed_incidence.py --check
+    python -O -B papers/tpc-350-fresh-growth-signed-incidence/code/tpc350_fresh_growth_signed_incidence.py --check
+    python -B papers/tpc-350-fresh-growth-signed-incidence/experiments/tpc350_independent_checker.py --check
+    python -O -B papers/tpc-350-fresh-growth-signed-incidence/experiments/tpc350_independent_checker.py --check
+    python -B papers/tpc-350-fresh-growth-signed-incidence/experiments/tpc350_growth_stress.py
+    python -O -B papers/tpc-350-fresh-growth-signed-incidence/experiments/tpc350_growth_stress.py
+    python -B research/tpc-big-road/tpc_bridge_b_tpc350_fresh_growth_signed_incidence_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc350_fresh_growth_signed_incidence_checker.py --check
+
+TPC-349 previous section: prime-balanced signed incidence witness for the divisibility-mask defect
 ---------------------------------------------------------------------------------------------------------
 
 TPC-349 continues the literal masked prime-shell object from TPC-348.  For the
@@ -12099,12 +12161,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V202/TPC-349 是当前 release；其 producer、reverse-shell independent replay、stress
-audit 与 prime-balanced signed-incidence bridge 已封存。V201/TPC-348、TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
+V203/TPC-350 是当前 release；其 producer、reverse-shell independent replay、stress
+audit 与 fresh-growth signed-incidence bridge 已封存。V202/TPC-349、V201/TPC-348、TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
 TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
 TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 417 对 normal/optimized 命令、834 次
+当前 curated cascade command set 共 421 对 normal/optimized 命令、842 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -12123,7 +12185,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -12180,6 +12242,14 @@ incidence Gram lower-witness interface 与 finite 192-row census 不代表 growi
 bound、source-uniform arithmetic `L2`、uniform masked-operator bound、fixed-power
 saving 或 official evaluator pass。56/192 rows 未超过 coordinate baseline，故
 universal balanced gain 仅为 `REFUTED_SCOPED`。
+
+V203/TPC-350 的新增 4 对由 project producer、reverse-shell independent checker、
+growth stress 与 local Bridge-B checker 逐项验证；其 fresh-origin/fresh-length/
+fresh-shell finite replication 与 exact signed-incidence Gram interface 不代表
+growing lower bound、source-uniform arithmetic `L2`、uniform masked-operator theorem、
+fixed-power saving 或 official evaluator pass。`Q=256` 的 48 rows 全部低于 half-defect，
+只有 `24/48` length series nondecreasing，故 universal quarter-floor 与 monotone
+growth 均为 `REFUTED_SCOPED`。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
@@ -13609,6 +13679,29 @@ fresh_loo_pairs=18`。这是 V199 的 finite third-panel hostile replication；�
 panel-adaptive freeze 不代表 universal impossibility、source-uniform arithmetic
 `L2`、fixed-power saving 或 official evaluator pass。
 
+TPC-350 的项目级 producer、reverse-shell independent replay、growth stress 与
+bridge checker：
+
+```bash
+python -B papers/tpc-350-fresh-growth-signed-incidence/code/tpc350_fresh_growth_signed_incidence.py --write
+python -B papers/tpc-350-fresh-growth-signed-incidence/code/tpc350_fresh_growth_signed_incidence.py --check
+python -O -B papers/tpc-350-fresh-growth-signed-incidence/code/tpc350_fresh_growth_signed_incidence.py --check
+python -B papers/tpc-350-fresh-growth-signed-incidence/experiments/tpc350_independent_checker.py --check
+python -O -B papers/tpc-350-fresh-growth-signed-incidence/experiments/tpc350_independent_checker.py --check
+python -B papers/tpc-350-fresh-growth-signed-incidence/experiments/tpc350_growth_stress.py
+python -O -B papers/tpc-350-fresh-growth-signed-incidence/experiments/tpc350_growth_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc350_fresh_growth_signed_incidence_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc350_fresh_growth_signed_incidence_checker.py --check
+```
+
+TPC-350 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 均返回零、
+stderr 为空且 stdout 逐对 byte-identical；Bridge-B 输出 `rows=192 /
+positive_witness=192 / ratio_floor=0.0657381187306 / nondecreasing_series=24/48`。
+这是 V203 的 fresh-growth finite replication 与 shell-scale audit；`Q=256` 的 48
+rows 全部低于 half-defect，故 universal quarter-floor 与 monotone growth 均为
+`REFUTED_SCOPED`，不代表 growing lower bound、source-uniform arithmetic `L2`、
+uniform masked-operator theorem、fixed-power saving 或 official evaluator pass。
+
 TPC-349 的项目级 producer、reverse-shell independent replay、signed-witness stress 与
 bridge checker：
 
@@ -13736,7 +13829,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-349 current release 入口：
+TPC-350 current release 入口：
+
+papers/tpc-350-fresh-growth-signed-incidence/README.md
+papers/tpc-350-fresh-growth-signed-incidence/PAPER_PLAN.md
+papers/tpc-350-fresh-growth-signed-incidence/DERIVATION_PACKAGE.md
+papers/tpc-350-fresh-growth-signed-incidence/PROOF_PACKAGE.md
+papers/tpc-350-fresh-growth-signed-incidence/code/tpc350_fresh_growth_signed_incidence.py
+papers/tpc-350-fresh-growth-signed-incidence/experiments/tpc350_independent_checker.py
+papers/tpc-350-fresh-growth-signed-incidence/experiments/tpc350_growth_stress.py
+papers/tpc-350-fresh-growth-signed-incidence/results/tpc350_certificate.json
+papers/tpc-350-fresh-growth-signed-incidence/notes/theorem_ledger.md
+papers/tpc-350-fresh-growth-signed-incidence/notes/claim_firewall.md
+papers/tpc-350-fresh-growth-signed-incidence/notes/computational_protocol.md
+papers/tpc-350-fresh-growth-signed-incidence/notes/route_evaluation.md
+papers/tpc-350-fresh-growth-signed-incidence/paper/main.tex
+papers/tpc-350-fresh-growth-signed-incidence/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc350_fresh_growth_signed_incidence.md
+research/tpc-big-road/tpc_bridge_b_tpc350_fresh_growth_signed_incidence_checker.py
+
+TPC-349 previous release 入口：
 
 papers/tpc-349-prime-balanced-signed-defect-witness/README.md
 papers/tpc-349-prime-balanced-signed-defect-witness/PAPER_PLAN.md

@@ -1,16 +1,50 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-09-02
+更新时间：2026-09-03
 
-当前地图版本：V202 / TPC-349
+当前地图版本：V203 / TPC-350
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-349`（`PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_AUDIT`）；
+当前编号锚点：`TPC-350`（`PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT`）；
 对应论文目录为
-`papers/tpc-349-prime-balanced-signed-defect-witness/`。
+`papers/tpc-350-fresh-growth-signed-incidence/`。
 
-TPC-349 是当前地图位置：它承接 TPC-348 的 coordinate defect witness，对升序
+TPC-350 是当前地图位置：它把 TPC-349 的 zero-sum prime-incidence Gram
+interface 搬到三个全新 origins、四个 finite lengths 和四级 shell ladder，专门检验
+signed witness 是否在 fresh/growing panel 上保持。冻结 protocol 产生 `192` 条 rows
+和 `48` 条 length series；所有 signed witnesses 均有正响应，signed/defect ratio 为
+`0.0657381187306--0.8797933448`，`70/192` rows 超过 coordinate baseline，
+`91/192` rows 达到 half-defect。可是 `Q=256` 的 48 rows 没有一行达到 half-defect，
+length series 只有 `24/48` nondecreasing，因此 universal quarter-floor 与 universal
+monotone-growth 叙述均为 scoped refuted；下一步是预声明的 scale-adaptive zero-sum
+contrast，或回到保留 literal masks 的 source-native arithmetic `L2`。
+
+本关仍没有 arithmetic advance；source-uniform `L2`、uniform masked operator bound、
+fixed-power credit 与 twin-prime endpoint 继续 open。
+
+```text
+YOU ARE HERE = V203 / TPC-350
+TPC350_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT
+TPC350_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+TPC350_FRESH_GROWTH_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+TPC350_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+TPC350_SIGNED_TO_DEFECT_FLOOR = NUMERICALLY_CERTIFIED_FINITE_0.0657381187306
+TPC350_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_70_OF_192
+TPC350_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_91_OF_192
+TPC350_NONDECREASING_GROWTH_SERIES = NUMERICALLY_CERTIFIED_FINITE_24_OF_48
+TPC350_UNIFORM_QUARTER_FLOOR = REFUTED_SCOPED
+TPC350_ARITHMETIC_ADVANCE = NO
+TPC350_FIXED_POWER_CREDIT = 0
+TPC350_FULL_GATE_B = OPEN
+TPC350_TWIN_PRIME_RESULT = NONE
+TPC350_STATUS = PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT
+TPC350_ROUND2_CLUE = TEST_SCALE_ADAPTIVE_ZERO_SUM_CONTRAST_ON_HIGH_SHELLS
+```
+
+## V202 / TPC-349 previous anchor
+
+TPC-349 是上一位置：它承接 TPC-348 的 coordinate defect witness，对升序
 shell primes 取等量正负、总和为零的 `beta` split（奇数 shell留一个中性 prime），
 并定义 signed incidence vector `b_I(t)=sum_j beta_j 1_(p_j|t)`。它给出 exact
 prime-incidence Gram expansion 与 normalized induced-norm lower witness。
@@ -24,7 +58,7 @@ growing arithmetic result。
 fixed-power credit 与 twin-prime endpoint 继续 open。
 
 ```text
-YOU ARE HERE = V202 / TPC-349
+YOU ARE HERE = V202 / TPC-349 (historical)
 TPC349_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_AUDIT
 TPC349_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
 TPC349_PRIME_BALANCE_RULE = PROVED_EXACT_FINITE_DECLARED_MODEL
@@ -1320,7 +1354,55 @@ strongest positive result：exact two-term normalization, dominant exponent and 
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
 
-## 5.133 V202 / TPC-349：prime-balanced signed defect witness
+## 5.134 V203 / TPC-350：fresh-growth and shell-scale signed incidence
+
+TPC-350 承接 TPC-349 的 exact zero-sum prime-incidence Gram lower-witness interface，
+并将其放到三个互不重叠的 fresh origins `60097,72097,84097`、四个 source lengths
+`256,512,1024,2048` 与 `Q=36,80,128,256` 的 shell-scale ladder 上。两种 source
+laws、两种 kernel exponents 共形成 `192` rows 和 `48` 条固定
+`(origin,Q,exponent,law)` length series。每一行都保留 exact finite incidence identity，
+并由独立 reverse-shell replay 与 stress audit 重建。
+
+有限结果是：`192/192` signed witnesses 响应为正，signed/defect ratio 为
+`0.0657381187306--0.8797933448`，`70/192` rows 超过 coordinate baseline，
+`91/192` rows 达到 half-defect；incidence-Gram replay error 不超过
+`1.06581410364e-14`。但 `Q=256` 的 `48` rows 全部低于 half-defect，且只有
+`24/48` length series nondecreasing。故 fresh replication 是真实的 finite
+positive result，但不能升级为 growing lower bound；universal quarter-floor 和
+universal monotone growth 均记为 `REFUTED_SCOPED`。
+
+最强可复用结构为
+
+```text
+fresh origins + length ladder + shell ladder
+  -> balanced incidence Gram -> series ledger -> scale obstruction
+```
+
+下一关只允许测试一个不按 row 拟合的、预声明的 scale-adaptive zero-sum contrast；
+若该替代仍不稳定，则冻结 incidence branch，回到 literal-mask 的 source-native
+arithmetic `L2`。本项目没有 arithmetic advance、fixed-power credit、Route-B
+reassembly 或 twin-prime conclusion；official evaluator 缺失，local Bridge-B
+仍为 fail-closed fallback。
+
+```text
+TPC350_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT
+TPC350_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+TPC350_FRESH_GROWTH_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+TPC350_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+TPC350_SIGNED_TO_DEFECT_FLOOR = NUMERICALLY_CERTIFIED_FINITE_0.0657381187306
+TPC350_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_70_OF_192
+TPC350_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_91_OF_192
+TPC350_NONDECREASING_GROWTH_SERIES = NUMERICALLY_CERTIFIED_FINITE_24_OF_48
+TPC350_UNIFORM_QUARTER_FLOOR = REFUTED_SCOPED
+TPC350_ARITHMETIC_ADVANCE = NO
+TPC350_FIXED_POWER_CREDIT = 0
+TPC350_FULL_GATE_B = OPEN
+TPC350_TWIN_PRIME_RESULT = NONE
+TPC350_STATUS = PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT
+TPC350_ROUND2_CLUE = TEST_SCALE_ADAPTIVE_ZERO_SUM_CONTRAST_ON_HIGH_SHELLS
+```
+
+## 5.133 V202 / TPC-349：prime-balanced signed defect witness (previous)
 
 TPC-349 承接 TPC-348 的 position-aware coordinate lower witness，并测试一个预
 声明的 prime-balanced incidence vector。若 shell 按 `p_0<...<p_(r-1)` 排序，令
@@ -4043,9 +4125,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V202 / TPC-349                    |
-        | PRIME-BALANCED SIGNED DEFECT WITNESS        |
-        | ARITHMETIC L2 AND GATES STILL OPEN           |
+        | YOU ARE HERE — V203 / TPC-350                    |
+        | FRESH-GROWTH SIGNED INCIDENCE AUDIT         |
+        | HIGH-SHELL SCALE OBSTRUCTION; GATES OPEN    |
         +--------------------------------------------------+
                 |
                 v
@@ -9155,6 +9237,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-03 | V203 / TPC-350 | Bridge A / Gate B：fresh-growth signed-incidence replication 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-350` | 承接 TPC-349；三个 fresh origins、四个 lengths、四级 shell scale，192/192 正响应，signed/defect `0.0657--0.8798`，70/192 超过 coordinate baseline，91/192 达到 half-defect；Q=256 全部低于 half-defect，24/48 series nondecreasing，universal quarter-floor 与 monotone growth scoped refuted，下一步为 scale-adaptive zero-sum contrast |
 | 2026-09-02 | V202 / TPC-349 | Bridge A / Gate B：prime-balanced signed defect witness 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-349` | 承接 TPC-348；exact zero-sum beta、prime-incidence Gram expansion 与 normalized induced-norm witness；192/192 正响应，136/192 超过 coordinate baseline，175/192 达到 half-defect；universal gain scoped refuted，下一步为 growing fresh-panel replication |
 | 2026-09-02 | V201 / TPC-348 | Bridge A / Gate B：position-aware mask-defect lower witness 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-348` | 承接 TPC-347；exact two-sided position formula 与 coordinate induced-norm lower witness；192/192 rows positive，best-hit/defect `0.4540--0.8971`，mask-discard obstruction 定位到 mask-hit coordinates；arithmetic advance 仍为 NO，下一步测试 prime-balanced signed witnesses |
 | 2026-09-02 | V200 / TPC-347 | Bridge A / Gate B：convolution-plus-mask-defect interface 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-347` | 承接 TPC-346；精确 `A_I=T_I+D_I` factorisation、192 finite spectral rows、96/96 ideal translation checks、192/192 combined-bound checks；defect/ideal ratio `0.0312--0.4671`，93/192 超过 `1/4`；mask-discard shortcut scoped refuted，下一步为 position-aware defect lower witnesses |

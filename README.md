@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--349 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--350 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -48,6 +48,13 @@ primes 取等量 `+1/-1`（奇数 shell 留一个中性 prime），得到 exact 
 `0.39083565842--0.954375010719`；`136/192` 行超过最佳单坐标基线，`175/192`
 行达到 defect norm 的一半。但 56 行仍低于坐标基线，所以 universal balanced gain
 只可记为 `REFUTED_SCOPED`；arithmetic advance 仍为 NO。
+
+TPC-350 将同一 zero-sum incidence witness 移到三个 fresh origins、四个长度与
+`Q=36,80,128,256` 的扩展 shell ladder。`192/192` 行仍有正响应，
+signed/defect ratio 为 `0.0657381187306--0.8797933448`，但只有 `70/192` 行超过
+coordinate baseline、`91/192` 行达到 half-defect，长度序列仅 `24/48`
+nondecreasing。特别地，`Q=256` 的 48 行全部低于 half-defect，所以 fresh finite
+replication 成立，而 universal quarter-floor 在声明面板上为 `REFUTED_SCOPED`。
 
 ```text
 TPC343_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
@@ -172,6 +179,26 @@ TPC349_STATUS = PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_
 TPC349_ROUND2_CLUE = REPLICATE_SIGNED_INCIDENCE_GRAM_ON_GROWING_FRESH_PANELS
 ```
 
+```text
+TPC350_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT
+TPC350_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+TPC350_FRESH_GROWTH_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+TPC350_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+TPC350_SIGNED_TO_DEFECT_FLOOR = NUMERICALLY_CERTIFIED_FINITE_0.0657381187306
+TPC350_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_70_OF_192
+TPC350_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_91_OF_192
+TPC350_NONDECREASING_GROWTH_SERIES = NUMERICALLY_CERTIFIED_FINITE_24_OF_48
+TPC350_UNIFORM_QUARTER_FLOOR = REFUTED_SCOPED
+TPC350_ARITHMETIC_ADVANCE = NO
+TPC350_FIXED_POWER_CREDIT = 0
+TPC350_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+TPC350_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+TPC350_FULL_GATE_B = OPEN
+TPC350_TWIN_PRIME_RESULT = NONE
+TPC350_STATUS = PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT
+TPC350_ROUND2_CLUE = TEST_SCALE_ADAPTIVE_ZERO_SUM_CONTRAST_ON_HIGH_SHELLS
+```
+
 TPC-331（更早阶段）承接 TPC-330，把五个预声明的 coordinate controls 视为一个
 finite control orbit，并对 energy、coordinate diagonal 与 off-diagonal response 给出
 exact mean/centered decomposition。锁定同一两个 held-out origins={28001,36001}、
@@ -277,6 +304,12 @@ papers/tpc-349-prime-balanced-signed-defect-witness - TPC-349 已完成项目 - 
 prime-incidence Gram 与 signed lower witness；192/192 正响应、136/192 超过坐标
 基线、175/192 达到 half-defect，含 exact multi-hit anchor、独立 reverse replay、
 mutation stress、PDF 与 local Bridge-B checker；universal gain scoped refuted，
+arithmetic advance 仍为 NO。
+
+papers/tpc-350-fresh-growth-signed-incidence - TPC-350 已完成项目 - 在三个 fresh
+origins、四个长度与四级 shell scale 上重放 zero-sum incidence witness；192/192
+正响应，但 Q=256 的全部 rows 低于 half-defect，含 48-series growth ledger、exact
+fresh anchor、reverse replay、mutation stress、PDF 与 local Bridge-B checker；
 arithmetic advance 仍为 NO。
 
 papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram

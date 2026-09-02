@@ -1,6 +1,47 @@
 # TPC distilled map and bold channel
 
-## V202 / TPC-349 current anchor
+## V203 / TPC-350 current anchor
+
+更新时间：2026-09-03
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc350_fresh_growth_signed_incidence.md，checker 为
+tpc_bridge_b_tpc350_fresh_growth_signed_incidence_checker.py，编号论文为
+papers/tpc-350-fresh-growth-signed-incidence/。
+
+TPC-350 承接 TPC-349 的 zero-sum prime-incidence witness，把位置移到三个 fresh
+origins，并把区间长度扩展为 `256,512,1024,2048`，同时测试
+`Q=36,80,128,256` 的 shell-scale ladder。两种 source law、两种 exponent 形成
+`192` 行与 `48` 条 length series。所有 rows 仍有正响应，signed/defect ratio 为
+`0.0657381187306--0.8797933448`，但 `Q=256` 的 48 行全部低于 half-defect；
+整体仅 `70/192` 超过 coordinate baseline、`91/192` 达到 half-defect，且只有
+`24/48` length series nondecreasing。
+
+这是 `PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT`；
+fresh finite replication 成立，但 universal quarter-floor 记为 `REFUTED_SCOPED`。
+source-uniform arithmetic `L2`、uniform masked operator bound、fixed-power credit、
+Route-B reassembly 与 twin-prime endpoint 继续 open。Session-named evaluator files
+仍 absent，故只记录 local Bridge-B fail-closed。
+
+    TPC350_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT
+    TPC350_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+    TPC350_FRESH_GROWTH_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+    TPC350_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+    TPC350_SIGNED_TO_DEFECT_FLOOR = NUMERICALLY_CERTIFIED_FINITE_0.0657381187306
+    TPC350_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_70_OF_192
+    TPC350_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_91_OF_192
+    TPC350_NONDECREASING_GROWTH_SERIES = NUMERICALLY_CERTIFIED_FINITE_24_OF_48
+    TPC350_UNIFORM_QUARTER_FLOOR = REFUTED_SCOPED
+    TPC350_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+    TPC350_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC350_ARITHMETIC_ADVANCE = NO
+    TPC350_FIXED_POWER_CREDIT = 0
+    TPC350_FULL_GATE_B = OPEN
+    TPC350_TWIN_PRIME_RESULT = NONE
+    TPC350_STATUS = PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT
+    TPC350_ROUND2_CLUE = TEST_SCALE_ADAPTIVE_ZERO_SUM_CONTRAST_ON_HIGH_SHELLS
+
+## V202 / TPC-349 previous anchor
 
 更新时间：2026-09-02
 

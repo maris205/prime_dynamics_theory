@@ -1,15 +1,70 @@
 
 # TPC big-road paper candidate ledger
 
-更新时间：2026-09-02
+更新时间：2026-09-03
 
-状态：**TPC349_PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC350_PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.143 current：TPC-349 prime-balanced signed defect witness
+## 0.144 current：TPC-350 fresh-growth and shell-scale signed incidence audit
+
+项目：papers/tpc-350-fresh-growth-signed-incidence/
+
+类型：**PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT**。
+
+TPC-350 直接承接 TPC-349 的 zero-sum prime-incidence Gram interface，但不复用其
+origin/length/scale panel。冻结三个 fresh origins `60097,72097,84097`，四个长度
+`256,512,1024,2048`，四级 shell ladder `Q=36,80,128,256`，两种 source law
+`all_plus, alternating_index` 与两种 kernel exponent，共 `192` rows、`48` 条
+固定 `(origin,Q,exponent,law)` length series。所有 rows 的 signed incidence
+witness 均非零且响应为正；signed/defect ratio 为
+`0.0657381187306--0.8797933448`，mean 为 `0.492863038063`，support 为
+`24--294`，`70/192` rows 超过 coordinate baseline，`91/192` rows 达到
+half-defect，incidence-Gram replay 最大误差为 `1.06581410364e-14`。
+
+最强正结果：TPC-349 的 exact lower-witness interface 在三个全新位置、四个有限
+长度和两种 shell law 上保持 `192/192` 正响应；这是 fresh finite replication，
+不是 growing theorem。
+
+最强 obstruction：按 Q 分层，`Q=256` 的 48 rows 的 ratio 范围为
+`0.0657381187306--0.456967381039`，没有一行达到 half-defect；长度序列只有
+`24/48` nondecreasing。因此 universal quarter-floor 与 universal monotone-growth
+叙述在该声明面板上均只能记为 `REFUTED_SCOPED`。
+
+开放定理：寻找不对每一行拟合的 scale-adaptive zero-sum contrast，或冻结 incidence
+branch 并回到保留 literal masks 的 source-native arithmetic `L2`。两者都尚未给出
+fixed-power credit、Route-B reassembly 或 twin-prime endpoint。
+
+可复用结构：
+
+    fresh origins + length ladder + shell ladder
+      -> balanced incidence Gram -> series ledger -> scale obstruction
+
+ROUND2_CLUE：`TEST_SCALE_ADAPTIVE_ZERO_SUM_CONTRAST_ON_HIGH_SHELLS`。
+
+声明上限：`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`、
+`TWIN_PRIME_RESULT=NONE`；official evaluator files absent，local Bridge-B fail-closed。
+
+    TPC350_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT
+    TPC350_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+    TPC350_FRESH_GROWTH_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+    TPC350_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+    TPC350_SIGNED_TO_DEFECT_FLOOR = NUMERICALLY_CERTIFIED_FINITE_0.0657381187306
+    TPC350_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_70_OF_192
+    TPC350_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_91_OF_192
+    TPC350_NONDECREASING_GROWTH_SERIES = NUMERICALLY_CERTIFIED_FINITE_24_OF_48
+    TPC350_UNIFORM_QUARTER_FLOOR = REFUTED_SCOPED
+    TPC350_ARITHMETIC_ADVANCE = NO
+    TPC350_FIXED_POWER_CREDIT = 0
+    TPC350_FULL_GATE_B = OPEN
+    TPC350_TWIN_PRIME_RESULT = NONE
+    TPC350_STATUS = PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT
+    TPC350_ROUND2_CLUE = TEST_SCALE_ADAPTIVE_ZERO_SUM_CONTRAST_ON_HIGH_SHELLS
+
+## 0.143 previous：TPC-349 prime-balanced signed defect witness
 
 项目：papers/tpc-349-prime-balanced-signed-defect-witness/
 
