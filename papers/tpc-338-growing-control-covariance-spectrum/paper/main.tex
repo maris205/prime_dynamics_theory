@@ -1,0 +1,150 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.78in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,mathtools}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+
+\title{Growing-Control Covariance Spectrum\\
+\large Stable Energy, Noncanonical Signed Interaction}
+\author{Liang Wang\\School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{September 2, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-337 found that centered variation dominates the response of four masked
+source components under five coordinate controls.  We enlarge that orbit to
+nine controls while holding the source and the all-plus operator fixed.  The
+centered fraction remains high in every one of six windows (87.72--89.73
+percent), and the trace-normalized covariance spectrum changes by only
+0.0264--0.0441 in $L^1$.  A selected signed interaction is not stable:
+twin--zero covariance is negative for the five-control ensemble and positive
+for the nine-control ensemble in all six rows.  Thus the finite energy
+structure is more reproducible than any signed covariance law.
+\end{abstract}
+
+\section{Question and nested ensembles}
+
+Write the parent-locked source as
+\[
+ \beta=\sum_{C\in\{T,B,P,Z\}}\beta_C,
+ \qquad \beta(t)=\Lambda(t+2)-b^{(2)}(t),
+\]
+on the six intervals $I_{o,N}=\{o,\ldots,o+N/2-1\}$ with
+$o\in\{42001,44001\}$ and $N\in\{2048,4096,8192\}$.  The labels denote
+twin prime, non-twin prime shift, prime-power shift, and zero-support.
+
+The fixed operator is the all-plus deleted-diagonal shell matrix
+\[
+ A=\sum_{54<p\le108}B_{p,54,1},\qquad H=66.
+\]
+The five-control ensemble is identity, the affine maps $(3,11)$, $(5,17)$,
+$(7,29)$, and reversal.  The nine-control ensemble adds $(9,1)$, $(11,13)$,
+$(13,17)$, and $(17,19)$ modulo the source count.  All multipliers are odd,
+so these are bijections on the powers-of-two source counts.
+
+For an ensemble $J$, define
+\[
+ y_{C,j}=AP_j\beta_C,\quad
+ \bar y_{C,J}=\frac1{|J|}\sum_{j\in J}y_{C,j},\quad
+ z_{C,j,J}=y_{C,j}-\bar y_{C,J}.
+\]
+
+\section{Finite identity and spectrum}
+
+The centered vectors sum to zero.  Therefore, for either nested ensemble,
+\begin{equation}\label{eq:split}
+ \frac1{|J|}\sum_{j\in J}\|y_{C,j}\|_2^2
+ =\|\bar y_{C,J}\|_2^2+
+ \frac1{|J|}\sum_{j\in J}\|z_{C,j,J}\|_2^2.
+\end{equation}
+The class covariance Gram matrix is
+\[
+ K_J(C,D)=\frac1{|J|}\sum_{j\in J}
+ \langle z_{C,j,J},z_{D,j,J}\rangle.
+\]
+For any $a\in\mathbb R^4$,
+\[
+ a^TK_Ja=\frac1{|J|}\sum_{j\in J}
+ \left\|\sum_Ca_Cz_{C,j,J}\right\|_2^2\ge0.
+\]
+This proves positive semidefiniteness but says nothing about the sign of an
+individual off-diagonal entry.  Since changing $J$ changes the centering,
+there is no nested sign monotonicity to assume.
+
+We compare the eigenvalues of $K_J$ after division by its trace.  This removes
+the overall response scale for a descriptive finite spectral comparison; it
+does not create a limiting object.
+
+\section{Audit and exact anchor}
+
+The producer computes all nine outputs once per class and derives both nested
+ledgers.  An independent checker rebuilds the source by trial factorisation
+and accumulates the prime shell in reverse order.  Mutation stress tests the
+control count, energy dominance, sign reversal, anchor, and firewall.  A
+rational two-vector anchor verifies the mean/centered identity exactly:
+for orbit vectors $(1,0)$ and $(0,1)$, the average, coherent, and centered
+energies are $1$, $1/2$, and $1/2$.
+
+\section{Results}
+
+\begin{table}[ht]
+\centering\small
+\caption{Nested control-orbit readout over six windows.}
+\label{tab:main}
+\begin{tabular}{lcc}
+\toprule
+quantity & five controls & nine controls\\
+\midrule
+full centered fraction & 0.785032--0.855298 & 0.877180--0.897264\\
+full coherent fraction & 0.144702--0.214968 & 0.102736--0.122820\\
+twin/background covariance & + in 6/6 & + in 6/6\\
+background/zero covariance & -- in 6/6 & -- in 6/6\\
+twin/zero covariance & -- in 6/6 & + in 6/6\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The normalized covariance-spectrum $L^1$ distance between the two ensembles is
+0.0264396--0.0440592.  The corresponding unnormalized covariance matrices
+change by 0.217894--0.237903 in relative Frobenius norm.  These two facts can
+coexist: the spectral shape is fairly close after normalization, while a
+particular off-diagonal entry crosses zero.
+
+The sign reversal is not a numerical borderline phenomenon.  The smallest
+absolute twin--zero entry in each ensemble is separated from zero by the
+declared guard, and the independent replay reproduces both six-row censuses.
+It nevertheless remains a finite statement about two explicitly chosen
+ensembles.
+
+\section{Interpretation and firewall}
+
+The positive result is a nested validation of the robust part of TPC-337:
+position-sensitive covariance carries most of the output response even after
+four new affine controls are added.  The obstruction is that signed class
+interaction is not canonical.  A proof strategy that needs a fixed sign for
+the twin--zero term cannot be justified by the five-control panel.
+
+The identities are \texttt{PROVED\_EXACT\_FINITE\_DECLARED\_MODEL}; the
+nested replay, energy census, and finite spectral distances are
+\texttt{NUMERICALLY\_CERTIFIED\_FINITE}.  The sign reversal is
+\texttt{REFUTED\_SCOPED} for ensemble invariance.  There is no arithmetic
+advance, fixed-power credit, official evaluator pass, or twin-prime result:
+\[
+ \texttt{ARITHMETIC\_ADVANCE=NO},\qquad
+ \texttt{FIXED\_POWER\_CREDIT=0},\qquad
+ \texttt{FULL\_GATE\_B=OPEN}.
+\]
+The official Session evaluator files are absent; local Bridge-B is fail-closed.
+
+\section{Next question}
+
+The next route should avoid relying on signed covariance.  We therefore test a
+sign-free mask-aware operator envelope and compare it with the observed gains.
+
+\end{document}
