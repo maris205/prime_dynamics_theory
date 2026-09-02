@@ -1,6 +1,136 @@
 # TPC HANDOFF
 
-TPC-331 current section: control-average and centered position-response decomposition
+TPC-336 current section: masked signed-Gram response and output interference
+-----------------------------------------------------------------------------------------------
+
+TPC-336 is the batch endpoint for the TPC-332--336 source-to-response chain.  It takes the
+four disjoint support masks produced by TPC-334/335 and sends them through the fixed
+all-plus deleted-diagonal signed-Gram operator with `Q=54`, exponent `1`, and `H=66`.
+The parent-locked panel has origins `{42001,44001}` and scales `{2048,4096,8192}`.
+
+Across all six rows, the self-response gains obey
+
+```text
+zero_support > non_twin_prime_shift > twin_prime > prime_power_shift.
+```
+
+The gain ranges are respectively
+`393547.76798--419768.84446`, `117431.36298--127558.56125`,
+`37443.58626--44607.77342`, and `0--34676.06051`.  Every row has destructive output
+interaction; the ratio of the sum of masked self energies to the full output response is
+`[4.8538535937774503,5.4814134328177246]`.  Producer, independent replay, mutation
+stress, exact anchor, PDF audit, and the local fail-closed Bridge-B checker all pass.
+
+    TPC336_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE
+    TPC336_MASK_RESPONSE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC336_FIXED_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+    TPC336_GAIN_ORDERING = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
+    TPC336_DESTRUCTIVE_OUTPUT_INTERACTION = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
+    TPC336_TWIN_RESPONSE_DOMINANCE = REFUTED_SCOPED_FINITE_PANEL
+    TPC336_ARITHMETIC_ADVANCE = NO
+    TPC336_FIXED_POWER_CREDIT = 0
+    TPC336_SOURCE_UNIFORM_L2 = OPEN
+    TPC336_FULL_GATE_B = OPEN
+    TPC336_TWIN_PRIME_RESULT = NONE
+    TPC336_STATUS = NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE
+    TPC336_STRONGEST_POSITIVE = FOUR_MASK_SOURCE_TO_OUTPUT_GRAM_CHAIN_WITH_6_OF_6_REPLAY
+    TPC336_STRONGEST_OBSTRUCTION = OUTPUT_CROSS_CLASS_INTERFERENCE_BLOCKS_SOURCE_SHARE_TRANSFER
+    TPC336_OPEN_THEOREM = UNIFORM_MASKED_OPERATOR_BOUND_OR_CONTROL_COVARIANCE_THEOREM
+    TPC336_REUSABLE_STRUCTURE = SUPPORT_MASKS_TO_EXACT_NORM_TO_OUTPUT_GRAM_COVARIANCE_LEDGER
+    TPC336_ROUND2_CLUE = RETURN_TO_CONTROL_COVARIANCE_OR_SEEK_UNIFORM_MASKED_OPERATOR_BOUND
+
+官方 Session-named Route-A/Route-B evaluator files 在本 checkout 中不存在；上述 local
+Bridge-B 是 fail-closed fallback，不能写成 official evaluator pass。批次在 TPC-336
+停止，不创建 TPC-337。
+
+TPC-335 previous section: twin-isolated source norm decomposition
+-----------------------------------------------------------------------------------------------
+
+TPC-335 将 TPC-334 的四个 support masks 作用于 `beta=Lambda-b`，给出 exact disjoint
+residual norm split。六个 windows 的 twin norm fraction 为
+`0.095561720872944358--0.12241598178733512`，non-twin background 为
+`0.67049701649956917--0.69656908745054080`，prime-power 至多
+`0.0018737060121997208`；twin norm share 相对 raw cross share 的 amplification 为
+`1.7065194950664935--1.7705815591117822`。它确认 twin signal 非零但不是 residual
+energy 主导类，并把下一问题自然推进到 masked operator response。
+
+    TPC335_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_TWIN_ISOLATED_SOURCE_NORM
+    TPC335_MASK_NORM_SPLIT = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC335_TWIN_NORM_SHARE = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+    TPC335_BACKGROUND_NORM_SHARE = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+    TPC335_ARITHMETIC_ADVANCE = NO
+    TPC335_FIXED_POWER_CREDIT = 0
+    TPC335_SOURCE_UNIFORM_L2 = OPEN
+    TPC335_FULL_GATE_B = OPEN
+    TPC335_TWIN_PRIME_RESULT = NONE
+    TPC335_STATUS = NUMERICALLY_CERTIFIED_FINITE_TWIN_ISOLATED_SOURCE_NORM
+    TPC335_ROUND2_CLUE = TEST_TWIN_ISOLATED_SOURCE_THROUGH_FIXED_SIGNED_GRAM_OPERATOR
+
+TPC-334 previous section: cross-term support ledger
+-----------------------------------------------------------------------------------------------
+
+TPC-334 将 TPC-333 的 `<Lambda,b>` 按 twin、non-twin prime-shift、prime-power 与
+zero support 四类 exact finite support 分账。六行 twin share 为
+`0.054296754369378503--0.071734300218214184`，non-twin share 为
+`0.92826569978178597--0.94419571979139760`，prime-power 至多
+`0.0028651911963981512`；六行均满足 twin `<10%`、non-twin `>90%`。这是一项
+support obstruction，不是否定其他 twin-prime route。
+
+    TPC334_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_TERM_SUPPORT_LEDGER
+    TPC334_SUPPORT_PARTITION = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC334_TWIN_SHARE = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+    TPC334_NON_TWIN_SHARE = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+    TPC334_ARITHMETIC_ADVANCE = NO
+    TPC334_FIXED_POWER_CREDIT = 0
+    TPC334_SOURCE_UNIFORM_L2 = OPEN
+    TPC334_FULL_GATE_B = OPEN
+    TPC334_TWIN_PRIME_RESULT = NONE
+    TPC334_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_TERM_SUPPORT_LEDGER
+    TPC334_ROUND2_CLUE = BUILD_TWIN_ISOLATED_RESIDUAL_NORM_LEDGER
+
+TPC-333 previous section: source polarization and cross-term ledger
+-----------------------------------------------------------------------------------------------
+
+TPC-333 承接 TPC-332 的 growing finite control-average result，去掉 dense operator，直接
+审计六个 source windows `origins={42001,44001}`, `scales={2048,4096,8192}` 的四项
+polarization identity
+
+```text
+||Lambda-b||_2^2 = ||Lambda||_2^2 + ||b||_2^2 - 2 <Lambda,b>.
+```
+
+dimensionless coefficient `kappa=2<Lambda,b>/(||Lambda||_2^2+||b||_2^2)` 在六个窗口
+均位于 `[0.35486589921455675,0.36250235375855522]`，residual fraction 位于
+`[0.63749764624144467,0.64513410078544309]`。producer、independent reverse-factorization
+replay、five-mutation stress、exact rational anchor、PDF audit 与 local Bridge-B checker
+构成 finite source ledger。near-orthogonality 与 near-total-cancellation 只在该面板上
+为 `REFUTED_SCOPED`；source-uniform arithmetic `L2`、support attribution、fixed-power
+credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+    TPC333_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_POLARIZATION_LEDGER
+    TPC333_POLARIZATION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC333_SIX_WINDOW_REPLAY = NUMERICALLY_CERTIFIED_FINITE_6_WINDOWS
+    TPC333_CANCELLATION_COEFFICIENT = NUMERICALLY_CERTIFIED_FINITE_0.35_TO_0.37
+    TPC333_NEAR_ORTHOGONALITY = REFUTED_SCOPED_FINITE_PANEL
+    TPC333_NEAR_TOTAL_CANCELLATION = REFUTED_SCOPED_FINITE_PANEL
+    TPC333_ARITHMETIC_ADVANCE = NO
+    TPC333_FIXED_POWER_CREDIT = 0
+    TPC333_SOURCE_UNIFORM_L2 = OPEN
+    TPC333_FULL_GATE_B = OPEN
+    TPC333_TWIN_PRIME_RESULT = NONE
+    TPC333_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_POLARIZATION_LEDGER
+    TPC333_ROUND2_CLUE = CLASSIFY_CROSS_TERM_SUPPORT_BY_PRIME_POWER_AND_TWIN_MASK
+
+TPC-332 previous section: growing control-average ensemble
+-----------------------------------------------------------------------------------------------
+
+TPC-332 在 `42001,44001` 与 `2048,4096,8192` 上完成 48-row、192-observation 的
+five-control mean/centered replication；all-plus average/centered 为 `48/48` positive、
+coherent 为 `47/48`。unpermuted residual 为 `27 negative / 21 positive`，source
+polarization fields 首次被并入同一 certificate。该 finite result 是 TPC-333 的 parent，
+不提供 source-uniform arithmetic theorem。
+
+TPC-331 previous section: control-average and centered position-response decomposition
 -----------------------------------------------------------------------------------------------
 
 TPC-331 承接 TPC-330，把 identity、三个 odd-affine controls 与 reversal 视为一个五元素
@@ -11441,10 +11571,11 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V184/TPC-331 是当前 release；其 producer、independent replay、stress audit 与
-control-average / centered-response bridge 已封存。TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
+V189/TPC-336 是当前 release；其 producer、independent replay、stress audit 与
+masked signed-Gram response bridge 已封存。TPC-335、TPC-334、TPC-333、TPC-332、
+TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 345 对 normal/optimized 命令、690 次
+当前 curated cascade command set 共 365 对 normal/optimized 命令、730 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -11462,13 +11593,18 @@ TPC-318 再追加末尾 4 对，TPC-319 再追加末尾 4 对，TPC-320 再追�
 TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追加末尾 4 对，
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
-TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对。
+TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
+TPC-335、TPC-336 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
 V184/TPC-331 的新增 4 对由本项目 bridge 与 standalone tail checks 逐项验证；其
 finite decomposition 不代表 source-uniform arithmetic `L2` 或 official Route-A/Route-B
 通过。
+
+V185--V189/TPC-332--336 的新增 20 对由各项目 bridge 与 standalone tail checks
+逐项验证；五篇论文的 finite source/support/output certificates 不代表 source-uniform
+arithmetic `L2`、fixed-power saving 或 official Route-A/Route-B 通过。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
@@ -12610,6 +12746,102 @@ exact_anchor=1`。这是 V184/TPC-331 的新增尾部；finite mean/centered dec
 不代表 source-uniform growing theorem、arithmetic power saving 或官方 Route-A/Route-B
 通过。
 
+TPC-332 的项目级 producer、independent replay、growing-ensemble stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-332-growing-control-average-ensemble/code/tpc332_growing_control_average_ensemble.py --check
+python -O -B papers/tpc-332-growing-control-average-ensemble/code/tpc332_growing_control_average_ensemble.py --check
+python -B papers/tpc-332-growing-control-average-ensemble/experiments/tpc332_independent_checker.py --check
+python -O -B papers/tpc-332-growing-control-average-ensemble/experiments/tpc332_independent_checker.py --check
+python -B papers/tpc-332-growing-control-average-ensemble/experiments/tpc332_growing_ensemble_stress.py --check
+python -O -B papers/tpc-332-growing-control-average-ensemble/experiments/tpc332_growing_ensemble_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc332_growing_control_average_ensemble_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc332_growing_control_average_ensemble_checker.py --check
+```
+
+TPC-332 增量 tail audit：上述 4 对共 8 次 invocation 均返回零、stderr 为空，且
+normal/optimized stdout 逐对 byte-identical；Bridge-B 输出
+`rows=48 / origins=2 / scales=3 / laws=4 / decomposition_observations=192 /
+source_windows=6 / growth_pairs=4 / exact_anchor=1`。这是 V185/TPC-332 的新增尾部；
+growing finite control-average 不代表 source-uniform arithmetic `L2` 或 official pass。
+
+TPC-333 的项目级 producer、independent replay、polarization stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-333-source-polarization-cross-term/code/tpc333_source_polarization_cross_term.py --check
+python -O -B papers/tpc-333-source-polarization-cross-term/code/tpc333_source_polarization_cross_term.py --check
+python -B papers/tpc-333-source-polarization-cross-term/experiments/tpc333_independent_checker.py --check
+python -O -B papers/tpc-333-source-polarization-cross-term/experiments/tpc333_independent_checker.py --check
+python -B papers/tpc-333-source-polarization-cross-term/experiments/tpc333_polarization_stress.py --check
+python -O -B papers/tpc-333-source-polarization-cross-term/experiments/tpc333_polarization_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc333_source_polarization_cross_term_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc333_source_polarization_cross_term_checker.py --check
+```
+
+TPC-333 增量 tail audit：上述 4 对共 8 次 invocation 均返回零、stderr 为空，且
+normal/optimized stdout 逐对 byte-identical；Bridge-B 输出
+`windows=6 / growth_pairs=4 / kappa_interval_census=6 / exact_anchor=1`。这是
+V186/TPC-333 的新增尾部；source polarization 仍不提供 arithmetic `L2` 或 twin-prime
+结论。
+
+TPC-334 的项目级 producer、independent replay、support stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-334-cross-term-support-ledger/code/tpc334_cross_term_support_ledger.py --check
+python -O -B papers/tpc-334-cross-term-support-ledger/code/tpc334_cross_term_support_ledger.py --check
+python -B papers/tpc-334-cross-term-support-ledger/experiments/tpc334_independent_checker.py --check
+python -O -B papers/tpc-334-cross-term-support-ledger/experiments/tpc334_independent_checker.py --check
+python -B papers/tpc-334-cross-term-support-ledger/experiments/tpc334_support_stress.py --check
+python -O -B papers/tpc-334-cross-term-support-ledger/experiments/tpc334_support_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc334_cross_term_support_ledger_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc334_cross_term_support_ledger_checker.py --check
+```
+
+TPC-334 增量 tail audit：上述 4 对共 8 次 invocation 均返回零、stderr 为空，且
+normal/optimized stdout 逐对 byte-identical；Bridge-B 输出
+`windows=6 / categories=4 / twin_below_10pct=6 / non_twin_above_90pct=6 /
+exact_anchor=1`。这是 V187/TPC-334 的新增尾部；support attribution 是 finite
+obstruction，不是 twin-prime theorem。
+
+TPC-335 的项目级 producer、independent replay、norm stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-335-twin-isolated-source-norm/code/tpc335_twin_isolated_source_norm.py --check
+python -O -B papers/tpc-335-twin-isolated-source-norm/code/tpc335_twin_isolated_source_norm.py --check
+python -B papers/tpc-335-twin-isolated-source-norm/experiments/tpc335_independent_checker.py --check
+python -O -B papers/tpc-335-twin-isolated-source-norm/experiments/tpc335_independent_checker.py --check
+python -B papers/tpc-335-twin-isolated-source-norm/experiments/tpc335_norm_stress.py --check
+python -O -B papers/tpc-335-twin-isolated-source-norm/experiments/tpc335_norm_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc335_twin_isolated_source_norm_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc335_twin_isolated_source_norm_checker.py --check
+```
+
+TPC-335 增量 tail audit：上述 4 对共 8 次 invocation 均返回零、stderr 为空，且
+normal/optimized stdout 逐对 byte-identical；Bridge-B 输出
+`windows=6 / categories=4 / twin_norm_9_to_13pct=6 /
+background_norm_65_to_72pct=6 / exact_anchor=1`。这是 V188/TPC-335 的新增尾部；
+source norm split 不代表 source-uniform arithmetic `L2` 或 operator bound。
+
+TPC-336 的项目级 producer、independent replay、response stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-336-masked-signed-gram-response/code/tpc336_masked_signed_gram_response.py --check
+python -O -B papers/tpc-336-masked-signed-gram-response/code/tpc336_masked_signed_gram_response.py --check
+python -B papers/tpc-336-masked-signed-gram-response/experiments/tpc336_independent_checker.py --check
+python -O -B papers/tpc-336-masked-signed-gram-response/experiments/tpc336_independent_checker.py --check
+python -B papers/tpc-336-masked-signed-gram-response/experiments/tpc336_response_stress.py --check
+python -O -B papers/tpc-336-masked-signed-gram-response/experiments/tpc336_response_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc336_masked_signed_gram_response_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc336_masked_signed_gram_response_checker.py --check
+```
+
+TPC-336 增量 tail audit：上述 4 对共 8 次 invocation 均返回零、stderr 为空，且
+normal/optimized stdout 逐对 byte-identical；Bridge-B 应输出
+`rows=6 / categories=4 / gain_ordering=6 / destructive_interaction=6 /
+exact_anchor=1`。这是 V189/TPC-336 的 batch endpoint；masked response 的
+cross-class interference 不代表 uniform operator theorem、arithmetic power saving 或
+official Route-A/Route-B 通过。
+
 TPC-327 的项目级 producer、independent replay、three-origin stress 与 bridge checker：
 
 ```bash
@@ -12671,7 +12903,49 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-最新 TPC-331 入口：
+最新 TPC-336 入口：
+
+papers/tpc-336-masked-signed-gram-response/README.md
+papers/tpc-336-masked-signed-gram-response/PAPER_PLAN.md
+papers/tpc-336-masked-signed-gram-response/DERIVATION_PACKAGE.md
+papers/tpc-336-masked-signed-gram-response/PROOF_PACKAGE.md
+papers/tpc-336-masked-signed-gram-response/code/tpc336_masked_signed_gram_response.py
+papers/tpc-336-masked-signed-gram-response/experiments/tpc336_independent_checker.py
+papers/tpc-336-masked-signed-gram-response/experiments/tpc336_response_stress.py
+papers/tpc-336-masked-signed-gram-response/results/tpc336_certificate.json
+papers/tpc-336-masked-signed-gram-response/notes/theorem_ledger.md
+papers/tpc-336-masked-signed-gram-response/notes/claim_firewall.md
+papers/tpc-336-masked-signed-gram-response/notes/computational_protocol.md
+papers/tpc-336-masked-signed-gram-response/notes/route_evaluation.md
+papers/tpc-336-masked-signed-gram-response/paper/main.tex
+papers/tpc-336-masked-signed-gram-response/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc336_masked_signed_gram_response.md
+research/tpc-big-road/tpc_bridge_b_tpc336_masked_signed_gram_response_checker.py
+
+TPC-335 / TPC-334 / TPC-333 / TPC-332 的直接前置入口依次为：
+
+papers/tpc-335-twin-isolated-source-norm/README.md
+papers/tpc-335-twin-isolated-source-norm/PROOF_PACKAGE.md
+papers/tpc-335-twin-isolated-source-norm/results/tpc335_certificate.json
+research/tpc-big-road/bridge_b_tpc335_twin_isolated_source_norm.md
+research/tpc-big-road/tpc_bridge_b_tpc335_twin_isolated_source_norm_checker.py
+papers/tpc-334-cross-term-support-ledger/README.md
+papers/tpc-334-cross-term-support-ledger/PROOF_PACKAGE.md
+papers/tpc-334-cross-term-support-ledger/results/tpc334_certificate.json
+research/tpc-big-road/bridge_b_tpc334_cross_term_support_ledger.md
+research/tpc-big-road/tpc_bridge_b_tpc334_cross_term_support_ledger_checker.py
+papers/tpc-333-source-polarization-cross-term/README.md
+papers/tpc-333-source-polarization-cross-term/PROOF_PACKAGE.md
+papers/tpc-333-source-polarization-cross-term/results/tpc333_certificate.json
+research/tpc-big-road/bridge_b_tpc333_source_polarization_cross_term.md
+research/tpc-big-road/tpc_bridge_b_tpc333_source_polarization_cross_term_checker.py
+papers/tpc-332-growing-control-average-ensemble/README.md
+papers/tpc-332-growing-control-average-ensemble/PROOF_PACKAGE.md
+papers/tpc-332-growing-control-average-ensemble/results/tpc332_certificate.json
+research/tpc-big-road/bridge_b_tpc332_growing_control_average_ensemble.md
+research/tpc-big-road/tpc_bridge_b_tpc332_growing_control_average_ensemble_checker.py
+
+TPC-331 ancestor 入口（历史 direct parent）：
 
 papers/tpc-331-control-average-centered-response-decomposition/README.md
 papers/tpc-331-control-average-centered-response-decomposition/PAPER_PLAN.md

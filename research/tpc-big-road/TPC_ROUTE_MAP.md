@@ -2,15 +2,122 @@
 
 更新时间：2026-09-02
 
-当前地图版本：V184 / TPC-331
+当前地图版本：V189 / TPC-336
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-331`（`NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION`）；
+当前编号锚点：`TPC-336`（`NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE`）；
 对应论文目录为
-`papers/tpc-331-control-average-centered-response-decomposition/`。
+`papers/tpc-336-masked-signed-gram-response/`。
 
-TPC-331 是当前地图位置：承接 TPC-330，把五个预声明 coordinate bijections 视为一个
+TPC-336 是当前地图位置，也是本批次的封口：承接 TPC-335，将 twin、non-twin、
+prime-power 与 zero-support 四个 source masks 送入固定 all-plus deleted-diagonal
+signed-Gram operator（`Q=54`、exponent `1`、`H=66`）。在两个 origins、三个 scales
+形成的 6 个 windows 上，self-response gain ordering 全部一致：
+
+    zero_support > non_twin_prime_shift > twin_prime > prime_power_shift
+
+六行都出现 destructive output interaction；self-energy sum/full-response ratio 为
+`[4.8538535937774503,5.4814134328177246]`。这把路线从 source cross-term（TPC-334）
+和 residual norm（TPC-335）推进到 output Gram/covariance 层，明确指出 source-level
+twin share 不能未经 position-aware interaction estimate 直接传递为 operator response。
+本关仍没有 arithmetic advance；source-uniform `L2`、uniform masked operator bound、
+fixed-power credit 与 twin-prime endpoint 继续 open。
+
+```text
+YOU ARE HERE = V189 / TPC-336
+TPC336_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE
+TPC336_MASK_RESPONSE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC336_FIXED_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+TPC336_GAIN_ORDERING = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
+TPC336_DESTRUCTIVE_OUTPUT_INTERACTION = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
+TPC336_TWIN_RESPONSE_DOMINANCE = REFUTED_SCOPED_FINITE_PANEL
+TPC336_ARITHMETIC_ADVANCE = NO
+TPC336_FIXED_POWER_CREDIT = 0
+TPC336_SOURCE_UNIFORM_L2 = OPEN
+TPC336_FULL_GATE_B = OPEN
+TPC336_TWIN_PRIME_RESULT = NONE
+TPC336_STATUS = NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE
+TPC336_ROUND2_CLUE = RETURN_TO_CONTROL_COVARIANCE_OR_SEEK_UNIFORM_MASKED_OPERATOR_BOUND
+```
+
+## V188 / TPC-335 previous anchor
+
+TPC-335 将 TPC-334 的四个 support masks 作用于 `beta=Lambda-b`，得到 exact disjoint
+residual norm split。六个 windows 的 twin norm fraction 为
+`0.095561720872944358--0.12241598178733512`，non-twin background 为
+`0.67049701649956917--0.69656908745054080`；twin norm share 相对 raw cross share
+的 amplification 为 `1.7065194950664935--1.7705815591117822`。因此 twin signal
+非零但不是 residual-energy 主导类，直接 response transfer 仍须经过 output Gram
+analysis。
+
+```text
+TPC335_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_TWIN_ISOLATED_SOURCE_NORM
+TPC335_MASK_NORM_SPLIT = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC335_TWIN_NORM_SHARE = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+TPC335_BACKGROUND_NORM_SHARE = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+TPC335_ARITHMETIC_ADVANCE = NO
+TPC335_FIXED_POWER_CREDIT = 0
+TPC335_SOURCE_UNIFORM_L2 = OPEN
+TPC335_FULL_GATE_B = OPEN
+TPC335_TWIN_PRIME_RESULT = NONE
+TPC335_STATUS = NUMERICALLY_CERTIFIED_FINITE_TWIN_ISOLATED_SOURCE_NORM
+TPC335_ROUND2_CLUE = TEST_TWIN_ISOLATED_SOURCE_THROUGH_FIXED_SIGNED_GRAM_OPERATOR
+```
+
+## V187 / TPC-334 previous anchor
+
+TPC-334 将 TPC-333 的 source cross term 按 twin、non-twin prime-shift、prime-power
+与 zero support 精确分账。六行 twin share 为 `5.43%--7.17%`，non-twin share 为
+`92.83%--94.42%`，prime-power 至多 `0.2865%`；这只是 finite support obstruction，
+不把 composite background 支配误写为 twin-prime theorem。
+
+```text
+TPC334_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_TERM_SUPPORT_LEDGER
+TPC334_SUPPORT_PARTITION = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC334_TWIN_SHARE = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+TPC334_NON_TWIN_SHARE = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+TPC334_ARITHMETIC_ADVANCE = NO
+TPC334_FIXED_POWER_CREDIT = 0
+TPC334_SOURCE_UNIFORM_L2 = OPEN
+TPC334_FULL_GATE_B = OPEN
+TPC334_TWIN_PRIME_RESULT = NONE
+TPC334_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_TERM_SUPPORT_LEDGER
+TPC334_ROUND2_CLUE = BUILD_TWIN_ISOLATED_RESIDUAL_NORM_LEDGER
+```
+
+## V186 / TPC-333 previous anchor
+
+TPC-333 在两个 origins `42001,44001`、三个 scales `2048,4096,8192` 上直接审计
+`||Lambda-b||^2=||Lambda||^2+||b||^2-2<Lambda,b>`。六行的 `kappa` 位于
+`[0.35486589921455675,0.36250235375855522]`，从而 near-orthogonality 与
+near-total-cancellation 在该面板上均为 `REFUTED_SCOPED`；下一步自然是 support
+attribution，这正是 TPC-334 的入口。
+
+```text
+TPC333_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_POLARIZATION_LEDGER
+TPC333_POLARIZATION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC333_SIX_WINDOW_REPLAY = NUMERICALLY_CERTIFIED_FINITE_6_WINDOWS
+TPC333_CANCELLATION_COEFFICIENT = NUMERICALLY_CERTIFIED_FINITE_0.35_TO_0.37
+TPC333_NEAR_ORTHOGONALITY = REFUTED_SCOPED_FINITE_PANEL
+TPC333_NEAR_TOTAL_CANCELLATION = REFUTED_SCOPED_FINITE_PANEL
+TPC333_ARITHMETIC_ADVANCE = NO
+TPC333_FIXED_POWER_CREDIT = 0
+TPC333_SOURCE_UNIFORM_L2 = OPEN
+TPC333_FULL_GATE_B = OPEN
+TPC333_TWIN_PRIME_RESULT = NONE
+TPC333_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_POLARIZATION_LEDGER
+TPC333_ROUND2_CLUE = CLASSIFY_CROSS_TERM_SUPPORT_BY_PRIME_POWER_AND_TWIN_MASK
+```
+
+## V185 / TPC-332 previous anchor
+
+TPC-332 将 TPC-331 的五-control mean/centered identity 搬到两个 disjoint origins 与
+三个 nested scales，得到 48 rows；all-plus average 与 centered components 为
+48/48 positive、coherent 为 47/48。它同时首次把 source polarization identity 记录
+在同一面板，因此是 TPC-333 的直接 parent lock。
+
+TPC-332 是当前地图的直接前置位置：承接 TPC-331，把五个预声明 coordinate bijections 视为一个
 finite control orbit。对 `w_j=P_jv`、`v_bar=mean_j w_j` 与 `z_j=w_j-v_bar`，任意
 有限 quadratic form 都满足 exact mean/centered identity；energy、coordinate diagonal
 与 off-diagonal response 因而同时分解。锁定两个 origins `28001,36001`、两个 scales
@@ -771,7 +878,7 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V184 / TPC-331
+HISTORICAL ANCHOR = V184 / TPC-331
 MAP_LABEL = CONTROL-AVERAGE / CENTERED POSITION RESPONSE DECOMPOSITION / GROWING L2 OPEN
 ```
 
@@ -3402,9 +3509,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V184 / TPC-331                    |
-        | CONTROL-AVERAGE / CENTERED RESPONSE          |
-        | POSITION-AWARE L2 / ARITHMETIC GATES OPEN    |
+        | YOU ARE HERE — V189 / TPC-336                    |
+        | MASKED SIGNED-GRAM RESPONSE / OUTPUT GRAM    |
+        | UNIFORM L2 / ARITHMETIC GATES OPEN           |
         +--------------------------------------------------+
                 |
                 v
@@ -8514,6 +8621,10 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-02 | V189 / TPC-336 | Bridge A / Gate B：masked signed-Gram response 与 output-interference ledger 已完成；uniform masked operator bound、source-uniform `L2`、fixed-power credit 与 full Gate B open | `TPC-336` | 承接 TPC-335；四个 support masks 经过固定 `Q=54` all-plus operator，6/6 gain ordering 与 6/6 destructive interaction；下一步回到 control covariance 或寻求 uniform masked-operator theorem |
+| 2026-09-02 | V188 / TPC-335 | Bridge A / Gate B：twin-isolated source norm decomposition 已完成；masked response、source-uniform `L2`、fixed-power credit 与 full Gate B open | `TPC-335` | 承接 TPC-334；四个 disjoint masks 的 exact residual norm split，twin `9.56%--12.24%`、background `67.05%--69.66%`；下一步为固定 operator response |
+| 2026-09-02 | V187 / TPC-334 | Bridge A / Gate B：cross-term support attribution 已完成；twin-specific arithmetic、source-uniform `L2`、fixed-power credit 与 full Gate B open | `TPC-334` | 承接 TPC-333；6/6 rows 中 twin share `5.43%--7.17%`、non-twin share `92.83%--94.42%`；下一步为 twin-isolated norm ledger |
+| 2026-09-02 | V186 / TPC-333 | Bridge A / Gate B：source polarization ledger 已完成；support attribution、source-uniform `L2`、fixed-power credit 与 full Gate B open | `TPC-333` | 承接 TPC-332；六个 windows 的 `kappa` 为 `0.3548658992...--0.3625023538...`，极端 cancellation 解释被 scoped refute；下一步为 cross-term support classification |
 | 2026-09-02 | V184 / TPC-331 | Bridge A / Gate B：control-average / centered position-response decomposition 已完成；growing source-native `L2`、fixed-power credit 与 full Gate B open | `TPC-331` | 承接 TPC-330；五-control orbit 上的 exact mean/centered identity 同时作用于 `E,D,O`，32 rows、128 law-level decompositions；all-plus average/centered 为 `32/32`、coherent 为 `31/32`；下一步为 growing source ensemble 与分离 arithmetic `L2` |
 | 2026-09-02 | V183 / TPC-330 | Bridge A / Gate B：multi-permutation response spectrum 已完成；position-aware source-native `L2`、fixed-power credit 与 full Gate B open | `TPC-330` | 承接 TPC-329；五个 predeclared bijections、32 rows、640 law/control observations、10 组 pairwise summaries；三个 affine controls 的 all-plus 为 `0/32`、identity/reversal 为 `31/1`，affine-family consensus 通过 independent replay；下一步为 control-average / centered position-response decomposition |
 | 2026-09-01 | V182 / TPC-329 | Bridge A / Gate B：held-out source-native placement-sensitivity audit 已完成；growing arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-329` | 承接 TPC-328；两个新 origins、两个更大 scales 的 32 actual rows、64 scale pairs；norm/multiset-preserving affine null 将 all-plus `31/1` 改为 `0/32`，31/32 classifications changed；128 placement comparisons 与 independent replay 通过；下一步为 multiple predeclared controls 或 position-aware decomposition |

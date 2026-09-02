@@ -1,42 +1,108 @@
 # TPC distilled map and bold channel
 
-## V184 / TPC-331 current anchor
+## V189 / TPC-336 current anchor
 
 更新时间：2026-09-02
 
 当前入口：proof 为
-research/tpc-big-road/bridge_b_tpc331_control_average_centered_response_decomposition.md，
-checker 为 tpc_bridge_b_tpc331_control_average_centered_response_decomposition_checker.py，
-编号论文为 papers/tpc-331-control-average-centered-response-decomposition/。
+research/tpc-big-road/bridge_b_tpc336_masked_signed_gram_response.md，checker 为
+tpc_bridge_b_tpc336_masked_signed_gram_response_checker.py，编号论文为
+papers/tpc-336-masked-signed-gram-response/。
 
-TPC-331 承接 TPC-330，把五个 coordinate bijections 组成一个 finite control orbit。
-对 `w_j=P_jv`、控制均值 `v_bar` 与 centered vectors `z_j=w_j-v_bar`，任意有限
-quadratic form 都满足 exact mean/centered identity；因此 energy、coordinate diagonal
-与 off-diagonal Gram response 同时分解。锁定同一两个 origins `28001,36001`、两个
-scales `4096,8192`、四个 laws 与 V59 source-native residual，32 rows 形成 128 个
-law-level decompositions。all-plus 的 control-average 与 centered-position components
-均为 `32/32` positive，coherent mean 为 `31/32` positive。
+TPC-336 是 TPC-332--336 批次的终点。它把 TPC-334/335 的 twin、non-twin、
+prime-power 与 zero-support masks 送入固定 all-plus deleted-diagonal signed-Gram
+operator（`Q=54`、exponent `1`、`H=66`）。两个 origins `42001,44001` 与三个 scales
+`2048,4096,8192` 的六个 rows 上，self-response gain ordering 全部一致：
 
-这是 `NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION`；
-它把有限正响应定位到 coherent/centered 两个 component，但不提供 growing
-source-native arithmetic `L2`、fixed-power credit、canonical sign 或 twin-prime
-endpoint。Session-named evaluator files absent，故只记 local Bridge-B fail-closed，
-不宣称 official Route-A/Route-B pass。
+```text
+zero_support > non_twin_prime_shift > twin_prime > prime_power_shift
+```
 
-    TPC331_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
-    TPC331_EXACT_MEAN_CENTERED_DECOMPOSITION = PROVED_EXACT_FINITE
-    TPC331_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
-    TPC331_CONTROL_AVERAGE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
-    TPC331_CENTERED_POSITION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
-    TPC331_COHERENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_31_OF_32
-    TPC331_NUMERIC_IDENTITY = NUMERICALLY_CERTIFIED_FINITE
-    TPC331_ARITHMETIC_ADVANCE = NO
-    TPC331_FIXED_POWER_CREDIT = 0
-    TPC331_GROWING_SOURCE_NATIVE_L2 = OPEN
-    TPC331_FULL_GATE_B = OPEN
-    TPC331_TWIN_PRIME_RESULT = NONE
-    TPC331_STATUS = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
-    TPC331_ROUND2_CLUE = TEST_CONTROL_AVERAGE_ON_GROWING_SOURCE_ENSEMBLE_AND_SEPARATE_ARITHMETIC_L2
+六行都出现 destructive output interaction；self-energy sum/full-response energy ratio
+为 `[4.8538535937774503,5.4814134328177246]`。这是 source support/norm ledger 到
+operator-output covariance 的明确推进，但不是 uniform operator theorem。
+
+这是 `NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE`；source-uniform
+arithmetic `L2`、uniform masked operator bound、fixed-power credit 与 twin-prime
+endpoint 仍 open。Session-named evaluator files absent，故只记 local Bridge-B
+fail-closed，不宣称 official Route-A/Route-B pass。
+
+    TPC336_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE
+    TPC336_MASK_RESPONSE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC336_FIXED_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+    TPC336_GAIN_ORDERING = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
+    TPC336_DESTRUCTIVE_OUTPUT_INTERACTION = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
+    TPC336_TWIN_RESPONSE_DOMINANCE = REFUTED_SCOPED_FINITE_PANEL
+    TPC336_ARITHMETIC_ADVANCE = NO
+    TPC336_FIXED_POWER_CREDIT = 0
+    TPC336_SOURCE_UNIFORM_L2 = OPEN
+    TPC336_FULL_GATE_B = OPEN
+    TPC336_TWIN_PRIME_RESULT = NONE
+    TPC336_STATUS = NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE
+    TPC336_ROUND2_CLUE = RETURN_TO_CONTROL_COVARIANCE_OR_SEEK_UNIFORM_MASKED_OPERATOR_BOUND
+
+## V188 / TPC-335 previous anchor
+
+TPC-335 对 TPC-334 的四个 support masks 做 exact disjoint residual norm split。六行
+twin norm fraction 为 `9.556%--12.242%`，non-twin background 为 `67.050%--69.657%`，
+而 twin 相对 raw cross share 的 amplification 为 `1.7065--1.7706`。它确认 twin
+component 非零但不是 residual-energy 主导类，下一关因此转入固定 operator response。
+
+    TPC335_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_TWIN_ISOLATED_SOURCE_NORM
+    TPC335_MASK_NORM_SPLIT = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC335_TWIN_NORM_SHARE = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+    TPC335_BACKGROUND_NORM_SHARE = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+    TPC335_ARITHMETIC_ADVANCE = NO
+    TPC335_FIXED_POWER_CREDIT = 0
+    TPC335_SOURCE_UNIFORM_L2 = OPEN
+    TPC335_FULL_GATE_B = OPEN
+    TPC335_TWIN_PRIME_RESULT = NONE
+    TPC335_STATUS = NUMERICALLY_CERTIFIED_FINITE_TWIN_ISOLATED_SOURCE_NORM
+    TPC335_ROUND2_CLUE = TEST_TWIN_ISOLATED_SOURCE_THROUGH_FIXED_SIGNED_GRAM_OPERATOR
+
+## V187 / TPC-334 previous anchor
+
+TPC-334 将 TPC-333 cross term 按 twin、non-twin prime-shift、prime-power 与 zero
+support 精确分账。六行 twin share 为 `5.43%--7.17%`，non-twin share 为
+`92.83%--94.42%`，因此 raw cross term 不是 twin-prime proxy；下一关是 twin-isolated
+residual norm，而非 arithmetic conclusion。
+
+    TPC334_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_TERM_SUPPORT_LEDGER
+    TPC334_SUPPORT_PARTITION = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC334_TWIN_SHARE = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+    TPC334_NON_TWIN_SHARE = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+    TPC334_ARITHMETIC_ADVANCE = NO
+    TPC334_FIXED_POWER_CREDIT = 0
+    TPC334_SOURCE_UNIFORM_L2 = OPEN
+    TPC334_FULL_GATE_B = OPEN
+    TPC334_TWIN_PRIME_RESULT = NONE
+    TPC334_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_TERM_SUPPORT_LEDGER
+    TPC334_ROUND2_CLUE = BUILD_TWIN_ISOLATED_RESIDUAL_NORM_LEDGER
+
+## V186 / TPC-333 previous anchor
+
+TPC-333 在六个 source windows 上测得 `kappa` 区间
+`[0.35486589921455675,0.36250235375855522]`，并将 near-orthogonality 与
+near-total-cancellation 的极端解释限制为 scoped finite refutations。它把下一关
+明确为 support attribution。
+
+    TPC333_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_POLARIZATION_LEDGER
+    TPC333_POLARIZATION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC333_SIX_WINDOW_REPLAY = NUMERICALLY_CERTIFIED_FINITE_6_WINDOWS
+    TPC333_CANCELLATION_COEFFICIENT = NUMERICALLY_CERTIFIED_FINITE_0.35_TO_0.37
+    TPC333_ARITHMETIC_ADVANCE = NO
+    TPC333_FIXED_POWER_CREDIT = 0
+    TPC333_SOURCE_UNIFORM_L2 = OPEN
+    TPC333_FULL_GATE_B = OPEN
+    TPC333_TWIN_PRIME_RESULT = NONE
+    TPC333_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_POLARIZATION_LEDGER
+    TPC333_ROUND2_CLUE = CLASSIFY_CROSS_TERM_SUPPORT_BY_PRIME_POWER_AND_TWIN_MASK
+
+## V185 / TPC-332 previous anchor
+
+TPC-332 在两个 disjoint origins、三个 nested scales 上复现 TPC-331 的 control-average /
+centered split，48 rows 中 all-plus average/centered 为 `48/48`、coherent 为 `47/48`；
+它首次把 source polarization 纳入同一 growing finite certificate。
 
 ## V183 / TPC-330 previous anchor
 

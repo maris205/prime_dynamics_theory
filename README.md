@@ -9,7 +9,30 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-331 承接 TPC-330，把五个预声明的 coordinate controls 视为一个
+当前主线状态：TPC-332--336 已完成一条连续的 twin-prime finite audit chain。TPC-332
+把五个预声明的 coordinate controls 移动到两个新 origin、三个嵌套 scale 的 growing
+finite ensemble；TPC-333 将 source polarization 的 cross term 单独锁定；TPC-334
+按 twin/non-twin/prime-power support 分类；TPC-335 证明四个 disjoint source masks
+的 residual norm split；TPC-336 再把这些 masks 送入固定 all-plus signed-Gram
+operator，得到 6/6 的 gain ordering 与 destructive output interaction。整条链仍是
+有限 declared-model certificate：source-uniform arithmetic $L^2$、uniform masked
+operator bound、fixed-power credit 与 twin-prime endpoint 均未关闭。
+
+```text
+TPC336_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE
+TPC336_MASK_RESPONSE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC336_GAIN_ORDERING = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
+TPC336_DESTRUCTIVE_OUTPUT_INTERACTION = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
+TPC336_ARITHMETIC_ADVANCE = NO
+TPC336_FIXED_POWER_CREDIT = 0
+TPC336_SOURCE_UNIFORM_L2 = OPEN
+TPC336_FULL_GATE_B = OPEN
+TPC336_TWIN_PRIME_RESULT = NONE
+TPC336_STATUS = NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE
+TPC336_ROUND2_CLUE = RETURN_TO_CONTROL_COVARIANCE_OR_SEEK_UNIFORM_MASKED_OPERATOR_BOUND
+```
+
+TPC-331（更早阶段）承接 TPC-330，把五个预声明的 coordinate controls 视为一个
 finite control orbit，并对 energy、coordinate diagonal 与 off-diagonal response 给出
 exact mean/centered decomposition。锁定同一两个 held-out origins={28001,36001}、
 scales={4096,8192}、四个 laws 与 V59 source-native residual；32 个 rows 形成
@@ -33,9 +56,29 @@ position-response localization，不是 growing arithmetic theorem、fixed-power
     TPC331_STATUS = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
     TPC331_ROUND2_CLUE = TEST_CONTROL_AVERAGE_ON_GROWING_SOURCE_ENSEMBLE_AND_SEPARATE_ARITHMETIC_L2
 
-papers/tpc-331-control-average-centered-response-decomposition - TPC-331 当前项目 -
+papers/tpc-331-control-average-centered-response-decomposition - TPC-331 已完成项目 -
 五控制 orbit 的 exact mean/centered identity、128 条 decomposition 明细、independent
 replay、stress、PDF 与 local Bridge-B checker。
+
+papers/tpc-332-growing-control-average-ensemble - TPC-332 已完成项目 - 两 origin、三
+scale 的 48-row control-average/centered replication、source polarization ledger、
+independent replay、stress、PDF 与 local Bridge-B checker。
+
+papers/tpc-333-source-polarization-cross-term - TPC-333 已完成项目 - 六窗口 source
+cross-term coefficient ledger；near-orthogonality 与 near-total-cancellation 的
+有限面板假设被 scoped refute，arithmetic advance 仍为 NO。
+
+papers/tpc-334-cross-term-support-ledger - TPC-334 已完成项目 - 将 cross term 按
+twin/non-twin/prime-power/zero support 精确分账；6/6 行显示 non-twin background
+占主导，含 independent replay、stress、PDF 与 local Bridge-B checker。
+
+papers/tpc-335-twin-isolated-source-norm - TPC-335 已完成项目 - 对四个 disjoint
+support masks 完成 residual $L^2$ norm split；twin 占 9.56%--12.24%，含
+independent replay、stress、PDF 与 local Bridge-B checker。
+
+papers/tpc-336-masked-signed-gram-response - TPC-336 当前批次终点 - 固定 signed-Gram
+operator 的 6-row masked response ledger；zero/background/twin/prime-power gain
+ordering 与 6/6 destructive interaction 已独立复现，arithmetic advance 仍为 NO。
 
 TPC-330（上一位置）仍保留 affine-family placement obstruction，作为 TPC-331 的
 直接 parent lock。
