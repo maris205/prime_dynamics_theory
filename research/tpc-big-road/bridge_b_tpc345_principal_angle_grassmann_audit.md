@@ -1,0 +1,36 @@
+# Bridge-B fallback: TPC-345 principal-angle / Grassmann audit
+
+This is a local, fail-closed bridge record for the TPC-345 finite geometric
+audit.  The Session-named Route-A/Route-B evaluator files are absent in this
+checkout, so this record is not an official evaluator pass.
+
+`text
+TPC345_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
+TPC345_PRINCIPAL_ANGLE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC345_BASIS_INVARIANCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC345_RAW_DOMINANT_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC345_TRANSVERSE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC345_WEIGHTING_STABILITY = REFUTED_SCOPED
+TPC345_MUTUAL_TRANSFER = REFUTED_SCOPED
+TPC345_RANK_MISMATCH = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC345_ARITHMETIC_ADVANCE = NO
+TPC345_FIXED_POWER_CREDIT = 0
+TPC345_SOURCE_UNIFORM_L2 = OPEN
+TPC345_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+TPC345_FULL_GATE_B = OPEN
+TPC345_TWIN_PRIME_RESULT = NONE
+TPC345_STATUS = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
+TPC345_ROUND2_CLUE = FINITE_NO_GO_OR_FREEZE_PANEL_ADAPTIVE_ROUTE
+`
+
+The raw principal cosines are
+`0.99570180102754502, 0.079945679326165323`; equal-row weighting gives
+`0.91445198603192213, 0.078708449294248611`.  The leading angle changes by
+`18.557794938747453` degrees.  The cross-panel target-transfer retentions
+from TPC-342 onto TPC-341 are `0.35887708996182871` (raw) and
+`0.32345205001638555` (equal-row), so mutual transfer fails the declared
+`<0.30` criterion in both weightings.
+
+The exact angle/projector identities are finite linear algebra; no arithmetic
+advance, fixed-power credit, strict `1/400` payment, or twin-prime conclusion
+is licensed.

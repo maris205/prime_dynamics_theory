@@ -1,6 +1,63 @@
 # TPC HANDOFF
 
-TPC-344 current section: panel-contrast nuisance-basis audit
+TPC-345 current section: principal-angle / Grassmann stability audit
+-----------------------------------------------------------------------------------------------
+
+TPC-345 follows the TPC-344 weighting-sensitive panel-contrast repair and
+removes its coordinate dependence.  It forms the positive-SVD nuisance column
+spaces of the hash-locked TPC-341 and TPC-342 three-row panels, then compares
+their principal angles and orthogonal projectors under raw and equal-row
+weighting.  The observed positive ranks are 3 and 2.
+
+The raw principal cosines are `0.99570180102754502` and
+`0.079945679326165323`, with angles `5.3141837612792102°` and
+`85.414556610305894°`.  Equal-row weighting gives cosines
+`0.91445198603192213`, `0.078708449294248611` and angles
+`23.871978700026663°`, `85.485668773878913°`; the leading angle therefore
+moves `18.557794938747453°`.
+
+The TPC-341 target projected on the TPC-342 basis retains
+`0.2306119635213958` raw and `0.27459500882916554` equal-row energy; the
+opposite direction retains `0.35887708996182843` and
+`0.32345205001638844`.  Thus the declared mutual-transfer criterion, requiring
+both directions below `0.30`, fails under both weightings.  Across 18
+leave-one-control-out pairs the raw dominant cosine remains at least
+`0.99470019507217156`, while raw/equal transverse cosines remain at most
+`0.15497512764427687` and `0.16757600960516528`.
+
+A fixed nonsingular shear preserves projectors and principal cosines to errors
+below `8e-15`.  Producer, reverse-shell independent replay, nine-mutation stress,
+four-page PDF audit, and local fail-closed Bridge-B checks pass.
+
+    TPC345_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
+    TPC345_PRINCIPAL_ANGLE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC345_BASIS_INVARIANCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC345_RAW_DOMINANT_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC345_TRANSVERSE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC345_WEIGHTING_STABILITY = REFUTED_SCOPED
+    TPC345_MUTUAL_TRANSFER = REFUTED_SCOPED
+    TPC345_RANK_MISMATCH = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC345_ARITHMETIC_ADVANCE = NO
+    TPC345_FIXED_POWER_CREDIT = 0
+    TPC345_SOURCE_UNIFORM_L2 = OPEN
+    TPC345_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC345_FULL_GATE_B = OPEN
+    TPC345_TWIN_PRIME_RESULT = NONE
+    TPC345_STRONGEST_POSITIVE = BASIS_INVARIANT_DOMINANT_PLUS_TRANSVERSE_GEOMETRY
+    TPC345_STRONGEST_OBSTRUCTION = WEIGHTING_MOTION_AND_MUTUAL_TRANSFER_FAILURE
+    TPC345_OPEN_THEOREM = CANONICAL_WEIGHTING_STABLE_STRUCTURE_OR_SOURCE_UNIFORM_L2
+    TPC345_REUSABLE_STRUCTURE = POSITIVE_SVD_TO_PRINCIPAL_ANGLES_TO_TRANSFER_AUDIT
+    TPC345_ROUND2_CLUE = FINITE_NO_GO_OR_FREEZE_PANEL_ADAPTIVE_ROUTE
+    TPC345_STATUS = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
+
+Session-named Route-A/Route-B evaluator files are absent in this checkout.
+The local Bridge-B wrapper is a fail-closed fallback and cannot be written as
+an official evaluator pass.  No finite angle certificate supplies an arithmetic
+estimate, fixed-power credit, strict `1/400` payment, or twin-prime conclusion.
+The next minimal test is a fresh third-panel hostile replication before this
+panel-adaptive branch is frozen.
+
+TPC-344 previous section: panel-contrast nuisance-basis audit
 -----------------------------------------------------------------------------------------------
 
 TPC-344 follows the TPC-343 shared-coefficient obstruction on the same two
@@ -11778,12 +11835,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V197/TPC-344 是当前 release；其 producer、reverse-shell independent replay、stress
-audit 与 panel-contrast bridge 已封存。TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
+V198/TPC-345 是当前 release；其 producer、reverse-shell independent replay、stress
+audit 与 principal-angle/Grassmann bridge 已封存。TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
 TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
 TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 397 对 normal/optimized 命令、794 次
+当前 curated cascade command set 共 401 对 normal/optimized 命令、802 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -11802,7 +11859,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -11831,6 +11888,11 @@ V197/TPC-344 的新增 4 对由 project producer、reverse-shell independent che
 panel-contrast stress 与 local Bridge-B checker 逐项验证；其 raw-weighted partial
 repair 不代表 weighting-stable transfer、canonical nuisance basis、source-uniform
 arithmetic `L2`、fixed-power saving 或 official evaluator pass。
+
+V198/TPC-345 的新增 4 对由 project producer、reverse-shell independent checker、
+geometry stress 与 local Bridge-B checker 逐项验证；其 finite principal-angle
+geometry 不代表 canonical weighting-stable law、source-uniform arithmetic `L2`、
+fixed-power saving 或 official evaluator pass。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
@@ -13218,6 +13280,27 @@ holdout_records=18`。这是 V197 的 finite panel-contrast audit，不代表
 weighting-stable transfer、canonical basis、source-uniform arithmetic `L2` 或
 twin-prime conclusion。
 
+TPC-345 的项目级 producer、reverse-shell independent replay、geometry stress 与
+bridge checker：
+
+```bash
+python -B papers/tpc-345-principal-angle-grassmann-audit/code/tpc345_principal_angle_grassmann_audit.py --check
+python -O -B papers/tpc-345-principal-angle-grassmann-audit/code/tpc345_principal_angle_grassmann_audit.py --check
+python -B papers/tpc-345-principal-angle-grassmann-audit/experiments/tpc345_independent_checker.py --check
+python -O -B papers/tpc-345-principal-angle-grassmann-audit/experiments/tpc345_independent_checker.py --check
+python -B papers/tpc-345-principal-angle-grassmann-audit/experiments/tpc345_geometry_stress.py --check
+python -O -B papers/tpc-345-principal-angle-grassmann-audit/experiments/tpc345_geometry_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc345_principal_angle_grassmann_audit_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc345_principal_angle_grassmann_audit_checker.py --check
+```
+
+TPC-345 增量 tail audit：4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `panels=2 / rows=6 / raw_records=216 /
+loo_angle_pairs=18 / raw_cosines=0.9957018010,0.0799456793 /
+equal_cosines=0.9144519860,0.0787084493`。这是 V198 的 finite subspace-geometry
+audit，不代表 canonical weighting law、source-uniform arithmetic `L2`、fixed-power
+saving 或 twin-prime conclusion。
+
 TPC-327 的项目级 producer、independent replay、three-origin stress 与 bridge checker：
 
 ```bash
@@ -13278,6 +13361,25 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 ```
 
 随后优先读取：
+
+TPC-345 current release 入口：
+
+papers/tpc-345-principal-angle-grassmann-audit/README.md
+papers/tpc-345-principal-angle-grassmann-audit/PAPER_PLAN.md
+papers/tpc-345-principal-angle-grassmann-audit/DERIVATION_PACKAGE.md
+papers/tpc-345-principal-angle-grassmann-audit/PROOF_PACKAGE.md
+papers/tpc-345-principal-angle-grassmann-audit/code/tpc345_principal_angle_grassmann_audit.py
+papers/tpc-345-principal-angle-grassmann-audit/experiments/tpc345_independent_checker.py
+papers/tpc-345-principal-angle-grassmann-audit/experiments/tpc345_geometry_stress.py
+papers/tpc-345-principal-angle-grassmann-audit/results/tpc345_certificate.json
+papers/tpc-345-principal-angle-grassmann-audit/notes/theorem_ledger.md
+papers/tpc-345-principal-angle-grassmann-audit/notes/claim_firewall.md
+papers/tpc-345-principal-angle-grassmann-audit/notes/computational_protocol.md
+papers/tpc-345-principal-angle-grassmann-audit/notes/route_evaluation.md
+papers/tpc-345-principal-angle-grassmann-audit/paper/main.tex
+papers/tpc-345-principal-angle-grassmann-audit/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc345_principal_angle_grassmann_audit.md
+research/tpc-big-road/tpc_bridge_b_tpc345_principal_angle_grassmann_audit_checker.py
 
 TPC-344 current release 入口：
 

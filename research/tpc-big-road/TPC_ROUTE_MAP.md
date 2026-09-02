@@ -2,48 +2,53 @@
 
 更新时间：2026-09-02
 
-当前地图版本：V197 / TPC-344
+当前地图版本：V198 / TPC-345
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-344`（`NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT`）；
+当前编号锚点：`TPC-345`（`NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT`）；
 对应论文目录为
-`papers/tpc-344-panel-contrast-nuisance-basis/`。
+`papers/tpc-345-principal-angle-grassmann-audit/`。
 
-TPC-344 是当前地图位置：它承接 TPC-343 的 shared-coefficient obstruction，在同一
-六个 cutoff-safe rows 上加入预声明的 panel-contrast nuisance basis。六列 basis 在
-有限线性代数上等价于每个 panel 内共享、panel 之间允许不同的 nuisance coefficients。
-raw pooled residual retention 为 0.2962189247，但 equal-row retention 为
-0.3186506700；四个 cross-fit prediction retentions 为
-0.3759486734--0.6342934197，18 个 contrast holdouts 为
-0.6372238668--0.9128543547。这是 weighting-sensitive partial repair，不是
-canonical basis 或 transfer theorem。
+TPC-345 是当前地图位置：它承接 TPC-344 的 weighting-sensitive partial repair，
+直接比较 TPC-341/TPC-342 两个 nuisance column spaces 的 principal angles 与
+orthogonal projectors。raw principal cosines 为 0.9957018010、0.0799456793，
+equal-row 为 0.9144519860、0.0787084493；第一主角从 5.3142° 移到 23.8720°。
+双向 target transfer 在两种 weighting 下均不能同时满足 retention < 0.30，
+而 18 个 leave-one-control-out pairs 保留 near-orthogonal transverse mismatch。
+这是 basis-invariant finite geometry obstruction，不是 canonical arithmetic law。
 
 本关仍没有 arithmetic advance；source-uniform `L2`、uniform masked operator bound、
 fixed-power credit 与 twin-prime endpoint 继续 open。
 
 ```text
-YOU ARE HERE = V197 / TPC-344
-TPC344_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT
-TPC344_CONTRAST_SPAN_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-TPC344_RAW_CONTRAST_GUARD = NUMERICALLY_CERTIFIED_FINITE_SCOPED_PASS
-TPC344_EQUAL_ROW_CONTRAST_GUARD = REFUTED_SCOPED
-TPC344_WEIGHTING_STABILITY = REFUTED_SCOPED
-TPC344_CROSSFIT_TRANSFER = REFUTED_SCOPED
-TPC344_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_18_RECORDS
-TPC344_ARITHMETIC_ADVANCE = NO
-TPC344_FIXED_POWER_CREDIT = 0
-TPC344_SOURCE_UNIFORM_L2 = OPEN
-TPC344_FULL_GATE_B = OPEN
-TPC344_TWIN_PRIME_RESULT = NONE
-TPC344_STATUS = NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT
-TPC344_ROUND2_CLUE = PRINCIPAL_ANGLE_GRASSMANN_STABILITY_AUDIT
+YOU ARE HERE = V198 / TPC-345
+TPC345_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
+TPC345_PRINCIPAL_ANGLE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC345_BASIS_INVARIANCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC345_RAW_DOMINANT_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC345_TRANSVERSE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC345_WEIGHTING_STABILITY = REFUTED_SCOPED
+TPC345_MUTUAL_TRANSFER = REFUTED_SCOPED
+TPC345_RANK_MISMATCH = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC345_ARITHMETIC_ADVANCE = NO
+TPC345_FIXED_POWER_CREDIT = 0
+TPC345_SOURCE_UNIFORM_L2 = OPEN
+TPC345_FULL_GATE_B = OPEN
+TPC345_TWIN_PRIME_RESULT = NONE
+TPC345_STATUS = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
+TPC345_ROUND2_CLUE = FINITE_NO_GO_OR_FREEZE_PANEL_ADAPTIVE_ROUTE
 ```
+
+## V197 / TPC-344 previous anchor
+
+TPC-344 的详细历史条目位于下方的 `## 5.128 V197 / TPC-344`；它是 TPC-345 的
+panel-contrast coordinate parent。
 
 ## V196 / TPC-343 previous anchor
 
 TPC-343 的详细历史条目位于下方的 `## 5.127 V196 / TPC-343`；它是 TPC-344 的
-shared-coefficient parent。
+shared-coefficient parent，并由 TPC-345 保留为两个 geometry parents 之一。
 
 ## V195 / TPC-342 previous anchor
 
@@ -1237,6 +1242,60 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.129 V198 / TPC-345：principal-angle / Grassmann stability audit
+
+TPC-345 removes the coordinate dependence of the TPC-344 base-plus-contrast
+parameterization.  For each of the two locked three-row panels, it stacks the
+three nuisance response columns and extracts their positive-SVD column space.
+The observed dimensions are 3 for TPC-341 and 2 for TPC-342.  Orthogonal
+projectors and principal cosines therefore test the subspaces themselves, not
+a chosen basis.
+
+Under raw row stacking, the common principal cosines are
+`0.99570180102754502, 0.079945679326165323`, giving angles
+`5.3141837612792102°`, `85.414556610305894°`.  Under equal-row weighting they
+are `0.91445198603192213, 0.078708449294248611`, giving angles
+`23.871978700026663°`, `85.485668773878913°`.  Thus the leading angle moves
+`18.557794938747453°`, while the transverse direction remains nearly
+orthogonal.  A fixed nonsingular shear preserves projectors and principal
+cosines to errors below `8e-15`.
+
+The TPC-341 target projected on the TPC-342 basis retains
+`0.2306119635213958` raw and `0.27459500882916554` equal-row energy.  In the
+opposite direction the retentions are `0.35887708996182843` and
+`0.32345205001638844`.  Hence the declared mutual-transfer criterion, requiring
+both directions below `0.30`, fails under both weightings.  All 18
+leave-one-control-out angle pairs retain the rank mismatch and transverse
+cosine below `0.20`; this is a finite geometric obstruction, not a universal
+arithmetic no-go.
+
+The strongest positive is coordinate-invariant separation of one dominant
+alignment from one persistent transverse mismatch.  The strongest obstruction
+is the `18.56°` weighting motion plus two-way transfer failure.  The open theorem
+remains a canonical source-uniform nuisance structure or arithmetic `L2` theorem;
+fixed-power credit is zero and full Gate B remains open.  The next minimal test
+is a genuinely fresh third-panel hostile replication before freezing the
+panel-adaptive branch.
+
+```text
+TPC345_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
+TPC345_PRINCIPAL_ANGLE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC345_BASIS_INVARIANCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC345_RAW_DOMINANT_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC345_TRANSVERSE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC345_WEIGHTING_STABILITY = REFUTED_SCOPED
+TPC345_MUTUAL_TRANSFER = REFUTED_SCOPED
+TPC345_RANK_MISMATCH = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC345_ARITHMETIC_ADVANCE = NO
+TPC345_FIXED_POWER_CREDIT = 0
+TPC345_SOURCE_UNIFORM_L2 = OPEN
+TPC345_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+TPC345_FULL_GATE_B = OPEN
+TPC345_TWIN_PRIME_RESULT = NONE
+TPC345_STATUS = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
+TPC345_ROUND2_CLUE = FINITE_NO_GO_OR_FREEZE_PANEL_ADAPTIVE_ROUTE
+```
 
 ## 5.128 V197 / TPC-344：panel-contrast nuisance-basis audit
 
@@ -8850,6 +8909,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-02 | V198 / TPC-345 | Bridge A / Gate B：principal-angle / Grassmann stability audit 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-345` | 承接 TPC-344；两个 locked nuisance subspaces 的 raw principal cosines 为 `0.9957/0.07995`，equal-row 为 `0.9145/0.07871`；第一主角移动 `18.56°`，18 个 LOO angle pairs 保留 transverse mismatch，mutual transfer scoped refuted；下一步为第三 panel hostile replication / finite freeze test |
 | 2026-09-02 | V197 / TPC-344 | Bridge A / Gate B：panel-contrast nuisance-basis audit 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-344` | 承接 TPC-343；六 rows、216 raw records、18 contrast holdouts 与 4 cross-fits；raw contrast retention `0.2962` 但 equal-row `0.3187`，weighting stability 与 low-residual transfer scoped refuted；下一步为 principal-angle/Grassmann stability audit |
 | 2026-09-02 | V196 / TPC-343 | Bridge A / Gate B：cross-panel shared-nuisance meta-certificate 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-343` | 承接 TPC-342；六 rows、216 raw records、54 leave-one-control-out records；shared retention `0.3198/0.3549` 均越过 `0.30`，下一步为 alternative nuisance basis 或 principal-angle audit |
 | 2026-09-02 | V195 / TPC-342 | Bridge A / Gate B：independent fresh-panel reproduction 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-342` | 锁定 TPC-341 protocol；三个 disjoint windows、108 raw records、27 leave-one-control-out tests；样本内 retention `0.270--0.296`，held-out retention `0.589--0.943`，27/27 再现 control-stability obstruction；下一步为 cross-panel meta certificate |

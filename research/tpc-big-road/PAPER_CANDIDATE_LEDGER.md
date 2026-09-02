@@ -3,13 +3,74 @@
 
 更新时间：2026-09-02
 
-状态：**TPC344_NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC345_NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.138 current：TPC-344 panel-contrast nuisance basis audit
+## 0.139 current：TPC-345 principal-angle / Grassmann stability audit
+
+项目：papers/tpc-345-principal-angle-grassmann-audit/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT**。
+
+TPC-345 承接 TPC-344 的 weighting-sensitive panel-contrast partial repair，不再比较
+base/contrast 坐标系，而是比较 TPC-341 与 TPC-342 两个 hash-locked nuisance
+column spaces。每个 panel 的三条 length-512 rows 依协议堆叠；raw weighting
+直接堆叠，equal-row weighting 以各 row twin-target 的 `L2` norm 同时归一化
+target 与 nuisance columns。positive-SVD rank rule 给出 TPC-341 rank 3、TPC-342
+rank 2。
+
+raw principal cosines 为 `0.99570180102754502, 0.079945679326165323`，对应
+angles `5.3141837612792102°`, `85.414556610305894°`；equal-row cosines 为
+`0.91445198603192213, 0.078708449294248611`，angles 为
+`23.871978700026663°`, `85.485668773878913°`。第一主角移动
+`18.557794938747453°`，所以 dominant alignment 不具 weighting stability。
+
+双向 target-transfer retentions 在 raw 下为 `0.2306119635213958` 与
+`0.35887708996182843`，equal-row 下为 `0.27459500882916554` 与
+`0.32345205001638844`；要求两方向同时 `<0.30` 的 criterion 在两种 weighting
+下均失败。18 个 leave-one-control-out angle pairs 保留 raw dominant cosine
+minimum `0.99470019507217156`，raw/equal transverse maxima 分别为
+`0.15497512764427687` 与 `0.16757600960516528`。固定 nonsingular shear 下
+projector 与 principal-cosine errors 均低于 `8e-15`。
+
+最强正结果：一个 dominant alignment 与一个 persistent near-orthogonal transverse
+direction 在 basis change 与所有 18 个 control omissions 下可独立重放。
+
+最强 obstruction：dominant angle 对 row weighting 发生 `18.56°` 位移，且双向
+target transfer 在 raw/equal 两种预声明 weighting 下均不能同时通过。
+
+开放定理：canonical weighting-stable nuisance structure、source-uniform arithmetic
+`L2`、uniform masked operator bound、strict `1/400` payment 与 full Route-B Gate B。
+fixed-power credit 为 `0`，twin-prime conclusion 为 `NONE`；官方 evaluator 文件缺失，
+仅有 local fail-closed Bridge-B。
+
+可复用结构：
+
+    panel-adaptive spans -> positive-SVD bases -> principal angles/projectors
+                         -> weighting audit -> mutual transfer obstruction
+
+ROUND2_CLUE：`FINITE_NO_GO_OR_FREEZE_PANEL_ADAPTIVE_ROUTE`。
+
+    TPC345_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
+    TPC345_PRINCIPAL_ANGLE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC345_BASIS_INVARIANCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC345_RAW_DOMINANT_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC345_TRANSVERSE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC345_WEIGHTING_STABILITY = REFUTED_SCOPED
+    TPC345_MUTUAL_TRANSFER = REFUTED_SCOPED
+    TPC345_RANK_MISMATCH = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC345_ARITHMETIC_ADVANCE = NO
+    TPC345_FIXED_POWER_CREDIT = 0
+    TPC345_SOURCE_UNIFORM_L2 = OPEN
+    TPC345_FULL_GATE_B = OPEN
+    TPC345_TWIN_PRIME_RESULT = NONE
+    TPC345_STATUS = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
+    TPC345_ROUND2_CLUE = FINITE_NO_GO_OR_FREEZE_PANEL_ADAPTIVE_ROUTE
+
+## 0.138 released：TPC-344 panel-contrast nuisance basis audit
 
 项目：papers/tpc-344-panel-contrast-nuisance-basis/
 

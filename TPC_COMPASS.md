@@ -1,41 +1,49 @@
 # TPC distilled map and bold channel
 
-## V197 / TPC-344 current anchor
+## V198 / TPC-345 current anchor
 
 更新时间：2026-09-02
 
 当前入口：proof 为
-research/tpc-big-road/bridge_b_tpc344_panel_contrast_nuisance_basis.md，checker 为
-tpc_bridge_b_tpc344_panel_contrast_nuisance_basis_checker.py，编号论文为
-papers/tpc-344-panel-contrast-nuisance-basis/。
+research/tpc-big-road/bridge_b_tpc345_principal_angle_grassmann_audit.md，checker 为
+tpc_bridge_b_tpc345_principal_angle_grassmann_audit_checker.py，编号论文为
+papers/tpc-345-principal-angle-grassmann-audit/。
 
-TPC-344 在 TPC-343 的 shared-coefficient obstruction 后加入预声明的 panel-contrast
-nuisance basis。六列 basis 在有限线性代数上等价于每个 panel 一个 shared nuisance
-vector；raw pooled residual retention 为 `0.2962189247`，但 equal-row retention 为
-`0.3186506700`。四个 cross-fit prediction retentions 为
-`0.3759486734--0.6342934197`，18 个 contrast holdouts 为
-`0.6372238668--0.9128543547`。
+TPC-345 在 TPC-344 的 panel-contrast partial repair 后，把比较提升为坐标无关的
+principal-angle/Grassmann 审计。raw weighting 的两个 principal cosines 为
+`0.9957018010, 0.0799456793`，equal-row 为 `0.9144519860, 0.0787084493`；
+第一主角从 `5.3142°` 移到 `23.8720°`。四个跨 panel target-transfer retentions
+在两种权重下均不能同时低于 `0.30`，18 个 leave-one-control-out 复核保留了
+强 dominant alignment 与近正交 transverse mismatch。
 
-这是 `NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT`；raw crossing 是
-scoped finite result，weighting stability 与 low-residual cross-panel transfer 均
+这是 `NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT`；principal-angle
+与 projector identity 属于 exact finite linear algebra，basis invariance、dominant/
+transverse finite diagnostics 通过；weighting stability 与 mutual transfer 均
 refuted scoped。source-uniform arithmetic `L2`、uniform masked operator bound、
 fixed-power credit 与 twin-prime endpoint 仍 open。Session-named evaluator files absent，
 故只记 local Bridge-B fail-closed，不宣称 official Route-A/Route-B pass。
 
-    TPC344_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT
-    TPC344_CONTRAST_SPAN_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-    TPC344_RAW_CONTRAST_GUARD = NUMERICALLY_CERTIFIED_FINITE_SCOPED_PASS
-    TPC344_EQUAL_ROW_CONTRAST_GUARD = REFUTED_SCOPED
-    TPC344_WEIGHTING_STABILITY = REFUTED_SCOPED
-    TPC344_CROSSFIT_TRANSFER = REFUTED_SCOPED
-    TPC344_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_18_RECORDS
-    TPC344_ARITHMETIC_ADVANCE = NO
-    TPC344_FIXED_POWER_CREDIT = 0
-    TPC344_SOURCE_UNIFORM_L2 = OPEN
-    TPC344_FULL_GATE_B = OPEN
-    TPC344_TWIN_PRIME_RESULT = NONE
-    TPC344_STATUS = NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT
-    TPC344_ROUND2_CLUE = PRINCIPAL_ANGLE_GRASSMANN_STABILITY_AUDIT
+    TPC345_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
+    TPC345_PRINCIPAL_ANGLE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC345_BASIS_INVARIANCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC345_RAW_DOMINANT_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC345_TRANSVERSE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC345_WEIGHTING_STABILITY = REFUTED_SCOPED
+    TPC345_MUTUAL_TRANSFER = REFUTED_SCOPED
+    TPC345_RANK_MISMATCH = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC345_ARITHMETIC_ADVANCE = NO
+    TPC345_FIXED_POWER_CREDIT = 0
+    TPC345_SOURCE_UNIFORM_L2 = OPEN
+    TPC345_FULL_GATE_B = OPEN
+    TPC345_TWIN_PRIME_RESULT = NONE
+    TPC345_STATUS = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
+    TPC345_ROUND2_CLUE = FINITE_NO_GO_OR_FREEZE_PANEL_ADAPTIVE_ROUTE
+
+## V197 / TPC-344 previous anchor
+
+TPC-344 的 panel-contrast basis 对 raw pooled fit 给出 `0.2962189247` 的窄幅
+partial repair，但 equal-row `0.3186506700` 与四个 cross-fits 均未通过；
+TPC-345 已将该坐标模型升级为 subspace-level stability audit。
 
 ## V196 / TPC-343 previous anchor
 

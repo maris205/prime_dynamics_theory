@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--344 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--345 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -19,9 +19,12 @@ nuisance orthogonalization 的稳定性；TPC-342 又在三个完全 disjoint、
 跨面板 meta-certificate：row-block fit 仍通过，但 shared nuisance coefficient 在两种
 权重下均失败。TPC-344 随后加入预声明的 panel-contrast nuisance basis：raw pooled
 retention 降到 `0.2962189247`，但 equal-row retention 回升到 `0.3186506700`，
-形成 weighting-sensitive partial repair。整条链仍是有限 declared-model
-certificate：source-uniform arithmetic $L^2$、uniform masked operator bound、fixed-power
-credit 与 twin-prime endpoint 均未关闭。
+形成 weighting-sensitive partial repair。TPC-345 再把比较提升到不依赖坐标的
+principal-angle/Grassmann 几何：两个 panel 保留一个强对齐方向，但第一主角在
+raw 到 equal-row weighting 下由约 `5.31°` 移到 `23.87°`，且双向 transfer
+均失败。整条链仍是有限 declared-model certificate：source-uniform arithmetic
+$L^2$、uniform masked operator bound、fixed-power credit 与 twin-prime endpoint
+均未关闭。
 
 ```text
 TPC343_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
@@ -53,6 +56,23 @@ TPC344_TWIN_PRIME_RESULT = NONE
 TPC344_STATUS = NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT
 TPC344_ROUND2_CLUE = PRINCIPAL_ANGLE_GRASSMANN_STABILITY_AUDIT
 ```
+
+```text
+TPC345_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
+TPC345_PRINCIPAL_ANGLE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC345_BASIS_INVARIANCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC345_RAW_DOMINANT_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC345_TRANSVERSE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC345_WEIGHTING_STABILITY = REFUTED_SCOPED
+TPC345_MUTUAL_TRANSFER = REFUTED_SCOPED
+TPC345_RANK_MISMATCH = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC345_ARITHMETIC_ADVANCE = NO
+TPC345_FIXED_POWER_CREDIT = 0
+TPC345_SOURCE_UNIFORM_L2 = OPEN
+TPC345_FULL_GATE_B = OPEN
+TPC345_TWIN_PRIME_RESULT = NONE
+TPC345_STATUS = NUMERICALLY_CERTIFIED_FINITE_PRINCIPAL_ANGLE_GRASSMANN_AUDIT
+TPC345_ROUND2_CLUE = FINITE_NO_GO_OR_FREEZE_PANEL_ADAPTIVE_ROUTE
 ```
 
 TPC-331（更早阶段）承接 TPC-330，把五个预声明的 coordinate controls 视为一个
@@ -131,6 +151,12 @@ papers/tpc-344-panel-contrast-nuisance-basis - TPC-344 已完成项目 - 预声�
 panel-contrast basis 使 raw pooled retention 为 0.2962，但 equal-row 为 0.3187；
 完成 exact span identity、18 个 holdout、4 个 cross-fit、independent replay、stress、
 PDF 与 local Bridge-B checker，arithmetic advance 仍为 NO。
+
+papers/tpc-345-principal-angle-grassmann-audit - TPC-345 已完成项目 - 对
+TPC-341/TPC-342 两个 panel 完成 basis-invariant principal-angle、projector、
+weighting-stability、mutual-transfer 与 18 个 leave-one-control-out 几何审计；
+第一主角由 5.31° 移到 23.87°，panel-adaptive 路线的 finite freeze/no-go
+测试因此成为下一步。
 
 papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram
 operator 的 6-row masked response ledger；zero/background/twin/prime-power gain
