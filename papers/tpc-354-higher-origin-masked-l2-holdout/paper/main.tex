@@ -1,0 +1,197 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+\title{Higher-Origin Holdout for Source-Native Masked $L^2$ Polarization:\\
+Finite Transfer and Floor-Stability Firewall}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST)\\
+Wuhan, China}
+\date{3 September 2026}
+
+\newcommand{\norm}[1]{\lVert #1\rVert_2}
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The source-native residual $\beta(t)=\Lambda(t+2)-b^{(2)}(t)$ was attached in
+TPC-353 to the literal divisibility-masked prime-shell operator on a low-origin
+panel.  We test transfer to a disjoint higher-origin panel while keeping every
+other protocol choice fixed.  For every finite row the identity
+$\|A\beta\|_2^2=\|A\Lambda\|_2^2+\|Ab\|_2^2-2\langle A\Lambda,Ab\rangle$
+is exact, with a corresponding Cauchy envelope.  On 216 higher-origin
+law-level rows, all four predeclared sign laws have positive output alignment.
+For the all-plus law the normalized alignment coefficient ranges from
+$0.6508$ to $0.9914$, compared with $0.6929$ to $0.9963$ on the locked TPC-353
+parent; its mean drops by $0.02125$.  Positive transfer survives, but the
+finite floor is not stable.  This is a scoped holdout result, not an
+asymptotic arithmetic estimate, power credit, or twin-prime conclusion.
+\end{abstract}
+
+\section{Question and scope}
+
+TPC-352 subjected a reciprocal-shell finite repair to a disjoint holdout and
+found a high-shell floor below its balanced parent.  TPC-353 then attached the
+actual source-native vector to the literal masked operator on a low-origin
+panel.  The remaining local question is whether that operator-level alignment
+survives a higher-origin holdout when no response is used to retune the model.
+The answer is positive at the census level but loses a measurable all-plus
+floor and mean.
+
+Throughout, all conclusions are explicitly classified as finite, declared
+model statements or numerically certified finite observations.  In particular,
+the finite V59 convention used below is not identified with an asymptotic
+twin-prime formula.
+
+\section{Finite object and exact identities}
+
+Let $I$ be a finite interval and let $S_Q=\{p: p$ prime, $Q<p\leq 2Q\}$.
+For a sign law $e$ define the literal operator
+\begin{equation}
+ A_e(u,t)=\sum_{p\in S_Q}e_p\,1_{u\ne t}1_{p\nmid ut}
+ p\frac{H^{2s}}{(H^2+(u-t)^2)^s}
+ \left(1_{u\equiv t\pmod p}-\frac1{p-1}\right).
+ \label{eq:operator}
+\end{equation}
+Both endpoint masks in $1_{p\nmid ut}$ are retained.  The source is the
+finite declared model
+\begin{equation}
+ \beta=\Lambda-b,\qquad
+ b(t)=2C_2,1_{2\nmid t}\prod_{p\mid t,\ p>2}\frac{p-1}{p-2},
+ \label{eq:source}
+\end{equation}
+with the inherited finite Euler-tail enclosure and logarithm midpoint rule.
+
+\paragraph{Proposition 1 (operator polarization).}
+For any real finite matrix $A$ and finite vectors $L,b$, putting $\beta=L-b$
+gives
+\begin{equation}
+ \|A\beta\|_2^2=\|AL\|_2^2+\|Ab\|_2^2-2\langle AL,Ab\rangle.
+ \label{eq:polar}
+\end{equation}
+This follows by expanding the finite Euclidean square; no limit or
+interchange is used.
+
+Write $E_L=\|AL\|_2^2$, $E_b=\|Ab\|_2^2$, and, when their sum is nonzero,
+\begin{equation}
+ \kappa_A=\frac{2\langle AL,Ab\rangle}{E_L+E_b},\qquad
+ R_A=\frac{\|A\beta\|_2^2}{E_L+E_b}.
+ \label{eq:kappa}
+\end{equation}
+Then $R_A=1-\kappa_A$.  Cauchy--Schwarz gives the exact finite envelope
+\begin{equation}
+ \frac{(\sqrt{E_L}-\sqrt{E_b})^2}{E_L+E_b}
+ \leq R_A\leq
+ \frac{(\sqrt{E_L}+\sqrt{E_b})^2}{E_L+E_b}.
+ \label{eq:cauchy}
+\end{equation}
+The envelope is an interface for a specified finite source and operator, not
+a source-uniform operator theorem.
+
+\section{Protocol and independent audit}
+
+The panel was fixed before evaluating responses.  Relative to TPC-353, only the
+origins change:
+\begin{center}
+\small
+\begin{tabular}{ll}
+\toprule
+parent origins & $6001,8001,10001$\\
+holdout origins & $21001,23001,25001$\\
+source counts & $256,512,1024$\\
+shell anchors & $Q=24,54,80$\\
+kernel exponents & $s=1,2$\\
+sign laws & all-plus, alternating-index, mod-4 character, half split\\
+height and source cutoff & $H=66$, $50000$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The Cartesian product has $3\cdot3\cdot3\cdot2\cdot4=216$ holdout rows.  The
+producer uses Decimal/Fraction source enclosures followed by a float64 matrix
+replay.  A separate checker rebuilds the source with a trial sieve and
+accumulates shell primes in reverse order.  It does not import the producer.
+Eight in-memory mutation tests verify the certificate firewall, and the
+certificate records min/mean/max transfer deltas against the hash-locked
+TPC-353 parent.
+
+An exact fourteen-point anchor on $[21001,21014]$ and shell $\{5,7\}$ uses two
+fixed rational vectors.  Its four reduced-fraction digests are independently
+recomputed, and equation~\eqref{eq:polar} holds exactly.  The largest floating
+point identity residual over the numerical panel is
+$1.6093254089355469\times10^{-6}$.
+
+\section{Results}
+
+Table~\ref{tab:summary} reports the output coefficient $\kappa_A$ and the
+remaining residual fraction $R_A$.  Every row is separated from zero by the
+declared $10^{-7}$ guard; no row is unresolved.
+
+\begin{table}[h]
+\centering\small
+\caption{Operator-level polarization on the higher-origin holdout (54 rows per law).}
+\label{tab:summary}
+\begin{tabular}{lrrrrr}
+\toprule
+law & rows & $\kappa_{\min}$ & $\kappa_{\max}$ & $\overline\kappa$ & $R$ range\\
+\midrule
+all-plus & 54 & .650760 & .991350 & .874362 & .008650--.349240\\
+alternating-index & 54 & .007731 & .669776 & .183032 & .330224--.992269\\
+mod-4 character & 54 & .021947 & .713036 & .320578 & .286964--.978053\\
+half split & 54 & .039348 & .656130 & .314469 & .343870--.960652\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The source coefficient, computed before applying $A_e$, lies in
+$[0.3635760668,0.3864841937]$ on the holdout rows.  For all-plus, the output
+coefficient exceeds the source coefficient on every row, with output-minus-
+source range $[0.2740398279,0.6242474791]$.  For the other laws the deltas
+still range across both signs: alternating-index
+$[-0.3656732564,0.2847031469]$, mod-4
+$[-0.3584238082,0.3279629836]$, and half split
+$[-0.3339835447,0.2846881223]$.
+
+The locked-parent comparison gives the all-plus minimum shift
+$-0.0421511462$ and mean shift $-0.0212497456$.  The holdout therefore
+preserves finite positive alignment while refuting a uniform all-plus floor
+transfer at this scope.
+
+The output cosine for all-plus is $0.700035$--$0.991441$; for the other laws
+the minima are respectively $0.029389$, $0.097886$, and $0.110696$.
+These values make the geometry visible without replacing the exact identity:
+the masked operator can align the two source components much more strongly
+than their source-space inner product suggests.
+
+\section{Claim firewall and route decision}
+
+The exact claims are the finite operator identity and Cauchy envelope.  The
+declared-model claim is the literal source attachment.  The numerical claims
+are the 216-row higher-origin replay, positive alignment on $216/216$, the
+origins-only comparison to TPC-353, and the ranges in Table~\ref{tab:summary}.
+The narrow obstruction is that positive finite transfer does not stabilize the
+all-plus floor: the holdout minimum and mean are lower than the parent.
+Source-level polarization also does not determine operator-level polarization;
+consequently a source-only $L^2$ ledger cannot be promoted silently to a masked
+estimate.
+
+No source-uniform arithmetic $L^2$ bound, uniform masked-operator bound,
+canonical sign law, strict $1/400$ payment, fixed-power credit, Route-B
+reassembly, or twin-prime endpoint follows.  The Session-named Route-A and
+Route-B evaluator files are absent from this checkout, so the local Bridge-B
+is fail-closed fallback evidence rather than an official evaluator pass.
+The next admissible test is a position-aware masked normalization or a
+controlled sign-law subspace; adding the same finite panel again would not pay
+the open theorem.
+
+\begin{thebibliography}{1}
+\bibitem{cauchy}
+Standard finite-dimensional Cauchy--Schwarz and polarization identities are
+used only in the elementary form displayed in equations~\eqref{eq:polar}--\eqref{eq:cauchy}.
+\end{thebibliography}
+
+\end{document}

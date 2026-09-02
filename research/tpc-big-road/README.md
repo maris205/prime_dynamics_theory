@@ -1,46 +1,56 @@
-# TPC big road V206 / TPC-353: source-native masked L2 polarization
+# TPC big road V207 / TPC-354: higher-origin masked L2 holdout
 
-## V206 current anchor: TPC-353
+## V207 current anchor: TPC-354
 
 更新时间：2026-09-03
 
-当前 TPC-353 proof 为
-bridge_b_tpc353_source_native_masked_l2_polarization.md，checker 为
-tpc_bridge_b_tpc353_source_native_masked_l2_polarization_checker.py，编号论文为
-../../papers/tpc-353-source-native-masked-l2-polarization/。
+当前 TPC-354 proof 为
+bridge_b_tpc354_higher_origin_masked_l2_holdout.md，checker 为
+tpc_bridge_b_tpc354_higher_origin_masked_l2_holdout_checker.py，编号论文为
+../../papers/tpc-354-higher-origin-masked-l2-holdout/。
 
-TPC-353 将 V59 finite residual `beta=Lambda-b` 接入 literal two-endpoint
-divisibility-masked operator，并把有限 operator polarization 与 Cauchy envelope
-作为逐行可审计的 interface。冻结 origins `6001,8001,10001`、source counts
-`256,512,1024`、shell anchors `Q=24,54,80`、exponents `1,2`、四个 sign laws
-与 `H=66`，共 `216` rows。`216/216` operator images 有正 alignment；all-plus
-output `kappa_A` 为 `0.69291151430780062--0.99626802812598902`，source-level
-coefficient 为 `0.39570365481042707--0.43581376702257324`，其余 sign laws 的
-output range 明显更低且有 source/output sign mismatch。
+TPC-354 将 V59 finite residual `beta=Lambda-b` 与 literal two-endpoint
+divisibility-masked operator 原样移到 disjoint higher origins
+`21001,23001,25001`。counts `256,512,1024`、shell anchors `Q=24,54,80`、
+exponents `1,2`、四个 sign laws、`H=66` 与 source cutoff `50000` 均保持不变，
+共 `216` rows。`216/216` operator images 有正 alignment；all-plus output
+`kappa_A` 为 `0.65076036812307647--0.99135023146539858`，mean 为
+`0.87436211602135017`，source-level coefficient 为
+`0.36357606682978283--0.38648419369238701`。相对 TPC-353 parent，all-plus
+minimum/mean shift 为 `-0.042151146184724153` /
+`-0.021249745559872912`。
 
 这是 `PROVED_EXACT_FINITE` 的 operator polarization/Cauchy identity 与
-`NUMERICALLY_CERTIFIED_FINITE` 的 source-native attachment audit。它没有关闭
-source-uniform arithmetic `L2` 或 uniform masked-operator bound；因此不授予
-fixed-power credit、Route-B reassembly 或 twin-prime result。当前 obstruction 是
-source-level alignment 不能静默替代 operator-level control；下一关为 disjoint
-higher-origin holdout，必要时转为 position-aware masked bound。Session-named
-evaluator files absent，local Bridge-B 仍 fail-closed。
+`NUMERICALLY_CERTIFIED_FINITE` 的 higher-origin attachment audit。正 alignment
+transfer 保留，但 all-plus floor/mean transfer 为 `REFUTED_SCOPED`；它没有关闭
+source-uniform arithmetic `L2` 或 uniform masked-operator bound，因此不授予
+fixed-power credit、Route-B reassembly 或 twin-prime result。下一关是
+position-aware masked normalization/bound。Session-named evaluator files absent，
+local Bridge-B 仍 fail-closed。
 
-    TPC353_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT
-    TPC353_FINITE_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
-    TPC353_FINITE_CAUCHY_ENVELOPE = PROVED_EXACT_FINITE
-    TPC353_SOURCE_NATIVE_MODEL = PROVED_EXACT_FINITE_DECLARED_MODEL
-    TPC353_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
-    TPC353_POSITIVE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_216_OF_216
-    TPC353_OUTPUT_SOURCE_MISMATCH = NUMERICALLY_CERTIFIED_FINITE
-    TPC353_UNIFORM_L2 = OPEN
-    TPC353_MASKED_OPERATOR_BOUND = OPEN
-    TPC353_ARITHMETIC_ADVANCE = NO
-    TPC353_FIXED_POWER_CREDIT = 0
-    TPC353_FULL_GATE_B = OPEN
-    TPC353_TWIN_PRIME_RESULT = NONE
-    TPC353_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT
-    TPC353_ROUND2_CLUE = TEST_SOURCE_NATIVE_L2_CROSS_TERM_ON_DISJOINT_HIGHER_ORIGINS_OR_BUILD_POSITION_AWARE_MASKED_BOUND
+    TPC354_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT
+    TPC354_FINITE_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+    TPC354_FINITE_CAUCHY_ENVELOPE = PROVED_EXACT_FINITE
+    TPC354_SOURCE_NATIVE_MODEL = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC354_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC354_POSITIVE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_216_OF_216
+    TPC354_HIGHER_ORIGIN_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC354_OUTPUT_SOURCE_MISMATCH = NUMERICALLY_CERTIFIED_FINITE
+    TPC354_ALL_PLUS_FLOOR_TRANSFER = REFUTED_SCOPED
+    TPC354_UNIFORM_L2 = OPEN
+    TPC354_MASKED_OPERATOR_BOUND = OPEN
+    TPC354_ARITHMETIC_ADVANCE = NO
+    TPC354_FIXED_POWER_CREDIT = 0
+    TPC354_FULL_GATE_B = OPEN
+    TPC354_TWIN_PRIME_RESULT = NONE
+    TPC354_STATUS = NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT
+    TPC354_ROUND2_CLUE = TEST_POSITION_AWARE_MASKED_BOUND_ORIGIN_SCALE_NORMALIZATION_OR_CONTROLLED_SIGN_LAW_SUBSPACE
+
+## V206 previous anchor: TPC-353
+
+TPC-353 remains the hash-locked low-origin parent for this release.  Its
+`216/216` finite operator rows had positive alignment, but the source/output
+polarization mismatch left source-uniform masked `L2` open.
 
 ## V205 previous anchor: TPC-352
 

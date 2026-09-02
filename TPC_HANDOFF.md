@@ -1,9 +1,72 @@
 # TPC HANDOFF
 
-TPC-353 current section: source-native masked L2 polarization
--------------------------------------------------------------
+TPC-354 current section: higher-origin masked L2 holdout
+---------------------------------------------------------
 
-TPC-353 is the current sealed release.  It is the source-native continuation
+TPC-354 is the current sealed release.  It is the origins-only disjoint
+holdout after TPC-353: the finite V59 residual `beta=Lambda-b`, literal
+two-endpoint divisibility masks, source counts `256,512,1024`, shell anchors
+`Q=24,54,80`, exponents `1,2`, four predeclared sign laws, `H=66`, and source
+cutoff `50000` are all frozen.  Only the origins move from
+`6001,8001,10001` to `21001,23001,25001`, giving `216` law-level rows.
+
+For every finite real matrix `A`, the operator polarization identity and its
+normalized Cauchy envelope remain `PROVED_EXACT_FINITE`.  The declared source
+attachment is replayed on `216/216` rows with positive output alignment;
+independent reverse-shell replay, the exact rational anchor, eight mutation
+tests, and normal/optimized local Bridge-B checks all pass.  The all-plus
+output coefficient is `0.65076036812307647--0.99135023146539858` with mean
+`0.87436211602135017`; the holdout source coefficient is
+`0.36357606682978283--0.38648419369238701`.
+
+The decisive finite obstruction is the parent-locked all-plus shift:
+minimum `-0.042151146184724153` and mean `-0.021249745559872912` relative to
+TPC-353.  Thus positive alignment transfers, but a uniform higher-origin
+all-plus floor does not; `TPC354_ALL_PLUS_FLOOR_TRANSFER=REFUTED_SCOPED`.
+Source/output mismatch remains law-dependent.  No source-uniform arithmetic
+`L2`, uniform masked-operator bound, canonical sign law, fixed-power credit,
+Route-B reassembly, or twin-prime conclusion is licensed.  The Session-named
+official evaluator files are absent, so local Bridge-B is fail-closed fallback
+evidence only.
+
+    TPC354_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT
+    TPC354_FINITE_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+    TPC354_FINITE_CAUCHY_ENVELOPE = PROVED_EXACT_FINITE
+    TPC354_SOURCE_NATIVE_MODEL = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC354_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC354_POSITIVE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_216_OF_216
+    TPC354_HIGHER_ORIGIN_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC354_OUTPUT_SOURCE_MISMATCH = NUMERICALLY_CERTIFIED_FINITE
+    TPC354_ALL_PLUS_FLOOR_TRANSFER = REFUTED_SCOPED
+    TPC354_UNIFORM_L2 = OPEN
+    TPC354_MASKED_OPERATOR_BOUND = OPEN
+    TPC354_ARITHMETIC_ADVANCE = NO
+    TPC354_FIXED_POWER_CREDIT = 0
+    TPC354_FULL_GATE_B = OPEN
+    TPC354_TWIN_PRIME_RESULT = NONE
+    TPC354_STRONGEST_POSITIVE = HIGHER_ORIGIN_POSITIVE_ALIGNMENT_216_OF_216
+    TPC354_STRONGEST_OBSTRUCTION = HIGHER_ORIGIN_ALL_PLUS_FLOOR_AND_MEAN_DROP
+    TPC354_OPEN_THEOREM = POSITION_AWARE_MASKED_NORMALIZATION_OR_SOURCE_UNIFORM_L2
+    TPC354_REUSABLE_STRUCTURE = SOURCE_OPERATOR_ATTACHMENT_TO_PARENT_LOCKED_HOLDOUT
+    TPC354_ROUND2_CLUE = TEST_POSITION_AWARE_MASKED_BOUND_ORIGIN_SCALE_NORMALIZATION_OR_CONTROLLED_SIGN_LAW_SUBSPACE
+    TPC354_STATUS = NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT
+
+TPC-354 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-354-higher-origin-masked-l2-holdout/code/tpc354_higher_origin_masked_l2_holdout.py --write
+    python -B papers/tpc-354-higher-origin-masked-l2-holdout/code/tpc354_higher_origin_masked_l2_holdout.py --check
+    python -O -B papers/tpc-354-higher-origin-masked-l2-holdout/code/tpc354_higher_origin_masked_l2_holdout.py --check
+    python -B papers/tpc-354-higher-origin-masked-l2-holdout/experiments/tpc354_independent_checker.py --check
+    python -O -B papers/tpc-354-higher-origin-masked-l2-holdout/experiments/tpc354_independent_checker.py --check
+    python -B papers/tpc-354-higher-origin-masked-l2-holdout/experiments/tpc354_holdout_stress.py --check
+    python -O -B papers/tpc-354-higher-origin-masked-l2-holdout/experiments/tpc354_holdout_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc354_higher_origin_masked_l2_holdout_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc354_higher_origin_masked_l2_holdout_checker.py --check
+
+TPC-353 previous section: source-native masked L2 polarization
+
+TPC-353 is the previous sealed release.  It is the source-native continuation
 after the TPC-352 reciprocal-incidence branch was frozen.  The project attaches
 the inherited finite V59 residual `beta=Lambda-b` directly to the literal
 two-endpoint divisibility-masked operator and audits the exact operator
@@ -12365,13 +12428,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V206/TPC-353 是当前 release；其 source-native producer、reverse-shell independent
+V207/TPC-354 是当前 release；其 higher-origin source-native producer、reverse-shell independent
 replay、polarization stress audit 与 literal masked-operator Bridge-B 已封存。
-V205/TPC-352、V204/TPC-351、V203/TPC-350、V202/TPC-349、V201/TPC-348、TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
+V206/TPC-353、V205/TPC-352、V204/TPC-351、V203/TPC-350、V202/TPC-349、V201/TPC-348、TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
 TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
 TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 433 对 normal/optimized 命令、866 次
+当前 curated cascade command set 共 437 对 normal/optimized 命令、874 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -12390,7 +12453,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353 各再追加末尾 4 对。
+	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -12459,10 +12522,28 @@ growth 均为 `REFUTED_SCOPED`。
 V204/TPC-351 的新增 4 对由 project producer、reverse-shell independent checker、
 reciprocal-contrast stress 与 local Bridge-B checker 逐项验证；其 exact rational
 zero-sum incidence interface 与 finite scale repair 不代表 growing lower bound、
-source-uniform arithmetic `L2`、uniform masked-operator theorem、fixed-power saving
-或 official evaluator pass。`180/192` rows 改善 TPC-350、`111/192` 达到 half-defect，
+source-uniform arithmetic `L2`、uniform masked-operator theorem、fixed-power saving 或
+official evaluator pass。`180/192` rows 改善 TPC-350、`111/192` 达到 half-defect，
 但 12 rows 退化、floor 仍低于 `1/4`，`25/48` series nondecreasing，故 universal
 quarter-floor 仍为 `REFUTED_SCOPED`，下一步是 disjoint adversarial holdout。
+
+V205/TPC-352 的新增 4 对由 project producer、reverse-shell independent checker、
+adversarial holdout stress 与 local Bridge-B checker 逐项验证；其 reciprocal branch
+在 `Q=256` 出现低于 parent 的 floor，故 finite repair transfer 为
+`REFUTED_SCOPED`，下一步返回 source-native literal masked arithmetic `L2`。
+
+V206/TPC-353 的新增 4 对由 project producer、reverse-shell independent checker、
+polarization stress 与 local Bridge-B checker 逐项验证；其 `216/216` positive
+operator alignment 是 finite source/operator interface，不代表 source-uniform
+masked `L2` 或 official evaluator pass。
+
+V207/TPC-354 的新增 4 对由 project producer、reverse-shell independent checker、
+higher-origin holdout stress 与 local Bridge-B checker 逐项验证；其 `216/216`
+positive alignment transfer 保留，但 all-plus floor/mean 相对 TPC-353 分别下降
+`0.042151146184724153`/`0.021249745559872912`，故 uniform floor transfer 为
+`REFUTED_SCOPED`。该结果不代表 source-uniform arithmetic `L2`、fixed-power saving、
+Route-B reassembly 或 official evaluator pass；下一步是 position-aware masked
+normalization/bound。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
@@ -13988,6 +14069,32 @@ masked-operator theorem、fixed-power saving、Route-B reassembly、official eva
 pass 或 twin-prime result。下一步为 disjoint higher-origin holdout，必要时转向
 position-aware masked bound。
 
+TPC-354 的项目级 producer、reverse-shell independent replay、higher-origin holdout
+stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-354-higher-origin-masked-l2-holdout/code/tpc354_higher_origin_masked_l2_holdout.py --write
+python -B papers/tpc-354-higher-origin-masked-l2-holdout/code/tpc354_higher_origin_masked_l2_holdout.py --check
+python -O -B papers/tpc-354-higher-origin-masked-l2-holdout/code/tpc354_higher_origin_masked_l2_holdout.py --check
+python -B papers/tpc-354-higher-origin-masked-l2-holdout/experiments/tpc354_independent_checker.py --check
+python -O -B papers/tpc-354-higher-origin-masked-l2-holdout/experiments/tpc354_independent_checker.py --check
+python -B papers/tpc-354-higher-origin-masked-l2-holdout/experiments/tpc354_holdout_stress.py --check
+python -O -B papers/tpc-354-higher-origin-masked-l2-holdout/experiments/tpc354_holdout_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc354_higher_origin_masked_l2_holdout_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc354_higher_origin_masked_l2_holdout_checker.py --check
+```
+
+TPC-354 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 必须返回零、
+stderr 为空且 stdout 逐对 byte-identical；Bridge-B 输出
+`rows=216 / positive_alignment=216/216 /
+all_plus_kappa=0.65076036812307647--0.99135023146539858`。这是 V207 的 finite
+higher-origin transfer audit；positive alignment transfer 保留，但 all-plus floor
+与 mean 相对 TPC-353 分别下降 `0.042151146184724153` 与
+`0.021249745559872912`，故 uniform floor transfer 为 `REFUTED_SCOPED`。它不代表
+source-uniform arithmetic `L2`、uniform masked-operator theorem、fixed-power saving、
+Route-B reassembly、official evaluator pass 或 twin-prime result；下一步为
+position-aware masked normalization/bound。
+
 TPC-349 的项目级 producer、reverse-shell independent replay、signed-witness stress 与
 bridge checker：
 
@@ -14115,7 +14222,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-353 current release 入口：
+TPC-354 current release 入口：
+
+papers/tpc-354-higher-origin-masked-l2-holdout/README.md
+papers/tpc-354-higher-origin-masked-l2-holdout/PAPER_PLAN.md
+papers/tpc-354-higher-origin-masked-l2-holdout/DERIVATION_PACKAGE.md
+papers/tpc-354-higher-origin-masked-l2-holdout/PROOF_PACKAGE.md
+papers/tpc-354-higher-origin-masked-l2-holdout/code/tpc354_higher_origin_masked_l2_holdout.py
+papers/tpc-354-higher-origin-masked-l2-holdout/experiments/tpc354_independent_checker.py
+papers/tpc-354-higher-origin-masked-l2-holdout/experiments/tpc354_holdout_stress.py
+papers/tpc-354-higher-origin-masked-l2-holdout/results/tpc354_certificate.json
+papers/tpc-354-higher-origin-masked-l2-holdout/notes/theorem_ledger.md
+papers/tpc-354-higher-origin-masked-l2-holdout/notes/claim_firewall.md
+papers/tpc-354-higher-origin-masked-l2-holdout/notes/computational_protocol.md
+papers/tpc-354-higher-origin-masked-l2-holdout/notes/route_evaluation.md
+papers/tpc-354-higher-origin-masked-l2-holdout/paper/main.tex
+papers/tpc-354-higher-origin-masked-l2-holdout/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc354_higher_origin_masked_l2_holdout.md
+research/tpc-big-road/tpc_bridge_b_tpc354_higher_origin_masked_l2_holdout_checker.py
+
+TPC-353 previous release 入口：
 
 papers/tpc-353-source-native-masked-l2-polarization/README.md
 papers/tpc-353-source-native-masked-l2-polarization/PAPER_PLAN.md

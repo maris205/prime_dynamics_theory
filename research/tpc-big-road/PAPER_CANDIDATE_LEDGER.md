@@ -3,13 +3,70 @@
 
 更新时间：2026-09-03
 
-状态：**TPC353_NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC354_NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.147 current：TPC-353 source-native masked L2 polarization
+## 0.148 current：TPC-354 higher-origin masked L2 holdout
+
+项目：papers/tpc-354-higher-origin-masked-l2-holdout/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT**。
+
+TPC-354 是 TPC-353 的 origins-only disjoint holdout。它保持同一个 finite V59
+source `beta=Lambda-b`、literal two-endpoint divisibility-masked operator、三个
+source counts `256,512,1024`、shell anchors `Q=24,54,80`、两种 exponent、四种
+预声明 sign laws、`H=66` 与 source cutoff `50000`，只把 origins 从
+`6001,8001,10001` 移到 `21001,23001,25001`。有限 operator polarization identity
+与 normalized Cauchy envelope 仍为 `PROVED_EXACT_FINITE`；source attachment 是
+声明模型内的 exact finite construction。
+
+最强正结果：独立 reverse-shell replay 在 `216/216` rows 上复现 operator output，
+所有 rows 都有正 alignment；exact rational anchor、8-mutation stress 和
+normal/optimized local Bridge-B 均通过。all-plus output coefficient 的范围为
+`0.65076036812307647--0.99135023146539858`，mean 为
+`0.87436211602135017`；holdout 上 source coefficient 为
+`0.36357606682978283--0.38648419369238701`。
+
+最强 obstruction：相对 hash-locked TPC-353 parent，all-plus minimum shift 为
+`-0.042151146184724153`，mean shift 为 `-0.021249745559872912`。因此正 transfer
+保留，但低-origin all-plus floor 不能被当作 uniform higher-origin floor；同时
+output coefficient 仍显著依赖 sign law，source coefficient 不能单独控制 masked
+output。该 floor-transfer 命题记为 `REFUTED_SCOPED`。
+
+开放定理：source-uniform literal masked arithmetic `L2`、position-aware uniform
+masked-operator bound、canonical sign law，以及它们与 Route-B typed reassembly
+的连接。`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`、
+`TWIN_PRIME_RESULT=NONE`；official evaluator files absent，local Bridge-B
+fail-closed。
+
+可复用结构：
+
+    source residual -> literal masked operator -> exact polarization
+      -> disjoint origin holdout -> parent-locked floor firewall
+
+ROUND2_CLUE：`TEST_POSITION_AWARE_MASKED_BOUND_ORIGIN_SCALE_NORMALIZATION_OR_CONTROLLED_SIGN_LAW_SUBSPACE`。
+
+    TPC354_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT
+    TPC354_FINITE_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+    TPC354_FINITE_CAUCHY_ENVELOPE = PROVED_EXACT_FINITE
+    TPC354_SOURCE_NATIVE_MODEL = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC354_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC354_POSITIVE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_216_OF_216
+    TPC354_HIGHER_ORIGIN_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC354_OUTPUT_SOURCE_MISMATCH = NUMERICALLY_CERTIFIED_FINITE
+    TPC354_ALL_PLUS_FLOOR_TRANSFER = REFUTED_SCOPED
+    TPC354_UNIFORM_L2 = OPEN
+    TPC354_MASKED_OPERATOR_BOUND = OPEN
+    TPC354_ARITHMETIC_ADVANCE = NO
+    TPC354_FIXED_POWER_CREDIT = 0
+    TPC354_FULL_GATE_B = OPEN
+    TPC354_TWIN_PRIME_RESULT = NONE
+    TPC354_STATUS = NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT
+
+## 0.147 previous：TPC-353 source-native masked L2 polarization
 
 项目：papers/tpc-353-source-native-masked-l2-polarization/
 

@@ -1,0 +1,39 @@
+# Bridge-B record: TPC-354 higher-origin masked `L2` holdout
+
+The Session-named official Route-A/Route-B evaluator files are absent from
+this checkout.  This document is therefore a fail-closed local Bridge-B
+record, not an official gate pass.  TPC-354 keeps the TPC-353 source,
+operator, shell, laws, counts, exponents, and audit protocol fixed while
+moving the origins to a disjoint higher-origin holdout.
+
+```text
+TPC354_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT
+TPC354_FINITE_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+TPC354_FINITE_CAUCHY_ENVELOPE = PROVED_EXACT_FINITE
+TPC354_SOURCE_NATIVE_MODEL = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC354_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+TPC354_POSITIVE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_216_OF_216
+TPC354_HIGHER_ORIGIN_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+TPC354_OUTPUT_SOURCE_MISMATCH = NUMERICALLY_CERTIFIED_FINITE
+TPC354_SOURCE_KAPPA_RANGE = 0.36357606682978283--0.38648419369238701
+TPC354_ALL_PLUS_OUTPUT_KAPPA_RANGE = 0.65076036812307647--0.99135023146539858
+TPC354_ALL_PLUS_PARENT_FLOOR_SHIFT = -0.042151146184724153
+TPC354_ALL_PLUS_PARENT_MEAN_SHIFT = -0.021249745559872912
+TPC354_ALL_PLUS_RESIDUAL_FRACTION = 0.0086497685346015422--0.34923963187692358
+TPC354_UNIFORM_L2 = OPEN
+TPC354_MASKED_OPERATOR_BOUND = OPEN
+TPC354_ARITHMETIC_ADVANCE = NO
+TPC354_FIXED_POWER_CREDIT = 0
+TPC354_FULL_GATE_B = OPEN
+TPC354_TWIN_PRIME_RESULT = NONE
+TPC354_ROUND2_CLUE = TEST_POSITION_AWARE_MASKED_BOUND_ORIGIN_SCALE_NORMALIZATION_OR_CONTROLLED_SIGN_LAW_SUBSPACE
+TPC354_STATUS = NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT
+```
+
+The exact content is finite bilinear algebra, the declared source/operator
+attachment, a 216-row reverse replay, a parent-locked higher-origin
+comparison, a mutation suite, and provenance/PDF locks.  The positive
+alignment census is not a canonical sign law; the lower all-plus floor and
+mean on the holdout are an obstruction to treating the low-origin floor as
+uniform.  Nothing here supplies a source-uniform arithmetic estimate or a
+twin-prime conclusion.

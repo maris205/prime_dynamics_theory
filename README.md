@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--353 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--354 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -85,6 +85,38 @@ source coefficient 只有 `0.39570365481042707--0.43581376702257324`；其他 si
 cross-term 是真实的 operator interface，同时也形成 obstruction：有限正 alignment
 不能升级为 source-uniform masked arithmetic `L2`，下一关转向 disjoint higher-origin
 holdout 或 position-aware masked bound。
+
+TPC-354 随后冻结所有非-origin protocol fields，只把同一 source/operator attachment
+移到 disjoint higher origins `21001,23001,25001`。在相同 counts、shell anchors、
+exponents、四种 sign laws、`H=66` 与 source cutoff 下，`216/216` rows 仍有正
+output alignment；all-plus output `kappa_A` 为
+`0.65076036812307647--0.99135023146539858`，mean 为 `0.87436211602135017`，
+source coefficient 为 `0.36357606682978283--0.38648419369238701`。相对
+TPC-353 parent，all-plus minimum/mean shift 为 `-0.042151146184724153` /
+`-0.021249745559872912`，所以 positive transfer 保留而 floor transfer 为
+`REFUTED_SCOPED`。这是 higher-origin finite obstruction，不是 source-uniform
+arithmetic `L2`、power saving、Route-B reassembly 或 twin-prime conclusion；下一关
+测试 position-aware masked normalization/bound。
+
+```text
+TPC354_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT
+TPC354_FINITE_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+TPC354_FINITE_CAUCHY_ENVELOPE = PROVED_EXACT_FINITE
+TPC354_SOURCE_NATIVE_MODEL = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC354_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+TPC354_POSITIVE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_216_OF_216
+TPC354_HIGHER_ORIGIN_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+TPC354_OUTPUT_SOURCE_MISMATCH = NUMERICALLY_CERTIFIED_FINITE
+TPC354_ALL_PLUS_FLOOR_TRANSFER = REFUTED_SCOPED
+TPC354_UNIFORM_L2 = OPEN
+TPC354_MASKED_OPERATOR_BOUND = OPEN
+TPC354_ARITHMETIC_ADVANCE = NO
+TPC354_FIXED_POWER_CREDIT = 0
+TPC354_FULL_GATE_B = OPEN
+TPC354_TWIN_PRIME_RESULT = NONE
+TPC354_STATUS = NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT
+TPC354_ROUND2_CLUE = TEST_POSITION_AWARE_MASKED_BOUND_ORIGIN_SCALE_NORMALIZATION_OR_CONTROLLED_SIGN_LAW_SUBSPACE
+```
 
 ```text
 TPC343_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
@@ -422,6 +454,13 @@ papers/tpc-353-source-native-masked-l2-polarization - TPC-353 已完成项目 - 
 与 Cauchy envelope；216/216 rows 正 alignment，但 source/output coefficient 明显
 不一致，含 exact anchor、independent reverse replay、mutation stress、PDF 与 local
 Bridge-B checker；source-uniform arithmetic L2 仍为 OPEN，arithmetic advance 仍为 NO。
+
+papers/tpc-354-higher-origin-masked-l2-holdout - TPC-354 已完成项目 - 将同一
+source/operator attachment 移到 disjoint higher origins；216/216 rows 正 alignment，
+但 all-plus floor/mean 相对 TPC-353 parent 分别下降 0.04215/0.02125，形成
+`REFUTED_SCOPED` 的 uniform floor-transfer obstruction；含 exact anchor、独立
+reverse replay、8-mutation stress、PDF 与 local Bridge-B checker，arithmetic advance
+仍为 NO。
 
 papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram
 operator 的 6-row masked response ledger；zero/background/twin/prime-power gain

@@ -2,45 +2,58 @@
 
 更新时间：2026-09-03
 
-当前地图版本：V206 / TPC-353
+当前地图版本：V207 / TPC-354
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-353`（`NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT`）；
+当前编号锚点：`TPC-354`（`NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT`）；
 对应论文目录为
-`papers/tpc-353-source-native-masked-l2-polarization/`。
+`papers/tpc-354-higher-origin-masked-l2-holdout/`。
 
-TPC-353 是当前地图位置：它把继承的 V59 finite residual `beta=Lambda-b` 直接接入
-literal two-endpoint divisibility-masked operator，并在 origins `6001,8001,10001`、
-source counts `256,512,1024`、shell anchors `Q=24,54,80`、两种 exponent 和四种
-sign law 上完成 `216`-row operator polarization audit。`216/216` rows 有正 output
-alignment；all-plus 的 `kappa_A` 为 `0.69291151430780062--0.99626802812598902`，
-而 source-level coefficient 为 `0.39570365481042707--0.43581376702257324`。
-source/output mismatch 随 sign law 显著变化，说明有限 attachment 已接通，但
-source-only cancellation 不能替代 uniform masked `L2`。
+TPC-354 是当前地图位置：它把 TPC-353 的 finite source/operator attachment
+原样移到 origins `21001,23001,25001` 的 disjoint higher-origin holdout；counts
+`256,512,1024`、shell anchors `Q=24,54,80`、两种 exponent、四种 sign law、
+`H=66` 与 source cutoff `50000` 全部冻结不变。`216/216` rows 有正 output
+alignment；all-plus 的 `kappa_A` 为 `0.65076036812307647--0.99135023146539858`，
+mean 为 `0.87436211602135017`，source-level coefficient 为
+`0.36357606682978283--0.38648419369238701`。相对 TPC-353 parent，all-plus floor
+shift 为 `-0.042151146184724153`、mean shift 为 `-0.021249745559872912`。
+因此 attachment 的正 transfer 保留，但 floor transfer 被 scoped refute。
 
 本关仍没有 arithmetic advance；source-uniform `L2`、uniform masked operator bound、
-fixed-power credit 与 twin-prime endpoint 继续 open。下一步是 disjoint higher-origin
-holdout；若 transfer 不稳定，转向 position-aware masked bound。
+fixed-power credit 与 twin-prime endpoint 继续 open。下一关优先测试
+position-aware masked normalization/bound；若只能在受控 sign-law 子空间成立，则把
+该限制写入 theorem ledger，不把它升级为 canonical law。
 
 ```text
-YOU ARE HERE = V206 / TPC-353
-TPC353_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT
-TPC353_FINITE_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
-TPC353_FINITE_CAUCHY_ENVELOPE = PROVED_EXACT_FINITE
-TPC353_SOURCE_NATIVE_MODEL = PROVED_EXACT_FINITE_DECLARED_MODEL
-TPC353_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
-TPC353_POSITIVE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_216_OF_216
-TPC353_OUTPUT_SOURCE_MISMATCH = NUMERICALLY_CERTIFIED_FINITE
-TPC353_UNIFORM_L2 = OPEN
-TPC353_MASKED_OPERATOR_BOUND = OPEN
-TPC353_ARITHMETIC_ADVANCE = NO
-TPC353_FIXED_POWER_CREDIT = 0
-TPC353_FULL_GATE_B = OPEN
-TPC353_TWIN_PRIME_RESULT = NONE
-TPC353_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT
-TPC353_ROUND2_CLUE = TEST_SOURCE_NATIVE_L2_CROSS_TERM_ON_DISJOINT_HIGHER_ORIGINS_OR_BUILD_POSITION_AWARE_MASKED_BOUND
+YOU ARE HERE = V207 / TPC-354
+TPC354_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT
+TPC354_FINITE_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+TPC354_FINITE_CAUCHY_ENVELOPE = PROVED_EXACT_FINITE
+TPC354_SOURCE_NATIVE_MODEL = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC354_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+TPC354_POSITIVE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_216_OF_216
+TPC354_HIGHER_ORIGIN_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+TPC354_OUTPUT_SOURCE_MISMATCH = NUMERICALLY_CERTIFIED_FINITE
+TPC354_ALL_PLUS_FLOOR_TRANSFER = REFUTED_SCOPED
+TPC354_UNIFORM_L2 = OPEN
+TPC354_MASKED_OPERATOR_BOUND = OPEN
+TPC354_ARITHMETIC_ADVANCE = NO
+TPC354_FIXED_POWER_CREDIT = 0
+TPC354_FULL_GATE_B = OPEN
+TPC354_TWIN_PRIME_RESULT = NONE
+TPC354_STATUS = NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT
+TPC354_ROUND2_CLUE = TEST_POSITION_AWARE_MASKED_BOUND_ORIGIN_SCALE_NORMALIZATION_OR_CONTROLLED_SIGN_LAW_SUBSPACE
 ```
+
+## V207 / TPC-354 current anchor details
+
+TPC-354 是一个只改变 origins 的 higher-origin transfer test。其 exact finite
+polarization/Cauchy identities、declared source attachment、reverse-shell replay、
+parent comparison、mutation stress、PDF 与 provenance locks 均已通过本地
+fail-closed controls；这些 controls 不替代缺失的 Session-named official
+Route-A/Route-B evaluator。all-plus floor/mean 的下降是本关最窄的 obstruction，
+所以 position-aware normalization 只能作为下一项可检验模型，不能预先视为修复。
 
 ## V205 / TPC-352 previous anchor
 
@@ -9437,6 +9450,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-03 | V207 / TPC-354 | Bridge A / Gate B：higher-origin source-native masked `L2` holdout 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-354` | 承接 TPC-353；只改变 origins 至 `21001,23001,25001`，216 rows、216/216 positive alignment；all-plus `kappa_A` `0.6508--0.9914`，相对 parent floor/mean shift `-0.04215/-0.02125`，uniform floor transfer `REFUTED_SCOPED`；下一步 position-aware normalization/bound |
 | 2026-09-03 | V206 / TPC-353 | Bridge A / Gate B：source-native literal masked `L2` polarization attachment 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-353` | 承接 TPC-352 的 branch freeze；literal two-endpoint operator、V59 residual、exact polarization/Cauchy envelope，216 rows、216/216 positive alignment；all-plus `kappa_A` `0.6929--0.9963`，source/output mismatch；下一步 disjoint higher-origin holdout或 position-aware masked bound |
 | 2026-09-03 | V205 / TPC-352 | Bridge A / Gate B：disjoint reciprocal-shell adversarial holdout 已完成；source-native arithmetic `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-352` | 承接 TPC-351；三个 disjoint origins、144 rows、144/144 reciprocal 正响应、118/144 改善 parent，ratio `0.0801--0.8296`；Q=256 reciprocal floor 低于 balanced parent，有限 reciprocal 分支冻结，下一步回到 source-native literal masked arithmetic `L2` |
 | 2026-09-03 | V204 / TPC-351 | Bridge A / Gate B：reciprocal-shell finite scale repair 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-351` | 承接 TPC-350；exact rational reciprocal centering、192/192 正响应、180/192 改善 parent，reciprocal/defect `0.0918--0.9017`，86/192 超过 coordinate baseline，111/192 达到 half-defect，25/48 series nondecreasing；universal quarter-floor scoped refuted，下一步为 disjoint adversarial holdout |
