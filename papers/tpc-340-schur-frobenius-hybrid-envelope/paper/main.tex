@@ -1,0 +1,179 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.78in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,mathtools}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+
+\title{A Schur/Frobenius Hybrid Envelope\\
+\large A Sign-Free Finite Bound for Masked Twin-Prime Responses}
+\author{Liang Wang\\School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{September 2, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The support-restricted Frobenius envelope in TPC-339 is universally valid but
+loose on broad arithmetic masks.  We combine it with a global Schur envelope
+for the same finite symmetric all-plus shell operator.  If $x$ is supported on
+$S$ and $R$ is the maximum absolute row sum, then
+\[
+ \|Ax\|_2^2\leq\min\{\|A_{[:,S]}\|_F^2,R^2\}\|x\|_2^2.
+\]
+The inequality is proved exactly for every finite symmetric matrix and passes
+all 216 records in the parent-locked panel.  The Schur branch is active in 54
+records and improves the zero-support envelope by factors from 1.250245 to
+4.698443.  Broad-mask occupancy nevertheless remains below 0.186855, so the
+hybrid is a useful finite envelope and a sharper obstruction, not a growing
+arithmetic estimate.
+\end{abstract}
+
+\section{Question and finite object}
+
+TPC-338 showed that signed class covariances depend on the chosen control
+ensemble, and TPC-339 replaced that unstable interface by a support-only
+Frobenius inequality.  We ask whether a second sign-free norm can sharpen the
+finite envelope without importing a covariance sign.
+
+The parent-locked source is the four-way decomposition
+\[
+ \beta=\beta_T+\beta_B+\beta_P+\beta_Z,
+\]
+where the labels denote twin-prime, non-twin-prime-shift, prime-power-shift,
+and zero-support masks.  We use the all-plus deleted-diagonal shell operator
+\[
+ A=\sum_{54<p\leq108}B_{p,54,1},\qquad Q=54,\quad H=66,
+\]
+on
+\[
+ I_{o,N}=\{o,\ldots,o+N/2-1\},qquad
+ o\in\{42001,44001\},\quad N\in\{2048,4096,8192\}.
+\]
+The nine controls are the identity, reversal, and the seven affine maps
+declared in TPC-338.  A control only permutes source coordinates; the matrix
+and source construction are otherwise unchanged.
+
+\section{Two sign-free bounds}
+
+Let $S=\operatorname{supp}(x)$ and let $A_S$ be the column submatrix.  The
+support-restricted bound used by TPC-339 is
+\begin{equation}
+ \|Ax\|_2^2=\|A_Sx_S\|_2^2
+ \leq \|A_S\|_F^2\|x_S\|_2^2.
+ \label{eq:frob}
+\end{equation}
+Write
+\[
+ F(S)^2=\|A_S\|_F^2
+ =\sum_{t\in S}\sum_u |A(u,t)|^2.
+\]
+
+For a finite symmetric matrix put
+\[
+ R=\max_i\sum_j|A(i,j)|.
+\]
+Symmetry gives $\|A\|_1=\|A\|_\infty=R$, and the induced-norm inequality
+therefore gives
+\begin{equation}
+ \|Ax\|_2^2\leq \|A\|_2^2\|x\|_2^2
+ \leq R^2\|x\|_2^2.
+ \label{eq:schur}
+\end{equation}
+Taking the smaller right-hand side in \eqref{eq:frob} and \eqref{eq:schur}
+proves the hybrid envelope
+\begin{equation}
+ \|Ax\|_2^2\leq \min\{F(S)^2,R^2\}\|x\|_2^2.
+ \label{eq:hybrid}
+\end{equation}
+No sign of a matrix entry or a cross-class covariance appears in this
+argument.
+
+\paragraph{Exact anchor.}
+For
+\[
+ A=\begin{pmatrix}1&-1\\-1&1\end{pmatrix},\qquad x=(1,1),
+\]
+the output energy is zero, $\|x\|_2^2=2$, and $R^2=4$.  This rational anchor
+checks the Schur interface and also illustrates that an upper envelope does
+not assert response lower bounds.
+
+\section{Audit protocol}
+
+For each of six windows, the producer constructs the matrix, classifies the
+four masks, applies all nine controls, and stores the source norm, response
+gain, Frobenius gain, Schur gain, hybrid gap, occupancy, and active branch.
+This gives $6\times9\times4=216$ records, of which 198 have nonzero source
+norm.  A reverse-shell independent checker rebuilds the source and matrix
+under parent hash locks.  A mutation stress test changes structural counts,
+bound flags, branch counts, and firewall fields; every mutation must be
+rejected.
+
+\section{Finite results}
+
+\begin{table}[ht]
+\centering\small
+\caption{Hybrid-envelope readout on the declared six-window panel.}
+\label{tab:results}
+\begin{tabular}{lccc}
+\toprule
+mask & nonempty & hybrid occupancy & Frobenius improvement\\
+\midrule
+twin prime & 54 & 0.028830--0.186855 & 1--1\\
+non-twin prime shift & 54 & 0.010649--0.055850 & 1--1\\
+prime-power shift & 36 & 1.000000--1.000000 & 1--1\\
+zero support & 54 & 0.035013--0.041164 & 1.250245--4.698443\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All 216 hybrid inequalities pass.  The active-branch census is
+\[
+ \#\{\text{Schur records}\}=54,\qquad
+ \#\{\text{Frobenius records}\}=162.
+\]
+The global nonempty occupancy range is
+0.0106490382--1.0000000000.  On the broad twin, non-twin, and zero masks the
+maximum is 0.1868550366.  The Schur branch is consequently useful where the
+Frobenius column sum is inflated, especially for the zero-support records,
+but it does not recover alignment information for broad masks.
+
+The strongest positive result is a clean finite, sign-free envelope with a
+measurable branch improvement.  The strongest obstruction is equally clear:
+support information plus a global row-sum bound still leaves a large response
+gap on broad masks.  The occupancy values are finite observations, not a
+uniform-in-$x$ or growing-in-$N$ theorem.
+
+\section{Route evaluation and scope}
+
+The Schur inequality and the hybrid construction are
+\texttt{PROVED\_EXACT\_FINITE\_DECLARED\_MODEL}.  The replay and zero-violation
+census are \texttt{NUMERICALLY\_CERTIFIED\_FINITE}; the occupancy and branch
+ranges are finite numerical observations.  Broad-mask factor-five tightness
+is \texttt{REFUTED\_SCOPED}.  The Session-named official Route-A and Route-B
+evaluator files are absent, so the local Bridge-B wrapper is fail-closed and
+does not assert an official route pass.
+
+In particular,
+\[
+ \texttt{ARITHMETIC\_ADVANCE=NO},\qquad
+ \texttt{FIXED\_POWER\_CREDIT=0},\qquad
+ \texttt{FULL\_GATE\_B=OPEN}.
+\]
+There is no twin-prime theorem in this release.  The reusable structure is
+the branch-audited combination of a support-local norm and a global induced
+norm; the unresolved gate is a uniform arithmetic operator estimate.
+
+\section{Next question}
+
+Since the hybrid cannot explain broad-mask alignment, the next minimal test
+is structural rather than another generic norm.  On a fresh source holdout we
+will project the twin response away from the span of the non-twin, zero, and
+prime-power nuisance means, then repeat the test under adversarial controls.
+This can either reveal a stable residual direction or provide a sharper
+obstruction to treating raw twin response as isolated arithmetic signal.
+
+\end{document}
