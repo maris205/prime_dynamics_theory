@@ -1,8 +1,47 @@
 # TPC distilled map and bold channel
 
-## V199 / TPC-346 current anchor
+## V200 / TPC-347 current anchor
 
 更新时间：2026-09-02
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc347_convolution_mask_defect_interface.md，checker 为
+tpc_bridge_b_tpc347_convolution_mask_defect_interface_checker.py，编号论文为
+papers/tpc-347-convolution-mask-defect-interface/。
+
+TPC-347 承接 TPC-346 冻结的 arithmetic-L2 回归方向，保留 literal divisibility
+masks，并把物理 finite block 精确写成
+`A_I=T_I+D_I`，其中 `T_I` 是 unmasked translation-invariant convolution 的
+interval compression，`D_I` 是显式 projection defect。Fourier multiplier norm、
+compression inequality 与 Young tail envelope 在相应的 unmasked/finite 条件下是
+exact；两 origin、三 source counts、四个 shell anchors、两种 exponent 与四个
+sign laws 共 `192` rows，`96/96` ideal origin checks 和 `192/192` combined-bound
+checks 通过。defect/ideal spectral ratio 为 `0.0312337689685--0.467075645603`，
+其中 `93/192` 超过 `1/4`。
+
+这是 `PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT`；
+它 refute 了声明面板上的 mask-discard shortcut，但没有给出 source-uniform
+arithmetic `L2` 或 uniform masked operator bound。Session-named evaluator 文件仍
+缺失，因此只记录 local Bridge-B fail-closed，不宣称 official Route-A/Route-B pass。
+
+    TPC347_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT
+    TPC347_MASK_FACTORISATION = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC347_UNMASKED_FOURIER_INTERFACE = PROVED_EXACT_CONDITIONAL
+    TPC347_COMPRESSION_INEQUALITY = PROVED_EXACT
+    TPC347_YOUNG_ENVELOPE = PROVED_EXACT_FOR_UNMASKED_KERNEL
+    TPC347_TRANSLATION_INVARIANCE = NUMERICALLY_CERTIFIED_FINITE_96_OF_96
+    TPC347_MASK_DEFECT_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+    TPC347_DEFECT_DISCARDABILITY = REFUTED_SCOPED
+    TPC347_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+    TPC347_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC347_ARITHMETIC_ADVANCE = NO
+    TPC347_FIXED_POWER_CREDIT = 0
+    TPC347_FULL_GATE_B = OPEN
+    TPC347_TWIN_PRIME_RESULT = NONE
+    TPC347_STATUS = PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT
+    TPC347_ROUND2_CLUE = QUANTIFY_MASK_DEFECT_LOWER_WITNESSES_BEFORE_SOURCE_NATIVE_L2
+
+## V199 / TPC-346 previous anchor
 
 当前入口：proof 为
 research/tpc-big-road/bridge_b_tpc346_third_panel_hostile_replication.md，checker 为

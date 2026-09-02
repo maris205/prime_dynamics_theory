@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--346 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--347 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -28,7 +28,12 @@ panel-adaptive fit 只有 raw `0.2999630726` 的窄幅 crossing，equal-row 回�
 `0.3222362713305`；全部 transfer、leave-one-panel-out 与 fresh control-LOO 均失败，
 因此只冻结该有限 panel-adaptive 分支。整条链仍是有限 declared-model certificate：
 source-uniform arithmetic $L^2$、uniform masked operator bound、fixed-power credit 与
-twin-prime endpoint 均未关闭。
+twin-prime endpoint 均未关闭。TPC-347 随后把 literal masked prime-shell block
+精确拆成 unmasked translation-invariant convolution 加上 divisibility-mask defect：
+192 个 finite spectral rows 中有 93 个 defect/ideal ratio 超过 `1/4`，而
+`96/96` 个 ideal origin pairs 保持 translation invariance。因此 mask shortcut 在
+声明面板上被 refute，但 masked operator bound 与 source-uniform arithmetic $L^2$ 仍然
+open。
 
 ```text
 TPC343_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
@@ -94,6 +99,23 @@ TPC346_FULL_GATE_B = OPEN
 TPC346_TWIN_PRIME_RESULT = NONE
 TPC346_STATUS = NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION
 TPC346_ROUND2_CLUE = FREEZE_PANEL_ADAPTIVE_ROUTE_AND_RETURN_TO_ARITHMETIC_L2
+```
+
+```text
+TPC347_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT
+TPC347_MASK_FACTORISATION = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC347_UNMASKED_FOURIER_INTERFACE = PROVED_EXACT_CONDITIONAL
+TPC347_TRANSLATION_INVARIANCE = NUMERICALLY_CERTIFIED_FINITE_96_OF_96
+TPC347_MASK_DEFECT_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+TPC347_DEFECT_DISCARDABILITY = REFUTED_SCOPED
+TPC347_ARITHMETIC_ADVANCE = NO
+TPC347_FIXED_POWER_CREDIT = 0
+TPC347_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+TPC347_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+TPC347_FULL_GATE_B = OPEN
+TPC347_TWIN_PRIME_RESULT = NONE
+TPC347_STATUS = PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT
+TPC347_ROUND2_CLUE = QUANTIFY_MASK_DEFECT_LOWER_WITNESSES_BEFORE_SOURCE_NATIVE_L2
 ```
 
 TPC-331（更早阶段）承接 TPC-330，把五个预声明的 coordinate controls 视为一个
@@ -184,6 +206,12 @@ TPC-341/TPC-342 之后加入 disjoint fresh third panel；324 raw records、261
 nonempty records、18 个 fresh control-LOO 与 panel-transfer audit 全部可重放；
 raw panel-adaptive crossing 为 0.299963，但 equal-row 为 0.322236，故冻结该
 finite branch，arithmetic advance 仍为 NO。
+
+papers/tpc-347-convolution-mask-defect-interface - TPC-347 已完成项目 - 将 literal
+masked block 精确分解为 unmasked convolution 与 mask defect；192 条 finite rows、
+96 个 translation checks、exact rational anchor、独立 replay、mutation stress、
+PDF 与 local Bridge-B checker 均已封存；mask shortcut 为 scoped refuted，
+arithmetic advance 仍为 NO。
 
 papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram
 operator 的 6-row masked response ledger；zero/background/twin/prime-power gain

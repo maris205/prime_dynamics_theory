@@ -1,6 +1,68 @@
 # TPC HANDOFF
 
-TPC-346 current section: third-panel hostile replication and finite route freeze
+TPC-347 current section: exact convolution interface and divisibility-mask defect
+-----------------------------------------------------------------------------------------------
+
+TPC-347 returns from the finite panel-adaptive freeze to the literal arithmetic-L2
+interface.  For the locked prime-shell family, the physical block is exactly
+`A_I=sum_p e_p R_I P_p K_p P_p E_I`.  With `K_e=sum_p e_p K_p` and
+`T_I=R_I K_e E_I`, the exact decomposition is `A_I=T_I+D_I`, where `D_I` is the
+explicit left/right projection defect.  The unmasked `K_e` is a convolution, so its
+`ell^2(Z)` norm has the conditional Fourier-multiplier identity and a Young tail
+majorant; these statements do not replace the physical masks.
+
+The predeclared finite protocol uses origins [40097,48097], source counts [256,512,1024],
+Q anchors [24,36,54,80], exponents [1,2], four sign laws, and H=66.  It contains
+192 spectral rows, 96/96 ideal translation checks, and 192/192 combined-bound checks,
+plus an exact rational six-point anchor.  The defect/ideal spectral ratio ranges from
+0.0312337689685 to 0.467075645603, with 93/192 rows above 1/4.
+
+The exact factorisation/interface is PROVED_EXACT within its declared finite model and
+the Fourier statement is conditional on the explicitly unmasked absolutely summable
+kernel.  The finite panel refutes the mask-discard shortcut (`REFUTED_SCOPED`), but it
+does not provide a growing lower bound, source-uniform arithmetic `L2`, a uniform
+masked-operator theorem, fixed-power credit, or a twin-prime conclusion.
+
+    TPC347_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT
+    TPC347_MASK_FACTORISATION = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC347_UNMASKED_FOURIER_INTERFACE = PROVED_EXACT_CONDITIONAL
+    TPC347_COMPRESSION_INEQUALITY = PROVED_EXACT
+    TPC347_YOUNG_ENVELOPE = PROVED_EXACT_FOR_UNMASKED_KERNEL
+    TPC347_TRANSLATION_INVARIANCE = NUMERICALLY_CERTIFIED_FINITE_96_OF_96
+    TPC347_MASK_DEFECT_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+    TPC347_DEFECT_DISCARDABILITY = REFUTED_SCOPED
+    TPC347_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+    TPC347_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC347_ARITHMETIC_ADVANCE = NO
+    TPC347_FIXED_POWER_CREDIT = 0
+    TPC347_FULL_GATE_B = OPEN
+    TPC347_TWIN_PRIME_RESULT = NONE
+    TPC347_STRONGEST_POSITIVE = EXACT_CONVOLUTION_PLUS_EXPLICIT_MASK_DEFECT_INTERFACE
+    TPC347_STRONGEST_OBSTRUCTION = MASK_DEFECT_NOT_FINITE_UNIFORMLY_DISCARDABLE
+    TPC347_OPEN_THEOREM = POSITION_AWARE_MASKED_L2_OR_DEFECT_BOUND
+    TPC347_REUSABLE_STRUCTURE = PROJECTION_FACTORISATION_TO_CONVOLUTION_TO_DEFECT_AUDIT
+    TPC347_ROUND2_CLUE = QUANTIFY_MASK_DEFECT_LOWER_WITNESSES_BEFORE_SOURCE_NATIVE_L2
+    TPC347_STATUS = PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT
+
+The Session-named propose.md and Route-A/Route-B evaluator files remain absent in this
+checkout.  The local Bridge-B wrapper is fail-closed and is not an official evaluator
+pass.  No arithmetic estimate, strict 1/400 payment, fixed-power credit, or twin-prime
+conclusion is licensed.
+
+TPC-347 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-347-convolution-mask-defect-interface/code/tpc347_convolution_mask_defect_interface.py --write
+    python -B papers/tpc-347-convolution-mask-defect-interface/code/tpc347_convolution_mask_defect_interface.py --check
+    python -O -B papers/tpc-347-convolution-mask-defect-interface/code/tpc347_convolution_mask_defect_interface.py --check
+    python -B papers/tpc-347-convolution-mask-defect-interface/experiments/tpc347_independent_checker.py --check
+    python -O -B papers/tpc-347-convolution-mask-defect-interface/experiments/tpc347_independent_checker.py --check
+    python -B papers/tpc-347-convolution-mask-defect-interface/experiments/tpc347_mask_defect_stress.py
+    python -O -B papers/tpc-347-convolution-mask-defect-interface/experiments/tpc347_mask_defect_stress.py
+    python -B research/tpc-big-road/tpc_bridge_b_tpc347_convolution_mask_defect_interface_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc347_convolution_mask_defect_interface_checker.py --check
+
+TPC-346 previous section: third-panel hostile replication and finite route freeze
 -----------------------------------------------------------------------------------------------
 
 TPC-346 adds the predeclared disjoint fresh panel [44097,44609,45217] to the
@@ -11896,12 +11958,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V199/TPC-346 是当前 release；其 producer、reverse-shell independent replay、stress
-audit 与 third-panel hostile-replication bridge 已封存。TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
+V200/TPC-347 是当前 release；其 producer、reverse-shell independent replay、stress
+audit 与 convolution/mask-defect bridge 已封存。TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
 TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
 TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 405 对 normal/optimized 命令、810 次
+当前 curated cascade command set 共 409 对 normal/optimized 命令、818 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -11920,7 +11982,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -11959,6 +12021,11 @@ V199/TPC-346 的新增 4 对由 project producer、reverse-shell independent che
 hostile stress 与 local Bridge-B checker 逐项验证；其 fresh third-panel finite
 freeze 不代表 universal panel impossibility、source-uniform arithmetic `L2`、
 fixed-power saving 或 official evaluator pass。
+
+V200/TPC-347 的新增 4 对由 project producer、reverse-shell independent checker、
+mask-defect stress 与 local Bridge-B checker 逐项验证；其 exact convolution-plus-
+defect interface 与 finite mask-discard obstruction 不代表 source-uniform arithmetic
+`L2`、uniform masked-operator bound、fixed-power saving 或 official evaluator pass。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
@@ -13388,6 +13455,27 @@ fresh_loo_pairs=18`。这是 V199 的 finite third-panel hostile replication；�
 panel-adaptive freeze 不代表 universal impossibility、source-uniform arithmetic
 `L2`、fixed-power saving 或 official evaluator pass。
 
+TPC-347 的项目级 producer、reverse-shell independent replay、mask-defect stress 与
+bridge checker：
+
+```bash
+python -B papers/tpc-347-convolution-mask-defect-interface/code/tpc347_convolution_mask_defect_interface.py --check
+python -O -B papers/tpc-347-convolution-mask-defect-interface/code/tpc347_convolution_mask_defect_interface.py --check
+python -B papers/tpc-347-convolution-mask-defect-interface/experiments/tpc347_independent_checker.py --check
+python -O -B papers/tpc-347-convolution-mask-defect-interface/experiments/tpc347_independent_checker.py --check
+python -B papers/tpc-347-convolution-mask-defect-interface/experiments/tpc347_mask_defect_stress.py
+python -O -B papers/tpc-347-convolution-mask-defect-interface/experiments/tpc347_mask_defect_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc347_convolution_mask_defect_interface_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc347_convolution_mask_defect_interface_checker.py --check
+```
+
+TPC-347 增量 tail audit：4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `rows=192 / invariance=96 /
+bound_violations=0 / defect_ratio_gt_quarter=93`。这是 V200 的 exact finite
+convolution/mask-defect interface 与 scoped finite obstruction；不代表 growing
+arithmetic `L2`、uniform masked-operator theorem、fixed-power saving 或 official
+evaluator pass。
+
 TPC-327 的项目级 producer、independent replay、three-origin stress 与 bridge checker：
 
 ```bash
@@ -13449,7 +13537,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-346 current release 入口：
+TPC-347 current release 入口：
+
+papers/tpc-347-convolution-mask-defect-interface/README.md
+papers/tpc-347-convolution-mask-defect-interface/PAPER_PLAN.md
+papers/tpc-347-convolution-mask-defect-interface/DERIVATION_PACKAGE.md
+papers/tpc-347-convolution-mask-defect-interface/PROOF_PACKAGE.md
+papers/tpc-347-convolution-mask-defect-interface/code/tpc347_convolution_mask_defect_interface.py
+papers/tpc-347-convolution-mask-defect-interface/experiments/tpc347_independent_checker.py
+papers/tpc-347-convolution-mask-defect-interface/experiments/tpc347_mask_defect_stress.py
+papers/tpc-347-convolution-mask-defect-interface/results/tpc347_certificate.json
+papers/tpc-347-convolution-mask-defect-interface/notes/theorem_ledger.md
+papers/tpc-347-convolution-mask-defect-interface/notes/claim_firewall.md
+papers/tpc-347-convolution-mask-defect-interface/notes/computational_protocol.md
+papers/tpc-347-convolution-mask-defect-interface/notes/route_evaluation.md
+papers/tpc-347-convolution-mask-defect-interface/paper/main.tex
+papers/tpc-347-convolution-mask-defect-interface/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc347_convolution_mask_defect_interface.md
+research/tpc-big-road/tpc_bridge_b_tpc347_convolution_mask_defect_interface_checker.py
+
+TPC-346 previous release 入口：
 
 papers/tpc-346-third-panel-hostile-replication/README.md
 papers/tpc-346-third-panel-hostile-replication/PAPER_PLAN.md

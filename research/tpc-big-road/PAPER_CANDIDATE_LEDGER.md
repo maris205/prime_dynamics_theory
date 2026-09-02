@@ -3,13 +3,71 @@
 
 更新时间：2026-09-02
 
-状态：**TPC346_NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC347_PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.140 current：TPC-346 third-panel hostile replication
+## 0.141 current：TPC-347 convolution interface and mask defect
+
+项目：papers/tpc-347-convolution-mask-defect-interface/
+
+类型：**PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT**。
+
+TPC-347 承接 TPC-346 的 arithmetic-L2 回归方向，在 literal prime-shell family
+中保留 endpoint divisibility masks。对 `k_p(d)` 及 signed coherent sum `K_e`，
+物理 block 精确写成
+`A_I=sum_p e_p R_I P_p K_p P_p E_I=T_I+D_I`，其中
+`T_I=R_I K_e E_I` 是 unmasked convolution 的 interval compression，`D_I` 是
+显式 projection defect。绝对可和条件下，Fourier multiplier norm
+`||K_e||=ess sup |khat_e|`、compression inequality 与 Young tail majorant 都
+给出 exact interface；它们没有把 physical masked operator 偷换成 ideal operator。
+
+预声明 protocol 为 origins `[40097,48097]`、source counts `[256,512,1024]`、
+`Q=[24,36,54,80]`、exponents `[1,2]`、四个 sign laws、`H=66`。共 `192` 条
+finite spectral rows、`96/96` ideal translation checks 与 `192/192` combined
+envelope checks，另有 exact rational six-point anchor。mask defect/ideal spectral
+ratio 范围为 `0.0312337689685--0.467075645603`，`93/192` 条超过 `1/4`。
+
+最强正结果：literal masked object 获得了可复用的 convolution-plus-defect
+factorisation；ideal comparison 在全部 `96` 个 two-origin groups 上保持 exact
+translation pattern，且生产者、reverse-order independent replay、mutation stress
+与正常/优化 Bridge-B 均通过。
+
+最强 obstruction：在声明面板上，mask defect 不是可统一丢弃的 finite remainder；
+但该比例是有限数值审计，不是 growing lower bound，也不否定未来的 position-aware
+cancellation。
+
+开放定理：在保留 residue masks 的前提下，对 `D_I` 给出 source-uniform、
+position-aware operator bound，或直接证明 masked coherent sum 的 arithmetic `L2`
+cancellation；随后仍需完成 Route-B reassembly 与 endpoint payment。
+
+可复用结构：
+
+    literal block -> P_p K_p P_p -> unmasked convolution -> Fourier interface
+                  -> exact defect -> finite spectral audit -> claim firewall
+
+ROUND2_CLUE：`QUANTIFY_MASK_DEFECT_LOWER_WITNESSES_BEFORE_SOURCE_NATIVE_L2`。
+
+    TPC347_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT
+    TPC347_MASK_FACTORISATION = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC347_UNMASKED_FOURIER_INTERFACE = PROVED_EXACT_CONDITIONAL
+    TPC347_COMPRESSION_INEQUALITY = PROVED_EXACT
+    TPC347_YOUNG_ENVELOPE = PROVED_EXACT_FOR_UNMASKED_KERNEL
+    TPC347_TRANSLATION_INVARIANCE = NUMERICALLY_CERTIFIED_FINITE_96_OF_96
+    TPC347_MASK_DEFECT_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+    TPC347_DEFECT_DISCARDABILITY = REFUTED_SCOPED
+    TPC347_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+    TPC347_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC347_ARITHMETIC_ADVANCE = NO
+    TPC347_FIXED_POWER_CREDIT = 0
+    TPC347_FULL_GATE_B = OPEN
+    TPC347_TWIN_PRIME_RESULT = NONE
+    TPC347_STATUS = PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT
+    TPC347_ROUND2_CLUE = QUANTIFY_MASK_DEFECT_LOWER_WITNESSES_BEFORE_SOURCE_NATIVE_L2
+
+## 0.140 previous：TPC-346 third-panel hostile replication
 
 项目：papers/tpc-346-third-panel-hostile-replication/
 

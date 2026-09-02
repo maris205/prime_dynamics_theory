@@ -1,42 +1,51 @@
-# TPC big road V199 / TPC-346: third-panel hostile replication
+# TPC big road V200 / TPC-347: convolution interface and mask defect
 
-## V199 current anchor: TPC-346
+## V200 current anchor: TPC-347
 
 更新时间：2026-09-02
 
-当前 TPC-346 proof 为
-bridge_b_tpc346_third_panel_hostile_replication.md，checker 为
-tpc_bridge_b_tpc346_third_panel_hostile_replication_checker.py，编号论文为
-../../papers/tpc-346-third-panel-hostile-replication/。
+当前 TPC-347 proof 为
+bridge_b_tpc347_convolution_mask_defect_interface.md，checker 为
+tpc_bridge_b_tpc347_convolution_mask_defect_interface_checker.py，编号论文为
+../../papers/tpc-347-convolution-mask-defect-interface/。
 
-TPC-346 在 TPC-345 的 coordinate-free geometry 后加入 disjoint fresh third panel
-`[44097,44609,45217]`。fresh own-fit retention 为
-`0.3159173453/0.3294074741`，三 panel adaptive retention 为
-`0.2999630726/0.3222362713`（raw/equal-row）；six directed predictions、
-three leave-one-panel-out predictions 与 eighteen fresh control-LOO projections
-全部超过 `0.30`。
+TPC-347 承接 TPC-346 的 arithmetic-L2 回归方向，保留 literal divisibility masks，
+并把物理 finite block 精确分解为 unmasked translation-invariant convolution
+`T_I` 与显式 mask defect `D_I`：`A_I=T_I+D_I`。Fourier multiplier、compression
+inequality 与 unmasked Young envelope 是相应条件下的 exact interface；两 origins、
+三 source counts、四 shell anchors、两 exponents 与四 sign laws 共 `192` rows，
+`96/96` ideal translation checks 和 `192/192` combined-bound checks 通过。defect/
+ideal spectral ratio 为 `0.0312337689685--0.467075645603`，其中 `93/192` 超过
+`1/4`。
 
-这是 `NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION`；shared-to-adaptive
-nested identity 与 projection identity 为 exact finite linear algebra，fresh own-fit、
-weighting stability 与 transfer 均为 scoped finite obstruction。只冻结声明的
-panel-adaptive branch，不外推为 universal no-go。source-uniform arithmetic `L2`、
-uniform masked operator bound、fixed-power credit 与 twin-prime endpoint 仍 open。
-Session-named evaluator files absent，故不宣称 official Route-A/Route-B pass。
+这是 `PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT`；
+它只对声明面板上的 mask-discard shortcut 给出 `REFUTED_SCOPED`，不是 source-uniform
+arithmetic `L2`、uniform masked operator bound 或 twin-prime result。Session-named
+evaluator files absent，故只记录 local Bridge-B fail-closed，不宣称 official
+Route-A/Route-B pass。
 
-    TPC346_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION
-    TPC346_NESTED_MODEL_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-    TPC346_FRESH_PANEL_OWN_FIT = REFUTED_SCOPED
-    TPC346_PANEL_ADAPTIVE_RAW = NUMERICALLY_CERTIFIED_FINITE_SCOPED_PASS
-    TPC346_PANEL_ADAPTIVE_EQUAL_ROW = REFUTED_SCOPED
-    TPC346_PANEL_ADAPTIVE_WEIGHTING_STABILITY = REFUTED_SCOPED
-    TPC346_THIRD_PANEL_TRANSFER = REFUTED_SCOPED
-    TPC346_ARITHMETIC_ADVANCE = NO
-    TPC346_FIXED_POWER_CREDIT = 0
-    TPC346_SOURCE_UNIFORM_L2 = OPEN
-    TPC346_FULL_GATE_B = OPEN
-    TPC346_TWIN_PRIME_RESULT = NONE
-    TPC346_STATUS = NUMERICALLY_CERTIFIED_FINITE_THIRD_PANEL_HOSTILE_REPLICATION
-    TPC346_ROUND2_CLUE = FREEZE_PANEL_ADAPTIVE_ROUTE_AND_RETURN_TO_ARITHMETIC_L2
+    TPC347_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT
+    TPC347_MASK_FACTORISATION = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC347_UNMASKED_FOURIER_INTERFACE = PROVED_EXACT_CONDITIONAL
+    TPC347_COMPRESSION_INEQUALITY = PROVED_EXACT
+    TPC347_YOUNG_ENVELOPE = PROVED_EXACT_FOR_UNMASKED_KERNEL
+    TPC347_TRANSLATION_INVARIANCE = NUMERICALLY_CERTIFIED_FINITE_96_OF_96
+    TPC347_MASK_DEFECT_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+    TPC347_DEFECT_DISCARDABILITY = REFUTED_SCOPED
+    TPC347_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+    TPC347_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC347_ARITHMETIC_ADVANCE = NO
+    TPC347_FIXED_POWER_CREDIT = 0
+    TPC347_FULL_GATE_B = OPEN
+    TPC347_TWIN_PRIME_RESULT = NONE
+    TPC347_STATUS = PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT
+    TPC347_ROUND2_CLUE = QUANTIFY_MASK_DEFECT_LOWER_WITNESSES_BEFORE_SOURCE_NATIVE_L2
+
+## V199 previous anchor: TPC-346
+
+TPC-346 的 third-panel hostile replication 仍是 TPC-347 的 parent lock：fresh
+panel、panel-adaptive weighting audit、transfer 与 control-LOO 共同冻结了有限
+panel-adaptive 分支，并把下一步引向 arithmetic `L2` 与 literal mask interface。
 
 ## V198 previous anchor: TPC-345
 

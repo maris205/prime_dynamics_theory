@@ -1,0 +1,33 @@
+# Bridge-B record: TPC-347 convolution interface and mask defect
+
+This local bridge records the exact object and the finite audit for
+`papers/tpc-347-convolution-mask-defect-interface/`.  The repository does not
+contain the Session-named official Route-A/Route-B evaluator files, so this is
+a fail-closed local bridge and not an official gate pass.
+
+```text
+TPC347_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT
+TPC347_MASK_FACTORISATION = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC347_UNMASKED_FOURIER_INTERFACE = PROVED_EXACT_CONDITIONAL
+TPC347_COMPRESSION_INEQUALITY = PROVED_EXACT
+TPC347_YOUNG_ENVELOPE = PROVED_EXACT_FOR_UNMASKED_KERNEL
+TPC347_TRANSLATION_INVARIANCE = NUMERICALLY_CERTIFIED_FINITE_96_OF_96
+TPC347_MASK_DEFECT_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+TPC347_DEFECT_DISCARDABILITY = REFUTED_SCOPED
+TPC347_DEFECT_RATIO_RANGE = 0.0312337689685--0.467075645603
+TPC347_DEFECT_RATIO_ABOVE_QUARTER = 93_OF_192
+TPC347_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+TPC347_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+TPC347_ARITHMETIC_ADVANCE = NO
+TPC347_FIXED_POWER_CREDIT = 0
+TPC347_FULL_GATE_B = OPEN
+TPC347_TWIN_PRIME_RESULT = NONE
+TPC347_ROUND2_CLUE = QUANTIFY_MASK_DEFECT_LOWER_WITNESSES_BEFORE_SOURCE_NATIVE_L2
+TPC347_STATUS = PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT
+```
+
+The exact statements are the projection factorisation, the convolution
+Fourier norm identity, interval compression, and the finite triangle bound.
+The finite ratios are observations on the declared two-origin, three-count
+panel only.  No source-native arithmetic vector, asymptotic estimate, fixed
+power, or twin-prime conclusion is attached.
