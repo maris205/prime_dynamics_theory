@@ -2,43 +2,48 @@
 
 更新时间：2026-09-02
 
-当前地图版本：V195 / TPC-342
+当前地图版本：V196 / TPC-343
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-342`（`NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION`）；
+当前编号锚点：`TPC-343`（`NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE`）；
 对应论文目录为
-`papers/tpc-342-independent-fresh-holdout-reproduction/`。
+`papers/tpc-343-cross-panel-meta-certificate/`。
 
-TPC-342 是当前地图位置：它锁定 TPC-341 的九-control nuisance-projection protocol，
-在三个完全 disjoint、cutoff-safe 的 source windows 上作 independent reproduction。
-样本内 twin mean residual retention 为 `0.2701410521--0.2951006120`，而 27 个
-leave-one-control-out hostile tests 保留 `0.5894842476--0.9429165296`。因此 TPC-341
-发现的 aggregate-versus-holdout split 在新面板上复现，mean-only projection 仍不能
-升级为 control-invariant twin-prime component；正交 identity 是 exact finite，复现与
-稳定性结论是 scoped finite facts。
+TPC-343 是当前地图位置：它锁定 TPC-341 与 TPC-342 两个 protocol-compatible panels，
+在六个 cutoff-safe rows 上比较 row-block 与 shared nuisance projections。row-block
+pooled residual retention 为 `0.2325429101`，但 shared raw 与 equal-row retention
+分别为 `0.3198013104` 与 `0.3549335801`，均越过 inherited `0.30` guard。因而
+row-local fit 不能直接升级为一个跨 panel 的 shared nuisance law；stacked identity
+是 exact finite，shared-law failure 是 scoped finite fact。
 
 本关仍没有 arithmetic advance；source-uniform `L2`、uniform masked operator bound、
 fixed-power credit 与 twin-prime endpoint 继续 open。
 
 ```text
-YOU ARE HERE = V195 / TPC-342
-TPC342_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
-TPC342_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-TPC342_INDEPENDENT_FRESH_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
-TPC342_IN_SAMPLE_PROJECTION = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
-TPC342_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
-TPC342_IN_SAMPLE_RETENTION = NUMERICAL_OBSERVATION_0.270_TO_0.296
-TPC342_HOLDOUT_RETENTION = NUMERICAL_OBSERVATION_0.589_TO_0.943
-TPC342_CONTROL_STABILITY = REFUTED_SCOPED
-TPC342_ARITHMETIC_ADVANCE = NO
-TPC342_FIXED_POWER_CREDIT = 0
-TPC342_SOURCE_UNIFORM_L2 = OPEN
-TPC342_FULL_GATE_B = OPEN
-TPC342_TWIN_PRIME_RESULT = NONE
-TPC342_STATUS = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
-TPC342_ROUND2_CLUE = CROSS_PANEL_META_CERTIFICATE_OR_ALTERNATIVE_NUISANCE_BASIS
+YOU ARE HERE = V196 / TPC-343
+TPC343_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
+TPC343_STACKED_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC343_ROW_BLOCK_META = NUMERICALLY_CERTIFIED_FINITE_6_ROW_POOLED_PROJECTION
+TPC343_SHARED_COEFFICIENT_RAW = NUMERICAL_OBSERVATION_0.319_TO_0.320
+TPC343_SHARED_COEFFICIENT_EQUAL_ROW = NUMERICAL_OBSERVATION_0.354_TO_0.355
+TPC343_SHARED_COEFFICIENT_STABILITY = REFUTED_SCOPED
+TPC343_HOLDOUT_META = NUMERICALLY_CERTIFIED_FINITE_54_RECORDS
+TPC343_ARITHMETIC_ADVANCE = NO
+TPC343_FIXED_POWER_CREDIT = 0
+TPC343_SOURCE_UNIFORM_L2 = OPEN
+TPC343_FULL_GATE_B = OPEN
+TPC343_TWIN_PRIME_RESULT = NONE
+TPC343_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
+TPC343_ROUND2_CLUE = ALTERNATIVE_NUISANCE_BASIS_OR_PRINCIPAL_ANGLE_AUDIT
 ```
+
+## V195 / TPC-342 previous anchor
+
+TPC-342 independently reproduced the TPC-341 aggregate-versus-holdout split on
+`[40097,40608]`, `[40609,41120]`, and `[41121,41632]`; its in-sample retention was
+`0.2701410521--0.2951006120` and its held-out retention was
+`0.5894842476--0.9429165296`.
 
 ## V194 / TPC-341 previous anchor
 
@@ -1225,6 +1230,40 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.127 V196 / TPC-343：cross-panel shared-nuisance meta-certificate
+
+TPC-343 combines the TPC-341 and TPC-342 panels without changing their locked
+all-plus `Q=54`, exponent-one, `H=66` operator, nine controls, four masks, or
+cutoff.  The six rows yield `216` raw records (`171` nonempty) and `54`
+leave-one-control-out records.
+
+The row-block model, which allows one nuisance coefficient vector per row, has
+pooled raw-energy residual retention `0.2325429101` and equal-row retention
+`0.2502856954`.  A single shared coefficient vector across all six rows has
+retention `0.3198013104` under raw weighting and `0.3549335801` under equal-row
+weighting.  Both shared values fail the inherited `<0.30` in-sample guard,
+while the nine shared cross-panel holdout stacks retain
+`0.6408306196--0.9090948298`.
+
+The exact stacked Pythagorean identity and row-block energy additivity are
+finite algebra.  The shared-law failure is a scoped model obstruction; it does
+not refute alternative nuisance bases or supply arithmetic `L2` credit.
+
+```text
+TPC343_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
+TPC343_STACKED_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC343_ROW_BLOCK_META = NUMERICALLY_CERTIFIED_FINITE_6_ROW_POOLED_PROJECTION
+TPC343_SHARED_COEFFICIENT_STABILITY = REFUTED_SCOPED
+TPC343_HOLDOUT_META = NUMERICALLY_CERTIFIED_FINITE_54_RECORDS
+TPC343_ARITHMETIC_ADVANCE = NO
+TPC343_FIXED_POWER_CREDIT = 0
+TPC343_SOURCE_UNIFORM_L2 = OPEN
+TPC343_FULL_GATE_B = OPEN
+TPC343_TWIN_PRIME_RESULT = NONE
+TPC343_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
+TPC343_ROUND2_CLUE = ALTERNATIVE_NUISANCE_BASIS_OR_PRINCIPAL_ANGLE_AUDIT
+```
 
 ## 5.126 V195 / TPC-342：independent fresh-panel holdout reproduction
 

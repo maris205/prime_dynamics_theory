@@ -1,39 +1,42 @@
-# TPC big road V195 / TPC-342: independent fresh-panel reproduction
+# TPC big road V196 / TPC-343: cross-panel shared-nuisance meta-certificate
 
-## V195 current anchor: TPC-342
+## V196 current anchor: TPC-343
 
 更新时间：2026-09-02
 
-当前 TPC-342 proof 为
-bridge_b_tpc342_independent_fresh_holdout_reproduction.md，checker 为
-tpc_bridge_b_tpc342_independent_fresh_holdout_reproduction_checker.py，编号论文为
-../../papers/tpc-342-independent-fresh-holdout-reproduction/。
+当前 TPC-343 proof 为
+bridge_b_tpc343_cross_panel_meta_certificate.md，checker 为
+tpc_bridge_b_tpc343_cross_panel_meta_certificate_checker.py，编号论文为
+../../papers/tpc-343-cross-panel-meta-certificate/。
 
-TPC-342 锁定 TPC-341 的 protocol，在三个新的 cutoff-safe windows
-`[40097,40608]`、`[40609,41120]`、`[41121,41632]` 上独立重放同一 all-plus operator、
-九 controls、四 masks 与 leave-one-control-out rule。样本内 residual retention 为
-`0.2701410521--0.2951006120`，而 27 个 hostile tests 保留
-`0.5894842476--0.9429165296`。aggregate-versus-holdout split 因而在 disjoint panel
-上复现；正交投影 identity 是 exact finite，control instability 是 scoped obstruction。
+TPC-343 锁定 TPC-341 与 TPC-342 两个 disjoint panels，在六个 cutoff-safe windows
+上比较 row-block 与 shared nuisance projections。row-block pooled residual retention
+为 `0.2325429101`；shared raw-energy 与 equal-row retentions 为
+`0.3198013104` 与 `0.3549335801`，共同超过 inherited `0.30` guard。九个 shared
+cross-panel holdout stacks 的 retention 为 `0.6408306196--0.9090948298`。
 
-这是 `NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION`；
+这是 `NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE`；
 source-uniform arithmetic `L2`、uniform masked operator bound、fixed-power credit 与
 twin-prime endpoint 仍 open。Session-named evaluator files absent，故不宣称 official
 Route-A/Route-B pass。
 
-    TPC342_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
-    TPC342_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-    TPC342_INDEPENDENT_FRESH_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
-    TPC342_IN_SAMPLE_PROJECTION = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
-    TPC342_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
-    TPC342_CONTROL_STABILITY = REFUTED_SCOPED
-    TPC342_ARITHMETIC_ADVANCE = NO
-    TPC342_FIXED_POWER_CREDIT = 0
-    TPC342_SOURCE_UNIFORM_L2 = OPEN
-    TPC342_FULL_GATE_B = OPEN
-    TPC342_TWIN_PRIME_RESULT = NONE
-    TPC342_STATUS = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
-    TPC342_ROUND2_CLUE = CROSS_PANEL_META_CERTIFICATE_OR_ALTERNATIVE_NUISANCE_BASIS
+    TPC343_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
+    TPC343_STACKED_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC343_ROW_BLOCK_META = NUMERICALLY_CERTIFIED_FINITE_6_ROW_POOLED_PROJECTION
+    TPC343_SHARED_COEFFICIENT_STABILITY = REFUTED_SCOPED
+    TPC343_HOLDOUT_META = NUMERICALLY_CERTIFIED_FINITE_54_RECORDS
+    TPC343_ARITHMETIC_ADVANCE = NO
+    TPC343_FIXED_POWER_CREDIT = 0
+    TPC343_SOURCE_UNIFORM_L2 = OPEN
+    TPC343_FULL_GATE_B = OPEN
+    TPC343_TWIN_PRIME_RESULT = NONE
+    TPC343_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
+    TPC343_ROUND2_CLUE = ALTERNATIVE_NUISANCE_BASIS_OR_PRINCIPAL_ANGLE_AUDIT
+
+## V195 previous anchor: TPC-342
+
+TPC-342 independently reproduced TPC-341's aggregate-versus-holdout split on three new
+windows; TPC-343 uses both panels for the shared-coefficient meta-audit.
 
 ## V194 previous anchor: TPC-341
 

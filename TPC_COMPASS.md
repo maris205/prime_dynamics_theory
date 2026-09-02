@@ -1,42 +1,46 @@
 # TPC distilled map and bold channel
 
-## V195 / TPC-342 current anchor
+## V196 / TPC-343 current anchor
 
 更新时间：2026-09-02
 
 当前入口：proof 为
-research/tpc-big-road/bridge_b_tpc342_independent_fresh_holdout_reproduction.md，checker 为
-tpc_bridge_b_tpc342_independent_fresh_holdout_reproduction_checker.py，编号论文为
-papers/tpc-342-independent-fresh-holdout-reproduction/。
+research/tpc-big-road/bridge_b_tpc343_cross_panel_meta_certificate.md，checker 为
+tpc_bridge_b_tpc343_cross_panel_meta_certificate_checker.py，编号论文为
+papers/tpc-343-cross-panel-meta-certificate/。
 
-TPC-342 锁定 TPC-341 的完整 protocol，仅把 source panel 移到三个新的、彼此不重叠且
-cutoff-safe 的 windows `[40097,40608]`、`[40609,41120]`、`[41121,41632]`。
-九-control twin mean 的 nuisance-span 投影在样本内保留
-`0.2701410521--0.2951006120` 的 energy；leave-one-control-out 的 27 个 hostile tests
-保留 `0.5894842476--0.9429165296`。因此 TPC-341 的 aggregate-versus-holdout split
-在独立面板上复现，而 mean-only nuisance removal 仍不是 control-invariant component。
+TPC-343 锁定 TPC-341 与 TPC-342 两个 protocol-compatible panels，共六个
+cutoff-safe windows。它比较 row-block nuisance projection（每行独立系数）与
+shared projection（六行共用一个系数向量）。row-block raw-energy retention 为
+`0.2325429101`，而 shared raw 与 equal-row retention 分别为
+`0.3198013104` 与 `0.3549335801`。
 
-这是 `NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION`；正交投影
-identity 是 declared finite linear algebra，独立复现与稳定性失败是 scoped finite facts，
+这是 `NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE`；stacked projection
+identity 是 declared finite linear algebra，shared-coefficient failure 是 scoped finite fact，
 不是 arithmetic estimate。source-uniform arithmetic `L2`、uniform masked operator bound、
 fixed-power credit 与 twin-prime endpoint 仍 open。Session-named evaluator files absent，
 故只记 local Bridge-B fail-closed，不宣称 official Route-A/Route-B pass。
 
-    TPC342_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
-    TPC342_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-    TPC342_INDEPENDENT_FRESH_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
-    TPC342_IN_SAMPLE_PROJECTION = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
-    TPC342_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
-    TPC342_IN_SAMPLE_RETENTION = NUMERICAL_OBSERVATION_0.270_TO_0.296
-    TPC342_HOLDOUT_RETENTION = NUMERICAL_OBSERVATION_0.589_TO_0.943
-    TPC342_CONTROL_STABILITY = REFUTED_SCOPED
-    TPC342_ARITHMETIC_ADVANCE = NO
-    TPC342_FIXED_POWER_CREDIT = 0
-    TPC342_SOURCE_UNIFORM_L2 = OPEN
-    TPC342_FULL_GATE_B = OPEN
-    TPC342_TWIN_PRIME_RESULT = NONE
-    TPC342_STATUS = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
-    TPC342_ROUND2_CLUE = CROSS_PANEL_META_CERTIFICATE_OR_ALTERNATIVE_NUISANCE_BASIS
+    TPC343_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
+    TPC343_STACKED_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC343_ROW_BLOCK_META = NUMERICALLY_CERTIFIED_FINITE_6_ROW_POOLED_PROJECTION
+    TPC343_SHARED_COEFFICIENT_RAW = NUMERICAL_OBSERVATION_0.319_TO_0.320
+    TPC343_SHARED_COEFFICIENT_EQUAL_ROW = NUMERICAL_OBSERVATION_0.354_TO_0.355
+    TPC343_SHARED_COEFFICIENT_STABILITY = REFUTED_SCOPED
+    TPC343_HOLDOUT_META = NUMERICALLY_CERTIFIED_FINITE_54_RECORDS
+    TPC343_ARITHMETIC_ADVANCE = NO
+    TPC343_FIXED_POWER_CREDIT = 0
+    TPC343_SOURCE_UNIFORM_L2 = OPEN
+    TPC343_FULL_GATE_B = OPEN
+    TPC343_TWIN_PRIME_RESULT = NONE
+    TPC343_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
+    TPC343_ROUND2_CLUE = ALTERNATIVE_NUISANCE_BASIS_OR_PRINCIPAL_ANGLE_AUDIT
+
+## V195 / TPC-342 previous anchor
+
+TPC-342 independently reproduced TPC-341 on windows `[40097,40608]`, `[40609,41120]`,
+and `[41121,41632]`; its in-sample retention was `0.2701410521--0.2951006120` and
+its 27 held-out retentions were `0.5894842476--0.9429165296`.
 
 ## V194 / TPC-341 previous anchor
 

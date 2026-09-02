@@ -1,47 +1,68 @@
 # TPC HANDOFF
 
-TPC-342 current section: independent fresh-panel holdout reproduction
+TPC-343 current section: cross-panel shared-nuisance meta-certificate
 -----------------------------------------------------------------------------------------------
 
-TPC-342 locks the TPC-341 nuisance-projection protocol and changes only the source panel.
-The new mutually disjoint, cutoff-safe windows are `[40097,40608]`, `[40609,41120]`,
-and `[41121,41632]`; the all-plus `Q=54`, exponent `1`, `H=66` operator, nine controls,
-four masks, SVD rank rule, and guards are unchanged.
+TPC-343 locks both the TPC-341 parent panel and the TPC-342 independent panel, preserving
+the all-plus `Q=54`, exponent `1`, `H=66` operator, nine controls, four masks, and cutoff.
+It compares a row-block nuisance span (one coefficient vector per row) with a shared span
+(one coefficient vector across all six rows).
 
-The nine-control twin-mean projection retains `0.2701410521--0.2951006120` of in-sample
-energy.  All 27 hostile leave-one-control-out tests retain
-`0.5894842476--0.9429165296`.  Thus the TPC-341 aggregate-versus-holdout split reproduces
-on an independent source panel, while mean-only nuisance removal again fails to transfer to
-a control-invariant twin component.  The projection/Pythagorean identity is exact finite
-linear algebra; the reproduction and stability failure are scoped finite facts. Producer,
-reverse-shell independent replay, six-mutation stress, PDF audit, and the local fail-closed
-Bridge-B checker all pass.
+The row-block pooled raw-energy projection retains `0.2325429101` of in-sample energy;
+the equal-row version retains `0.2502856954`.  The shared coefficient model retains
+`0.3198013104` under raw weighting and `0.3549335801` under equal-row weighting, so both
+fail the inherited `<0.30` guard.  The nine shared cross-panel holdout stacks retain
+`0.6408306196--0.9090948298`; all 54 individual holdout records retain
+`0.4435267486--0.9429165296`.
+
+The stacked projection/Pythagorean identity and row-block energy additivity are exact finite
+linear algebra.  The shared-law failure is a scoped finite model obstruction, not an
+arithmetic estimate.  Producer, reverse-shell independent replay, seven-mutation stress,
+PDF audit, and the local fail-closed Bridge-B checker all pass.
+
+    TPC343_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
+    TPC343_STACKED_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC343_ROW_BLOCK_META = NUMERICALLY_CERTIFIED_FINITE_6_ROW_POOLED_PROJECTION
+    TPC343_SHARED_COEFFICIENT_RAW = NUMERICAL_OBSERVATION_0.319_TO_0.320
+    TPC343_SHARED_COEFFICIENT_EQUAL_ROW = NUMERICAL_OBSERVATION_0.354_TO_0.355
+    TPC343_SHARED_COEFFICIENT_STABILITY = REFUTED_SCOPED
+    TPC343_HOLDOUT_META = NUMERICALLY_CERTIFIED_FINITE_54_RECORDS
+    TPC343_ARITHMETIC_ADVANCE = NO
+    TPC343_FIXED_POWER_CREDIT = 0
+    TPC343_SOURCE_UNIFORM_L2 = OPEN
+    TPC343_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC343_FULL_GATE_B = OPEN
+    TPC343_TWIN_PRIME_RESULT = NONE
+    TPC343_STRONGEST_POSITIVE = ROW_BLOCK_META_REMAINS_STRONG_ACROSS_TWO_PANELS
+    TPC343_STRONGEST_OBSTRUCTION = SHARED_COEFFICIENT_GUARD_FAILS_UNDER_TWO_WEIGHTINGS
+    TPC343_OPEN_THEOREM = ALTERNATIVE_CANONICAL_BASIS_OR_SOURCE_UNIFORM_L2
+    TPC343_REUSABLE_STRUCTURE = PANEL_STACK_ROW_BLOCK_VERSUS_SHARED_COLUMN_AUDIT
+    TPC343_ROUND2_CLUE = ALTERNATIVE_NUISANCE_BASIS_OR_PRINCIPAL_ANGLE_AUDIT
+    TPC343_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
+
+Session-named Route-A/Route-B evaluator files are absent in this checkout.  The local
+Bridge-B wrapper is a fail-closed fallback and cannot be written as an official evaluator
+pass.  The next smallest nonduplicative question is an alternative nuisance basis or
+principal-angle audit; no arithmetic promotion is licensed by this finite comparison.
+
+TPC-342 previous section: independent fresh-panel holdout reproduction
+-----------------------------------------------------------------------------------------------
+
+TPC-342 locked and reproduced the TPC-341 nuisance-projection protocol on the disjoint,
+cutoff-safe windows `[40097,40608]`, `[40609,41120]`, and `[41121,41632]`.  Its in-sample
+retention was `0.2701410521--0.2951006120`, while all 27 held-out retentions were
+`0.5894842476--0.9429165296`.  It is the direct panel parent of TPC-343.
 
     TPC342_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
     TPC342_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
     TPC342_INDEPENDENT_FRESH_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
-    TPC342_IN_SAMPLE_PROJECTION = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
     TPC342_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
-    TPC342_IN_SAMPLE_RETENTION = NUMERICAL_OBSERVATION_0.270_TO_0.296
-    TPC342_HOLDOUT_RETENTION = NUMERICAL_OBSERVATION_0.589_TO_0.943
     TPC342_CONTROL_STABILITY = REFUTED_SCOPED
     TPC342_ARITHMETIC_ADVANCE = NO
     TPC342_FIXED_POWER_CREDIT = 0
-    TPC342_SOURCE_UNIFORM_L2 = OPEN
-    TPC342_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
     TPC342_FULL_GATE_B = OPEN
     TPC342_TWIN_PRIME_RESULT = NONE
-    TPC342_STRONGEST_POSITIVE = INDEPENDENT_PANEL_REPRODUCES_AGGREGATE_VERSUS_HOLDOUT_SPLIT
-    TPC342_STRONGEST_OBSTRUCTION = ALL_27_HELDOUT_TESTS_REJECT_CONTROL_STABILITY
-    TPC342_OPEN_THEOREM = SOURCE_UNIFORM_L2_OR_CANONICAL_NUISANCE_DECOMPOSITION
-    TPC342_REUSABLE_STRUCTURE = PROTOCOL_HASH_LOCK_TO_DISJOINT_PANEL_REVERSE_SHELL_REPLAY
-    TPC342_ROUND2_CLUE = CROSS_PANEL_META_CERTIFICATE_OR_ALTERNATIVE_NUISANCE_BASIS
     TPC342_STATUS = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
-
-Session-named Route-A/Route-B evaluator files are absent in this checkout.  The local
-Bridge-B wrapper is a fail-closed fallback and cannot be written as an official evaluator
-pass.  The next smallest nonduplicative question is a cross-panel meta certificate; no
-arithmetic promotion is licensed by the reproduction.
 
 TPC-341 previous section: fresh holdout nuisance orthogonalization
 -----------------------------------------------------------------------------------------------
@@ -11709,12 +11730,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V195/TPC-342 是当前 release；其 producer、reverse-shell independent replay、stress
-audit 与 independent fresh-panel reproduction bridge 已封存。TPC-341、TPC-340、TPC-339、TPC-338、
+V196/TPC-343 是当前 release；其 producer、reverse-shell independent replay、stress
+audit 与 cross-panel meta bridge 已封存。TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
 TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
 TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 389 对 normal/optimized 命令、778 次
+当前 curated cascade command set 共 393 对 normal/optimized 命令、786 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -11733,7 +11754,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -11752,6 +11773,11 @@ source-uniform arithmetic `L2`、fixed-power saving 或 official Route-A/Route-B
 V195/TPC-342 的新增 4 对由 project producer、reverse-shell independent checker、
 mutation stress 与 local Bridge-B checker 逐项验证；其 independent finite reproduction
 不代表 source-uniform arithmetic `L2`、fixed-power saving 或 official evaluator pass。
+
+V196/TPC-343 的新增 4 对由 project producer、reverse-shell independent checker、
+meta stress 与 local Bridge-B checker 逐项验证；其 cross-panel shared-coefficient
+obstruction 不代表 alternative-basis impossibility、source-uniform arithmetic `L2`、
+fixed-power saving 或 official evaluator pass。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
@@ -13099,6 +13125,25 @@ holdout_records=27 / rank_failures=0 / exact_anchor=1`。这是 V195 的 indepen
 finite reproduction，不代表 canonical nuisance decomposition、arithmetic saving 或
 twin-prime conclusion。
 
+TPC-343 的项目级 producer、reverse-shell independent replay、meta stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-343-cross-panel-meta-certificate/code/tpc343_cross_panel_meta_certificate.py --check
+python -O -B papers/tpc-343-cross-panel-meta-certificate/code/tpc343_cross_panel_meta_certificate.py --check
+python -B papers/tpc-343-cross-panel-meta-certificate/experiments/tpc343_independent_checker.py --check
+python -O -B papers/tpc-343-cross-panel-meta-certificate/experiments/tpc343_independent_checker.py --check
+python -B papers/tpc-343-cross-panel-meta-certificate/experiments/tpc343_meta_stress.py --check
+python -O -B papers/tpc-343-cross-panel-meta-certificate/experiments/tpc343_meta_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc343_cross_panel_meta_certificate_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc343_cross_panel_meta_certificate_checker.py --check
+```
+
+TPC-343 增量 tail audit：4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `panels=2 / rows=6 / controls=9 /
+raw_records=216 / holdout_records=54 / shared_guard=REFUTED_SCOPED`。这是 V196 的
+finite shared-coefficient model obstruction，不代表 alternative-basis impossibility、
+source-uniform arithmetic `L2` 或 twin-prime conclusion。
+
 TPC-327 的项目级 producer、independent replay、three-origin stress 与 bridge checker：
 
 ```bash
@@ -13160,7 +13205,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-最新 TPC-342 入口：
+最新 TPC-343 入口：
+
+papers/tpc-343-cross-panel-meta-certificate/README.md
+papers/tpc-343-cross-panel-meta-certificate/PAPER_PLAN.md
+papers/tpc-343-cross-panel-meta-certificate/DERIVATION_PACKAGE.md
+papers/tpc-343-cross-panel-meta-certificate/PROOF_PACKAGE.md
+papers/tpc-343-cross-panel-meta-certificate/code/tpc343_cross_panel_meta_certificate.py
+papers/tpc-343-cross-panel-meta-certificate/experiments/tpc343_independent_checker.py
+papers/tpc-343-cross-panel-meta-certificate/experiments/tpc343_meta_stress.py
+papers/tpc-343-cross-panel-meta-certificate/results/tpc343_certificate.json
+papers/tpc-343-cross-panel-meta-certificate/notes/theorem_ledger.md
+papers/tpc-343-cross-panel-meta-certificate/notes/claim_firewall.md
+papers/tpc-343-cross-panel-meta-certificate/notes/computational_protocol.md
+papers/tpc-343-cross-panel-meta-certificate/notes/route_evaluation.md
+papers/tpc-343-cross-panel-meta-certificate/paper/main.tex
+papers/tpc-343-cross-panel-meta-certificate/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc343_cross_panel_meta_certificate.md
+research/tpc-big-road/tpc_bridge_b_tpc343_cross_panel_meta_certificate_checker.py
+
+TPC-342 panel parent 入口：
 
 papers/tpc-342-independent-fresh-holdout-reproduction/README.md
 papers/tpc-342-independent-fresh-holdout-reproduction/PAPER_PLAN.md

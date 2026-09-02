@@ -3,13 +3,66 @@
 
 更新时间：2026-09-02
 
-状态：**TPC342_NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC343_NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.136 current：TPC-342 independent fresh-panel reproduction
+## 0.137 current：TPC-343 cross-panel shared-nuisance meta-certificate
+
+项目：papers/tpc-343-cross-panel-meta-certificate/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE**。
+
+TPC-343 承接 TPC-342 的真实结论：TPC-341 的 aggregate-versus-holdout split 已在
+独立 panel 上复现，但这还没有说明 nuisance projection 存在一个跨 panel 的共同
+系数律。本项目锁定 TPC-341 与 TPC-342 的两个三窗口 panels，共六个
+cutoff-safe rows，并比较两个明确的 finite stacking models：row-block model 允许
+每个 row 使用独立 nuisance coefficients；shared model 强制六个 rows 共用一个
+三维 nuisance coefficient vector。
+
+六 rows 产生 216 个 raw records、171 个 nonempty records、6 个 in-sample projections
+与 54 个 leave-one-control-out records。row-block raw-energy pooled residual retention
+为 `0.23254291005354055`，equal-row 版本为 `0.25028569537510303`，均通过继承的
+`<0.30` guard。shared raw-energy retention 为 `0.31980131035540693`，equal-row
+retention 为 `0.35493358014194187`，两者均超过同一 guard；九个 shared cross-panel
+holdout stacks 的 raw retention 为 `0.64083061957187526--0.90909482975034406`。
+
+最强正结果：row-block projection 的 stacked Pythagorean identity 与 energy additivity
+是 exact finite；两个独立 panels 的 row-local fit 在 pooled certificate 中仍然可重放。
+
+最强 obstruction：single shared nuisance coefficient law 在 raw 与 equal-row 两种
+预声明权重下都失败。这是对该 finite basis/model 的 scoped refutation，不是对所有
+nuisance bases 的否定。
+
+开放定理：canonical nuisance basis、source-uniform arithmetic `L2`、uniform masked
+operator bound、strict `1/400` payment 与 full Route-B Gate B。fixed-power credit 为
+`0`，twin-prime conclusion 为 `NONE`。
+
+可复用结构：
+
+    independent panels -> row-block direct sum -> shared-column stack
+                       -> weighting sensitivity -> scoped coefficient-stability test
+
+ROUND2_CLUE：`ALTERNATIVE_NUISANCE_BASIS_OR_PRINCIPAL_ANGLE_AUDIT`。
+
+    TPC343_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
+    TPC343_STACKED_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC343_ROW_BLOCK_META = NUMERICALLY_CERTIFIED_FINITE_6_ROW_POOLED_PROJECTION
+    TPC343_SHARED_COEFFICIENT_RAW = NUMERICAL_OBSERVATION_0.319_TO_0.320
+    TPC343_SHARED_COEFFICIENT_EQUAL_ROW = NUMERICAL_OBSERVATION_0.354_TO_0.355
+    TPC343_SHARED_COEFFICIENT_STABILITY = REFUTED_SCOPED
+    TPC343_HOLDOUT_META = NUMERICALLY_CERTIFIED_FINITE_54_RECORDS
+    TPC343_ARITHMETIC_ADVANCE = NO
+    TPC343_FIXED_POWER_CREDIT = 0
+    TPC343_SOURCE_UNIFORM_L2 = OPEN
+    TPC343_FULL_GATE_B = OPEN
+    TPC343_TWIN_PRIME_RESULT = NONE
+    TPC343_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
+    TPC343_ROUND2_CLUE = ALTERNATIVE_NUISANCE_BASIS_OR_PRINCIPAL_ANGLE_AUDIT
+
+## 0.136 released：TPC-342 independent fresh-panel reproduction
 
 项目：papers/tpc-342-independent-fresh-holdout-reproduction/
 
