@@ -3,13 +3,65 @@
 
 更新时间：2026-09-03
 
-状态：**TPC356_NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_NORMALIZATION_HOLDOUT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC357_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_NORM_SCALE_LADDER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.150 current：TPC-356 geometry-adversarial normalization holdout
+## 0.151 current：TPC-357 operator-norm scale ladder
+
+项目：papers/tpc-357-operator-norm-scale-ladder/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_OPERATOR_NORM_SCALE_LADDER**。
+
+TPC-357 冻结 TPC-356 geometry-only adversarial selection 得到的三个 origins
+`38423,42010,45597`，把 count ladder 扩展为 `256,512,1024,2048`，并在
+`Q=24,54,80`、kernel exponents `1,2` 与四种 sign laws 上完成 operator-only
+replay。每个 raw/normalized law matrix 都记录 Schur row-sum 与 Frobenius envelope，
+共 `288` rows；all-plus raw/normalized matrix 的极端 eigenvalues 另在 `72` rows
+上重放。父代代码与证书均 hash-locked，选择与本篇均不使用 source response。
+
+最强正结果：normalized Schur maximum 为 `0.8077815961017315`，all-plus normalized
+spectral maximum 为 `0.62665294142584216`，而 raw all-plus spectral maximum 为
+`1542.7455490253569`；所有记录的 spectral values 均满足有限 Schur/Frobenius
+envelopes。有限 transition audit 给出 54 个相邻 count transitions 中 normalized
+all-plus spectral `15` 增、`35` 降、`4` 平（guard `1e-6`）。
+
+最强 obstruction：normalized spectral decay 并不单调，且有限 cap 没有 origin/scale
+uniformity。于是 `TPC357_SCALE_MONOTONE_DECAY=REFUTED_SCOPED_ON_DECLARED_LADDER`，
+而不是 asymptotic refutation；growing operator bound、source-uniform arithmetic
+`L2`、Route-B reassembly 与 twin-prime endpoint 仍 open。
+
+开放定理：fresh origin-scale spectral holdout 或 uniform masked-operator theorem。
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`、
+`TWIN_PRIME_RESULT=NONE`；official evaluator files absent，local Bridge-B 为
+fail-closed fallback。
+
+可复用结构：
+
+    frozen geometry normalization -> all-law Schur/Frobenius envelope
+      -> all-plus spectral scale ladder -> independent reverse-shell replay
+      -> finite cap plus explicit monotonicity obstruction
+
+ROUND2_CLUE：`ATTACK_THE_FINITE_NORMALIZED_SPECTRAL_CAP_ON_A_PREREGISTERED_FRESH_ORIGIN_SCALE_HOLDOUT_BEFORE_ANY_UNIFORM_CLAIM`。
+
+    TPC357_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_NORM_SCALE_LADDER
+    TPC357_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC357_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC357_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC357_NORMALIZED_SCHUR_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC357_ALL_PLUS_SPECTRAL_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC357_SCALE_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
+    TPC357_GROWING_OPERATOR_BOUND = OPEN
+    TPC357_SOURCE_UNIFORM_L2 = OPEN
+    TPC357_ARITHMETIC_ADVANCE = NO
+    TPC357_FIXED_POWER_CREDIT = 0
+    TPC357_FULL_GATE_B = OPEN
+    TPC357_TWIN_PRIME_RESULT = NONE
+    TPC357_STATUS = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_NORM_SCALE_LADDER
+
+## 0.150 previous：TPC-356 geometry-adversarial normalization holdout
 
 项目：papers/tpc-356-geometry-adversarial-normalization-holdout/
 

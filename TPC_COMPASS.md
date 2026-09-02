@@ -1,13 +1,48 @@
 # TPC distilled map and bold channel
 
-## V209 / TPC-356 current anchor
+## V210 / TPC-357 current anchor
 
 更新时间：2026-09-03
 
 当前入口：proof 为
-research/tpc-big-road/bridge_b_tpc356_geometry_adversarial_normalization_holdout.md，
-checker 为 tpc_bridge_b_tpc356_geometry_adversarial_normalization_holdout_checker.py，
-编号论文为 papers/tpc-356-geometry-adversarial-normalization-holdout/。
+research/tpc-big-road/bridge_b_tpc357_operator_norm_scale_ladder.md，checker 为
+tpc_bridge_b_tpc357_operator_norm_scale_ladder_checker.py，编号论文为
+papers/tpc-357-operator-norm-scale-ladder/。
+
+TPC-357 冻结 TPC-356 的三个 geometry-adversarial origins
+`38423,42010,45597`，将 count ladder 扩展为 `256,512,1024,2048`，并在
+`Q=24,54,80`、exponents `1,2` 与四种 sign laws 上完成 `288` 个 operator rows。
+所有 rows 都记录 raw/normalized Schur row-sum 与 Frobenius envelopes；all-plus 的
+`72` 个 raw/normalized rows 另计算真谱范数。normalized Schur 最大值为
+`0.8077815961017315`，all-plus normalized spectral 最大值为
+`0.62665294142584216`，raw all-plus spectral 最大值为 `1542.7455490253569`。
+在 54 个相邻 count transitions 中，normalized all-plus spectral 为 `15` 增、`35`
+降、`4` 平（guard `1e-6`）。
+
+这是 finite operator-envelope certificate 与 scoped monotonicity obstruction：
+Schur/Frobenius inequalities 是 exact finite，数值 cap 只属于声明 panel，而
+monotone decay 在该 ladder 上 `REFUTED_SCOPED`。source-uniform arithmetic L2、
+growing masked-operator bound、fixed-power credit、full Gate B、Route-B reassembly
+与 twin-prime endpoint 仍 open，arithmetic advance 为 NO。official evaluator files
+absent，local Bridge-B 仍是 fail-closed fallback。
+
+    TPC357_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_NORM_SCALE_LADDER
+    TPC357_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC357_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC357_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC357_NORMALIZED_SCHUR_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC357_ALL_PLUS_SPECTRAL_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC357_SCALE_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
+    TPC357_GROWING_OPERATOR_BOUND = OPEN
+    TPC357_SOURCE_UNIFORM_L2 = OPEN
+    TPC357_ARITHMETIC_ADVANCE = NO
+    TPC357_FIXED_POWER_CREDIT = 0
+    TPC357_FULL_GATE_B = OPEN
+    TPC357_TWIN_PRIME_RESULT = NONE
+    TPC357_STATUS = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_NORM_SCALE_LADDER
+    TPC357_ROUND2_CLUE = ATTACK_THE_FINITE_NORMALIZED_SPECTRAL_CAP_ON_A_PREREGISTERED_FRESH_ORIGIN_SCALE_HOLDOUT_BEFORE_ANY_UNIFORM_CLAIM
+
+## V209 / TPC-356 previous anchor
 
 TPC-356 冻结 TPC-355 的 unsigned mask-energy congruence，并在 51 个晚期候选 origins
 上只用 count 256 的六组 unsigned geometry spread 做 adversarial 选择；按 descending

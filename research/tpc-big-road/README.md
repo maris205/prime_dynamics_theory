@@ -1,13 +1,45 @@
-# TPC big road V209 / TPC-356: geometry-adversarial normalization holdout
+# TPC big road V210 / TPC-357: operator-norm scale ladder
 
-## V209 current anchor: TPC-356
+## V210 current anchor: TPC-357
 
 更新时间：2026-09-03
 
-当前 TPC-356 proof 为
-bridge_b_tpc356_geometry_adversarial_normalization_holdout.md，checker 为
-tpc_bridge_b_tpc356_geometry_adversarial_normalization_holdout_checker.py，编号论文为
-../../papers/tpc-356-geometry-adversarial-normalization-holdout/。
+当前 TPC-357 proof 为 bridge_b_tpc357_operator_norm_scale_ladder.md，checker 为
+tpc_bridge_b_tpc357_operator_norm_scale_ladder_checker.py，编号论文为
+../../papers/tpc-357-operator-norm-scale-ladder/。
+
+TPC-357 冻结 TPC-356 已选出的三个 origins `38423,42010,45597`，把 count ladder
+扩展为 `256,512,1024,2048`，并在 `Q=24,54,80`、exponents `1,2` 与四种 sign laws
+上完成 `288` 个 operator rows。每行都记录 raw/normalized Schur 与 Frobenius
+envelopes；all-plus 的 72 rows 另计算真谱范数。normalized Schur 最大值为
+`0.8077815961017315`，normalized all-plus spectral 最大值为
+`0.62665294142584216`，raw all-plus spectral 最大值为 `1542.7455490253569`。
+54 个相邻尺度转移中，normalized spectral 为 `15` 增、`35` 降、`4` 平。
+
+这是 finite operator-envelope certificate；Schur/Frobenius 关系为 exact finite，
+数值 cap 只对声明 panel 有效。normalized all-plus monotone decay 在该 ladder 上
+为 `REFUTED_SCOPED_ON_DECLARED_LADDER`，但 growing operator bound、source-uniform
+arithmetic L2、fixed-power credit、Route-B reassembly、full Gate B 与 twin-prime
+result 仍 open，arithmetic advance 仍 NO。official evaluator files absent，local
+Bridge-B fail-closed。
+
+    TPC357_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_NORM_SCALE_LADDER
+    TPC357_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC357_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC357_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC357_NORMALIZED_SCHUR_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC357_ALL_PLUS_SPECTRAL_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC357_SCALE_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
+    TPC357_GROWING_OPERATOR_BOUND = OPEN
+    TPC357_SOURCE_UNIFORM_L2 = OPEN
+    TPC357_ARITHMETIC_ADVANCE = NO
+    TPC357_FIXED_POWER_CREDIT = 0
+    TPC357_FULL_GATE_B = OPEN
+    TPC357_TWIN_PRIME_RESULT = NONE
+    TPC357_STATUS = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_NORM_SCALE_LADDER
+    TPC357_ROUND2_CLUE = ATTACK_THE_FINITE_NORMALIZED_SPECTRAL_CAP_ON_A_PREREGISTERED_FRESH_ORIGIN_SCALE_HOLDOUT_BEFORE_ANY_UNIFORM_CLAIM
+
+## V209 / TPC-356 previous anchor
 
 TPC-356 冻结 TPC-355 normalization，并把 origin 选择变成 response-blind 的
 geometry-adversarial holdout：在 51 个候选上用 count 256 的六个 unsigned geometry

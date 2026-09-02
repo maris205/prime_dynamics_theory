@@ -1,9 +1,72 @@
 # TPC HANDOFF
 
-TPC-356 current section: geometry-adversarial normalization holdout
-------------------------------------------------------------------
+TPC-357 current section: operator-norm scale ladder
+---------------------------------------------------
 
-TPC-356 is the current sealed release.  It freezes the TPC-355 unsigned
+TPC-357 is the current sealed release.  It freezes the three origins selected
+by TPC-356's response-blind geometry rule, `(38423,42010,45597)`, and extends
+the interval count ladder to `256,512,1024,2048`.  The shell anchors are
+`Q=24,54,80`, the kernel exponents are `1,2`, the height is `66`, and the four
+sign laws are retained.  No source response is used by this operator-only
+experiment.
+
+All four laws receive raw and normalized Schur row-sum and Frobenius envelopes
+on `288` rows.  The all-plus law additionally receives raw and normalized
+extreme-eigenvalue replay on `72` rows.  The normalized Schur maximum is
+`0.8077815961017315`; the normalized all-plus spectral maximum is
+`0.62665294142584216`; the raw all-plus spectral maximum is
+`1542.7455490253569`.  The normalized spectral scale transition census is
+`15` increases, `35` decreases, and `4` flats under guard `1e-6`.
+
+The finite Schur/Frobenius inequalities and positive finite congruence are
+exact within the declared model.  The replay is numerically certified by the
+forward producer, reverse-shell independent checker, 12-mutation stress test,
+and local Bridge-B checker in normal and optimized modes.  The monotone-decay
+hypothesis is `REFUTED_SCOPED_ON_DECLARED_LADDER`, not an asymptotic claim.
+
+The strongest obstruction is that neither the finite cap nor the envelope
+controls growing origins or intervals.  No source-uniform arithmetic `L2`,
+growing masked-operator theorem, fixed-power credit, Route-B reassembly, or
+twin-prime conclusion is licensed.  The official Session-named evaluator
+files remain absent; local Bridge-B is fail-closed fallback evidence only.
+
+    TPC357_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_NORM_SCALE_LADDER
+    TPC357_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC357_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC357_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC357_NORMALIZED_SCHUR_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC357_ALL_PLUS_SPECTRAL_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC357_SCALE_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
+    TPC357_GROWING_OPERATOR_BOUND = OPEN
+    TPC357_SOURCE_UNIFORM_L2 = OPEN
+    TPC357_ARITHMETIC_ADVANCE = NO
+    TPC357_FIXED_POWER_CREDIT = 0
+    TPC357_FULL_GATE_B = OPEN
+    TPC357_TWIN_PRIME_RESULT = NONE
+    TPC357_STRONGEST_POSITIVE = FINITE_NORMALIZED_OPERATOR_ENVELOPE_288_ROWS
+    TPC357_STRONGEST_OBSTRUCTION = NORMALIZED_SPECTRAL_NONMONOTONICITY_AND_NO_GROWING_BOUND
+    TPC357_OPEN_THEOREM = FRESH_ORIGIN_SCALE_HOLDOUT_OR_UNIFORM_MASKED_OPERATOR_BOUND
+    TPC357_REUSABLE_STRUCTURE = FINITE_SCHUR_FROBENIUS_PLUS_SPECTRAL_SCALE_LADDER
+    TPC357_ROUND2_CLUE = ATTACK_THE_FINITE_NORMALIZED_SPECTRAL_CAP_ON_A_PREREGISTERED_FRESH_ORIGIN_SCALE_HOLDOUT_BEFORE_ANY_UNIFORM_CLAIM
+    TPC357_STATUS = NUMERICALLY_CERTIFIED_FINITE_OPERATOR_NORM_SCALE_LADDER
+
+TPC-357 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-357-operator-norm-scale-ladder/code/tpc357_operator_norm_scale_ladder.py --write
+    python -B papers/tpc-357-operator-norm-scale-ladder/code/tpc357_operator_norm_scale_ladder.py --check
+    python -O -B papers/tpc-357-operator-norm-scale-ladder/code/tpc357_operator_norm_scale_ladder.py --check
+    python -B papers/tpc-357-operator-norm-scale-ladder/experiments/tpc357_independent_checker.py --check
+    python -O -B papers/tpc-357-operator-norm-scale-ladder/experiments/tpc357_independent_checker.py --check
+    python -B papers/tpc-357-operator-norm-scale-ladder/experiments/tpc357_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-357-operator-norm-scale-ladder/experiments/tpc357_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc357_operator_norm_scale_ladder_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc357_operator_norm_scale_ladder_checker.py --check
+
+TPC-356 previous section: geometry-adversarial normalization holdout
+---------------------------------------------------------------------
+
+TPC-356 is the previous sealed release.  It freezes the TPC-355 unsigned
 mask-energy congruence and tests it under a predeclared geometry-only
 adversarial origin selection.  The candidate list is `38001+211j` for
 `0<=j<=50`; count `256` pilot geometry is scored by the largest unsigned
@@ -12556,13 +12619,15 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V209/TPC-356 是当前 release；其 geometry-adversarial raw/normalized producer、reverse-shell independent
-replay、polarization stress audit 与 literal masked-operator Bridge-B 已封存。
-V206/TPC-353、V205/TPC-352、V204/TPC-351、V203/TPC-350、V202/TPC-349、V201/TPC-348、TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
-TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
-TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
+V210/TPC-357 是当前 release；其 finite operator-envelope producer、reverse-shell independent
+replay、certificate stress audit 与 literal masked-operator Bridge-B 已封存。
+V209/TPC-356、V208/TPC-355、V207/TPC-354、V206/TPC-353、V205/TPC-352、V204/TPC-351、
+V203/TPC-350、V202/TPC-349、V201/TPC-348、TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、
+TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、TPC-334、
+TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
+TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 445 对 normal/optimized 命令、890 次
+当前 curated cascade command set 共 446 对 normal/optimized 命令、892 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -12581,7 +12646,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356 各再追加末尾 4 对。
+	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -14283,6 +14348,32 @@ source-uniform arithmetic `L2`、growing masked-operator theorem、fixed-power s
 Route-B reassembly、official evaluator pass 与 twin-prime result 仍未关闭；下一步为
 origin-scale/operator-norm certificate。
 
+TPC-357 的项目级 producer、reverse-shell independent replay、certificate stress 与
+bridge checker：
+
+```bash
+python -B papers/tpc-357-operator-norm-scale-ladder/code/tpc357_operator_norm_scale_ladder.py --write
+python -B papers/tpc-357-operator-norm-scale-ladder/code/tpc357_operator_norm_scale_ladder.py --check
+python -O -B papers/tpc-357-operator-norm-scale-ladder/code/tpc357_operator_norm_scale_ladder.py --check
+python -B papers/tpc-357-operator-norm-scale-ladder/experiments/tpc357_independent_checker.py --check
+python -O -B papers/tpc-357-operator-norm-scale-ladder/experiments/tpc357_independent_checker.py --check
+python -B papers/tpc-357-operator-norm-scale-ladder/experiments/tpc357_adversarial_certificate_stress.py --check
+python -O -B papers/tpc-357-operator-norm-scale-ladder/experiments/tpc357_adversarial_certificate_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc357_operator_norm_scale_ladder_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc357_operator_norm_scale_ladder_checker.py --check
+```
+
+TPC-357 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 必须返回零、
+stderr 为空且 stdout 逐对 byte-identical；Bridge-B 输出
+`rows=288 / spectral_rows=72 / normalized_schur_max=0.8077815961017315 /
+normalized_spectral_max=0.62665294142584216 / increases=15 / decreases=35 / flats=4`。
+这是 V210 的 finite operator-envelope audit：Schur/Frobenius inequalities 为
+exact finite，数值 cap 只属于声明 panel；normalized all-plus monotone decay 在
+该 ladder 上 `REFUTED_SCOPED_ON_DECLARED_LADDER`，但 growing operator bound、
+source-uniform arithmetic `L2`、fixed-power saving、Route-B reassembly、official
+evaluator pass 与 twin-prime result 仍未关闭；下一步是 fresh pre-registered
+origin-scale spectral holdout。
+
 TPC-349 的项目级 producer、reverse-shell independent replay、signed-witness stress 与
 bridge checker：
 
@@ -14410,7 +14501,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-356 current release 入口：
+TPC-357 current release 入口：
+
+papers/tpc-357-operator-norm-scale-ladder/README.md
+papers/tpc-357-operator-norm-scale-ladder/PAPER_PLAN.md
+papers/tpc-357-operator-norm-scale-ladder/DERIVATION_PACKAGE.md
+papers/tpc-357-operator-norm-scale-ladder/PROOF_PACKAGE.md
+papers/tpc-357-operator-norm-scale-ladder/code/tpc357_operator_norm_scale_ladder.py
+papers/tpc-357-operator-norm-scale-ladder/experiments/tpc357_independent_checker.py
+papers/tpc-357-operator-norm-scale-ladder/experiments/tpc357_adversarial_certificate_stress.py
+papers/tpc-357-operator-norm-scale-ladder/results/tpc357_certificate.json
+papers/tpc-357-operator-norm-scale-ladder/notes/theorem_ledger.md
+papers/tpc-357-operator-norm-scale-ladder/notes/claim_firewall.md
+papers/tpc-357-operator-norm-scale-ladder/notes/computational_protocol.md
+papers/tpc-357-operator-norm-scale-ladder/notes/route_evaluation.md
+papers/tpc-357-operator-norm-scale-ladder/paper/main.tex
+papers/tpc-357-operator-norm-scale-ladder/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc357_operator_norm_scale_ladder.md
+research/tpc-big-road/tpc_bridge_b_tpc357_operator_norm_scale_ladder_checker.py
+
+TPC-356 previous release 入口：
 
 papers/tpc-356-geometry-adversarial-normalization-holdout/README.md
 papers/tpc-356-geometry-adversarial-normalization-holdout/PAPER_PLAN.md
