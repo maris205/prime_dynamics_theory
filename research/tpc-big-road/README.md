@@ -1,13 +1,47 @@
-# TPC big road V208 / TPC-355: position-aware mask-energy normalization
+# TPC big road V209 / TPC-356: geometry-adversarial normalization holdout
 
-## V208 current anchor: TPC-355
+## V209 current anchor: TPC-356
 
 更新时间：2026-09-03
 
-当前 TPC-355 proof 为
-bridge_b_tpc355_position_aware_mask_energy_normalization.md，checker 为
-tpc_bridge_b_tpc355_position_aware_mask_energy_normalization_checker.py，编号论文为
-../../papers/tpc-355-position-aware-mask-energy-normalization/。
+当前 TPC-356 proof 为
+bridge_b_tpc356_geometry_adversarial_normalization_holdout.md，checker 为
+tpc_bridge_b_tpc356_geometry_adversarial_normalization_holdout_checker.py，编号论文为
+../../papers/tpc-356-geometry-adversarial-normalization-holdout/。
+
+TPC-356 冻结 TPC-355 normalization，并把 origin 选择变成 response-blind 的
+geometry-adversarial holdout：在 51 个候选上用 count 256 的六个 unsigned geometry
+spread 排序，按最小间隔 1536 的 greedy rule 选择 38423、42010、45597。随后固定
+父代 counts、shell anchors、exponents 与四种 sign laws 重放 216 rows；raw 与
+normalized alignment 均为 216/216 positive。all-plus minimum/mean 分别从
+0.63140161782616067/0.8687258535297816 升至
+0.65046429467683675/0.87560762679420479，有限 gains 为
+0.019062676850676086/0.0068817732644231855。
+
+这是有限 geometry-only transfer signal，不是 growing-origin 或 uniform operator
+bound；source-uniform arithmetic L2、fixed-power credit、Route-B reassembly、full
+Gate B 与 twin-prime result 仍 open，arithmetic advance 仍 NO。official evaluator
+files absent，local Bridge-B fail-closed。
+
+    TPC356_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_NORMALIZATION_HOLDOUT
+    TPC356_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_DETERMINISTIC
+    TPC356_SELECTION_RESPONSE_INDEPENDENCE = PROVED_EXACT_FINITE
+    TPC356_PANEL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC356_RAW_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC356_NORMALIZED_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC356_ALL_PLUS_MIN_GAIN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC356_ALL_PLUS_MEAN_GAIN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC356_UNIFORM_TRANSFER = OPEN
+    TPC356_SOURCE_UNIFORM_L2 = OPEN
+    TPC356_MASKED_OPERATOR_BOUND = OPEN
+    TPC356_ARITHMETIC_ADVANCE = NO
+    TPC356_FIXED_POWER_CREDIT = 0
+    TPC356_FULL_GATE_B = OPEN
+    TPC356_TWIN_PRIME_RESULT = NONE
+    TPC356_STATUS = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_NORMALIZATION_HOLDOUT
+    TPC356_ROUND2_CLUE = TEST_ORIGIN_SCALE_STABILITY_OR_OPERATOR_NORM_CERTIFICATE_BEFORE_ANY_ARITHMETIC_REASSEMBLY
+
+## V208 / TPC-355 previous anchor
 
 TPC-355 在 TPC-353 low parent、TPC-354 higher parent 与 fresh origins
 `29001,33001,37001` 上冻结同一个 finite V59 source/operator protocol，并预先定义

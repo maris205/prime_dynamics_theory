@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--355 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--356 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -148,6 +148,38 @@ TPC355_FULL_GATE_B = OPEN
 TPC355_TWIN_PRIME_RESULT = NONE
 TPC355_STATUS = NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT
 TPC355_ROUND2_CLUE = TEST_ADVERSARIAL_POSITION_NORMALIZATION_OR_LAW_INVARIANT_BOUND_ON_FRESH_ORIGINS
+```
+
+TPC-356 紧接着冻结 TPC-355 normalization，并把 origins 的选择本身变成一个
+response-blind adversarial test：在 38001+211j、0<=j<=50 的 51 个候选上，
+以 count 256 的六个 (Q,s) unsigned geometry spread 排序，按最小间隔 1536
+的 greedy rule 选出 (38423,42010,45597)。随后按父代完整 protocol 重放
+216 rows；raw 与 normalized alignment 均为 216/216 positive。all-plus
+minimum 从 0.63140161782616067 升至 0.65046429467683675，mean 从
+0.8687258535297816 升至 0.87560762679420479，有限 gain 分别为
+0.019062676850676086 与 0.0068817732644231855。这是 geometry-only
+selection 下的 finite transfer signal；origin/scale uniformity、source-uniform
+arithmetic L2、masked operator bound、fixed-power credit、Route-B reassembly
+与 twin-prime endpoint 仍 open，arithmetic advance 仍为 NO。
+
+```text
+TPC356_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_NORMALIZATION_HOLDOUT
+TPC356_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_DETERMINISTIC
+TPC356_SELECTION_RESPONSE_INDEPENDENCE = PROVED_EXACT_FINITE
+TPC356_PANEL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+TPC356_RAW_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+TPC356_NORMALIZED_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+TPC356_ALL_PLUS_MIN_GAIN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC356_ALL_PLUS_MEAN_GAIN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC356_UNIFORM_TRANSFER = OPEN
+TPC356_SOURCE_UNIFORM_L2 = OPEN
+TPC356_MASKED_OPERATOR_BOUND = OPEN
+TPC356_ARITHMETIC_ADVANCE = NO
+TPC356_FIXED_POWER_CREDIT = 0
+TPC356_FULL_GATE_B = OPEN
+TPC356_TWIN_PRIME_RESULT = NONE
+TPC356_STATUS = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_NORMALIZATION_HOLDOUT
+TPC356_ROUND2_CLUE = TEST_ORIGIN_SCALE_STABILITY_OR_OPERATOR_NORM_CERTIFICATE_BEFORE_ANY_ARITHMETIC_REASSEMBLY
 ```
 
 ```text
@@ -499,6 +531,13 @@ response/source/sign-law-independent 的 unsigned mask-energy diagonal congruenc
 panels 共 648 rows，all-plus minimum drop 有限缓解 37.75%，但 mean repair 与
 law-uniform alignment 均 scoped refuted；含 exact anchor、独立 reverse replay、10-
 mutation stress、PDF 与 local Bridge-B checker，arithmetic advance 仍为 NO。
+
+papers/tpc-356-geometry-adversarial-normalization-holdout - TPC-356 已完成项目 - 冻结
+TPC-355 normalization，并用 51 候选的 geometry-only adversarial selection 选出三个
+late origins；216 rows raw/normalized 均 216/216 positive，all-plus minimum/mean
+分别获得 0.01906/0.00688 的有限 scoped gain；含 exact anchor、独立 reverse-shell
+replay、10-mutation stress、PDF 与 local Bridge-B checker，uniform transfer 与
+arithmetic advance 仍为 OPEN/NO。
 
 papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram
 operator 的 6-row masked response ledger；zero/background/twin/prime-power gain

@@ -1,6 +1,47 @@
 # TPC distilled map and bold channel
 
-## V208 / TPC-355 current anchor
+## V209 / TPC-356 current anchor
+
+更新时间：2026-09-03
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc356_geometry_adversarial_normalization_holdout.md，
+checker 为 tpc_bridge_b_tpc356_geometry_adversarial_normalization_holdout_checker.py，
+编号论文为 papers/tpc-356-geometry-adversarial-normalization-holdout/。
+
+TPC-356 冻结 TPC-355 的 unsigned mask-energy congruence，并在 51 个晚期候选 origins
+上只用 count 256 的六组 unsigned geometry spread 做 adversarial 选择；按 descending
+score 与最小间隔 1536 的 greedy rule 选出 38423、42010、45597。选择不读取 source
+response 或 sign law。随后以 counts 256/512/1024、Q=24/54/80、exponents 1/2 与四种
+sign laws 重放 216 rows；raw 与 normalized 各为 216/216 positive。all-plus minimum
+从 0.63140161782616067 升到 0.65046429467683675，mean 从 0.8687258535297816
+升到 0.87560762679420479，有限 gains 为 0.019062676850676086 与
+0.0068817732644231855。
+
+这是 geometry-only adversarial finite transfer signal；它不提供 origin/scale uniform
+bound。source-uniform arithmetic L2、masked operator bound、fixed-power credit、full
+Gate B、Route-B reassembly 与 twin-prime endpoint 仍 open，arithmetic advance 为 NO。
+official evaluator files absent，local Bridge-B 仍是 fail-closed fallback。
+
+    TPC356_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_NORMALIZATION_HOLDOUT
+    TPC356_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_DETERMINISTIC
+    TPC356_SELECTION_RESPONSE_INDEPENDENCE = PROVED_EXACT_FINITE
+    TPC356_PANEL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC356_RAW_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC356_NORMALIZED_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC356_ALL_PLUS_MIN_GAIN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC356_ALL_PLUS_MEAN_GAIN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC356_UNIFORM_TRANSFER = OPEN
+    TPC356_SOURCE_UNIFORM_L2 = OPEN
+    TPC356_MASKED_OPERATOR_BOUND = OPEN
+    TPC356_ARITHMETIC_ADVANCE = NO
+    TPC356_FIXED_POWER_CREDIT = 0
+    TPC356_FULL_GATE_B = OPEN
+    TPC356_TWIN_PRIME_RESULT = NONE
+    TPC356_STATUS = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_NORMALIZATION_HOLDOUT
+    TPC356_ROUND2_CLUE = TEST_ORIGIN_SCALE_STABILITY_OR_OPERATOR_NORM_CERTIFICATE_BEFORE_ANY_ARITHMETIC_REASSEMBLY
+
+## V208 / TPC-355 previous anchor
 
 更新时间：2026-09-03
 

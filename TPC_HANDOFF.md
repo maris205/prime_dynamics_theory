@@ -1,7 +1,75 @@
 # TPC HANDOFF
 
-TPC-355 current section: position-aware mask-energy normalization
----------------------------------------------------------------
+TPC-356 current section: geometry-adversarial normalization holdout
+------------------------------------------------------------------
+
+TPC-356 is the current sealed release.  It freezes the TPC-355 unsigned
+mask-energy congruence and tests it under a predeclared geometry-only
+adversarial origin selection.  The candidate list is `38001+211j` for
+`0<=j<=50`; count `256` pilot geometry is scored by the largest unsigned
+`max(G)/min(G)` over `Q=24,54,80` and exponents `1,2`.  Descending score with
+origin tie-break and greedy separation `1536` selects `38423,42010,45597`.
+The selection reads neither the V59 source response nor any sign law.
+
+The frozen replay uses counts `256,512,1024`, shell anchors `Q=24,54,80`,
+exponents `1,2`, four sign laws, `H=66`, and source cutoff `50000`, giving
+`216` law-level rows.  Raw and normalized alignment are each `216/216`
+positive.  On this geometry-adversarial holdout, all-plus minimum rises from
+`0.63140161782616067` to `0.65046429467683675`, and mean rises from
+`0.8687258535297816` to `0.87560762679420479`; the finite gains are
+`0.019062676850676086` and `0.0068817732644231855`.
+
+The selection determinism, response-blindness, finite diagonal congruence, and
+finite polarization identity are exact within the declared model.  The replay
+is numerically certified by the forward producer, reverse-shell independent
+checker, ten-mutation stress test, and local Bridge-B checker in normal and
+optimized modes.  These controls do not establish any growing-origin bound.
+
+The strongest obstruction is that the selected-panel gain does not control the
+geometry score, diagonal, or normalized operator as origins and intervals grow;
+the normalized all-plus minimum is still below the TPC-355 higher-panel value.
+No source-uniform arithmetic `L2`, masked-operator theorem, fixed-power credit,
+Route-B reassembly, or twin-prime conclusion is licensed.  The official
+Session-named evaluator files remain absent; local Bridge-B is fail-closed
+fallback evidence only.
+
+    TPC356_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_NORMALIZATION_HOLDOUT
+    TPC356_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_DETERMINISTIC
+    TPC356_SELECTION_RESPONSE_INDEPENDENCE = PROVED_EXACT_FINITE
+    TPC356_PANEL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC356_RAW_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC356_NORMALIZED_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC356_ALL_PLUS_MIN_GAIN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC356_ALL_PLUS_MEAN_GAIN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC356_UNIFORM_TRANSFER = OPEN
+    TPC356_SOURCE_UNIFORM_L2 = OPEN
+    TPC356_MASKED_OPERATOR_BOUND = OPEN
+    TPC356_ARITHMETIC_ADVANCE = NO
+    TPC356_FIXED_POWER_CREDIT = 0
+    TPC356_FULL_GATE_B = OPEN
+    TPC356_TWIN_PRIME_RESULT = NONE
+    TPC356_STRONGEST_POSITIVE = GEOMETRY_ONLY_ADVERSARIAL_HOLDOUT_216_OF_216
+    TPC356_STRONGEST_OBSTRUCTION = NO_GROWING_ORIGIN_OR_OPERATOR_BOUND
+    TPC356_OPEN_THEOREM = ORIGIN_SCALE_STABILITY_OR_SOURCE_UNIFORM_MASKED_L2
+    TPC356_REUSABLE_STRUCTURE = RESPONSE_BLIND_GEOMETRY_SELECTION_PLUS_PAIRED_NORMALIZATION_REPLAY
+    TPC356_ROUND2_CLUE = TEST_ORIGIN_SCALE_STABILITY_OR_OPERATOR_NORM_CERTIFICATE_BEFORE_ANY_ARITHMETIC_REASSEMBLY
+    TPC356_STATUS = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_NORMALIZATION_HOLDOUT
+
+TPC-356 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-356-geometry-adversarial-normalization-holdout/code/tpc356_geometry_adversarial_normalization_holdout.py --write
+    python -B papers/tpc-356-geometry-adversarial-normalization-holdout/code/tpc356_geometry_adversarial_normalization_holdout.py --check
+    python -O -B papers/tpc-356-geometry-adversarial-normalization-holdout/code/tpc356_geometry_adversarial_normalization_holdout.py --check
+    python -B papers/tpc-356-geometry-adversarial-normalization-holdout/experiments/tpc356_independent_checker.py --check
+    python -O -B papers/tpc-356-geometry-adversarial-normalization-holdout/experiments/tpc356_independent_checker.py --check
+    python -B papers/tpc-356-geometry-adversarial-normalization-holdout/experiments/tpc356_adversarial_selection_stress.py --check
+    python -O -B papers/tpc-356-geometry-adversarial-normalization-holdout/experiments/tpc356_adversarial_selection_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc356_geometry_adversarial_normalization_holdout_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc356_geometry_adversarial_normalization_holdout_checker.py --check
+
+TPC-355 previous section: position-aware mask-energy normalization
+-----------------------------------------------------------------
 
 TPC-355 is the current sealed release.  It follows the TPC-354 higher-origin
 floor obstruction with a predeclared, response/source/sign-law-independent
@@ -12488,13 +12556,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V208/TPC-355 是当前 release；其 position-aware raw/normalized producer、reverse-shell independent
+V209/TPC-356 是当前 release；其 geometry-adversarial raw/normalized producer、reverse-shell independent
 replay、polarization stress audit 与 literal masked-operator Bridge-B 已封存。
 V206/TPC-353、V205/TPC-352、V204/TPC-351、V203/TPC-350、V202/TPC-349、V201/TPC-348、TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
 TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
 TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 441 对 normal/optimized 命令、882 次
+当前 curated cascade command set 共 445 对 normal/optimized 命令、890 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -12513,7 +12581,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355 各再追加末尾 4 对。
+	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -14190,6 +14258,31 @@ source-uniform arithmetic `L2`、growing masked-operator theorem、fixed-power s
 Route-B reassembly、official evaluator pass 或 twin-prime result；下一步为 adversarial
 position/origin normalization holdout。
 
+TPC-356 的项目级 producer、reverse-shell independent replay、adversarial-selection
+stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-356-geometry-adversarial-normalization-holdout/code/tpc356_geometry_adversarial_normalization_holdout.py --write
+python -B papers/tpc-356-geometry-adversarial-normalization-holdout/code/tpc356_geometry_adversarial_normalization_holdout.py --check
+python -O -B papers/tpc-356-geometry-adversarial-normalization-holdout/code/tpc356_geometry_adversarial_normalization_holdout.py --check
+python -B papers/tpc-356-geometry-adversarial-normalization-holdout/experiments/tpc356_independent_checker.py --check
+python -O -B papers/tpc-356-geometry-adversarial-normalization-holdout/experiments/tpc356_independent_checker.py --check
+python -B papers/tpc-356-geometry-adversarial-normalization-holdout/experiments/tpc356_adversarial_selection_stress.py --check
+python -O -B papers/tpc-356-geometry-adversarial-normalization-holdout/experiments/tpc356_adversarial_selection_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc356_geometry_adversarial_normalization_holdout_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc356_geometry_adversarial_normalization_holdout_checker.py --check
+```
+
+TPC-356 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 必须返回零、
+stderr 为空且 stdout 逐对 byte-identical；Bridge-B 输出
+`candidates=51 / selected=3 / rows=216 / raw_positive=216/216 /
+normalized_positive=216/216 / min_gain=0.019062676850676086`。这是 V209 的
+geometry-only response-blind adversarial finite transfer；all-plus minimum/mean gain
+为 `0.019062676850676086/0.0068817732644231855`，但 origin/scale uniformity、
+source-uniform arithmetic `L2`、growing masked-operator theorem、fixed-power saving、
+Route-B reassembly、official evaluator pass 与 twin-prime result 仍未关闭；下一步为
+origin-scale/operator-norm certificate。
+
 TPC-349 的项目级 producer、reverse-shell independent replay、signed-witness stress 与
 bridge checker：
 
@@ -14317,7 +14410,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-355 current release 入口：
+TPC-356 current release 入口：
+
+papers/tpc-356-geometry-adversarial-normalization-holdout/README.md
+papers/tpc-356-geometry-adversarial-normalization-holdout/PAPER_PLAN.md
+papers/tpc-356-geometry-adversarial-normalization-holdout/DERIVATION_PACKAGE.md
+papers/tpc-356-geometry-adversarial-normalization-holdout/PROOF_PACKAGE.md
+papers/tpc-356-geometry-adversarial-normalization-holdout/code/tpc356_geometry_adversarial_normalization_holdout.py
+papers/tpc-356-geometry-adversarial-normalization-holdout/experiments/tpc356_independent_checker.py
+papers/tpc-356-geometry-adversarial-normalization-holdout/experiments/tpc356_adversarial_selection_stress.py
+papers/tpc-356-geometry-adversarial-normalization-holdout/results/tpc356_certificate.json
+papers/tpc-356-geometry-adversarial-normalization-holdout/notes/theorem_ledger.md
+papers/tpc-356-geometry-adversarial-normalization-holdout/notes/claim_firewall.md
+papers/tpc-356-geometry-adversarial-normalization-holdout/notes/computational_protocol.md
+papers/tpc-356-geometry-adversarial-normalization-holdout/notes/route_evaluation.md
+papers/tpc-356-geometry-adversarial-normalization-holdout/paper/main.tex
+papers/tpc-356-geometry-adversarial-normalization-holdout/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc356_geometry_adversarial_normalization_holdout.md
+research/tpc-big-road/tpc_bridge_b_tpc356_geometry_adversarial_normalization_holdout_checker.py
+
+TPC-355 previous release 入口：
 
 papers/tpc-355-position-aware-mask-energy-normalization/README.md
 papers/tpc-355-position-aware-mask-energy-normalization/PAPER_PLAN.md

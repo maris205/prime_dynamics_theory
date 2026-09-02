@@ -3,13 +3,68 @@
 
 更新时间：2026-09-03
 
-状态：**TPC355_NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC356_NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_NORMALIZATION_HOLDOUT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.149 current：TPC-355 position-aware mask-energy normalization
+## 0.150 current：TPC-356 geometry-adversarial normalization holdout
+
+项目：papers/tpc-356-geometry-adversarial-normalization-holdout/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_NORMALIZATION_HOLDOUT**。
+
+TPC-356 冻结 TPC-355 的 unsigned mask-energy diagonal congruence，并把 origin
+selection 预先固定为 geometry-only adversarial rule：在 `38001+211j`、`0<=j<=50`
+的 51 个候选上，以 count `256` 的六个 `(Q,s)` geometry spread 最大值排序，再用
+最小间隔 `1536` 的 greedy rule 选出 `38423,42010,45597`。该过程不读取 V59
+source response 或 sign law；随后按父代 counts、shell anchors、exponents 与四种
+laws 重放 `216` rows。
+
+最强正结果：raw 与 normalized alignment 均为 `216/216` positive；all-plus minimum
+从 `0.63140161782616067` 升至 `0.65046429467683675`，mean 从
+`0.8687258535297816` 升至 `0.87560762679420479`，有限 gains 分别为
+`0.019062676850676086` 与 `0.0068817732644231855`。选择规则的确定性与
+response-blindness 为 `PROVED_EXACT_FINITE`，回放为
+`NUMERICALLY_CERTIFIED_FINITE`。
+
+最强 obstruction：几何 spread、归一化对角与 normalized operator 没有 growing-origin
+控制；selected panel 的 normalized all-plus minimum 仍低于 TPC-355 higher-panel
+minimum。因此 finite adversarial gain 不能升级为 uniform transfer 或 arithmetic
+bound。
+
+开放定理：origin/scale stability、source-uniform literal masked arithmetic `L2`、
+growing masked operator bound 与 Route-B typed reassembly。`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`、`TWIN_PRIME_RESULT=NONE`；official
+evaluator files absent，local Bridge-B 只是 fail-closed fallback。
+
+可复用结构：
+
+    frozen response-blind normalization -> geometry-only candidate scan
+      -> separated adversarial origins -> raw/normalized paired replay
+      -> finite gain plus explicit uniformity firewall
+
+ROUND2_CLUE：`TEST_ORIGIN_SCALE_STABILITY_OR_OPERATOR_NORM_CERTIFICATE_BEFORE_ANY_ARITHMETIC_REASSEMBLY`。
+
+    TPC356_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_NORMALIZATION_HOLDOUT
+    TPC356_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_DETERMINISTIC
+    TPC356_SELECTION_RESPONSE_INDEPENDENCE = PROVED_EXACT_FINITE
+    TPC356_PANEL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC356_RAW_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC356_NORMALIZED_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC356_ALL_PLUS_MIN_GAIN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC356_ALL_PLUS_MEAN_GAIN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC356_UNIFORM_TRANSFER = OPEN
+    TPC356_SOURCE_UNIFORM_L2 = OPEN
+    TPC356_MASKED_OPERATOR_BOUND = OPEN
+    TPC356_ARITHMETIC_ADVANCE = NO
+    TPC356_FIXED_POWER_CREDIT = 0
+    TPC356_FULL_GATE_B = OPEN
+    TPC356_TWIN_PRIME_RESULT = NONE
+    TPC356_STATUS = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_NORMALIZATION_HOLDOUT
+
+## 0.149 previous：TPC-355 position-aware mask-energy normalization
 
 项目：papers/tpc-355-position-aware-mask-energy-normalization/
 
