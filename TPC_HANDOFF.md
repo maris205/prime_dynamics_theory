@@ -1,6 +1,66 @@
 # TPC HANDOFF
 
-TPC-354 current section: higher-origin masked L2 holdout
+TPC-355 current section: position-aware mask-energy normalization
+---------------------------------------------------------------
+
+TPC-355 is the current sealed release.  It follows the TPC-354 higher-origin
+floor obstruction with a predeclared, response/source/sign-law-independent
+geometry layer.  For each unsigned literal prime component `B_p`, define
+`G_u=sum_(p,t) B_p(u,t)^2` and `A#=D_G^(-1/2) A D_G^(-1/2)`, where
+`D_G=diag(G_u)`.  The locked TPC-353 low parent, TPC-354 higher parent, and
+fresh origins `29001,33001,37001` use the same V59 source, literal endpoint
+masks, counts `256,512,1024`, shell anchors `Q=24,54,80`, exponents `1,2`,
+four sign laws, `H=66`, and source cutoff `50000`, giving `648` rows.
+
+The finite geometry positivity, diagonal congruence, polarization identity, and
+Cauchy envelope are `PROVED_EXACT_FINITE` within the declared model.  Raw and
+normalized replay each have `647/648` positive, `1/648` negative, and `0`
+unresolved rows.  The all-plus TPC-353→TPC-354 minimum drop decreases from
+`0.042151146184724153` to `0.026236988152766205`, a finite reduction fraction
+`0.37754982894688971`.  The normalized mean drop is instead
+`0.024839744603963321`, larger than raw `0.021249745559872912`; a fresh mod-4
+row remains negative.  Thus this is a finite partial repair plus a scoped
+obstruction, not a uniform operator theorem.
+
+No source-uniform arithmetic `L2`, growing masked bound, fixed-power credit,
+Route-B reassembly, or twin-prime conclusion is licensed.  The official
+Session-named evaluator files are absent; local Bridge-B remains fail-closed
+fallback evidence only.  The next route is an adversarial position/origin
+normalization holdout.
+
+    TPC355_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT
+    TPC355_GEOMETRY_DEFINITION = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC355_DIAGONAL_CONGRUENCE = PROVED_EXACT_FINITE
+    TPC355_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+    TPC355_PANEL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+    TPC355_RAW_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+    TPC355_NORMALIZED_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+    TPC355_ALL_PLUS_FLOOR_REPAIR = NUMERICALLY_CERTIFIED_FINITE_PARTIAL
+    TPC355_ALL_PLUS_MEAN_REPAIR = REFUTED_SCOPED
+    TPC355_ALL_LAW_POSITIVE_ALIGNMENT = REFUTED_SCOPED
+    TPC355_SOURCE_UNIFORM_L2 = OPEN
+    TPC355_MASKED_OPERATOR_BOUND = OPEN
+    TPC355_ARITHMETIC_ADVANCE = NO
+    TPC355_FIXED_POWER_CREDIT = 0
+    TPC355_FULL_GATE_B = OPEN
+    TPC355_TWIN_PRIME_RESULT = NONE
+    TPC355_STATUS = NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT
+    TPC355_ROUND2_CLUE = TEST_ADVERSARIAL_POSITION_NORMALIZATION_OR_LAW_INVARIANT_BOUND_ON_FRESH_ORIGINS
+
+TPC-355 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-355-position-aware-mask-energy-normalization/code/tpc355_position_aware_mask_energy_normalization.py --write
+    python -B papers/tpc-355-position-aware-mask-energy-normalization/code/tpc355_position_aware_mask_energy_normalization.py --check
+    python -O -B papers/tpc-355-position-aware-mask-energy-normalization/code/tpc355_position_aware_mask_energy_normalization.py --check
+    python -B papers/tpc-355-position-aware-mask-energy-normalization/experiments/tpc355_independent_checker.py --check
+    python -O -B papers/tpc-355-position-aware-mask-energy-normalization/experiments/tpc355_independent_checker.py --check
+    python -B papers/tpc-355-position-aware-mask-energy-normalization/experiments/tpc355_normalization_stress.py --check
+    python -O -B papers/tpc-355-position-aware-mask-energy-normalization/experiments/tpc355_normalization_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc355_position_aware_mask_energy_normalization_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc355_position_aware_mask_energy_normalization_checker.py --check
+
+TPC-354 previous section: higher-origin masked L2 holdout
 ---------------------------------------------------------
 
 TPC-354 is the current sealed release.  It is the origins-only disjoint
@@ -12428,13 +12488,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V207/TPC-354 是当前 release；其 higher-origin source-native producer、reverse-shell independent
+V208/TPC-355 是当前 release；其 position-aware raw/normalized producer、reverse-shell independent
 replay、polarization stress audit 与 literal masked-operator Bridge-B 已封存。
 V206/TPC-353、V205/TPC-352、V204/TPC-351、V203/TPC-350、V202/TPC-349、V201/TPC-348、TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
 TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
 TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 437 对 normal/optimized 命令、874 次
+当前 curated cascade command set 共 441 对 normal/optimized 命令、882 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -12453,7 +12513,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354 各再追加末尾 4 对。
+	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -12544,6 +12604,16 @@ positive alignment transfer 保留，但 all-plus floor/mean 相对 TPC-353 分�
 `REFUTED_SCOPED`。该结果不代表 source-uniform arithmetic `L2`、fixed-power saving、
 Route-B reassembly 或 official evaluator pass；下一步是 position-aware masked
 normalization/bound。
+
+V208/TPC-355 的新增 4 对由 project producer、reverse-shell independent checker、
+normalization stress 与 local Bridge-B checker 逐项验证；其 raw/normalized 三-panel
+648-row audit 各有 `647/648` positive、`1/648` negative，all-plus minimum drop
+从 `0.042151146184724153` 降至 `0.026236988152766205`（finite reduction
+`0.37754982894688971`），但 mean drop 增至 `0.024839744603963321` 且 fresh
+mod-4 仍有负 row，故仅为 partial repair，mean/law-uniform repair 为
+`REFUTED_SCOPED`。该结果不代表 source-uniform arithmetic `L2`、growing masked
+operator bound、fixed-power saving、Route-B reassembly 或 official evaluator pass；
+下一步是 adversarial position/origin normalization holdout。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
@@ -14095,6 +14165,31 @@ source-uniform arithmetic `L2`、uniform masked-operator theorem、fixed-power s
 Route-B reassembly、official evaluator pass 或 twin-prime result；下一步为
 position-aware masked normalization/bound。
 
+TPC-355 的项目级 producer、reverse-shell independent replay、normalization stress
+与 bridge checker：
+
+```bash
+python -B papers/tpc-355-position-aware-mask-energy-normalization/code/tpc355_position_aware_mask_energy_normalization.py --write
+python -B papers/tpc-355-position-aware-mask-energy-normalization/code/tpc355_position_aware_mask_energy_normalization.py --check
+python -O -B papers/tpc-355-position-aware-mask-energy-normalization/code/tpc355_position_aware_mask_energy_normalization.py --check
+python -B papers/tpc-355-position-aware-mask-energy-normalization/experiments/tpc355_independent_checker.py --check
+python -O -B papers/tpc-355-position-aware-mask-energy-normalization/experiments/tpc355_independent_checker.py --check
+python -B papers/tpc-355-position-aware-mask-energy-normalization/experiments/tpc355_normalization_stress.py --check
+python -O -B papers/tpc-355-position-aware-mask-energy-normalization/experiments/tpc355_normalization_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc355_position_aware_mask_energy_normalization_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc355_position_aware_mask_energy_normalization_checker.py --check
+```
+
+TPC-355 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 必须返回零、
+stderr 为空且 stdout 逐对 byte-identical；Bridge-B 输出
+`panels=3 / rows=648 / raw_positive=647/648 /
+normalized_positive=647/648 / floor_drop_reduction=0.37754982894688971`。这是
+V208 的 response/source/sign-law-independent position-aware finite partial repair；
+all-plus mean repair 与 law-uniform positive alignment 均为 `REFUTED_SCOPED`，不代表
+source-uniform arithmetic `L2`、growing masked-operator theorem、fixed-power saving、
+Route-B reassembly、official evaluator pass 或 twin-prime result；下一步为 adversarial
+position/origin normalization holdout。
+
 TPC-349 的项目级 producer、reverse-shell independent replay、signed-witness stress 与
 bridge checker：
 
@@ -14222,7 +14317,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-354 current release 入口：
+TPC-355 current release 入口：
+
+papers/tpc-355-position-aware-mask-energy-normalization/README.md
+papers/tpc-355-position-aware-mask-energy-normalization/PAPER_PLAN.md
+papers/tpc-355-position-aware-mask-energy-normalization/DERIVATION_PACKAGE.md
+papers/tpc-355-position-aware-mask-energy-normalization/PROOF_PACKAGE.md
+papers/tpc-355-position-aware-mask-energy-normalization/code/tpc355_position_aware_mask_energy_normalization.py
+papers/tpc-355-position-aware-mask-energy-normalization/experiments/tpc355_independent_checker.py
+papers/tpc-355-position-aware-mask-energy-normalization/experiments/tpc355_normalization_stress.py
+papers/tpc-355-position-aware-mask-energy-normalization/results/tpc355_certificate.json
+papers/tpc-355-position-aware-mask-energy-normalization/notes/theorem_ledger.md
+papers/tpc-355-position-aware-mask-energy-normalization/notes/claim_firewall.md
+papers/tpc-355-position-aware-mask-energy-normalization/notes/computational_protocol.md
+papers/tpc-355-position-aware-mask-energy-normalization/notes/route_evaluation.md
+papers/tpc-355-position-aware-mask-energy-normalization/paper/main.tex
+papers/tpc-355-position-aware-mask-energy-normalization/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc355_position_aware_mask_energy_normalization.md
+research/tpc-big-road/tpc_bridge_b_tpc355_position_aware_mask_energy_normalization_checker.py
+
+TPC-354 previous release 入口：
 
 papers/tpc-354-higher-origin-masked-l2-holdout/README.md
 papers/tpc-354-higher-origin-masked-l2-holdout/PAPER_PLAN.md

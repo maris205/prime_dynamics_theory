@@ -1,6 +1,50 @@
-# TPC big road V207 / TPC-354: higher-origin masked L2 holdout
+# TPC big road V208 / TPC-355: position-aware mask-energy normalization
 
-## V207 current anchor: TPC-354
+## V208 current anchor: TPC-355
+
+更新时间：2026-09-03
+
+当前 TPC-355 proof 为
+bridge_b_tpc355_position_aware_mask_energy_normalization.md，checker 为
+tpc_bridge_b_tpc355_position_aware_mask_energy_normalization_checker.py，编号论文为
+../../papers/tpc-355-position-aware-mask-energy-normalization/。
+
+TPC-355 在 TPC-353 low parent、TPC-354 higher parent 与 fresh origins
+`29001,33001,37001` 上冻结同一个 finite V59 source/operator protocol，并预先定义
+unsigned mask-energy diagonal
+`G_u=sum_(p,t)B_p(u,t)^2` 与对称 congruence
+`A#=D_G^(-1/2) A D_G^(-1/2)`。三面板共 `648` rows；raw 与 normalized metric
+各为 `647/648` positive、`1/648` negative、`0` unresolved。all-plus minimum
+drop 从 raw `0.042151146184724153` 降到 normalized
+`0.026236988152766205`，有限 reduction fraction 为 `0.37754982894688971`。
+
+这是 response/source/sign-law-independent geometry layer 的 finite partial repair；
+normalized all-plus mean drop `0.024839744603963321` 反而高于 raw
+`0.021249745559872912`，fresh mod-4 row 仍为负，故 mean/law-uniform repair
+均为 `REFUTED_SCOPED`。source-uniform arithmetic `L2`、uniform masked-operator
+bound、fixed-power credit、Route-B reassembly 与 twin-prime result 仍 open；
+official evaluator files absent，local Bridge-B 仍 fail-closed。
+
+    TPC355_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT
+    TPC355_GEOMETRY_DEFINITION = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC355_DIAGONAL_CONGRUENCE = PROVED_EXACT_FINITE
+    TPC355_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+    TPC355_PANEL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+    TPC355_RAW_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+    TPC355_NORMALIZED_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+    TPC355_ALL_PLUS_FLOOR_REPAIR = NUMERICALLY_CERTIFIED_FINITE_PARTIAL
+    TPC355_ALL_PLUS_MEAN_REPAIR = REFUTED_SCOPED
+    TPC355_ALL_LAW_POSITIVE_ALIGNMENT = REFUTED_SCOPED
+    TPC355_SOURCE_UNIFORM_L2 = OPEN
+    TPC355_MASKED_OPERATOR_BOUND = OPEN
+    TPC355_ARITHMETIC_ADVANCE = NO
+    TPC355_FIXED_POWER_CREDIT = 0
+    TPC355_FULL_GATE_B = OPEN
+    TPC355_TWIN_PRIME_RESULT = NONE
+    TPC355_STATUS = NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT
+    TPC355_ROUND2_CLUE = TEST_ADVERSARIAL_POSITION_NORMALIZATION_OR_LAW_INVARIANT_BOUND_ON_FRESH_ORIGINS
+
+## V207 previous anchor: TPC-354
 
 更新时间：2026-09-03
 

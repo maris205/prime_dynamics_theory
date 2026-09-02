@@ -3,13 +3,70 @@
 
 更新时间：2026-09-03
 
-状态：**TPC354_NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC355_NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.148 current：TPC-354 higher-origin masked L2 holdout
+## 0.149 current：TPC-355 position-aware mask-energy normalization
+
+项目：papers/tpc-355-position-aware-mask-energy-normalization/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT**。
+
+TPC-355 承接 TPC-354 的 higher-origin floor obstruction，预先定义一个只依赖
+unsigned literal mask geometry 的对称 diagonal congruence。对每个 prime component
+`B_p` 取 `G_u=sum_(p,t)B_p(u,t)^2`，再令
+`A#=D_G^(-1/2) A D_G^(-1/2)`。该 geometry 不使用 V59 source、response 或
+sign law。TPC-353 low parent、TPC-354 higher parent 与 fresh origins
+`29001,33001,37001` 三面板均冻结 counts `256,512,1024`、shell anchors
+`Q=24,54,80`、exponents `1,2`、四种 sign laws、`H=66` 与 cutoff `50000`，共
+`648` law-level rows。
+
+最强正结果：raw 与 normalized 两套 replay 各有 `647/648` positive、`1/648`
+negative、`0` unresolved；all-plus minimum 的 TPC-353→TPC-354 drop 从
+`0.042151146184724153` 降至 `0.026236988152766205`，有限 reduction fraction
+为 `0.37754982894688971`，且 fresh normalized minimum 为
+`0.66413980630867930`。
+
+最强 obstruction：normalized all-plus mean drop 为
+`0.024839744603963321`，高于 raw 的 `0.021249745559872912`；fresh panel 的
+mod-4 normalization 仍有负 row，higher-panel half-split minimum 也下降。因此
+minimum-floor repair 只能记为 finite partial，mean/law-uniform repair 为
+`REFUTED_SCOPED`，不能外推为 uniform masked bound。
+
+开放定理：source-uniform literal masked arithmetic `L2`、growing position-aware
+operator bound、canonical sign law 及 Route-B typed reassembly。`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`、`TWIN_PRIME_RESULT=NONE`；official
+evaluator files absent，local Bridge-B fail-closed。
+
+可复用结构：
+
+    literal masked component -> unsigned geometry diagonal -> finite congruence
+      -> raw/normalized polarization -> parent + fresh holdout -> repair firewall
+
+ROUND2_CLUE：`TEST_ADVERSARIAL_POSITION_NORMALIZATION_OR_LAW_INVARIANT_BOUND_ON_FRESH_ORIGINS`。
+
+    TPC355_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT
+    TPC355_GEOMETRY_DEFINITION = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC355_DIAGONAL_CONGRUENCE = PROVED_EXACT_FINITE
+    TPC355_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+    TPC355_PANEL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+    TPC355_RAW_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+    TPC355_NORMALIZED_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+    TPC355_ALL_PLUS_FLOOR_REPAIR = NUMERICALLY_CERTIFIED_FINITE_PARTIAL
+    TPC355_ALL_PLUS_MEAN_REPAIR = REFUTED_SCOPED
+    TPC355_ALL_LAW_POSITIVE_ALIGNMENT = REFUTED_SCOPED
+    TPC355_SOURCE_UNIFORM_L2 = OPEN
+    TPC355_MASKED_OPERATOR_BOUND = OPEN
+    TPC355_ARITHMETIC_ADVANCE = NO
+    TPC355_FIXED_POWER_CREDIT = 0
+    TPC355_FULL_GATE_B = OPEN
+    TPC355_TWIN_PRIME_RESULT = NONE
+    TPC355_STATUS = NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT
+
+## 0.148 previous：TPC-354 higher-origin masked L2 holdout
 
 项目：papers/tpc-354-higher-origin-masked-l2-holdout/
 

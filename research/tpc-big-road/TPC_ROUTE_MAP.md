@@ -2,51 +2,64 @@
 
 更新时间：2026-09-03
 
-当前地图版本：V207 / TPC-354
+当前地图版本：V208 / TPC-355
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-354`（`NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT`）；
+当前编号锚点：`TPC-355`（`NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT`）；
 对应论文目录为
-`papers/tpc-354-higher-origin-masked-l2-holdout/`。
+`papers/tpc-355-position-aware-mask-energy-normalization/`。
 
-TPC-354 是当前地图位置：它把 TPC-353 的 finite source/operator attachment
-原样移到 origins `21001,23001,25001` 的 disjoint higher-origin holdout；counts
-`256,512,1024`、shell anchors `Q=24,54,80`、两种 exponent、四种 sign law、
-`H=66` 与 source cutoff `50000` 全部冻结不变。`216/216` rows 有正 output
-alignment；all-plus 的 `kappa_A` 为 `0.65076036812307647--0.99135023146539858`，
-mean 为 `0.87436211602135017`，source-level coefficient 为
-`0.36357606682978283--0.38648419369238701`。相对 TPC-353 parent，all-plus floor
-shift 为 `-0.042151146184724153`、mean shift 为 `-0.021249745559872912`。
-因此 attachment 的正 transfer 保留，但 floor transfer 被 scoped refute。
+TPC-355 是当前地图位置：在 TPC-353 low parent、TPC-354 higher parent 与 fresh
+origins `29001,33001,37001` 三个面板上，冻结 V59 source、literal two-endpoint
+masked operator、counts `256,512,1024`、shell anchors `Q=24,54,80`、两种
+exponent、四种 sign law、`H=66` 与 source cutoff `50000`。新增的
+response/source/sign-law-independent geometry layer 为
+`G_u=sum_(p,t)B_p(u,t)^2`，并定义 `A#=D_G^(-1/2) A D_G^(-1/2)`。共 `648`
+rows；raw 与 normalized 两套 replay 各有 `647` positive、`1` negative、`0`
+unresolved。
+
+all-plus minimum 的 low-to-higher drop 从 raw `0.042151146184724153` 降为
+normalized `0.026236988152766205`，有限 reduction fraction 为
+`0.37754982894688971`；但 normalized mean drop 为
+`0.024839744603963321`，高于 raw 的 `0.021249745559872912`，fresh mod-4
+仍有负 row。因此这是 finite partial repair 与 scoped obstruction，不是 uniform
+masked bound。
 
 本关仍没有 arithmetic advance；source-uniform `L2`、uniform masked operator bound、
-fixed-power credit 与 twin-prime endpoint 继续 open。下一关优先测试
-position-aware masked normalization/bound；若只能在受控 sign-law 子空间成立，则把
-该限制写入 theorem ledger，不把它升级为 canonical law。
+fixed-power credit、Route-B reassembly 与 twin-prime endpoint 继续 open。下一关优先
+做 adversarial position/origin normalization holdout。
 
 ```text
-YOU ARE HERE = V207 / TPC-354
-TPC354_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT
-TPC354_FINITE_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
-TPC354_FINITE_CAUCHY_ENVELOPE = PROVED_EXACT_FINITE
-TPC354_SOURCE_NATIVE_MODEL = PROVED_EXACT_FINITE_DECLARED_MODEL
-TPC354_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
-TPC354_POSITIVE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_216_OF_216
-TPC354_HIGHER_ORIGIN_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
-TPC354_OUTPUT_SOURCE_MISMATCH = NUMERICALLY_CERTIFIED_FINITE
-TPC354_ALL_PLUS_FLOOR_TRANSFER = REFUTED_SCOPED
-TPC354_UNIFORM_L2 = OPEN
-TPC354_MASKED_OPERATOR_BOUND = OPEN
-TPC354_ARITHMETIC_ADVANCE = NO
-TPC354_FIXED_POWER_CREDIT = 0
-TPC354_FULL_GATE_B = OPEN
-TPC354_TWIN_PRIME_RESULT = NONE
-TPC354_STATUS = NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT
-TPC354_ROUND2_CLUE = TEST_POSITION_AWARE_MASKED_BOUND_ORIGIN_SCALE_NORMALIZATION_OR_CONTROLLED_SIGN_LAW_SUBSPACE
+YOU ARE HERE = V208 / TPC-355
+TPC355_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT
+TPC355_GEOMETRY_DEFINITION = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC355_DIAGONAL_CONGRUENCE = PROVED_EXACT_FINITE
+TPC355_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+TPC355_PANEL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+TPC355_RAW_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+TPC355_NORMALIZED_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+TPC355_ALL_PLUS_FLOOR_REPAIR = NUMERICALLY_CERTIFIED_FINITE_PARTIAL
+TPC355_ALL_PLUS_MEAN_REPAIR = REFUTED_SCOPED
+TPC355_ALL_LAW_POSITIVE_ALIGNMENT = REFUTED_SCOPED
+TPC355_SOURCE_UNIFORM_L2 = OPEN
+TPC355_MASKED_OPERATOR_BOUND = OPEN
+TPC355_ARITHMETIC_ADVANCE = NO
+TPC355_FIXED_POWER_CREDIT = 0
+TPC355_FULL_GATE_B = OPEN
+TPC355_TWIN_PRIME_RESULT = NONE
+TPC355_STATUS = NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT
+TPC355_ROUND2_CLUE = TEST_ADVERSARIAL_POSITION_NORMALIZATION_OR_LAW_INVARIANT_BOUND_ON_FRESH_ORIGINS
 ```
 
-## V207 / TPC-354 current anchor details
+## V208 / TPC-355 current anchor details
+
+TPC-355's exact geometry positivity and diagonal-congruence propositions are
+finite only.  The raw and normalized replay are independently audited on the
+same three panels; the normalized minimum-floor statistic improves on the
+locked higher-origin transfer, while mean and law-uniform signs do not.
+
+## V207 / TPC-354 previous anchor details
 
 TPC-354 是一个只改变 origins 的 higher-origin transfer test。其 exact finite
 polarization/Cauchy identities、declared source attachment、reverse-shell replay、
@@ -1423,6 +1436,48 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.138 V208 / TPC-355：position-aware mask-energy normalization
+
+TPC-355 在 TPC-353 low parent、TPC-354 higher parent 与 fresh origins
+`29001,33001,37001` 三个 panel 上冻结同一个 finite V59 source/operator
+protocol，并定义 unsigned component geometry
+`G_u=sum_(p,t)B_p(u,t)^2` 与对称 diagonal congruence
+`A#=D_G^(-1/2) A D_G^(-1/2)`。该 diagonal 不使用 source、response 或 sign law。
+
+三面板 Cartesian product 有 `648` law-level rows；raw 与 normalized metric 各有
+`647/648` positive、`1/648` negative、`0` unresolved。all-plus minimum 的
+TPC-353→TPC-354 drop 从 raw `0.042151146184724153` 降到 normalized
+`0.026236988152766205`，finite drop-reduction fraction 为
+`0.37754982894688971`。但 mean drop 从 raw `0.021249745559872912` 增至
+normalized `0.024839744603963321`，fresh mod-4 仍出现负 row，故只记 finite
+partial repair；mean/law-uniform repair 为 `REFUTED_SCOPED`。
+
+```text
+TPC355_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT
+TPC355_GEOMETRY_DEFINITION = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC355_DIAGONAL_CONGRUENCE = PROVED_EXACT_FINITE
+TPC355_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+TPC355_PANEL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+TPC355_RAW_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+TPC355_NORMALIZED_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+TPC355_ALL_PLUS_FLOOR_REPAIR = NUMERICALLY_CERTIFIED_FINITE_PARTIAL
+TPC355_ALL_PLUS_MEAN_REPAIR = REFUTED_SCOPED
+TPC355_ALL_LAW_POSITIVE_ALIGNMENT = REFUTED_SCOPED
+TPC355_SOURCE_UNIFORM_L2 = OPEN
+TPC355_MASKED_OPERATOR_BOUND = OPEN
+TPC355_ARITHMETIC_ADVANCE = NO
+TPC355_FIXED_POWER_CREDIT = 0
+TPC355_FULL_GATE_B = OPEN
+TPC355_TWIN_PRIME_RESULT = NONE
+TPC355_STATUS = NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT
+TPC355_ROUND2_CLUE = TEST_ADVERSARIAL_POSITION_NORMALIZATION_OR_LAW_INVARIANT_BOUND_ON_FRESH_ORIGINS
+```
+
+该论文的 exact statements 只覆盖 finite geometry positivity、diagonal congruence
+与 polarization/Cauchy interface；它不关闭 source-uniform arithmetic `L2`、
+uniform masked operator bound、fixed-power credit、Route-B reassembly 或 twin-prime
+endpoint。official evaluator files absent，local Bridge-B 为 fail-closed fallback。
 
 ## 5.137 V206 / TPC-353：source-native masked L2 polarization
 
@@ -9450,6 +9505,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-03 | V208 / TPC-355 | Bridge A / Gate B：position-aware mask-energy normalization finite audit 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-355` | 承接 TPC-354；unsigned response/source/sign-law-independent geometry diagonal，三 panel、648 rows，all-plus minimum drop 从 `0.04215` 降至 `0.02624`（37.75% finite reduction），但 mean repair 与 law-uniform alignment `REFUTED_SCOPED`；下一步 adversarial position/origin holdout |
 | 2026-09-03 | V207 / TPC-354 | Bridge A / Gate B：higher-origin source-native masked `L2` holdout 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-354` | 承接 TPC-353；只改变 origins 至 `21001,23001,25001`，216 rows、216/216 positive alignment；all-plus `kappa_A` `0.6508--0.9914`，相对 parent floor/mean shift `-0.04215/-0.02125`，uniform floor transfer `REFUTED_SCOPED`；下一步 position-aware normalization/bound |
 | 2026-09-03 | V206 / TPC-353 | Bridge A / Gate B：source-native literal masked `L2` polarization attachment 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-353` | 承接 TPC-352 的 branch freeze；literal two-endpoint operator、V59 residual、exact polarization/Cauchy envelope，216 rows、216/216 positive alignment；all-plus `kappa_A` `0.6929--0.9963`，source/output mismatch；下一步 disjoint higher-origin holdout或 position-aware masked bound |
 | 2026-09-03 | V205 / TPC-352 | Bridge A / Gate B：disjoint reciprocal-shell adversarial holdout 已完成；source-native arithmetic `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-352` | 承接 TPC-351；三个 disjoint origins、144 rows、144/144 reciprocal 正响应、118/144 改善 parent，ratio `0.0801--0.8296`；Q=256 reciprocal floor 低于 balanced parent，有限 reciprocal 分支冻结，下一步回到 source-native literal masked arithmetic `L2` |

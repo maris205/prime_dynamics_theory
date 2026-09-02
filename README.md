@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--354 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--355 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -116,6 +116,38 @@ TPC354_FULL_GATE_B = OPEN
 TPC354_TWIN_PRIME_RESULT = NONE
 TPC354_STATUS = NUMERICALLY_CERTIFIED_FINITE_HIGHER_ORIGIN_MASKED_L2_HOLDOUT
 TPC354_ROUND2_CLUE = TEST_POSITION_AWARE_MASKED_BOUND_ORIGIN_SCALE_NORMALIZATION_OR_CONTROLLED_SIGN_LAW_SUBSPACE
+```
+
+TPC-355 接着测试了一个预先固定、只依赖 unsigned mask geometry 的 position-aware
+对称归一化：对每个 prime component `B_p` 取
+`G_u=sum_(p,t) B_p(u,t)^2`，再用 `A#=D_G^(-1/2) A D_G^(-1/2)`。在 TPC-353
+低-origin、TPC-354 higher-origin 与全新 `29001,33001,37001` fresh panel 的
+`648` rows 上，raw 与 normalized 两套度量各有 `647/648` positive、`1/648`
+negative、`0` unresolved。all-plus minimum 的 low-to-higher drop 从
+`0.042151146184724153` 降为 `0.026236988152766205`，有限 reduction fraction
+为 `0.37754982894688971`；但 mean drop 从 `0.021249745559872912` 变为
+`0.024839744603963321`，且 fresh mod-4 row 仍为负。因此这是 finite partial
+repair 与 law/mean obstruction，不是 source-uniform bound 或 arithmetic advance。
+
+```text
+TPC355_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT
+TPC355_GEOMETRY_DEFINITION = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC355_DIAGONAL_CONGRUENCE = PROVED_EXACT_FINITE
+TPC355_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+TPC355_PANEL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+TPC355_RAW_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+TPC355_NORMALIZED_REPLAY = NUMERICALLY_CERTIFIED_FINITE_648_ROWS
+TPC355_ALL_PLUS_FLOOR_REPAIR = NUMERICALLY_CERTIFIED_FINITE_PARTIAL
+TPC355_ALL_PLUS_MEAN_REPAIR = REFUTED_SCOPED
+TPC355_ALL_LAW_POSITIVE_ALIGNMENT = REFUTED_SCOPED
+TPC355_SOURCE_UNIFORM_L2 = OPEN
+TPC355_MASKED_OPERATOR_BOUND = OPEN
+TPC355_ARITHMETIC_ADVANCE = NO
+TPC355_FIXED_POWER_CREDIT = 0
+TPC355_FULL_GATE_B = OPEN
+TPC355_TWIN_PRIME_RESULT = NONE
+TPC355_STATUS = NUMERICALLY_CERTIFIED_FINITE_POSITION_AWARE_MASK_ENERGY_NORMALIZATION_AUDIT
+TPC355_ROUND2_CLUE = TEST_ADVERSARIAL_POSITION_NORMALIZATION_OR_LAW_INVARIANT_BOUND_ON_FRESH_ORIGINS
 ```
 
 ```text
@@ -461,6 +493,12 @@ source/operator attachment 移到 disjoint higher origins；216/216 rows 正 ali
 `REFUTED_SCOPED` 的 uniform floor-transfer obstruction；含 exact anchor、独立
 reverse replay、8-mutation stress、PDF 与 local Bridge-B checker，arithmetic advance
 仍为 NO。
+
+papers/tpc-355-position-aware-mask-energy-normalization - TPC-355 已完成项目 - 引入
+response/source/sign-law-independent 的 unsigned mask-energy diagonal congruence；三
+panels 共 648 rows，all-plus minimum drop 有限缓解 37.75%，但 mean repair 与
+law-uniform alignment 均 scoped refuted；含 exact anchor、独立 reverse replay、10-
+mutation stress、PDF 与 local Bridge-B checker，arithmetic advance 仍为 NO。
 
 papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram
 operator 的 6-row masked response ledger；zero/background/twin/prime-power gain
