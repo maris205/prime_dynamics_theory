@@ -3,13 +3,53 @@
 
 更新时间：2026-09-03
 
-状态：**TPC359_NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC360_NUMERICALLY_CERTIFIED_FINITE_SCHUR_TIGHTNESS_LAW_UNIFORM_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.153 current：TPC-359 geometry-adversarial high-origin holdout
+## 0.154 current：TPC-360 Schur-tightness and law-uniform audit
+
+项目：papers/tpc-360-schur-tightness-law-uniform-audit/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_SCHUR_TIGHTNESS_LAW_UNIFORM_AUDIT**。
+
+TPC-360 继承 TPC-359 的三个 fixed high-origin origins，在 counts `256,512`、
+`Q=24,54,80`、exponents `1,2` 上把 true spectral replay 扩展到四种 sign laws，
+形成 `144` rows 与 36 个 setting-wise comparisons。Schur/Frobenius inequalities 与
+rational anchor 为 `PROVED_EXACT_FINITE`；normalized spectral/Schur 最大 ratio 为
+`0.77628391453148915`，spectral/Frobenius 最大 ratio 为 `0.62110877254133434`，
+表示声明 panel 上的 finite envelope slack。144 个 spectra 均低于 `0.64`；all-plus
+赢 30 个 settings，mod-4 赢 6 个。
+
+最强正结果：有限 law-uniform cap 与可审计的 envelope-tightness ledger。最强
+obstruction：all-plus 并非每个 setting 的 winner，因此不能把它无条件当作所有
+sign laws 的 proxy。reverse-shell independent replay、14-mutation stress、PDF 与
+normal/optimized Bridge-B 均通过；official evaluator files absent，local Bridge-B
+仍是 fail-closed fallback。
+
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`、
+`TWIN_PRIME_RESULT=NONE`；growing operator theorem、source-uniform arithmetic `L2`
+与 Route-B reassembly 仍 open。
+
+ROUND2_CLUE：`TEST_INDEPENDENT_HIGH_ORIGIN_REPLICATION_WITH_TIGHTNESS_LEDGER`。
+
+    TPC360_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SCHUR_TIGHTNESS_LAW_UNIFORM_AUDIT
+    TPC360_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC360_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC360_ALL_LAW_SPECTRAL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+    TPC360_SCHUR_SLACK = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC360_LAW_UNIFORM_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC360_GROWING_OPERATOR_BOUND = OPEN
+    TPC360_SOURCE_UNIFORM_L2 = OPEN
+    TPC360_ARITHMETIC_ADVANCE = NO
+    TPC360_FIXED_POWER_CREDIT = 0
+    TPC360_FULL_GATE_B = OPEN
+    TPC360_TWIN_PRIME_RESULT = NONE
+    TPC360_STATUS = NUMERICALLY_CERTIFIED_FINITE_SCHUR_TIGHTNESS_LAW_UNIFORM_AUDIT
+
+## 0.153 previous：TPC-359 geometry-adversarial high-origin holdout
 
 项目：papers/tpc-359-geometry-adversarial-high-origin-holdout/
 

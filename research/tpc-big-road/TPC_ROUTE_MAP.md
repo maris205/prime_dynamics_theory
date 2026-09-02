@@ -2,12 +2,42 @@
 
 更新时间：2026-09-03
 
-当前地图版本：V212 / TPC-359
+当前地图版本：V213 / TPC-360
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-359`（`NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT`）；
-对应论文目录为 `papers/tpc-359-geometry-adversarial-high-origin-holdout/`。
+当前编号锚点：`TPC-360`（`NUMERICALLY_CERTIFIED_FINITE_SCHUR_TIGHTNESS_LAW_UNIFORM_AUDIT`）；
+对应论文目录为 `papers/tpc-360-schur-tightness-law-uniform-audit/`。
+
+TPC-360 是当前地图位置：继承 TPC-359 的三个 fixed hostile origins，在 counts
+`256,512`、`Q=24,54,80`、exponents `1,2` 上将真谱 replay 扩展到四种 sign laws，
+共 144 rows。normalized spectral/Schur 最大 ratio 为 `0.77628391453148915`，
+spectral/Frobenius 最大 ratio 为 `0.62110877254133434`；144 个 spectra 均低于
+`0.64`，36 个 setting-wise comparisons 中 all-plus 赢 30、mod-4 赢 6。
+
+这是 finite Schur-tightness 与 law-uniformity audit：envelope 为 exact finite，ratio
+slack 与 winner census 仅对声明 panel 有效，不产生 growing operator bound、
+source-uniform arithmetic `L2`、fixed-power credit、Route-B reassembly 或 twin-prime
+result；arithmetic advance 为 NO。official evaluator files absent，local Bridge-B
+仍是 fail-closed fallback。
+
+    YOU ARE HERE = V213 / TPC-360
+    TPC360_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SCHUR_TIGHTNESS_LAW_UNIFORM_AUDIT
+    TPC360_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC360_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC360_ALL_LAW_SPECTRAL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+    TPC360_SCHUR_SLACK = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC360_LAW_UNIFORM_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC360_GROWING_OPERATOR_BOUND = OPEN
+    TPC360_SOURCE_UNIFORM_L2 = OPEN
+    TPC360_ARITHMETIC_ADVANCE = NO
+    TPC360_FIXED_POWER_CREDIT = 0
+    TPC360_FULL_GATE_B = OPEN
+    TPC360_TWIN_PRIME_RESULT = NONE
+    TPC360_STATUS = NUMERICALLY_CERTIFIED_FINITE_SCHUR_TIGHTNESS_LAW_UNIFORM_AUDIT
+    TPC360_ROUND2_CLUE = TEST_INDEPENDENT_HIGH_ORIGIN_REPLICATION_WITH_TIGHTNESS_LEDGER
+
+## V212 / TPC-359 previous anchor details
 
 TPC-359 是当前地图位置：在高起点候选 `260001+211j`、`0<=j<=50` 上，以 count-256
 unsigned geometry spread 做 response-blind adversarial selection，按最小间隔 1536
@@ -1526,6 +1556,43 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.143 V213 / TPC-360：Schur-tightness and law-uniform audit
+
+TPC-360 继承 TPC-359 的三个 fixed hostile origins，在 counts `256,512`、shell anchors
+`Q=24,54,80`、exponents `1,2` 上将真谱 replay 扩展到 all-plus、alternating-index、
+mod-4 character 与 half-split 四种 sign laws，形成 `144` rows 与 36 个 setting-wise
+comparisons。normalized spectral/Schur 最大 ratio 为 `0.77628391453148915`，
+spectral/Frobenius 最大 ratio 为 `0.62110877254133434`；144 个 spectra 均低于 `0.64`，
+all-plus 赢 30 个 settings、mod-4 赢 6 个。
+
+这是一项 finite Schur-tightness/law-uniformity audit：Schur/Frobenius 为 exact finite，
+ratio slack 与 winner census 不是 growing theorem。independent reverse-shell replay、
+14-mutation stress、PDF 与 normal/optimized Bridge-B 均通过；source-uniform arithmetic
+`L2`、growing operator bound、fixed-power credit、full Gate B 与 twin-prime endpoint
+仍 open，arithmetic advance 为 NO。
+
+```text
+YOU ARE HERE = V213 / TPC-360
+TPC360_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SCHUR_TIGHTNESS_LAW_UNIFORM_AUDIT
+TPC360_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+TPC360_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+TPC360_ALL_LAW_SPECTRAL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+TPC360_SCHUR_SLACK = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC360_LAW_UNIFORM_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC360_GROWING_OPERATOR_BOUND = OPEN
+TPC360_SOURCE_UNIFORM_L2 = OPEN
+TPC360_ARITHMETIC_ADVANCE = NO
+TPC360_FIXED_POWER_CREDIT = 0
+TPC360_FULL_GATE_B = OPEN
+TPC360_TWIN_PRIME_RESULT = NONE
+TPC360_STATUS = NUMERICALLY_CERTIFIED_FINITE_SCHUR_TIGHTNESS_LAW_UNIFORM_AUDIT
+TPC360_ROUND2_CLUE = TEST_INDEPENDENT_HIGH_ORIGIN_REPLICATION_WITH_TIGHTNESS_LEDGER
+```
+
+地图位置：**V213 / TPC-360 证明 finite cap 在四 law 下仍可审计，并量化 Schur/Frobenius
+slack；all-plus 不是全 setting 的 universal winner。下一关做独立 high-origin
+replication with tightness ledger。**
 
 ## 5.142 V212 / TPC-359：geometry-adversarial high-origin holdout
 
@@ -9757,6 +9824,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-03 | V213 / TPC-360 | Bridge A / Gate B：finite Schur-tightness 与 law-uniform spectral audit 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-360` | 承接 TPC-359；三个 fixed hostile origins、两档 counts、四种 laws 共 144 真谱 rows；max spectral/Schur `0.77628`、spectral/Frobenius `0.62111`，all-plus/mod-4 winners `30/6`；下一步独立 high-origin replication with tightness ledger |
 | 2026-09-03 | V212 / TPC-359 | Bridge A / Gate B：geometry-adversarial high-origin finite holdout 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-359` | 承接 TPC-358；51 个高起点候选只用 unsigned geometry spread 选出 3 个 origins，288 rows，normalized Schur/spectral max `0.80835/0.62717` 均在 parent caps 与 `0.001` transfer tolerance 内；transition `12/36/6`，monotone decay scoped refuted；下一步 Schur-tightness 与独立 high-origin replication |
 | 2026-09-03 | V211 / TPC-358 | Bridge A / Gate B：fresh-origin finite spectral holdout 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-358` | 承接 TPC-357；三个预注册 disjoint origins、四档 counts、四种 laws 共 288 rows，Schur/Frobenius 全覆盖，all-plus 72 rows 真谱重放；normalized Schur max `0.80851`、spectral max `0.62664`，均在 parent caps 内且 `0.001` 内转移；normalized transitions `13/34/7`，monotone decay scoped refuted；下一步 hostile fresh geometry 或 Schur-tightness audit |
 | 2026-09-03 | V210 / TPC-357 | Bridge A / Gate B：finite operator-norm scale ladder 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-357` | 承接 TPC-356；三个 frozen adversarial origins、四档 counts、四种 laws 共 288 rows，Schur/Frobenius envelopes 全覆盖，all-plus 72 rows 真谱重放；normalized Schur max `0.80778`、spectral max `0.62665`、raw max `1542.75`，normalized transitions `15/35/4`，monotone decay scoped refuted；下一步 fresh origin-scale spectral holdout |

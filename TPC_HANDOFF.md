@@ -1,5 +1,60 @@
 # TPC HANDOFF
 
+TPC-360 current section: Schur-tightness and law-uniform audit
+---------------------------------------------------------------
+
+TPC-360 is the current sealed release.  It inherits the three fixed TPC-359
+origins `(267175,261267,269074)` and computes true spectra for all four sign
+laws at counts `256,512`, giving `144` normalized operator rows and 36
+within-setting law comparisons.  The normalized spectral/Schur ratio has
+maximum `0.77628391453148915`; the spectral/Frobenius ratio has maximum
+`0.62110877254133434`.  All 144 spectra are below `0.64`; all-plus wins 30
+settings and mod-4 wins 6.
+
+The finite Schur and Frobenius inequalities and rational anchor are exact in
+the declared model.  Producer, reverse-shell all-law checker, fourteen-
+mutation stress, PDF QA, and local Bridge-B normal/optimized replay pass.  The
+ratios are finite descriptive diagnostics, not uniform slack theorems; the
+winner census does not license dropping other laws.  No source-uniform
+arithmetic `L2`, growing operator bound, fixed-power credit, Route-B
+reassembly, or twin-prime conclusion is licensed.  Official Session-named
+evaluator files remain absent, so local Bridge-B is fail-closed fallback
+evidence only.
+
+    TPC360_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SCHUR_TIGHTNESS_LAW_UNIFORM_AUDIT
+    TPC360_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC360_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC360_ALL_LAW_SPECTRAL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+    TPC360_SCHUR_SLACK = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC360_LAW_UNIFORM_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC360_GROWING_OPERATOR_BOUND = OPEN
+    TPC360_SOURCE_UNIFORM_L2 = OPEN
+    TPC360_ARITHMETIC_ADVANCE = NO
+    TPC360_FIXED_POWER_CREDIT = 0
+    TPC360_FULL_GATE_B = OPEN
+    TPC360_TWIN_PRIME_RESULT = NONE
+    TPC360_STRONGEST_POSITIVE = FINITE_ALL_LAW_CAP_AND_ENVELOPE_SLACK_LEDGER
+    TPC360_STRONGEST_OBSTRUCTION = ALL_PLUS_NOT_UNIVERSAL_WINNER
+    TPC360_OPEN_THEOREM = INDEPENDENT_HIGH_ORIGIN_REPLICATION_WITH_TIGHTNESS_LEDGER
+    TPC360_REUSABLE_STRUCTURE = FOUR_LAW_SPECTRAL_REPLAY_PLUS_RATIO_AUDIT
+    TPC360_ROUND2_CLUE = TEST_INDEPENDENT_HIGH_ORIGIN_REPLICATION_WITH_TIGHTNESS_LEDGER
+    TPC360_STATUS = NUMERICALLY_CERTIFIED_FINITE_SCHUR_TIGHTNESS_LAW_UNIFORM_AUDIT
+
+TPC-360 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-360-schur-tightness-law-uniform-audit/code/tpc360_schur_tightness_law_uniform_audit.py --check
+    python -O -B papers/tpc-360-schur-tightness-law-uniform-audit/code/tpc360_schur_tightness_law_uniform_audit.py --check
+    python -B papers/tpc-360-schur-tightness-law-uniform-audit/experiments/tpc360_independent_checker.py --check
+    python -O -B papers/tpc-360-schur-tightness-law-uniform-audit/experiments/tpc360_independent_checker.py --check
+    python -B papers/tpc-360-schur-tightness-law-uniform-audit/experiments/tpc360_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-360-schur-tightness-law-uniform-audit/experiments/tpc360_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc360_schur_tightness_law_uniform_audit_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc360_schur_tightness_law_uniform_audit_checker.py --check
+
+TPC-359 previous section: geometry-adversarial high-origin holdout
+-------------------------------------------------------------------
+
 TPC-359 current section: geometry-adversarial high-origin holdout
 ----------------------------------------------------------------
 
@@ -12757,7 +12812,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 448 对 normal/optimized 命令、896 次
+当前 curated cascade command set 共 449 对 normal/optimized 命令、898 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -12776,7 +12831,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359 各再追加末尾 4 对。
+	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 

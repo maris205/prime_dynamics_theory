@@ -1,6 +1,41 @@
 # TPC distilled map and bold channel
 
-## V212 / TPC-359 current anchor
+## V213 / TPC-360 current anchor
+
+更新时间：2026-09-03
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc360_schur_tightness_law_uniform_audit.md，checker 为
+tpc_bridge_b_tpc360_schur_tightness_law_uniform_audit_checker.py，编号论文为
+papers/tpc-360-schur-tightness-law-uniform-audit/。
+
+TPC-360 在 TPC-359 的三个 fixed hostile origins 上，以 counts `256,512`、
+`Q=24,54,80`、exponents `1,2` 与四种 sign laws 完成 144-row all-law spectral
+replay。normalized spectral/Schur 最大 ratio 为 `0.77628391453148915`，
+spectral/Frobenius 最大 ratio 为 `0.62110877254133434`；144 个 spectra 均低于
+`0.64`，36 个 setting-wise comparisons 中 all-plus 赢 30、mod-4 赢 6。
+
+这是 finite Schur-tightness 与 law-uniformity audit：envelope inequalities 为 exact
+finite，ratio slack 与 winner census 都只对声明 panel 有效，不产生 growing operator
+theorem、source-uniform arithmetic `L2`、fixed-power credit、Route-B reassembly 或
+twin-prime result。official evaluator files absent，local Bridge-B 仍 fail-closed。
+
+    TPC360_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SCHUR_TIGHTNESS_LAW_UNIFORM_AUDIT
+    TPC360_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC360_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC360_ALL_LAW_SPECTRAL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+    TPC360_SCHUR_SLACK = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC360_LAW_UNIFORM_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC360_GROWING_OPERATOR_BOUND = OPEN
+    TPC360_SOURCE_UNIFORM_L2 = OPEN
+    TPC360_ARITHMETIC_ADVANCE = NO
+    TPC360_FIXED_POWER_CREDIT = 0
+    TPC360_FULL_GATE_B = OPEN
+    TPC360_TWIN_PRIME_RESULT = NONE
+    TPC360_STATUS = NUMERICALLY_CERTIFIED_FINITE_SCHUR_TIGHTNESS_LAW_UNIFORM_AUDIT
+    TPC360_ROUND2_CLUE = TEST_INDEPENDENT_HIGH_ORIGIN_REPLICATION_WITH_TIGHTNESS_LEDGER
+
+## V212 / TPC-359 previous anchor
 
 更新时间：2026-09-03
 
