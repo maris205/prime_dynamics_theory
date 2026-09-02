@@ -1,42 +1,48 @@
 # TPC distilled map and bold channel
 
-## V194 / TPC-341 current anchor
+## V195 / TPC-342 current anchor
 
 更新时间：2026-09-02
 
 当前入口：proof 为
-research/tpc-big-road/bridge_b_tpc341_fresh_holdout_nuisance_orthogonalization.md，checker 为
-tpc_bridge_b_tpc341_fresh_holdout_nuisance_orthogonalization_checker.py，编号论文为
-papers/tpc-341-fresh-holdout-nuisance-orthogonalization/。
+research/tpc-big-road/bridge_b_tpc342_independent_fresh_holdout_reproduction.md，checker 为
+tpc_bridge_b_tpc342_independent_fresh_holdout_reproduction_checker.py，编号论文为
+papers/tpc-342-independent-fresh-holdout-reproduction/。
 
-TPC-341 是 TPC-337--341 批次的终点。它在三个与 parent panel 不重叠、且 cutoff-safe
-的 fresh windows `[48097,48608]`、`[48609,49120]`、`[49217,49728]` 上，固定
-TPC-340 的 all-plus `Q=54`、exponent `1`、`H=66` operator 与九个 controls。九-control
-twin mean 的 nuisance-span 投影在样本内保留 `0.2010894086--0.2560626551` 的
-energy；但 leave-one-control-out 的 27 个 hostile tests 保留 `0.4435267486--0.8904473564`。
-因此 aggregate mean fit 与 control-invariant twin component 被明确分开。
+TPC-342 锁定 TPC-341 的完整 protocol，仅把 source panel 移到三个新的、彼此不重叠且
+cutoff-safe 的 windows `[40097,40608]`、`[40609,41120]`、`[41121,41632]`。
+九-control twin mean 的 nuisance-span 投影在样本内保留
+`0.2701410521--0.2951006120` 的 energy；leave-one-control-out 的 27 个 hostile tests
+保留 `0.5894842476--0.9429165296`。因此 TPC-341 的 aggregate-versus-holdout split
+在独立面板上复现，而 mean-only nuisance removal 仍不是 control-invariant component。
 
-这是 `NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION`；正交
-投影 identity 是 declared finite linear algebra，稳定性失败是 scoped obstruction，
+这是 `NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION`；正交投影
+identity 是 declared finite linear algebra，独立复现与稳定性失败是 scoped finite facts，
 不是 arithmetic estimate。source-uniform arithmetic `L2`、uniform masked operator bound、
 fixed-power credit 与 twin-prime endpoint 仍 open。Session-named evaluator files absent，
 故只记 local Bridge-B fail-closed，不宣称 official Route-A/Route-B pass。
 
-    TPC341_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
-    TPC341_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-    TPC341_FRESH_HOLDOUT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
-    TPC341_IN_SAMPLE_PROJECTION = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
-    TPC341_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
-    TPC341_IN_SAMPLE_RETENTION = NUMERICAL_OBSERVATION_0.201_TO_0.256
-    TPC341_HOLDOUT_RETENTION = NUMERICAL_OBSERVATION_0.444_TO_0.890
-    TPC341_CONTROL_STABILITY = REFUTED_SCOPED
-    TPC341_ARITHMETIC_ADVANCE = NO
-    TPC341_FIXED_POWER_CREDIT = 0
-    TPC341_SOURCE_UNIFORM_L2 = OPEN
-    TPC341_FULL_GATE_B = OPEN
-    TPC341_TWIN_PRIME_RESULT = NONE
-    TPC341_STATUS = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
-    TPC341_ROUND2_CLUE = INDEPENDENT_REPRODUCTION_OR_FREEZE_NUISANCE_PROJECTION
+    TPC342_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
+    TPC342_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC342_INDEPENDENT_FRESH_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
+    TPC342_IN_SAMPLE_PROJECTION = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
+    TPC342_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
+    TPC342_IN_SAMPLE_RETENTION = NUMERICAL_OBSERVATION_0.270_TO_0.296
+    TPC342_HOLDOUT_RETENTION = NUMERICAL_OBSERVATION_0.589_TO_0.943
+    TPC342_CONTROL_STABILITY = REFUTED_SCOPED
+    TPC342_ARITHMETIC_ADVANCE = NO
+    TPC342_FIXED_POWER_CREDIT = 0
+    TPC342_SOURCE_UNIFORM_L2 = OPEN
+    TPC342_FULL_GATE_B = OPEN
+    TPC342_TWIN_PRIME_RESULT = NONE
+    TPC342_STATUS = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
+    TPC342_ROUND2_CLUE = CROSS_PANEL_META_CERTIFICATE_OR_ALTERNATIVE_NUISANCE_BASIS
+
+## V194 / TPC-341 previous anchor
+
+TPC-341 established the parent fresh-window aggregate-versus-holdout split: in-sample
+retention was `0.2010894086--0.2560626551`, while all 27 held-out records retained
+`0.4435267486--0.8904473564`. TPC-342 is its protocol-locked independent reproduction.
 
 ## V193 / TPC-340 previous anchor
 

@@ -2,42 +2,49 @@
 
 更新时间：2026-09-02
 
-当前地图版本：V194 / TPC-341
+当前地图版本：V195 / TPC-342
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-341`（`NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION`）；
+当前编号锚点：`TPC-342`（`NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION`）；
 对应论文目录为
-`papers/tpc-341-fresh-holdout-nuisance-orthogonalization/`。
+`papers/tpc-342-independent-fresh-holdout-reproduction/`。
 
-TPC-341 是当前地图位置，也是本批次的封口：承接 TPC-340 的 sign-free hybrid envelope，
-在三个与 parent panel 不重叠的 fresh windows 上测试九-control nuisance mean projection。
-样本内 twin mean residual retention 为 `0.2010894086--0.2560626551`，但
-leave-one-control-out 的 27 个 hostile tests 保留 `0.4435267486--0.8904473564`。
-因此低维 aggregate fit 不能直接升级为 control-invariant twin-prime component；
-正交投影 identity 是 exact finite，而稳定性结论只是 scoped finite obstruction。
+TPC-342 是当前地图位置：它锁定 TPC-341 的九-control nuisance-projection protocol，
+在三个完全 disjoint、cutoff-safe 的 source windows 上作 independent reproduction。
+样本内 twin mean residual retention 为 `0.2701410521--0.2951006120`，而 27 个
+leave-one-control-out hostile tests 保留 `0.5894842476--0.9429165296`。因此 TPC-341
+发现的 aggregate-versus-holdout split 在新面板上复现，mean-only projection 仍不能
+升级为 control-invariant twin-prime component；正交 identity 是 exact finite，复现与
+稳定性结论是 scoped finite facts。
 
 本关仍没有 arithmetic advance；source-uniform `L2`、uniform masked operator bound、
 fixed-power credit 与 twin-prime endpoint 继续 open。
 
 ```text
-YOU ARE HERE = V194 / TPC-341
-TPC341_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
-TPC341_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-TPC341_FRESH_HOLDOUT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
-TPC341_IN_SAMPLE_PROJECTION = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
-TPC341_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
-TPC341_IN_SAMPLE_RETENTION = NUMERICAL_OBSERVATION_0.201_TO_0.256
-TPC341_HOLDOUT_RETENTION = NUMERICAL_OBSERVATION_0.444_TO_0.890
-TPC341_CONTROL_STABILITY = REFUTED_SCOPED
-TPC341_ARITHMETIC_ADVANCE = NO
-TPC341_FIXED_POWER_CREDIT = 0
-TPC341_SOURCE_UNIFORM_L2 = OPEN
-TPC341_FULL_GATE_B = OPEN
-TPC341_TWIN_PRIME_RESULT = NONE
-TPC341_STATUS = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
-TPC341_ROUND2_CLUE = INDEPENDENT_REPRODUCTION_OR_FREEZE_NUISANCE_PROJECTION
+YOU ARE HERE = V195 / TPC-342
+TPC342_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
+TPC342_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC342_INDEPENDENT_FRESH_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
+TPC342_IN_SAMPLE_PROJECTION = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
+TPC342_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
+TPC342_IN_SAMPLE_RETENTION = NUMERICAL_OBSERVATION_0.270_TO_0.296
+TPC342_HOLDOUT_RETENTION = NUMERICAL_OBSERVATION_0.589_TO_0.943
+TPC342_CONTROL_STABILITY = REFUTED_SCOPED
+TPC342_ARITHMETIC_ADVANCE = NO
+TPC342_FIXED_POWER_CREDIT = 0
+TPC342_SOURCE_UNIFORM_L2 = OPEN
+TPC342_FULL_GATE_B = OPEN
+TPC342_TWIN_PRIME_RESULT = NONE
+TPC342_STATUS = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
+TPC342_ROUND2_CLUE = CROSS_PANEL_META_CERTIFICATE_OR_ALTERNATIVE_NUISANCE_BASIS
 ```
+
+## V194 / TPC-341 previous anchor
+
+TPC-341 是 protocol parent：三个 fresh windows 的样本内 retention 为
+`0.2010894086--0.2560626551`，27 个 held-out retention 为
+`0.4435267486--0.8904473564`。TPC-342 已完成独立 panel reproduction。
 
 ## V193 / TPC-340 previous anchor
 
@@ -1218,6 +1225,39 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.126 V195 / TPC-342：independent fresh-panel holdout reproduction
+
+TPC-342 锁定 TPC-341 的 producer/certificate protocol，并把 source panel 移到三个
+完全 disjoint、cutoff-safe 的 windows `[40097,40608]`、`[40609,41120]`、
+`[41121,41632]`。all-plus `Q=54`、exponent `1`、`H=66` operator、九 controls、
+四 masks、SVD rank rule、in-sample `<0.30` 与 held-out `>0.40` guards 均保持不变。
+
+三个 rows 形成 108 个 raw records、81 个 nonempty records、3 个 aggregate fits 与
+27 个 leave-one-control-out fits。in-sample residual retention 为
+`0.27014105207549899--0.29510061195372306`；所有 held-out retention 位于
+`0.58948424759670548--0.94291652960635697`。prime-power mask 在本 panel 为空，
+nuisance rank 因而固定为 2；rank/Pythagorean failures 为 0。
+
+最强正结果：TPC-341 的 aggregate-versus-holdout split 在独立 source panel 上复现；
+最强 obstruction：27/27 held-out tests 继续拒绝 control-stability。开放定理仍是
+source-uniform arithmetic `L2`、canonical nuisance decomposition、uniform masked
+operator bound、strict `1/400` payment 与 full Gate B。
+
+```text
+TPC342_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
+TPC342_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC342_INDEPENDENT_FRESH_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
+TPC342_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
+TPC342_CONTROL_STABILITY = REFUTED_SCOPED
+TPC342_ARITHMETIC_ADVANCE = NO
+TPC342_FIXED_POWER_CREDIT = 0
+TPC342_SOURCE_UNIFORM_L2 = OPEN
+TPC342_FULL_GATE_B = OPEN
+TPC342_TWIN_PRIME_RESULT = NONE
+TPC342_STATUS = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
+TPC342_ROUND2_CLUE = CROSS_PANEL_META_CERTIFICATE_OR_ALTERNATIVE_NUISANCE_BASIS
+```
 
 ## 5.125 V184 / TPC-331：control-average and centered position-response decomposition
 
@@ -3612,9 +3652,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V194 / TPC-341                    |
-        | FRESH HOLDOUT NUISANCE ORTHOGONALIZATION    |
-        | CONTROL STABILITY OBSTRUCTION / GATES OPEN  |
+        | YOU ARE HERE — V195 / TPC-342                    |
+        | INDEPENDENT FRESH-PANEL REPRODUCTION         |
+        | CONTROL STABILITY OBSTRUCTION / GATES OPEN   |
         +--------------------------------------------------+
                 |
                 v
@@ -8724,6 +8764,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-02 | V195 / TPC-342 | Bridge A / Gate B：independent fresh-panel reproduction 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-342` | 锁定 TPC-341 protocol；三个 disjoint windows、108 raw records、27 leave-one-control-out tests；样本内 retention `0.270--0.296`，held-out retention `0.589--0.943`，27/27 再现 control-stability obstruction；下一步为 cross-panel meta certificate |
 | 2026-09-02 | V194 / TPC-341 | Bridge A / Gate B：fresh holdout nuisance orthogonalization 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-341` | 承接 TPC-340；三个 fresh windows、108 raw records、27 leave-one-control-out tests；样本内 retention `0.201--0.256`，held-out retention `0.444--0.890`，control-stability obstruction；下一步为 independent reproduction 或冻结该 projection line |
 | 2026-09-02 | V193 / TPC-340 | Bridge A / Gate B：Schur/Frobenius hybrid envelope 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-340` | 承接 TPC-339；216/216 bound checks 无 violation，Schur branch 54 条、Frobenius branch 162 条；zero-support finite improvement `1.250245--4.698443`；下一步为 nuisance orthogonalization 或 adversarial holdout |
 | 2026-09-02 | V192 / TPC-339 | Bridge A / Gate B：mask-aware Frobenius envelope 已完成；masked Gram sharpening、source-uniform `L2`、fixed-power credit 与 full Gate B open | `TPC-339` | 承接 TPC-338；216 records、198 nonempty、0 bound violations；broad-mask occupancy `<0.2`，elementary envelope 不 sharp；下一步为 global Schur hybrid |

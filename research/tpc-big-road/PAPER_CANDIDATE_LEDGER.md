@@ -3,13 +3,66 @@
 
 更新时间：2026-09-02
 
-状态：**TPC341_NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC342_NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.135 current：TPC-341 fresh holdout nuisance orthogonalization
+## 0.136 current：TPC-342 independent fresh-panel reproduction
+
+项目：papers/tpc-342-independent-fresh-holdout-reproduction/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION**。
+
+TPC-342 锁定 TPC-341 producer/certificate 所定义的九-control nuisance-projection
+protocol，并把 source panel 独立迁移到三个互不重叠、cutoff-safe 的 windows
+`[40097,40608]`、`[40609,41120]`、`[41121,41632]`。同一 all-plus `Q=54`、
+exponent `1`、`H=66` operator、四类 masks、SVD rank rule 与预声明 guards 均保持
+不变；因此本项目是 protocol reproduction，而不是向 TPC-341 certificate 追加样本。
+
+三个 rows 共形成 108 个 raw records、81 个 nonempty records、3 个 in-sample fits 与
+27 个 leave-one-control-out fits。样本内 residual retention 为
+`0.27014105207549899--0.29510061195372306`，27 个 held-out retention 为
+`0.58948424759670548--0.94291652960635697`。prime-power mask 在这三个窗口均为空，
+故 nuisance rank 统一为 2；该有限退化被显式记录，rank/Pythagorean failures 为 0。
+
+最强正结果：TPC-341 的 aggregate-versus-holdout split 在完全 disjoint source panel
+上独立复现，producer 与 reverse-shell checker 在 parent/protocol hash locks 下给出
+一致的 finite readout。
+
+最强 obstruction：27/27 held-out tests 仍高于预声明的 `0.40` residual guard；因此
+mean-only nuisance removal 在该独立面板上依然不能升级为 control-invariant twin
+component。
+
+开放定理：source-uniform arithmetic `L2`、uniform masked operator bound、canonical
+nuisance decomposition、strict `1/400` payment 与 full Route-B Gate B。fixed-power
+credit 为 0，twin-prime conclusion 为 NONE。
+
+可复用结构：
+
+    protocol hash lock -> disjoint cutoff-safe source panel -> reverse-shell replay
+                       -> in-sample/held-out separation -> scoped non-transfer certificate
+
+ROUND2_CLUE：`CROSS_PANEL_META_CERTIFICATE_OR_ALTERNATIVE_NUISANCE_BASIS`。
+
+    TPC342_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
+    TPC342_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC342_INDEPENDENT_FRESH_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
+    TPC342_IN_SAMPLE_PROJECTION = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
+    TPC342_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
+    TPC342_IN_SAMPLE_RETENTION = NUMERICAL_OBSERVATION_0.270_TO_0.296
+    TPC342_HOLDOUT_RETENTION = NUMERICAL_OBSERVATION_0.589_TO_0.943
+    TPC342_CONTROL_STABILITY = REFUTED_SCOPED
+    TPC342_ARITHMETIC_ADVANCE = NO
+    TPC342_FIXED_POWER_CREDIT = 0
+    TPC342_SOURCE_UNIFORM_L2 = OPEN
+    TPC342_FULL_GATE_B = OPEN
+    TPC342_TWIN_PRIME_RESULT = NONE
+    TPC342_STATUS = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
+    TPC342_ROUND2_CLUE = CROSS_PANEL_META_CERTIFICATE_OR_ALTERNATIVE_NUISANCE_BASIS
+
+## 0.135 released：TPC-341 fresh holdout nuisance orthogonalization
 
 项目：papers/tpc-341-fresh-holdout-nuisance-orthogonalization/
 

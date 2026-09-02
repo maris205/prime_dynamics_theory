@@ -1,46 +1,66 @@
 # TPC HANDOFF
 
-TPC-341 current section: fresh holdout nuisance orthogonalization
+TPC-342 current section: independent fresh-panel holdout reproduction
 -----------------------------------------------------------------------------------------------
 
-TPC-341 is the endpoint of the TPC-337--341 batch.  It keeps the TPC-340 all-plus
-`Q=54`, exponent `1`, `H=66` operator and nine-control orbit, but moves to three fresh,
-non-overlapping, cutoff-safe windows
-`[48097,48608]`, `[48609,49120]`, and `[49217,49728]`.
+TPC-342 locks the TPC-341 nuisance-projection protocol and changes only the source panel.
+The new mutually disjoint, cutoff-safe windows are `[40097,40608]`, `[40609,41120]`,
+and `[41121,41632]`; the all-plus `Q=54`, exponent `1`, `H=66` operator, nine controls,
+four masks, SVD rank rule, and guards are unchanged.
 
-The nine-control twin-mean nuisance projection retains `0.2010894086--0.2560626551`
-of in-sample energy.  A hostile leave-one-control-out fit, trained on eight controls and
-tested on the omitted twin output, retains `0.4435267486--0.8904473564` in all 27 tests.
-Thus a strong aggregate mean fit does not transfer to a control-invariant twin component.
-The projection/Pythagorean identity is exact finite linear algebra; the stability failure is
-only a scoped finite obstruction.  Producer, independent replay, mutation stress, PDF audit,
-and the local fail-closed Bridge-B checker all pass.
+The nine-control twin-mean projection retains `0.2701410521--0.2951006120` of in-sample
+energy.  All 27 hostile leave-one-control-out tests retain
+`0.5894842476--0.9429165296`.  Thus the TPC-341 aggregate-versus-holdout split reproduces
+on an independent source panel, while mean-only nuisance removal again fails to transfer to
+a control-invariant twin component.  The projection/Pythagorean identity is exact finite
+linear algebra; the reproduction and stability failure are scoped finite facts. Producer,
+reverse-shell independent replay, six-mutation stress, PDF audit, and the local fail-closed
+Bridge-B checker all pass.
+
+    TPC342_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
+    TPC342_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC342_INDEPENDENT_FRESH_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
+    TPC342_IN_SAMPLE_PROJECTION = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
+    TPC342_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
+    TPC342_IN_SAMPLE_RETENTION = NUMERICAL_OBSERVATION_0.270_TO_0.296
+    TPC342_HOLDOUT_RETENTION = NUMERICAL_OBSERVATION_0.589_TO_0.943
+    TPC342_CONTROL_STABILITY = REFUTED_SCOPED
+    TPC342_ARITHMETIC_ADVANCE = NO
+    TPC342_FIXED_POWER_CREDIT = 0
+    TPC342_SOURCE_UNIFORM_L2 = OPEN
+    TPC342_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC342_FULL_GATE_B = OPEN
+    TPC342_TWIN_PRIME_RESULT = NONE
+    TPC342_STRONGEST_POSITIVE = INDEPENDENT_PANEL_REPRODUCES_AGGREGATE_VERSUS_HOLDOUT_SPLIT
+    TPC342_STRONGEST_OBSTRUCTION = ALL_27_HELDOUT_TESTS_REJECT_CONTROL_STABILITY
+    TPC342_OPEN_THEOREM = SOURCE_UNIFORM_L2_OR_CANONICAL_NUISANCE_DECOMPOSITION
+    TPC342_REUSABLE_STRUCTURE = PROTOCOL_HASH_LOCK_TO_DISJOINT_PANEL_REVERSE_SHELL_REPLAY
+    TPC342_ROUND2_CLUE = CROSS_PANEL_META_CERTIFICATE_OR_ALTERNATIVE_NUISANCE_BASIS
+    TPC342_STATUS = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
+
+Session-named Route-A/Route-B evaluator files are absent in this checkout.  The local
+Bridge-B wrapper is a fail-closed fallback and cannot be written as an official evaluator
+pass.  The next smallest nonduplicative question is a cross-panel meta certificate; no
+arithmetic promotion is licensed by the reproduction.
+
+TPC-341 previous section: fresh holdout nuisance orthogonalization
+-----------------------------------------------------------------------------------------------
+
+TPC-341 established the protocol on windows `[48097,48608]`, `[48609,49120]`, and
+`[49217,49728]`.  Its in-sample retention was `0.2010894086--0.2560626551`, while its
+27 held-out retentions were `0.4435267486--0.8904473564`.  TPC-342 is the independent,
+protocol-locked reproduction of that scoped separation.
 
     TPC341_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
     TPC341_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
     TPC341_FRESH_HOLDOUT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
-    TPC341_IN_SAMPLE_PROJECTION = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
     TPC341_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
-    TPC341_IN_SAMPLE_RETENTION = NUMERICAL_OBSERVATION_0.201_TO_0.256
-    TPC341_HOLDOUT_RETENTION = NUMERICAL_OBSERVATION_0.444_TO_0.890
     TPC341_CONTROL_STABILITY = REFUTED_SCOPED
     TPC341_ARITHMETIC_ADVANCE = NO
     TPC341_FIXED_POWER_CREDIT = 0
-    TPC341_SOURCE_UNIFORM_L2 = OPEN
-    TPC341_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
     TPC341_FULL_GATE_B = OPEN
     TPC341_TWIN_PRIME_RESULT = NONE
-    TPC341_STRONGEST_POSITIVE = FRESH_PANEL_SEPARATES_MEAN_FIT_FROM_HELDOUT_TEST
-    TPC341_STRONGEST_OBSTRUCTION = LEAVE_ONE_CONTROL_OUT_REJECTS_STABILITY
-    TPC341_OPEN_THEOREM = SOURCE_UNIFORM_L2_OR_CANONICAL_NUISANCE_DECOMPOSITION
-    TPC341_REUSABLE_STRUCTURE = LOCKED_SOURCE_TO_FRESH_HOLDOUT_ORTHOGONAL_PROJECTION
-    TPC341_ROUND2_CLUE = INDEPENDENT_REPRODUCTION_OR_FREEZE_NUISANCE_PROJECTION
     TPC341_STATUS = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
-
-Session-named Route-A/Route-B evaluator files are absent in this checkout.  The local
-Bridge-B wrapper is a fail-closed fallback and cannot be written as an official evaluator
-pass.  The batch stops at TPC-341; do not create TPC-342 before an independent reproduction
-or a deliberate route review.
 
 TPC-340 previous section: Schur/Frobenius hybrid envelope
 -----------------------------------------------------------------------------------------------
@@ -11689,12 +11709,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V194/TPC-341 是当前 release；其 producer、independent replay、stress audit 与
-fresh-holdout nuisance orthogonalization bridge 已封存。TPC-340、TPC-339、TPC-338、
+V195/TPC-342 是当前 release；其 producer、reverse-shell independent replay、stress
+audit 与 independent fresh-panel reproduction bridge 已封存。TPC-341、TPC-340、TPC-339、TPC-338、
 TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
 TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 385 对 normal/optimized 命令、770 次
+当前 curated cascade command set 共 389 对 normal/optimized 命令、778 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -11713,7 +11733,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -11728,6 +11748,10 @@ arithmetic `L2`、fixed-power saving 或 official Route-A/Route-B 通过。
 V190--V194/TPC-337--341 的新增 20 对由各项目 bridge 与 standalone tail checks
 逐项验证；五篇论文的 finite covariance/envelope/holdout certificates 不代表
 source-uniform arithmetic `L2`、fixed-power saving 或 official Route-A/Route-B 通过。
+
+V195/TPC-342 的新增 4 对由 project producer、reverse-shell independent checker、
+mutation stress 与 local Bridge-B checker 逐项验证；其 independent finite reproduction
+不代表 source-uniform arithmetic `L2`、fixed-power saving 或 official evaluator pass。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
@@ -13056,6 +13080,25 @@ holdout_records=27 / rank_failures=0 / exact_anchor=1`。这是 V194 的 fresh-h
 control-stability obstruction，不代表 canonical nuisance decomposition 或 twin-prime
 结论。
 
+TPC-342 的项目级 producer、reverse-shell independent replay、holdout stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-342-independent-fresh-holdout-reproduction/code/tpc342_independent_fresh_holdout_reproduction.py --check
+python -O -B papers/tpc-342-independent-fresh-holdout-reproduction/code/tpc342_independent_fresh_holdout_reproduction.py --check
+python -B papers/tpc-342-independent-fresh-holdout-reproduction/experiments/tpc342_independent_checker.py --check
+python -O -B papers/tpc-342-independent-fresh-holdout-reproduction/experiments/tpc342_independent_checker.py --check
+python -B papers/tpc-342-independent-fresh-holdout-reproduction/experiments/tpc342_holdout_stress.py --check
+python -O -B papers/tpc-342-independent-fresh-holdout-reproduction/experiments/tpc342_holdout_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc342_independent_fresh_holdout_reproduction_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc342_independent_fresh_holdout_reproduction_checker.py --check
+```
+
+TPC-342 增量 tail audit：4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `rows=3 / controls=9 / raw_records=108 /
+holdout_records=27 / rank_failures=0 / exact_anchor=1`。这是 V195 的 independent
+finite reproduction，不代表 canonical nuisance decomposition、arithmetic saving 或
+twin-prime conclusion。
+
 TPC-327 的项目级 producer、independent replay、three-origin stress 与 bridge checker：
 
 ```bash
@@ -13117,7 +13160,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-最新 TPC-341 入口：
+最新 TPC-342 入口：
+
+papers/tpc-342-independent-fresh-holdout-reproduction/README.md
+papers/tpc-342-independent-fresh-holdout-reproduction/PAPER_PLAN.md
+papers/tpc-342-independent-fresh-holdout-reproduction/DERIVATION_PACKAGE.md
+papers/tpc-342-independent-fresh-holdout-reproduction/PROOF_PACKAGE.md
+papers/tpc-342-independent-fresh-holdout-reproduction/code/tpc342_independent_fresh_holdout_reproduction.py
+papers/tpc-342-independent-fresh-holdout-reproduction/experiments/tpc342_independent_checker.py
+papers/tpc-342-independent-fresh-holdout-reproduction/experiments/tpc342_holdout_stress.py
+papers/tpc-342-independent-fresh-holdout-reproduction/results/tpc342_certificate.json
+papers/tpc-342-independent-fresh-holdout-reproduction/notes/theorem_ledger.md
+papers/tpc-342-independent-fresh-holdout-reproduction/notes/claim_firewall.md
+papers/tpc-342-independent-fresh-holdout-reproduction/notes/computational_protocol.md
+papers/tpc-342-independent-fresh-holdout-reproduction/notes/route_evaluation.md
+papers/tpc-342-independent-fresh-holdout-reproduction/paper/main.tex
+papers/tpc-342-independent-fresh-holdout-reproduction/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc342_independent_fresh_holdout_reproduction.md
+research/tpc-big-road/tpc_bridge_b_tpc342_independent_fresh_holdout_reproduction_checker.py
+
+TPC-341 protocol parent 入口：
 
 papers/tpc-341-fresh-holdout-nuisance-orthogonalization/README.md
 papers/tpc-341-fresh-holdout-nuisance-orthogonalization/PAPER_PLAN.md

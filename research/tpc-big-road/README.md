@@ -1,39 +1,45 @@
-# TPC big road V194 / TPC-341: fresh holdout nuisance orthogonalization
+# TPC big road V195 / TPC-342: independent fresh-panel reproduction
 
-## V194 current anchor: TPC-341
+## V195 current anchor: TPC-342
 
 更新时间：2026-09-02
 
-当前 TPC-341 proof 为
-bridge_b_tpc341_fresh_holdout_nuisance_orthogonalization.md，checker 为
-tpc_bridge_b_tpc341_fresh_holdout_nuisance_orthogonalization_checker.py，编号论文为
-../../papers/tpc-341-fresh-holdout-nuisance-orthogonalization/。
+当前 TPC-342 proof 为
+bridge_b_tpc342_independent_fresh_holdout_reproduction.md，checker 为
+tpc_bridge_b_tpc342_independent_fresh_holdout_reproduction_checker.py，编号论文为
+../../papers/tpc-342-independent-fresh-holdout-reproduction/。
 
-TPC-341 在三个与 parent panel 不重叠且 cutoff-safe 的 fresh windows
-`[48097,48608]`、`[48609,49120]`、`[49217,49728]` 上固定 TPC-340 的 all-plus
-operator 与九个 controls。样本内 twin-mean nuisance projection 的 residual retention
-为 `0.2010894086--0.2560626551`，而 leave-one-control-out 的 27 个 hostile tests
-保留 `0.4435267486--0.8904473564`。正交投影 identity 是 exact finite；稳定性失败
-是 scoped obstruction，不是 arithmetic estimate。
+TPC-342 锁定 TPC-341 的 protocol，在三个新的 cutoff-safe windows
+`[40097,40608]`、`[40609,41120]`、`[41121,41632]` 上独立重放同一 all-plus operator、
+九 controls、四 masks 与 leave-one-control-out rule。样本内 residual retention 为
+`0.2701410521--0.2951006120`，而 27 个 hostile tests 保留
+`0.5894842476--0.9429165296`。aggregate-versus-holdout split 因而在 disjoint panel
+上复现；正交投影 identity 是 exact finite，control instability 是 scoped obstruction。
 
-这是 `NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION`；
+这是 `NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION`；
 source-uniform arithmetic `L2`、uniform masked operator bound、fixed-power credit 与
 twin-prime endpoint 仍 open。Session-named evaluator files absent，故不宣称 official
 Route-A/Route-B pass。
 
-    TPC341_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
-    TPC341_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-    TPC341_FRESH_HOLDOUT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
-    TPC341_IN_SAMPLE_PROJECTION = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
-    TPC341_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
-    TPC341_CONTROL_STABILITY = REFUTED_SCOPED
-    TPC341_ARITHMETIC_ADVANCE = NO
-    TPC341_FIXED_POWER_CREDIT = 0
-    TPC341_SOURCE_UNIFORM_L2 = OPEN
-    TPC341_FULL_GATE_B = OPEN
-    TPC341_TWIN_PRIME_RESULT = NONE
-    TPC341_STATUS = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
-    TPC341_ROUND2_CLUE = INDEPENDENT_REPRODUCTION_OR_FREEZE_NUISANCE_PROJECTION
+    TPC342_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
+    TPC342_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC342_INDEPENDENT_FRESH_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
+    TPC342_IN_SAMPLE_PROJECTION = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
+    TPC342_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
+    TPC342_CONTROL_STABILITY = REFUTED_SCOPED
+    TPC342_ARITHMETIC_ADVANCE = NO
+    TPC342_FIXED_POWER_CREDIT = 0
+    TPC342_SOURCE_UNIFORM_L2 = OPEN
+    TPC342_FULL_GATE_B = OPEN
+    TPC342_TWIN_PRIME_RESULT = NONE
+    TPC342_STATUS = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
+    TPC342_ROUND2_CLUE = CROSS_PANEL_META_CERTIFICATE_OR_ALTERNATIVE_NUISANCE_BASIS
+
+## V194 previous anchor: TPC-341
+
+TPC-341 is the protocol parent. Its three fresh windows produced in-sample retention
+`0.2010894086--0.2560626551` and held-out retention
+`0.4435267486--0.8904473564`; TPC-342 independently reproduces the same separation.
 
 ## V193--V190 recent batch: TPC-340 through TPC-337
 

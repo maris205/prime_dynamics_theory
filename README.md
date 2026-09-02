@@ -9,28 +9,29 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--341 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--342 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
 Schur envelope；TPC-341 在三个 fresh windows 上用 leave-one-control-out 检验
-nuisance orthogonalization 的稳定性。整条链仍是有限 declared-model certificate：
+nuisance orthogonalization 的稳定性；TPC-342 又在三个完全 disjoint、cutoff-safe 的
+新窗口上独立复现 aggregate-versus-holdout split。整条链仍是有限 declared-model certificate：
 source-uniform arithmetic $L^2$、uniform masked operator bound、fixed-power credit 与
 twin-prime endpoint 均未关闭。
 
 ```text
-TPC341_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
-TPC341_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-TPC341_FRESH_HOLDOUT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
-TPC341_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
-TPC341_CONTROL_STABILITY = REFUTED_SCOPED
-TPC341_ARITHMETIC_ADVANCE = NO
-TPC341_FIXED_POWER_CREDIT = 0
-TPC341_SOURCE_UNIFORM_L2 = OPEN
-TPC341_FULL_GATE_B = OPEN
-TPC341_TWIN_PRIME_RESULT = NONE
-TPC341_STATUS = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
-TPC341_ROUND2_CLUE = INDEPENDENT_REPRODUCTION_OR_FREEZE_NUISANCE_PROJECTION
+TPC342_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
+TPC342_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC342_INDEPENDENT_FRESH_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
+TPC342_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
+TPC342_CONTROL_STABILITY = REFUTED_SCOPED
+TPC342_ARITHMETIC_ADVANCE = NO
+TPC342_FIXED_POWER_CREDIT = 0
+TPC342_SOURCE_UNIFORM_L2 = OPEN
+TPC342_FULL_GATE_B = OPEN
+TPC342_TWIN_PRIME_RESULT = NONE
+TPC342_STATUS = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_FRESH_HOLDOUT_REPRODUCTION
+TPC342_ROUND2_CLUE = CROSS_PANEL_META_CERTIFICATE_OR_ALTERNATIVE_NUISANCE_BASIS
 ```
 
 TPC-331（更早阶段）承接 TPC-330，把五个预声明的 coordinate controls 视为一个
@@ -93,9 +94,13 @@ papers/tpc-340-schur-frobenius-hybrid-envelope - TPC-340 已完成项目 - Schur
 hybrid bound 216/216 无 violation，zero-support branch 获得有限改善，但 broad-mask
 tightness 仍未解决。
 
-papers/tpc-341-fresh-holdout-nuisance-orthogonalization - TPC-341 当前批次终点 - 三个
+papers/tpc-341-fresh-holdout-nuisance-orthogonalization - TPC-341 前一项目 - 三个
 fresh windows 的样本内 nuisance 投影很强，但 27/27 leave-one-control-out 检验暴露
 control-stability obstruction。
+
+papers/tpc-342-independent-fresh-holdout-reproduction - TPC-342 已完成项目 - 在三个
+完全 disjoint 的新窗口上独立复现 aggregate-versus-holdout split；样本内 retention
+为 0.270--0.296，而 27/27 held-out retention 为 0.589--0.943。
 
 papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram
 operator 的 6-row masked response ledger；zero/background/twin/prime-power gain
