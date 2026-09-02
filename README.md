@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--350 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--351 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -55,6 +55,15 @@ signed/defect ratio 为 `0.0657381187306--0.8797933448`，但只有 `70/192` 行
 coordinate baseline、`91/192` 行达到 half-defect，长度序列仅 `24/48`
 nondecreasing。特别地，`Q=256` 的 48 行全部低于 half-defect，所以 fresh finite
 replication 成立，而 universal quarter-floor 在声明面板上为 `REFUTED_SCOPED`。
+
+TPC-351 随后冻结一个不按 row 拟合的 reciprocal-shell contrast：对
+`Q<p_j<=2Q` 取 `gamma_j=1/p_j-r^(-1)sum_k 1/p_k`。该有理规则 exact zero-sum，
+并保留 incidence Gram 展开与 induced-norm lower witness。在与 TPC-350 完全相同的
+192-row panel 上，`192/192` 行有正响应，`180/192` 行改善 parent，ratio 提升到
+`0.0917557319271--0.901734353382`；coordinate baseline census 为 `86/192`，
+half-defect census 为 `111/192`。不过仍有 12 行退化、ratio floor 低于 `1/4`，
+且只有 `25/48` length series nondecreasing，因此它是有限 scale repair，不是
+source-uniform arithmetic theorem；下一步必须在 disjoint holdout 上 hostile 验证。
 
 ```text
 TPC343_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
@@ -199,6 +208,28 @@ TPC350_STATUS = PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICA
 TPC350_ROUND2_CLUE = TEST_SCALE_ADAPTIVE_ZERO_SUM_CONTRAST_ON_HIGH_SHELLS
 ```
 
+```text
+TPC351_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT
+TPC351_RECIPROCAL_ZERO_SUM_RULE = PROVED_EXACT_FINITE_DECLARED_RATIONAL_RULE
+TPC351_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+TPC351_SCALE_REPAIR_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+TPC351_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+TPC351_PARENT_IMPROVEMENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_180_OF_192
+TPC351_RECIPROCAL_TO_DEFECT_RANGE = 0.0917557319271--0.901734353382
+TPC351_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_86_OF_192
+TPC351_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_111_OF_192
+TPC351_NONDECREASING_GROWTH_SERIES = NUMERICALLY_CERTIFIED_FINITE_25_OF_48
+TPC351_UNIFORM_QUARTER_FLOOR = REFUTED_SCOPED
+TPC351_ARITHMETIC_ADVANCE = NO
+TPC351_FIXED_POWER_CREDIT = 0
+TPC351_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+TPC351_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+TPC351_FULL_GATE_B = OPEN
+TPC351_TWIN_PRIME_RESULT = NONE
+TPC351_STATUS = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT
+TPC351_ROUND2_CLUE = ADVERSARIAL_HOLDOUT_FOR_RECIPROCAL_CONTRAST_BEFORE_BRANCH_FREEZE
+```
+
 TPC-331（更早阶段）承接 TPC-330，把五个预声明的 coordinate controls 视为一个
 finite control orbit，并对 energy、coordinate diagonal 与 off-diagonal response 给出
 exact mean/centered decomposition。锁定同一两个 held-out origins={28001,36001}、
@@ -311,6 +342,12 @@ origins、四个长度与四级 shell scale 上重放 zero-sum incidence witness
 正响应，但 Q=256 的全部 rows 低于 half-defect，含 48-series growth ledger、exact
 fresh anchor、reverse replay、mutation stress、PDF 与 local Bridge-B checker；
 arithmetic advance 仍为 NO。
+
+papers/tpc-351-reciprocal-shell-contrast - TPC-351 已完成项目 - 建立 exact rational
+reciprocal-shell zero-sum contrast；同一 192-row panel 上 180/192 改善 TPC-350，
+half-defect census 从 91 提升到 111，含 exact anchor、reverse-shell independent
+replay、8-mutation stress、PDF 与 local Bridge-B checker；uniform quarter-floor 仍
+scoped refuted，arithmetic advance 仍为 NO。
 
 papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram
 operator 的 6-row masked response ledger；zero/background/twin/prime-power gain

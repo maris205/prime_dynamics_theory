@@ -1,9 +1,78 @@
 # TPC HANDOFF
 
-TPC-350 current section: fresh-growth and shell-scale replication of signed incidence witnesses
+TPC-351 current section: reciprocal-shell zero-sum finite scale repair
+-------------------------------------------------------------------------------
+
+TPC-351 is the current sealed release.  It answers the TPC-350 high-shell
+obstruction with one predeclared rule on each ordered shell `Q<p_j<=2Q`:
+
+`gamma_j = 1/p_j - r^(-1) sum_k 1/p_k`,
+
+and `c_I(t)=sum_j gamma_j 1_(p_j|t)`.  The coefficients are exact rationals,
+sum to zero exactly, and do not depend on origin, interval length, source law,
+matrix entries, singular vectors, or observed responses.  The incidence Gram
+identity and `||D_I||_(2->2)>=||D_Ic_I||_2/||c_I||_2` are therefore
+`PROVED_EXACT_FINITE` whenever `c_I` is nonzero.
+
+The locked panel is exactly TPC-350's 192 rows.  All `192/192` reciprocal
+witnesses have positive response; `180/192` improve the parent.  The
+reciprocal/defect ratio is `0.0917557319271--0.901734353382` with mean
+`0.539037202287`; support is `24--339`; `86/192` beat the coordinate baseline,
+`111/192` reach half-defect, and `25/48` length series are nondecreasing.  At
+`Q=256`, the minimum rises from `0.0657381187306` to `0.0917557319271` and four
+rows reach half-defect instead of zero.  The incidence-Gram replay error is at
+most `1.42108547152e-14`; the exact `[97,110]` anchor has shell `(5,7)` and
+coefficients `(1/35,-1/35)`.
+
+This is a genuine finite scale repair, not a uniform theorem.  Twelve rows do
+not improve, the global floor remains below `1/4`, and 23 series are
+nonmonotone.  Hence `UNIFORM_QUARTER_FLOOR=REFUTED_SCOPED`; no source-uniform
+arithmetic `L2`, uniform masked-operator theorem, fixed-power credit, Route-B
+reassembly, or twin-prime conclusion is licensed.  The Session-named official
+evaluator files remain absent, so the local Bridge-B is fail-closed fallback
+evidence and not an official Route-A/Route-B pass.  The next minimal step is a
+disjoint adversarial holdout before this finite incidence branch is either
+retained or frozen.
+
+    TPC351_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT
+    TPC351_RECIPROCAL_ZERO_SUM_RULE = PROVED_EXACT_FINITE_DECLARED_RATIONAL_RULE
+    TPC351_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+    TPC351_SCALE_REPAIR_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+    TPC351_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+    TPC351_PARENT_IMPROVEMENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_180_OF_192
+    TPC351_RECIPROCAL_TO_DEFECT_RANGE = 0.0917557319271--0.901734353382
+    TPC351_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_86_OF_192
+    TPC351_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_111_OF_192
+    TPC351_NONDECREASING_GROWTH_SERIES = NUMERICALLY_CERTIFIED_FINITE_25_OF_48
+    TPC351_UNIFORM_QUARTER_FLOOR = REFUTED_SCOPED
+    TPC351_ARITHMETIC_ADVANCE = NO
+    TPC351_FIXED_POWER_CREDIT = 0
+    TPC351_FULL_GATE_B = OPEN
+    TPC351_TWIN_PRIME_RESULT = NONE
+    TPC351_STRONGEST_POSITIVE = EXACT_RECIPROCAL_CENTERING_AND_FINITE_REPAIR_ON_180_OF_192_ROWS
+    TPC351_STRONGEST_OBSTRUCTION = REPAIR_FAILS_ON_12_ROWS_AND_REMAINS_SUBQUARTER_AT_HIGH_SHELL
+    TPC351_OPEN_THEOREM = DISJOINT_HOLDOUT_TRANSFER_OR_SOURCE_NATIVE_MASKED_ARITHMETIC_L2
+    TPC351_REUSABLE_STRUCTURE = RECIPROCAL_PROFILE_TO_EXACT_CENTERING_TO_PAIRED_INCIDENCE_GRAM_AUDIT
+    TPC351_ROUND2_CLUE = ADVERSARIAL_HOLDOUT_FOR_RECIPROCAL_CONTRAST_BEFORE_BRANCH_FREEZE
+    TPC351_STATUS = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT
+
+TPC-351 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-351-reciprocal-shell-contrast/code/tpc351_reciprocal_shell_contrast.py --write
+    python -B papers/tpc-351-reciprocal-shell-contrast/code/tpc351_reciprocal_shell_contrast.py --check
+    python -O -B papers/tpc-351-reciprocal-shell-contrast/code/tpc351_reciprocal_shell_contrast.py --check
+    python -B papers/tpc-351-reciprocal-shell-contrast/experiments/tpc351_independent_checker.py --check
+    python -O -B papers/tpc-351-reciprocal-shell-contrast/experiments/tpc351_independent_checker.py --check
+    python -B papers/tpc-351-reciprocal-shell-contrast/experiments/tpc351_contrast_stress.py
+    python -O -B papers/tpc-351-reciprocal-shell-contrast/experiments/tpc351_contrast_stress.py
+    python -B research/tpc-big-road/tpc_bridge_b_tpc351_reciprocal_shell_contrast_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc351_reciprocal_shell_contrast_checker.py --check
+
+TPC-350 previous section: fresh-growth and shell-scale replication of signed incidence witnesses
 ---------------------------------------------------------------------------------------------------------
 
-TPC-350 is the current sealed release.  It carries the exact zero-sum
+TPC-350 is the previous sealed release.  It carries the exact zero-sum
 prime-incidence Gram lower-witness interface from TPC-349 to three fresh,
 disjoint origins `60097,72097,84097`, four source lengths `256,512,1024,2048`,
 four shell anchors `Q=36,80,128,256`, two kernel exponents, and two source
@@ -12161,12 +12230,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V203/TPC-350 是当前 release；其 producer、reverse-shell independent replay、stress
-audit 与 fresh-growth signed-incidence bridge 已封存。V202/TPC-349、V201/TPC-348、TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
+V204/TPC-351 是当前 release；其 producer、reverse-shell independent replay、stress
+audit 与 reciprocal-shell scale-repair bridge 已封存。V203/TPC-350、V202/TPC-349、V201/TPC-348、TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
 TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
 TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 421 对 normal/optimized 命令、842 次
+当前 curated cascade command set 共 425 对 normal/optimized 命令、850 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -12185,7 +12254,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -12250,6 +12319,14 @@ growing lower bound、source-uniform arithmetic `L2`、uniform masked-operator t
 fixed-power saving 或 official evaluator pass。`Q=256` 的 48 rows 全部低于 half-defect，
 只有 `24/48` length series nondecreasing，故 universal quarter-floor 与 monotone
 growth 均为 `REFUTED_SCOPED`。
+
+V204/TPC-351 的新增 4 对由 project producer、reverse-shell independent checker、
+reciprocal-contrast stress 与 local Bridge-B checker 逐项验证；其 exact rational
+zero-sum incidence interface 与 finite scale repair 不代表 growing lower bound、
+source-uniform arithmetic `L2`、uniform masked-operator theorem、fixed-power saving
+或 official evaluator pass。`180/192` rows 改善 TPC-350、`111/192` 达到 half-defect，
+但 12 rows 退化、floor 仍低于 `1/4`，`25/48` series nondecreasing，故 universal
+quarter-floor 仍为 `REFUTED_SCOPED`，下一步是 disjoint adversarial holdout。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
@@ -13702,6 +13779,29 @@ rows 全部低于 half-defect，故 universal quarter-floor 与 monotone growth 
 `REFUTED_SCOPED`，不代表 growing lower bound、source-uniform arithmetic `L2`、
 uniform masked-operator theorem、fixed-power saving 或 official evaluator pass。
 
+TPC-351 的项目级 producer、reverse-shell independent replay、reciprocal-contrast
+stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-351-reciprocal-shell-contrast/code/tpc351_reciprocal_shell_contrast.py --write
+python -B papers/tpc-351-reciprocal-shell-contrast/code/tpc351_reciprocal_shell_contrast.py --check
+python -O -B papers/tpc-351-reciprocal-shell-contrast/code/tpc351_reciprocal_shell_contrast.py --check
+python -B papers/tpc-351-reciprocal-shell-contrast/experiments/tpc351_independent_checker.py --check
+python -O -B papers/tpc-351-reciprocal-shell-contrast/experiments/tpc351_independent_checker.py --check
+python -B papers/tpc-351-reciprocal-shell-contrast/experiments/tpc351_contrast_stress.py
+python -O -B papers/tpc-351-reciprocal-shell-contrast/experiments/tpc351_contrast_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc351_reciprocal_shell_contrast_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc351_reciprocal_shell_contrast_checker.py --check
+```
+
+TPC-351 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 必须返回零、
+stderr 为空且 stdout 逐对 byte-identical；Bridge-B 输出
+`rows=192 / positive_witness=192 / improved_parent=180/192 /
+ratio_floor=0.0917557319271`。这是 V204 的 finite reciprocal-shell scale repair；
+12/192 rows 未改善 parent，floor 仍低于 `1/4`，故不代表 uniform quarter-floor、
+growing lower bound、source-uniform arithmetic `L2`、uniform masked-operator theorem、
+fixed-power saving 或 official evaluator pass。
+
 TPC-349 的项目级 producer、reverse-shell independent replay、signed-witness stress 与
 bridge checker：
 
@@ -13829,7 +13929,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-350 current release 入口：
+TPC-351 current release 入口：
+
+papers/tpc-351-reciprocal-shell-contrast/README.md
+papers/tpc-351-reciprocal-shell-contrast/PAPER_PLAN.md
+papers/tpc-351-reciprocal-shell-contrast/DERIVATION_PACKAGE.md
+papers/tpc-351-reciprocal-shell-contrast/PROOF_PACKAGE.md
+papers/tpc-351-reciprocal-shell-contrast/code/tpc351_reciprocal_shell_contrast.py
+papers/tpc-351-reciprocal-shell-contrast/experiments/tpc351_independent_checker.py
+papers/tpc-351-reciprocal-shell-contrast/experiments/tpc351_contrast_stress.py
+papers/tpc-351-reciprocal-shell-contrast/results/tpc351_certificate.json
+papers/tpc-351-reciprocal-shell-contrast/notes/theorem_ledger.md
+papers/tpc-351-reciprocal-shell-contrast/notes/claim_firewall.md
+papers/tpc-351-reciprocal-shell-contrast/notes/computational_protocol.md
+papers/tpc-351-reciprocal-shell-contrast/notes/route_evaluation.md
+papers/tpc-351-reciprocal-shell-contrast/paper/main.tex
+papers/tpc-351-reciprocal-shell-contrast/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc351_reciprocal_shell_contrast.md
+research/tpc-big-road/tpc_bridge_b_tpc351_reciprocal_shell_contrast_checker.py
+
+TPC-350 previous release 入口：
 
 papers/tpc-350-fresh-growth-signed-incidence/README.md
 papers/tpc-350-fresh-growth-signed-incidence/PAPER_PLAN.md

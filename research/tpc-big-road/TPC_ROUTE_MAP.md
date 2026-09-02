@@ -2,29 +2,59 @@
 
 更新时间：2026-09-03
 
-当前地图版本：V203 / TPC-350
+当前地图版本：V204 / TPC-351
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-350`（`PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT`）；
+当前编号锚点：`TPC-351`（`PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT`）；
 对应论文目录为
-`papers/tpc-350-fresh-growth-signed-incidence/`。
+`papers/tpc-351-reciprocal-shell-contrast/`。
 
-TPC-350 是当前地图位置：它把 TPC-349 的 zero-sum prime-incidence Gram
-interface 搬到三个全新 origins、四个 finite lengths 和四级 shell ladder，专门检验
-signed witness 是否在 fresh/growing panel 上保持。冻结 protocol 产生 `192` 条 rows
-和 `48` 条 length series；所有 signed witnesses 均有正响应，signed/defect ratio 为
-`0.0657381187306--0.8797933448`，`70/192` rows 超过 coordinate baseline，
-`91/192` rows 达到 half-defect。可是 `Q=256` 的 48 rows 没有一行达到 half-defect，
-length series 只有 `24/48` nondecreasing，因此 universal quarter-floor 与 universal
-monotone-growth 叙述均为 scoped refuted；下一步是预声明的 scale-adaptive zero-sum
-contrast，或回到保留 literal masks 的 source-native arithmetic `L2`。
+TPC-351 是当前地图位置：它承接 TPC-350 的 high-shell floor obstruction，冻结
+reciprocal-shell contrast `gamma_j=1/p_j-r^(-1)sum_k 1/p_k`。该 rule 不依赖
+origin、length、source law、observed matrices 或 responses，且 exact rational
+zero-sum。相同 protocol 的 `192/192` rows 有正响应，`180/192` 改善 parent；
+reciprocal/defect ratio 为 `0.0917557319271--0.901734353382`，`86/192` 超过
+coordinate baseline，`111/192` 达到 half-defect，`25/48` length series
+nondecreasing。它部分修复 `Q=256` block，但仍有 12 rows 退化且 floor 低于
+`1/4`；下一步是 disjoint adversarial holdout，失败则冻结 finite incidence branch。
 
 本关仍没有 arithmetic advance；source-uniform `L2`、uniform masked operator bound、
 fixed-power credit 与 twin-prime endpoint 继续 open。
 
 ```text
-YOU ARE HERE = V203 / TPC-350
+YOU ARE HERE = V204 / TPC-351
+TPC351_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT
+TPC351_RECIPROCAL_ZERO_SUM_RULE = PROVED_EXACT_FINITE_DECLARED_RATIONAL_RULE
+TPC351_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+TPC351_SCALE_REPAIR_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+TPC351_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+TPC351_PARENT_IMPROVEMENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_180_OF_192
+TPC351_RECIPROCAL_TO_DEFECT_RANGE = 0.0917557319271--0.901734353382
+TPC351_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_86_OF_192
+TPC351_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_111_OF_192
+TPC351_NONDECREASING_GROWTH_SERIES = NUMERICALLY_CERTIFIED_FINITE_25_OF_48
+TPC351_UNIFORM_QUARTER_FLOOR = REFUTED_SCOPED
+TPC351_ARITHMETIC_ADVANCE = NO
+TPC351_FIXED_POWER_CREDIT = 0
+TPC351_FULL_GATE_B = OPEN
+TPC351_TWIN_PRIME_RESULT = NONE
+TPC351_STATUS = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT
+TPC351_ROUND2_CLUE = ADVERSARIAL_HOLDOUT_FOR_RECIPROCAL_CONTRAST_BEFORE_BRANCH_FREEZE
+```
+
+## V203 / TPC-350 previous anchor
+
+TPC-350 把 TPC-349 的 zero-sum prime-incidence Gram interface 搬到三个全新
+origins、四个 finite lengths 和四级 shell ladder。冻结 protocol 的 `192/192`
+signed witnesses 有正响应，signed/defect ratio 为
+`0.0657381187306--0.8797933448`；`70/192` 超过 coordinate baseline，`91/192`
+达到 half-defect，`24/48` length series nondecreasing。`Q=256` 的 48 rows 全部
+低于 half-defect，因此 universal quarter-floor 与 monotone-growth 均 scoped
+refuted，并触发 TPC-351 的 scale-adaptive contrast。
+
+```text
+YOU ARE HERE = V203 / TPC-350 (historical)
 TPC350_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT
 TPC350_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
 TPC350_FRESH_GROWTH_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
@@ -1353,6 +1383,54 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.135 V204 / TPC-351：reciprocal-shell zero-sum scale repair
+
+TPC-351 responds to the TPC-350 high-shell obstruction with exactly one
+predeclared coefficient law.  For the primes `Q<p_j<=2Q`, set
+`gamma_j=1/p_j-r^(-1)sum_k 1/p_k` and
+`c_I(t)=sum_j gamma_j 1_(p_j|t)`.  The rational coefficient sum vanishes
+exactly, so the incidence Gram expansion and normalized induced-norm lower
+witness are exact finite statements, independent of every observed response.
+
+On the identical 192-row parent panel, all reciprocal witnesses have positive
+response and `180/192` improve TPC-350.  The reciprocal/defect ratio is
+`0.0917557319271--0.901734353382`, `86/192` rows beat the coordinate baseline,
+`111/192` reach half-defect, and `25/48` length series are nondecreasing.  At
+`Q=256`, four rows now reach half-defect instead of zero, and the finite floor
+rises from `0.0657381187306` to `0.0917557319271`.
+
+The repair is not universal: 12 rows lose to the parent, the floor remains
+below `1/4`, and 23 series are nonmonotone.  Therefore the strongest obstruction
+remains a missing transferable, source-native masked arithmetic `L2` theorem.
+The next minimal paper is an adversarial holdout at disjoint origins and new
+scales; failure freezes the finite incidence branch, while success still earns
+no arithmetic or fixed-power credit by itself.
+
+```text
+shell reciprocal profile -> exact rational centering -> incidence Gram
+  -> paired parent comparison -> scale repair/obstruction -> disjoint holdout
+```
+
+```text
+TPC351_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT
+TPC351_RECIPROCAL_ZERO_SUM_RULE = PROVED_EXACT_FINITE_DECLARED_RATIONAL_RULE
+TPC351_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+TPC351_SCALE_REPAIR_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+TPC351_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+TPC351_PARENT_IMPROVEMENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_180_OF_192
+TPC351_RECIPROCAL_TO_DEFECT_RANGE = 0.0917557319271--0.901734353382
+TPC351_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_86_OF_192
+TPC351_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_111_OF_192
+TPC351_NONDECREASING_GROWTH_SERIES = NUMERICALLY_CERTIFIED_FINITE_25_OF_48
+TPC351_UNIFORM_QUARTER_FLOOR = REFUTED_SCOPED
+TPC351_ARITHMETIC_ADVANCE = NO
+TPC351_FIXED_POWER_CREDIT = 0
+TPC351_FULL_GATE_B = OPEN
+TPC351_TWIN_PRIME_RESULT = NONE
+TPC351_STATUS = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT
+TPC351_ROUND2_CLUE = ADVERSARIAL_HOLDOUT_FOR_RECIPROCAL_CONTRAST_BEFORE_BRANCH_FREEZE
+```
 
 ## 5.134 V203 / TPC-350：fresh-growth and shell-scale signed incidence
 
@@ -4125,9 +4203,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V203 / TPC-350                    |
-        | FRESH-GROWTH SIGNED INCIDENCE AUDIT         |
-        | HIGH-SHELL SCALE OBSTRUCTION; GATES OPEN    |
+        | YOU ARE HERE — V204 / TPC-351                    |
+        | RECIPROCAL-SHELL FINITE SCALE REPAIR        |
+        | DISJOINT HOLDOUT NEXT; ARITHMETIC GATES OPEN|
         +--------------------------------------------------+
                 |
                 v
@@ -9237,6 +9315,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-03 | V204 / TPC-351 | Bridge A / Gate B：reciprocal-shell finite scale repair 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-351` | 承接 TPC-350；exact rational reciprocal centering、192/192 正响应、180/192 改善 parent，reciprocal/defect `0.0918--0.9017`，86/192 超过 coordinate baseline，111/192 达到 half-defect，25/48 series nondecreasing；universal quarter-floor scoped refuted，下一步为 disjoint adversarial holdout |
 | 2026-09-03 | V203 / TPC-350 | Bridge A / Gate B：fresh-growth signed-incidence replication 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-350` | 承接 TPC-349；三个 fresh origins、四个 lengths、四级 shell scale，192/192 正响应，signed/defect `0.0657--0.8798`，70/192 超过 coordinate baseline，91/192 达到 half-defect；Q=256 全部低于 half-defect，24/48 series nondecreasing，universal quarter-floor 与 monotone growth scoped refuted，下一步为 scale-adaptive zero-sum contrast |
 | 2026-09-02 | V202 / TPC-349 | Bridge A / Gate B：prime-balanced signed defect witness 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-349` | 承接 TPC-348；exact zero-sum beta、prime-incidence Gram expansion 与 normalized induced-norm witness；192/192 正响应，136/192 超过 coordinate baseline，175/192 达到 half-defect；universal gain scoped refuted，下一步为 growing fresh-panel replication |
 | 2026-09-02 | V201 / TPC-348 | Bridge A / Gate B：position-aware mask-defect lower witness 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-348` | 承接 TPC-347；exact two-sided position formula 与 coordinate induced-norm lower witness；192/192 rows positive，best-hit/defect `0.4540--0.8971`，mask-discard obstruction 定位到 mask-hit coordinates；arithmetic advance 仍为 NO，下一步测试 prime-balanced signed witnesses |

@@ -1,6 +1,50 @@
 # TPC distilled map and bold channel
 
-## V203 / TPC-350 current anchor
+## V204 / TPC-351 current anchor
+
+更新时间：2026-09-03
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc351_reciprocal_shell_contrast.md，checker 为
+tpc_bridge_b_tpc351_reciprocal_shell_contrast_checker.py，编号论文为
+papers/tpc-351-reciprocal-shell-contrast/。
+
+TPC-351 承接 TPC-350 的 high-shell floor obstruction，冻结一个不依赖 origin、
+length、source law、矩阵 entries 或 observed response 的 reciprocal-shell rule：
+`gamma_j=1/p_j-r^(-1)sum_k 1/p_k`。该有理 coefficient vector exact zero-sum，
+因此 prime-incidence Gram identity 与 normalized induced-norm lower witness 都是
+exact finite algebra。原 192-row panel 上，所有 reciprocal witnesses 有正响应，
+`180/192` rows 改善 TPC-350；reciprocal/defect ratio 为
+`0.0917557319271--0.901734353382`，`86/192` 超过 coordinate baseline，
+`111/192` 达到 half-defect，`25/48` length series nondecreasing。
+
+这是 `PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT`；
+reciprocal centering 构成真实 finite repair，但 12 rows 没有改善，floor 仍低于
+`1/4`，因此 universal quarter-floor 继续 `REFUTED_SCOPED`。source-uniform
+arithmetic `L2`、uniform masked operator bound、fixed-power credit、Route-B
+reassembly 与 twin-prime endpoint 继续 open。Session-named evaluator files absent，
+故只记录 local Bridge-B fail-closed；下一步是 disjoint adversarial holdout。
+
+    TPC351_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT
+    TPC351_RECIPROCAL_ZERO_SUM_RULE = PROVED_EXACT_FINITE_DECLARED_RATIONAL_RULE
+    TPC351_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+    TPC351_SCALE_REPAIR_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+    TPC351_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+    TPC351_PARENT_IMPROVEMENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_180_OF_192
+    TPC351_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_86_OF_192
+    TPC351_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_111_OF_192
+    TPC351_NONDECREASING_GROWTH_SERIES = NUMERICALLY_CERTIFIED_FINITE_25_OF_48
+    TPC351_UNIFORM_QUARTER_FLOOR = REFUTED_SCOPED
+    TPC351_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+    TPC351_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC351_ARITHMETIC_ADVANCE = NO
+    TPC351_FIXED_POWER_CREDIT = 0
+    TPC351_FULL_GATE_B = OPEN
+    TPC351_TWIN_PRIME_RESULT = NONE
+    TPC351_STATUS = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT
+    TPC351_ROUND2_CLUE = ADVERSARIAL_HOLDOUT_FOR_RECIPROCAL_CONTRAST_BEFORE_BRANCH_FREEZE
+
+## V203 / TPC-350 previous anchor
 
 更新时间：2026-09-03
 

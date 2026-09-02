@@ -3,13 +3,80 @@
 
 更新时间：2026-09-03
 
-状态：**TPC350_PROVED_EXACT_FINITE_SIGNED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FRESH_GROWTH_AND_SCALE_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC351_PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.144 current：TPC-350 fresh-growth and shell-scale signed incidence audit
+## 0.145 current：TPC-351 reciprocal-shell zero-sum contrast
+
+项目：papers/tpc-351-reciprocal-shell-contrast/
+
+类型：**PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT**。
+
+TPC-351 承接 TPC-350 的 high-shell scale obstruction，并只测试一个预声明、
+不按 row 拟合的替代：对升序 shell primes `Q<p_j<=2Q` 令
+`gamma_j=1/p_j-r^(-1)sum_k 1/p_k`，再定义
+`c_I(t)=sum_j gamma_j 1_(p_j|t)`。系数是 exact rationals 且
+`sum_j gamma_j=0`；线性与双线性精确给出
+
+```text
+||D_I c_I||_2^2
+ = sum_(j,k) gamma_j gamma_k <D_I h_(p_j,I),D_I h_(p_k,I)>,
+||D_I||_(2->2) >= ||D_I c_I||_2 / ||c_I||_2.
+```
+
+冻结 protocol 与 TPC-350 完全相同，共 `192` rows、`48` 条 length series。
+所有 reciprocal witnesses 非零且响应为正；reciprocal/defect ratio 为
+`0.0917557319271--0.901734353382`，mean 为 `0.539037202287`，support 为
+`24--339`。`180/192` rows 改善 parent，`86/192` 超过 coordinate baseline，
+`111/192` 达到 half-defect；incidence-Gram replay 最大误差为
+`1.42108547152e-14`。按 shell 分层，`Q=256` 的 half-defect census 从 parent 的
+0 提升到 4，floor 从 `0.0657381187306` 提升到 `0.0917557319271`。
+
+最强正结果：一个固定、scale-aware、exact zero-sum 的 reciprocal coefficient rule
+在相同 panel 的 `180/192` rows 改善 TPC-350，并将总体 half-defect census 从 91
+提升到 111；这是明确的 finite scale repair，而不是 response-fitted artifact。
+
+最强 obstruction：改善并非 universal；12 rows 退化，`Q=256` 仍有 44/48 rows
+低于 half-defect，总体 floor 仍低于 `1/4`，且只有 `25/48` length series
+nondecreasing。因此 universal quarter-floor 与 monotone-growth 叙述仍为
+`REFUTED_SCOPED`，并未获得 arithmetic credit。
+
+开放定理：在完全 disjoint origins 与新的 length/shell ladder 上 adversarially
+hold out 同一 reciprocal rule；若 transfer 失败则冻结 finite incidence branch，若
+transfer 成立也仍需 source-native masked arithmetic `L2` 才能进入 Route-B reassembly。
+
+可复用结构：
+
+    shell reciprocal profile -> exact rational centering -> incidence Gram
+      -> paired parent comparison -> scale-resolved repair/obstruction ledger
+
+ROUND2_CLUE：`ADVERSARIAL_HOLDOUT_FOR_RECIPROCAL_CONTRAST_BEFORE_BRANCH_FREEZE`。
+
+声明上限：`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`、
+`TWIN_PRIME_RESULT=NONE`；official evaluator files absent，local Bridge-B fail-closed。
+
+    TPC351_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT
+    TPC351_RECIPROCAL_ZERO_SUM_RULE = PROVED_EXACT_FINITE_DECLARED_RATIONAL_RULE
+    TPC351_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+    TPC351_SCALE_REPAIR_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+    TPC351_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+    TPC351_PARENT_IMPROVEMENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_180_OF_192
+    TPC351_RECIPROCAL_TO_DEFECT_RANGE = 0.0917557319271--0.901734353382
+    TPC351_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_86_OF_192
+    TPC351_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_111_OF_192
+    TPC351_NONDECREASING_GROWTH_SERIES = NUMERICALLY_CERTIFIED_FINITE_25_OF_48
+    TPC351_UNIFORM_QUARTER_FLOOR = REFUTED_SCOPED
+    TPC351_ARITHMETIC_ADVANCE = NO
+    TPC351_FIXED_POWER_CREDIT = 0
+    TPC351_FULL_GATE_B = OPEN
+    TPC351_TWIN_PRIME_RESULT = NONE
+    TPC351_STATUS = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT
+    TPC351_ROUND2_CLUE = ADVERSARIAL_HOLDOUT_FOR_RECIPROCAL_CONTRAST_BEFORE_BRANCH_FREEZE
+
+## 0.144 previous：TPC-350 fresh-growth and shell-scale signed incidence audit
 
 项目：papers/tpc-350-fresh-growth-signed-incidence/
 
