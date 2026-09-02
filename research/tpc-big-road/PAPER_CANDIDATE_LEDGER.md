@@ -3,13 +3,68 @@
 
 更新时间：2026-09-02
 
-状态：**TPC343_NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC344_NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.137 current：TPC-343 cross-panel shared-nuisance meta-certificate
+## 0.138 current：TPC-344 panel-contrast nuisance basis audit
+
+项目：papers/tpc-344-panel-contrast-nuisance-basis/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT**。
+
+TPC-344 承接 TPC-343 的 scoped shared-coefficient obstruction，测试最小的
+panel-adaptive 结构：对三个 nuisance categories 分别加入一个预声明的
+panel-contrast column。六列 basis 在 exact finite linear algebra 上满足
+`u_1j=(b_j+d_j)/2`、`u_2j=(b_j-d_j)/2`，等价于每个 panel 内共享、panel
+之间允许不同的 nuisance coefficient vector；这不是 canonical arithmetic basis。
+
+六 rows 产生 216 个 raw records、171 个 nonempty records、6 个 in-sample
+projections、18 个 contrast holdouts 与 4 个 directional cross-fits。panel-contrast
+raw residual retention 为 `0.29621892474890171`，首次在该 declared raw weighting
+下通过 inherited `<0.30` guard；equal-row retention 为 `0.31865066996095742`，
+因此该 crossing 对 weighting 不稳定。contrast positive rank 为 5（TPC-342 的
+prime-power nuisance column 在其三 rows 上为空），raw positive-condition diagnostic
+为 `141.98499924473342`。
+
+最强正结果：panel-contrast span 对 raw pooled finite fit 提供了一个可重放的、
+但很窄的 partial repair，并与 panel-adaptive shared span exact 等价。
+
+最强 obstruction：equal-row weighting 删除 raw crossing；四个 cross-fit prediction
+retentions 为 `0.37594867338366317--0.63429341965475916`，全部高于低残差
+`<0.30` transfer criterion。18 个 contrast holdouts 为
+`0.6372238668391691--0.91285435474891141`。
+
+开放定理：canonical/source-uniform nuisance structure、arithmetic `L2`、uniform
+masked operator bound、strict `1/400` payment 与 full Route-B Gate B。fixed-power
+credit 为 `0`，twin-prime conclusion 为 `NONE`；官方 evaluator 文件缺失，仅有
+local fail-closed Bridge-B。
+
+可复用结构：
+
+    shared span -> signed panel contrast -> panel-adaptive reparameterization
+                -> weighting sensitivity -> cross-fit transfer audit
+
+ROUND2_CLUE：`PRINCIPAL_ANGLE_GRASSMANN_STABILITY_AUDIT`。
+
+    TPC344_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT
+    TPC344_CONTRAST_SPAN_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC344_RAW_CONTRAST_GUARD = NUMERICALLY_CERTIFIED_FINITE_SCOPED_PASS
+    TPC344_EQUAL_ROW_CONTRAST_GUARD = REFUTED_SCOPED
+    TPC344_WEIGHTING_STABILITY = REFUTED_SCOPED
+    TPC344_CROSSFIT_TRANSFER = REFUTED_SCOPED
+    TPC344_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_18_RECORDS
+    TPC344_ARITHMETIC_ADVANCE = NO
+    TPC344_FIXED_POWER_CREDIT = 0
+    TPC344_SOURCE_UNIFORM_L2 = OPEN
+    TPC344_FULL_GATE_B = OPEN
+    TPC344_TWIN_PRIME_RESULT = NONE
+    TPC344_STATUS = NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT
+    TPC344_ROUND2_CLUE = PRINCIPAL_ANGLE_GRASSMANN_STABILITY_AUDIT
+
+## 0.137 released：TPC-343 cross-panel shared-nuisance meta-certificate
 
 项目：papers/tpc-343-cross-panel-meta-certificate/
 

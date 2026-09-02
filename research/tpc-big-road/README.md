@@ -1,13 +1,43 @@
-# TPC big road V196 / TPC-343: cross-panel shared-nuisance meta-certificate
+# TPC big road V197 / TPC-344: panel-contrast nuisance basis audit
 
-## V196 current anchor: TPC-343
+## V197 current anchor: TPC-344
 
 更新时间：2026-09-02
 
-当前 TPC-343 proof 为
-bridge_b_tpc343_cross_panel_meta_certificate.md，checker 为
-tpc_bridge_b_tpc343_cross_panel_meta_certificate_checker.py，编号论文为
-../../papers/tpc-343-cross-panel-meta-certificate/。
+当前 TPC-344 proof 为
+bridge_b_tpc344_panel_contrast_nuisance_basis.md，checker 为
+tpc_bridge_b_tpc344_panel_contrast_nuisance_basis_checker.py，编号论文为
+../../papers/tpc-344-panel-contrast-nuisance-basis/。
+
+TPC-344 在 TPC-343 的 shared-coefficient obstruction 后加入预声明的 panel-contrast
+nuisance basis。六列 basis 在有限线性代数上等价于每个 panel 一个 shared nuisance
+vector；raw pooled residual retention 为 `0.2962189247`，但 equal-row retention 为
+`0.3186506700`。四个 cross-fit prediction retentions 为
+`0.3759486734--0.6342934197`，18 个 contrast holdouts 为
+`0.6372238668--0.9128543547`。
+
+这是 `NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT`；raw crossing 是
+scoped finite result，weighting stability 与 low-residual cross-panel transfer 均
+refuted scoped。source-uniform arithmetic `L2`、uniform masked operator bound、
+fixed-power credit 与 twin-prime endpoint 仍 open。Session-named evaluator files absent，
+故不宣称 official Route-A/Route-B pass。
+
+    TPC344_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT
+    TPC344_CONTRAST_SPAN_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC344_RAW_CONTRAST_GUARD = NUMERICALLY_CERTIFIED_FINITE_SCOPED_PASS
+    TPC344_EQUAL_ROW_CONTRAST_GUARD = REFUTED_SCOPED
+    TPC344_WEIGHTING_STABILITY = REFUTED_SCOPED
+    TPC344_CROSSFIT_TRANSFER = REFUTED_SCOPED
+    TPC344_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_18_RECORDS
+    TPC344_ARITHMETIC_ADVANCE = NO
+    TPC344_FIXED_POWER_CREDIT = 0
+    TPC344_SOURCE_UNIFORM_L2 = OPEN
+    TPC344_FULL_GATE_B = OPEN
+    TPC344_TWIN_PRIME_RESULT = NONE
+    TPC344_STATUS = NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT
+    TPC344_ROUND2_CLUE = PRINCIPAL_ANGLE_GRASSMANN_STABILITY_AUDIT
+
+## V196 previous anchor: TPC-343
 
 TPC-343 锁定 TPC-341 与 TPC-342 两个 disjoint panels，在六个 cutoff-safe windows
 上比较 row-block 与 shared nuisance projections。row-block pooled residual retention

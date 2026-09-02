@@ -1,6 +1,54 @@
 # TPC HANDOFF
 
-TPC-343 current section: cross-panel shared-nuisance meta-certificate
+TPC-344 current section: panel-contrast nuisance-basis audit
+-----------------------------------------------------------------------------------------------
+
+TPC-344 follows the TPC-343 shared-coefficient obstruction on the same two
+hash-locked panels.  For each of the three nuisance categories it adds a
+predeclared signed panel-contrast column, with sign vector `(+1,-1)`.  The
+resulting six-column basis is exactly equivalent, by
+`u_1=(b+d)/2` and `u_2=(b-d)/2`, to one shared nuisance coefficient vector per
+panel.  This is a finite reparameterization, not a canonical arithmetic basis.
+
+The panel-contrast raw-energy residual retention is `0.29621892474890171`,
+which narrowly passes the inherited `<0.30` guard.  Equal-row retention is
+`0.31865066996095742`, so the crossing is not weighting-stable.  The 18
+contrast holdouts retain `0.6372238668391691--0.91285435474891141`; four
+cross-fit prediction retentions are `0.37594867338366317--0.63429341965475916`
+and all exceed the low-residual `<0.30` transfer criterion.
+
+The exact span identity and finite projection identity are proved in the
+project package.  Producer, reverse-shell independent replay, nine-mutation
+stress, PDF audit, and local fail-closed Bridge-B checks pass.  The observed
+contrast rank is 5 because the prime-power nuisance column is zero on the
+TPC-342 rows.
+
+    TPC344_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT
+    TPC344_CONTRAST_SPAN_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC344_RAW_CONTRAST_GUARD = NUMERICALLY_CERTIFIED_FINITE_SCOPED_PASS
+    TPC344_EQUAL_ROW_CONTRAST_GUARD = REFUTED_SCOPED
+    TPC344_WEIGHTING_STABILITY = REFUTED_SCOPED
+    TPC344_CROSSFIT_TRANSFER = REFUTED_SCOPED
+    TPC344_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_18_RECORDS
+    TPC344_ARITHMETIC_ADVANCE = NO
+    TPC344_FIXED_POWER_CREDIT = 0
+    TPC344_SOURCE_UNIFORM_L2 = OPEN
+    TPC344_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC344_FULL_GATE_B = OPEN
+    TPC344_TWIN_PRIME_RESULT = NONE
+    TPC344_STRONGEST_POSITIVE = RAW_WEIGHTED_PANEL_CONTRAST_PARTIAL_REPAIR
+    TPC344_STRONGEST_OBSTRUCTION = EQUAL_ROW_AND_CROSSFIT_FAILURE
+    TPC344_OPEN_THEOREM = PRINCIPAL_ANGLE_STABILITY_OR_SOURCE_UNIFORM_L2
+    TPC344_REUSABLE_STRUCTURE = SHARED_TO_CONTRAST_TO_PANEL_ADAPTIVE_SPAN
+    TPC344_ROUND2_CLUE = PRINCIPAL_ANGLE_GRASSMANN_STABILITY_AUDIT
+    TPC344_STATUS = NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT
+
+Session-named Route-A/Route-B evaluator files are absent in this checkout.
+The local Bridge-B wrapper is a fail-closed fallback and cannot be written as
+an official evaluator pass.  No arithmetic estimate, fixed-power credit, strict
+`1/400` payment, or twin-prime conclusion is licensed.
+
+TPC-343 previous section: cross-panel shared-nuisance meta-certificate
 -----------------------------------------------------------------------------------------------
 
 TPC-343 locks both the TPC-341 parent panel and the TPC-342 independent panel, preserving
@@ -11730,12 +11778,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V196/TPC-343 是当前 release；其 producer、reverse-shell independent replay、stress
-audit 与 cross-panel meta bridge 已封存。TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
+V197/TPC-344 是当前 release；其 producer、reverse-shell independent replay、stress
+audit 与 panel-contrast bridge 已封存。TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
 TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
 TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 393 对 normal/optimized 命令、786 次
+当前 curated cascade command set 共 397 对 normal/optimized 命令、794 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -11754,7 +11802,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -11778,6 +11826,11 @@ V196/TPC-343 的新增 4 对由 project producer、reverse-shell independent che
 meta stress 与 local Bridge-B checker 逐项验证；其 cross-panel shared-coefficient
 obstruction 不代表 alternative-basis impossibility、source-uniform arithmetic `L2`、
 fixed-power saving 或 official evaluator pass。
+
+V197/TPC-344 的新增 4 对由 project producer、reverse-shell independent checker、
+panel-contrast stress 与 local Bridge-B checker 逐项验证；其 raw-weighted partial
+repair 不代表 weighting-stable transfer、canonical nuisance basis、source-uniform
+arithmetic `L2`、fixed-power saving 或 official evaluator pass。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
@@ -13144,6 +13197,27 @@ raw_records=216 / holdout_records=54 / shared_guard=REFUTED_SCOPED`。这是 V19
 finite shared-coefficient model obstruction，不代表 alternative-basis impossibility、
 source-uniform arithmetic `L2` 或 twin-prime conclusion。
 
+TPC-344 的项目级 producer、reverse-shell independent replay、panel-contrast stress 与
+bridge checker：
+
+```bash
+python -B papers/tpc-344-panel-contrast-nuisance-basis/code/tpc344_panel_contrast_nuisance_basis.py --check
+python -O -B papers/tpc-344-panel-contrast-nuisance-basis/code/tpc344_panel_contrast_nuisance_basis.py --check
+python -B papers/tpc-344-panel-contrast-nuisance-basis/experiments/tpc344_independent_checker.py --check
+python -O -B papers/tpc-344-panel-contrast-nuisance-basis/experiments/tpc344_independent_checker.py --check
+python -B papers/tpc-344-panel-contrast-nuisance-basis/experiments/tpc344_meta_stress.py --check
+python -O -B papers/tpc-344-panel-contrast-nuisance-basis/experiments/tpc344_meta_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc344_panel_contrast_nuisance_basis_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc344_panel_contrast_nuisance_basis_checker.py --check
+```
+
+TPC-344 增量 tail audit：4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `rows=6 / raw_records=216 /
+contrast_raw=0.2962189247 / contrast_equal_row=0.3186506700 /
+holdout_records=18`。这是 V197 的 finite panel-contrast audit，不代表
+weighting-stable transfer、canonical basis、source-uniform arithmetic `L2` 或
+twin-prime conclusion。
+
 TPC-327 的项目级 producer、independent replay、three-origin stress 与 bridge checker：
 
 ```bash
@@ -13204,6 +13278,25 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 ```
 
 随后优先读取：
+
+TPC-344 current release 入口：
+
+papers/tpc-344-panel-contrast-nuisance-basis/README.md
+papers/tpc-344-panel-contrast-nuisance-basis/PAPER_PLAN.md
+papers/tpc-344-panel-contrast-nuisance-basis/DERIVATION_PACKAGE.md
+papers/tpc-344-panel-contrast-nuisance-basis/PROOF_PACKAGE.md
+papers/tpc-344-panel-contrast-nuisance-basis/code/tpc344_panel_contrast_nuisance_basis.py
+papers/tpc-344-panel-contrast-nuisance-basis/experiments/tpc344_independent_checker.py
+papers/tpc-344-panel-contrast-nuisance-basis/experiments/tpc344_meta_stress.py
+papers/tpc-344-panel-contrast-nuisance-basis/results/tpc344_certificate.json
+papers/tpc-344-panel-contrast-nuisance-basis/notes/theorem_ledger.md
+papers/tpc-344-panel-contrast-nuisance-basis/notes/claim_firewall.md
+papers/tpc-344-panel-contrast-nuisance-basis/notes/computational_protocol.md
+papers/tpc-344-panel-contrast-nuisance-basis/notes/route_evaluation.md
+papers/tpc-344-panel-contrast-nuisance-basis/paper/main.tex
+papers/tpc-344-panel-contrast-nuisance-basis/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc344_panel_contrast_nuisance_basis.md
+research/tpc-big-road/tpc_bridge_b_tpc344_panel_contrast_nuisance_basis_checker.py
 
 最新 TPC-343 入口：
 

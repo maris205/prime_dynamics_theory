@@ -2,41 +2,48 @@
 
 更新时间：2026-09-02
 
-当前地图版本：V196 / TPC-343
+当前地图版本：V197 / TPC-344
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-343`（`NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE`）；
+当前编号锚点：`TPC-344`（`NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT`）；
 对应论文目录为
-`papers/tpc-343-cross-panel-meta-certificate/`。
+`papers/tpc-344-panel-contrast-nuisance-basis/`。
 
-TPC-343 是当前地图位置：它锁定 TPC-341 与 TPC-342 两个 protocol-compatible panels，
-在六个 cutoff-safe rows 上比较 row-block 与 shared nuisance projections。row-block
-pooled residual retention 为 `0.2325429101`，但 shared raw 与 equal-row retention
-分别为 `0.3198013104` 与 `0.3549335801`，均越过 inherited `0.30` guard。因而
-row-local fit 不能直接升级为一个跨 panel 的 shared nuisance law；stacked identity
-是 exact finite，shared-law failure 是 scoped finite fact。
+TPC-344 是当前地图位置：它承接 TPC-343 的 shared-coefficient obstruction，在同一
+六个 cutoff-safe rows 上加入预声明的 panel-contrast nuisance basis。六列 basis 在
+有限线性代数上等价于每个 panel 内共享、panel 之间允许不同的 nuisance coefficients。
+raw pooled residual retention 为 0.2962189247，但 equal-row retention 为
+0.3186506700；四个 cross-fit prediction retentions 为
+0.3759486734--0.6342934197，18 个 contrast holdouts 为
+0.6372238668--0.9128543547。这是 weighting-sensitive partial repair，不是
+canonical basis 或 transfer theorem。
 
 本关仍没有 arithmetic advance；source-uniform `L2`、uniform masked operator bound、
 fixed-power credit 与 twin-prime endpoint 继续 open。
 
 ```text
-YOU ARE HERE = V196 / TPC-343
-TPC343_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
-TPC343_STACKED_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-TPC343_ROW_BLOCK_META = NUMERICALLY_CERTIFIED_FINITE_6_ROW_POOLED_PROJECTION
-TPC343_SHARED_COEFFICIENT_RAW = NUMERICAL_OBSERVATION_0.319_TO_0.320
-TPC343_SHARED_COEFFICIENT_EQUAL_ROW = NUMERICAL_OBSERVATION_0.354_TO_0.355
-TPC343_SHARED_COEFFICIENT_STABILITY = REFUTED_SCOPED
-TPC343_HOLDOUT_META = NUMERICALLY_CERTIFIED_FINITE_54_RECORDS
-TPC343_ARITHMETIC_ADVANCE = NO
-TPC343_FIXED_POWER_CREDIT = 0
-TPC343_SOURCE_UNIFORM_L2 = OPEN
-TPC343_FULL_GATE_B = OPEN
-TPC343_TWIN_PRIME_RESULT = NONE
-TPC343_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
-TPC343_ROUND2_CLUE = ALTERNATIVE_NUISANCE_BASIS_OR_PRINCIPAL_ANGLE_AUDIT
+YOU ARE HERE = V197 / TPC-344
+TPC344_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT
+TPC344_CONTRAST_SPAN_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC344_RAW_CONTRAST_GUARD = NUMERICALLY_CERTIFIED_FINITE_SCOPED_PASS
+TPC344_EQUAL_ROW_CONTRAST_GUARD = REFUTED_SCOPED
+TPC344_WEIGHTING_STABILITY = REFUTED_SCOPED
+TPC344_CROSSFIT_TRANSFER = REFUTED_SCOPED
+TPC344_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_18_RECORDS
+TPC344_ARITHMETIC_ADVANCE = NO
+TPC344_FIXED_POWER_CREDIT = 0
+TPC344_SOURCE_UNIFORM_L2 = OPEN
+TPC344_FULL_GATE_B = OPEN
+TPC344_TWIN_PRIME_RESULT = NONE
+TPC344_STATUS = NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT
+TPC344_ROUND2_CLUE = PRINCIPAL_ANGLE_GRASSMANN_STABILITY_AUDIT
 ```
+
+## V196 / TPC-343 previous anchor
+
+TPC-343 的详细历史条目位于下方的 `## 5.127 V196 / TPC-343`；它是 TPC-344 的
+shared-coefficient parent。
 
 ## V195 / TPC-342 previous anchor
 
@@ -1230,6 +1237,46 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.128 V197 / TPC-344：panel-contrast nuisance-basis audit
+
+TPC-344 在同一六个 cutoff-safe rows 上测试最小的 panel-adaptive relaxation：对三个
+nuisance categories 各加入一个 signed contrast column，panel sign 为 `(+1,-1)`。
+六列 basis 与每个 panel 一个 shared nuisance vector 之间存在 exact finite
+reparameterization，因此这是一个明确的有限模型审计，而不是 canonical arithmetic
+decomposition。
+
+216 条 raw records 中，panel-contrast projection 的 raw-weighted residual retention
+为 `0.29621892474890171`，窄幅通过 inherited `<0.30` guard；equal-row retention
+为 `0.31865066996095742`，所以 weighting stability 被 scoped refute。18 个 contrast
+holdouts 的 retention 为 `0.6372238668391691--0.91285435474891141`；四个跨 panel
+cross-fit prediction retentions 为 `0.37594867338366317--0.63429341965475916`，
+均不满足低残差 `<0.30` transfer criterion。观察到的 contrast rank 为 5，因为
+TPC-342 panel 上 prime-power nuisance column 为零。
+
+该关的正结果是一个可独立重放的 raw-weighted partial repair；负结果是 equal-row
+crossing 与 cross-fit transfer 同时失败。它没有 arithmetic advance、fixed-power
+credit、source-uniform `L2` 或 twin-prime conclusion；官方 evaluator 文件仍缺失，
+local Bridge-B 仅作 fail-closed fallback。下一关沿 `ROUND2_CLUE` 转入 principal-angle/
+Grassmann stability audit。
+
+```text
+TPC344_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT
+TPC344_CONTRAST_SPAN_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC344_RAW_CONTRAST_GUARD = NUMERICALLY_CERTIFIED_FINITE_SCOPED_PASS
+TPC344_EQUAL_ROW_CONTRAST_GUARD = REFUTED_SCOPED
+TPC344_WEIGHTING_STABILITY = REFUTED_SCOPED
+TPC344_CROSSFIT_TRANSFER = REFUTED_SCOPED
+TPC344_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_18_RECORDS
+TPC344_ARITHMETIC_ADVANCE = NO
+TPC344_FIXED_POWER_CREDIT = 0
+TPC344_SOURCE_UNIFORM_L2 = OPEN
+TPC344_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+TPC344_FULL_GATE_B = OPEN
+TPC344_TWIN_PRIME_RESULT = NONE
+TPC344_STATUS = NUMERICALLY_CERTIFIED_FINITE_PANEL_CONTRAST_BASIS_AUDIT
+TPC344_ROUND2_CLUE = PRINCIPAL_ANGLE_GRASSMANN_STABILITY_AUDIT
+```
 
 ## 5.127 V196 / TPC-343：cross-panel shared-nuisance meta-certificate
 
@@ -8803,6 +8850,8 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-02 | V197 / TPC-344 | Bridge A / Gate B：panel-contrast nuisance-basis audit 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-344` | 承接 TPC-343；六 rows、216 raw records、18 contrast holdouts 与 4 cross-fits；raw contrast retention `0.2962` 但 equal-row `0.3187`，weighting stability 与 low-residual transfer scoped refuted；下一步为 principal-angle/Grassmann stability audit |
+| 2026-09-02 | V196 / TPC-343 | Bridge A / Gate B：cross-panel shared-nuisance meta-certificate 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-343` | 承接 TPC-342；六 rows、216 raw records、54 leave-one-control-out records；shared retention `0.3198/0.3549` 均越过 `0.30`，下一步为 alternative nuisance basis 或 principal-angle audit |
 | 2026-09-02 | V195 / TPC-342 | Bridge A / Gate B：independent fresh-panel reproduction 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-342` | 锁定 TPC-341 protocol；三个 disjoint windows、108 raw records、27 leave-one-control-out tests；样本内 retention `0.270--0.296`，held-out retention `0.589--0.943`，27/27 再现 control-stability obstruction；下一步为 cross-panel meta certificate |
 | 2026-09-02 | V194 / TPC-341 | Bridge A / Gate B：fresh holdout nuisance orthogonalization 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-341` | 承接 TPC-340；三个 fresh windows、108 raw records、27 leave-one-control-out tests；样本内 retention `0.201--0.256`，held-out retention `0.444--0.890`，control-stability obstruction；下一步为 independent reproduction 或冻结该 projection line |
 | 2026-09-02 | V193 / TPC-340 | Bridge A / Gate B：Schur/Frobenius hybrid envelope 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-340` | 承接 TPC-339；216/216 bound checks 无 violation，Schur branch 54 条、Frobenius branch 162 条；zero-support finite improvement `1.250245--4.698443`；下一步为 nuisance orthogonalization 或 adversarial holdout |
