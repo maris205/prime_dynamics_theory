@@ -1,6 +1,49 @@
 # TPC distilled map and bold channel
 
-## V205 / TPC-352 current anchor
+## V206 / TPC-353 current anchor
+
+更新时间：2026-09-03
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc353_source_native_masked_l2_polarization.md，checker 为
+tpc_bridge_b_tpc353_source_native_masked_l2_polarization_checker.py，编号论文为
+papers/tpc-353-source-native-masked-l2-polarization/。
+
+TPC-353 把继承的 V59 finite residual `beta=Lambda-b` 直接附着到 literal
+two-endpoint divisibility-masked operator，并在 `216` 个 declared rows 上重放
+operator-level polarization。面板冻结为 origins `6001,8001,10001`、source counts
+`256,512,1024`、shell anchors `Q=24,54,80`、exponents `1,2`、四个 sign laws 与
+`H=66`。所有 `216/216` operator images 都有正 alignment；all-plus 的 output
+`kappa_A` 为 `0.69291151430780062--0.99626802812598902`，而 source-level
+coefficient 只有 `0.39570365481042707--0.43581376702257324`。其他三种 law 的
+output coefficient 最低降至 `0.00774850`，说明 mask/operator 会重塑 source
+polarization。
+
+这是 exact finite operator polarization、Cauchy envelope 与 declared-model
+attachment，加上 numerically certified finite replay；不是 source-uniform
+arithmetic `L2`。source/output mismatch 是当前 obstruction，uniform masked operator
+bound、fixed-power credit、full Gate B、Route-B reassembly 与 twin-prime endpoint
+仍 open。Session-named official evaluator files absent，local Bridge-B 继续
+fail-closed；下一关测试 disjoint higher-origin transfer，若不稳定则转向
+position-aware masked bound。
+
+    TPC353_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT
+    TPC353_FINITE_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+    TPC353_FINITE_CAUCHY_ENVELOPE = PROVED_EXACT_FINITE
+    TPC353_SOURCE_NATIVE_MODEL = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC353_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC353_POSITIVE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_216_OF_216
+    TPC353_OUTPUT_SOURCE_MISMATCH = NUMERICALLY_CERTIFIED_FINITE
+    TPC353_UNIFORM_L2 = OPEN
+    TPC353_MASKED_OPERATOR_BOUND = OPEN
+    TPC353_ARITHMETIC_ADVANCE = NO
+    TPC353_FIXED_POWER_CREDIT = 0
+    TPC353_FULL_GATE_B = OPEN
+    TPC353_TWIN_PRIME_RESULT = NONE
+    TPC353_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT
+    TPC353_ROUND2_CLUE = TEST_SOURCE_NATIVE_L2_CROSS_TERM_ON_DISJOINT_HIGHER_ORIGINS_OR_BUILD_POSITION_AWARE_MASKED_BOUND
+
+## V205 / TPC-352 previous anchor
 
 更新时间：2026-09-03
 

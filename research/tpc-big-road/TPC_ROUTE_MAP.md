@@ -2,49 +2,47 @@
 
 更新时间：2026-09-03
 
-当前地图版本：V205 / TPC-352
+当前地图版本：V206 / TPC-353
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-352`（`PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_DISJOINT_HOLDOUT_AUDIT`）；
+当前编号锚点：`TPC-353`（`NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT`）；
 对应论文目录为
-`papers/tpc-352-reciprocal-shell-adversarial-holdout/`。
+`papers/tpc-353-source-native-masked-l2-polarization/`。
 
-TPC-352 是当前地图位置：它在三个完全 disjoint origins、三种长度和新的
-`Q=64,128,256,512` shell ladder 上 hostile 重放 TPC-351 的 reciprocal contrast。
-`144/144` rows 仍有正响应，但只有 `118/144` 改善 balanced parent；
-reciprocal/defect ratio 为 `0.0801262572786--0.829632172143`，`49/144` 达到
-half-defect，`47/144` 超过 coordinate baseline，`22/48` length series
-nondecreasing。关键的 `Q=256` floor 为 `0.0801262572786`，低于 parent 的
-`0.099642909832`，所以 finite repair 没有 uniform holdout transfer；incidence
-branch 冻结，主路线返回 source-native masked arithmetic `L2`。
+TPC-353 是当前地图位置：它把继承的 V59 finite residual `beta=Lambda-b` 直接接入
+literal two-endpoint divisibility-masked operator，并在 origins `6001,8001,10001`、
+source counts `256,512,1024`、shell anchors `Q=24,54,80`、两种 exponent 和四种
+sign law 上完成 `216`-row operator polarization audit。`216/216` rows 有正 output
+alignment；all-plus 的 `kappa_A` 为 `0.69291151430780062--0.99626802812598902`，
+而 source-level coefficient 为 `0.39570365481042707--0.43581376702257324`。
+source/output mismatch 随 sign law 显著变化，说明有限 attachment 已接通，但
+source-only cancellation 不能替代 uniform masked `L2`。
 
 本关仍没有 arithmetic advance；source-uniform `L2`、uniform masked operator bound、
-fixed-power credit 与 twin-prime endpoint 继续 open。
+fixed-power credit 与 twin-prime endpoint 继续 open。下一步是 disjoint higher-origin
+holdout；若 transfer 不稳定，转向 position-aware masked bound。
 
 ```text
-YOU ARE HERE = V205 / TPC-352
-TPC352_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_DISJOINT_HOLDOUT_AUDIT
-TPC352_RECIPROCAL_RULE = PROVED_EXACT_FINITE_DECLARED_RATIONAL_RULE
-TPC352_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
-TPC352_DISJOINT_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
-TPC352_RECIPROCAL_POSITIVE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_144_OF_144
-TPC352_PARENT_IMPROVEMENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_118_OF_144
-TPC352_RECIPROCAL_TO_DEFECT_RANGE = 0.0801262572786--0.829632172143
-TPC352_RECIPROCAL_HALF_DEFECT = NUMERICALLY_CERTIFIED_FINITE_49_OF_144
-TPC352_RECIPROCAL_COORDINATE_BASELINE = NUMERICALLY_CERTIFIED_FINITE_47_OF_144
-TPC352_NONDECREASING_SERIES = NUMERICALLY_CERTIFIED_FINITE_22_OF_48
-TPC352_UNIFORM_REPAIR_TRANSFER = REFUTED_SCOPED
-TPC352_HIGH_SHELL_REPAIR = REFUTED_SCOPED
-TPC352_ARITHMETIC_ADVANCE = NO
-TPC352_FIXED_POWER_CREDIT = 0
-TPC352_FULL_GATE_B = OPEN
-TPC352_TWIN_PRIME_RESULT = NONE
-TPC352_STATUS = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_DISJOINT_HOLDOUT_AUDIT
-TPC352_ROUND2_CLUE = FREEZE_FINITE_RECIPROCAL_BRANCH_AND_RETURN_TO_SOURCE_NATIVE_L2
+YOU ARE HERE = V206 / TPC-353
+TPC353_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT
+TPC353_FINITE_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+TPC353_FINITE_CAUCHY_ENVELOPE = PROVED_EXACT_FINITE
+TPC353_SOURCE_NATIVE_MODEL = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC353_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+TPC353_POSITIVE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_216_OF_216
+TPC353_OUTPUT_SOURCE_MISMATCH = NUMERICALLY_CERTIFIED_FINITE
+TPC353_UNIFORM_L2 = OPEN
+TPC353_MASKED_OPERATOR_BOUND = OPEN
+TPC353_ARITHMETIC_ADVANCE = NO
+TPC353_FIXED_POWER_CREDIT = 0
+TPC353_FULL_GATE_B = OPEN
+TPC353_TWIN_PRIME_RESULT = NONE
+TPC353_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT
+TPC353_ROUND2_CLUE = TEST_SOURCE_NATIVE_L2_CROSS_TERM_ON_DISJOINT_HIGHER_ORIGINS_OR_BUILD_POSITION_AWARE_MASKED_BOUND
 ```
 
-## V204 / TPC-351 previous anchor
+## V205 / TPC-352 previous anchor
 
 TPC-351 在 TPC-350 的 high-shell obstruction 上测试 reciprocal-shell rational
 centering；相同 192-row panel 上 `180/192` 改善 parent，ratio
@@ -1412,6 +1410,53 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.137 V206 / TPC-353：source-native masked L2 polarization
+
+TPC-353 is the source-native continuation after the TPC-352 incidence branch was
+frozen.  It attaches the inherited finite V59 residual `beta=Lambda-b` to the
+literal two-endpoint divisibility-masked operator and records the exact finite
+polarization identity and Cauchy envelope at operator level.  The declared panel
+has origins `6001,8001,10001`, source counts `256,512,1024`, shell anchors
+`Q=24,54,80`, exponents `1,2`, four sign laws, and `H=66`, giving `216` rows.
+
+All `216/216` operator images have positive alignment.  The all-plus output
+coefficient `kappa_A` ranges from `0.69291151430780062` to
+`0.99626802812598902`, while the source coefficient on the same rows ranges only
+from `0.39570365481042707` to `0.43581376702257324`.  Across all laws the output
+range is `0.007748502598008385--0.99626802812598902`, and the output-minus-source
+range is `-0.41063272009685658--0.59337758362080639`.
+
+The exact identity and declared-model attachment are proved only at finite scope;
+the replay, reverse checker, stress mutations, PDF audit, and local Bridge-B are
+numerically certified controls.  This is a source/operator interface and a
+source-only obstruction, not a source-uniform arithmetic `L2` theorem.  No
+fixed-power credit, Route-B reassembly, or twin-prime result is awarded.  The next
+route is a disjoint higher-origin holdout, with a position-aware masked bound as
+the fallback if transfer fails.
+
+```text
+inherited V59 residual -> literal masked operator -> exact polarization
+  -> Cauchy envelope -> law/origin holdout -> source/operator claim firewall
+```
+
+```text
+TPC353_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT
+TPC353_FINITE_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+TPC353_FINITE_CAUCHY_ENVELOPE = PROVED_EXACT_FINITE
+TPC353_SOURCE_NATIVE_MODEL = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC353_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+TPC353_POSITIVE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_216_OF_216
+TPC353_OUTPUT_SOURCE_MISMATCH = NUMERICALLY_CERTIFIED_FINITE
+TPC353_UNIFORM_L2 = OPEN
+TPC353_MASKED_OPERATOR_BOUND = OPEN
+TPC353_ARITHMETIC_ADVANCE = NO
+TPC353_FIXED_POWER_CREDIT = 0
+TPC353_FULL_GATE_B = OPEN
+TPC353_TWIN_PRIME_RESULT = NONE
+TPC353_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT
+TPC353_ROUND2_CLUE = TEST_SOURCE_NATIVE_L2_CROSS_TERM_ON_DISJOINT_HIGHER_ORIGINS_OR_BUILD_POSITION_AWARE_MASKED_BOUND
+```
 
 ## 5.136 V205 / TPC-352：adversarial reciprocal-shell holdout
 
@@ -4280,9 +4325,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V205 / TPC-352                    |
-        | RECIPROCAL-SHELL ADVERSARIAL HOLDOUT        |
-        | BRANCH FROZEN; RETURN TO SOURCE-NATIVE L2  |
+        | YOU ARE HERE — V206 / TPC-353                    |
+        | SOURCE-NATIVE MASKED L2 POLARIZATION        |
+        | OPERATOR CROSS-TERM ATTACHMENT; HOLDOUT NEXT |
         +--------------------------------------------------+
                 |
                 v
@@ -9392,6 +9437,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-03 | V206 / TPC-353 | Bridge A / Gate B：source-native literal masked `L2` polarization attachment 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-353` | 承接 TPC-352 的 branch freeze；literal two-endpoint operator、V59 residual、exact polarization/Cauchy envelope，216 rows、216/216 positive alignment；all-plus `kappa_A` `0.6929--0.9963`，source/output mismatch；下一步 disjoint higher-origin holdout或 position-aware masked bound |
 | 2026-09-03 | V205 / TPC-352 | Bridge A / Gate B：disjoint reciprocal-shell adversarial holdout 已完成；source-native arithmetic `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-352` | 承接 TPC-351；三个 disjoint origins、144 rows、144/144 reciprocal 正响应、118/144 改善 parent，ratio `0.0801--0.8296`；Q=256 reciprocal floor 低于 balanced parent，有限 reciprocal 分支冻结，下一步回到 source-native literal masked arithmetic `L2` |
 | 2026-09-03 | V204 / TPC-351 | Bridge A / Gate B：reciprocal-shell finite scale repair 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-351` | 承接 TPC-350；exact rational reciprocal centering、192/192 正响应、180/192 改善 parent，reciprocal/defect `0.0918--0.9017`，86/192 超过 coordinate baseline，111/192 达到 half-defect，25/48 series nondecreasing；universal quarter-floor scoped refuted，下一步为 disjoint adversarial holdout |
 | 2026-09-03 | V203 / TPC-350 | Bridge A / Gate B：fresh-growth signed-incidence replication 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-350` | 承接 TPC-349；三个 fresh origins、四个 lengths、四级 shell scale，192/192 正响应，signed/defect `0.0657--0.8798`，70/192 超过 coordinate baseline，91/192 达到 half-defect；Q=256 全部低于 half-defect，24/48 series nondecreasing，universal quarter-floor 与 monotone growth scoped refuted，下一步为 scale-adaptive zero-sum contrast |

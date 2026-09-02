@@ -1,9 +1,74 @@
 # TPC HANDOFF
 
-TPC-352 current section: adversarial holdout for the reciprocal-shell contrast
+TPC-353 current section: source-native masked L2 polarization
+-------------------------------------------------------------
+
+TPC-353 is the current sealed release.  It is the source-native continuation
+after the TPC-352 reciprocal-incidence branch was frozen.  The project attaches
+the inherited finite V59 residual `beta=Lambda-b` directly to the literal
+two-endpoint divisibility-masked operator and audits the exact operator
+polarization identity, rather than reading cancellation only on the source
+vector.  The declared panel uses origins `6001,8001,10001`, source counts
+`256,512,1024`, shell anchors `Q=24,54,80`, exponents `1,2`, four source laws,
+and `H=66`, giving `216` rows.
+
+For every finite real matrix `A`, the identity
+
+`||A(L-b)||_2^2 = ||AL||_2^2 + ||Ab||_2^2 - 2 <AL,Ab>`
+
+and its normalized coefficient/Cauchy envelope are `PROVED_EXACT_FINITE`.  The
+literal attachment is replayed on `216/216` rows with positive output alignment.
+For `all_plus`, output `kappa_A` is
+`0.69291151430780062--0.99626802812598902`, while source `kappa` is only
+`0.39570365481042707--0.43581376702257324`.  Across all laws the output range is
+`0.007748502598008385--0.99626802812598902`; output-minus-source ranges from
+`-0.41063272009685658` to `0.59337758362080639`.
+
+This is a finite source/operator interface and a source-only obstruction.  It
+does not prove source-uniform arithmetic `L2`, a canonical sign law, a uniform
+masked-operator bound, fixed-power credit, Route-B reassembly, or a twin-prime
+conclusion.  The Session-named official evaluator files are absent, so the local
+Bridge-B remains fail-closed fallback evidence.  The next route is a disjoint
+higher-origin holdout; if transfer is unstable, formulate a position-aware
+masked bound.
+
+    TPC353_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT
+    TPC353_FINITE_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+    TPC353_FINITE_CAUCHY_ENVELOPE = PROVED_EXACT_FINITE
+    TPC353_SOURCE_NATIVE_MODEL = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC353_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC353_POSITIVE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_216_OF_216
+    TPC353_OUTPUT_SOURCE_MISMATCH = NUMERICALLY_CERTIFIED_FINITE
+    TPC353_UNIFORM_L2 = OPEN
+    TPC353_MASKED_OPERATOR_BOUND = OPEN
+    TPC353_ARITHMETIC_ADVANCE = NO
+    TPC353_FIXED_POWER_CREDIT = 0
+    TPC353_FULL_GATE_B = OPEN
+    TPC353_TWIN_PRIME_RESULT = NONE
+    TPC353_STRONGEST_POSITIVE = FINITE_LITERAL_OPERATOR_ATTACHMENT_WITH_216_OF_216_POSITIVE_ALIGNMENT
+    TPC353_STRONGEST_OBSTRUCTION = SOURCE_OUTPUT_POLARIZATION_IS_LAW_DEPENDENT
+    TPC353_OPEN_THEOREM = SOURCE_UNIFORM_LITERAL_MASKED_ARITHMETIC_L2_OR_POSITION_AWARE_BOUND
+    TPC353_REUSABLE_STRUCTURE = SOURCE_RESIDUAL_TO_LITERAL_OPERATOR_POLARIZATION_WITH_CAUCHY_FIREWALL
+    TPC353_ROUND2_CLUE = TEST_SOURCE_NATIVE_L2_CROSS_TERM_ON_DISJOINT_HIGHER_ORIGINS_OR_BUILD_POSITION_AWARE_MASKED_BOUND
+    TPC353_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT
+
+TPC-353 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-353-source-native-masked-l2-polarization/code/tpc353_source_native_masked_l2_polarization.py --write
+    python -B papers/tpc-353-source-native-masked-l2-polarization/code/tpc353_source_native_masked_l2_polarization.py --check
+    python -O -B papers/tpc-353-source-native-masked-l2-polarization/code/tpc353_source_native_masked_l2_polarization.py --check
+    python -B papers/tpc-353-source-native-masked-l2-polarization/experiments/tpc353_independent_checker.py --check
+    python -O -B papers/tpc-353-source-native-masked-l2-polarization/experiments/tpc353_independent_checker.py --check
+    python -B papers/tpc-353-source-native-masked-l2-polarization/experiments/tpc353_polarization_stress.py --check
+    python -O -B papers/tpc-353-source-native-masked-l2-polarization/experiments/tpc353_polarization_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc353_source_native_masked_l2_polarization_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc353_source_native_masked_l2_polarization_checker.py --check
+
+TPC-352 previous section: adversarial holdout for the reciprocal-shell contrast
 -------------------------------------------------------------------------------
 
-TPC-352 is the current sealed release.  It is the predeclared disjoint hostile
+TPC-352 is the previous sealed release.  It is the predeclared disjoint hostile
 holdout for the TPC-351 reciprocal-shell rule.  The holdout uses origins
 `96097,120097,144097`, lengths `256,512,1024`, shell anchors
 `Q=64,128,256,512`, exponents `1,2`, source laws `all_plus` and
@@ -12300,12 +12365,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V205/TPC-352 是当前 release；其 producer、reverse-shell independent replay、stress
-audit 与 adversarial reciprocal-shell holdout bridge 已封存。V204/TPC-351、V203/TPC-350、V202/TPC-349、V201/TPC-348、TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
+V206/TPC-353 是当前 release；其 source-native producer、reverse-shell independent
+replay、polarization stress audit 与 literal masked-operator Bridge-B 已封存。
+V205/TPC-352、V204/TPC-351、V203/TPC-350、V202/TPC-349、V201/TPC-348、TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
 TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
 TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 429 对 normal/optimized 命令、858 次
+当前 curated cascade command set 共 433 对 normal/optimized 命令、866 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -12324,7 +12390,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352 各再追加末尾 4 对。
+	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -13897,6 +13963,31 @@ source-native arithmetic `L2`、uniform masked-operator theorem、fixed-power sa
 Route-B reassembly 或 official evaluator pass；有限 reciprocal 分支冻结，下一步回到
 source-native literal masked `L2`。
 
+TPC-353 的项目级 producer、reverse-shell independent replay、polarization stress 与
+literal masked-operator bridge checker：
+
+```bash
+python -B papers/tpc-353-source-native-masked-l2-polarization/code/tpc353_source_native_masked_l2_polarization.py --write
+python -B papers/tpc-353-source-native-masked-l2-polarization/code/tpc353_source_native_masked_l2_polarization.py --check
+python -O -B papers/tpc-353-source-native-masked-l2-polarization/code/tpc353_source_native_masked_l2_polarization.py --check
+python -B papers/tpc-353-source-native-masked-l2-polarization/experiments/tpc353_independent_checker.py --check
+python -O -B papers/tpc-353-source-native-masked-l2-polarization/experiments/tpc353_independent_checker.py --check
+python -B papers/tpc-353-source-native-masked-l2-polarization/experiments/tpc353_polarization_stress.py --check
+python -O -B papers/tpc-353-source-native-masked-l2-polarization/experiments/tpc353_polarization_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc353_source_native_masked_l2_polarization_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc353_source_native_masked_l2_polarization_checker.py --check
+```
+
+TPC-353 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 必须返回零、
+stderr 为空且 stdout 逐对 byte-identical；Bridge-B 输出
+`rows=216 / positive_alignment=216/216 /
+all_plus_kappa=0.69291151430780062--0.99626802812598902`。这是 V206 的 finite
+source-native literal operator attachment、exact polarization/Cauchy interface 与
+source/output mismatch audit；它不代表 source-uniform arithmetic `L2`、uniform
+masked-operator theorem、fixed-power saving、Route-B reassembly、official evaluator
+pass 或 twin-prime result。下一步为 disjoint higher-origin holdout，必要时转向
+position-aware masked bound。
+
 TPC-349 的项目级 producer、reverse-shell independent replay、signed-witness stress 与
 bridge checker：
 
@@ -14024,7 +14115,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-352 current release 入口：
+TPC-353 current release 入口：
+
+papers/tpc-353-source-native-masked-l2-polarization/README.md
+papers/tpc-353-source-native-masked-l2-polarization/PAPER_PLAN.md
+papers/tpc-353-source-native-masked-l2-polarization/DERIVATION_PACKAGE.md
+papers/tpc-353-source-native-masked-l2-polarization/PROOF_PACKAGE.md
+papers/tpc-353-source-native-masked-l2-polarization/code/tpc353_source_native_masked_l2_polarization.py
+papers/tpc-353-source-native-masked-l2-polarization/experiments/tpc353_independent_checker.py
+papers/tpc-353-source-native-masked-l2-polarization/experiments/tpc353_polarization_stress.py
+papers/tpc-353-source-native-masked-l2-polarization/results/tpc353_certificate.json
+papers/tpc-353-source-native-masked-l2-polarization/notes/theorem_ledger.md
+papers/tpc-353-source-native-masked-l2-polarization/notes/claim_firewall.md
+papers/tpc-353-source-native-masked-l2-polarization/notes/computational_protocol.md
+papers/tpc-353-source-native-masked-l2-polarization/notes/route_evaluation.md
+papers/tpc-353-source-native-masked-l2-polarization/paper/main.tex
+papers/tpc-353-source-native-masked-l2-polarization/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc353_source_native_masked_l2_polarization.md
+research/tpc-big-road/tpc_bridge_b_tpc353_source_native_masked_l2_polarization_checker.py
+
+TPC-352 previous release 入口：
 
 papers/tpc-352-reciprocal-shell-adversarial-holdout/README.md
 papers/tpc-352-reciprocal-shell-adversarial-holdout/PAPER_PLAN.md
@@ -14043,7 +14153,7 @@ papers/tpc-352-reciprocal-shell-adversarial-holdout/paper/paper.pdf
 research/tpc-big-road/bridge_b_tpc352_reciprocal_shell_adversarial_holdout.md
 research/tpc-big-road/tpc_bridge_b_tpc352_reciprocal_shell_adversarial_holdout_checker.py
 
-TPC-351 previous release 入口：
+TPC-351 archived release 入口：
 
 papers/tpc-351-reciprocal-shell-contrast/README.md
 papers/tpc-351-reciprocal-shell-contrast/PAPER_PLAN.md

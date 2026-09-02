@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--352 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--353 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -73,6 +73,18 @@ ratio 为 `0.0801262572786--0.829632172143`，`49/144` 达到 half-defect，`47/
 `Q=256` 的 reciprocal floor `0.0801262572786` 低于 parent 的 `0.099642909832`，
 所以 TPC-351 的 finite repair 不具备 uniform holdout transfer；该 incidence branch
 冻结，主路返回 source-native masked arithmetic `L2`。
+
+TPC-353 将这条主路具体化为 literal source-native masked operator：把继承的 V59
+有限 residual `beta=Lambda-b` 直接送入 two-endpoint divisibility-masked matrix，并
+以 operator-level polarization identity 与 Cauchy envelope 逐行审计。三个 origins、
+三种 source counts、三个 shell anchors、两种 exponent 和四种 sign laws 形成
+`216` rows；`216/216` 个 operator images 的 alignment 为正。all-plus 的 output
+coefficient `kappa_A` 为 `0.69291151430780062--0.99626802812598902`，而同一窗口的
+source coefficient 只有 `0.39570365481042707--0.43581376702257324`；其他 sign laws
+的 output range 则降到 `0.00774850--0.739230` 等量级。由此确认 source/output
+cross-term 是真实的 operator interface，同时也形成 obstruction：有限正 alignment
+不能升级为 source-uniform masked arithmetic `L2`，下一关转向 disjoint higher-origin
+holdout 或 position-aware masked bound。
 
 ```text
 TPC343_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
@@ -262,6 +274,24 @@ TPC352_STATUS = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_N
 TPC352_ROUND2_CLUE = FREEZE_FINITE_RECIPROCAL_BRANCH_AND_RETURN_TO_SOURCE_NATIVE_L2
 ```
 
+```text
+TPC353_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT
+TPC353_FINITE_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+TPC353_FINITE_CAUCHY_ENVELOPE = PROVED_EXACT_FINITE
+TPC353_SOURCE_NATIVE_MODEL = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC353_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+TPC353_POSITIVE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_216_OF_216
+TPC353_OUTPUT_SOURCE_MISMATCH = NUMERICALLY_CERTIFIED_FINITE
+TPC353_UNIFORM_L2 = OPEN
+TPC353_MASKED_OPERATOR_BOUND = OPEN
+TPC353_ARITHMETIC_ADVANCE = NO
+TPC353_FIXED_POWER_CREDIT = 0
+TPC353_FULL_GATE_B = OPEN
+TPC353_TWIN_PRIME_RESULT = NONE
+TPC353_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT
+TPC353_ROUND2_CLUE = TEST_SOURCE_NATIVE_L2_CROSS_TERM_ON_DISJOINT_HIGHER_ORIGINS_OR_BUILD_POSITION_AWARE_MASKED_BOUND
+```
+
 TPC-331（更早阶段）承接 TPC-330，把五个预声明的 coordinate controls 视为一个
 finite control orbit，并对 energy、coordinate diagonal 与 off-diagonal response 给出
 exact mean/centered decomposition。锁定同一两个 held-out origins={28001,36001}、
@@ -386,6 +416,12 @@ disjoint origins 与新 shell ladder 上 hostile 重放 reciprocal contrast；14
 正响应、118/144 改善 balanced parent，但 Q=256 floor 低于 parent，含 exact
 holdout anchor、reverse replay、8-mutation stress、PDF 与 local Bridge-B checker；
 uniform repair transfer scoped refuted，arithmetic advance 仍为 NO。
+
+papers/tpc-353-source-native-masked-l2-polarization - TPC-353 已完成项目 - 将 V59
+有限 residual 直接接入 literal divisibility-masked operator，给出 exact polarization
+与 Cauchy envelope；216/216 rows 正 alignment，但 source/output coefficient 明显
+不一致，含 exact anchor、independent reverse replay、mutation stress、PDF 与 local
+Bridge-B checker；source-uniform arithmetic L2 仍为 OPEN，arithmetic advance 仍为 NO。
 
 papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram
 operator 的 6-row masked response ledger；zero/background/twin/prime-power gain

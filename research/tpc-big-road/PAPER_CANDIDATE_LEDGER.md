@@ -3,13 +3,74 @@
 
 更新时间：2026-09-03
 
-状态：**TPC352_PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_DISJOINT_HOLDOUT_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC353_NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.146 current：TPC-352 adversarial reciprocal-shell holdout
+## 0.147 current：TPC-353 source-native masked L2 polarization
+
+项目：papers/tpc-353-source-native-masked-l2-polarization/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT**。
+
+TPC-353 承接 TPC-352 冻结 incidence branch 后的 source-native `L2` 路线。它把
+继承的 V59 finite residual `beta=Lambda-b` 直接送入 literal two-endpoint
+divisibility-masked operator，而不是只在 source vector 上读取 polarization。对任意
+有限实矩阵 `A`，精确恒等式
+
+```text
+||A(L-b)||_2^2 = ||AL||_2^2 + ||Ab||_2^2 - 2 <AL,Ab>
+```
+
+以及相应的 normalized coefficient `kappa_A` 与 Cauchy envelope 均为
+`PROVED_EXACT_FINITE`。冻结面板为 origins `6001,8001,10001`、source counts
+`256,512,1024`、shell anchors `Q=24,54,80`、exponents `1,2`、四种预声明 sign
+laws、`H=66` 和 source cutoff `50000`，共 `216` rows；该面板声明为与
+TPC-328--TPC-352 active panels disjoint 的 fresh low-origin panel。
+
+最强正结果：literal operator attachment 的 `216/216` rows 都有正 output
+alignment，且 exact anchor、independent reverse-shell replay、8-mutation stress
+和 normal/optimized Bridge-B 均通过。all-plus output coefficient 的范围为
+`0.69291151430780062--0.99626802812598902`，同窗 source coefficient 只有
+`0.39570365481042707--0.43581376702257324`；这把 source residual 与 physical
+operator cross term 接上了一个可复核的有限 interface。
+
+最强 obstruction：output coefficient 依赖 sign law 且不由 source coefficient 决定。
+全体 output range 为 `0.007748502598008385--0.99626802812598902`，
+output-minus-source range 为 `-0.41063272009685658--0.59337758362080639`；
+因此 source-level cancellation 不能升级为 source-uniform masked arithmetic `L2`。
+
+开放定理：source-uniform literal masked arithmetic `L2`、canonical sign law 或
+position-aware uniform masked-operator bound，以及其 Route-B typed reassembly。
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`、
+`TWIN_PRIME_RESULT=NONE`；official evaluator files absent，local Bridge-B
+fail-closed。
+
+可复用结构：
+
+    inherited source residual -> literal masked operator -> exact polarization
+      -> Cauchy envelope -> law/origin holdout -> source/operator firewall
+
+ROUND2_CLUE：`TEST_SOURCE_NATIVE_L2_CROSS_TERM_ON_DISJOINT_HIGHER_ORIGINS_OR_BUILD_POSITION_AWARE_MASKED_BOUND`。
+
+    TPC353_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT
+    TPC353_FINITE_OPERATOR_POLARIZATION = PROVED_EXACT_FINITE
+    TPC353_FINITE_CAUCHY_ENVELOPE = PROVED_EXACT_FINITE
+    TPC353_SOURCE_NATIVE_MODEL = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC353_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_ROWS
+    TPC353_POSITIVE_ALIGNMENT = NUMERICALLY_CERTIFIED_FINITE_216_OF_216
+    TPC353_OUTPUT_SOURCE_MISMATCH = NUMERICALLY_CERTIFIED_FINITE
+    TPC353_UNIFORM_L2 = OPEN
+    TPC353_MASKED_OPERATOR_BOUND = OPEN
+    TPC353_ARITHMETIC_ADVANCE = NO
+    TPC353_FIXED_POWER_CREDIT = 0
+    TPC353_FULL_GATE_B = OPEN
+    TPC353_TWIN_PRIME_RESULT = NONE
+    TPC353_STATUS = NUMERICALLY_CERTIFIED_FINITE_SOURCE_NATIVE_MASKED_L2_POLARIZATION_AUDIT
+
+## 0.146 previous：TPC-352 adversarial reciprocal-shell holdout
 
 项目：papers/tpc-352-reciprocal-shell-adversarial-holdout/
 
