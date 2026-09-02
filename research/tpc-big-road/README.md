@@ -1,12 +1,47 @@
-# TPC big road V210 / TPC-357: operator-norm scale ladder
+# TPC big road V211 / TPC-358: fresh-origin spectral holdout
 
-## V210 current anchor: TPC-357
+## V211 current anchor: TPC-358
 
 更新时间：2026-09-03
 
-当前 TPC-357 proof 为 bridge_b_tpc357_operator_norm_scale_ladder.md，checker 为
-tpc_bridge_b_tpc357_operator_norm_scale_ladder_checker.py，编号论文为
-../../papers/tpc-357-operator-norm-scale-ladder/。
+当前 TPC-358 proof 为 bridge_b_tpc358_fresh_origin_spectral_holdout.md，checker 为
+tpc_bridge_b_tpc358_fresh_origin_spectral_holdout_checker.py，编号论文为
+../../papers/tpc-358-fresh-origin-spectral-holdout/。
+
+TPC-358 将 TPC-357 的 finite operator-envelope protocol 移到预注册、disjoint 且
+origin span 为 `168000` 的 fresh panel `52001,120001,220001`。在
+`Q=24,54,80`、exponents `1,2`、counts `256,512,1024,2048` 与四种 sign laws 上
+完成 `288` 个 rows；每行记录 raw/normalized Schur 与 Frobenius envelopes，all-plus
+的 `72` rows 另计算真谱范数。fresh normalized Schur maximum 为
+`0.80850510742101689`，all-plus normalized spectral maximum 为
+`0.62663944469203836`，均低于 parent caps `0.83` 与 `0.64`，并在 `0.001` 内
+保持 parent transfer。normalized spectral transitions 为 `13` 增、`34` 降、`7` 平。
+
+这是 scoped finite fresh-origin transfer，不是 origin-uniform 或 growing theorem。
+Schur/Frobenius inequalities 为 exact finite；monotone decay 在声明 ladder 上仍为
+`REFUTED_SCOPED_ON_DECLARED_LADDER`。source-uniform arithmetic L2、growing masked
+operator bound、fixed-power credit、Route-B reassembly、full Gate B 与 twin-prime
+result 仍 open，arithmetic advance 为 NO。official evaluator files absent，local
+Bridge-B 仍 fail-closed。
+
+    TPC358_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_FRESH_ORIGIN_SPECTRAL_HOLDOUT
+    TPC358_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC358_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC358_FRESH_ORIGIN_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC358_PARENT_CAP_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC358_NORMALIZED_SCHUR_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC358_ALL_PLUS_SPECTRAL_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC358_SCALE_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
+    TPC358_GROWING_OPERATOR_BOUND = OPEN
+    TPC358_SOURCE_UNIFORM_L2 = OPEN
+    TPC358_ARITHMETIC_ADVANCE = NO
+    TPC358_FIXED_POWER_CREDIT = 0
+    TPC358_FULL_GATE_B = OPEN
+    TPC358_TWIN_PRIME_RESULT = NONE
+    TPC358_STATUS = NUMERICALLY_CERTIFIED_FINITE_FRESH_ORIGIN_SPECTRAL_HOLDOUT
+    TPC358_ROUND2_CLUE = TEST_A_GEOMETRY_ADVERSARIAL_FRESH_ORIGIN_OR_SCHUR_TIGHTNESS_HOLDOUT_BEFORE_ANY_SOURCE_UNIFORM_OPERATOR_CLAIM
+
+## V210 / TPC-357 previous anchor
 
 TPC-357 冻结 TPC-356 已选出的三个 origins `38423,42010,45597`，把 count ladder
 扩展为 `256,512,1024,2048`，并在 `Q=24,54,80`、exponents `1,2` 与四种 sign laws

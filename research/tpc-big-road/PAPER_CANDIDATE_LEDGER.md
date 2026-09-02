@@ -3,13 +3,69 @@
 
 更新时间：2026-09-03
 
-状态：**TPC357_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_NORM_SCALE_LADDER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC358_NUMERICALLY_CERTIFIED_FINITE_FRESH_ORIGIN_SPECTRAL_HOLDOUT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.151 current：TPC-357 operator-norm scale ladder
+## 0.152 current：TPC-358 fresh-origin spectral holdout
+
+项目：papers/tpc-358-fresh-origin-spectral-holdout/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_FRESH_ORIGIN_SPECTRAL_HOLDOUT**。
+
+TPC-358 将 TPC-357 的 operator-envelope protocol 移到预注册、disjoint 的
+fresh origins `52001,120001,220001`，由固定规则 `52001+100000j` 在任何矩阵
+计算前生成，origin span 为 `168000`。在 counts `256,512,1024,2048`、shell anchors
+`Q=24,54,80`、exponents `1,2` 与四种 sign laws 上完成 `288` rows；所有 raw 与
+normalized law matrices 都记录 Schur/Frobenius envelopes，all-plus 的 `72` rows
+另记录 raw/normalized extreme eigenvalues。父代 producer 与 certificate 均锁定，
+source response 不参与选择或计算。
+
+最强正结果：fresh normalized Schur maximum 为 `0.80850510742101689`，all-plus
+normalized spectral maximum 为 `0.62663944469203836`，均低于冻结 parent caps
+`0.83` 与 `0.64`，且分别在 `0.001` transfer tolerance 内接近 TPC-357；raw
+all-plus spectral maximum 为 `1542.7492651981368`。正向 producer、reverse-shell
+independent checker、14-mutation stress、exact rational anchor、PDF 与 local
+Bridge-B 均通过，normal/optimized stdout byte-identical。
+
+最强 obstruction：fresh normalized all-plus spectral ladder 的 54 个相邻 transitions
+为 `13` 增、`34` 降、`7` 平（guard `1e-6`），所以 finite cap transfer 不提供
+monotone decay，更不提供 origin-uniform/growing operator bound。`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`、`TWIN_PRIME_RESULT=NONE`；official
+evaluator files absent，local Bridge-B 仅为 fail-closed finite evidence。
+
+开放定理：在 fresh origin/scale 上得到真正 growing 的 masked-operator estimate，或
+先以 geometry-adversarial fresh panel / Schur-tightness audit 定位 finite cap 的失效
+机制；两者均必须在 source-uniform arithmetic `L2` 与 Route-B reassembly 之前单独
+完成，不能把 finite transfer 记作 arithmetic progress。
+
+可复用结构：
+
+    frozen position-aware geometry -> disjoint pre-registered origins
+      -> all-law Schur/Frobenius envelopes -> all-plus spectral cap
+      -> reverse-shell replay + mutation stress -> finite transfer/obstruction firewall
+
+ROUND2_CLUE：`TEST_A_GEOMETRY_ADVERSARIAL_FRESH_ORIGIN_OR_SCHUR_TIGHTNESS_HOLDOUT_BEFORE_ANY_SOURCE_UNIFORM_OPERATOR_CLAIM`。
+
+    TPC358_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_FRESH_ORIGIN_SPECTRAL_HOLDOUT
+    TPC358_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC358_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC358_FRESH_ORIGIN_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC358_PARENT_CAP_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC358_NORMALIZED_SCHUR_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC358_ALL_PLUS_SPECTRAL_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC358_SCALE_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
+    TPC358_GROWING_OPERATOR_BOUND = OPEN
+    TPC358_SOURCE_UNIFORM_L2 = OPEN
+    TPC358_ARITHMETIC_ADVANCE = NO
+    TPC358_FIXED_POWER_CREDIT = 0
+    TPC358_FULL_GATE_B = OPEN
+    TPC358_TWIN_PRIME_RESULT = NONE
+    TPC358_STATUS = NUMERICALLY_CERTIFIED_FINITE_FRESH_ORIGIN_SPECTRAL_HOLDOUT
+
+## 0.151 previous：TPC-357 operator-norm scale ladder
 
 项目：papers/tpc-357-operator-norm-scale-ladder/
 
