@@ -1,6 +1,46 @@
 # TPC distilled map and bold channel
 
-## V201 / TPC-348 current anchor
+## V202 / TPC-349 current anchor
+
+更新时间：2026-09-02
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc349_prime_balanced_signed_defect_witness.md，checker 为
+tpc_bridge_b_tpc349_prime_balanced_signed_defect_witness_checker.py，编号论文为
+papers/tpc-349-prime-balanced-signed-defect-witness/。
+
+TPC-349 承接 TPC-348 的 coordinate defect witness，对升序 shell primes 取等量
+正负、总和为零的 `beta` split（奇数 shell 留一个中性 prime），并定义
+`b_I(t)=sum_j beta_j 1_(p_j|t)`。它证明 exact prime-incidence Gram expansion 与
+`||D_I||_(2->2)>=||D_Ib_I||_2/||b_I||_2`。冻结的 `192` rows 全部有非零 signed
+vector 与正响应；signed/defect ratio 为 `0.39083565842--0.954375010719`，
+`136/192` rows 超过 TPC-348 coordinate baseline，`175/192` rows 达到 half-defect。
+
+这是 `PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_AUDIT`；
+56 rows 不超过 coordinate baseline，因此 universal balanced gain 为
+`REFUTED_SCOPED`。source-uniform arithmetic `L2`、uniform masked operator bound、
+fixed-power credit、Route-B reassembly 与 twin-prime endpoint 继续 open。Session-named
+evaluator files absent，故只记录 local Bridge-B fail-closed。
+
+    TPC349_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_AUDIT
+    TPC349_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+    TPC349_PRIME_BALANCE_RULE = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC349_INCIDENCE_GRAM_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC349_FINITE_SIGNED_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+    TPC349_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+    TPC349_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_136_OF_192
+    TPC349_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_175_OF_192
+    TPC349_UNIVERSAL_BALANCED_GAIN = REFUTED_SCOPED
+    TPC349_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+    TPC349_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC349_ARITHMETIC_ADVANCE = NO
+    TPC349_FIXED_POWER_CREDIT = 0
+    TPC349_FULL_GATE_B = OPEN
+    TPC349_TWIN_PRIME_RESULT = NONE
+    TPC349_STATUS = PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_AUDIT
+    TPC349_ROUND2_CLUE = REPLICATE_SIGNED_INCIDENCE_GRAM_ON_GROWING_FRESH_PANELS
+
+## V201 / TPC-348 previous anchor
 
 更新时间：2026-09-02
 

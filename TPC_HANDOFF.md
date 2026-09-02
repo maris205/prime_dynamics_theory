@@ -1,6 +1,81 @@
 # TPC HANDOFF
 
-TPC-348 current section: position-aware lower witness for the divisibility-mask defect
+TPC-349 current section: prime-balanced signed incidence witness for the divisibility-mask defect
+---------------------------------------------------------------------------------------------------------
+
+TPC-349 continues the literal masked prime-shell object from TPC-348.  For the
+ordered active shell `p_0 < ... < p_(r-1)`, set `m=floor(r/2)` and take
+`beta_j=+1` on the first `m` primes, `beta_j=-1` on the last `m` primes, and
+`beta_j=0` on the middle prime when `r` is odd.  With
+`h_(p,I)(t)=1_(p|t)` and `b_I=sum_j beta_j h_(p_j,I)`, the finite incidence
+calculation gives the exact Gram identity
+
+`||D_I b_I||_2^2 = sum_(j,k) beta_j beta_k <D_I h_(p_j,I),D_I h_(p_k,I)>`,
+
+and finite-dimensional induced-norm linear algebra gives
+`||D_I||_(2->2) >= ||D_I b_I||_2/||b_I||_2` whenever `b_I != 0`.
+
+The locked protocol is inherited unchanged: origins [40097,48097], source counts
+[256,512,1024], Q anchors [24,36,54,80], exponents [1,2], four sign laws, and
+H=66.  The certificate has 192 rows; all 192 signed witnesses are nonzero with
+positive response.  The signed/defect ratio is 0.39083565842--0.954375010719,
+the signed/ideal ratio is 0.0125941959067--0.430061305156, and the
+signed/coordinate-baseline ratio is 0.542800508699--2.04702542827.  The signed
+witness beats the best mask-hit coordinate baseline on 136/192 rows and reaches
+at least half the defect norm on 175/192 rows.  The incidence-Gram replay error
+is at most 1.06581410364e-14; an exact multi-hit anchor is retained at I=[1,14].
+
+The zero-sum split, Gram expansion, and normalized lower-witness inequality are
+PROVED_EXACT_FINITE within the declared model; the 192-row census is
+NUMERICALLY_CERTIFIED_FINITE.  Since 56 rows do not beat the coordinate baseline,
+`UNIVERSAL_BALANCED_GAIN=REFUTED_SCOPED`.  This is not a growing lower bound and
+gives no source-uniform arithmetic `L2`, uniform masked-operator theorem,
+fixed-power credit, Route-B reassembly, or twin-prime conclusion.  The official
+Session-named evaluator files remain absent; the local Bridge-B result is
+fail-closed and is not an official evaluator pass.
+
+    TPC349_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_AUDIT
+    TPC349_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+    TPC349_PRIME_BALANCE_RULE = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC349_INCIDENCE_GRAM_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC349_FINITE_SIGNED_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+    TPC349_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+    TPC349_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_136_OF_192
+    TPC349_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_175_OF_192
+    TPC349_UNIVERSAL_BALANCED_GAIN = REFUTED_SCOPED
+    TPC349_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+    TPC349_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC349_ARITHMETIC_ADVANCE = NO
+    TPC349_FIXED_POWER_CREDIT = 0
+    TPC349_FULL_GATE_B = OPEN
+    TPC349_TWIN_PRIME_RESULT = NONE
+    TPC349_STRONGEST_POSITIVE = PRIME_BALANCED_INCIDENCE_GRAM_LOWER_WITNESS_AND_192_ROW_REPLAY
+    TPC349_STRONGEST_OBSTRUCTION = UNIVERSAL_BALANCED_GAIN_FAILS_ON_56_OF_192_ROWS
+    TPC349_OPEN_THEOREM = GROWING_FRESH_PANEL_SIGNED_GRAM_REPLICATION_OR_SOURCE_UNIFORM_MASKED_L2
+    TPC349_REUSABLE_STRUCTURE = ORDERED_SHELL_TO_ZERO_SUM_INCIDENCE_CONTRAST_TO_GRAM_WITNESS
+    TPC349_ROUND2_CLUE = REPLICATE_SIGNED_INCIDENCE_GRAM_ON_GROWING_FRESH_PANELS
+    TPC349_STATUS = PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_AUDIT
+
+The TPC-349 reproducibility commands are:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-349-prime-balanced-signed-defect-witness/code/tpc349_prime_balanced_signed_defect_witness.py --write
+    python -B papers/tpc-349-prime-balanced-signed-defect-witness/code/tpc349_prime_balanced_signed_defect_witness.py --check
+    python -O -B papers/tpc-349-prime-balanced-signed-defect-witness/code/tpc349_prime_balanced_signed_defect_witness.py --check
+    python -B papers/tpc-349-prime-balanced-signed-defect-witness/experiments/tpc349_independent_checker.py --check
+    python -O -B papers/tpc-349-prime-balanced-signed-defect-witness/experiments/tpc349_independent_checker.py --check
+    python -B papers/tpc-349-prime-balanced-signed-defect-witness/experiments/tpc349_signed_witness_stress.py
+    python -O -B papers/tpc-349-prime-balanced-signed-defect-witness/experiments/tpc349_signed_witness_stress.py
+    python -B research/tpc-big-road/tpc_bridge_b_tpc349_prime_balanced_signed_defect_witness_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc349_prime_balanced_signed_defect_witness_checker.py --check
+
+TPC-349 is current; TPC-348, TPC-347, TPC-346, TPC-345, TPC-344, TPC-343,
+TPC-342, TPC-341, TPC-340, TPC-339, TPC-338, TPC-337, TPC-336, TPC-335,
+TPC-334, TPC-333, TPC-332, TPC-331, TPC-330, TPC-329, TPC-328, TPC-327,
+TPC-326, TPC-325, TPC-324, TPC-323, TPC-322, TPC-321, TPC-320, TPC-319,
+TPC-318, TPC-317, TPC-316 and earlier releases remain retained in historical order.
+
+TPC-348 previous section: position-aware lower witness for the divisibility-mask defect
 -----------------------------------------------------------------------------------------------
 
 TPC-348 continues the literal masked prime-shell object from TPC-347.  For
@@ -12024,12 +12099,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V201/TPC-348 是当前 release；其 producer、reverse-shell independent replay、stress
-audit 与 position-aware mask-defect bridge 已封存。TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
+V202/TPC-349 是当前 release；其 producer、reverse-shell independent replay、stress
+audit 与 prime-balanced signed-incidence bridge 已封存。V201/TPC-348、TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
 TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
 TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 413 对 normal/optimized 命令、826 次
+当前 curated cascade command set 共 417 对 normal/optimized 命令、834 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -12048,7 +12123,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -12098,6 +12173,13 @@ position-aware witness stress 与 local Bridge-B checker 逐项验证；其 exac
 lower-witness interface 与 finite positive-witness census 不代表 growing lower bound、
 source-uniform arithmetic `L2`、uniform masked-operator bound、fixed-power saving 或
 official evaluator pass。
+
+V202/TPC-349 的新增 4 对由 project producer、reverse-shell independent checker、
+signed-witness stress 与 local Bridge-B checker 逐项验证；其 exact prime-balanced
+incidence Gram lower-witness interface 与 finite 192-row census 不代表 growing lower
+bound、source-uniform arithmetic `L2`、uniform masked-operator bound、fixed-power
+saving 或 official evaluator pass。56/192 rows 未超过 coordinate baseline，故
+universal balanced gain 仅为 `REFUTED_SCOPED`。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
@@ -13527,6 +13609,29 @@ fresh_loo_pairs=18`。这是 V199 的 finite third-panel hostile replication；�
 panel-adaptive freeze 不代表 universal impossibility、source-uniform arithmetic
 `L2`、fixed-power saving 或 official evaluator pass。
 
+TPC-349 的项目级 producer、reverse-shell independent replay、signed-witness stress 与
+bridge checker：
+
+```bash
+python -B papers/tpc-349-prime-balanced-signed-defect-witness/code/tpc349_prime_balanced_signed_defect_witness.py --write
+python -B papers/tpc-349-prime-balanced-signed-defect-witness/code/tpc349_prime_balanced_signed_defect_witness.py --check
+python -O -B papers/tpc-349-prime-balanced-signed-defect-witness/code/tpc349_prime_balanced_signed_defect_witness.py --check
+python -B papers/tpc-349-prime-balanced-signed-defect-witness/experiments/tpc349_independent_checker.py --check
+python -O -B papers/tpc-349-prime-balanced-signed-defect-witness/experiments/tpc349_independent_checker.py --check
+python -B papers/tpc-349-prime-balanced-signed-defect-witness/experiments/tpc349_signed_witness_stress.py
+python -O -B papers/tpc-349-prime-balanced-signed-defect-witness/experiments/tpc349_signed_witness_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc349_prime_balanced_signed_defect_witness_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc349_prime_balanced_signed_defect_witness_checker.py --check
+```
+
+TPC-349 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 均返回零、
+stderr 为空且 stdout 逐对 byte-identical；Bridge-B 输出 `rows=192 /
+positive_witness=192 / coordinate_beaten=136 / half_defect=175`。这是 V202 的
+exact prime-balanced incidence-Gram lower-witness interface 与 finite census；56/192
+rows 未超过 coordinate baseline，故 universal gain 仅为 `REFUTED_SCOPED`，不代表
+growing lower bound、source-uniform arithmetic `L2`、uniform masked-operator theorem、
+fixed-power saving 或 official evaluator pass。
+
 TPC-348 的项目级 producer、reverse-shell independent replay、position-aware witness
 stress 与 bridge checker：
 
@@ -13631,7 +13736,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-348 current release 入口：
+TPC-349 current release 入口：
+
+papers/tpc-349-prime-balanced-signed-defect-witness/README.md
+papers/tpc-349-prime-balanced-signed-defect-witness/PAPER_PLAN.md
+papers/tpc-349-prime-balanced-signed-defect-witness/DERIVATION_PACKAGE.md
+papers/tpc-349-prime-balanced-signed-defect-witness/PROOF_PACKAGE.md
+papers/tpc-349-prime-balanced-signed-defect-witness/code/tpc349_prime_balanced_signed_defect_witness.py
+papers/tpc-349-prime-balanced-signed-defect-witness/experiments/tpc349_independent_checker.py
+papers/tpc-349-prime-balanced-signed-defect-witness/experiments/tpc349_signed_witness_stress.py
+papers/tpc-349-prime-balanced-signed-defect-witness/results/tpc349_certificate.json
+papers/tpc-349-prime-balanced-signed-defect-witness/notes/theorem_ledger.md
+papers/tpc-349-prime-balanced-signed-defect-witness/notes/claim_firewall.md
+papers/tpc-349-prime-balanced-signed-defect-witness/notes/computational_protocol.md
+papers/tpc-349-prime-balanced-signed-defect-witness/notes/route_evaluation.md
+papers/tpc-349-prime-balanced-signed-defect-witness/paper/main.tex
+papers/tpc-349-prime-balanced-signed-defect-witness/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc349_prime_balanced_signed_defect_witness.md
+research/tpc-big-road/tpc_bridge_b_tpc349_prime_balanced_signed_defect_witness_checker.py
+
+TPC-348 previous release 入口：
 
 papers/tpc-348-position-aware-mask-defect-lower-witness/README.md
 papers/tpc-348-position-aware-mask-defect-lower-witness/PAPER_PLAN.md

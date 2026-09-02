@@ -1,0 +1,35 @@
+# Bridge-B record: TPC-349 prime-balanced signed incidence witness
+
+This local bridge records the exact finite prime-incidence Gram interface and
+the signed-witness audit for
+`papers/tpc-349-prime-balanced-signed-defect-witness/`.  The repository does
+not contain the Session-named official Route-A/Route-B evaluator files, so this
+is a fail-closed local bridge and not an official gate pass.
+
+```text
+TPC349_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_AUDIT
+TPC349_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+TPC349_PRIME_BALANCE_RULE = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC349_INCIDENCE_GRAM_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC349_FINITE_SIGNED_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+TPC349_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+TPC349_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_136_OF_192
+TPC349_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_175_OF_192
+TPC349_UNIVERSAL_BALANCED_GAIN = REFUTED_SCOPED
+TPC349_SIGNED_TO_DEFECT_RATIO = 0.39083565842--0.954375010719
+TPC349_SIGNED_TO_IDEAL_RATIO = 0.0125941959067--0.430061305156
+TPC349_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+TPC349_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+TPC349_ARITHMETIC_ADVANCE = NO
+TPC349_FIXED_POWER_CREDIT = 0
+TPC349_FULL_GATE_B = OPEN
+TPC349_TWIN_PRIME_RESULT = NONE
+TPC349_ROUND2_CLUE = REPLICATE_SIGNED_INCIDENCE_GRAM_ON_GROWING_FRESH_PANELS
+TPC349_STATUS = PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_AUDIT
+```
+
+The exact statements are the zero-sum shell split, the incidence Gram
+expansion, and the induced-norm lower-witness inequality.  The 192-row ranges,
+baseline comparisons, exact multi-hit anchor, and normal/optimized replays are
+finite evidence only.  No source-native arithmetic estimate, asymptotic gain,
+fixed-power payment, Route-B reassembly, or twin-prime conclusion is attached.

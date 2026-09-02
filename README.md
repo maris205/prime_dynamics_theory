@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--348 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--349 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -41,6 +41,13 @@ TPC-348 紧接着把 TPC-347 的 defect 进一步定位到预声明的 mask-hit 
 `0.453958762219--0.897148966365`，position formula 的最大 replay discrepancy 为
 `2.0872192863e-14`。这仍是 finite position audit；source-uniform arithmetic $L^2$、
 uniform masked operator bound、fixed-power credit 与 twin-prime endpoint 继续 open。
+
+TPC-349 再把 mask-hit coordinates 组合成零和 prime-incidence contrast：升序 shell
+primes 取等量 `+1/-1`（奇数 shell 留一个中性 prime），得到 exact incidence Gram
+展开与 induced-norm lower witness。`192/192` 行有正响应，signed/defect ratio 为
+`0.39083565842--0.954375010719`；`136/192` 行超过最佳单坐标基线，`175/192`
+行达到 defect norm 的一半。但 56 行仍低于坐标基线，所以 universal balanced gain
+只可记为 `REFUTED_SCOPED`；arithmetic advance 仍为 NO。
 
 ```text
 TPC343_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
@@ -145,6 +152,26 @@ TPC348_STATUS = PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CE
 TPC348_ROUND2_CLUE = TEST_PRIME_BALANCED_DEFECT_WITNESSES_BEFORE_SOURCE_NATIVE_L2
 ```
 
+```text
+TPC349_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_AUDIT
+TPC349_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+TPC349_PRIME_BALANCE_RULE = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC349_INCIDENCE_GRAM_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC349_FINITE_SIGNED_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+TPC349_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+TPC349_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_136_OF_192
+TPC349_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_175_OF_192
+TPC349_UNIVERSAL_BALANCED_GAIN = REFUTED_SCOPED
+TPC349_ARITHMETIC_ADVANCE = NO
+TPC349_FIXED_POWER_CREDIT = 0
+TPC349_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+TPC349_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+TPC349_FULL_GATE_B = OPEN
+TPC349_TWIN_PRIME_RESULT = NONE
+TPC349_STATUS = PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_AUDIT
+TPC349_ROUND2_CLUE = REPLICATE_SIGNED_INCIDENCE_GRAM_ON_GROWING_FRESH_PANELS
+```
+
 TPC-331（更早阶段）承接 TPC-330，把五个预声明的 coordinate controls 视为一个
 finite control orbit，并对 energy、coordinate diagonal 与 off-diagonal response 给出
 exact mean/centered decomposition。锁定同一两个 held-out origins={28001,36001}、
@@ -245,6 +272,12 @@ TPC-347 defect 建立 exact position-aware coordinate lower witness；192/192 �
 mask-hit witness，含 exact rational anchor、独立 reverse replay、mutation stress、
 PDF 与 local Bridge-B checker；仅形成 finite scoped obstruction，arithmetic advance
 仍为 NO。
+
+papers/tpc-349-prime-balanced-signed-defect-witness - TPC-349 已完成项目 - 建立零和
+prime-incidence Gram 与 signed lower witness；192/192 正响应、136/192 超过坐标
+基线、175/192 达到 half-defect，含 exact multi-hit anchor、独立 reverse replay、
+mutation stress、PDF 与 local Bridge-B checker；universal gain scoped refuted，
+arithmetic advance 仍为 NO。
 
 papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram
 operator 的 6-row masked response ledger；zero/background/twin/prime-power gain

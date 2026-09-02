@@ -3,13 +3,78 @@
 
 更新时间：2026-09-02
 
-状态：**TPC348_PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC349_PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.142 current：TPC-348 position-aware mask-defect lower witness
+## 0.143 current：TPC-349 prime-balanced signed defect witness
+
+项目：papers/tpc-349-prime-balanced-signed-defect-witness/
+
+类型：**PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_AUDIT**。
+
+TPC-349 承接 TPC-348 的 coordinate lower-witness interface。对升序 shell
+`p_0<...<p_(r-1)`，前后各 `floor(r/2)` 个 primes 取 `+1/-1`，奇数 shell 的
+中间 prime 取 `0`，从而 `sum_j beta_j=0`。定义 interval incidence vectors
+`h_(p_j,I)(t)=1_(p_j|t)` 与 `b_I=sum_j beta_j h_(p_j,I)`。线性与双线性精确给出
+
+```text
+||D_I b_I||_2^2
+ = sum_(j,k) beta_j beta_k <D_I h_(p_j,I),D_I h_(p_k,I)>,
+||D_I||_(2->2) >= ||D_I b_I||_2 / ||b_I||_2.
+```
+
+冻结 protocol 与 TPC-348 相同，共 `192` rows。所有 rows 的 signed incidence
+vector 非零且响应为正；signed/defect ratio 为
+`0.39083565842--0.954375010719`，signed/ideal ratio 为
+`0.0125941959067--0.430061305156`，signed/coordinate ratio 为
+`0.542800508699--2.04702542827`。`136/192` rows 超过最佳 mask-hit coordinate
+baseline，`175/192` rows 达到 defect norm 的一半；signed support 为 `28--150`。
+producer、reverse-shell independent replay、six-mutation stress 与 exact `[1,14]`
+multi-hit anchor 均通过。
+
+最强正结果：零和 prime-incidence contrast 获得 exact cross-prime Gram interface 与
+deterministic lower witness；它在多数声明 rows 上比单坐标 witness 更强。
+
+最强 obstruction：signed/coordinate ratio 的有限下界只有 `0.542800508699`，56
+rows 未超过 coordinate baseline，所以 universal balanced gain 即使在当前 panel
+也被 scoped refute；这不否定其他预声明 sign rules 或 growing theorem。
+
+开放定理：在 fresh/growing panels 上重放并控制 signed incidence Gram，区分
+same-prime energy 与 cross-prime interference，同时保留 literal masks；若无稳定性，
+则应冻结该 finite sign rule 并回到 source-native arithmetic `L2`。
+
+可复用结构：
+
+    ordered shell -> zero-sum beta -> incidence contrast -> prime Gram
+                  -> normalized lower witness -> finite baseline audit
+
+ROUND2_CLUE：`REPLICATE_SIGNED_INCIDENCE_GRAM_ON_GROWING_FRESH_PANELS`。
+
+声明上限：`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`、
+`TWIN_PRIME_RESULT=NONE`；official evaluator files absent，local Bridge-B fail-closed。
+
+    TPC349_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_AUDIT
+    TPC349_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+    TPC349_PRIME_BALANCE_RULE = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC349_INCIDENCE_GRAM_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC349_FINITE_SIGNED_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+    TPC349_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+    TPC349_COORDINATE_BASELINE_BEATEN = NUMERICALLY_CERTIFIED_FINITE_136_OF_192
+    TPC349_HALF_DEFECT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_175_OF_192
+    TPC349_UNIVERSAL_BALANCED_GAIN = REFUTED_SCOPED
+    TPC349_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+    TPC349_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC349_ARITHMETIC_ADVANCE = NO
+    TPC349_FIXED_POWER_CREDIT = 0
+    TPC349_FULL_GATE_B = OPEN
+    TPC349_TWIN_PRIME_RESULT = NONE
+    TPC349_STATUS = PROVED_EXACT_FINITE_PRIME_BALANCED_INCIDENCE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_AUDIT
+    TPC349_ROUND2_CLUE = REPLICATE_SIGNED_INCIDENCE_GRAM_ON_GROWING_FRESH_PANELS
+
+## 0.142 previous：TPC-348 position-aware mask-defect lower witness
 
 项目：papers/tpc-348-position-aware-mask-defect-lower-witness/
 
