@@ -1,6 +1,76 @@
 # TPC HANDOFF
 
-TPC-351 current section: reciprocal-shell zero-sum finite scale repair
+TPC-352 current section: adversarial holdout for the reciprocal-shell contrast
+-------------------------------------------------------------------------------
+
+TPC-352 is the current sealed release.  It is the predeclared disjoint hostile
+holdout for the TPC-351 reciprocal-shell rule.  The holdout uses origins
+`96097,120097,144097`, lengths `256,512,1024`, shell anchors
+`Q=64,128,256,512`, exponents `1,2`, source laws `all_plus` and
+`alternating_index`, and `H=66`, for `144` rows and `48` length series.  The
+reciprocal coefficients remain
+
+`gamma_j = 1/p_j - r^(-1) sum_k 1/p_k`,
+
+with exact rational zero sum.  The balanced parent is the fixed first-half
+`+1`/last-half `-1` profile (and a zero middle coordinate when needed), so the
+comparison is declared before observing responses.
+
+The finite holdout is reproducible: reciprocal witnesses are positive on
+`144/144` rows and improve the parent on `118/144`; the reciprocal/defect ratio
+is `0.0801262572786--0.829632172143` with mean `0.397491684421`, while the
+parent range is `0.099642909832--0.806767399067`.  The reciprocal witness
+reaches half-defect on `49/144` rows, beats the coordinate baseline on
+`47/144`, and `22/48` length series are nondecreasing.  At `Q=256` its floor
+(`0.0801262572786`) is below the balanced parent floor (`0.099642909832`),
+which is the decisive holdout obstruction.
+
+The exact zero-sum incidence identity, Gram expansion, and induced-norm
+lower-witness inequality remain `PROVED_EXACT_FINITE`; all holdout counts,
+spectral comparisons, reverse replay, stress mutations, PDF checks, and hash
+locks are finite evidence.  Thus `UNIFORM_REPAIR_TRANSFER=REFUTED_SCOPED` and
+`HIGH_SHELL_REPAIR=REFUTED_SCOPED`.  No source-uniform arithmetic `L2`, uniform
+masked-operator theorem, fixed-power credit, Route-B reassembly, or twin-prime
+conclusion is licensed.  The finite reciprocal branch is frozen and the next
+minimal route is source-native literal masked arithmetic `L2`.
+
+    TPC352_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_DISJOINT_HOLDOUT_AUDIT
+    TPC352_RECIPROCAL_RULE = PROVED_EXACT_FINITE_DECLARED_RATIONAL_RULE
+    TPC352_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+    TPC352_DISJOINT_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+    TPC352_RECIPROCAL_POSITIVE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_144_OF_144
+    TPC352_PARENT_IMPROVEMENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_118_OF_144
+    TPC352_RECIPROCAL_TO_DEFECT_RANGE = 0.0801262572786--0.829632172143
+    TPC352_RECIPROCAL_HALF_DEFECT = NUMERICALLY_CERTIFIED_FINITE_49_OF_144
+    TPC352_RECIPROCAL_COORDINATE_BASELINE = NUMERICALLY_CERTIFIED_FINITE_47_OF_144
+    TPC352_NONDECREASING_SERIES = NUMERICALLY_CERTIFIED_FINITE_22_OF_48
+    TPC352_UNIFORM_REPAIR_TRANSFER = REFUTED_SCOPED
+    TPC352_HIGH_SHELL_REPAIR = REFUTED_SCOPED
+    TPC352_ARITHMETIC_ADVANCE = NO
+    TPC352_FIXED_POWER_CREDIT = 0
+    TPC352_FULL_GATE_B = OPEN
+    TPC352_TWIN_PRIME_RESULT = NONE
+    TPC352_STRONGEST_POSITIVE = DISJOINT_HOLDOUT_RETAINS_EXACT_WITNESS_AND_POSITIVE_RESPONSE_CENSUS
+    TPC352_STRONGEST_OBSTRUCTION = Q256_RECIPROCAL_FLOOR_BELOW_BALANCED_PARENT
+    TPC352_OPEN_THEOREM = SOURCE_NATIVE_LITERAL_MASKED_ARITHMETIC_L2
+    TPC352_REUSABLE_STRUCTURE = ADVERSARIAL_HOLDOUT_PROTOCOL_WITH_EXACT_RATIONAL_WITNESS_AND_FAIL_CLOSED_TRANSFER_TEST
+    TPC352_ROUND2_CLUE = FREEZE_FINITE_RECIPROCAL_BRANCH_AND_RETURN_TO_SOURCE_NATIVE_L2
+    TPC352_STATUS = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_DISJOINT_HOLDOUT_AUDIT
+
+TPC-352 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-352-reciprocal-shell-adversarial-holdout/code/tpc352_reciprocal_shell_adversarial_holdout.py --write
+    python -B papers/tpc-352-reciprocal-shell-adversarial-holdout/code/tpc352_reciprocal_shell_adversarial_holdout.py --check
+    python -O -B papers/tpc-352-reciprocal-shell-adversarial-holdout/code/tpc352_reciprocal_shell_adversarial_holdout.py --check
+    python -B papers/tpc-352-reciprocal-shell-adversarial-holdout/experiments/tpc352_independent_checker.py --check
+    python -O -B papers/tpc-352-reciprocal-shell-adversarial-holdout/experiments/tpc352_independent_checker.py --check
+    python -B papers/tpc-352-reciprocal-shell-adversarial-holdout/experiments/tpc352_holdout_stress.py
+    python -O -B papers/tpc-352-reciprocal-shell-adversarial-holdout/experiments/tpc352_holdout_stress.py
+    python -B research/tpc-big-road/tpc_bridge_b_tpc352_reciprocal_shell_adversarial_holdout_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc352_reciprocal_shell_adversarial_holdout_checker.py --check
+
+TPC-351 previous section: reciprocal-shell zero-sum finite scale repair
 -------------------------------------------------------------------------------
 
 TPC-351 is the current sealed release.  It answers the TPC-350 high-shell
@@ -12230,12 +12300,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V204/TPC-351 是当前 release；其 producer、reverse-shell independent replay、stress
-audit 与 reciprocal-shell scale-repair bridge 已封存。V203/TPC-350、V202/TPC-349、V201/TPC-348、TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
+V205/TPC-352 是当前 release；其 producer、reverse-shell independent replay、stress
+audit 与 adversarial reciprocal-shell holdout bridge 已封存。V204/TPC-351、V203/TPC-350、V202/TPC-349、V201/TPC-348、TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
 TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
 TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 425 对 normal/optimized 命令、850 次
+当前 curated cascade command set 共 429 对 normal/optimized 命令、858 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -12254,7 +12324,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -13802,6 +13872,31 @@ ratio_floor=0.0917557319271`。这是 V204 的 finite reciprocal-shell scale rep
 growing lower bound、source-uniform arithmetic `L2`、uniform masked-operator theorem、
 fixed-power saving 或 official evaluator pass。
 
+TPC-352 的项目级 producer、reverse-shell independent replay、holdout stress 与
+bridge checker：
+
+```bash
+python -B papers/tpc-352-reciprocal-shell-adversarial-holdout/code/tpc352_reciprocal_shell_adversarial_holdout.py --write
+python -B papers/tpc-352-reciprocal-shell-adversarial-holdout/code/tpc352_reciprocal_shell_adversarial_holdout.py --check
+python -O -B papers/tpc-352-reciprocal-shell-adversarial-holdout/code/tpc352_reciprocal_shell_adversarial_holdout.py --check
+python -B papers/tpc-352-reciprocal-shell-adversarial-holdout/experiments/tpc352_independent_checker.py --check
+python -O -B papers/tpc-352-reciprocal-shell-adversarial-holdout/experiments/tpc352_independent_checker.py --check
+python -B papers/tpc-352-reciprocal-shell-adversarial-holdout/experiments/tpc352_holdout_stress.py
+python -O -B papers/tpc-352-reciprocal-shell-adversarial-holdout/experiments/tpc352_holdout_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc352_reciprocal_shell_adversarial_holdout_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc352_reciprocal_shell_adversarial_holdout_checker.py --check
+```
+
+TPC-352 增量 tail audit：上述 4 对共 8 次 normal/optimized invocation 必须返回零、
+stderr 为空且 stdout 逐对 byte-identical；Bridge-B 输出
+`rows=144 / positive_reciprocal=144 / improved_parent=118/144 /
+ratio_floor=0.0801262572786`。这是 V205 的 disjoint adversarial reciprocal-shell
+holdout；Q=256 reciprocal floor 低于 balanced parent，故
+`UNIFORM_REPAIR_TRANSFER=REFUTED_SCOPED`、`HIGH_SHELL_REPAIR=REFUTED_SCOPED`，不代表
+source-native arithmetic `L2`、uniform masked-operator theorem、fixed-power saving、
+Route-B reassembly 或 official evaluator pass；有限 reciprocal 分支冻结，下一步回到
+source-native literal masked `L2`。
+
 TPC-349 的项目级 producer、reverse-shell independent replay、signed-witness stress 与
 bridge checker：
 
@@ -13929,7 +14024,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-351 current release 入口：
+TPC-352 current release 入口：
+
+papers/tpc-352-reciprocal-shell-adversarial-holdout/README.md
+papers/tpc-352-reciprocal-shell-adversarial-holdout/PAPER_PLAN.md
+papers/tpc-352-reciprocal-shell-adversarial-holdout/DERIVATION_PACKAGE.md
+papers/tpc-352-reciprocal-shell-adversarial-holdout/PROOF_PACKAGE.md
+papers/tpc-352-reciprocal-shell-adversarial-holdout/code/tpc352_reciprocal_shell_adversarial_holdout.py
+papers/tpc-352-reciprocal-shell-adversarial-holdout/experiments/tpc352_independent_checker.py
+papers/tpc-352-reciprocal-shell-adversarial-holdout/experiments/tpc352_holdout_stress.py
+papers/tpc-352-reciprocal-shell-adversarial-holdout/results/tpc352_certificate.json
+papers/tpc-352-reciprocal-shell-adversarial-holdout/notes/theorem_ledger.md
+papers/tpc-352-reciprocal-shell-adversarial-holdout/notes/claim_firewall.md
+papers/tpc-352-reciprocal-shell-adversarial-holdout/notes/computational_protocol.md
+papers/tpc-352-reciprocal-shell-adversarial-holdout/notes/route_evaluation.md
+papers/tpc-352-reciprocal-shell-adversarial-holdout/paper/main.tex
+papers/tpc-352-reciprocal-shell-adversarial-holdout/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc352_reciprocal_shell_adversarial_holdout.md
+research/tpc-big-road/tpc_bridge_b_tpc352_reciprocal_shell_adversarial_holdout_checker.py
+
+TPC-351 previous release 入口：
 
 papers/tpc-351-reciprocal-shell-contrast/README.md
 papers/tpc-351-reciprocal-shell-contrast/PAPER_PLAN.md

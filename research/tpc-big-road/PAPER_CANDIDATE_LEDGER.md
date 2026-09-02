@@ -3,13 +3,75 @@
 
 更新时间：2026-09-03
 
-状态：**TPC351_PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_SCALE_REPAIR_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC352_PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_DISJOINT_HOLDOUT_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.145 current：TPC-351 reciprocal-shell zero-sum contrast
+## 0.146 current：TPC-352 adversarial reciprocal-shell holdout
+
+项目：papers/tpc-352-reciprocal-shell-adversarial-holdout/
+
+类型：**PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_DISJOINT_HOLDOUT_AUDIT**。
+
+TPC-352 是 TPC-351 的预声明 disjoint holdout。冻结 origins
+`96097,120097,144097`、长度 `256,512,1024`、shell anchors
+`Q=64,128,256,512`、两种 source law 与两种 exponent；保持同一 reciprocal rule
+`gamma_j=1/p_j-r^(-1)sum_k1/p_k`，并在每行同时计算 TPC-350 balanced parent。
+exact coefficient balance、incidence identity、Gram expansion 与 induced-norm
+lower witness 不变，均为 `PROVED_EXACT_FINITE`。
+
+新的 `144` rows、`48` 条 length series 中，reciprocal witness `144/144` 有正响应，
+但只在 `118/144` rows 改善 balanced parent。reciprocal/defect ratio 为
+`0.0801262572786--0.829632172143`，mean 为 `0.397491684421`；parent ratio 为
+`0.099642909832--0.806767399067`，mean 为 `0.361474079935`。reciprocal witness
+在 `49/144` rows 达到 half-defect、`47/144` 超过 coordinate baseline，双方均有
+`22/48` nondecreasing series，Gram replay 最大误差为 `1.15463194561e-14`。
+
+最强正结果：在完全新 origins 与新 shell ladder 上，固定 reciprocal contrast 仍
+产生 `144/144` 正的 finite lower witnesses，并在 `118/144` rows 保留相对 balanced
+parent 的 response gain；这确认了部分而非零 transfer。
+
+最强 obstruction：transfer 不是 uniform。`Q=256` 的 reciprocal floor
+`0.0801262572786` 低于 balanced parent 的 `0.099642909832`，整体有 26 个 parent
+非劣行，且只有 `22/48` series 单调。因此 TPC-351 的 scale repair 不能升级为
+uniform shell-scale principle，记为 `REFUTED_SCOPED`。
+
+开放定理：源原生 literal masked aggregate 的 uniform arithmetic `L2` 估计，以及
+其与 Route-B reassembly 的 typed attachment；finite reciprocal incidence branch
+冻结，不再以新面板重复包装同一 repair claim。
+
+可复用结构：
+
+    predeclared reciprocal rule -> disjoint holdout -> paired parent comparison
+      -> scale-specific transfer test -> finite branch freeze
+
+ROUND2_CLUE：`FREEZE_FINITE_RECIPROCAL_BRANCH_AND_RETURN_TO_SOURCE_NATIVE_L2`。
+
+声明上限：`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`、
+`TWIN_PRIME_RESULT=NONE`；official evaluator files absent，local Bridge-B fail-closed。
+
+    TPC352_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_DISJOINT_HOLDOUT_AUDIT
+    TPC352_RECIPROCAL_RULE = PROVED_EXACT_FINITE_DECLARED_RATIONAL_RULE
+    TPC352_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+    TPC352_DISJOINT_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+    TPC352_RECIPROCAL_POSITIVE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_144_OF_144
+    TPC352_PARENT_IMPROVEMENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_118_OF_144
+    TPC352_RECIPROCAL_TO_DEFECT_RANGE = 0.0801262572786--0.829632172143
+    TPC352_RECIPROCAL_HALF_DEFECT = NUMERICALLY_CERTIFIED_FINITE_49_OF_144
+    TPC352_RECIPROCAL_COORDINATE_BASELINE = NUMERICALLY_CERTIFIED_FINITE_47_OF_144
+    TPC352_NONDECREASING_SERIES = NUMERICALLY_CERTIFIED_FINITE_22_OF_48
+    TPC352_UNIFORM_REPAIR_TRANSFER = REFUTED_SCOPED
+    TPC352_HIGH_SHELL_REPAIR = REFUTED_SCOPED
+    TPC352_ARITHMETIC_ADVANCE = NO
+    TPC352_FIXED_POWER_CREDIT = 0
+    TPC352_FULL_GATE_B = OPEN
+    TPC352_TWIN_PRIME_RESULT = NONE
+    TPC352_STATUS = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_DISJOINT_HOLDOUT_AUDIT
+    TPC352_ROUND2_CLUE = FREEZE_FINITE_RECIPROCAL_BRANCH_AND_RETURN_TO_SOURCE_NATIVE_L2
+
+## 0.145 previous：TPC-351 reciprocal-shell zero-sum contrast
 
 项目：papers/tpc-351-reciprocal-shell-contrast/
 

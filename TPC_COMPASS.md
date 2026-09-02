@@ -1,6 +1,45 @@
 # TPC distilled map and bold channel
 
-## V204 / TPC-351 current anchor
+## V205 / TPC-352 current anchor
+
+更新时间：2026-09-03
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc352_reciprocal_shell_adversarial_holdout.md，checker 为
+tpc_bridge_b_tpc352_reciprocal_shell_adversarial_holdout_checker.py，编号论文为
+papers/tpc-352-reciprocal-shell-adversarial-holdout/。
+
+TPC-352 是对 TPC-351 reciprocal-shell repair 的 disjoint adversarial holdout。冻结
+origins `96097,120097,144097`、lengths `256,512,1024` 与新 shell anchors
+`Q=64,128,256,512`，不改变 reciprocal coefficient rule，也不按 holdout response
+拟合。`144/144` 行有正响应，`118/144` 行改善 balanced parent；ratio 为
+`0.0801262572786--0.829632172143`，`49/144` 达到 half-defect，`47/144` 超过
+coordinate baseline，`22/48` series nondecreasing。`Q=256` 的 reciprocal floor
+低于 parent，故有限 repair 的 uniform transfer 被 `REFUTED_SCOPED`，该 branch
+冻结并返回 source-native masked arithmetic `L2`。
+
+这是 `PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_DISJOINT_HOLDOUT_AUDIT`；
+exact statements 仍限于 rational balance、incidence Gram 与 induced-norm witness，
+arithmetic `L2`、uniform masked operator bound、fixed-power credit、Route-B
+reassembly 与 twin-prime endpoint 均 open。official evaluator files absent，故只记
+local Bridge-B fail-closed。
+
+    TPC352_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_DISJOINT_HOLDOUT_AUDIT
+    TPC352_RECIPROCAL_RULE = PROVED_EXACT_FINITE_DECLARED_RATIONAL_RULE
+    TPC352_SIGNED_INCIDENCE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+    TPC352_DISJOINT_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+    TPC352_RECIPROCAL_POSITIVE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_144_OF_144
+    TPC352_PARENT_IMPROVEMENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_118_OF_144
+    TPC352_UNIFORM_REPAIR_TRANSFER = REFUTED_SCOPED
+    TPC352_HIGH_SHELL_REPAIR = REFUTED_SCOPED
+    TPC352_ARITHMETIC_ADVANCE = NO
+    TPC352_FIXED_POWER_CREDIT = 0
+    TPC352_FULL_GATE_B = OPEN
+    TPC352_TWIN_PRIME_RESULT = NONE
+    TPC352_STATUS = PROVED_EXACT_FINITE_RECIPROCAL_ZERO_SUM_INCIDENCE_WITNESS_PLUS_NUMERICALLY_CERTIFIED_DISJOINT_HOLDOUT_AUDIT
+    TPC352_ROUND2_CLUE = FREEZE_FINITE_RECIPROCAL_BRANCH_AND_RETURN_TO_SOURCE_NATIVE_L2
+
+## V204 / TPC-351 previous anchor
 
 更新时间：2026-09-03
 
