@@ -3,13 +3,76 @@
 
 更新时间：2026-09-02
 
-状态：**TPC347_PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC348_PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.141 current：TPC-347 convolution interface and mask defect
+## 0.142 current：TPC-348 position-aware mask-defect lower witness
+
+项目：papers/tpc-348-position-aware-mask-defect-lower-witness/
+
+类型：**PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT**。
+
+TPC-348 承接 TPC-347 的 literal masked prime-shell object。令 `D_I=A_I-T_I` 为
+physical block 与 unmasked convolution compression 的 defect，并定义
+`J_I={t in I: exists active shell prime p with p|t}`。对每个单位坐标列精确得到
+左右 projection defect 的 position formula；于是有限维 induced Euclidean norm 满足
+`||D_I||_(2->2)>=max_(t in J_I)||D_I e_t||_2`。这是 coordinate lower-witness
+theorem，不需要 positivity、symmetry、leading eigenvector 或 sign heuristic。
+
+冻结 protocol 为 origins `[40097,48097]`、source counts `[256,512,1024]`、
+`Q=[24,36,54,80]`、exponents `[1,2]`、四个 sign laws 与 `H=66`，共 `192` 条
+finite rows。producer、reverse-shell independent checker 与 mutation stress 共同
+重建每一行；`192/192` rows 有正 best-hit witness，mask-hit count 为 `30--169`，
+best-hit/defect ratio 为 `0.453958762219--0.897148966365`，best-hit/ideal ratio
+为 `0.0183057714619--0.336311065586`，position formula 最大 replay discrepancy
+为 `2.0872192863e-14`。另有 exact rational six-point anchor：`I=[1,6]`、shell
+`{5,7}`、唯一 hit position `5`。
+
+最强正结果：把 TPC-347 的 mask defect 从整体 spectral observation 变成一个可复用的
+position-aware finite lower-witness interface，并在全部声明行上完成独立可审计的正
+witness census。
+
+最强 obstruction：mask-hit columns 在声明面板上不能被当作零 defect；但这是 finite
+scoped obstruction，不能外推为 growing lower bound，也不能替代 source-native
+arithmetic `L2` cancellation。
+
+开放定理：在保留所有 residue masks 的情况下，证明 source-uniform position-aware
+defect bound，或构造 prime-balanced signed witnesses 后获得可支付的 arithmetic `L2`
+estimate；Route-B reassembly、fixed-power payment 与 twin-prime endpoint 仍 open。
+
+可复用结构：
+
+    literal masked block -> two-sided projection defect -> mask-hit set
+                       -> coordinate lower witness -> finite audit -> firewall
+
+ROUND2_CLUE：`TEST_PRIME_BALANCED_DEFECT_WITNESSES_BEFORE_SOURCE_NATIVE_L2`。
+
+声明上限：`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`、
+`TWIN_PRIME_RESULT=NONE`；Session-named official evaluator files absent，故 local
+Bridge-B 仍 fail-closed。
+
+    TPC348_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT
+    TPC348_COORDINATE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+    TPC348_MASK_HIT_SELECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC348_POSITION_FORMULA = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC348_FINITE_POSITION_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+    TPC348_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+    TPC348_MASK_DISCARDABILITY = REFUTED_SCOPED
+    TPC348_BEST_HIT_TO_DEFECT_RATIO = 0.453958762219--0.897148966365
+    TPC348_BEST_HIT_TO_IDEAL_RATIO = 0.0183057714619--0.336311065586
+    TPC348_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+    TPC348_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC348_ARITHMETIC_ADVANCE = NO
+    TPC348_FIXED_POWER_CREDIT = 0
+    TPC348_FULL_GATE_B = OPEN
+    TPC348_TWIN_PRIME_RESULT = NONE
+    TPC348_STATUS = PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT
+    TPC348_ROUND2_CLUE = TEST_PRIME_BALANCED_DEFECT_WITNESSES_BEFORE_SOURCE_NATIVE_L2
+
+## 0.141 previous：TPC-347 convolution interface and mask defect
 
 项目：papers/tpc-347-convolution-mask-defect-interface/
 

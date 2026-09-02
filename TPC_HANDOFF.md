@@ -1,7 +1,73 @@
 # TPC HANDOFF
 
-TPC-347 current section: exact convolution interface and divisibility-mask defect
+TPC-348 current section: position-aware lower witness for the divisibility-mask defect
 -----------------------------------------------------------------------------------------------
+
+TPC-348 continues the literal masked prime-shell object from TPC-347.  For
+`D_I=A_I-T_I`, let `J_I` be the interval positions divisible by at least one
+active shell prime.  The exact position formula retains both projection sides,
+and finite-dimensional induced-norm linear algebra gives
+`||D_I||_(2->2) >= max_(t in J_I)||D_I e_t||_2`.  The selector is declared from
+the shell and interval; it is not a leading-eigenvector fit and makes no sign
+assumption.
+
+The locked protocol is unchanged: origins [40097,48097], source counts
+[256,512,1024], Q anchors [24,36,54,80], exponents [1,2], four sign laws, and
+H=66.  The certificate has 192 rows; all 192 rows have a positive best-hit
+witness, with mask-hit counts 30--169.  The best-hit/defect ratio is
+0.453958762219--0.897148966365 and the best-hit/ideal ratio is
+0.0183057714619--0.336311065586.  The two-sided position-formula replay has
+maximum discrepancy 2.0872192863e-14, and the exact six-point anchor has unique
+hit position 5.
+
+The coordinate lower-witness theorem and the position formula are
+PROVED_EXACT_FINITE within the declared model; the 192-row census is
+NUMERICALLY_CERTIFIED_FINITE.  This is a finite scoped obstruction to treating
+the masks as zero, not a growing lower bound.  It gives no source-uniform
+arithmetic `L2`, uniform masked-operator bound, fixed-power credit, Route-B
+reassembly, or twin-prime conclusion.
+
+    TPC348_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT
+    TPC348_COORDINATE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+    TPC348_MASK_HIT_SELECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC348_POSITION_FORMULA = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC348_FINITE_POSITION_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+    TPC348_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+    TPC348_MASK_DISCARDABILITY = REFUTED_SCOPED
+    TPC348_BEST_HIT_TO_DEFECT_RATIO = 0.453958762219--0.897148966365
+    TPC348_BEST_HIT_TO_IDEAL_RATIO = 0.0183057714619--0.336311065586
+    TPC348_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+    TPC348_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC348_ARITHMETIC_ADVANCE = NO
+    TPC348_FIXED_POWER_CREDIT = 0
+    TPC348_FULL_GATE_B = OPEN
+    TPC348_TWIN_PRIME_RESULT = NONE
+    TPC348_STRONGEST_POSITIVE = EXACT_COORDINATE_LOWER_WITNESS_AND_192_ROW_REPLAY
+    TPC348_STRONGEST_OBSTRUCTION = MASK_HIT_DEFECT_NOT_DISCARDABLE_ON_DECLARED_PANEL
+    TPC348_OPEN_THEOREM = PRIME_BALANCED_SIGNED_DEFECT_OR_SOURCE_UNIFORM_MASKED_L2
+    TPC348_REUSABLE_STRUCTURE = PROJECTION_DEFECT_TO_MASK_HIT_COORDINATE_ENVELOPE
+    TPC348_ROUND2_CLUE = TEST_PRIME_BALANCED_DEFECT_WITNESSES_BEFORE_SOURCE_NATIVE_L2
+    TPC348_STATUS = PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT
+
+The Session-named `propose.md` and Route-A/Route-B evaluator files remain absent
+in this checkout.  The local Bridge-B wrapper is fail-closed and is not an
+official evaluator pass.  No arithmetic estimate, strict 1/400 payment,
+fixed-power credit, or twin-prime conclusion is licensed.
+
+TPC-348 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-348-position-aware-mask-defect-lower-witness/code/tpc348_position_aware_mask_defect_lower_witness.py --write
+    python -B papers/tpc-348-position-aware-mask-defect-lower-witness/code/tpc348_position_aware_mask_defect_lower_witness.py --check
+    python -O -B papers/tpc-348-position-aware-mask-defect-lower-witness/code/tpc348_position_aware_mask_defect_lower_witness.py --check
+    python -B papers/tpc-348-position-aware-mask-defect-lower-witness/experiments/tpc348_independent_checker.py --check
+    python -O -B papers/tpc-348-position-aware-mask-defect-lower-witness/experiments/tpc348_independent_checker.py --check
+    python -B papers/tpc-348-position-aware-mask-defect-lower-witness/experiments/tpc348_witness_stress.py
+    python -O -B papers/tpc-348-position-aware-mask-defect-lower-witness/experiments/tpc348_witness_stress.py
+    python -B research/tpc-big-road/tpc_bridge_b_tpc348_position_aware_mask_defect_lower_witness_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc348_position_aware_mask_defect_lower_witness_checker.py --check
+
+TPC-347 previous section: exact convolution interface and divisibility-mask defect
 
 TPC-347 returns from the finite panel-adaptive freeze to the literal arithmetic-L2
 interface.  For the locked prime-shell family, the physical block is exactly
@@ -11958,12 +12024,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V200/TPC-347 是当前 release；其 producer、reverse-shell independent replay、stress
-audit 与 convolution/mask-defect bridge 已封存。TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
+V201/TPC-348 是当前 release；其 producer、reverse-shell independent replay、stress
+audit 与 position-aware mask-defect bridge 已封存。TPC-347、TPC-346、TPC-345、TPC-344、TPC-343、TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、
 TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
 TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 409 对 normal/optimized 命令、818 次
+当前 curated cascade command set 共 413 对 normal/optimized 命令、826 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -11982,7 +12048,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -12026,6 +12092,12 @@ V200/TPC-347 的新增 4 对由 project producer、reverse-shell independent che
 mask-defect stress 与 local Bridge-B checker 逐项验证；其 exact convolution-plus-
 defect interface 与 finite mask-discard obstruction 不代表 source-uniform arithmetic
 `L2`、uniform masked-operator bound、fixed-power saving 或 official evaluator pass。
+
+V201/TPC-348 的新增 4 对由 project producer、reverse-shell independent checker、
+position-aware witness stress 与 local Bridge-B checker 逐项验证；其 exact coordinate
+lower-witness interface 与 finite positive-witness census 不代表 growing lower bound、
+source-uniform arithmetic `L2`、uniform masked-operator bound、fixed-power saving 或
+official evaluator pass。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
@@ -13455,6 +13527,28 @@ fresh_loo_pairs=18`。这是 V199 的 finite third-panel hostile replication；�
 panel-adaptive freeze 不代表 universal impossibility、source-uniform arithmetic
 `L2`、fixed-power saving 或 official evaluator pass。
 
+TPC-348 的项目级 producer、reverse-shell independent replay、position-aware witness
+stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-348-position-aware-mask-defect-lower-witness/code/tpc348_position_aware_mask_defect_lower_witness.py --write
+python -B papers/tpc-348-position-aware-mask-defect-lower-witness/code/tpc348_position_aware_mask_defect_lower_witness.py --check
+python -O -B papers/tpc-348-position-aware-mask-defect-lower-witness/code/tpc348_position_aware_mask_defect_lower_witness.py --check
+python -B papers/tpc-348-position-aware-mask-defect-lower-witness/experiments/tpc348_independent_checker.py --check
+python -O -B papers/tpc-348-position-aware-mask-defect-lower-witness/experiments/tpc348_independent_checker.py --check
+python -B papers/tpc-348-position-aware-mask-defect-lower-witness/experiments/tpc348_witness_stress.py
+python -O -B papers/tpc-348-position-aware-mask-defect-lower-witness/experiments/tpc348_witness_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc348_position_aware_mask_defect_lower_witness_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc348_position_aware_mask_defect_lower_witness_checker.py --check
+```
+
+TPC-348 增量 tail audit：4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `rows=192 / positive_witness=192 /
+position_formula=192`。这是 V201 的 exact finite coordinate lower-witness interface
+与 scoped mask-defect obstruction；不代表 growing lower bound、source-uniform
+arithmetic `L2`、uniform masked-operator theorem、fixed-power saving 或 official
+evaluator pass。
+
 TPC-347 的项目级 producer、reverse-shell independent replay、mask-defect stress 与
 bridge checker：
 
@@ -13537,7 +13631,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-347 current release 入口：
+TPC-348 current release 入口：
+
+papers/tpc-348-position-aware-mask-defect-lower-witness/README.md
+papers/tpc-348-position-aware-mask-defect-lower-witness/PAPER_PLAN.md
+papers/tpc-348-position-aware-mask-defect-lower-witness/DERIVATION_PACKAGE.md
+papers/tpc-348-position-aware-mask-defect-lower-witness/PROOF_PACKAGE.md
+papers/tpc-348-position-aware-mask-defect-lower-witness/code/tpc348_position_aware_mask_defect_lower_witness.py
+papers/tpc-348-position-aware-mask-defect-lower-witness/experiments/tpc348_independent_checker.py
+papers/tpc-348-position-aware-mask-defect-lower-witness/experiments/tpc348_witness_stress.py
+papers/tpc-348-position-aware-mask-defect-lower-witness/results/tpc348_certificate.json
+papers/tpc-348-position-aware-mask-defect-lower-witness/notes/theorem_ledger.md
+papers/tpc-348-position-aware-mask-defect-lower-witness/notes/claim_firewall.md
+papers/tpc-348-position-aware-mask-defect-lower-witness/notes/computational_protocol.md
+papers/tpc-348-position-aware-mask-defect-lower-witness/notes/route_evaluation.md
+papers/tpc-348-position-aware-mask-defect-lower-witness/paper/main.tex
+papers/tpc-348-position-aware-mask-defect-lower-witness/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc348_position_aware_mask_defect_lower_witness.md
+research/tpc-big-road/tpc_bridge_b_tpc348_position_aware_mask_defect_lower_witness_checker.py
+
+TPC-347 previous release 入口：
 
 papers/tpc-347-convolution-mask-defect-interface/README.md
 papers/tpc-347-convolution-mask-defect-interface/PAPER_PLAN.md

@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--347 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--348 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -34,6 +34,13 @@ twin-prime endpoint 均未关闭。TPC-347 随后把 literal masked prime-shell 
 `96/96` 个 ideal origin pairs 保持 translation invariance。因此 mask shortcut 在
 声明面板上被 refute，但 masked operator bound 与 source-uniform arithmetic $L^2$ 仍然
 open。
+
+TPC-348 紧接着把 TPC-347 的 defect 进一步定位到预声明的 mask-hit positions：对
+`J_I={t: p|t}` 上的坐标列给出 exact induced-norm lower witness。锁定面板的
+`192/192` 行都有正 witness，best-hit witness/defect ratio 为
+`0.453958762219--0.897148966365`，position formula 的最大 replay discrepancy 为
+`2.0872192863e-14`。这仍是 finite position audit；source-uniform arithmetic $L^2$、
+uniform masked operator bound、fixed-power credit 与 twin-prime endpoint 继续 open。
 
 ```text
 TPC343_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_PANEL_META_CERTIFICATE
@@ -116,6 +123,26 @@ TPC347_FULL_GATE_B = OPEN
 TPC347_TWIN_PRIME_RESULT = NONE
 TPC347_STATUS = PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT
 TPC347_ROUND2_CLUE = QUANTIFY_MASK_DEFECT_LOWER_WITNESSES_BEFORE_SOURCE_NATIVE_L2
+```
+
+```text
+TPC348_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT
+TPC348_COORDINATE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+TPC348_MASK_HIT_SELECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC348_POSITION_FORMULA = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC348_FINITE_POSITION_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+TPC348_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+TPC348_MASK_DISCARDABILITY = REFUTED_SCOPED
+TPC348_BEST_HIT_TO_DEFECT_RATIO = 0.453958762219--0.897148966365
+TPC348_BEST_HIT_TO_IDEAL_RATIO = 0.0183057714619--0.336311065586
+TPC348_ARITHMETIC_ADVANCE = NO
+TPC348_FIXED_POWER_CREDIT = 0
+TPC348_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+TPC348_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+TPC348_FULL_GATE_B = OPEN
+TPC348_TWIN_PRIME_RESULT = NONE
+TPC348_STATUS = PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT
+TPC348_ROUND2_CLUE = TEST_PRIME_BALANCED_DEFECT_WITNESSES_BEFORE_SOURCE_NATIVE_L2
 ```
 
 TPC-331（更早阶段）承接 TPC-330，把五个预声明的 coordinate controls 视为一个
@@ -212,6 +239,12 @@ masked block 精确分解为 unmasked convolution 与 mask defect；192 条 fini
 96 个 translation checks、exact rational anchor、独立 replay、mutation stress、
 PDF 与 local Bridge-B checker 均已封存；mask shortcut 为 scoped refuted，
 arithmetic advance 仍为 NO。
+
+papers/tpc-348-position-aware-mask-defect-lower-witness - TPC-348 已完成项目 - 对
+TPC-347 defect 建立 exact position-aware coordinate lower witness；192/192 行有正
+mask-hit witness，含 exact rational anchor、独立 reverse replay、mutation stress、
+PDF 与 local Bridge-B checker；仅形成 finite scoped obstruction，arithmetic advance
+仍为 NO。
 
 papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram
 operator 的 6-row masked response ledger；zero/background/twin/prime-power gain

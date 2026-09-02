@@ -2,28 +2,52 @@
 
 更新时间：2026-09-02
 
-当前地图版本：V200 / TPC-347
+当前地图版本：V201 / TPC-348
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-347`（`PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT`）；
+当前编号锚点：`TPC-348`（`PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT`）；
 对应论文目录为
-`papers/tpc-347-convolution-mask-defect-interface/`。
+`papers/tpc-348-position-aware-mask-defect-lower-witness/`。
 
-TPC-347 是当前地图位置：它承接 TPC-346 冻结的 panel-adaptive 分支，回到 literal
-arithmetic-L2 interface。物理 masked block 精确分解为 unmasked
-translation-invariant convolution `T_I` 与 projection defect `D_I`，即
-`A_I=T_I+D_I`；Fourier multiplier、compression 与 Young tail 是相应条件下的
-exact statements。声明 protocol 产生 `192` 条 finite rows、`96/96` ideal
-translation checks 和 `192/192` combined-bound checks；defect/ideal spectral ratio
-为 `0.0312337689685--0.467075645603`，其中 `93/192` 超过 `1/4`。这使面板内的
-mask-discard shortcut 成为 `REFUTED_SCOPED`，但不是 growing lower bound。
+TPC-348 是当前地图位置：它承接 TPC-347 的 literal convolution-plus-defect
+interface，定义 mask-hit positions `J_I={t in I: exists active p with p|t}`，并
+证明 exact coordinate lower witness
+`||D_I||_(2->2)>=max_(t in J_I)||D_I e_t||_2`。左右 projection defect 的
+position formula 也保持 exact；声明 protocol 产生 `192` 条 finite rows，
+`192/192` rows 有正 best-hit witness，best-hit/defect ratio 为
+`0.453958762219--0.897148966365`，公式 replay 最大误差为
+`2.0872192863e-14`，并通过 exact rational anchor 与 hostile mutations。它把
+mask-discard obstruction 定位到确定坐标，但不是 growing lower bound。
 
 本关仍没有 arithmetic advance；source-uniform `L2`、uniform masked operator bound、
 fixed-power credit 与 twin-prime endpoint 继续 open。
 
 ```text
-YOU ARE HERE = V200 / TPC-347
+YOU ARE HERE = V201 / TPC-348
+TPC348_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT
+TPC348_COORDINATE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+TPC348_MASK_HIT_SELECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC348_POSITION_FORMULA = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC348_FINITE_POSITION_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+TPC348_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+TPC348_MASK_DISCARDABILITY = REFUTED_SCOPED
+TPC348_BEST_HIT_TO_DEFECT_RATIO = 0.453958762219--0.897148966365
+TPC348_BEST_HIT_TO_IDEAL_RATIO = 0.0183057714619--0.336311065586
+TPC348_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+TPC348_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+TPC348_ARITHMETIC_ADVANCE = NO
+TPC348_FIXED_POWER_CREDIT = 0
+TPC348_FULL_GATE_B = OPEN
+TPC348_TWIN_PRIME_RESULT = NONE
+TPC348_STATUS = PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT
+TPC348_ROUND2_CLUE = TEST_PRIME_BALANCED_DEFECT_WITNESSES_BEFORE_SOURCE_NATIVE_L2
+```
+
+## V200 / TPC-347 previous anchor
+
+```text
+YOU ARE HERE = V200 / TPC-347 (historical)
 TPC347_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_CONVOLUTION_MASK_DEFECT_INTERFACE_PLUS_NUMERICALLY_CERTIFIED_FINITE_SPECTRAL_AUDIT
 TPC347_MASK_FACTORISATION = PROVED_EXACT_FINITE_DECLARED_MODEL
 TPC347_UNMASKED_FOURIER_INTERFACE = PROVED_EXACT_CONDITIONAL
@@ -1271,7 +1295,50 @@ strongest positive result：exact two-term normalization, dominant exponent and 
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
 
-## 5.131 V200 / TPC-347：convolution interface and mask defect
+## 5.132 V201 / TPC-348：position-aware mask-defect lower witness
+
+TPC-348 承接 TPC-347 的 literal masked prime-shell block。令 `D_I=A_I-T_I`，并以
+`J_I={t in I: exists active shell prime p with p|t}` 选取 mask-hit positions。对
+每个 `t in J_I`，左右 projection defect 的 exact column formula 给出
+`||D_I||_(2->2)>=||D_I e_t||_2`，取最大即得 position-aware lower witness。这个
+命题是有限维 induced-norm linear algebra，不使用 leading eigenvector 或 sign
+heuristic。
+
+冻结的 two-origin、three-count、four-anchor、two-exponent、four-law panel 共 `192`
+rows；producer、reverse-shell independent checker 与 mutation stress 均重放成功。
+所有 `192/192` rows 有正 best-hit witness，mask-hit count 为 `30--169`，
+best-hit/defect ratio 为 `0.453958762219--0.897148966365`，best-hit/ideal ratio
+为 `0.0183057714619--0.336311065586`，position formula 最大误差为
+`2.0872192863e-14`。`I=[1,6]`、`Q=4`、exponent `1`、all-plus 的 exact anchor
+具有唯一 hit position `5`。
+
+最强正结果是可复用的 `literal block -> projection defect -> mask-hit set ->
+coordinate lower witness` interface；最强 obstruction 是声明面板上 mask defect
+不能被作为零 remainder 丢弃。后者仍是 finite scoped observation，不是 growing
+lower bound。source-uniform arithmetic `L2`、uniform masked operator bound、
+fixed-power payment、Route-B reassembly 与 twin-prime endpoint 继续 open。
+
+```text
+TPC348_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT
+TPC348_COORDINATE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+TPC348_MASK_HIT_SELECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC348_POSITION_FORMULA = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC348_FINITE_POSITION_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+TPC348_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+TPC348_MASK_DISCARDABILITY = REFUTED_SCOPED
+TPC348_BEST_HIT_TO_DEFECT_RATIO = 0.453958762219--0.897148966365
+TPC348_BEST_HIT_TO_IDEAL_RATIO = 0.0183057714619--0.336311065586
+TPC348_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+TPC348_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+TPC348_ARITHMETIC_ADVANCE = NO
+TPC348_FIXED_POWER_CREDIT = 0
+TPC348_FULL_GATE_B = OPEN
+TPC348_TWIN_PRIME_RESULT = NONE
+TPC348_STATUS = PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT
+TPC348_ROUND2_CLUE = TEST_PRIME_BALANCED_DEFECT_WITNESSES_BEFORE_SOURCE_NATIVE_L2
+```
+
+## 5.131 V200 / TPC-347：convolution interface and mask defect (previous)
 
 TPC-347 承接 TPC-346 的 finite panel-adaptive freeze，回到 literal masked
 prime-shell 的 arithmetic-L2 interface。对每个 shell prime 的 residue kernel `K_p`
@@ -3910,8 +3977,8 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V200 / TPC-347                    |
-        | CONVOLUTION + MASK-DEFECT INTERFACE         |
+        | YOU ARE HERE — V201 / TPC-348                    |
+        | POSITION-AWARE DEFECT LOWER WITNESS          |
         | ARITHMETIC L2 AND GATES STILL OPEN           |
         +--------------------------------------------------+
                 |
@@ -9022,6 +9089,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-02 | V201 / TPC-348 | Bridge A / Gate B：position-aware mask-defect lower witness 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-348` | 承接 TPC-347；exact two-sided position formula 与 coordinate induced-norm lower witness；192/192 rows positive，best-hit/defect `0.4540--0.8971`，mask-discard obstruction 定位到 mask-hit coordinates；arithmetic advance 仍为 NO，下一步测试 prime-balanced signed witnesses |
 | 2026-09-02 | V200 / TPC-347 | Bridge A / Gate B：convolution-plus-mask-defect interface 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-347` | 承接 TPC-346；精确 `A_I=T_I+D_I` factorisation、192 finite spectral rows、96/96 ideal translation checks、192/192 combined-bound checks；defect/ideal ratio `0.0312--0.4671`，93/192 超过 `1/4`；mask-discard shortcut scoped refuted，下一步为 position-aware defect lower witnesses |
 | 2026-09-02 | V199 / TPC-346 | Bridge A / Gate B：third-panel hostile replication 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-346` | 承接 TPC-345；三 panels、9 rows、324 raw records、261 nonempty；fresh own-fit `0.3159/0.3294`，adaptive `0.3000/0.3222`（raw/equal-row），transfer 与 control-LOO scoped refuted；仅冻结 panel-adaptive finite branch，下一步返回 arithmetic `L2` interface |
 | 2026-09-02 | V197 / TPC-344 | Bridge A / Gate B：panel-contrast nuisance-basis audit 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-344` | 承接 TPC-343；六 rows、216 raw records、18 contrast holdouts 与 4 cross-fits；raw contrast retention `0.2962` 但 equal-row `0.3187`，weighting stability 与 low-residual transfer scoped refuted；下一步为 principal-angle/Grassmann stability audit |

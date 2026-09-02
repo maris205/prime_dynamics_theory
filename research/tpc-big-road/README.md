@@ -1,6 +1,48 @@
-# TPC big road V200 / TPC-347: convolution interface and mask defect
+# TPC big road V201 / TPC-348: position-aware mask-defect lower witness
 
-## V200 current anchor: TPC-347
+## V201 current anchor: TPC-348
+
+更新时间：2026-09-02
+
+当前 TPC-348 proof 为
+bridge_b_tpc348_position_aware_mask_defect_lower_witness.md，checker 为
+tpc_bridge_b_tpc348_position_aware_mask_defect_lower_witness_checker.py，编号论文为
+../../papers/tpc-348-position-aware-mask-defect-lower-witness/。
+
+TPC-348 在 TPC-347 的 literal convolution-plus-mask-defect interface 上，定义
+mask-hit coordinate set `J_I` 并证明 exact lower witness
+`||D_I||_(2->2) >= max_(t in J_I)||D_I e_t||_2`。左右 projection defect 的
+position formula 同样 exact；声明的 two-origin、three-count、four-anchor、two-
+exponent、four-law panel 共 `192` rows，`192/192` rows 有正 best-hit witness，
+best-hit/defect ratio 为 `0.453958762219--0.897148966365`，公式 replay 最大
+误差为 `2.0872192863e-14`。
+
+这是 `PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT`；
+它把 finite mask-discard obstruction 定位到预声明坐标，却没有形成 growing lower
+bound。source-uniform arithmetic `L2`、uniform masked operator bound、fixed-power
+credit、Route-B reassembly 与 twin-prime endpoint 仍 open。Session-named evaluator
+files absent，故这里只记录 local Bridge-B fail-closed，不宣称 official Route-A/Route-B
+pass。
+
+    TPC348_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT
+    TPC348_COORDINATE_LOWER_WITNESS = PROVED_EXACT_FINITE_LINEAR_ALGEBRA
+    TPC348_MASK_HIT_SELECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC348_POSITION_FORMULA = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC348_FINITE_POSITION_AUDIT = NUMERICALLY_CERTIFIED_FINITE_192_ROWS
+    TPC348_POSITIVE_WITNESS_CENSUS = NUMERICALLY_CERTIFIED_FINITE_192_OF_192
+    TPC348_MASK_DISCARDABILITY = REFUTED_SCOPED
+    TPC348_BEST_HIT_TO_DEFECT_RATIO = 0.453958762219--0.897148966365
+    TPC348_BEST_HIT_TO_IDEAL_RATIO = 0.0183057714619--0.336311065586
+    TPC348_SOURCE_UNIFORM_ARITHMETIC_L2 = OPEN
+    TPC348_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC348_ARITHMETIC_ADVANCE = NO
+    TPC348_FIXED_POWER_CREDIT = 0
+    TPC348_FULL_GATE_B = OPEN
+    TPC348_TWIN_PRIME_RESULT = NONE
+    TPC348_STATUS = PROVED_EXACT_FINITE_COORDINATE_LOWER_WITNESS_PLUS_NUMERICALLY_CERTIFIED_FINITE_POSITION_AUDIT
+    TPC348_ROUND2_CLUE = TEST_PRIME_BALANCED_DEFECT_WITNESSES_BEFORE_SOURCE_NATIVE_L2
+
+## V200 previous anchor: TPC-347
 
 更新时间：2026-09-02
 
