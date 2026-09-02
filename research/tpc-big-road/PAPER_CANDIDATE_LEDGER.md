@@ -3,13 +3,65 @@
 
 更新时间：2026-09-03
 
-状态：**TPC358_NUMERICALLY_CERTIFIED_FINITE_FRESH_ORIGIN_SPECTRAL_HOLDOUT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC359_NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.152 current：TPC-358 fresh-origin spectral holdout
+## 0.153 current：TPC-359 geometry-adversarial high-origin holdout
+
+项目：papers/tpc-359-geometry-adversarial-high-origin-holdout/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT**。
+
+TPC-359 在 `260001+211j`、`0<=j<=50` 的 51 个高起点候选上，以 count 256 的
+unsigned geometry spread（六个 `(Q,s)` settings）固定 response-blind selection，按
+descending score、origin tie-break 与最小间隔 1536 的 greedy rule 选出
+`267175,261267,269074`。随后以 counts `256,512,1024,2048`、`Q=24,54,80`、
+exponents `1,2` 与四种 sign laws 完成 288-row operator replay，all-plus 的 72 rows
+另计算真谱范数。
+
+最强正结果：normalized Schur max 为 `0.80834744529310265`，all-plus normalized
+spectral max 为 `0.6271657593674812`，均在 TPC-358 parent caps `0.83/0.64` 内且
+在 `0.001` transfer tolerance 内；raw spectral max 为 `1542.7354827195263`。
+selection、finite envelopes、reverse-shell replay、14-mutation stress、PDF 与
+normal/optimized Bridge-B 均通过。
+
+最强 obstruction：normalized spectral ladder 的 54 transitions 为 `12` 增、`36` 降、
+`6` 平，因此 cap transfer 仍不提供 monotone decay 或 growing-origin quantifier。
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`、
+`TWIN_PRIME_RESULT=NONE`；official evaluator files absent，local Bridge-B 仅为
+fail-closed finite evidence。
+
+开放定理：Schur-tightness 与独立 high-origin replication；source-uniform arithmetic
+`L2`、growing masked-operator theorem 与 Route-B reassembly 仍 open。
+
+可复用结构：
+
+    unsigned geometry-only scan -> separated high-origin selection
+      -> all-law envelopes -> all-plus spectral ladder
+      -> reverse-shell replay + mutation stress -> finite transfer firewall
+
+ROUND2_CLUE：`TEST_SCHUR_TIGHTNESS_AND_INDEPENDENT_HIGH_ORIGIN_REPLICATION`。
+
+    TPC359_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT
+    TPC359_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+    TPC359_HIGH_ORIGIN_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC359_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC359_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC359_PARENT_CAP_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC359_NORMALIZED_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC359_SPECTRAL_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
+    TPC359_GROWING_OPERATOR_BOUND = OPEN
+    TPC359_SOURCE_UNIFORM_L2 = OPEN
+    TPC359_ARITHMETIC_ADVANCE = NO
+    TPC359_FIXED_POWER_CREDIT = 0
+    TPC359_FULL_GATE_B = OPEN
+    TPC359_TWIN_PRIME_RESULT = NONE
+    TPC359_STATUS = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT
+
+## 0.152 previous：TPC-358 fresh-origin spectral holdout
 
 项目：papers/tpc-358-fresh-origin-spectral-holdout/
 

@@ -1,7 +1,67 @@
 # TPC HANDOFF
 
-TPC-358 current section: fresh-origin spectral holdout
-------------------------------------------------------
+TPC-359 current section: geometry-adversarial high-origin holdout
+----------------------------------------------------------------
+
+TPC-359 is the current sealed release.  It fixes a response-blind hostile
+selection rule on the high-origin candidate grid `260001+211j`,
+`0<=j<=50`, using only the count-256 unsigned geometry spread over
+`Q=24,54,80` and exponents `1,2`.  Greedy separation 1536 selects
+`(267175,261267,269074)`.  No source response, sign law, or signed spectrum is
+read by the selection.
+
+The complete replay has `288` rows: counts `256,512,1024,2048`, the three
+shell anchors, two exponents, and four fixed sign laws; all rows have raw and
+normalized Schur/Frobenius envelopes and all-plus rows have true spectra.  The
+normalized Schur maximum is `0.80834744529310265`, the normalized all-plus
+spectral maximum is `0.6271657593674812`, and the raw all-plus spectral maximum
+is `1542.7354827195263`.  Both normalized maxima transfer the TPC-358 finite
+caps within `0.001`.  The normalized spectral transition census is `12`
+increases, `36` decreases, and `6` flats.
+
+The finite inequalities and rational anchor are exact within the declared
+model.  Producer, reverse-shell independent checker, fourteen-mutation stress,
+PDF QA, and local Bridge-B normal/optimized replay pass.  The result remains
+finite and scoped: no growing operator bound, source-uniform arithmetic `L2`,
+fixed-power credit, Route-B reassembly, or twin-prime conclusion is licensed.
+The official Session-named evaluator files remain absent, so local Bridge-B is
+fail-closed fallback evidence only.
+
+    TPC359_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT
+    TPC359_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+    TPC359_HIGH_ORIGIN_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC359_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC359_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC359_PARENT_CAP_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC359_NORMALIZED_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC359_SPECTRAL_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
+    TPC359_GROWING_OPERATOR_BOUND = OPEN
+    TPC359_SOURCE_UNIFORM_L2 = OPEN
+    TPC359_ARITHMETIC_ADVANCE = NO
+    TPC359_FIXED_POWER_CREDIT = 0
+    TPC359_FULL_GATE_B = OPEN
+    TPC359_TWIN_PRIME_RESULT = NONE
+    TPC359_STRONGEST_POSITIVE = HIGH_ORIGIN_GEOMETRY_ADVERSARIAL_CAP_TRANSFER
+    TPC359_STRONGEST_OBSTRUCTION = NONMONOTONE_SPECTRAL_LADDER_NO_GROWING_QUANTIFIER
+    TPC359_OPEN_THEOREM = SCHUR_TIGHTNESS_OR_INDEPENDENT_HIGH_ORIGIN_REPLICATION
+    TPC359_REUSABLE_STRUCTURE = RESPONSE_BLIND_GEOMETRY_SCAN_PLUS_OPERATOR_HOLDOUT
+    TPC359_ROUND2_CLUE = TEST_SCHUR_TIGHTNESS_AND_INDEPENDENT_HIGH_ORIGIN_REPLICATION
+    TPC359_STATUS = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT
+
+TPC-359 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-359-geometry-adversarial-high-origin-holdout/code/tpc359_geometry_adversarial_high_origin_holdout.py --check
+    python -O -B papers/tpc-359-geometry-adversarial-high-origin-holdout/code/tpc359_geometry_adversarial_high_origin_holdout.py --check
+    python -B papers/tpc-359-geometry-adversarial-high-origin-holdout/experiments/tpc359_independent_checker.py --check
+    python -O -B papers/tpc-359-geometry-adversarial-high-origin-holdout/experiments/tpc359_independent_checker.py --check
+    python -B papers/tpc-359-geometry-adversarial-high-origin-holdout/experiments/tpc359_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-359-geometry-adversarial-high-origin-holdout/experiments/tpc359_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc359_geometry_adversarial_high_origin_holdout_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc359_geometry_adversarial_high_origin_holdout_checker.py --check
+
+TPC-358 previous section: fresh-origin spectral holdout
+--------------------------------------------------------
 
 TPC-358 is the current sealed release.  It transfers the TPC-357 finite
 operator-envelope protocol to three pre-registered, disjoint fresh origins
@@ -12697,7 +12757,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 447 对 normal/optimized 命令、894 次
+当前 curated cascade command set 共 448 对 normal/optimized 命令、896 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -12716,7 +12776,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358 各再追加末尾 4 对。
+	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 

@@ -1,12 +1,42 @@
-# TPC big road V211 / TPC-358: fresh-origin spectral holdout
+# TPC big road V212 / TPC-359: geometry-adversarial high-origin holdout
 
-## V211 current anchor: TPC-358
+## V212 current anchor: TPC-359
 
 更新时间：2026-09-03
 
-当前 TPC-358 proof 为 bridge_b_tpc358_fresh_origin_spectral_holdout.md，checker 为
-tpc_bridge_b_tpc358_fresh_origin_spectral_holdout_checker.py，编号论文为
-../../papers/tpc-358-fresh-origin-spectral-holdout/。
+当前 TPC-359 proof 为 bridge_b_tpc359_geometry_adversarial_high_origin_holdout.md，checker 为
+tpc_bridge_b_tpc359_geometry_adversarial_high_origin_holdout_checker.py，编号论文为
+../../papers/tpc-359-geometry-adversarial-high-origin-holdout/。
+
+TPC-359 在高起点候选 `260001+211j`、`0<=j<=50` 上只读取 unsigned geometry spread，
+按 response-blind greedy separation rule 选出 `(267175,261267,269074)`。完整 replay
+为 288 rows；normalized Schur max `0.80834744529310265`、all-plus normalized
+spectral max `0.6271657593674812`、raw spectral max `1542.7354827195263`，并在
+`0.001` 内保持 TPC-358 的 finite caps。transition census 为 `12/36/6` 增/降/平。
+
+这是 scoped finite high-origin geometry-adversarial holdout。Schur/Frobenius 为 exact
+finite；growing operator bound、source-uniform arithmetic L2、fixed-power credit、
+Route-B reassembly 与 twin-prime result 仍 open，arithmetic advance 为 NO；official
+evaluator files absent，local Bridge-B fail-closed。
+
+    TPC359_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT
+    TPC359_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+    TPC359_HIGH_ORIGIN_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC359_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC359_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC359_PARENT_CAP_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC359_NORMALIZED_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC359_SPECTRAL_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
+    TPC359_GROWING_OPERATOR_BOUND = OPEN
+    TPC359_SOURCE_UNIFORM_L2 = OPEN
+    TPC359_ARITHMETIC_ADVANCE = NO
+    TPC359_FIXED_POWER_CREDIT = 0
+    TPC359_FULL_GATE_B = OPEN
+    TPC359_TWIN_PRIME_RESULT = NONE
+    TPC359_STATUS = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT
+    TPC359_ROUND2_CLUE = TEST_SCHUR_TIGHTNESS_AND_INDEPENDENT_HIGH_ORIGIN_REPLICATION
+
+## V211 / TPC-358 previous anchor
 
 TPC-358 将 TPC-357 的 finite operator-envelope protocol 移到预注册、disjoint 且
 origin span 为 `168000` 的 fresh panel `52001,120001,220001`。在

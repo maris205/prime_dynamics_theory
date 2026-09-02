@@ -2,14 +2,49 @@
 
 更新时间：2026-09-03
 
-当前地图版本：V211 / TPC-358
+当前地图版本：V212 / TPC-359
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-358`（`NUMERICALLY_CERTIFIED_FINITE_FRESH_ORIGIN_SPECTRAL_HOLDOUT`）；
-对应论文目录为 `papers/tpc-358-fresh-origin-spectral-holdout/`。
+当前编号锚点：`TPC-359`（`NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT`）；
+对应论文目录为 `papers/tpc-359-geometry-adversarial-high-origin-holdout/`。
 
-TPC-358 是当前地图位置：将 TPC-357 的 finite operator-envelope protocol 移到预注册、
+TPC-359 是当前地图位置：在高起点候选 `260001+211j`、`0<=j<=50` 上，以 count-256
+unsigned geometry spread 做 response-blind adversarial selection，按最小间隔 1536
+的 greedy rule 选出 `(267175,261267,269074)`。随后用 counts
+`256,512,1024,2048`、`Q=24,54,80`、exponents `1,2` 与四种 sign laws 审计 288 rows；
+normalized Schur max 为 `0.80834744529310265`，all-plus normalized spectral max 为
+`0.6271657593674812`，raw spectral max 为 `1542.7354827195263`，两项 normalized
+cap 均在 TPC-358 parent 的 `0.001` transfer tolerance 内。transition census 为
+`12/36/6` 增/降/平。
+
+这是 scoped finite geometry-adversarial high-origin holdout。Schur/Frobenius 为 exact
+finite，但非单调谱 ladder 不支持 growing operator bound；source-uniform arithmetic
+`L2`、fixed-power credit、Route-B reassembly、full Gate B 与 twin-prime endpoint
+仍 open，arithmetic advance 为 NO。official evaluator files absent，local Bridge-B
+仍为 fail-closed fallback。
+
+    YOU ARE HERE = V212 / TPC-359
+    TPC359_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT
+    TPC359_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+    TPC359_HIGH_ORIGIN_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC359_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC359_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC359_PARENT_CAP_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC359_NORMALIZED_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC359_SPECTRAL_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
+    TPC359_GROWING_OPERATOR_BOUND = OPEN
+    TPC359_SOURCE_UNIFORM_L2 = OPEN
+    TPC359_ARITHMETIC_ADVANCE = NO
+    TPC359_FIXED_POWER_CREDIT = 0
+    TPC359_FULL_GATE_B = OPEN
+    TPC359_TWIN_PRIME_RESULT = NONE
+    TPC359_STATUS = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT
+    TPC359_ROUND2_CLUE = TEST_SCHUR_TIGHTNESS_AND_INDEPENDENT_HIGH_ORIGIN_REPLICATION
+
+## V211 / TPC-358 previous anchor details
+
+TPC-358 是历史地图位置：将 TPC-357 的 finite operator-envelope protocol 移到预注册、
 disjoint 的 fresh origins `52001,120001,220001`，origin span 为 `168000`。在
 `Q=24,54,80`、exponents `1,2`、counts `256,512,1024,2048` 与四种 sign laws 上
 审计 `288` 个 operator rows；每行记录 raw/normalized Schur row-sum 与 Frobenius
@@ -1491,6 +1526,47 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.142 V212 / TPC-359：geometry-adversarial high-origin holdout
+
+TPC-359 在 `260001+211j`、`0<=j<=50` 的 51 个高起点候选上，只用 count-256
+unsigned geometry spread 做 response-blind adversarial selection；descending score、
+origin tie-break 与最小间隔 1536 的 greedy rule 选出
+`(267175,261267,269074)`。随后在 counts `256,512,1024,2048`、shell anchors
+`Q=24,54,80`、exponents `1,2` 与四种 sign laws 上完成 288-row replay，all-plus
+的 72 rows 另计算真谱范数。
+
+normalized Schur max 为 `0.80834744529310265`，all-plus normalized spectral max 为
+`0.6271657593674812`，raw spectral max 为 `1542.7354827195263`；两项 normalized
+cap 均在 TPC-358 parent cap 的 `0.001` transfer tolerance 内。54 个 normalized
+spectral transitions 为 `12` 增、`36` 降、`6` 平，故仍不能形成 monotone 或
+growing-origin theorem。selection、finite envelope、reverse-shell replay、14-mutation
+stress、PDF 与 normal/optimized Bridge-B 均通过，但 arithmetic advance 为 NO，
+source-uniform `L2`、growing operator bound、full Gate B 与 twin-prime endpoint 仍 open。
+
+```text
+YOU ARE HERE = V212 / TPC-359
+TPC359_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT
+TPC359_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+TPC359_HIGH_ORIGIN_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+TPC359_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+TPC359_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+TPC359_PARENT_CAP_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC359_NORMALIZED_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC359_SPECTRAL_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
+TPC359_GROWING_OPERATOR_BOUND = OPEN
+TPC359_SOURCE_UNIFORM_L2 = OPEN
+TPC359_ARITHMETIC_ADVANCE = NO
+TPC359_FIXED_POWER_CREDIT = 0
+TPC359_FULL_GATE_B = OPEN
+TPC359_TWIN_PRIME_RESULT = NONE
+TPC359_STATUS = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT
+TPC359_ROUND2_CLUE = TEST_SCHUR_TIGHTNESS_AND_INDEPENDENT_HIGH_ORIGIN_REPLICATION
+```
+
+地图位置：**V212 / TPC-359 把 finite normalized cap 推到 geometry-adversarial 的
+高起点 panel；这是新的 scoped finite transfer，非 arithmetic advance。下一关先审计
+Schur tightness，再做独立 high-origin replication。**
 
 ## 5.141 V211 / TPC-358：fresh-origin spectral holdout
 
@@ -9681,6 +9757,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-03 | V212 / TPC-359 | Bridge A / Gate B：geometry-adversarial high-origin finite holdout 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-359` | 承接 TPC-358；51 个高起点候选只用 unsigned geometry spread 选出 3 个 origins，288 rows，normalized Schur/spectral max `0.80835/0.62717` 均在 parent caps 与 `0.001` transfer tolerance 内；transition `12/36/6`，monotone decay scoped refuted；下一步 Schur-tightness 与独立 high-origin replication |
 | 2026-09-03 | V211 / TPC-358 | Bridge A / Gate B：fresh-origin finite spectral holdout 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-358` | 承接 TPC-357；三个预注册 disjoint origins、四档 counts、四种 laws 共 288 rows，Schur/Frobenius 全覆盖，all-plus 72 rows 真谱重放；normalized Schur max `0.80851`、spectral max `0.62664`，均在 parent caps 内且 `0.001` 内转移；normalized transitions `13/34/7`，monotone decay scoped refuted；下一步 hostile fresh geometry 或 Schur-tightness audit |
 | 2026-09-03 | V210 / TPC-357 | Bridge A / Gate B：finite operator-norm scale ladder 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-357` | 承接 TPC-356；三个 frozen adversarial origins、四档 counts、四种 laws 共 288 rows，Schur/Frobenius envelopes 全覆盖，all-plus 72 rows 真谱重放；normalized Schur max `0.80778`、spectral max `0.62665`、raw max `1542.75`，normalized transitions `15/35/4`，monotone decay scoped refuted；下一步 fresh origin-scale spectral holdout |
 | 2026-09-03 | V209 / TPC-356 | Bridge A / Gate B：geometry-adversarial position normalization holdout 已完成；source-uniform L2、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-356` | 承接 TPC-355；51 候选 geometry-only selection 选出 3 个 late origins，216 rows、raw/normalized 均 216/216 positive；all-plus minimum/mean finite gain `0.01906/0.00688`，不形成 uniform transfer；下一步 origin-scale/operator-norm certificate |

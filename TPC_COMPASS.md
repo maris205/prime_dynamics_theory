@@ -1,6 +1,46 @@
 # TPC distilled map and bold channel
 
-## V211 / TPC-358 current anchor
+## V212 / TPC-359 current anchor
+
+更新时间：2026-09-03
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc359_geometry_adversarial_high_origin_holdout.md，checker 为
+tpc_bridge_b_tpc359_geometry_adversarial_high_origin_holdout_checker.py，编号论文为
+papers/tpc-359-geometry-adversarial-high-origin-holdout/。
+
+TPC-359 在全新高起点候选 `260001+211j`、`0<=j<=50` 上，以 count-256 的 unsigned
+geometry spread 做 response-blind selection，并以最小间隔 1536 的 greedy rule 选出
+`267175,261267,269074`。完整 protocol 为 288 rows（counts `256,512,1024,2048`，
+`Q=24,54,80`，exponents `1,2`，四种 sign laws）；normalized Schur max 为
+`0.80834744529310265`，all-plus normalized spectral max 为 `0.6271657593674812`，
+raw spectral max 为 `1542.7354827195263`，均把 TPC-358 的 finite cap transfer 保持在
+`0.001` 内。normalized spectral transitions 为 `12/36/6`。
+
+这是 geometry-adversarial high-origin 的 scoped finite holdout；Schur/Frobenius 为
+exact finite，非单调性仍 `REFUTED_SCOPED_ON_DECLARED_LADDER`，不产生 growing
+operator theorem、source-uniform arithmetic `L2`、fixed-power credit、Route-B
+reassembly 或 twin-prime result。official evaluator files absent，local Bridge-B
+仍 fail-closed。
+
+    TPC359_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT
+    TPC359_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+    TPC359_HIGH_ORIGIN_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC359_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC359_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC359_PARENT_CAP_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC359_NORMALIZED_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC359_SPECTRAL_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
+    TPC359_GROWING_OPERATOR_BOUND = OPEN
+    TPC359_SOURCE_UNIFORM_L2 = OPEN
+    TPC359_ARITHMETIC_ADVANCE = NO
+    TPC359_FIXED_POWER_CREDIT = 0
+    TPC359_FULL_GATE_B = OPEN
+    TPC359_TWIN_PRIME_RESULT = NONE
+    TPC359_STATUS = NUMERICALLY_CERTIFIED_FINITE_GEOMETRY_ADVERSARIAL_HIGH_ORIGIN_HOLDOUT
+    TPC359_ROUND2_CLUE = TEST_SCHUR_TIGHTNESS_AND_INDEPENDENT_HIGH_ORIGIN_REPLICATION
+
+## V211 / TPC-358 previous anchor
 
 更新时间：2026-09-03
 
