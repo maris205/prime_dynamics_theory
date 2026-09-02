@@ -1,47 +1,165 @@
 # TPC HANDOFF
 
-TPC-336 current section: masked signed-Gram response and output interference
+TPC-341 current section: fresh holdout nuisance orthogonalization
 -----------------------------------------------------------------------------------------------
 
-TPC-336 is the batch endpoint for the TPC-332--336 source-to-response chain.  It takes the
-four disjoint support masks produced by TPC-334/335 and sends them through the fixed
-all-plus deleted-diagonal signed-Gram operator with `Q=54`, exponent `1`, and `H=66`.
-The parent-locked panel has origins `{42001,44001}` and scales `{2048,4096,8192}`.
+TPC-341 is the endpoint of the TPC-337--341 batch.  It keeps the TPC-340 all-plus
+`Q=54`, exponent `1`, `H=66` operator and nine-control orbit, but moves to three fresh,
+non-overlapping, cutoff-safe windows
+`[48097,48608]`, `[48609,49120]`, and `[49217,49728]`.
 
-Across all six rows, the self-response gains obey
+The nine-control twin-mean nuisance projection retains `0.2010894086--0.2560626551`
+of in-sample energy.  A hostile leave-one-control-out fit, trained on eight controls and
+tested on the omitted twin output, retains `0.4435267486--0.8904473564` in all 27 tests.
+Thus a strong aggregate mean fit does not transfer to a control-invariant twin component.
+The projection/Pythagorean identity is exact finite linear algebra; the stability failure is
+only a scoped finite obstruction.  Producer, independent replay, mutation stress, PDF audit,
+and the local fail-closed Bridge-B checker all pass.
 
-```text
-zero_support > non_twin_prime_shift > twin_prime > prime_power_shift.
-```
+    TPC341_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
+    TPC341_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC341_FRESH_HOLDOUT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
+    TPC341_IN_SAMPLE_PROJECTION = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
+    TPC341_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
+    TPC341_IN_SAMPLE_RETENTION = NUMERICAL_OBSERVATION_0.201_TO_0.256
+    TPC341_HOLDOUT_RETENTION = NUMERICAL_OBSERVATION_0.444_TO_0.890
+    TPC341_CONTROL_STABILITY = REFUTED_SCOPED
+    TPC341_ARITHMETIC_ADVANCE = NO
+    TPC341_FIXED_POWER_CREDIT = 0
+    TPC341_SOURCE_UNIFORM_L2 = OPEN
+    TPC341_UNIFORM_MASKED_OPERATOR_BOUND = OPEN
+    TPC341_FULL_GATE_B = OPEN
+    TPC341_TWIN_PRIME_RESULT = NONE
+    TPC341_STRONGEST_POSITIVE = FRESH_PANEL_SEPARATES_MEAN_FIT_FROM_HELDOUT_TEST
+    TPC341_STRONGEST_OBSTRUCTION = LEAVE_ONE_CONTROL_OUT_REJECTS_STABILITY
+    TPC341_OPEN_THEOREM = SOURCE_UNIFORM_L2_OR_CANONICAL_NUISANCE_DECOMPOSITION
+    TPC341_REUSABLE_STRUCTURE = LOCKED_SOURCE_TO_FRESH_HOLDOUT_ORTHOGONAL_PROJECTION
+    TPC341_ROUND2_CLUE = INDEPENDENT_REPRODUCTION_OR_FREEZE_NUISANCE_PROJECTION
+    TPC341_STATUS = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
 
-The gain ranges are respectively
-`393547.76798--419768.84446`, `117431.36298--127558.56125`,
-`37443.58626--44607.77342`, and `0--34676.06051`.  Every row has destructive output
-interaction; the ratio of the sum of masked self energies to the full output response is
-`[4.8538535937774503,5.4814134328177246]`.  Producer, independent replay, mutation
-stress, exact anchor, PDF audit, and the local fail-closed Bridge-B checker all pass.
+Session-named Route-A/Route-B evaluator files are absent in this checkout.  The local
+Bridge-B wrapper is a fail-closed fallback and cannot be written as an official evaluator
+pass.  The batch stops at TPC-341; do not create TPC-342 before an independent reproduction
+or a deliberate route review.
 
-    TPC336_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE
-    TPC336_MASK_RESPONSE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-    TPC336_FIXED_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
-    TPC336_GAIN_ORDERING = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
-    TPC336_DESTRUCTIVE_OUTPUT_INTERACTION = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
-    TPC336_TWIN_RESPONSE_DOMINANCE = REFUTED_SCOPED_FINITE_PANEL
-    TPC336_ARITHMETIC_ADVANCE = NO
-    TPC336_FIXED_POWER_CREDIT = 0
-    TPC336_SOURCE_UNIFORM_L2 = OPEN
-    TPC336_FULL_GATE_B = OPEN
-    TPC336_TWIN_PRIME_RESULT = NONE
-    TPC336_STATUS = NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE
-    TPC336_STRONGEST_POSITIVE = FOUR_MASK_SOURCE_TO_OUTPUT_GRAM_CHAIN_WITH_6_OF_6_REPLAY
-    TPC336_STRONGEST_OBSTRUCTION = OUTPUT_CROSS_CLASS_INTERFERENCE_BLOCKS_SOURCE_SHARE_TRANSFER
-    TPC336_OPEN_THEOREM = UNIFORM_MASKED_OPERATOR_BOUND_OR_CONTROL_COVARIANCE_THEOREM
-    TPC336_REUSABLE_STRUCTURE = SUPPORT_MASKS_TO_EXACT_NORM_TO_OUTPUT_GRAM_COVARIANCE_LEDGER
-    TPC336_ROUND2_CLUE = RETURN_TO_CONTROL_COVARIANCE_OR_SEEK_UNIFORM_MASKED_OPERATOR_BOUND
+TPC-340 previous section: Schur/Frobenius hybrid envelope
+-----------------------------------------------------------------------------------------------
 
-官方 Session-named Route-A/Route-B evaluator files 在本 checkout 中不存在；上述 local
-Bridge-B 是 fail-closed fallback，不能写成 official evaluator pass。批次在 TPC-336
-停止，不创建 TPC-337。
+TPC-340 combines the TPC-339 support-restricted Frobenius envelope with the global Schur
+envelope.  For finite symmetric `A` and `supp(x) subseteq S`,
+`||Ax||^2 <= min(||A[:,S]||_F^2,R^2)||x||^2`, where
+`R=max_i sum_j |A(i,j)|`.  All 216 declared records pass with zero violations; 54 records
+use the Schur branch and 162 use the Frobenius branch.  Zero-support improvement factors are
+`1.250245--4.698443`, while broad-mask occupancy remains at most `0.1868550366`.
+
+    TPC340_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SCHUR_FROBENIUS_HYBRID_ENVELOPE
+    TPC340_HYBRID_BOUND = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC340_HYBRID_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_RECORDS
+    TPC340_BOUND_CENSUS = NUMERICALLY_CERTIFIED_FINITE_0_VIOLATIONS
+    TPC340_SCHUR_BRANCH_CENSUS = NUMERICALLY_CERTIFIED_FINITE_54_RECORDS
+    TPC340_FROBENIUS_BRANCH_CENSUS = NUMERICALLY_CERTIFIED_FINITE_162_RECORDS
+    TPC340_BROAD_TIGHTNESS = REFUTED_SCOPED
+    TPC340_ARITHMETIC_ADVANCE = NO
+    TPC340_FIXED_POWER_CREDIT = 0
+    TPC340_SOURCE_UNIFORM_L2 = OPEN
+    TPC340_FULL_GATE_B = OPEN
+    TPC340_TWIN_PRIME_RESULT = NONE
+    TPC340_STRONGEST_POSITIVE = SIGN_FREE_HYBRID_BOUND_WITH_BRANCH_AUDIT
+    TPC340_STRONGEST_OBSTRUCTION = BROAD_MASK_RESPONSE_REMAINS_NONSHARP
+    TPC340_OPEN_THEOREM = UNIFORM_MASKED_OPERATOR_BOUND_OR_SOURCE_UNIFORM_L2
+    TPC340_REUSABLE_STRUCTURE = SUPPORT_FROBENIUS_PLUS_GLOBAL_SCHUR_MIN_ENVELOPE
+    TPC340_ROUND2_CLUE = TEST_NUISANCE_ORTHOGONALIZATION_OR_ADVERSARIAL_HOLDOUT
+    TPC340_STATUS = NUMERICALLY_CERTIFIED_FINITE_SCHUR_FROBENIUS_HYBRID_ENVELOPE
+
+TPC-339 previous section: mask-aware Frobenius envelope
+-----------------------------------------------------------------------------------------------
+
+TPC-339 replaces the noncanonical signed covariance heuristic by the exact finite inequality
+`||Ax||^2 <= ||A[:,S]||_F^2||x||^2`.  The nine-control, four-mask panel has 216 records,
+198 nonempty, and zero bound violations.  Broad twin/background/zero masks have occupancy
+below `0.2`; singleton-like prime-power records can attain equality.  The bound is valid but
+not a sharp broad-mask response theorem.
+
+    TPC339_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MASK_AWARE_FROBENIUS_ENVELOPE
+    TPC339_SUPPORT_FROBENIUS_BOUND = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC339_MASKED_CONTROL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_RECORDS
+    TPC339_BOUND_CENSUS = NUMERICALLY_CERTIFIED_FINITE_0_VIOLATIONS
+    TPC339_BROAD_MASK_SLACK = NUMERICALLY_CERTIFIED_FINITE_OCCUPANCY_BELOW_0.2
+    TPC339_SIMPLE_ENVELOPE_TIGHTNESS = REFUTED_SCOPED
+    TPC339_ARITHMETIC_ADVANCE = NO
+    TPC339_FIXED_POWER_CREDIT = 0
+    TPC339_SOURCE_UNIFORM_L2 = OPEN
+    TPC339_FULL_GATE_B = OPEN
+    TPC339_TWIN_PRIME_RESULT = NONE
+    TPC339_STRONGEST_POSITIVE = UNIVERSAL_FINITE_SUPPORT_FROBENIUS_ENVELOPE
+    TPC339_STRONGEST_OBSTRUCTION = ELEMENTARY_ENVELOPE_TOO_SLACK_ON_BROAD_MASKS
+    TPC339_OPEN_THEOREM = SHARP_MASKED_GRAM_OR_UNIFORM_MASKED_OPERATOR_BOUND
+    TPC339_REUSABLE_STRUCTURE = SUPPORT_MASK_TO_COLUMN_FROBENIUS_CERTIFICATE
+    TPC339_ROUND2_CLUE = COMBINE_SUPPORT_FROBENIUS_WITH_A_GLOBAL_SCHUR_BOUND
+    TPC339_STATUS = NUMERICALLY_CERTIFIED_FINITE_MASK_AWARE_FROBENIUS_ENVELOPE
+
+TPC-338 previous section: growing-control covariance spectrum
+-----------------------------------------------------------------------------------------------
+
+TPC-338 expands TPC-337 from five to nine controls.  Centered energy remains dominant in all
+six rows (`0.8771801838--0.8972635786`) and the normalized covariance spectrum changes by
+only `0.0264396313--0.0440591812` in `L1`.  Nevertheless twin/zero covariance is negative
+for all six five-control rows and positive for all six nine-control rows, a scoped sign
+reversal that blocks a canonical signed-covariance law.
+
+    TPC338_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_GROWING_CONTROL_COVARIANCE_SPECTRUM
+    TPC338_NESTED_COVARIANCE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC338_COVARIANCE_GRAM_PSD = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC338_ENERGY_DOMINANCE_STABILITY = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
+    TPC338_TWIN_ZERO_SIGN_STABILITY = REFUTED_SCOPED
+    TPC338_TWIN_ZERO_SIGN_REVERSAL = NUMERICALLY_CERTIFIED_FINITE_6_OF_6_NESTED_COMPARISON
+    TPC338_ARITHMETIC_ADVANCE = NO
+    TPC338_FIXED_POWER_CREDIT = 0
+    TPC338_SOURCE_UNIFORM_L2 = OPEN
+    TPC338_FULL_GATE_B = OPEN
+    TPC338_TWIN_PRIME_RESULT = NONE
+    TPC338_STRONGEST_POSITIVE = CENTERED_ENERGY_STABILITY_UNDER_ORBIT_GROWTH
+    TPC338_STRONGEST_OBSTRUCTION = TWIN_ZERO_SIGN_REVERSAL_UNDER_NESTED_CONTROLS
+    TPC338_OPEN_THEOREM = CANONICAL_SIGN_FREE_RESPONSE_OR_SOURCE_UNIFORM_L2
+    TPC338_REUSABLE_STRUCTURE = NESTED_CONTROL_ORBIT_TO_COVARIANCE_SPECTRUM
+    TPC338_ROUND2_CLUE = REPLACE_SIGNED_COVARIANCE_BY_A_SIGN_FREE_MASKED_BOUND
+    TPC338_STATUS = NUMERICALLY_CERTIFIED_FINITE_GROWING_CONTROL_COVARIANCE_SPECTRUM
+
+TPC-337 previous section: control covariance of masked responses
+-----------------------------------------------------------------------------------------------
+
+TPC-337 transports the four TPC-336 source masks through five predeclared coordinate
+bijections and records the class-output covariance Gram ledger.  On six rows the centered
+fraction is `0.7850322548--0.8552982168`; twin/background covariance is positive in `6/6`,
+while twin/zero and background/zero are negative in `6/6`.  The mean/centered identity and
+covariance PSD are exact finite algebra, but the signed interaction is not yet canonical.
+
+    TPC337_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CONTROL_COVARIANCE_MASKED_RESPONSE
+    TPC337_COVARIANCE_GRAM_PSD = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC337_MASKED_RESPONSE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+    TPC337_CENTERED_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
+    TPC337_SIGNED_COVARIANCE_CANONICALITY = OPEN
+    TPC337_ARITHMETIC_ADVANCE = NO
+    TPC337_FIXED_POWER_CREDIT = 0
+    TPC337_SOURCE_UNIFORM_L2 = OPEN
+    TPC337_FULL_GATE_B = OPEN
+    TPC337_TWIN_PRIME_RESULT = NONE
+    TPC337_STRONGEST_POSITIVE = MASKED_SOURCE_TO_OUTPUT_COVARIANCE_INTERFACE
+    TPC337_STRONGEST_OBSTRUCTION = SIGNED_COVARIANCE_CONTROL_SENSITIVITY
+    TPC337_OPEN_THEOREM = CONTROL_UNIFORM_COVARIANCE_OR_SIGN_FREE_OPERATOR_BOUND
+    TPC337_REUSABLE_STRUCTURE = MASKED_CLASSES_TO_CONTROL_ORBIT_TO_COVARIANCE_GRAM
+    TPC337_ROUND2_CLUE = GROW_THE_CONTROL_ORBIT_AND_TEST_SIGN_STABILITY
+    TPC337_STATUS = NUMERICALLY_CERTIFIED_FINITE_CONTROL_COVARIANCE_MASKED_RESPONSE
+
+TPC-336 previous section: masked signed-Gram response and output interference
+-----------------------------------------------------------------------------------------------
+
+TPC-336 sends four disjoint source masks through a fixed all-plus deleted-diagonal signed-Gram
+operator (`Q=54`, exponent `1`, `H=66`) on the `{42001,44001}` by `{2048,4096,8192}` panel.
+All six rows have the same gain ordering
+`zero_support > non_twin_prime_shift > twin_prime > prime_power_shift`, and all six have
+destructive output interaction.  This is the direct parent of TPC-337's covariance ledger;
+it does not provide a uniform masked operator bound.
 
 TPC-335 previous section: twin-isolated source norm decomposition
 -----------------------------------------------------------------------------------------------
@@ -11571,11 +11689,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V189/TPC-336 是当前 release；其 producer、independent replay、stress audit 与
-masked signed-Gram response bridge 已封存。TPC-335、TPC-334、TPC-333、TPC-332、
+V194/TPC-341 是当前 release；其 producer、independent replay、stress audit 与
+fresh-holdout nuisance orthogonalization bridge 已封存。TPC-340、TPC-339、TPC-338、
+TPC-337、TPC-336、TPC-335、TPC-334、TPC-333、TPC-332、
 TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 365 对 normal/optimized 命令、730 次
+当前 curated cascade command set 共 385 对 normal/optimized 命令、770 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -11594,7 +11713,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -11605,6 +11724,10 @@ finite decomposition 不代表 source-uniform arithmetic `L2` 或 official Route
 V185--V189/TPC-332--336 的新增 20 对由各项目 bridge 与 standalone tail checks
 逐项验证；五篇论文的 finite source/support/output certificates 不代表 source-uniform
 arithmetic `L2`、fixed-power saving 或 official Route-A/Route-B 通过。
+
+V190--V194/TPC-337--341 的新增 20 对由各项目 bridge 与 standalone tail checks
+逐项验证；五篇论文的 finite covariance/envelope/holdout certificates 不代表
+source-uniform arithmetic `L2`、fixed-power saving 或 official Route-A/Route-B 通过。
 
 旧的 V176/TPC-323 当前快照如下；它保留作历史链记录：其 producer、independent replay、stress audit 与
 signed-profile bridge 已封存。TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
@@ -12842,6 +12965,97 @@ exact_anchor=1`。这是 V189/TPC-336 的 batch endpoint；masked response 的
 cross-class interference 不代表 uniform operator theorem、arithmetic power saving 或
 official Route-A/Route-B 通过。
 
+TPC-337 的项目级 producer、independent replay、covariance stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-337-control-covariance-masked-response/code/tpc337_control_covariance_masked_response.py --check
+python -O -B papers/tpc-337-control-covariance-masked-response/code/tpc337_control_covariance_masked_response.py --check
+python -B papers/tpc-337-control-covariance-masked-response/experiments/tpc337_independent_checker.py --check
+python -O -B papers/tpc-337-control-covariance-masked-response/experiments/tpc337_independent_checker.py --check
+python -B papers/tpc-337-control-covariance-masked-response/experiments/tpc337_covariance_stress.py --check
+python -O -B papers/tpc-337-control-covariance-masked-response/experiments/tpc337_covariance_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc337_control_covariance_masked_response_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc337_control_covariance_masked_response_checker.py --check
+```
+
+TPC-337 增量 tail audit：4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `rows=6 / controls=5 / masks=4 /
+centered_dominance=6 / exact_anchor=1`。这是 V190 的 finite covariance interface，
+不代表 signed covariance canonicality 或 arithmetic `L2`。
+
+TPC-338 的项目级 producer、independent replay、spectrum stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-338-growing-control-covariance-spectrum/code/tpc338_growing_control_covariance_spectrum.py --check
+python -O -B papers/tpc-338-growing-control-covariance-spectrum/code/tpc338_growing_control_covariance_spectrum.py --check
+python -B papers/tpc-338-growing-control-covariance-spectrum/experiments/tpc338_independent_checker.py --check
+python -O -B papers/tpc-338-growing-control-covariance-spectrum/experiments/tpc338_independent_checker.py --check
+python -B papers/tpc-338-growing-control-covariance-spectrum/experiments/tpc338_spectrum_stress.py --check
+python -O -B papers/tpc-338-growing-control-covariance-spectrum/experiments/tpc338_spectrum_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc338_growing_control_covariance_spectrum_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc338_growing_control_covariance_spectrum_checker.py --check
+```
+
+TPC-338 增量 tail audit：4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `rows=6 / five_controls=5 / nine_controls=9 /
+sign_reversal=6 / exact_anchor=1`。这是 V191 的 nested-control obstruction，不能
+升级为 control-independent signed law。
+
+TPC-339 的项目级 producer、independent replay、envelope stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-339-mask-aware-frobenius-envelope/code/tpc339_mask_aware_frobenius_envelope.py --check
+python -O -B papers/tpc-339-mask-aware-frobenius-envelope/code/tpc339_mask_aware_frobenius_envelope.py --check
+python -B papers/tpc-339-mask-aware-frobenius-envelope/experiments/tpc339_independent_checker.py --check
+python -O -B papers/tpc-339-mask-aware-frobenius-envelope/experiments/tpc339_independent_checker.py --check
+python -B papers/tpc-339-mask-aware-frobenius-envelope/experiments/tpc339_envelope_stress.py --check
+python -O -B papers/tpc-339-mask-aware-frobenius-envelope/experiments/tpc339_envelope_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc339_mask_aware_frobenius_envelope_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc339_mask_aware_frobenius_envelope_checker.py --check
+```
+
+TPC-339 增量 tail audit：4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `records=216 / nonempty=198 /
+bound_violations=0 / exact_anchor=1`。这是 V192 的 sign-free finite envelope，
+不是 broad-mask sharpness theorem。
+
+TPC-340 的项目级 producer、independent replay、hybrid stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-340-schur-frobenius-hybrid-envelope/code/tpc340_schur_frobenius_hybrid_envelope.py --check
+python -O -B papers/tpc-340-schur-frobenius-hybrid-envelope/code/tpc340_schur_frobenius_hybrid_envelope.py --check
+python -B papers/tpc-340-schur-frobenius-hybrid-envelope/experiments/tpc340_independent_checker.py --check
+python -O -B papers/tpc-340-schur-frobenius-hybrid-envelope/experiments/tpc340_independent_checker.py --check
+python -B papers/tpc-340-schur-frobenius-hybrid-envelope/experiments/tpc340_hybrid_stress.py --check
+python -O -B papers/tpc-340-schur-frobenius-hybrid-envelope/experiments/tpc340_hybrid_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc340_schur_frobenius_hybrid_envelope_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc340_schur_frobenius_hybrid_envelope_checker.py --check
+```
+
+TPC-340 增量 tail audit：4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `rows=6 / controls=9 / records=216 /
+bound_violations=0 / schur_branch=54 / exact_anchor=1`。这是 V193 的 branch-audited
+finite improvement，不代表 uniform masked operator bound。
+
+TPC-341 的项目级 producer、independent replay、holdout stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-341-fresh-holdout-nuisance-orthogonalization/code/tpc341_fresh_holdout_nuisance_orthogonalization.py --check
+python -O -B papers/tpc-341-fresh-holdout-nuisance-orthogonalization/code/tpc341_fresh_holdout_nuisance_orthogonalization.py --check
+python -B papers/tpc-341-fresh-holdout-nuisance-orthogonalization/experiments/tpc341_independent_checker.py --check
+python -O -B papers/tpc-341-fresh-holdout-nuisance-orthogonalization/experiments/tpc341_independent_checker.py --check
+python -B papers/tpc-341-fresh-holdout-nuisance-orthogonalization/experiments/tpc341_holdout_stress.py --check
+python -O -B papers/tpc-341-fresh-holdout-nuisance-orthogonalization/experiments/tpc341_holdout_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc341_fresh_holdout_nuisance_orthogonalization_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc341_fresh_holdout_nuisance_orthogonalization_checker.py --check
+```
+
+TPC-341 增量 tail audit：4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `rows=3 / controls=9 / raw_records=108 /
+holdout_records=27 / rank_failures=0 / exact_anchor=1`。这是 V194 的 fresh-holdout
+control-stability obstruction，不代表 canonical nuisance decomposition 或 twin-prime
+结论。
+
 TPC-327 的项目级 producer、independent replay、three-origin stress 与 bridge checker：
 
 ```bash
@@ -12903,24 +13117,47 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-最新 TPC-336 入口：
+最新 TPC-341 入口：
 
-papers/tpc-336-masked-signed-gram-response/README.md
-papers/tpc-336-masked-signed-gram-response/PAPER_PLAN.md
-papers/tpc-336-masked-signed-gram-response/DERIVATION_PACKAGE.md
-papers/tpc-336-masked-signed-gram-response/PROOF_PACKAGE.md
-papers/tpc-336-masked-signed-gram-response/code/tpc336_masked_signed_gram_response.py
-papers/tpc-336-masked-signed-gram-response/experiments/tpc336_independent_checker.py
-papers/tpc-336-masked-signed-gram-response/experiments/tpc336_response_stress.py
-papers/tpc-336-masked-signed-gram-response/results/tpc336_certificate.json
-papers/tpc-336-masked-signed-gram-response/notes/theorem_ledger.md
-papers/tpc-336-masked-signed-gram-response/notes/claim_firewall.md
-papers/tpc-336-masked-signed-gram-response/notes/computational_protocol.md
-papers/tpc-336-masked-signed-gram-response/notes/route_evaluation.md
-papers/tpc-336-masked-signed-gram-response/paper/main.tex
-papers/tpc-336-masked-signed-gram-response/paper/paper.pdf
-research/tpc-big-road/bridge_b_tpc336_masked_signed_gram_response.md
-research/tpc-big-road/tpc_bridge_b_tpc336_masked_signed_gram_response_checker.py
+papers/tpc-341-fresh-holdout-nuisance-orthogonalization/README.md
+papers/tpc-341-fresh-holdout-nuisance-orthogonalization/PAPER_PLAN.md
+papers/tpc-341-fresh-holdout-nuisance-orthogonalization/DERIVATION_PACKAGE.md
+papers/tpc-341-fresh-holdout-nuisance-orthogonalization/PROOF_PACKAGE.md
+papers/tpc-341-fresh-holdout-nuisance-orthogonalization/code/tpc341_fresh_holdout_nuisance_orthogonalization.py
+papers/tpc-341-fresh-holdout-nuisance-orthogonalization/experiments/tpc341_independent_checker.py
+papers/tpc-341-fresh-holdout-nuisance-orthogonalization/experiments/tpc341_holdout_stress.py
+papers/tpc-341-fresh-holdout-nuisance-orthogonalization/results/tpc341_certificate.json
+papers/tpc-341-fresh-holdout-nuisance-orthogonalization/notes/theorem_ledger.md
+papers/tpc-341-fresh-holdout-nuisance-orthogonalization/notes/claim_firewall.md
+papers/tpc-341-fresh-holdout-nuisance-orthogonalization/notes/computational_protocol.md
+papers/tpc-341-fresh-holdout-nuisance-orthogonalization/notes/route_evaluation.md
+papers/tpc-341-fresh-holdout-nuisance-orthogonalization/paper/main.tex
+papers/tpc-341-fresh-holdout-nuisance-orthogonalization/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc341_fresh_holdout_nuisance_orthogonalization.md
+research/tpc-big-road/tpc_bridge_b_tpc341_fresh_holdout_nuisance_orthogonalization_checker.py
+
+TPC-340 / TPC-339 / TPC-338 / TPC-337 的紧邻入口依次为：
+
+papers/tpc-340-schur-frobenius-hybrid-envelope/README.md
+papers/tpc-340-schur-frobenius-hybrid-envelope/PROOF_PACKAGE.md
+papers/tpc-340-schur-frobenius-hybrid-envelope/results/tpc340_certificate.json
+research/tpc-big-road/bridge_b_tpc340_schur_frobenius_hybrid_envelope.md
+research/tpc-big-road/tpc_bridge_b_tpc340_schur_frobenius_hybrid_envelope_checker.py
+papers/tpc-339-mask-aware-frobenius-envelope/README.md
+papers/tpc-339-mask-aware-frobenius-envelope/PROOF_PACKAGE.md
+papers/tpc-339-mask-aware-frobenius-envelope/results/tpc339_certificate.json
+research/tpc-big-road/bridge_b_tpc339_mask_aware_frobenius_envelope.md
+research/tpc-big-road/tpc_bridge_b_tpc339_mask_aware_frobenius_envelope_checker.py
+papers/tpc-338-growing-control-covariance-spectrum/README.md
+papers/tpc-338-growing-control-covariance-spectrum/PROOF_PACKAGE.md
+papers/tpc-338-growing-control-covariance-spectrum/results/tpc338_certificate.json
+research/tpc-big-road/bridge_b_tpc338_growing_control_covariance_spectrum.md
+research/tpc-big-road/tpc_bridge_b_tpc338_growing_control_covariance_spectrum_checker.py
+papers/tpc-337-control-covariance-masked-response/README.md
+papers/tpc-337-control-covariance-masked-response/PROOF_PACKAGE.md
+papers/tpc-337-control-covariance-masked-response/results/tpc337_certificate.json
+research/tpc-big-road/bridge_b_tpc337_control_covariance_masked_response.md
+research/tpc-big-road/tpc_bridge_b_tpc337_control_covariance_masked_response_checker.py
 
 TPC-335 / TPC-334 / TPC-333 / TPC-332 的直接前置入口依次为：
 

@@ -9,27 +9,28 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-332--336 已完成一条连续的 twin-prime finite audit chain。TPC-332
-把五个预声明的 coordinate controls 移动到两个新 origin、三个嵌套 scale 的 growing
-finite ensemble；TPC-333 将 source polarization 的 cross term 单独锁定；TPC-334
-按 twin/non-twin/prime-power support 分类；TPC-335 证明四个 disjoint source masks
-的 residual norm split；TPC-336 再把这些 masks 送入固定 all-plus signed-Gram
-operator，得到 6/6 的 gain ordering 与 destructive output interaction。整条链仍是
-有限 declared-model certificate：source-uniform arithmetic $L^2$、uniform masked
-operator bound、fixed-power credit 与 twin-prime endpoint 均未关闭。
+当前主线状态：TPC-337--341 已完成一条连续的 twin-prime finite audit chain。TPC-337
+把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
+control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
+用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
+Schur envelope；TPC-341 在三个 fresh windows 上用 leave-one-control-out 检验
+nuisance orthogonalization 的稳定性。整条链仍是有限 declared-model certificate：
+source-uniform arithmetic $L^2$、uniform masked operator bound、fixed-power credit 与
+twin-prime endpoint 均未关闭。
 
 ```text
-TPC336_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE
-TPC336_MASK_RESPONSE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-TPC336_GAIN_ORDERING = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
-TPC336_DESTRUCTIVE_OUTPUT_INTERACTION = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
-TPC336_ARITHMETIC_ADVANCE = NO
-TPC336_FIXED_POWER_CREDIT = 0
-TPC336_SOURCE_UNIFORM_L2 = OPEN
-TPC336_FULL_GATE_B = OPEN
-TPC336_TWIN_PRIME_RESULT = NONE
-TPC336_STATUS = NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE
-TPC336_ROUND2_CLUE = RETURN_TO_CONTROL_COVARIANCE_OR_SEEK_UNIFORM_MASKED_OPERATOR_BOUND
+TPC341_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
+TPC341_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC341_FRESH_HOLDOUT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
+TPC341_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
+TPC341_CONTROL_STABILITY = REFUTED_SCOPED
+TPC341_ARITHMETIC_ADVANCE = NO
+TPC341_FIXED_POWER_CREDIT = 0
+TPC341_SOURCE_UNIFORM_L2 = OPEN
+TPC341_FULL_GATE_B = OPEN
+TPC341_TWIN_PRIME_RESULT = NONE
+TPC341_STATUS = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
+TPC341_ROUND2_CLUE = INDEPENDENT_REPRODUCTION_OR_FREEZE_NUISANCE_PROJECTION
 ```
 
 TPC-331（更早阶段）承接 TPC-330，把五个预声明的 coordinate controls 视为一个
@@ -76,7 +77,27 @@ papers/tpc-335-twin-isolated-source-norm - TPC-335 已完成项目 - 对四个 d
 support masks 完成 residual $L^2$ norm split；twin 占 9.56%--12.24%，含
 independent replay、stress、PDF 与 local Bridge-B checker。
 
-papers/tpc-336-masked-signed-gram-response - TPC-336 当前批次终点 - 固定 signed-Gram
+papers/tpc-337-control-covariance-masked-response - TPC-337 已完成项目 - 五-control
+orbit 下四类 masked output 的 covariance Gram ledger；centered energy 占
+78.50%--85.53%，并建立 signed covariance sign firewall。
+
+papers/tpc-338-growing-control-covariance-spectrum - TPC-338 已完成项目 - 九-control
+扩展保持 centered spectral energy，却在 twin/zero covariance 上出现 6/6 sign reversal，
+否定 ensemble-invariant signed law。
+
+papers/tpc-339-mask-aware-frobenius-envelope - TPC-339 已完成项目 - 216 条记录的
+support-restricted Frobenius bound 全部通过，但 broad-mask occupancy 低于 0.2，说明
+该 elementary envelope 不够 sharp。
+
+papers/tpc-340-schur-frobenius-hybrid-envelope - TPC-340 已完成项目 - Schur/Frobenius
+hybrid bound 216/216 无 violation，zero-support branch 获得有限改善，但 broad-mask
+tightness 仍未解决。
+
+papers/tpc-341-fresh-holdout-nuisance-orthogonalization - TPC-341 当前批次终点 - 三个
+fresh windows 的样本内 nuisance 投影很强，但 27/27 leave-one-control-out 检验暴露
+control-stability obstruction。
+
+papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram
 operator 的 6-row masked response ledger；zero/background/twin/prime-power gain
 ordering 与 6/6 destructive interaction 已独立复现，arithmetic advance 仍为 NO。
 

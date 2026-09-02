@@ -1,41 +1,55 @@
-# TPC big road V184 / TPC-331: control-average and centered response decomposition
+# TPC big road V194 / TPC-341: fresh holdout nuisance orthogonalization
 
-## V184 current anchor: TPC-331
+## V194 current anchor: TPC-341
 
 更新时间：2026-09-02
 
-当前 TPC-331 proof 为
-bridge_b_tpc331_control_average_centered_response_decomposition.md，checker 为
-tpc_bridge_b_tpc331_control_average_centered_response_decomposition_checker.py，编号论文为
-../../papers/tpc-331-control-average-centered-response-decomposition/。
+当前 TPC-341 proof 为
+bridge_b_tpc341_fresh_holdout_nuisance_orthogonalization.md，checker 为
+tpc_bridge_b_tpc341_fresh_holdout_nuisance_orthogonalization_checker.py，编号论文为
+../../papers/tpc-341-fresh-holdout-nuisance-orthogonalization/。
 
-TPC-331 承接 TPC-330，把五个预声明 coordinate bijections 视为一个 finite control
-orbit。对 `w_j=P_jv`、`v_bar=mean_j w_j` 与 `z_j=w_j-v_bar`，任意有限 quadratic
-form 都满足 exact mean/centered identity；energy、coordinate diagonal 与
-off-diagonal Gram response 因而同时分解。锁定同一两个 origins `28001,36001`、
-两个 scales `4096,8192`、四个 laws 与 V59 source-native residual，32 rows 形成
-128 个 law-level decompositions。all-plus 的 control-average 与 centered-position
-components 均为 `32/32` positive，coherent mean 为 `31/32` positive。
+TPC-341 在三个与 parent panel 不重叠且 cutoff-safe 的 fresh windows
+`[48097,48608]`、`[48609,49120]`、`[49217,49728]` 上固定 TPC-340 的 all-plus
+operator 与九个 controls。样本内 twin-mean nuisance projection 的 residual retention
+为 `0.2010894086--0.2560626551`，而 leave-one-control-out 的 27 个 hostile tests
+保留 `0.4435267486--0.8904473564`。正交投影 identity 是 exact finite；稳定性失败
+是 scoped obstruction，不是 arithmetic estimate。
 
-这是 `NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION`；
-它是有限 position-response localization，不提供 source-uniform growing arithmetic
-`L2` theorem、fixed-power credit 或 twin-prime endpoint。Session-named evaluator files
-absent，故不宣称 official Route-A/Route-B pass。
+这是 `NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION`；
+source-uniform arithmetic `L2`、uniform masked operator bound、fixed-power credit 与
+twin-prime endpoint 仍 open。Session-named evaluator files absent，故不宣称 official
+Route-A/Route-B pass。
 
-    TPC331_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
-    TPC331_EXACT_MEAN_CENTERED_DECOMPOSITION = PROVED_EXACT_FINITE
-    TPC331_SOURCE_NATIVE_VECTOR = PROVED_EXACT_FINITE_DECLARED_MODEL
-    TPC331_CONTROL_AVERAGE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
-    TPC331_CENTERED_POSITION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_32_OF_32
-    TPC331_COHERENT_CENSUS = NUMERICALLY_CERTIFIED_FINITE_31_OF_32
-    TPC331_NUMERIC_IDENTITY = NUMERICALLY_CERTIFIED_FINITE
-    TPC331_ARITHMETIC_ADVANCE = NO
-    TPC331_FIXED_POWER_CREDIT = 0
-    TPC331_GROWING_SOURCE_NATIVE_L2 = OPEN
-    TPC331_FULL_GATE_B = OPEN
-    TPC331_TWIN_PRIME_RESULT = NONE
-    TPC331_STATUS = NUMERICALLY_CERTIFIED_FINITE_CONTROL_AVERAGE_CENTERED_RESPONSE_DECOMPOSITION
-    TPC331_ROUND2_CLUE = TEST_CONTROL_AVERAGE_ON_GROWING_SOURCE_ENSEMBLE_AND_SEPARATE_ARITHMETIC_L2
+    TPC341_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
+    TPC341_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC341_FRESH_HOLDOUT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
+    TPC341_IN_SAMPLE_PROJECTION = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
+    TPC341_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
+    TPC341_CONTROL_STABILITY = REFUTED_SCOPED
+    TPC341_ARITHMETIC_ADVANCE = NO
+    TPC341_FIXED_POWER_CREDIT = 0
+    TPC341_SOURCE_UNIFORM_L2 = OPEN
+    TPC341_FULL_GATE_B = OPEN
+    TPC341_TWIN_PRIME_RESULT = NONE
+    TPC341_STATUS = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
+    TPC341_ROUND2_CLUE = INDEPENDENT_REPRODUCTION_OR_FREEZE_NUISANCE_PROJECTION
+
+## V193--V190 recent batch: TPC-340 through TPC-337
+
+TPC-340 completed the exact finite Schur/Frobenius hybrid envelope with 216 records and
+zero bound violations; TPC-339 completed the support-restricted Frobenius envelope with
+198 nonempty records and broad-mask occupancy below `0.2`; TPC-338 expanded the control
+orbit from five to nine and recorded the `6/6` twin/zero covariance sign reversal; TPC-337
+established the five-control covariance Gram interface and its centered-energy/sign ledger.
+Each project has its own proof package, certificate, PDF, independent replay, mutation
+stress, and local fail-closed Bridge-B checker. None supplies the open growing arithmetic
+`L2` theorem or a twin-prime conclusion.
+
+    TPC340_ROUND2_CLUE = TEST_NUISANCE_ORTHOGONALIZATION_OR_ADVERSARIAL_HOLDOUT
+    TPC339_ROUND2_CLUE = COMBINE_SUPPORT_FROBENIUS_WITH_A_GLOBAL_SCHUR_BOUND
+    TPC338_ROUND2_CLUE = REPLACE_SIGNED_COVARIANCE_BY_A_SIGN_FREE_MASKED_BOUND
+    TPC337_ROUND2_CLUE = GROW_THE_CONTROL_ORBIT_AND_TEST_SIGN_STABILITY
 
 ## V183 previous anchor: TPC-330
 

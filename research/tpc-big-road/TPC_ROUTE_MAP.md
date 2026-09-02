@@ -2,44 +2,147 @@
 
 更新时间：2026-09-02
 
-当前地图版本：V189 / TPC-336
+当前地图版本：V194 / TPC-341
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-336`（`NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE`）；
+当前编号锚点：`TPC-341`（`NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION`）；
 对应论文目录为
-`papers/tpc-336-masked-signed-gram-response/`。
+`papers/tpc-341-fresh-holdout-nuisance-orthogonalization/`。
 
-TPC-336 是当前地图位置，也是本批次的封口：承接 TPC-335，将 twin、non-twin、
-prime-power 与 zero-support 四个 source masks 送入固定 all-plus deleted-diagonal
-signed-Gram operator（`Q=54`、exponent `1`、`H=66`）。在两个 origins、三个 scales
-形成的 6 个 windows 上，self-response gain ordering 全部一致：
+TPC-341 是当前地图位置，也是本批次的封口：承接 TPC-340 的 sign-free hybrid envelope，
+在三个与 parent panel 不重叠的 fresh windows 上测试九-control nuisance mean projection。
+样本内 twin mean residual retention 为 `0.2010894086--0.2560626551`，但
+leave-one-control-out 的 27 个 hostile tests 保留 `0.4435267486--0.8904473564`。
+因此低维 aggregate fit 不能直接升级为 control-invariant twin-prime component；
+正交投影 identity 是 exact finite，而稳定性结论只是 scoped finite obstruction。
 
-    zero_support > non_twin_prime_shift > twin_prime > prime_power_shift
-
-六行都出现 destructive output interaction；self-energy sum/full-response ratio 为
-`[4.8538535937774503,5.4814134328177246]`。这把路线从 source cross-term（TPC-334）
-和 residual norm（TPC-335）推进到 output Gram/covariance 层，明确指出 source-level
-twin share 不能未经 position-aware interaction estimate 直接传递为 operator response。
 本关仍没有 arithmetic advance；source-uniform `L2`、uniform masked operator bound、
 fixed-power credit 与 twin-prime endpoint 继续 open。
 
 ```text
-YOU ARE HERE = V189 / TPC-336
-TPC336_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE
-TPC336_MASK_RESPONSE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
-TPC336_FIXED_OPERATOR_REPLAY = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
-TPC336_GAIN_ORDERING = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
-TPC336_DESTRUCTIVE_OUTPUT_INTERACTION = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
-TPC336_TWIN_RESPONSE_DOMINANCE = REFUTED_SCOPED_FINITE_PANEL
-TPC336_ARITHMETIC_ADVANCE = NO
-TPC336_FIXED_POWER_CREDIT = 0
-TPC336_SOURCE_UNIFORM_L2 = OPEN
-TPC336_FULL_GATE_B = OPEN
-TPC336_TWIN_PRIME_RESULT = NONE
-TPC336_STATUS = NUMERICALLY_CERTIFIED_FINITE_MASKED_SIGNED_GRAM_RESPONSE
-TPC336_ROUND2_CLUE = RETURN_TO_CONTROL_COVARIANCE_OR_SEEK_UNIFORM_MASKED_OPERATOR_BOUND
+YOU ARE HERE = V194 / TPC-341
+TPC341_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
+TPC341_PROJECTION_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC341_FRESH_HOLDOUT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_108_RAW_RECORDS
+TPC341_IN_SAMPLE_PROJECTION = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
+TPC341_HOLDOUT_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_27_RECORDS
+TPC341_IN_SAMPLE_RETENTION = NUMERICAL_OBSERVATION_0.201_TO_0.256
+TPC341_HOLDOUT_RETENTION = NUMERICAL_OBSERVATION_0.444_TO_0.890
+TPC341_CONTROL_STABILITY = REFUTED_SCOPED
+TPC341_ARITHMETIC_ADVANCE = NO
+TPC341_FIXED_POWER_CREDIT = 0
+TPC341_SOURCE_UNIFORM_L2 = OPEN
+TPC341_FULL_GATE_B = OPEN
+TPC341_TWIN_PRIME_RESULT = NONE
+TPC341_STATUS = NUMERICALLY_CERTIFIED_FINITE_FRESH_HOLDOUT_NUISANCE_ORTHOGONALIZATION
+TPC341_ROUND2_CLUE = INDEPENDENT_REPRODUCTION_OR_FREEZE_NUISANCE_PROJECTION
 ```
+
+## V193 / TPC-340 previous anchor
+
+TPC-340 将 TPC-339 的 support-restricted Frobenius envelope 与 global Schur envelope
+合并为 `||Ax||^2 <= min(||A[:,S]||_F^2,R^2)||x||^2`。六 windows、九 controls、四
+masks 的 216 条记录全部无 violation；Schur branch 为 54 条，Frobenius branch 为
+162 条，zero-support 的有限 improvement factor 为 `1.250245--4.698443`。但 broad
+mask hybrid occupancy 仍不超过 `0.1868550366`，所以这只是 sign-free finite
+improvement，不是 sharp uniform response theorem。
+
+```text
+TPC340_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SCHUR_FROBENIUS_HYBRID_ENVELOPE
+TPC340_HYBRID_BOUND = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC340_HYBRID_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_RECORDS
+TPC340_BOUND_CENSUS = NUMERICALLY_CERTIFIED_FINITE_0_VIOLATIONS
+TPC340_SCHUR_BRANCH_CENSUS = NUMERICALLY_CERTIFIED_FINITE_54_RECORDS
+TPC340_FROBENIUS_BRANCH_CENSUS = NUMERICALLY_CERTIFIED_FINITE_162_RECORDS
+TPC340_BROAD_TIGHTNESS = REFUTED_SCOPED
+TPC340_ARITHMETIC_ADVANCE = NO
+TPC340_FIXED_POWER_CREDIT = 0
+TPC340_SOURCE_UNIFORM_L2 = OPEN
+TPC340_FULL_GATE_B = OPEN
+TPC340_TWIN_PRIME_RESULT = NONE
+TPC340_STATUS = NUMERICALLY_CERTIFIED_FINITE_SCHUR_FROBENIUS_HYBRID_ENVELOPE
+TPC340_ROUND2_CLUE = TEST_NUISANCE_ORTHOGONALIZATION_OR_ADVERSARIAL_HOLDOUT
+```
+
+## V192 / TPC-339 previous anchor
+
+TPC-339 在 TPC-338 的九-control panel 上建立 sign-free support-restricted bound
+`||Ax||^2 <= ||A[:,S]||_F^2||x||^2`。216 条 mask/control records 中 198 条非空且
+全部通过；broad masks 的 occupancy 均低于 `0.2`，而 prime-power singleton-like
+records 可达到 equality。它证明了有限 envelope 的可靠性，同时 refute 了其在 broad
+mask 上自动 sharp 的解释，下一步自然加入 global Schur branch。
+
+```text
+TPC339_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MASK_AWARE_FROBENIUS_ENVELOPE
+TPC339_SUPPORT_FROBENIUS_BOUND = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC339_MASKED_CONTROL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_216_RECORDS
+TPC339_BOUND_CENSUS = NUMERICALLY_CERTIFIED_FINITE_0_VIOLATIONS
+TPC339_BROAD_MASK_SLACK = NUMERICALLY_CERTIFIED_FINITE_OCCUPANCY_BELOW_0.2
+TPC339_SIMPLE_ENVELOPE_TIGHTNESS = REFUTED_SCOPED
+TPC339_ARITHMETIC_ADVANCE = NO
+TPC339_FIXED_POWER_CREDIT = 0
+TPC339_SOURCE_UNIFORM_L2 = OPEN
+TPC339_FULL_GATE_B = OPEN
+TPC339_TWIN_PRIME_RESULT = NONE
+TPC339_STATUS = NUMERICALLY_CERTIFIED_FINITE_MASK_AWARE_FROBENIUS_ENVELOPE
+TPC339_ROUND2_CLUE = COMBINE_SUPPORT_FROBENIUS_WITH_A_GLOBAL_SCHUR_BOUND
+```
+
+## V191 / TPC-338 previous anchor
+
+TPC-338 把 TPC-337 的五-control orbit 扩展到九个 controls。六 rows 的 centered
+fraction 仍为 `0.8771801838--0.8972635786`，normalized covariance spectrum 的
+`L1` 距离为 `0.0264396313--0.0440591812`；但 twin/zero covariance 从五-control 的
+`6/6` negative 变成九-control 的 `6/6` positive。能量集中比 signed interaction
+更稳定，因此选定 sign-free masked bound 作为下一关。
+
+```text
+TPC338_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_GROWING_CONTROL_COVARIANCE_SPECTRUM
+TPC338_NESTED_COVARIANCE_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC338_COVARIANCE_GRAM_PSD = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC338_ENERGY_DOMINANCE_STABILITY = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
+TPC338_TWIN_ZERO_SIGN_STABILITY = REFUTED_SCOPED
+TPC338_TWIN_ZERO_SIGN_REVERSAL = NUMERICALLY_CERTIFIED_FINITE_6_OF_6_NESTED_COMPARISON
+TPC338_ARITHMETIC_ADVANCE = NO
+TPC338_FIXED_POWER_CREDIT = 0
+TPC338_SOURCE_UNIFORM_L2 = OPEN
+TPC338_FULL_GATE_B = OPEN
+TPC338_TWIN_PRIME_RESULT = NONE
+TPC338_STATUS = NUMERICALLY_CERTIFIED_FINITE_GROWING_CONTROL_COVARIANCE_SPECTRUM
+TPC338_ROUND2_CLUE = REPLACE_SIGNED_COVARIANCE_BY_A_SIGN_FREE_MASKED_BOUND
+```
+
+## V190 / TPC-337 previous anchor
+
+TPC-337 将 TPC-336 的四个 source masks 经过五个 predeclared coordinate bijections，
+形成 class-output covariance Gram ledger。六 rows 的 centered fraction 为
+`0.7850322548--0.8552982168`；twin/background covariance 在 `6/6` 为正，
+twin/zero 与 background/zero 在 `6/6` 为负。mean/centered identity 与 covariance
+Gram PSD 是 exact finite algebra，但 signed interaction 的 canonicality 被留作开放
+问题，并由 TPC-338 的 growing-control sign audit 直接攻击。
+
+```text
+TPC337_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CONTROL_COVARIANCE_MASKED_RESPONSE
+TPC337_COVARIANCE_GRAM_PSD = PROVED_EXACT_FINITE_DECLARED_MODEL
+TPC337_MASKED_RESPONSE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+TPC337_CENTERED_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_6_OF_6
+TPC337_SIGNED_COVARIANCE_CANONICALITY = OPEN
+TPC337_ARITHMETIC_ADVANCE = NO
+TPC337_FIXED_POWER_CREDIT = 0
+TPC337_SOURCE_UNIFORM_L2 = OPEN
+TPC337_FULL_GATE_B = OPEN
+TPC337_TWIN_PRIME_RESULT = NONE
+TPC337_STATUS = NUMERICALLY_CERTIFIED_FINITE_CONTROL_COVARIANCE_MASKED_RESPONSE
+TPC337_ROUND2_CLUE = GROW_THE_CONTROL_ORBIT_AND_TEST_SIGN_STABILITY
+```
+
+## V189 / TPC-336 previous anchor
+
+TPC-336 将四个 source masks 送入固定 all-plus signed-Gram operator；六 rows 的 gain
+ordering 全部为 `zero_support > non_twin_prime_shift > twin_prime > prime_power_shift`，
+并全部出现 destructive output interaction。它是 TPC-337 covariance ledger 的直接
+parent；该 finite response 仍不提供 uniform masked operator bound。
 
 ## V188 / TPC-335 previous anchor
 
@@ -3509,9 +3612,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V189 / TPC-336                    |
-        | MASKED SIGNED-GRAM RESPONSE / OUTPUT GRAM    |
-        | UNIFORM L2 / ARITHMETIC GATES OPEN           |
+        | YOU ARE HERE — V194 / TPC-341                    |
+        | FRESH HOLDOUT NUISANCE ORTHOGONALIZATION    |
+        | CONTROL STABILITY OBSTRUCTION / GATES OPEN  |
         +--------------------------------------------------+
                 |
                 v
@@ -8621,6 +8724,11 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-02 | V194 / TPC-341 | Bridge A / Gate B：fresh holdout nuisance orthogonalization 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-341` | 承接 TPC-340；三个 fresh windows、108 raw records、27 leave-one-control-out tests；样本内 retention `0.201--0.256`，held-out retention `0.444--0.890`，control-stability obstruction；下一步为 independent reproduction 或冻结该 projection line |
+| 2026-09-02 | V193 / TPC-340 | Bridge A / Gate B：Schur/Frobenius hybrid envelope 已完成；source-uniform `L2`、uniform masked operator bound、fixed-power credit 与 full Gate B open | `TPC-340` | 承接 TPC-339；216/216 bound checks 无 violation，Schur branch 54 条、Frobenius branch 162 条；zero-support finite improvement `1.250245--4.698443`；下一步为 nuisance orthogonalization 或 adversarial holdout |
+| 2026-09-02 | V192 / TPC-339 | Bridge A / Gate B：mask-aware Frobenius envelope 已完成；masked Gram sharpening、source-uniform `L2`、fixed-power credit 与 full Gate B open | `TPC-339` | 承接 TPC-338；216 records、198 nonempty、0 bound violations；broad-mask occupancy `<0.2`，elementary envelope 不 sharp；下一步为 global Schur hybrid |
+| 2026-09-02 | V191 / TPC-338 | Bridge A / Gate B：growing-control covariance spectrum 已完成；canonical signed covariance、source-uniform `L2`、fixed-power credit 与 full Gate B open | `TPC-338` | 承接 TPC-337；五/九-control centered energy 保持，但 twin/zero covariance 在 6/6 rows 发生 sign reversal；下一步改用 sign-free masked bound |
+| 2026-09-02 | V190 / TPC-337 | Bridge A / Gate B：control covariance of masked responses 已完成；control-uniform sign、source-uniform `L2`、uniform masked operator bound 与 full Gate B open | `TPC-337` | 承接 TPC-336；五-control、四-mask、六-row covariance Gram ledger，centered fraction `0.785--0.855`；下一步扩大 control orbit 检验 sign stability |
 | 2026-09-02 | V189 / TPC-336 | Bridge A / Gate B：masked signed-Gram response 与 output-interference ledger 已完成；uniform masked operator bound、source-uniform `L2`、fixed-power credit 与 full Gate B open | `TPC-336` | 承接 TPC-335；四个 support masks 经过固定 `Q=54` all-plus operator，6/6 gain ordering 与 6/6 destructive interaction；下一步回到 control covariance 或寻求 uniform masked-operator theorem |
 | 2026-09-02 | V188 / TPC-335 | Bridge A / Gate B：twin-isolated source norm decomposition 已完成；masked response、source-uniform `L2`、fixed-power credit 与 full Gate B open | `TPC-335` | 承接 TPC-334；四个 disjoint masks 的 exact residual norm split，twin `9.56%--12.24%`、background `67.05%--69.66%`；下一步为固定 operator response |
 | 2026-09-02 | V187 / TPC-334 | Bridge A / Gate B：cross-term support attribution 已完成；twin-specific arithmetic、source-uniform `L2`、fixed-power credit 与 full Gate B open | `TPC-334` | 承接 TPC-333；6/6 rows 中 twin share `5.43%--7.17%`、non-twin share `92.83%--94.42%`；下一步为 twin-isolated norm ledger |
