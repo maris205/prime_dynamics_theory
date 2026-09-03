@@ -3,13 +3,69 @@
 
 更新时间：2026-09-03
 
-状态：**TPC363_NUMERICALLY_CERTIFIED_FINITE_BULK_PERSISTENCE_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC364_NUMERICALLY_CERTIFIED_FINITE_SHELL_TILT_PHASE_DIAGRAM / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.157 current：TPC-363 bulk persistence at the first shell-scale failure
+## 0.158 current：TPC-364 prime-shell tilt phase diagram
+
+项目：papers/tpc-364-shell-tilt-phase-diagram/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_SHELL_TILT_PHASE_DIAGRAM**。
+
+TPC-364 承接 TPC-363 的 finite bulk-persistence obstruction，固定同一 ordered high-origin
+panel `(313030,311166,321651)`，对显式 shell tilt
+`w_(p,beta)=(p/Q)^beta` 做完整 phase diagram。协议包含
+`beta=-2,-1,0,1,2`、四种 sign laws、counts `256,512`、shell anchors
+`Q=80,128,256,512` 与 exponents `1,2`，共 `960` 个全真谱 rows。五个 beta 的
+spectral-cap violations 分别为 `63/36/30/30/0`；beta=2 在 `192/192` 个声明行上
+没有 `0.64` cap failure，最大 normalized spectrum 为 `0.61628753962786131`，最大
+normalized Schur 为 `0.64531400360759594`，最小 shell-effective fraction 为
+`0.66938300094026681`。
+
+最强正结果：完整整数 tilt menu 中 beta=2 给出有限 all-law cap repair，并且有效 shell
+participation 仍为至少 66.9%。最强 obstruction：这是 reused panel 上的 modeling-choice
+phase point，beta 是在同一有限 menu 中比较出的，尚无 disjoint holdout 或 source-valid
+normalization 证明；因此不能外推为 asymptotic repair。
+
+producer、reverse-shell independent replay、18-mutation stress、exact rational anchors、
+PDF 与 normal/optimized Bridge-B 均通过；official evaluator files absent，local Bridge-B
+仍为 fail-closed fallback。`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`、`TWIN_PRIME_RESULT=NONE`；growing operator bound、source-uniform
+arithmetic `L2` 与 Route-B reassembly 仍 open。
+
+开放定理：在 response-blind disjoint fresh-origin holdout 上验证 beta=2，随后判断其是否
+具有 shell-scale transfer；任何成功 transfer 仍需独立证明 source validity 与 growing
+operator bound。
+
+可复用结构：
+
+    frozen high-Q failure -> integer shell-tilt menu
+      -> weighted square-energy congruence -> all-law phase census
+      -> effective-shell diagnostic -> explicit-holdout clue
+
+ROUND2_CLUE：`TEST_BETA2_ON_RESPONSE_BLIND_FRESH_HOLDOUT`。
+
+```text
+TPC364_WEIGHTED_BLOCK_DEFINITION = PROVED_EXACT_FINITE
+TPC364_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+TPC364_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_960_ROWS
+TPC364_PHASE_DIAGRAM = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC364_BETA2_PANEL_CAP_REPAIR = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC364_BETA2_ASYMPTOTIC_REPAIR = OPEN
+TPC364_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC364_GROWING_OPERATOR_BOUND = OPEN
+TPC364_SOURCE_UNIFORM_L2 = OPEN
+TPC364_ARITHMETIC_ADVANCE = NO
+TPC364_FIXED_POWER_CREDIT = 0
+TPC364_FULL_GATE_B = OPEN
+TPC364_TWIN_PRIME_RESULT = NONE
+TPC364_STATUS = NUMERICALLY_CERTIFIED_FINITE_SHELL_TILT_PHASE_DIAGRAM
+```
+
+## 0.157 previous：TPC-363 bulk persistence at the first shell-scale failure
 
 项目：papers/tpc-363-bulk-persistence-localization/
 

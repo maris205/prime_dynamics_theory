@@ -1,7 +1,71 @@
 # TPC HANDOFF
 
-TPC-363 current section: bulk persistence at the first shell-scale failure
--------------------------------------------------------------------------
+TPC-364 current section: prime-shell tilt phase diagram
+-------------------------------------------------------
+
+TPC-364 is the current sealed release.  It inherits the TPC-361 ordered
+high-origin panel `(313030,311166,321651)` and applies the explicit relative
+shell weight `w_(p,beta)=(p/Q)^beta` together with the matching weighted
+square-energy congruence.  The complete menu uses beta `-2,-1,0,1,2`, counts
+`256,512`, shell anchors `80,128,256,512`, exponents `1,2`, and all four fixed
+sign laws, giving 960 true-spectral rows.
+
+The spectral-cap violation counts for beta `-2,-1,0,1,2` are
+`63,36,30,30,0`.  Beta=2 is the unique member of the declared menu with no
+violation in its 192 rows; its maximum normalized spectrum is
+`0.61628753962786131`, its maximum normalized Schur value is
+`0.64531400360759594`, and its minimum effective shell fraction is
+`0.66938300094026681`.
+
+This is a finite phase diagram and a reused-panel modeling observation.  The
+beta=2 point is not an independent holdout and has not been shown source-valid
+or asymptotically uniform.  Producer, reverse-shell independent checker,
+18-mutation stress, five exact rational anchors, PDF QA, and local Bridge-B
+normal/optimized replay pass.  No source-uniform arithmetic `L2`, growing
+operator bound, fixed-power credit, Route-B reassembly, or twin-prime
+conclusion is licensed.  Official Session-named evaluator files remain absent,
+so local Bridge-B is fail-closed fallback evidence only.
+
+    TPC364_WEIGHTED_BLOCK_DEFINITION = PROVED_EXACT_FINITE
+    TPC364_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC364_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_960_ROWS
+    TPC364_PHASE_DIAGRAM = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC364_BETA2_PANEL_CAP_REPAIR = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC364_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC364_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC364_GROWING_OPERATOR_BOUND = OPEN
+    TPC364_SOURCE_UNIFORM_L2 = OPEN
+    TPC364_ARITHMETIC_ADVANCE = NO
+    TPC364_FIXED_POWER_CREDIT = 0
+    TPC364_FULL_GATE_B = OPEN
+    TPC364_TWIN_PRIME_RESULT = NONE
+    TPC364_STRONGEST_POSITIVE = BETA2_FINITE_ALL_LAW_CAP_REPAIR_WITH_SUBSTANTIAL_SHELL_PARTICIPATION
+    TPC364_STRONGEST_OBSTRUCTION = REUSED_PANEL_AND_SOURCE_VALIDITY_NOT_ESTABLISHED
+    TPC364_OPEN_THEOREM = RESPONSE_BLIND_FRESH_HOLDOUT_AND_GROWING_SOURCE_VALID_BETA2_BOUND
+    TPC364_REUSABLE_STRUCTURE = INTEGER_SHELL_TILT_MENU_PLUS_WEIGHTED_GEOMETRY_PHASE_CENSUS
+    TPC364_ROUND2_CLUE = TEST_BETA2_ON_RESPONSE_BLIND_FRESH_HOLDOUT
+    TPC364_STATUS = NUMERICALLY_CERTIFIED_FINITE_SHELL_TILT_PHASE_DIAGRAM
+
+TPC-364 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-364-shell-tilt-phase-diagram/code/tpc364_shell_tilt_phase_diagram.py --check
+    python -O -B papers/tpc-364-shell-tilt-phase-diagram/code/tpc364_shell_tilt_phase_diagram.py --check
+    python -B papers/tpc-364-shell-tilt-phase-diagram/experiments/tpc364_independent_checker.py --check
+    python -O -B papers/tpc-364-shell-tilt-phase-diagram/experiments/tpc364_independent_checker.py --check
+    python -B papers/tpc-364-shell-tilt-phase-diagram/experiments/tpc364_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-364-shell-tilt-phase-diagram/experiments/tpc364_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc364_shell_tilt_phase_diagram_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc364_shell_tilt_phase_diagram_checker.py --check
+
+TPC-364 incremental tail audit: all four normal/optimized pairs return zero,
+have empty stderr, and emit byte-identical stdout.  This is V217 finite
+phase-diagram evidence only; the disjoint beta=2 holdout, source-validity,
+growing operator bound, arithmetic `L2`, fixed-power saving, full Gate B, and
+twin-prime endpoint remain open.
+
+TPC-363 previous section: bulk persistence at the first shell-scale failure
+--------------------------------------------------------------------------
 
 TPC-363 is the current sealed release.  It inherits the TPC-361 ordered
 high-origin panel `(313030,311166,321651)` and the TPC-362 literal normalized
@@ -12987,9 +13051,11 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V216/TPC-363 是当前 release；其 bulk-persistence localization producer、
+V217/TPC-364 是当前 release；其 prime-shell tilt phase-diagram producer、
 reverse-shell independent replay、certificate stress audit 与 literal masked-operator
-Bridge-B 已封存。V215/TPC-362 是上一 release；其 shell-scale finite obstruction、
+Bridge-B 已封存。V216/TPC-363 是上一 release；其 bulk-persistence localization producer、
+reverse-shell independent replay、certificate stress audit 与 literal masked-operator
+Bridge-B 已封存。V215/TPC-362 的 shell-scale finite obstruction、
 reverse-shell all-law replay、certificate stress audit 与 literal masked-operator
 Bridge-B 已封存。V214/TPC-361 的 independent high-origin finite tightness producer、
 reverse-shell independent replay、certificate stress audit 与 literal masked-operator
@@ -13000,7 +13066,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 461 对 normal/optimized 命令、922 次
+当前 curated cascade command set 共 465 对 normal/optimized 命令、930 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -13019,7 +13085,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363 各再追加末尾 4 对。
+	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 

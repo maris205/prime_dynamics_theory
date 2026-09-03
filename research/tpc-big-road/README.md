@@ -1,8 +1,43 @@
-# TPC big road V216 / TPC-363: bulk persistence localization
+# TPC big road V217 / TPC-364: prime-shell tilt phase diagram
 
-## V216 current anchor: TPC-363
+## V217 current anchor: TPC-364
 
 更新时间：2026-09-03
+
+当前 TPC-364 proof 为 bridge_b_tpc364_shell_tilt_phase_diagram.md，checker 为
+tpc_bridge_b_tpc364_shell_tilt_phase_diagram_checker.py，编号论文为
+../../papers/tpc-364-shell-tilt-phase-diagram/。
+
+TPC-364 承接 TPC-363 的 finite bulk-persistence obstruction，在同一 frozen high-origin
+panel 上对 `w_(p,beta)=(p/Q)^beta` 的五个整数 tilt、四种 sign laws、counts `256,512`、
+`Q=80,128,256,512` 与 exponents `1,2` 完成 `960` 个全真谱 rows。beta
+`-2,-1,0,1,2` 的 spectral-cap violations 为 `63/36/30/30/0`；beta=2 的最大
+normalized spectrum 为 `0.61628753962786131`，最大 normalized Schur 为
+`0.64531400360759594`，最小 shell-effective fraction 为 `0.66938300094026681`。
+
+这是 reused panel 上的 finite modeling-choice phase diagram。beta=2 的 repair 尚未
+经过 disjoint holdout，也不代表 source-valid normalization、growing operator theorem、
+source-uniform arithmetic `L2`、fixed-power credit、Route-B reassembly 或 twin-prime
+result；arithmetic advance 为 NO。official evaluator files absent，local Bridge-B
+仍为 fail-closed fallback。下一步是 response-blind fresh holdout。
+
+    TPC364_WEIGHTED_BLOCK_DEFINITION = PROVED_EXACT_FINITE
+    TPC364_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC364_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_960_ROWS
+    TPC364_PHASE_DIAGRAM = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC364_BETA2_PANEL_CAP_REPAIR = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC364_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC364_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC364_GROWING_OPERATOR_BOUND = OPEN
+    TPC364_SOURCE_UNIFORM_L2 = OPEN
+    TPC364_ARITHMETIC_ADVANCE = NO
+    TPC364_FIXED_POWER_CREDIT = 0
+    TPC364_FULL_GATE_B = OPEN
+    TPC364_TWIN_PRIME_RESULT = NONE
+    TPC364_STATUS = NUMERICALLY_CERTIFIED_FINITE_SHELL_TILT_PHASE_DIAGRAM
+    TPC364_ROUND2_CLUE = TEST_BETA2_ON_RESPONSE_BLIND_FRESH_HOLDOUT
+
+## V216 previous anchor: TPC-363
 
 当前 TPC-363 proof 为 bridge_b_tpc363_bulk_persistence_localization.md，checker 为
 tpc_bridge_b_tpc363_bulk_persistence_localization_checker.py，编号论文为
