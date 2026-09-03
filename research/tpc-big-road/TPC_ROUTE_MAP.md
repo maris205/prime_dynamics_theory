@@ -2,27 +2,57 @@
 
 更新时间：2026-09-03
 
-当前地图版本：V217 / TPC-364
+当前地图版本：V218 / TPC-365
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-364`（`NUMERICALLY_CERTIFIED_FINITE_SHELL_TILT_PHASE_DIAGRAM`）；
-对应论文目录为 `papers/tpc-364-shell-tilt-phase-diagram/`。
+当前编号锚点：`TPC-365`（`NUMERICALLY_CERTIFIED_FINITE_BETA2_FRESH_HOLDOUT`）；
+对应论文目录为 `papers/tpc-365-beta2-fresh-holdout/`。
 
-TPC-364 是当前地图位置：承接 TPC-363 的有限 bulk-persistence obstruction，在同一
+TPC-365 是当前地图位置：冻结 TPC-364 的 beta=2 shell tilt，在 51 个候选起点上只用
+256-point unsigned weighted geometry 做 response-blind greedy selection，选出
+`(413342,410258,416940)`；随后在新 panel 的 beta `0,2`、四种 sign laws、两档 counts、
+四个 `Q` anchors 与两种 exponents 上完成 `384` 个全真谱 rows。beta=2 在 `192/192`
+行低于 `0.64` working cap，最大 normalized spectrum 为 `0.61633188509480319`；beta=0
+对照有 `30/192` 个 violations。相对 TPC-364 最大值差为 `4.4345466941875245e-05`，
+低于 `0.001` transfer tolerance。
+
+这是 geometry-selected、response-blind 的 finite transfer evidence，不是随机独立样本、
+source-valid normalization 或 asymptotic theorem；arithmetic advance 为 NO。official
+evaluator files absent，local Bridge-B 仍为 fail-closed fallback。下一步固定 beta=2，
+沿更高 `Q` 与新 scale ladder 勘探首个失败边界。
+
+    YOU ARE HERE = V218 / TPC-365
+    TPC365_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+    TPC365_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC365_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_384_ROWS
+    TPC365_BETA2_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC365_BETA2_CAP_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC365_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC365_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC365_GROWING_OPERATOR_BOUND = OPEN
+    TPC365_SOURCE_UNIFORM_L2 = OPEN
+    TPC365_ARITHMETIC_ADVANCE = NO
+    TPC365_FIXED_POWER_CREDIT = 0
+    TPC365_FULL_GATE_B = OPEN
+    TPC365_TWIN_PRIME_RESULT = NONE
+    TPC365_STATUS = NUMERICALLY_CERTIFIED_FINITE_BETA2_FRESH_HOLDOUT
+    TPC365_ROUND2_CLUE = TEST_BETA2_ON_HIGHER_Q_AND_NEW_SCALE_LADDER
+
+TPC-364 是上一地图位置：承接 TPC-363 的有限 bulk-persistence obstruction，在同一
 frozen high-origin panel 上对 `w_(p,beta)=(p/Q)^beta` 的五个整数 tilt、四种 sign laws、
 counts `256,512`、`Q=80,128,256,512` 与 exponents `1,2` 完成 960 个全真谱 rows。
 beta `-2,-1,0,1,2` 的 spectral-cap violations 为 `63/36/30/30/0`；beta=2 的
 最大 normalized spectrum 为 `0.61628753962786131`，最大 normalized Schur 为
 `0.64531400360759594`，最小 shell-effective fraction 为 `0.66938300094026681`。
 
-这是 reused panel 上的 finite modeling-choice phase diagram：beta=2 的 cap repair 仍需
-在 response-blind disjoint holdout 上检验，不产生 source-valid normalization、growing
+这是 reused panel 上的 finite modeling-choice phase diagram：beta=2 的 cap repair 已由
+TPC-365 做有限 response-blind holdout 检验，但仍不产生 source-valid normalization、growing
 operator bound、source-uniform arithmetic `L2`、fixed-power credit、Route-B reassembly
 或 twin-prime result；arithmetic advance 为 NO。official evaluator files absent，local
-Bridge-B 仍为 fail-closed fallback。
+Bridge-B 仍为 fail-closed fallback；下一步转入更高 `Q` 与新 scale ladder。
 
-    YOU ARE HERE = V217 / TPC-364
+    PREVIOUS ANCHOR = V217 / TPC-364
     TPC364_WEIGHTED_BLOCK_DEFINITION = PROVED_EXACT_FINITE
     TPC364_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
     TPC364_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_960_ROWS
@@ -1620,6 +1650,47 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.148 V218 / TPC-365：beta=2 response-blind fresh holdout
+
+TPC-365 冻结 TPC-364 在 reused panel 上发现的 beta=2 shell tilt，不再进行 beta 搜索。
+在候选 origins `410001+257j`、`0<=j<51` 上，以 256-point pilot 的 unsigned weighted
+geometry spread 排序，采用 origin tie-break 与最小间隔 `2048` 的 greedy rule，选出
+`(413342,410258,416940)`。该选择不读取 signed response、source vector 或 sign law。
+
+选择冻结后，按 beta `0,2`、counts `256,512`、`Q=80,128,256,512`、exponents `1,2`
+与四种 fixed sign laws 完成 `384` 个全真谱 rows。beta=2 在 `192/192` 行低于
+inherited `0.64` working cap，最大 normalized spectrum 为 `0.61633188509480319`，
+最大 normalized Schur 为 `0.64544840644076373`；beta=0 对照有 `30/192` 个 spectral
+violations，最大谱为 `1.6398827540264729`。beta=2 相对 TPC-364 最大值的差为
+`4.4345466941875245e-05`，低于预声明的 `0.001` transfer tolerance。
+
+最强正结果：固定 beta=2 的有限 cap repair 在 geometry-selected、response-blind 新
+panel 上转移，并由 reverse-shell 独立实现重放。最强 obstruction：这是 geometry-
+selected finite panel 而非随机独立样本；有限 transfer 不能推出 source-valid
+normalization、growing-`Q` operator bound 或 arithmetic source `L2`。因此
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`，official
+Route-A/Route-B evaluator 文件缺失，local Bridge-B 只作 fail-closed fallback。
+
+下一步：固定 beta=2，扩展到更高 `Q` 与新 scale ladder，定位首个失败边界；失败应保留为
+scale obstruction，成功也只记为 finite transfer。
+
+    YOU ARE HERE = V218 / TPC-365
+    TPC365_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+    TPC365_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC365_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_384_ROWS
+    TPC365_BETA2_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC365_BETA2_CAP_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC365_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC365_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC365_GROWING_OPERATOR_BOUND = OPEN
+    TPC365_SOURCE_UNIFORM_L2 = OPEN
+    TPC365_ARITHMETIC_ADVANCE = NO
+    TPC365_FIXED_POWER_CREDIT = 0
+    TPC365_FULL_GATE_B = OPEN
+    TPC365_TWIN_PRIME_RESULT = NONE
+    TPC365_STATUS = NUMERICALLY_CERTIFIED_FINITE_BETA2_FRESH_HOLDOUT
+    TPC365_ROUND2_CLUE = TEST_BETA2_ON_HIGHER_Q_AND_NEW_SCALE_LADDER
 
 ## 5.147 V217 / TPC-364：prime-shell tilt phase diagram
 
@@ -10051,6 +10122,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-03 | V218 / TPC-365 | Bridge A / Gate B：fixed beta=2 response-blind fresh-holdout transfer completed; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-365` | 承接 TPC-364；51 个候选只用 unsigned geometry selection 选出 `(413342,410258,416940)`，新 panel 完成 384 个全法真谱 rows；beta=2 在 192/192 行低于 `0.64`，beta=0 有 30/192 violations，最大谱差相对 parent 为 `4.43e-05`；下一步固定 beta=2 攻击更高 Q 与新 scale ladder |
 | 2026-09-03 | V217 / TPC-364 | Bridge A / Gate B：explicit shell-tilt phase diagram completed; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-364` | 承接 TPC-363；固定三 origins，在五个 integer beta、`Q=80,128,256,512`、两档 counts、两种 exponents、四种 laws 上完成 960 个真谱 rows；beta=2 在 192/192 行低于 `0.64`，其余 beta 的 failure counts 为 `63/36/30/30`；下一步 beta=2 response-blind fresh holdout |
 | 2026-09-03 | V216 / TPC-363 | Bridge A / Gate B：first high-Q failure 的 finite bulk-persistence localization 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-363` | 承接 TPC-362；固定三 origins，在 `Q=80,128,256`、两档 counts、两种 exponents、四种 laws 上完成 144 个真谱 rows；18 个 cap failures 全部在两种 `floor(N/20)` targeted principal trims 后保留，最小 retained spectrum `0.86120`；下一步 explicit-holdout renormalization/reweighting |
 | 2026-09-03 | V215 / TPC-362 | Bridge A / Gate B：shell-scale finite cap obstruction 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-362` | 承接 TPC-361；固定三 origins，扩展八级 Q ladder，384 个四-law 真谱 rows；旧 caps 在 `Q<=80` 保持，`Q=128` 首次越界，Schur/spectral violations `33/30`，Q transitions `200/136/0`；下一步 localization of high-Q law/row geometry |

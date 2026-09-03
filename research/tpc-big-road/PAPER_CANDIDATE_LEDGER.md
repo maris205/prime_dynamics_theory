@@ -3,13 +3,72 @@
 
 更新时间：2026-09-03
 
-状态：**TPC364_NUMERICALLY_CERTIFIED_FINITE_SHELL_TILT_PHASE_DIAGRAM / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC365_NUMERICALLY_CERTIFIED_FINITE_BETA2_FRESH_HOLDOUT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.158 current：TPC-364 prime-shell tilt phase diagram
+## 0.159 current：TPC-365 beta=2 response-blind fresh holdout
+
+项目：papers/tpc-365-beta2-fresh-holdout/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_BETA2_FRESH_HOLDOUT**。
+
+TPC-365 冻结 TPC-364 在 reused panel 上找到的 beta=2 shell tilt，不再搜索 beta。先在
+`410001+257j`、`0<=j<51` 的 51 个候选起点上，以 256-point pilot 的 unsigned
+weighted geometry spread 做 response-blind selection；按 descending score、origin
+tie-break 与最小间隔 `2048` 的 greedy rule，选出 ordered origins
+`(413342,410258,416940)`。selection 不读取 signed response、source vector 或 sign law。
+
+选择冻结后，比较 beta `0,2`，在两档 counts `256,512`、四个 shell anchors
+`Q=80,128,256,512`、两种 exponents `1,2` 与四种 fixed sign laws 上完成 `384` 个全真谱
+rows。beta=2 在 `192/192` 行低于 inherited `0.64` working cap，最大 normalized
+spectrum 为 `0.61633188509480319`，最大 normalized Schur 为
+`0.64544840644076373`；beta=0 对照有 `30/192` 个 spectral-cap violations，最大谱为
+`1.6398827540264729`。beta=2 相对 TPC-364 最大谱的差为
+`4.4345466941875245e-05`，低于预声明 transfer tolerance `0.001`；minimum effective
+shell fraction 仍为 `0.66938300094026681`。
+
+最强正结果：固定 beta=2 在 geometry-selected、response-blind 的新 panel 上保留有限
+cap repair，并由反向 shell 独立重放。最强 obstruction：该 panel 仍是 geometry-selected
+而非随机独立样本，且有限 transfer 不能证明 source-valid normalization、growing-`Q`
+operator bound 或 arithmetic source `L2`。因此不升级为 asymptotic repair。
+
+producer、reverse-shell independent replay、19-mutation stress、exact rational anchors、
+PDF 与 normal/optimized Bridge-B 均通过；official evaluator files absent，local Bridge-B
+仍为 fail-closed fallback。`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`、`TWIN_PRIME_RESULT=NONE`。
+
+开放定理：固定 beta=2 后，在更高 `Q` 与新 scale ladder 上定位首个失败边界，并最终证明
+或否定该 weighted normalization 的 source validity 与 growing operator control。
+
+可复用结构：
+
+    finite phase point -> response-blind geometry selection
+      -> frozen beta holdout -> all-law fresh-panel replay
+      -> parent-transfer statistic -> higher-Q scale attack
+
+ROUND2_CLUE：`TEST_BETA2_ON_HIGHER_Q_AND_NEW_SCALE_LADDER`。
+
+```text
+TPC365_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+TPC365_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+TPC365_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_384_ROWS
+TPC365_BETA2_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC365_BETA2_CAP_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC365_BETA2_ASYMPTOTIC_REPAIR = OPEN
+TPC365_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC365_GROWING_OPERATOR_BOUND = OPEN
+TPC365_SOURCE_UNIFORM_L2 = OPEN
+TPC365_ARITHMETIC_ADVANCE = NO
+TPC365_FIXED_POWER_CREDIT = 0
+TPC365_FULL_GATE_B = OPEN
+TPC365_TWIN_PRIME_RESULT = NONE
+TPC365_STATUS = NUMERICALLY_CERTIFIED_FINITE_BETA2_FRESH_HOLDOUT
+```
+
+## 0.158 previous：TPC-364 prime-shell tilt phase diagram
 
 项目：papers/tpc-364-shell-tilt-phase-diagram/
 

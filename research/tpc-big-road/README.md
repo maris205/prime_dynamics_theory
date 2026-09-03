@@ -1,6 +1,43 @@
-# TPC big road V217 / TPC-364: prime-shell tilt phase diagram
+# TPC big road V218 / TPC-365: beta=2 fresh holdout
 
-## V217 current anchor: TPC-364
+## V218 current anchor: TPC-365
+
+更新时间：2026-09-03
+
+当前 TPC-365 proof 为 bridge_b_tpc365_beta2_fresh_holdout.md，checker 为
+tpc_bridge_b_tpc365_beta2_fresh_holdout_checker.py，编号论文为
+../../papers/tpc-365-beta2-fresh-holdout/。
+
+TPC-365 冻结 TPC-364 发现的 beta=2 shell tilt，先在 51 个候选 origins 上只用
+256-point unsigned weighted geometry 做 response-blind greedy selection，选出
+`(413342,410258,416940)`；随后对 beta `0,2`、四种 sign laws、counts `256,512`、
+`Q=80,128,256,512` 与 exponents `1,2` 完成 `384` 个全真谱 rows。beta=2 在
+`192/192` 行低于 `0.64` working cap，最大 normalized spectrum 为
+`0.61633188509480319`；beta=0 对照有 `30/192` 个 violations。beta=2 相对 TPC-364
+的最大值差为 `4.4345466941875245e-05`，低于预声明的 `0.001` transfer tolerance。
+
+这是 geometry-selected、response-blind 的 finite transfer evidence，不是随机独立样本、
+source-valid normalization 或 asymptotic theorem；arithmetic advance 为 NO。official
+evaluator files absent，local Bridge-B 仍为 fail-closed fallback。下一步固定 beta=2，
+扩展到更高 `Q` 与新 scale ladder。
+
+    TPC365_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+    TPC365_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC365_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_384_ROWS
+    TPC365_BETA2_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC365_BETA2_CAP_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC365_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC365_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC365_GROWING_OPERATOR_BOUND = OPEN
+    TPC365_SOURCE_UNIFORM_L2 = OPEN
+    TPC365_ARITHMETIC_ADVANCE = NO
+    TPC365_FIXED_POWER_CREDIT = 0
+    TPC365_FULL_GATE_B = OPEN
+    TPC365_TWIN_PRIME_RESULT = NONE
+    TPC365_STATUS = NUMERICALLY_CERTIFIED_FINITE_BETA2_FRESH_HOLDOUT
+    TPC365_ROUND2_CLUE = TEST_BETA2_ON_HIGHER_Q_AND_NEW_SCALE_LADDER
+
+## V217 previous anchor: TPC-364
 
 更新时间：2026-09-03
 
@@ -19,7 +56,8 @@ normalized spectrum 为 `0.61628753962786131`，最大 normalized Schur 为
 经过 disjoint holdout，也不代表 source-valid normalization、growing operator theorem、
 source-uniform arithmetic `L2`、fixed-power credit、Route-B reassembly 或 twin-prime
 result；arithmetic advance 为 NO。official evaluator files absent，local Bridge-B
-仍为 fail-closed fallback。下一步是 response-blind fresh holdout。
+仍为 fail-closed fallback；该 holdout 已由 TPC-365 完成。下一步固定 beta=2，测试
+更高 `Q` 与新 scale ladder。
 
     TPC364_WEIGHTED_BLOCK_DEFINITION = PROVED_EXACT_FINITE
     TPC364_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE

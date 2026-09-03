@@ -1,0 +1,23 @@
+# TPC-365 claim firewall
+
+```text
+TPC365_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+TPC365_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+TPC365_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_384_ROWS
+TPC365_BETA2_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC365_BETA2_CAP_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC365_BETA2_ASYMPTOTIC_REPAIR = OPEN
+TPC365_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC365_GROWING_OPERATOR_BOUND = OPEN
+TPC365_SOURCE_UNIFORM_L2 = OPEN
+TPC365_ARITHMETIC_ADVANCE = NO
+TPC365_FIXED_POWER_CREDIT = 0
+TPC365_FULL_GATE_B = OPEN
+TPC365_TWIN_PRIME_RESULT = NONE
+```
+
+The selection is response-blind but geometry-selected.  It is not presented
+as an independent random holdout or as a uniform theorem.  The official
+Session-named Route-A and Route-B evaluator files are absent from this
+checkout.  The local Bridge-B checker is fail-closed finite reproducibility
+evidence only and is not an official evaluator pass.

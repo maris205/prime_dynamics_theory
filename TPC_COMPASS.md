@@ -1,6 +1,45 @@
 # TPC distilled map and bold channel
 
-## V217 / TPC-364 current anchor
+## V218 / TPC-365 current anchor
+
+更新时间：2026-09-03
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc365_beta2_fresh_holdout.md，checker 为
+tpc_bridge_b_tpc365_beta2_fresh_holdout_checker.py，编号论文为
+papers/tpc-365-beta2-fresh-holdout/。
+
+TPC-365 将 TPC-364 的 beta=2 规则冻结后，先在 51 个候选起点上只用 256-point
+unsigned weighted geometry 做 response-blind greedy selection，选出
+`(413342,410258,416940)`；随后在新 panel 上对 beta `0,2`、四种 sign laws、counts
+`256,512`、`Q=80,128,256,512` 与 exponents `1,2` 完成 `384` 个全真谱 rows。beta=2
+在 `192/192` 行低于 inherited `0.64` working cap，最大 normalized spectrum 为
+`0.61633188509480319`，相对 TPC-364 最大值差为 `4.4345466941875245e-05`；beta=0
+对照有 `30/192` 个 violations。
+
+这是 geometry-selected、response-blind 的 finite transfer evidence：它不是随机独立
+样本、source-valid normalization 或 asymptotic theorem。它不产生 growing operator
+bound、source-uniform arithmetic `L2`、fixed-power credit、Route-B reassembly 或
+twin-prime result；arithmetic advance 为 NO。official evaluator files 仍 absent，local
+Bridge-B 仍 fail-closed。下一步固定 beta=2，扩展到更高 `Q` 与新 scale ladder。
+
+    TPC365_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+    TPC365_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC365_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_384_ROWS
+    TPC365_BETA2_HOLDOUT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC365_BETA2_CAP_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC365_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC365_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC365_GROWING_OPERATOR_BOUND = OPEN
+    TPC365_SOURCE_UNIFORM_L2 = OPEN
+    TPC365_ARITHMETIC_ADVANCE = NO
+    TPC365_FIXED_POWER_CREDIT = 0
+    TPC365_FULL_GATE_B = OPEN
+    TPC365_TWIN_PRIME_RESULT = NONE
+    TPC365_STATUS = NUMERICALLY_CERTIFIED_FINITE_BETA2_FRESH_HOLDOUT
+    TPC365_ROUND2_CLUE = TEST_BETA2_ON_HIGHER_Q_AND_NEW_SCALE_LADDER
+
+## V217 / TPC-364 previous anchor
 
 更新时间：2026-09-03
 
@@ -21,7 +60,8 @@ shell-effective fraction 为 `0.66938300094026681`。
 尚不是 holdout transfer、source-valid normalization 或 asymptotic theorem。它不产生
 growing operator bound、source-uniform arithmetic `L2`、fixed-power credit、Route-B
 reassembly 或 twin-prime result；arithmetic advance 为 NO。official evaluator files
-仍 absent，local Bridge-B 仍 fail-closed。下一步是 response-blind disjoint holdout。
+仍 absent，local Bridge-B 仍 fail-closed；该 holdout 已由 TPC-365 完成。下一步固定
+beta=2 并测试更高 `Q` 与新 scale ladder。
 
     TPC364_WEIGHTED_BLOCK_DEFINITION = PROVED_EXACT_FINITE
     TPC364_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
