@@ -1,9 +1,57 @@
 # TPC HANDOFF
 
-TPC-370 current section: count-2048 finite-window audit
-------------------------------------------------------
+TPC-371 current section: block-local phase localization
+-------------------------------------------------------
 
-TPC-370 is the current sealed release. It inherits the third response-blind
+TPC-371 is the current sealed release.  It inherits the three response-blind
+origins and count-2048 full-window protocol from TPC-370, then predeclares
+eight contiguous blocks of length 256 and audits every block with the same
+shell anchors `Q=512,2048,8192`, exponent one, four fixed laws, and beta
+`0,2`.  The resulting Cartesian panel has 576 true-spectral rows.
+
+All 288 beta=2 block-local rows are below both working caps, with maximum
+normalized spectral value `0.5536333251967529`; the beta=0 control has 72
+spectral and 72 Schur failures.  TPC-370 nevertheless has six beta=2
+full-window-normalized high-Q/all-plus failures.  Hence the scoped hypothesis
+that a parent failure must already occur in one independently normalized
+256-point block is `REFUTED_SCOPED`.  The changed normalization means this is
+not a cross-block causality theorem.
+
+The inherited exact anchor `[1010346,1010359)` is rechecked by exact rational
+geometry and is not used to select the main panel.  The exact geometry,
+independent descending-shell replay, 36-mutation stress test, paper PDF, and
+local fail-closed Bridge-B are part of the release.  Official Route-A/Route-B
+evaluator files remain absent.  `ARITHMETIC_ADVANCE=NO`,
+`FIXED_POWER_CREDIT=0`, and `FULL_GATE_B=OPEN`; the next finite question is
+the common-normalization block-diagonal/off-block decomposition.
+
+    TPC371_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+    TPC371_BLOCK_PARTITION = PROVED_EXACT_FINITE_PREDECLARED
+    TPC371_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC371_BLOCK_LOCAL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_576_ROWS
+    TPC371_BETA2_BLOCK_PHASE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC371_BETA2_LOCAL_FAILURE = REFUTED_SCOPED
+    TPC371_CROSS_BLOCK_COHERENCE = OPEN
+    TPC371_ORIGIN_UNIFORMITY = OPEN
+    TPC371_WINDOW_UNIFORMITY = OPEN
+    TPC371_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC371_GROWING_OPERATOR_BOUND = OPEN
+    TPC371_SOURCE_UNIFORM_L2 = OPEN
+    TPC371_ARITHMETIC_ADVANCE = NO
+    TPC371_FIXED_POWER_CREDIT = 0
+    TPC371_FULL_GATE_B = OPEN
+    TPC371_TWIN_PRIME_RESULT = NONE
+    TPC371_STRONGEST_POSITIVE = COMPLETE_BETA2_BLOCK_LOCAL_CAP_PASS
+    TPC371_STRONGEST_OBSTRUCTION = INDEPENDENT_BLOCK_FAILURE_HYPOTHESIS_REFUTED_SCOPED
+    TPC371_OPEN_THEOREM = COMMON_NORMALIZATION_OFF_BLOCK_COHERENCE
+    TPC371_REUSABLE_STRUCTURE = LOCAL_REPLAY_TO_COMMON_NORMALIZATION_DECOMPOSITION
+    TPC371_ROUND2_CLUE = TEST_OFF_BLOCK_COHERENCE_DECOMPOSITION
+    TPC371_STATUS = NUMERICALLY_CERTIFIED_FINITE_BLOCK_PHASE_LOCALIZATION
+
+TPC-370 previous section: count-2048 finite-window audit
+---------------------------------------------------------
+
+TPC-370 is the previous sealed release. It inherits the third response-blind
 origin family from TPC-369 and changes only the window count to `2048`. The
 candidate grid is `1010001+401j`, `0<=j<41`; indices `(0,20,40)` are fixed
 before any response, source, law result, or geometry score is read, giving
@@ -245,6 +293,24 @@ TPC-369 tail audit is required to return zero with empty stderr and
 byte-identical normal/optimized stdout.  It is finite third-family evidence
 only: the six beta=2 long-window spectral failures and the exact-anchor repair
 do not pay arithmetic or fixed-power credit and do not close Route-A/Route-B.
+
+TPC-371 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-371-block-phase-localization/code/tpc371_block_phase_localization.py --check
+    python -O -B papers/tpc-371-block-phase-localization/code/tpc371_block_phase_localization.py --check
+    python -B papers/tpc-371-block-phase-localization/experiments/tpc371_independent_checker.py --check
+    python -O -B papers/tpc-371-block-phase-localization/experiments/tpc371_independent_checker.py --check
+    python -B papers/tpc-371-block-phase-localization/experiments/tpc371_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-371-block-phase-localization/experiments/tpc371_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc371_block_phase_localization_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc371_block_phase_localization_checker.py --check
+
+TPC-371 tail audit is required to return zero with empty stderr and
+byte-identical normal/optimized stdout. It is finite block-local evidence only:
+the scoped local-failure refutation does not pay arithmetic or fixed-power
+credit and does not close Route-A/Route-B. The next declared question is the
+common-normalization off-block coherence decomposition.
 
 TPC-370 reproducibility commands:
 
@@ -13424,7 +13490,9 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V223/TPC-370 是当前 release；其 count-2048 producer、
+V224/TPC-371 是当前 release；其 block-local phase producer、
+independent reverse-shell replay、certificate stress audit 与 literal masked-operator
+Bridge-B 已封存。V223/TPC-370 是上一 release；其 count-2048 producer、
 independent reverse-shell replay、certificate stress audit 与 literal masked-operator
 Bridge-B 已封存。V222/TPC-369 是上一 release；其 third predeclared origin-family producer、
 reverse-shell independent replay、certificate stress audit 与 literal masked-operator
@@ -13451,7 +13519,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 489 对 normal/optimized 命令、978 次
+当前 curated cascade command set 共 493 对 normal/optimized 命令、986 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -13470,7 +13538,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369、TPC-370 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369、TPC-370、TPC-371 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 

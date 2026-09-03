@@ -2,47 +2,81 @@
 
 更新时间：2026-09-03
 
-当前地图版本：V223 / TPC-370
+当前地图版本：V224 / TPC-371
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-370`（`NUMERICALLY_CERTIFIED_FINITE_COUNT_2048_WINDOW_AUDIT`）；
-对应论文目录为 `papers/tpc-370-count-2048-window-audit/`。
+当前编号锚点：`TPC-371`（`NUMERICALLY_CERTIFIED_FINITE_BLOCK_PHASE_LOCALIZATION`）；
+对应论文目录为 `papers/tpc-371-block-phase-localization/`。
 
-TPC-370 是当前地图位置：在 TPC-369 已冻结的第三个 response-blind origin family
-上只把窗口 count 改为 `2048`，保持 origins `(1010001,1018021,1026041)`、
-`Q=512,2048,8192`、exponent `1`、四种 sign laws 与 beta `0,2`，完成 `72` 个全真谱
-rows。beta=2 在三个 origins 的高-Q/all-plus rows 仍有 `6` 个 spectral violations，
-但最大谱升至 `0.71099989528234753`；beta=2 无 Schur violation，beta=0 对照为
-`9/36` spectral 与 `9/36` Schur violations。去掉刻意变化的 count 坐标后，六键
-origin/`Q`/law support 与 TPC-369 parent 一致，但幅度不稳定，因此下一关是
-count-2048 的 origin/residue/high-Q phase localization，而不是渐近外推。
+TPC-371 是当前地图位置：在 TPC-370 的三个继承 origin 上保持 count-2048 full window，
+预声明切成八个连续的 256-point blocks，对每个 block 完成同一 shell、law、beta 面板，
+共 `576` 个 block-local 真谱 rows。beta=2 的 `288/288` 行全部通过 spectral 与 Schur
+working caps，最大 normalized spectrum 为 `0.5536333251967529`；beta=0 对照有
+`72/288` 个 spectral 与 `72/288` 个 Schur violations。TPC-370 的 full-window-normalized
+对象仍有六个 beta=2 高-Q/all-plus failures，因此“parent failure 已在某个独立归一化
+256-point block 中出现”这一有限假设被 `REFUTED_SCOPED`。由于 block normalization
+改变，这不是 cross-block causality theorem。
 
-该结果仍是 finite scoped evidence：不建立 origin/window uniformity、source-valid
+继承 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核，未用于 main-panel
+选择。该结果仍是 finite scoped evidence：不建立 origin/window uniformity、source-valid
 normalization、growing operator bound、source-uniform arithmetic `L2`、prime-shell
 reassembly、fixed-power credit、Route-B closure 或 twin-prime result；
-`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。official
-evaluator files absent，local Bridge-B 仍为 fail-closed evidence。
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。official evaluator
+files absent，local Bridge-B 仍为 fail-closed evidence。下一关保持 full-window normalization，
+做固定 block-diagonal/off-block decomposition，测试 cross-block coherence。
 
-    YOU ARE HERE = V223 / TPC-370
-    TPC370_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
-    TPC370_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
-    TPC370_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
-    TPC370_COUNT_2048_WINDOW = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC370_BETA2_PHASE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC370_BETA2_PARENT_SIGNATURE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC370_ORIGIN_UNIFORMITY = OPEN
-    TPC370_WINDOW_UNIFORMITY = OPEN
-    TPC370_BETA2_ASYMPTOTIC_REPAIR = OPEN
-    TPC370_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
-    TPC370_GROWING_OPERATOR_BOUND = OPEN
-    TPC370_SOURCE_UNIFORM_L2 = OPEN
-    TPC370_ARITHMETIC_ADVANCE = NO
-    TPC370_FIXED_POWER_CREDIT = 0
-    TPC370_FULL_GATE_B = OPEN
-    TPC370_TWIN_PRIME_RESULT = NONE
-    TPC370_STATUS = NUMERICALLY_CERTIFIED_FINITE_COUNT_2048_WINDOW_AUDIT
-    TPC370_ROUND2_CLUE = TEST_COUNT_2048_PHASE_LOCALIZATION
+    YOU ARE HERE = V224 / TPC-371
+    TPC371_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+    TPC371_BLOCK_PARTITION = PROVED_EXACT_FINITE_PREDECLARED
+    TPC371_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC371_BLOCK_LOCAL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_576_ROWS
+    TPC371_BETA2_BLOCK_PHASE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC371_BETA2_LOCAL_FAILURE = REFUTED_SCOPED
+    TPC371_CROSS_BLOCK_COHERENCE = OPEN
+    TPC371_ORIGIN_UNIFORMITY = OPEN
+    TPC371_WINDOW_UNIFORMITY = OPEN
+    TPC371_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC371_GROWING_OPERATOR_BOUND = OPEN
+    TPC371_SOURCE_UNIFORM_L2 = OPEN
+    TPC371_ARITHMETIC_ADVANCE = NO
+    TPC371_FIXED_POWER_CREDIT = 0
+    TPC371_FULL_GATE_B = OPEN
+    TPC371_TWIN_PRIME_RESULT = NONE
+    TPC371_STATUS = NUMERICALLY_CERTIFIED_FINITE_BLOCK_PHASE_LOCALIZATION
+    TPC371_ROUND2_CLUE = TEST_OFF_BLOCK_COHERENCE_DECOMPOSITION
+
+## 5.154 V224 / TPC-371：block-local phase localization
+
+TPC-371 的完整 finite package 位于
+`papers/tpc-371-block-phase-localization/`。它保持 TPC-370 的三个 origin 与 count-2048
+full-window protocol，预声明八个 256-point contiguous blocks，并完成 `576` 个 block-local
+rows。beta=2 的 `288/288` 行均通过 spectral/Schur caps，最大谱为
+`0.5536333251967529`；beta=0 对照为 `72/288` 与 `72/288` violations。
+
+TPC-370 parent 的六个 beta=2 高-Q/all-plus full-window failures 在本轮没有出现在任何
+独立归一化的 256-point block 中。因此仅对该有限、改归一化的命题记为
+`REFUTED_SCOPED`；不能把它升级为 cross-block causality 或渐近结论。下一关在同一
+full-window normalization 下做 block-diagonal/off-block decomposition。
+
+    TPC371_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+    TPC371_BLOCK_PARTITION = PROVED_EXACT_FINITE_PREDECLARED
+    TPC371_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC371_BLOCK_LOCAL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_576_ROWS
+    TPC371_BETA2_BLOCK_PHASE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC371_BETA2_LOCAL_FAILURE = REFUTED_SCOPED
+    TPC371_CROSS_BLOCK_COHERENCE = OPEN
+    TPC371_ORIGIN_UNIFORMITY = OPEN
+    TPC371_WINDOW_UNIFORMITY = OPEN
+    TPC371_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC371_GROWING_OPERATOR_BOUND = OPEN
+    TPC371_SOURCE_UNIFORM_L2 = OPEN
+    TPC371_ARITHMETIC_ADVANCE = NO
+    TPC371_FIXED_POWER_CREDIT = 0
+    TPC371_FULL_GATE_B = OPEN
+    TPC371_TWIN_PRIME_RESULT = NONE
+    TPC371_STATUS = NUMERICALLY_CERTIFIED_FINITE_BLOCK_PHASE_LOCALIZATION
+    TPC371_ROUND2_CLUE = TEST_OFF_BLOCK_COHERENCE_DECOMPOSITION
 
 ## 5.153 V223 / TPC-370：count-2048 finite-window audit
 
@@ -10502,6 +10536,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-03 | V224 / TPC-371 | Bridge B / Gate B：block-local phase localization; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-371` | 承接 TPC-370；固定三个 origin 与 count `2048`，切成 8 个 256-point blocks，完成 576 个 block-local rows；beta=2 的 288 行均通过 spectral/Schur，parent 的独立归一化 block-local failure 假设 scoped-refuted；下一步 common-normalization off-block coherence |
 | 2026-09-03 | V223 / TPC-370 | Bridge B / Gate B：count-2048 finite-window audit; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-370` | 承接 TPC-369；固定第三 origin family 与 count `2048`，完成 72 个全法真谱 rows；beta=2 在高-Q/all-plus 三 origin 上保留 6 个 spectral violations、Schur 0，support signature 与 parent 一致，但最大谱升至 `0.7109998953`，有限 magnitude stability 不成立；下一步 count-2048 phase localization |
 | 2026-09-03 | V222 / TPC-369 | Bridge B / Gate B：third predeclared origin-family finite audit; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-369` | 承接 TPC-368；第三个 `1010001+401j` predeclared family 完成 144 个全法真谱 rows，beta=2 在 count=1024、高-Q、all-plus/exponent-1 逐键复现 6 个 spectral violations，Schur 0；初始 exact anchor 零几何并由 unsigned first-positive rule 修复；下一步 count-2048 window 或 residue-phase localization |
 | 2026-09-03 | V221 / TPC-368 | Bridge B / Gate B：second predeclared origin-family finite replication; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-368` | 承接 TPC-367；第二个 `810001+353j` predeclared family 完成 144 个全法真谱 rows，beta=2 在 count=1024、高-Q、all-plus/exponent-1 逐键复现 6 个 spectral violations，Schur 0；下一步第三个 family 或 count-2048 window |

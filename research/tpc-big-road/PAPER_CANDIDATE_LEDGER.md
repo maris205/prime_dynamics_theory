@@ -3,13 +3,70 @@
 
 更新时间：2026-09-03
 
-状态：**TPC370_NUMERICALLY_CERTIFIED_FINITE_COUNT_2048_WINDOW_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC371_NUMERICALLY_CERTIFIED_FINITE_BLOCK_PHASE_LOCALIZATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.164 current：TPC-370 count-2048 finite-window audit
+## 0.165 current：TPC-371 block-local phase localization
+
+项目：papers/tpc-371-block-phase-localization/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_BLOCK_PHASE_LOCALIZATION**。
+
+TPC-371 在 TPC-370 的三个继承 response-blind origins 上保持 count `2048` 的 full
+window，预声明切成八个连续的 `256`-point blocks，并对每个 block 使用相同的
+`Q=512,2048,8192`、exponent `1`、四种 fixed sign laws 与 beta `0,2`，完成 `576` 个
+block-local 真谱 rows。origin grid `1010001+401j` 与 indices `(0,20,40)` 在任何
+response、source、law score 或 geometry ranking 读取前已冻结。
+
+最强正结果：beta=2 的 `288/288` 个 block-local rows 同时低于 spectral `0.64` 与
+Schur `0.83` caps，最大 normalized spectrum 为 `0.5536333251967529`；beta=0 对照
+有 `72/288` 个 spectral 与 `72/288` 个 Schur violations。最强 obstruction：TPC-370
+的 full-window-normalized parent 仍有六个 beta=2 高-Q/all-plus failures，但本轮所有
+独立归一化的 256-point blocks 都没有 beta=2 failure。因此“parent failure 已在某个
+独立归一化短 block 中出现”这一有限假设记为 `REFUTED_SCOPED`；由于 normalization
+随 domain 改变，这不是 cross-block causality theorem。
+
+继承 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核，未用于 main-panel
+选择。producer、独立 descending-shell replay、36-mutation stress、PDF 与 local Bridge-B
+组成 package；official evaluator files absent，local bridge 仍为 fail-closed evidence。
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
+
+开放定理：在相同 full-window normalization 下，把矩阵分解为固定的 block-diagonal 与
+off-block 部分，判断有限高-Q signal 是否由 cross-block coherence 承担，并寻找可推广的
+bound；origin/window uniformity、source-valid normalization、growing operator bound、
+source-uniform arithmetic `L2` 与 Route-B reassembly 仍 open。
+
+可复用结构：
+
+    full-window failure -> fixed contiguous partition -> exhaustive local replay
+      -> normalization warning -> common-normalization off-block decomposition
+
+ROUND2_CLUE：`TEST_OFF_BLOCK_COHERENCE_DECOMPOSITION`。
+
+```text
+TPC371_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+TPC371_BLOCK_PARTITION = PROVED_EXACT_FINITE_PREDECLARED
+TPC371_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+TPC371_BLOCK_LOCAL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_576_ROWS
+TPC371_BETA2_BLOCK_PHASE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC371_BETA2_LOCAL_FAILURE = REFUTED_SCOPED
+TPC371_CROSS_BLOCK_COHERENCE = OPEN
+TPC371_ORIGIN_UNIFORMITY = OPEN
+TPC371_WINDOW_UNIFORMITY = OPEN
+TPC371_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC371_GROWING_OPERATOR_BOUND = OPEN
+TPC371_SOURCE_UNIFORM_L2 = OPEN
+TPC371_ARITHMETIC_ADVANCE = NO
+TPC371_FIXED_POWER_CREDIT = 0
+TPC371_FULL_GATE_B = OPEN
+TPC371_TWIN_PRIME_RESULT = NONE
+TPC371_STATUS = NUMERICALLY_CERTIFIED_FINITE_BLOCK_PHASE_LOCALIZATION
+```
+
+## 0.164 previous：TPC-370 count-2048 finite-window audit
 
 项目：papers/tpc-370-count-2048-window-audit/
 
