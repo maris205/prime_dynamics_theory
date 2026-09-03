@@ -1,21 +1,42 @@
-# TPC big road V213 / TPC-360: Schur-tightness and law-uniform audit
+# TPC big road V214 / TPC-361: independent high-origin tightness replication
 
-## V213 current anchor: TPC-360
+## V214 current anchor: TPC-361
 
 更新时间：2026-09-03
 
-当前 TPC-360 proof 为 bridge_b_tpc360_schur_tightness_law_uniform_audit.md，checker 为
-tpc_bridge_b_tpc360_schur_tightness_law_uniform_audit_checker.py，编号论文为
-../../papers/tpc-360-schur-tightness-law-uniform-audit/。
+当前 TPC-361 proof 为 bridge_b_tpc361_independent_high_origin_tightness_replication.md，checker 为
+tpc_bridge_b_tpc361_independent_high_origin_tightness_replication_checker.py，编号论文为
+../../papers/tpc-361-independent-high-origin-tightness-replication/。
 
-TPC-360 在 TPC-359 锁定的三个 hostile origins 上，将 true spectral replay 扩展到四种
-sign laws 与 counts `256,512`，共 144 rows。normalized spectral/Schur 最大 ratio 为
-`0.77628391453148915`，spectral/Frobenius 最大 ratio 为 `0.62110877254133434`；
-144 个 spectra 均低于 `0.64`，36 个 setting-wise comparisons 中 all-plus 赢 30、
-mod-4 赢 6。这是 finite tightness/law-uniform audit，不是 growing theorem；
-source-uniform arithmetic L2、fixed-power credit、Route-B reassembly 与 twin-prime
-result 仍 open，arithmetic advance 为 NO；official evaluator files absent，local
-Bridge-B fail-closed。
+TPC-361 在全新候选 `310001+233j`、`0<=j<=50` 上只用 pilot count 256 的六组 unsigned
+geometry spread 做 response-blind selection，按最小间隔 1536 的 greedy rule 选出
+`(313030,311166,321651)`。随后以 counts `256,512,1024,2048`、`Q=24,54,80`、
+exponents `1,2` 与四种 sign laws 完成 288 rows；短 counts 的四 law 与长 counts 的
+all-plus 共记录 180 个真谱。normalized Schur/spectral maxima 为
+`0.80830232610282304/0.62690716242733457`，最大 spectral/Schur ratio 为
+`0.77585950058997`；all-plus ladder 为 `12/36/6` 增/降/平。这是 finite independent
+replication，不是 growing theorem；source-uniform arithmetic L2、fixed-power credit、
+Route-B reassembly 与 twin-prime result 仍 open，arithmetic advance 为 NO；official
+evaluator files absent，local Bridge-B fail-closed。
+
+    TPC361_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_HIGH_ORIGIN_TIGHTNESS_REPLICATION
+    TPC361_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+    TPC361_HIGH_ORIGIN_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC361_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC361_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC361_TIGHTNESS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC361_LAW_UNIFORM_SHORT_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC361_SCALE_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
+    TPC361_GROWING_OPERATOR_BOUND = OPEN
+    TPC361_SOURCE_UNIFORM_L2 = OPEN
+    TPC361_ARITHMETIC_ADVANCE = NO
+    TPC361_FIXED_POWER_CREDIT = 0
+    TPC361_FULL_GATE_B = OPEN
+    TPC361_TWIN_PRIME_RESULT = NONE
+    TPC361_STATUS = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_HIGH_ORIGIN_TIGHTNESS_REPLICATION
+    TPC361_ROUND2_CLUE = TEST_SCALE_LADDER_AND_SIGN_LAW_INTERACTION_ON_A_NEW_PANEL
+
+## V213 / TPC-360 previous anchor
 
     TPC360_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SCHUR_TIGHTNESS_LAW_UNIFORM_AUDIT
     TPC360_SCHUR_ENVELOPE = PROVED_EXACT_FINITE

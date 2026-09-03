@@ -1,9 +1,69 @@
 # TPC HANDOFF
 
-TPC-360 current section: Schur-tightness and law-uniform audit
+TPC-361 current section: independent high-origin tightness replication
+-----------------------------------------------------------------------
+
+TPC-361 is the current sealed release.  It freezes 51 candidates
+`310001+233j`, `0<=j<=50`, scores them using only six unsigned geometry
+spreads at pilot count `256`, and applies the declared descending-score,
+origin-tie-break, 1536-separated greedy rule.  The selected ordered panel is
+`(313030,311166,321651)`, fixed before any signed matrix or spectrum is read.
+
+The post-selection replay has `288` law rows over counts `256,512,1024,2048`,
+shell anchors `Q=24,54,80`, exponents `1,2`, and four sign laws.  True spectra
+are recorded for all laws at counts `256,512` and for all-plus at `1024,2048`,
+for `180` spectral rows.  The normalized Schur and spectral maxima are
+`0.80830232610282304` and `0.62690716242733457`; the maximum
+spectral/Schur ratio is `0.77585950058997`.  The short law winner census is
+all-plus `30`, mod-4 `6`, alternating `0`, half-split `0`; the all-plus ladder
+has `12` increases, `36` decreases, and `6` flats.
+
+The finite envelope inequalities, response-blind selection algorithm, and
+rational anchor are exact within the declared model.  Producer, reverse-shell
+independent checker, fifteen-mutation stress, PDF QA, and local Bridge-B
+normal/optimized replay pass.  The result is finite and scoped: no
+source-uniform arithmetic `L2`, growing operator bound, fixed-power credit,
+Route-B reassembly, or twin-prime conclusion is licensed.  Official
+Session-named evaluator files remain absent, so local Bridge-B is fail-closed
+fallback evidence only.
+
+    TPC361_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_HIGH_ORIGIN_TIGHTNESS_REPLICATION
+    TPC361_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+    TPC361_HIGH_ORIGIN_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC361_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC361_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC361_TIGHTNESS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC361_LAW_UNIFORM_SHORT_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC361_SCALE_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
+    TPC361_GROWING_OPERATOR_BOUND = OPEN
+    TPC361_SOURCE_UNIFORM_L2 = OPEN
+    TPC361_ARITHMETIC_ADVANCE = NO
+    TPC361_FIXED_POWER_CREDIT = 0
+    TPC361_FULL_GATE_B = OPEN
+    TPC361_TWIN_PRIME_RESULT = NONE
+    TPC361_STRONGEST_POSITIVE = INDEPENDENT_HIGH_ORIGIN_FINITE_CAP_REPLICATION
+    TPC361_STRONGEST_OBSTRUCTION = NONMONOTONE_SCALE_LADDER_AND_NONUNIVERSAL_LAW_WINNER
+    TPC361_OPEN_THEOREM = SCALE_UNIFORM_MASKED_OPERATOR_BOUND_OR_SIGN_LAW_INTERACTION_THEOREM
+    TPC361_REUSABLE_STRUCTURE = GEOMETRY_ONLY_SELECTION_PLUS_ALL_LAW_TIGHTNESS_LEDGER
+    TPC361_ROUND2_CLUE = TEST_SCALE_LADDER_AND_SIGN_LAW_INTERACTION_ON_A_NEW_PANEL
+    TPC361_STATUS = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_HIGH_ORIGIN_TIGHTNESS_REPLICATION
+
+TPC-361 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-361-independent-high-origin-tightness-replication/code/tpc361_independent_high_origin_tightness_replication.py --check
+    python -O -B papers/tpc-361-independent-high-origin-tightness-replication/code/tpc361_independent_high_origin_tightness_replication.py --check
+    python -B papers/tpc-361-independent-high-origin-tightness-replication/experiments/tpc361_independent_checker.py --check
+    python -O -B papers/tpc-361-independent-high-origin-tightness-replication/experiments/tpc361_independent_checker.py --check
+    python -B papers/tpc-361-independent-high-origin-tightness-replication/experiments/tpc361_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-361-independent-high-origin-tightness-replication/experiments/tpc361_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc361_independent_high_origin_tightness_replication_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc361_independent_high_origin_tightness_replication_checker.py --check
+
+TPC-360 previous section: Schur-tightness and law-uniform audit
 ---------------------------------------------------------------
 
-TPC-360 is the current sealed release.  It inherits the three fixed TPC-359
+TPC-360 is the previous sealed release.  It inherits the three fixed TPC-359
 origins `(267175,261267,269074)` and computes true spectra for all four sign
 laws at counts `256,512`, giving `144` normalized operator rows and 36
 within-setting law comparisons.  The normalized spectral/Schur ratio has
@@ -12803,7 +12863,7 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V211/TPC-358 是当前 release；其 fresh-origin finite operator-envelope producer、
+V214/TPC-361 是当前 release；其 independent high-origin finite tightness producer、
 reverse-shell independent replay、certificate stress audit 与 literal masked-operator
 Bridge-B 已封存。
 V210/TPC-357、V209/TPC-356、V208/TPC-355、V207/TPC-354、V206/TPC-353、V205/TPC-352、V204/TPC-351、
@@ -12812,7 +12872,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 449 对 normal/optimized 命令、898 次
+当前 curated cascade command set 共 453 对 normal/optimized 命令、906 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -12831,7 +12891,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360 各再追加末尾 4 对。
+	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -14584,6 +14644,73 @@ normalized_spectral_max=0.62663944469203836 / increases=13 / decreases=34 / flat
 `REFUTED_SCOPED_ON_DECLARED_LADDER`；growing operator bound、source-uniform arithmetic
 `L2`、fixed-power saving、Route-B reassembly、official evaluator pass 与 twin-prime
 result 仍未关闭。下一步是 hostile fresh geometry selection 或 Schur-tightness audit。
+
+TPC-359 的项目级 producer、reverse-shell independent replay、certificate stress 与
+bridge checker：
+
+```bash
+python -B papers/tpc-359-geometry-adversarial-high-origin-holdout/code/tpc359_geometry_adversarial_high_origin_holdout.py --check
+python -O -B papers/tpc-359-geometry-adversarial-high-origin-holdout/code/tpc359_geometry_adversarial_high_origin_holdout.py --check
+python -B papers/tpc-359-geometry-adversarial-high-origin-holdout/experiments/tpc359_independent_checker.py --check
+python -O -B papers/tpc-359-geometry-adversarial-high-origin-holdout/experiments/tpc359_independent_checker.py --check
+python -B papers/tpc-359-geometry-adversarial-high-origin-holdout/experiments/tpc359_adversarial_certificate_stress.py --check
+python -O -B papers/tpc-359-geometry-adversarial-high-origin-holdout/experiments/tpc359_adversarial_certificate_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc359_geometry_adversarial_high_origin_holdout_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc359_geometry_adversarial_high_origin_holdout_checker.py --check
+```
+
+TPC-359 增量 tail audit：上述 4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `rows=288 / origins=3 / origin_span=7807 /
+normalized_schur_max=0.80834744529310265 / normalized_spectral_max=0.6271657593674812 /
+increases=12 / decreases=36 / flats=6`。这是 V212 的 geometry-adversarial finite
+high-origin holdout；非单调 ladder 仍为 `REFUTED_SCOPED_ON_DECLARED_LADDER`，不代表
+growing operator bound、source-uniform arithmetic `L2`、fixed-power saving、Route-B
+reassembly 或 official evaluator pass。
+
+TPC-360 的项目级 producer、reverse-shell all-law replay、certificate stress 与 bridge
+checker：
+
+```bash
+python -B papers/tpc-360-schur-tightness-law-uniform-audit/code/tpc360_schur_tightness_law_uniform_audit.py --check
+python -O -B papers/tpc-360-schur-tightness-law-uniform-audit/code/tpc360_schur_tightness_law_uniform_audit.py --check
+python -B papers/tpc-360-schur-tightness-law-uniform-audit/experiments/tpc360_independent_checker.py --check
+python -O -B papers/tpc-360-schur-tightness-law-uniform-audit/experiments/tpc360_independent_checker.py --check
+python -B papers/tpc-360-schur-tightness-law-uniform-audit/experiments/tpc360_adversarial_certificate_stress.py --check
+python -O -B papers/tpc-360-schur-tightness-law-uniform-audit/experiments/tpc360_adversarial_certificate_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc360_schur_tightness_law_uniform_audit_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc360_schur_tightness_law_uniform_audit_checker.py --check
+```
+
+TPC-360 增量 tail audit：上述 4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `rows=144 / settings=36 / all_law_spectra=144 /
+max_schur_ratio=0.77628391453148915 / max_frobenius_ratio=0.62110877254133434 /
+winners=30/6`。这是 V213 的 finite Schur-tightness/law-uniform audit；ratio slack
+与 winner census 仅属声明 panel，growing operator bound、source-uniform arithmetic
+`L2`、fixed-power saving、Route-B reassembly 与 twin-prime result 仍未关闭。
+
+TPC-361 的项目级 producer、reverse-shell independent replay、certificate stress 与
+bridge checker：
+
+```bash
+python -B papers/tpc-361-independent-high-origin-tightness-replication/code/tpc361_independent_high_origin_tightness_replication.py --check
+python -O -B papers/tpc-361-independent-high-origin-tightness-replication/code/tpc361_independent_high_origin_tightness_replication.py --check
+python -B papers/tpc-361-independent-high-origin-tightness-replication/experiments/tpc361_independent_checker.py --check
+python -O -B papers/tpc-361-independent-high-origin-tightness-replication/experiments/tpc361_independent_checker.py --check
+python -B papers/tpc-361-independent-high-origin-tightness-replication/experiments/tpc361_adversarial_certificate_stress.py --check
+python -O -B papers/tpc-361-independent-high-origin-tightness-replication/experiments/tpc361_adversarial_certificate_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc361_independent_high_origin_tightness_replication_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc361_independent_high_origin_tightness_replication_checker.py --check
+```
+
+TPC-361 增量 tail audit：上述 4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `rows=288 / spectral_rows=180 / candidates=51 /
+origins=3 / normalized_schur_max=0.80830232610282304 /
+normalized_spectral_max=0.62690716242733457 / max_spectral_over_schur=0.77585950058997`。
+这是 V214 的 independent high-origin finite tightness replication；selection、finite
+envelopes 与 exact anchor 通过，但 `TPC361_SCALE_MONOTONE_DECAY` 仍为
+`REFUTED_SCOPED_ON_DECLARED_LADDER`，source-uniform arithmetic `L2`、growing operator
+bound、fixed-power saving、Route-B reassembly、official evaluator pass 与 twin-prime
+result 仍未关闭。
 
 TPC-349 的项目级 producer、reverse-shell independent replay、signed-witness stress 与
 bridge checker：

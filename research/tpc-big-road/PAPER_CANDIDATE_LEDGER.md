@@ -3,13 +3,68 @@
 
 更新时间：2026-09-03
 
-状态：**TPC360_NUMERICALLY_CERTIFIED_FINITE_SCHUR_TIGHTNESS_LAW_UNIFORM_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC361_NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_HIGH_ORIGIN_TIGHTNESS_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.154 current：TPC-360 Schur-tightness and law-uniform audit
+## 0.155 current：TPC-361 independent high-origin tightness replication
+
+项目：papers/tpc-361-independent-high-origin-tightness-replication/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_HIGH_ORIGIN_TIGHTNESS_REPLICATION**。
+
+TPC-361 在全新的候选 origins `310001+233j`、`0<=j<=50` 上，以 pilot count 256 的
+六组 unsigned geometry spread 做 response-blind selection，按 descending score、origin
+tie-break 与最小间隔 1536 的 greedy rule 选出 `(313030,311166,321651)`。选择在任何
+signed matrix、sign law 或 spectrum 计算之前完成。随后以 counts `256,512,1024,2048`、
+`Q=24,54,80`、exponents `1,2` 与四种 sign laws 完成 `288` rows；四 law 在短 counts
+与 all-plus 在长 counts 共记录 `180` 个真谱。
+
+最强正结果：normalized Schur max 为 `0.80830232610282304`，normalized spectral max
+为 `0.62690716242733457`，最大 spectral/Schur 与 spectral/Frobenius ratios 为
+`0.77585950058997` 与 `0.62120835204021907`；这是独立 high-origin panel 上的 finite
+tightness ledger replication。最强 obstruction：all-plus ladder 的 54 transitions 为
+`12` 增、`36` 降、`6` 平，且短 four-law winner 为 all-plus `30`、mod-4 `6`，所以
+finite cap 不产生 monotone decay、growing operator bound 或 universal all-plus proxy。
+
+producer、reverse-shell independent replay、15-mutation stress、exact rational anchor、
+PDF 与 normal/optimized Bridge-B 均通过；official evaluator files absent，local
+Bridge-B 仍是 fail-closed fallback。`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`、`TWIN_PRIME_RESULT=NONE`；source-uniform arithmetic `L2`、growing
+operator theorem 与 Route-B reassembly 仍 open。
+
+开放定理：在新 high-origin panel 上建立真正的 scale-uniform operator bound，或严格
+刻画 shell/sign interaction 的 asymptotic replacement；二者都不能由本篇 finite replay
+直接推出。
+
+可复用结构：
+
+    geometry-only 51-candidate scan -> separated high-origin selection
+      -> all-law finite envelopes -> short all-law/long all-plus spectra
+      -> reverse-shell replay + mutation stress + exact anchor
+      -> finite cap/tightness transfer with explicit nonmonotone firewall
+
+ROUND2_CLUE：`TEST_SCALE_LADDER_AND_SIGN_LAW_INTERACTION_ON_A_NEW_PANEL`。
+
+    TPC361_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_HIGH_ORIGIN_TIGHTNESS_REPLICATION
+    TPC361_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+    TPC361_HIGH_ORIGIN_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC361_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC361_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC361_TIGHTNESS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC361_LAW_UNIFORM_SHORT_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC361_SCALE_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
+    TPC361_GROWING_OPERATOR_BOUND = OPEN
+    TPC361_SOURCE_UNIFORM_L2 = OPEN
+    TPC361_ARITHMETIC_ADVANCE = NO
+    TPC361_FIXED_POWER_CREDIT = 0
+    TPC361_FULL_GATE_B = OPEN
+    TPC361_TWIN_PRIME_RESULT = NONE
+    TPC361_STATUS = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_HIGH_ORIGIN_TIGHTNESS_REPLICATION
+
+## 0.154 previous：TPC-360 Schur-tightness and law-uniform audit
 
 项目：papers/tpc-360-schur-tightness-law-uniform-audit/
 

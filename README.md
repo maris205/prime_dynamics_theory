@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--360 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--361 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -574,6 +574,15 @@ spectral/Frobenius 最大 ratio 为 `0.62110877254133434`；all-plus 在 36 个 
 中赢 30 次，mod-4 赢 6 次。该 finite slack/law-uniform audit 不形成 growing
 operator theorem；含 exact anchor、独立 reverse-shell replay、14-mutation stress、
 PDF 与 local Bridge-B checker，arithmetic advance 仍为 NO。
+
+papers/tpc-361-independent-high-origin-tightness-replication - TPC-361 已完成项目 - 在
+全新 `310001+233j`（51 个）候选上只用六组 unsigned geometry spread 做
+response-blind selection，选出 `(313030,311166,321651)`；288 rows、180 个真谱记录的
+normalized Schur/spectral maxima 为 `0.80830232610282304/0.62690716242733457`，最大
+spectral/Schur ratio 为 `0.77585950058997`。all-plus ladder 仍为 `12/36/6` 增/降/平，
+含 exact anchor、独立 reverse-shell replay、15-mutation stress、PDF 与 local Bridge-B
+checker；growing operator bound、source-uniform arithmetic L2 与 arithmetic advance
+仍为 OPEN/NO。
 
 papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram
 operator 的 6-row masked response ledger；zero/background/twin/prime-power gain

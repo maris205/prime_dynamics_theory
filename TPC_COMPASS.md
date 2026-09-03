@@ -1,6 +1,48 @@
 # TPC distilled map and bold channel
 
-## V213 / TPC-360 current anchor
+## V214 / TPC-361 current anchor
+
+更新时间：2026-09-03
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc361_independent_high_origin_tightness_replication.md，checker 为
+tpc_bridge_b_tpc361_independent_high_origin_tightness_replication_checker.py，编号论文为
+papers/tpc-361-independent-high-origin-tightness-replication/。
+
+TPC-361 在全新的 51 个候选 origins `310001+233j`、`0<=j<=50` 上，以 pilot count
+256 的六组 unsigned geometry spread 做 response-blind selection，并按最小间隔 1536
+的 greedy rule 选出 `(313030,311166,321651)`。随后以 counts `256,512,1024,2048`、
+`Q=24,54,80`、exponents `1,2` 与四种 sign laws 完成 288 rows；四 law 在短 counts
+与 all-plus 在长 counts 共记录 180 个真谱。normalized Schur max 为
+`0.80830232610282304`，normalized spectral max 为 `0.62690716242733457`，最大
+spectral/Schur ratio 为 `0.77585950058997`；短 panel winner 为 all-plus/mod-4
+`30/6`。all-plus ladder 的 54 transitions 为 `12/36/6` 增/降/平。
+
+这是 independent high-origin tightness replication：finite envelope、selection
+response-independence 与 rational anchor 为 exact finite，数值 cap、tightness ratio、
+law census 与 transition census 只对声明 panel 有效。growing operator theorem、
+source-uniform arithmetic `L2`、fixed-power credit、Route-B reassembly 与 twin-prime
+result 仍 open，arithmetic advance 为 NO；official evaluator files absent，local
+Bridge-B 仍 fail-closed。
+
+    TPC361_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_HIGH_ORIGIN_TIGHTNESS_REPLICATION
+    TPC361_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+    TPC361_HIGH_ORIGIN_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC361_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC361_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC361_TIGHTNESS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC361_LAW_UNIFORM_SHORT_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC361_SCALE_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
+    TPC361_GROWING_OPERATOR_BOUND = OPEN
+    TPC361_SOURCE_UNIFORM_L2 = OPEN
+    TPC361_ARITHMETIC_ADVANCE = NO
+    TPC361_FIXED_POWER_CREDIT = 0
+    TPC361_FULL_GATE_B = OPEN
+    TPC361_TWIN_PRIME_RESULT = NONE
+    TPC361_STATUS = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_HIGH_ORIGIN_TIGHTNESS_REPLICATION
+    TPC361_ROUND2_CLUE = TEST_SCALE_LADDER_AND_SIGN_LAW_INTERACTION_ON_A_NEW_PANEL
+
+## V213 / TPC-360 previous anchor
 
 更新时间：2026-09-03
 
