@@ -1,9 +1,65 @@
 # TPC HANDOFF
 
-TPC-361 current section: independent high-origin tightness replication
------------------------------------------------------------------------
+TPC-362 current section: shell-scale cap obstruction
+----------------------------------------------------
 
-TPC-361 is the current sealed release.  It freezes 51 candidates
+TPC-362 is the current sealed release.  It keeps the TPC-361 ordered panel
+`(313030,311166,321651)` fixed and widens the shell ladder to
+`Q=12,24,36,54,80,128,256,512`.  At counts `256,512`, exponents `1,2`, and
+the four fixed sign laws, the complete replay has `384` rows and true spectra
+for every row.  The inherited working caps `0.83` (normalized Schur) and
+`0.64` (normalized spectrum) hold for `Q<=80` and fail first at `Q=128`.
+Across the ladder the maxima are `1.7172665118910415` and
+`1.6398895499394266`, with 33 Schur and 30 spectral cap violations.  The
+96-setting winner census is all-plus `78`, alternating-index `4`, mod-4 `14`,
+half-split `0`; the 336 Q transitions are `200` increases, `136` decreases,
+and `0` flats.
+
+The finite Schur/Frobenius inequalities and rational anchor remain exact in
+the declared model.  Producer, reverse-shell all-law checker, fifteen-
+mutation stress, PDF QA, and local Bridge-B normal/optimized replay pass.
+The high-Q failure is a scoped shell-scale obstruction, not an asymptotic
+refutation; no source-uniform arithmetic `L2`, growing operator bound,
+fixed-power credit, Route-B reassembly, or twin-prime conclusion is licensed.
+Official Session-named evaluator files remain absent, so local Bridge-B is
+fail-closed fallback evidence only.
+
+    TPC362_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION
+    TPC362_SHELL_SCALE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_384_ROWS
+    TPC362_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC362_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC362_LOW_Q_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC362_HIGH_Q_CAP_EXTENSION = REFUTED_SCOPED_ON_DECLARED_Q_LADDER
+    TPC362_LAW_WINNER_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC362_GROWING_OPERATOR_BOUND = OPEN
+    TPC362_SOURCE_UNIFORM_L2 = OPEN
+    TPC362_ARITHMETIC_ADVANCE = NO
+    TPC362_FIXED_POWER_CREDIT = 0
+    TPC362_FULL_GATE_B = OPEN
+    TPC362_TWIN_PRIME_RESULT = NONE
+    TPC362_STRONGEST_POSITIVE = LOW_Q_FINITE_CAP_TRANSFER_THROUGH_Q80
+    TPC362_STRONGEST_OBSTRUCTION = FIRST_HIGH_Q_CAP_FAILURE_AT_Q128
+    TPC362_OPEN_THEOREM = HIGH_Q_LAW_ROW_GEOMETRY_LOCALIZATION_OR_RENORMALIZED_BOUND
+    TPC362_REUSABLE_STRUCTURE = LOW_HIGH_Q_PARTITION_PLUS_ALL_LAW_SHELL_SCALE_AUDIT
+    TPC362_ROUND2_CLUE = LOCALIZE_HIGH_Q_OBSTRUCTION_BY_LAW_AND_ROW_GEOMETRY
+    TPC362_STATUS = NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION
+
+TPC-362 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-362-shell-scale-cap-obstruction/code/tpc362_shell_scale_cap_obstruction.py --check
+    python -O -B papers/tpc-362-shell-scale-cap-obstruction/code/tpc362_shell_scale_cap_obstruction.py --check
+    python -B papers/tpc-362-shell-scale-cap-obstruction/experiments/tpc362_independent_checker.py --check
+    python -O -B papers/tpc-362-shell-scale-cap-obstruction/experiments/tpc362_independent_checker.py --check
+    python -B papers/tpc-362-shell-scale-cap-obstruction/experiments/tpc362_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-362-shell-scale-cap-obstruction/experiments/tpc362_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc362_shell_scale_cap_obstruction_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc362_shell_scale_cap_obstruction_checker.py --check
+
+TPC-361 previous section: independent high-origin tightness replication
+----------------------------------------------------------------------
+
+TPC-361 is the previous sealed release.  It freezes 51 candidates
 `310001+233j`, `0<=j<=50`, scores them using only six unsigned geometry
 spreads at pilot count `256`, and applies the declared descending-score,
 origin-tie-break, 1536-separated greedy rule.  The selected ordered panel is
@@ -12872,7 +12928,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 453 对 normal/optimized 命令、906 次
+当前 curated cascade command set 共 457 对 normal/optimized 命令、914 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -12891,7 +12947,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361 各再追加末尾 4 对。
+	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -14711,6 +14767,28 @@ envelopes 与 exact anchor 通过，但 `TPC361_SCALE_MONOTONE_DECAY` 仍为
 `REFUTED_SCOPED_ON_DECLARED_LADDER`，source-uniform arithmetic `L2`、growing operator
 bound、fixed-power saving、Route-B reassembly、official evaluator pass 与 twin-prime
 result 仍未关闭。
+
+TPC-362 的项目级 producer、reverse-shell all-law replay、certificate stress 与 bridge
+checker：
+
+```bash
+python -B papers/tpc-362-shell-scale-cap-obstruction/code/tpc362_shell_scale_cap_obstruction.py --check
+python -O -B papers/tpc-362-shell-scale-cap-obstruction/code/tpc362_shell_scale_cap_obstruction.py --check
+python -B papers/tpc-362-shell-scale-cap-obstruction/experiments/tpc362_independent_checker.py --check
+python -O -B papers/tpc-362-shell-scale-cap-obstruction/experiments/tpc362_independent_checker.py --check
+python -B papers/tpc-362-shell-scale-cap-obstruction/experiments/tpc362_adversarial_certificate_stress.py --check
+python -O -B papers/tpc-362-shell-scale-cap-obstruction/experiments/tpc362_adversarial_certificate_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc362_shell_scale_cap_obstruction_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc362_shell_scale_cap_obstruction_checker.py --check
+```
+
+TPC-362 增量 tail audit：上述 4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `rows=384 / all_laws=4 / first_cap_failure_Q=128 /
+spectral_violations=30`。这是 V215 的 shell-scale finite obstruction：旧 caps 在
+`Q<=80` 的声明范围内保持，但 `Q=128` 首次越界，full ladder 的 Schur/spectral
+violations 为 `33/30`；该结果不代表 shell-uniform growing bound、source-uniform
+arithmetic `L2`、fixed-power saving、Route-B reassembly、official evaluator pass 或
+twin-prime result。
 
 TPC-349 的项目级 producer、reverse-shell independent replay、signed-witness stress 与
 bridge checker：

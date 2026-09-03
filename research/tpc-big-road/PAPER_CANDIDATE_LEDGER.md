@@ -3,13 +3,65 @@
 
 更新时间：2026-09-03
 
-状态：**TPC361_NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_HIGH_ORIGIN_TIGHTNESS_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC362_NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.155 current：TPC-361 independent high-origin tightness replication
+## 0.156 current：TPC-362 shell-scale cap obstruction
+
+项目：papers/tpc-362-shell-scale-cap-obstruction/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION**。
+
+TPC-362 固定 TPC-361 的 ordered high-origin panel `(313030,311166,321651)`，不再改变
+origin，只把 shell ladder 扩展到 `Q=12,24,36,54,80,128,256,512`。在 counts `256,512`、
+exponents `1,2` 与四种 sign laws 上完成 `384` 个真谱 rows。将 `Q=12,24,36,54,80`
+作为 inherited low-Q range、`Q=128,256,512` 作为 high-Q stress range，旧 finite caps
+`0.83`（Schur）与 `0.64`（spectral）在 low-Q 全部保持，但 `Q=128` 首次越界。
+
+最强正结果：low-Q normalized Schur/spectral maxima 仍为
+`0.80830232610282304/0.62690716242733457`，说明 TPC-361 的有限 cap 在同一低-Q
+范围可复核。最强 obstruction：全 ladder normalized Schur/spectral maxima 上升到
+`1.7172665118910415/1.6398895499394266`，Schur/spectral cap violations 为 `33/30`；
+96 个 setting 的 law winner 为 all-plus/alternating-index/mod-4/half-split
+`78/4/14/0`，336 个 Q transitions 为 `200/136/0` 增/降/平。这是 shell-scale 的
+scoped refutation，不是 shell-uniform asymptotic theorem。
+
+producer、reverse-shell independent replay、15-mutation stress、exact rational anchor、
+PDF 与 normal/optimized Bridge-B 均通过；official evaluator files absent，local
+Bridge-B 仍是 fail-closed fallback。`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`、`TWIN_PRIME_RESULT=NONE`；source-uniform arithmetic `L2`、growing
+operator theorem 与 Route-B reassembly 仍 open。
+
+开放定理：解释并控制高-Q 首次越界的 row geometry/law interaction，或提出一个经
+adversarial holdout 验证的重新归一化；当前 finite data 不支付任何 power saving。
+
+可复用结构：
+
+    frozen high-origin panel -> low/high Q partition -> all-law spectral ladder
+      -> cap-violation and Q-transition census -> reverse replay + stress + exact anchor
+      -> shell-scale obstruction firewall
+
+ROUND2_CLUE：`LOCALIZE_HIGH_Q_OBSTRUCTION_BY_LAW_AND_ROW_GEOMETRY`。
+
+    TPC362_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION
+    TPC362_SHELL_SCALE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_384_ROWS
+    TPC362_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC362_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC362_LOW_Q_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC362_HIGH_Q_CAP_EXTENSION = REFUTED_SCOPED_ON_DECLARED_Q_LADDER
+    TPC362_LAW_WINNER_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC362_GROWING_OPERATOR_BOUND = OPEN
+    TPC362_SOURCE_UNIFORM_L2 = OPEN
+    TPC362_ARITHMETIC_ADVANCE = NO
+    TPC362_FIXED_POWER_CREDIT = 0
+    TPC362_FULL_GATE_B = OPEN
+    TPC362_TWIN_PRIME_RESULT = NONE
+    TPC362_STATUS = NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION
+
+## 0.155 previous：TPC-361 independent high-origin tightness replication
 
 项目：papers/tpc-361-independent-high-origin-tightness-replication/
 

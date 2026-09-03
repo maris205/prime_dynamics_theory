@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--361 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--362 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -582,6 +582,15 @@ normalized Schur/spectral maxima 为 `0.80830232610282304/0.62690716242733457`�
 spectral/Schur ratio 为 `0.77585950058997`。all-plus ladder 仍为 `12/36/6` 增/降/平，
 含 exact anchor、独立 reverse-shell replay、15-mutation stress、PDF 与 local Bridge-B
 checker；growing operator bound、source-uniform arithmetic L2 与 arithmetic advance
+仍为 OPEN/NO。
+
+papers/tpc-362-shell-scale-cap-obstruction - TPC-362 已完成项目 - 固定 TPC-361 的三个
+high-origin origins，把 shell ladder 扩展到 `Q=12,24,36,54,80,128,256,512`，完成
+384 个四-law spectral rows；旧 cap 在 `Q<=80` 保持（Schur/spectral max
+`0.8083023261/0.6269071624`），但 `Q=128` 首次越界，全 ladder maxima 为
+`1.7172665119/1.6398895499`，Schur/spectral violations 为 `33/30`。含 exact anchor、
+独立 reverse-shell replay、15-mutation stress、PDF 与 local Bridge-B checker；这是
+shell-scale 的 finite scoped obstruction，growing operator bound 与 arithmetic advance
 仍为 OPEN/NO。
 
 papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram

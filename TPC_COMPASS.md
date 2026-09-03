@@ -1,6 +1,44 @@
 # TPC distilled map and bold channel
 
-## V214 / TPC-361 current anchor
+## V215 / TPC-362 current anchor
+
+更新时间：2026-09-03
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc362_shell_scale_cap_obstruction.md，checker 为
+tpc_bridge_b_tpc362_shell_scale_cap_obstruction_checker.py，编号论文为
+papers/tpc-362-shell-scale-cap-obstruction/。
+
+TPC-362 固定 TPC-361 的三个 high-origin origins `(313030,311166,321651)`，将 shell
+ladder 扩展为 `Q=12,24,36,54,80,128,256,512`，在 counts `256,512`、exponents
+`1,2` 与四种 sign laws 上完成 `384` 个真谱 rows。旧 working caps `0.83`（Schur）与
+`0.64`（spectral）在 `Q<=80` 保持；`Q=128` 首次出现 cap violations，整条 ladder
+的 normalized Schur/spectral maxima 为 `1.7172665118910415/1.6398895499394266`，
+violations 为 `33/30`。law winners 为 all-plus/alternating-index/mod-4/half-split
+`78/4/14/0`，336 个 Q transitions 为 `200/136/0` 增/降/平。
+
+这是 shell-scale finite obstruction：low-Q cap 只对声明范围成立，不产生 shell-uniform
+或 growing operator theorem、source-uniform arithmetic `L2`、fixed-power credit、
+Route-B reassembly 或 twin-prime result。arithmetic advance 为 NO；official evaluator
+files absent，local Bridge-B 仍 fail-closed。
+
+    TPC362_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION
+    TPC362_SHELL_SCALE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_384_ROWS
+    TPC362_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC362_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC362_LOW_Q_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC362_HIGH_Q_CAP_EXTENSION = REFUTED_SCOPED_ON_DECLARED_Q_LADDER
+    TPC362_LAW_WINNER_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC362_GROWING_OPERATOR_BOUND = OPEN
+    TPC362_SOURCE_UNIFORM_L2 = OPEN
+    TPC362_ARITHMETIC_ADVANCE = NO
+    TPC362_FIXED_POWER_CREDIT = 0
+    TPC362_FULL_GATE_B = OPEN
+    TPC362_TWIN_PRIME_RESULT = NONE
+    TPC362_STATUS = NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION
+    TPC362_ROUND2_CLUE = LOCALIZE_HIGH_Q_OBSTRUCTION_BY_LAW_AND_ROW_GEOMETRY
+
+## V214 / TPC-361 previous anchor
 
 更新时间：2026-09-03
 

@@ -2,45 +2,42 @@
 
 更新时间：2026-09-03
 
-当前地图版本：V214 / TPC-361
+当前地图版本：V215 / TPC-362
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-361`（`NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_HIGH_ORIGIN_TIGHTNESS_REPLICATION`）；
-对应论文目录为 `papers/tpc-361-independent-high-origin-tightness-replication/`。
+当前编号锚点：`TPC-362`（`NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION`）；
+对应论文目录为 `papers/tpc-362-shell-scale-cap-obstruction/`。
 
-TPC-361 是当前地图位置：在全新候选 `310001+233j`、`0<=j<=50` 上，以 pilot count
-256 的六组 unsigned geometry spread 做 response-blind selection，按最小间隔 1536
-的 greedy rule 选出 `(313030,311166,321651)`；随后以 counts `256,512,1024,2048`、
-`Q=24,54,80`、exponents `1,2` 与四种 sign laws 完成 288 rows，短 counts 四 law
-与长 counts all-plus 共记录 180 个真谱。normalized Schur/spectral maxima 为
-`0.80830232610282304/0.62690716242733457`，最大 spectral/Schur ratio 为
-`0.77585950058997`；短 panel winner 为 all-plus/mod-4 `30/6`，all-plus ladder
-transition 为 `12/36/6` 增/降/平。
+TPC-362 是当前地图位置：固定 TPC-361 的三个 high-origin origins，把 shell ladder
+扩展为 `Q=12,24,36,54,80,128,256,512`，在 counts `256,512`、exponents `1,2` 与
+四种 sign laws 上完成 384 个真谱 rows。旧 working caps `0.83/0.64` 在 `Q<=80`
+保持，但 `Q=128` 首次越界；全 ladder normalized Schur/spectral maxima 为
+`1.7172665118910415/1.6398895499394266`，Schur/spectral violations 为 `33/30`。
+96 个 settings 的 law winner 为 `78/4/14/0`（all-plus/alternating-index/mod-4/
+half-split），336 个 Q transitions 为 `200/136/0` 增/降/平。
 
-这是 independent high-origin finite tightness replication：envelope、selection
-response-independence 与 rational anchor 为 exact finite，数值 cap、ratio、law census
-与 transition census 只对声明 panel 有效，不产生 growing operator bound、source-uniform
-arithmetic `L2`、fixed-power credit、Route-B reassembly 或 twin-prime result；arithmetic
-advance 为 NO。official evaluator files absent，local Bridge-B 仍是 fail-closed fallback。
+这是 shell-scale finite obstruction：Schur/Frobenius 为 exact finite，low-Q cap 只对
+声明范围有效，不产生 shell-uniform/growing operator bound、source-uniform arithmetic
+`L2`、fixed-power credit、Route-B reassembly 或 twin-prime result；arithmetic advance 为
+NO。official evaluator files absent，local Bridge-B 仍是 fail-closed fallback。
 
-    YOU ARE HERE = V214 / TPC-361
-    TPC361_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_HIGH_ORIGIN_TIGHTNESS_REPLICATION
-    TPC361_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
-    TPC361_HIGH_ORIGIN_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
-    TPC361_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
-    TPC361_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
-    TPC361_TIGHTNESS_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC361_LAW_UNIFORM_SHORT_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC361_SCALE_MONOTONE_DECAY = REFUTED_SCOPED_ON_DECLARED_LADDER
-    TPC361_GROWING_OPERATOR_BOUND = OPEN
-    TPC361_SOURCE_UNIFORM_L2 = OPEN
-    TPC361_ARITHMETIC_ADVANCE = NO
-    TPC361_FIXED_POWER_CREDIT = 0
-    TPC361_FULL_GATE_B = OPEN
-    TPC361_TWIN_PRIME_RESULT = NONE
-    TPC361_STATUS = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_HIGH_ORIGIN_TIGHTNESS_REPLICATION
-    TPC361_ROUND2_CLUE = TEST_SCALE_LADDER_AND_SIGN_LAW_INTERACTION_ON_A_NEW_PANEL
+    YOU ARE HERE = V215 / TPC-362
+    TPC362_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION
+    TPC362_SHELL_SCALE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_384_ROWS
+    TPC362_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC362_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC362_LOW_Q_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC362_HIGH_Q_CAP_EXTENSION = REFUTED_SCOPED_ON_DECLARED_Q_LADDER
+    TPC362_LAW_WINNER_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC362_GROWING_OPERATOR_BOUND = OPEN
+    TPC362_SOURCE_UNIFORM_L2 = OPEN
+    TPC362_ARITHMETIC_ADVANCE = NO
+    TPC362_FIXED_POWER_CREDIT = 0
+    TPC362_FULL_GATE_B = OPEN
+    TPC362_TWIN_PRIME_RESULT = NONE
+    TPC362_STATUS = NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION
+    TPC362_ROUND2_CLUE = LOCALIZE_HIGH_Q_OBSTRUCTION_BY_LAW_AND_ROW_GEOMETRY
 
 ## V212 / TPC-359 previous anchor details
 
@@ -1561,6 +1558,46 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.145 V215 / TPC-362：shell-scale cap obstruction
+
+TPC-362 固定 TPC-361 的三个 high-origin origins `(313030,311166,321651)`，不再改变
+origin，只把 shell ladder 扩展到 `Q=12,24,36,54,80,128,256,512`。在 counts `256,512`、
+exponents `1,2` 与四种 sign laws 上完成 384 个真谱 rows。旧 working caps `0.83`（Schur）
+与 `0.64`（spectral）在 `Q=12,24,36,54,80` 全部保持；`Q=128` 首次出现 cap violation。
+
+全 ladder normalized Schur/spectral maxima 为 `1.7172665118910415/1.6398895499394266`，
+Schur/spectral violations 为 `33/30`。96 个 settings 的 law winner 为
+all-plus/alternating-index/mod-4/half-split `78/4/14/0`；336 个相邻 Q transitions
+为 `200/136/0` 增/降/平。selection、finite envelope、reverse-shell replay、15-mutation
+stress、PDF 与 normal/optimized Bridge-B 均通过。
+
+这是 shell-scale finite obstruction：low-Q cap 只属于声明范围，不能外推为 shell-uniform
+或 growing operator theorem；source-uniform arithmetic `L2`、fixed-power credit、Route-B
+reassembly、full Gate B 与 twin-prime endpoint 仍 open，arithmetic advance 为 NO；official
+evaluator files absent，local Bridge-B 仍 fail-closed。
+
+```text
+YOU ARE HERE = V215 / TPC-362
+TPC362_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION
+TPC362_SHELL_SCALE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_384_ROWS
+TPC362_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+TPC362_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+TPC362_LOW_Q_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC362_HIGH_Q_CAP_EXTENSION = REFUTED_SCOPED_ON_DECLARED_Q_LADDER
+TPC362_LAW_WINNER_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC362_GROWING_OPERATOR_BOUND = OPEN
+TPC362_SOURCE_UNIFORM_L2 = OPEN
+TPC362_ARITHMETIC_ADVANCE = NO
+TPC362_FIXED_POWER_CREDIT = 0
+TPC362_FULL_GATE_B = OPEN
+TPC362_TWIN_PRIME_RESULT = NONE
+TPC362_STATUS = NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION
+TPC362_ROUND2_CLUE = LOCALIZE_HIGH_Q_OBSTRUCTION_BY_LAW_AND_ROW_GEOMETRY
+```
+
+地图位置：**V215 / TPC-362 定位了 `Q=128` 的首个 finite cap 越界；下一关只做 law/row
+geometry localization 或有明确 holdout 的重新归一化，不把失败外推成 asymptotic refutation。**
 
 ## 5.144 V214 / TPC-361：independent high-origin tightness replication
 
@@ -9874,6 +9911,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-03 | V215 / TPC-362 | Bridge A / Gate B：shell-scale finite cap obstruction 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-362` | 承接 TPC-361；固定三 origins，扩展八级 Q ladder，384 个四-law 真谱 rows；旧 caps 在 `Q<=80` 保持，`Q=128` 首次越界，Schur/spectral violations `33/30`，Q transitions `200/136/0`；下一步 localization of high-Q law/row geometry |
 | 2026-09-03 | V214 / TPC-361 | Bridge A / Gate B：independent high-origin finite tightness replication 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-361` | 承接 TPC-360；51 个新候选只用 unsigned geometry spread 选出 `(313030,311166,321651)`，288 rows、180 真谱，normalized Schur/spectral max `0.80830/0.62691`，最大 spectral/Schur `0.77586`；transition `12/36/6`，下一步 scale/shell stress 与 sign-law interaction |
 | 2026-09-03 | V213 / TPC-360 | Bridge A / Gate B：finite Schur-tightness 与 law-uniform spectral audit 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-360` | 承接 TPC-359；三个 fixed hostile origins、两档 counts、四种 laws 共 144 真谱 rows；max spectral/Schur `0.77628`、spectral/Frobenius `0.62111`，all-plus/mod-4 winners `30/6`；下一步独立 high-origin replication with tightness ledger |
 | 2026-09-03 | V212 / TPC-359 | Bridge A / Gate B：geometry-adversarial high-origin finite holdout 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-359` | 承接 TPC-358；51 个高起点候选只用 unsigned geometry spread 选出 3 个 origins，288 rows，normalized Schur/spectral max `0.80835/0.62717` 均在 parent caps 与 `0.001` transfer tolerance 内；transition `12/36/6`，monotone decay scoped refuted；下一步 Schur-tightness 与独立 high-origin replication |

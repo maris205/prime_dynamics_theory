@@ -1,23 +1,41 @@
-# TPC big road V214 / TPC-361: independent high-origin tightness replication
+# TPC big road V215 / TPC-362: shell-scale cap obstruction
 
-## V214 current anchor: TPC-361
+## V215 current anchor: TPC-362
 
 更新时间：2026-09-03
 
-当前 TPC-361 proof 为 bridge_b_tpc361_independent_high_origin_tightness_replication.md，checker 为
-tpc_bridge_b_tpc361_independent_high_origin_tightness_replication_checker.py，编号论文为
-../../papers/tpc-361-independent-high-origin-tightness-replication/。
+当前 TPC-362 proof 为 bridge_b_tpc362_shell_scale_cap_obstruction.md，checker 为
+tpc_bridge_b_tpc362_shell_scale_cap_obstruction_checker.py，编号论文为
+../../papers/tpc-362-shell-scale-cap-obstruction/。
 
-TPC-361 在全新候选 `310001+233j`、`0<=j<=50` 上只用 pilot count 256 的六组 unsigned
-geometry spread 做 response-blind selection，按最小间隔 1536 的 greedy rule 选出
-`(313030,311166,321651)`。随后以 counts `256,512,1024,2048`、`Q=24,54,80`、
-exponents `1,2` 与四种 sign laws 完成 288 rows；短 counts 的四 law 与长 counts 的
-all-plus 共记录 180 个真谱。normalized Schur/spectral maxima 为
-`0.80830232610282304/0.62690716242733457`，最大 spectral/Schur ratio 为
-`0.77585950058997`；all-plus ladder 为 `12/36/6` 增/降/平。这是 finite independent
-replication，不是 growing theorem；source-uniform arithmetic L2、fixed-power credit、
-Route-B reassembly 与 twin-prime result 仍 open，arithmetic advance 为 NO；official
-evaluator files absent，local Bridge-B fail-closed。
+TPC-362 固定 TPC-361 的 origins `(313030,311166,321651)`，将 shell ladder 扩展为
+`Q=12,24,36,54,80,128,256,512`，在 counts `256,512`、exponents `1,2` 与四种
+sign laws 上完成 384 rows，全部记录真谱。旧 caps `0.83/0.64` 在 `Q<=80` 保持，
+但 `Q=128` 首次越界；全 ladder normalized Schur/spectral maxima 为
+`1.7172665118910415/1.6398895499394266`，Schur/spectral violations 为 `33/30`。
+law winner census 为 `78/4/14/0`（all-plus/alternating-index/mod-4/half-split），
+Q transitions 为 `200/136/0` 增/降/平。这是 finite shell-scale obstruction，不是
+growing theorem；source-uniform arithmetic L2、fixed-power credit、Route-B reassembly
+与 twin-prime result 仍 open，arithmetic advance 为 NO；official evaluator files absent，
+local Bridge-B fail-closed。
+
+    TPC362_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION
+    TPC362_SHELL_SCALE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_384_ROWS
+    TPC362_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
+    TPC362_FINITE_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE
+    TPC362_LOW_Q_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC362_HIGH_Q_CAP_EXTENSION = REFUTED_SCOPED_ON_DECLARED_Q_LADDER
+    TPC362_LAW_WINNER_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC362_GROWING_OPERATOR_BOUND = OPEN
+    TPC362_SOURCE_UNIFORM_L2 = OPEN
+    TPC362_ARITHMETIC_ADVANCE = NO
+    TPC362_FIXED_POWER_CREDIT = 0
+    TPC362_FULL_GATE_B = OPEN
+    TPC362_TWIN_PRIME_RESULT = NONE
+    TPC362_STATUS = NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION
+    TPC362_ROUND2_CLUE = LOCALIZE_HIGH_Q_OBSTRUCTION_BY_LAW_AND_ROW_GEOMETRY
+
+## V214 / TPC-361 previous anchor
 
     TPC361_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_INDEPENDENT_HIGH_ORIGIN_TIGHTNESS_REPLICATION
     TPC361_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
