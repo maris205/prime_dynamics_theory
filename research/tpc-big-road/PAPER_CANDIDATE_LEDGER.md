@@ -3,13 +3,73 @@
 
 更新时间：2026-09-03
 
-状态：**TPC372_NUMERICALLY_CERTIFIED_FINITE_FULL_WINDOW_DECOMPOSITION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC373_NUMERICALLY_CERTIFIED_FINITE_EIGENMODE_BLOCK_SEPARATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.166 current：TPC-372 full-window block/off-block decomposition
+## 0.167 current：TPC-373 extremal-eigenmode block separation
+
+项目：papers/tpc-373-eigenmode-block-separation/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_EIGENMODE_BLOCK_SEPARATION**。
+
+TPC-373 在 TPC-372 的同一 count-2048 full-window normalization 下，对三个继承 origins、
+三个 Q anchors、all-plus law 与 beta `0,2` 的完整 `18` 个 rows 做极值特征模审计。块
+partition 固定为八个连续的 256-point blocks，层按 block-index absolute distance
+`0,...,7` 定义；所有 rows 在读取 mode 或 layer contribution 前已冻结。每行选择最大
+绝对特征值对应的 unit eigenvector，绝对值并列时固定选择 minimum-eigenvalue mode。
+
+最强正结果：`18/18` 行均选择 minimum-eigenvalue mode，且 distance 0 均为最大单层。
+在六个 beta=2、`Q=2048,8192` 的 parent failure rows 上，八个 Rayleigh terms 全部为负；
+distance 0--3 至少承载 `99.1571176%` 的 absolute Rayleigh mass，distance 4--7 至多
+`0.8428824%`，cross-block 总质量仍为 `0.3204177--0.3441539`。这把 TPC-372 的
+common-normalization sum/coherence 收窄为一个有限 near-block signed-coherence profile。
+
+最强 obstruction：该 profile 是一个有限、特征模选择后的 Rayleigh 描述，尚未给出
+near-block band 的 operator-norm 控制，也不能把 signed coherence 解释成 cross-block
+causality 或 decay theorem。beta=0 对照仍有 `9/9` full spectral/Schur failures。
+
+继承 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核，未用于 main-panel
+选择。producer、独立 descending-shell replay、39-mutation stress、PDF 与 local Bridge-B
+组成 package；official evaluator files absent，local bridge 仍为 fail-closed evidence。
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
+
+开放定理：在相同 full-window normalization 下，预声明 `d<=3` 的 near-block band
+truncation 是否能重现六个 beta=2 full-window failures，并能否进一步形成 uniform bound。
+
+可复用结构：
+
+    full-window normalization -> deterministic extremal mode
+      -> block-distance Rayleigh layers -> signed/absolute profile
+      -> hostile replay -> near-block band truncation test
+
+ROUND2_CLUE：`TEST_LAYERWISE_CROSS_BLOCK_DECAY`。
+
+```text
+TPC373_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+TPC373_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
+TPC373_BLOCK_DISTANCE_PARTITION = PROVED_EXACT_FINITE_PREDECLARED
+TPC373_EIGENMODE_SELECTION_RULE = PROVED_EXACT_FINITE_DETERMINISTIC
+TPC373_EIGENMODE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+TPC373_LAYER_RECONSTRUCTION = NUMERICALLY_CERTIFIED_FINITE
+TPC373_RAYLEIGH_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC373_CROSS_BLOCK_DECAY = OPEN
+TPC373_CROSS_BLOCK_CAUSALITY = OPEN
+TPC373_ORIGIN_UNIFORMITY = OPEN
+TPC373_WINDOW_UNIFORMITY = OPEN
+TPC373_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC373_GROWING_OPERATOR_BOUND = OPEN
+TPC373_SOURCE_UNIFORM_L2 = OPEN
+TPC373_ARITHMETIC_ADVANCE = NO
+TPC373_FIXED_POWER_CREDIT = 0
+TPC373_FULL_GATE_B = OPEN
+TPC373_TWIN_PRIME_RESULT = NONE
+TPC373_STATUS = NUMERICALLY_CERTIFIED_FINITE_EIGENMODE_BLOCK_SEPARATION
+```
+
+## 0.166 previous：TPC-372 full-window block/off-block decomposition
 
 项目：papers/tpc-372-full-window-offblock-decomposition/
 

@@ -1,9 +1,59 @@
 # TPC HANDOFF
 
-TPC-372 current section: full-window block/off-block decomposition
+TPC-373 current section: extremal-eigenmode block separation
+-------------------------------------------------------------
+
+TPC-373 is the current sealed release.  It keeps the TPC-372 count-2048
+full-window normalization and audits the extremal eigenmode on the complete
+18-row panel: three response-blind origins, three Q anchors, the all-plus law,
+and beta `0,2`.  The eight contiguous 256-point blocks are fixed in advance,
+and layers are indexed by absolute block distance `0,...,7`.
+
+All 18 rows select the minimum-eigenvalue mode under the deterministic rule
+“largest absolute eigenvalue, minimum mode wins ties”; distance zero is the
+largest individual Rayleigh layer on all 18 rows.  On the six beta=2 parent
+failure rows, all eight layer terms are negative.  Distances 0--3 carry at
+least `99.1571176%` of absolute Rayleigh mass, while distances 4--7 carry at
+most `0.8428824%`; cross-block mass remains `0.3204177--0.3441539`.  This is
+finite near-block signed-coherence evidence, not a causality or decay theorem.
+
+The inherited exact anchor `[1010346,1010359)` is rechecked by exact rational
+geometry and is not used to select the main panel.  The eigensystem replay,
+layer reconstruction, independent reverse-shell checker, 39-mutation stress
+test, paper PDF, and local fail-closed Bridge-B are part of the release.
+Official Route-A/Route-B evaluator files remain absent.  `ARITHMETIC_ADVANCE=NO`,
+`FIXED_POWER_CREDIT=0`, and `FULL_GATE_B=OPEN`; the next finite question is
+whether the predeclared `d<=3` near-block band reproduces the parent failures.
+
+    TPC373_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+    TPC373_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
+    TPC373_BLOCK_DISTANCE_PARTITION = PROVED_EXACT_FINITE_PREDECLARED
+    TPC373_EIGENMODE_SELECTION_RULE = PROVED_EXACT_FINITE_DETERMINISTIC
+    TPC373_EIGENMODE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+    TPC373_LAYER_RECONSTRUCTION = NUMERICALLY_CERTIFIED_FINITE
+    TPC373_RAYLEIGH_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC373_CROSS_BLOCK_DECAY = OPEN
+    TPC373_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC373_ORIGIN_UNIFORMITY = OPEN
+    TPC373_WINDOW_UNIFORMITY = OPEN
+    TPC373_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC373_GROWING_OPERATOR_BOUND = OPEN
+    TPC373_SOURCE_UNIFORM_L2 = OPEN
+    TPC373_ARITHMETIC_ADVANCE = NO
+    TPC373_FIXED_POWER_CREDIT = 0
+    TPC373_FULL_GATE_B = OPEN
+    TPC373_TWIN_PRIME_RESULT = NONE
+    TPC373_STRONGEST_POSITIVE = FINITE_MINIMUM_MODE_NEAR_BLOCK_SIGNED_COHERENCE
+    TPC373_STRONGEST_OBSTRUCTION = NO_UNIFORM_OPERATOR_BAND_BOUND
+    TPC373_OPEN_THEOREM = PREDECLARED_NEAR_BLOCK_BAND_TRUNCATION
+    TPC373_REUSABLE_STRUCTURE = EXTREMAL_MODE_BLOCK_DISTANCE_RAYLEIGH_PROFILE
+    TPC373_ROUND2_CLUE = TEST_LAYERWISE_CROSS_BLOCK_DECAY
+    TPC373_STATUS = NUMERICALLY_CERTIFIED_FINITE_EIGENMODE_BLOCK_SEPARATION
+
+TPC-372 previous section: full-window block/off-block decomposition
 ------------------------------------------------------------------
 
-TPC-372 is the current sealed release.  It keeps the TPC-370 count-2048
+TPC-372 is the previous sealed release.  It keeps the TPC-370 count-2048
 full-window normalization and decomposes each all-plus matrix with a fixed
 eight-block mask as `T=D+R`, over three origins, three Q anchors, and beta
 `0,2`, for 18 true-spectral rows.  All three matrices use the same
@@ -342,6 +392,25 @@ TPC-369 tail audit is required to return zero with empty stderr and
 byte-identical normal/optimized stdout.  It is finite third-family evidence
 only: the six beta=2 long-window spectral failures and the exact-anchor repair
 do not pay arithmetic or fixed-power credit and do not close Route-A/Route-B.
+
+TPC-373 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-373-eigenmode-block-separation/code/tpc373_eigenmode_block_separation.py --check
+    python -O -B papers/tpc-373-eigenmode-block-separation/code/tpc373_eigenmode_block_separation.py --check
+    python -B papers/tpc-373-eigenmode-block-separation/experiments/tpc373_independent_checker.py --check
+    python -O -B papers/tpc-373-eigenmode-block-separation/experiments/tpc373_independent_checker.py --check
+    python -B papers/tpc-373-eigenmode-block-separation/experiments/tpc373_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-373-eigenmode-block-separation/experiments/tpc373_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc373_eigenmode_block_separation_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc373_eigenmode_block_separation_checker.py --check
+
+TPC-373 tail audit is required to return zero with empty stderr and
+byte-identical normal/optimized stdout. It is finite near-block eigenmode
+profile evidence only: the layer sign-coherence and small far-distance tail
+do not pay arithmetic or fixed-power credit and do not close Route-A/Route-B.
+The next declared question is near-block band truncation.
 
 TPC-372 reproducibility commands:
 
@@ -13557,7 +13626,9 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V225/TPC-372 是当前 release；其 full-window block/off-block producer、
+V226/TPC-373 是当前 release；其 extremal-eigenmode block-separation producer、
+independent reverse-shell replay、certificate stress audit 与 literal masked-operator
+Bridge-B 已封存。V225/TPC-372 是上一 release；其 full-window block/off-block producer、
 independent reverse-shell replay、certificate stress audit 与 literal masked-operator
 Bridge-B 已封存。V224/TPC-371 是上一 release；其 block-local phase producer、
 independent reverse-shell replay、certificate stress audit 与 literal masked-operator
@@ -13588,7 +13659,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 497 对 normal/optimized 命令、994 次
+当前 curated cascade command set 共 501 对 normal/optimized 命令、1002 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -13607,7 +13678,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369、TPC-370、TPC-371、TPC-372 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369、TPC-370、TPC-371、TPC-372、TPC-373 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 

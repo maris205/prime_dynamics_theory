@@ -2,48 +2,61 @@
 
 更新时间：2026-09-03
 
-当前地图版本：V225 / TPC-372
+当前地图版本：V226 / TPC-373
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-372`（`NUMERICALLY_CERTIFIED_FINITE_FULL_WINDOW_DECOMPOSITION`）；
-对应论文目录为 `papers/tpc-372-full-window-offblock-decomposition/`。
+当前编号锚点：`TPC-373`（`NUMERICALLY_CERTIFIED_FINITE_EIGENMODE_BLOCK_SEPARATION`）；
+对应论文目录为 `papers/tpc-373-eigenmode-block-separation/`。
 
-TPC-372 是当前地图位置：保持 TPC-370 的 count-2048 full-window normalization，把
-all-plus matrix 按预声明的八块 mask 分解为 `T=D+R`，完成 `18` 个全真 rows。beta=2
-的 full matrix 有 `6` 个高-Q spectral-cap failures，而 block-diagonal `D` 与 off-block
-`R` 各有 `0` 个 spectral failures；六个 full failure rows 上反三角下界均为正，最大为
-`0.19398264343312976`。这说明有限面板上的 excess 需要 common-normalization 的
-sum/coherence，但不构成 off-block causality theorem。
+TPC-373 是当前地图位置：在 TPC-372 的同一 count-2048 full-window normalization 下，
+对完整 `18` 个 rows 的极值特征模按固定 block distance `0,...,7` 做 Rayleigh 分层。
+18/18 行均选择 minimum-eigenvalue mode，distance 0 均为最大单层；beta=2 的六个
+parent high-Q failure rows 上八层项全部为负，distance 0--3 至少承载 `99.1571176%`
+的 absolute Rayleigh mass，distance 4--7 至多 `0.8428824%`。这给出有限 near-block
+signed-coherence profile，但不构成 cross-block causality、decay theorem 或 asymptotic
+transfer。
 
 继承 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核，未用于 main-panel
 选择。该结果仍是 finite scoped evidence：不建立 origin/window uniformity、source-valid
 normalization、growing operator bound、source-uniform arithmetic `L2`、prime-shell
-reassembly、fixed-power credit、Route-B closure 或 twin-prime result；
-`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。official evaluator
-files absent，local Bridge-B 仍为 fail-closed evidence。下一关固定同一 full-window
-normalization，做 extremal eigenmode 的 block-separation audit。
+reassembly、fixed-power credit、Route-B closure 或 twin-prime result；`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。official evaluator files absent，local Bridge-B
+仍为 fail-closed evidence。下一关固定同一 full-window normalization，测试 `d<=3` 的
+near-block band truncation 是否复现 parent failures。
 
-    YOU ARE HERE = V225 / TPC-372
-    TPC372_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
-    TPC372_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
-    TPC372_DECOMPOSITION_IDENTITY = NUMERICALLY_CERTIFIED_FINITE
-    TPC372_FULL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
-    TPC372_BETA2_FULL_FAILURE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC372_BLOCK_DIAGONAL_PHASE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC372_OFF_BLOCK_NECESSITY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC372_CROSS_BLOCK_CAUSALITY = OPEN
-    TPC372_ORIGIN_UNIFORMITY = OPEN
-    TPC372_WINDOW_UNIFORMITY = OPEN
-    TPC372_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
-    TPC372_GROWING_OPERATOR_BOUND = OPEN
-    TPC372_SOURCE_UNIFORM_L2 = OPEN
-    TPC372_ARITHMETIC_ADVANCE = NO
-    TPC372_FIXED_POWER_CREDIT = 0
-    TPC372_FULL_GATE_B = OPEN
-    TPC372_TWIN_PRIME_RESULT = NONE
-    TPC372_STATUS = NUMERICALLY_CERTIFIED_FINITE_FULL_WINDOW_DECOMPOSITION
-    TPC372_ROUND2_CLUE = TEST_EIGENMODE_BLOCK_SEPARATION
+    YOU ARE HERE = V226 / TPC-373
+    TPC373_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+    TPC373_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
+    TPC373_BLOCK_DISTANCE_PARTITION = PROVED_EXACT_FINITE_PREDECLARED
+    TPC373_EIGENMODE_SELECTION_RULE = PROVED_EXACT_FINITE_DETERMINISTIC
+    TPC373_EIGENMODE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+    TPC373_LAYER_RECONSTRUCTION = NUMERICALLY_CERTIFIED_FINITE
+    TPC373_RAYLEIGH_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC373_CROSS_BLOCK_DECAY = OPEN
+    TPC373_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC373_ORIGIN_UNIFORMITY = OPEN
+    TPC373_WINDOW_UNIFORMITY = OPEN
+    TPC373_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC373_GROWING_OPERATOR_BOUND = OPEN
+    TPC373_SOURCE_UNIFORM_L2 = OPEN
+    TPC373_ARITHMETIC_ADVANCE = NO
+    TPC373_FIXED_POWER_CREDIT = 0
+    TPC373_FULL_GATE_B = OPEN
+    TPC373_TWIN_PRIME_RESULT = NONE
+    TPC373_STATUS = NUMERICALLY_CERTIFIED_FINITE_EIGENMODE_BLOCK_SEPARATION
+    TPC373_ROUND2_CLUE = TEST_LAYERWISE_CROSS_BLOCK_DECAY
+
+## 5.156 V226 / TPC-373：extremal-eigenmode block separation
+
+TPC-373 的完整 finite package 位于 `papers/tpc-373-eigenmode-block-separation/`。
+它在同一 full-window normalization 下对八个固定 block-distance layers 做极值模
+Rayleigh audit；18/18 行为 minimum mode、18/18 行 distance 0 dominant。六个 beta=2
+parent failure rows 的八层项全为负，距离 0--3 至少占 `99.1571176%`，距离 4--7
+至多占 `0.8428824%`。
+
+这是 near-block signed-coherence 的 finite scoped evidence，不是 causality、decay 或
+uniform operator theorem。下一关是同一归一化下的 `d<=3` near-block band truncation。
 
 ## 5.155 V225 / TPC-372：full-window block/off-block decomposition
 
@@ -10586,6 +10599,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-03 | V226 / TPC-373 | Bridge B / Gate B：extremal-eigenmode block separation; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-373` | 承接 TPC-372；固定三个 origin 与 count `2048`，对 18 个 rows 做八层 block-distance Rayleigh audit；18/18 为 minimum mode、distance 0 dominant，六个 beta=2 failure rows 全层同号且 d=0--3 至少占 99.157%；下一步 near-block band truncation |
 | 2026-09-03 | V225 / TPC-372 | Bridge B / Gate B：full-window block/off-block decomposition; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-372` | 承接 TPC-371；固定三个 origin 与 count `2048`，同一 full-window normalization 下完成 18 个 `T=D+R` rows；beta=2 full matrix 有 6 个 failure，而 D/R 各为 0，反三角 off-block 下界均为正；下一步 extremal eigenmode block separation |
 | 2026-09-03 | V224 / TPC-371 | Bridge B / Gate B：block-local phase localization; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-371` | 承接 TPC-370；固定三个 origin 与 count `2048`，切成 8 个 256-point blocks，完成 576 个 block-local rows；beta=2 的 288 行均通过 spectral/Schur，parent 的独立归一化 block-local failure 假设 scoped-refuted；下一步 common-normalization off-block coherence |
 | 2026-09-03 | V223 / TPC-370 | Bridge B / Gate B：count-2048 finite-window audit; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-370` | 承接 TPC-369；固定第三 origin family 与 count `2048`，完成 72 个全法真谱 rows；beta=2 在高-Q/all-plus 三 origin 上保留 6 个 spectral violations、Schur 0，support signature 与 parent 一致，但最大谱升至 `0.7109998953`，有限 magnitude stability 不成立；下一步 count-2048 phase localization |

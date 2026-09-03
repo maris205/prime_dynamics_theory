@@ -1,6 +1,49 @@
-# TPC big road V225 / TPC-372: full-window block/off-block decomposition
+# TPC big road V226 / TPC-373: extremal-eigenmode block separation
 
-## V225 current anchor: TPC-372
+## V226 current anchor: TPC-373
+
+更新时间：2026-09-03
+
+当前 TPC-373 proof 为 bridge_b_tpc373_eigenmode_block_separation.md，checker 为
+tpc_bridge_b_tpc373_eigenmode_block_separation_checker.py，编号论文为
+../../papers/tpc-373-eigenmode-block-separation/。
+
+TPC-373 在 TPC-372 的同一 count-2048 full-window normalization 下，对完整 `18` 个
+rows 的极值特征模按预声明的 block distance `0,...,7` 做 Rayleigh 分层。18/18 行
+均选择 minimum-eigenvalue mode，distance 0 均为最大单层；beta=2 的六个 parent
+high-Q failure rows 上八层项全部为负，距离 0--3 至少承载 `99.157%` 的 absolute
+Rayleigh mass，距离 4--7 至多 `0.842882%`。这是有限 near-block signed-coherence
+profile，不是 cross-block causality、decay theorem 或 asymptotic transfer。
+
+继承 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核，未用于 main-panel
+选择。producer、独立 descending-shell replay、39-mutation stress、PDF 与 local Bridge-B
+均纳入 package；official evaluator files absent，local Bridge-B 仍为 fail-closed fallback。
+arithmetic advance 为 NO，fixed-power credit 为 0，`FULL_GATE_B=OPEN`。下一关固定同一
+full-window normalization，测试 `d<=3` 的 near-block band truncation 是否复现 parent
+failures。
+
+    TPC373_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+    TPC373_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
+    TPC373_BLOCK_DISTANCE_PARTITION = PROVED_EXACT_FINITE_PREDECLARED
+    TPC373_EIGENMODE_SELECTION_RULE = PROVED_EXACT_FINITE_DETERMINISTIC
+    TPC373_EIGENMODE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+    TPC373_LAYER_RECONSTRUCTION = NUMERICALLY_CERTIFIED_FINITE
+    TPC373_RAYLEIGH_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC373_CROSS_BLOCK_DECAY = OPEN
+    TPC373_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC373_ORIGIN_UNIFORMITY = OPEN
+    TPC373_WINDOW_UNIFORMITY = OPEN
+    TPC373_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC373_GROWING_OPERATOR_BOUND = OPEN
+    TPC373_SOURCE_UNIFORM_L2 = OPEN
+    TPC373_ARITHMETIC_ADVANCE = NO
+    TPC373_FIXED_POWER_CREDIT = 0
+    TPC373_FULL_GATE_B = OPEN
+    TPC373_TWIN_PRIME_RESULT = NONE
+    TPC373_STATUS = NUMERICALLY_CERTIFIED_FINITE_EIGENMODE_BLOCK_SEPARATION
+    TPC373_ROUND2_CLUE = TEST_LAYERWISE_CROSS_BLOCK_DECAY
+
+## V225 previous anchor: TPC-372
 
 更新时间：2026-09-03
 
@@ -8,7 +51,7 @@
 tpc_bridge_b_tpc372_full_window_offblock_decomposition_checker.py，编号论文为
 ../../papers/tpc-372-full-window-offblock-decomposition/。
 
-TPC-372 在 TPC-370 的 count-2048 full-window normalization 下，把每个 all-plus matrix
+TPC-372 是上一 release；它在 TPC-370 的 count-2048 full-window normalization 下，把每个 all-plus matrix
 按预声明的八块 mask 分解为 `T=D+R`，完成 `18` 个全真 rows。beta=2 的 full matrix 有
 `6` 个高-Q spectral-cap failures，而 block-diagonal `D` 与 off-block `R` 各有 `0` 个
 spectral failures；六个 full failure rows 上的反三角下界均为正，最大为
