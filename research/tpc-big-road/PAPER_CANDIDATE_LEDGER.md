@@ -3,13 +3,76 @@
 
 更新时间：2026-09-03
 
-状态：**TPC373_NUMERICALLY_CERTIFIED_FINITE_EIGENMODE_BLOCK_SEPARATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC374_NUMERICALLY_CERTIFIED_FINITE_NEAR_BLOCK_BAND_TRUNCATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.167 current：TPC-373 extremal-eigenmode block separation
+## 0.168 current：TPC-374 near-block band truncation
+
+项目：papers/tpc-374-near-block-band-truncation/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_NEAR_BLOCK_BAND_TRUNCATION**。
+
+TPC-374 承接 TPC-373 的 near-block Rayleigh profile，在相同 count-2048 full-window
+normalization 下预声明保留八个 block 中 block distance `0,1,2,3` 的 band `B3`，并在
+三个 origins、三个 Q anchors、all-plus law 与 beta `0,2` 的完整 `18` 个 rows 上同时
+重放 full matrix、band 与 tail。band 与 tail 使用 full-window square-energy geometry，
+不改变 parent 的归一化。
+
+最强正结果：beta=2 的 `B3` 精确复现 full matrix 的六个 spectral-cap failure keys，
+即三个 origins 在 `Q=2048,8192` 的 all-plus rows；full 与 band 的 beta=2 Schur
+failures 都为 `0/9`。六个 failure rows 上 selected full-mode 的 band absolute-Rayleigh
+retention 为 `0.99157117644491055--0.99157357537480051`，tail fraction 至多
+`0.0084288235550895561`。这是 finite operator-level near-block reproduction，支持
+TPC-373 的结构定位，但不提供因果归因。
+
+最强 obstruction：`B3` 是固定有限 partition 的 truncation，尚未有 bandwidth、origin
+或 window uniformity；在 beta=2、`Q=512` 上 band spectral value 略高于 full value，故
+不能宣称截断具有单调 repair 性质。source-uniform arithmetic `L2`、masked operator
+bound、fixed-power credit 与 twin-prime endpoint 仍未关闭。
+
+继承 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核，未用于 main-panel
+选择。producer、独立 descending-shell replay、29-mutation stress、PDF 与 local Bridge-B
+组成 package；official evaluator files absent，local bridge 仍为 fail-closed evidence。
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
+
+开放定理：在相同 full-window normalization 下，较小预声明 block-distance cutoffs 是否
+稳定复现该六键 failure support，并在独立扩展面板上保持可审计的 tail 控制。
+
+可复用结构：
+
+    full normalization -> predeclared band/complement identity
+      -> full-mode Rayleigh retention -> failure-key reproduction
+      -> hostile replay -> bandwidth-stability audit
+
+ROUND2_CLUE：`TEST_BANDWIDTH_STABILITY`。
+
+```text
+TPC374_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+TPC374_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
+TPC374_NEAR_BLOCK_BAND = PROVED_EXACT_FINITE_PREDECLARED
+TPC374_BAND_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+TPC374_BAND_FAILURE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC374_PARENT_FAILURE_REPRODUCTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC374_RAYLEIGH_RETENTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC374_TAIL_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC374_BAND_OPERATOR_UNIFORMITY = OPEN
+TPC374_CROSS_BLOCK_CAUSALITY = OPEN
+TPC374_ORIGIN_UNIFORMITY = OPEN
+TPC374_WINDOW_UNIFORMITY = OPEN
+TPC374_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC374_GROWING_OPERATOR_BOUND = OPEN
+TPC374_SOURCE_UNIFORM_L2 = OPEN
+TPC374_ARITHMETIC_ADVANCE = NO
+TPC374_FIXED_POWER_CREDIT = 0
+TPC374_FULL_GATE_B = OPEN
+TPC374_TWIN_PRIME_RESULT = NONE
+TPC374_STATUS = NUMERICALLY_CERTIFIED_FINITE_NEAR_BLOCK_BAND_TRUNCATION
+```
+
+## 0.167 previous：TPC-373 extremal-eigenmode block separation
 
 项目：papers/tpc-373-eigenmode-block-separation/
 

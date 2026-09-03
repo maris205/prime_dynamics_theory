@@ -1,15 +1,59 @@
 # TPC distilled map and bold channel
 
-## V226 / TPC-373 current anchor
+## V227 / TPC-374 current anchor
 
 更新时间：2026-09-03
 
 当前入口：proof 为
-research/tpc-big-road/bridge_b_tpc373_eigenmode_block_separation.md，checker 为
-tpc_bridge_b_tpc373_eigenmode_block_separation_checker.py，编号论文为
-papers/tpc-373-eigenmode-block-separation/。
+research/tpc-big-road/bridge_b_tpc374_near_block_band_truncation.md，checker 为
+tpc_bridge_b_tpc374_near_block_band_truncation_checker.py，编号论文为
+papers/tpc-374-near-block-band-truncation/。
 
-TPC-373 是当前位置：在 TPC-372 的同一 count-2048 full-window normalization 下，
+TPC-374 是当前位置：承接 TPC-373 的 near-block Rayleigh profile，在同一
+count-2048 full-window normalization 下预声明保留 block distance `0,1,2,3` 的
+band `B3`，并对完整 `18` 个 rows 同时重放 full matrix、band 与 tail。beta=2 的 band
+精确复现 full matrix 的六个高-Q/all-plus spectral failures（3 origins x `Q=2048,8192`），
+且 beta=2 的 full/band Schur failures 均为 `0/9`。在六个 failure rows 上，selected
+full-mode 的 band absolute-Rayleigh retention 为
+`0.99157117644491055--0.99157357537480051`，tail fraction 至多
+`0.0084288235550895561`。这是有限 near-block operator reproduction，不是 causality、
+bandwidth-uniformity 或 asymptotic theorem。
+
+继承 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核，未用于 main
+panel 选择。producer、独立 descending-shell replay、29-mutation stress、PDF 与 local
+Bridge-B 均纳入 package；official evaluator files absent，local Bridge-B 仍为 fail-closed
+fallback。`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关
+固定同一 normalization，测试更小预声明带宽的 stability。
+
+    TPC374_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+    TPC374_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
+    TPC374_NEAR_BLOCK_BAND = PROVED_EXACT_FINITE_PREDECLARED
+    TPC374_BAND_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+    TPC374_BAND_FAILURE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC374_PARENT_FAILURE_REPRODUCTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC374_RAYLEIGH_RETENTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC374_TAIL_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC374_BAND_OPERATOR_UNIFORMITY = OPEN
+    TPC374_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC374_ORIGIN_UNIFORMITY = OPEN
+    TPC374_WINDOW_UNIFORMITY = OPEN
+    TPC374_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC374_GROWING_OPERATOR_BOUND = OPEN
+    TPC374_SOURCE_UNIFORM_L2 = OPEN
+    TPC374_ARITHMETIC_ADVANCE = NO
+    TPC374_FIXED_POWER_CREDIT = 0
+    TPC374_FULL_GATE_B = OPEN
+    TPC374_TWIN_PRIME_RESULT = NONE
+    TPC374_STRONGEST_POSITIVE = FINITE_BAND_REPRODUCES_SIX_BETA2_FAILURE_KEYS
+    TPC374_STRONGEST_OBSTRUCTION = NO_BANDWIDTH_UNIFORMITY_OR_CAUSALITY
+    TPC374_OPEN_THEOREM = PREDECLARED_BANDWIDTH_STABILITY
+    TPC374_REUSABLE_STRUCTURE = FULL_NORMALIZATION_BAND_TAIL_RAYLEIGH_IDENTITY
+    TPC374_ROUND2_CLUE = TEST_BANDWIDTH_STABILITY
+    TPC374_STATUS = NUMERICALLY_CERTIFIED_FINITE_NEAR_BLOCK_BAND_TRUNCATION
+
+## V226 / TPC-373 previous anchor
+
+TPC-373 是上一位置：在 TPC-372 的同一 count-2048 full-window normalization 下，
 对完整 `18` 个 rows 的极值特征模按预声明的 block distance `0,...,7` 做 Rayleigh
 分层。18/18 行均选择 minimum-eigenvalue mode，distance 0 均为最大单层；beta=2 的
 六个 parent high-Q failure rows 上八层项全部为负，距离 0--3 至少占 `99.157%` 的

@@ -1,9 +1,63 @@
 # TPC HANDOFF
 
-TPC-373 current section: extremal-eigenmode block separation
+TPC-374 current section: near-block band truncation
+----------------------------------------------------
+
+TPC-374 is the current sealed release.  It inherits TPC-373's count-2048
+full-window normalization and fixes, before reading any result, the band
+`B3` containing block distances `0,1,2,3` in the eight contiguous
+256-point-block partition.  The complete panel has three response-blind
+origins, three Q anchors, the all-plus law, beta `0,2`, and 18 rows.  The
+complement is `R3=T-B3`, using the same full-window square-energy geometry.
+
+The band reproduces exactly the six beta=2 full spectral-cap failure keys of
+the full matrix: every declared origin at `Q=2048,8192`; both full and band
+beta=2 Schur failure counts are `0/9`.  On those six rows the selected
+full-matrix extremal mode has band absolute-Rayleigh retention
+`0.99157117644491055--0.99157357537480051`, with omitted-tail fraction at
+most `0.0084288235550895561`.  This is finite operator-level near-block
+reproduction, not a causal attribution, bandwidth-uniform theorem, or
+asymptotic transfer.  At `Q=512` the band can be slightly larger than the
+full spectral value, so no monotone repair principle is claimed.
+
+The inherited exact anchor `[1010346,1010359)` is rechecked by exact rational
+geometry and is not used to select the main panel.  The band/tail identity,
+producer, independent reverse-shell replay, 29-mutation stress test, paper
+PDF, and local fail-closed Bridge-B are part of the release.  Official
+Route-A/Route-B evaluator files remain absent.  `ARITHMETIC_ADVANCE=NO`,
+`FIXED_POWER_CREDIT=0`, and `FULL_GATE_B=OPEN`; the next finite question is
+bandwidth stability for smaller predeclared cutoffs.
+
+    TPC374_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+    TPC374_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
+    TPC374_NEAR_BLOCK_BAND = PROVED_EXACT_FINITE_PREDECLARED
+    TPC374_BAND_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+    TPC374_BAND_FAILURE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC374_PARENT_FAILURE_REPRODUCTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC374_RAYLEIGH_RETENTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC374_TAIL_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC374_BAND_OPERATOR_UNIFORMITY = OPEN
+    TPC374_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC374_ORIGIN_UNIFORMITY = OPEN
+    TPC374_WINDOW_UNIFORMITY = OPEN
+    TPC374_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC374_GROWING_OPERATOR_BOUND = OPEN
+    TPC374_SOURCE_UNIFORM_L2 = OPEN
+    TPC374_ARITHMETIC_ADVANCE = NO
+    TPC374_FIXED_POWER_CREDIT = 0
+    TPC374_FULL_GATE_B = OPEN
+    TPC374_TWIN_PRIME_RESULT = NONE
+    TPC374_STRONGEST_POSITIVE = FINITE_BAND_REPRODUCES_SIX_BETA2_FAILURE_KEYS
+    TPC374_STRONGEST_OBSTRUCTION = NO_BANDWIDTH_UNIFORMITY_OR_CAUSALITY
+    TPC374_OPEN_THEOREM = PREDECLARED_BANDWIDTH_STABILITY
+    TPC374_REUSABLE_STRUCTURE = FULL_NORMALIZATION_BAND_TAIL_RAYLEIGH_IDENTITY
+    TPC374_ROUND2_CLUE = TEST_BANDWIDTH_STABILITY
+    TPC374_STATUS = NUMERICALLY_CERTIFIED_FINITE_NEAR_BLOCK_BAND_TRUNCATION
+
+TPC-373 previous section: extremal-eigenmode block separation
 -------------------------------------------------------------
 
-TPC-373 is the current sealed release.  It keeps the TPC-372 count-2048
+TPC-373 is the previous sealed release.  It keeps the TPC-372 count-2048
 full-window normalization and audits the extremal eigenmode on the complete
 18-row panel: three response-blind origins, three Q anchors, the all-plus law,
 and beta `0,2`.  The eight contiguous 256-point blocks are fixed in advance,
@@ -411,6 +465,25 @@ byte-identical normal/optimized stdout. It is finite near-block eigenmode
 profile evidence only: the layer sign-coherence and small far-distance tail
 do not pay arithmetic or fixed-power credit and do not close Route-A/Route-B.
 The next declared question is near-block band truncation.
+
+TPC-374 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-374-near-block-band-truncation/code/tpc374_near_block_band_truncation.py --check
+    python -O -B papers/tpc-374-near-block-band-truncation/code/tpc374_near_block_band_truncation.py --check
+    python -B papers/tpc-374-near-block-band-truncation/experiments/tpc374_independent_checker.py --check
+    python -O -B papers/tpc-374-near-block-band-truncation/experiments/tpc374_independent_checker.py --check
+    python -B papers/tpc-374-near-block-band-truncation/experiments/tpc374_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-374-near-block-band-truncation/experiments/tpc374_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc374_near_block_band_truncation_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc374_near_block_band_truncation_checker.py --check
+
+TPC-374 tail audit is required to return zero with empty stderr and
+byte-identical normal/optimized stdout.  It is finite near-block operator
+reproduction evidence only: the six-key band match and small selected-mode
+tail do not pay arithmetic or fixed-power credit and do not close
+Route-A/Route-B.  The next declared question is bandwidth stability.
 
 TPC-372 reproducibility commands:
 
@@ -13626,7 +13699,9 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V226/TPC-373 是当前 release；其 extremal-eigenmode block-separation producer、
+V227/TPC-374 是当前 release；其 near-block band-truncation producer、
+independent reverse-shell replay、certificate stress audit 与 literal masked-operator
+Bridge-B 已封存。V226/TPC-373 是上一 release；其 extremal-eigenmode block-separation producer、
 independent reverse-shell replay、certificate stress audit 与 literal masked-operator
 Bridge-B 已封存。V225/TPC-372 是上一 release；其 full-window block/off-block producer、
 independent reverse-shell replay、certificate stress audit 与 literal masked-operator
@@ -13659,7 +13734,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 501 对 normal/optimized 命令、1002 次
+当前 curated cascade command set 共 505 对 normal/optimized 命令、1010 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -13678,7 +13753,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369、TPC-370、TPC-371、TPC-372、TPC-373 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369、TPC-370、TPC-371、TPC-372、TPC-373、TPC-374 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 

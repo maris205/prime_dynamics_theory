@@ -1,6 +1,43 @@
-# TPC big road V226 / TPC-373: extremal-eigenmode block separation
+# TPC big road V227 / TPC-374: near-block band truncation
 
-## V226 current anchor: TPC-373
+## V227 current anchor: TPC-374
+
+更新时间：2026-09-03
+
+当前 TPC-374 proof 为 bridge_b_tpc374_near_block_band_truncation.md，checker 为
+tpc_bridge_b_tpc374_near_block_band_truncation_checker.py，编号论文为
+../../papers/tpc-374-near-block-band-truncation/。
+
+TPC-374 承接 TPC-373 的 near-block Rayleigh profile，在同一 count-2048 full-window
+normalization 下预声明保留 block distance `0,1,2,3` 的 band `B3`，对完整 `18` 个 rows
+同时重放 full matrix、band 与 tail。beta=2 的 band 精确复现 full matrix 的六个
+高-Q/all-plus spectral failures（所有三个 origins 的 `Q=2048,8192`），且 full/band
+Schur failures 均为 `0/9`。六个 failure rows 上 selected full-mode 的 band
+absolute-Rayleigh retention 为 `0.99157117644491055--0.99157357537480051`，tail
+fraction 至多 `0.0084288235550895561`。这是有限 operator-level near-block
+reproduction，不是 causality、bandwidth-uniformity 或 asymptotic theorem。
+
+继承 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核，未用于 main-panel
+选择。producer、独立 descending-shell replay、29-mutation stress、PDF 与 local Bridge-B
+均纳入 package；official evaluator files absent，local Bridge-B 仍为 fail-closed fallback。
+arithmetic advance 为 NO，fixed-power credit 为 0，`FULL_GATE_B=OPEN`。下一关测试更小
+预声明带宽的 stability。
+
+    TPC374_BAND_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+    TPC374_BAND_FAILURE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC374_PARENT_FAILURE_REPRODUCTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC374_BAND_OPERATOR_UNIFORMITY = OPEN
+    TPC374_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC374_ORIGIN_UNIFORMITY = OPEN
+    TPC374_WINDOW_UNIFORMITY = OPEN
+    TPC374_ARITHMETIC_ADVANCE = NO
+    TPC374_FIXED_POWER_CREDIT = 0
+    TPC374_FULL_GATE_B = OPEN
+    TPC374_TWIN_PRIME_RESULT = NONE
+    TPC374_STATUS = NUMERICALLY_CERTIFIED_FINITE_NEAR_BLOCK_BAND_TRUNCATION
+    TPC374_ROUND2_CLUE = TEST_BANDWIDTH_STABILITY
+
+## V226 / TPC-373 previous anchor
 
 更新时间：2026-09-03
 
