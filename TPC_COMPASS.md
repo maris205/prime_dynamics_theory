@@ -1,6 +1,47 @@
 # TPC distilled map and bold channel
 
-## V215 / TPC-362 current anchor
+## V216 / TPC-363 current anchor
+
+更新时间：2026-09-03
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc363_bulk_persistence_localization.md，checker 为
+tpc_bridge_b_tpc363_bulk_persistence_localization_checker.py，编号论文为
+papers/tpc-363-bulk-persistence-localization/。
+
+TPC-363 承接 TPC-362 在 `Q=128` 的首个 finite spectral-cap failure，固定同一组
+high-origin origins `(313030,311166,321651)`，并在 `Q=80,128,256`、counts `256,512`、
+exponents `1,2` 与四种 sign laws 上完成 `144` 个全真谱 rows。`Q=80` 控制没有
+`0.64` cap violation；`Q=128` 有 6 个、`Q=256` 有 12 个 violation，18 个全部为
+all-plus。对每行分别删除按 normalized Schur row mass 与 principal-eigenvector
+coordinate mass 选出的 `floor(N/20)` 个坐标，并重算 principal-submatrix spectrum；
+18/18 个 failing rows 在两种删减下均保留越界，全部 failure 的最小 retained spectrum
+为 `0.86120283374232454`，Q=128 子集最小为 `1.1843597700033823`。
+
+这是 finite bulk-persistence obstruction：它只 refute 声明删减范围内的
+single-row/single-coordinate explanation，不产生 universal renormalization、growing
+operator theorem、source-uniform arithmetic `L2`、fixed-power credit、Route-B
+reassembly 或 twin-prime result。arithmetic advance 为 NO；official evaluator files
+absent，local Bridge-B 仍 fail-closed。
+
+    TPC363_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_BULK_PERSISTENCE_OBSTRUCTION
+    TPC363_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+    TPC363_FINITE_ENVELOPE_INEQUALITIES = PROVED_EXACT_FINITE
+    TPC363_FIRST_Q128_FAILURE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC363_BULK_PERSISTENCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC363_SINGLE_ROW_SPIKE_EXPLANATION = REFUTED_SCOPED_ON_DECLARED_TRIMS
+    TPC363_EIGENVECTOR_DELOCALIZATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC363_RENORMALIZED_REPAIR = OPEN
+    TPC363_GROWING_OPERATOR_BOUND = OPEN
+    TPC363_SOURCE_UNIFORM_L2 = OPEN
+    TPC363_ARITHMETIC_ADVANCE = NO
+    TPC363_FIXED_POWER_CREDIT = 0
+    TPC363_FULL_GATE_B = OPEN
+    TPC363_TWIN_PRIME_RESULT = NONE
+    TPC363_STATUS = NUMERICALLY_CERTIFIED_FINITE_BULK_PERSISTENCE_OBSTRUCTION
+    TPC363_ROUND2_CLUE = TEST_RENORMALIZED_HIGH_Q_REPAIR_ON_EXPLICIT_HOLDOUT
+
+## V215 / TPC-362 previous anchor
 
 更新时间：2026-09-03
 

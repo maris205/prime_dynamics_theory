@@ -2,14 +2,46 @@
 
 更新时间：2026-09-03
 
-当前地图版本：V215 / TPC-362
+当前地图版本：V216 / TPC-363
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-362`（`NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION`）；
-对应论文目录为 `papers/tpc-362-shell-scale-cap-obstruction/`。
+当前编号锚点：`TPC-363`（`NUMERICALLY_CERTIFIED_FINITE_BULK_PERSISTENCE_OBSTRUCTION`）；
+对应论文目录为 `papers/tpc-363-bulk-persistence-localization/`。
 
-TPC-362 是当前地图位置：固定 TPC-361 的三个 high-origin origins，把 shell ladder
+TPC-363 是当前地图位置：承接 TPC-362 在 `Q=128` 的首个 finite spectral-cap
+failure，固定 TPC-361 的三组 high-origin origins，在 `Q=80,128,256`、counts
+`256,512`、exponents `1,2` 与四种 sign laws 上完成 144 个全真谱 rows。Q=80 控制
+没有 violation；Q=128 有 6 个、Q=256 有 12 个，18 个全部为 all-plus。对每行按
+normalized Schur row mass 与 principal-eigenvector coordinate mass 各删除
+`floor(N/20)` 个坐标并重算 principal-submatrix spectrum；18/18 个 failure 在两种
+删减下均保留越界，全部 failure 的最小 retained spectrum 为 `0.86120283374232454`。
+
+这是 finite bulk-persistence obstruction：只在声明 trims 上 refute single-row/
+single-coordinate explanation，不产生 universal renormalization、growing operator
+bound、source-uniform arithmetic `L2`、fixed-power credit、Route-B reassembly 或
+twin-prime result；arithmetic advance 为 NO。official evaluator files absent，local
+Bridge-B 仍是 fail-closed fallback。
+
+    YOU ARE HERE = V216 / TPC-363
+    TPC363_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_BULK_PERSISTENCE_OBSTRUCTION
+    TPC363_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+    TPC363_FINITE_ENVELOPE_INEQUALITIES = PROVED_EXACT_FINITE
+    TPC363_FIRST_Q128_FAILURE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC363_BULK_PERSISTENCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC363_SINGLE_ROW_SPIKE_EXPLANATION = REFUTED_SCOPED_ON_DECLARED_TRIMS
+    TPC363_EIGENVECTOR_DELOCALIZATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC363_RENORMALIZED_REPAIR = OPEN
+    TPC363_GROWING_OPERATOR_BOUND = OPEN
+    TPC363_SOURCE_UNIFORM_L2 = OPEN
+    TPC363_ARITHMETIC_ADVANCE = NO
+    TPC363_FIXED_POWER_CREDIT = 0
+    TPC363_FULL_GATE_B = OPEN
+    TPC363_TWIN_PRIME_RESULT = NONE
+    TPC363_STATUS = NUMERICALLY_CERTIFIED_FINITE_BULK_PERSISTENCE_OBSTRUCTION
+    TPC363_ROUND2_CLUE = TEST_RENORMALIZED_HIGH_Q_REPAIR_ON_EXPLICIT_HOLDOUT
+
+TPC-362 是上一地图位置：固定 TPC-361 的三个 high-origin origins，把 shell ladder
 扩展为 `Q=12,24,36,54,80,128,256,512`，在 counts `256,512`、exponents `1,2` 与
 四种 sign laws 上完成 384 个真谱 rows。旧 working caps `0.83/0.64` 在 `Q<=80`
 保持，但 `Q=128` 首次越界；全 ladder normalized Schur/spectral maxima 为
@@ -22,7 +54,7 @@ half-split），336 个 Q transitions 为 `200/136/0` 增/降/平。
 `L2`、fixed-power credit、Route-B reassembly 或 twin-prime result；arithmetic advance 为
 NO。official evaluator files absent，local Bridge-B 仍是 fail-closed fallback。
 
-    YOU ARE HERE = V215 / TPC-362
+    PREVIOUS ANCHOR = V215 / TPC-362
     TPC362_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION
     TPC362_SHELL_SCALE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_384_ROWS
     TPC362_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
@@ -1559,6 +1591,51 @@ strongest positive result：exact two-term normalization, dominant exponent and 
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
 
+## 5.146 V216 / TPC-363：bulk persistence at the first shell-scale failure
+
+TPC-363 承接 TPC-362 的 `Q=128` 首个 finite spectral-cap failure，固定 TPC-361 的
+ordered high-origin panel `(313030,311166,321651)`，在 `Q=80,128,256`、counts `256,512`、
+exponents `1,2` 与四种 sign laws 上完成 `144` 个全真谱 rows。Q=80 控制无 violation；
+Q=128 有 6 个、Q=256 有 12 个，18 个全部为 all-plus。
+
+每个 row 都按 normalized Schur row mass 与 principal-eigenvector coordinate mass
+分别选出 `floor(N/20)` 个坐标，删除后重算 principal-submatrix spectral norm。
+18/18 个原始 failing rows 在两种删减下均仍高于 `0.64`；全部 failure 的最小
+retained spectrum 为 `0.86120283374232454`，Q=128 子集最小为 `1.1843597700033823`。
+Q=80 控制的最大 trimmed spectrum 为 `0.60313535281541197`。这把 TPC-362 的
+shell-scale obstruction 精确推进为声明 trims 下的 bulk-persistence obstruction，
+但不构成 universal bulk theorem 或 renormalization theorem。
+
+producer、independent reverse-shell checker、16-mutation stress、exact rational anchor、
+PDF 与 normal/optimized Bridge-B 均通过；official evaluator files absent，local
+Bridge-B 仍为 fail-closed fallback。source-uniform arithmetic `L2`、growing operator
+bound、fixed-power credit、Route-B reassembly、full Gate B 与 twin-prime endpoint 仍 open，
+arithmetic advance 为 NO。
+
+```text
+YOU ARE HERE = V216 / TPC-363
+TPC363_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_BULK_PERSISTENCE_OBSTRUCTION
+TPC363_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+TPC363_FINITE_ENVELOPE_INEQUALITIES = PROVED_EXACT_FINITE
+TPC363_FIRST_Q128_FAILURE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC363_BULK_PERSISTENCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC363_SINGLE_ROW_SPIKE_EXPLANATION = REFUTED_SCOPED_ON_DECLARED_TRIMS
+TPC363_EIGENVECTOR_DELOCALIZATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC363_RENORMALIZED_REPAIR = OPEN
+TPC363_GROWING_OPERATOR_BOUND = OPEN
+TPC363_SOURCE_UNIFORM_L2 = OPEN
+TPC363_ARITHMETIC_ADVANCE = NO
+TPC363_FIXED_POWER_CREDIT = 0
+TPC363_FULL_GATE_B = OPEN
+TPC363_TWIN_PRIME_RESULT = NONE
+TPC363_STATUS = NUMERICALLY_CERTIFIED_FINITE_BULK_PERSISTENCE_OBSTRUCTION
+TPC363_ROUND2_CLUE = TEST_RENORMALIZED_HIGH_Q_REPAIR_ON_EXPLICIT_HOLDOUT
+```
+
+地图位置：**V216 / TPC-363 将 `Q=128` failure 从 shell-scale 定位推进到有限
+bulk-persistence obstruction；下一关测试明确 holdout 上的重新归一化或 shell reweighting，
+不把声明 trims 外推为 universal theorem。**
+
 ## 5.145 V215 / TPC-362：shell-scale cap obstruction
 
 TPC-362 固定 TPC-361 的三个 high-origin origins `(313030,311166,321651)`，不再改变
@@ -1578,7 +1655,7 @@ reassembly、full Gate B 与 twin-prime endpoint 仍 open，arithmetic advance �
 evaluator files absent，local Bridge-B 仍 fail-closed。
 
 ```text
-YOU ARE HERE = V215 / TPC-362
+    PREVIOUS ANCHOR = V215 / TPC-362
 TPC362_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION
 TPC362_SHELL_SCALE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_384_ROWS
 TPC362_FINITE_SCHUR_ENVELOPE = PROVED_EXACT_FINITE
@@ -9911,6 +9988,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-03 | V216 / TPC-363 | Bridge A / Gate B：first high-Q failure 的 finite bulk-persistence localization 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-363` | 承接 TPC-362；固定三 origins，在 `Q=80,128,256`、两档 counts、两种 exponents、四种 laws 上完成 144 个真谱 rows；18 个 cap failures 全部在两种 `floor(N/20)` targeted principal trims 后保留，最小 retained spectrum `0.86120`；下一步 explicit-holdout renormalization/reweighting |
 | 2026-09-03 | V215 / TPC-362 | Bridge A / Gate B：shell-scale finite cap obstruction 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-362` | 承接 TPC-361；固定三 origins，扩展八级 Q ladder，384 个四-law 真谱 rows；旧 caps 在 `Q<=80` 保持，`Q=128` 首次越界，Schur/spectral violations `33/30`，Q transitions `200/136/0`；下一步 localization of high-Q law/row geometry |
 | 2026-09-03 | V214 / TPC-361 | Bridge A / Gate B：independent high-origin finite tightness replication 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-361` | 承接 TPC-360；51 个新候选只用 unsigned geometry spread 选出 `(313030,311166,321651)`，288 rows、180 真谱，normalized Schur/spectral max `0.80830/0.62691`，最大 spectral/Schur `0.77586`；transition `12/36/6`，下一步 scale/shell stress 与 sign-law interaction |
 | 2026-09-03 | V213 / TPC-360 | Bridge A / Gate B：finite Schur-tightness 与 law-uniform spectral audit 已完成；source-uniform `L2`、growing masked operator bound、fixed-power credit 与 full Gate B open | `TPC-360` | 承接 TPC-359；三个 fixed hostile origins、两档 counts、四种 laws 共 144 真谱 rows；max spectral/Schur `0.77628`、spectral/Frobenius `0.62111`，all-plus/mod-4 winners `30/6`；下一步独立 high-origin replication with tightness ledger |

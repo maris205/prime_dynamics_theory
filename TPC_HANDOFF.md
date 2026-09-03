@@ -1,9 +1,77 @@
 # TPC HANDOFF
 
-TPC-362 current section: shell-scale cap obstruction
-----------------------------------------------------
+TPC-363 current section: bulk persistence at the first shell-scale failure
+-------------------------------------------------------------------------
 
-TPC-362 is the current sealed release.  It keeps the TPC-361 ordered panel
+TPC-363 is the current sealed release.  It inherits the TPC-361 ordered
+high-origin panel `(313030,311166,321651)` and the TPC-362 literal normalized
+operator, then audits `Q=80,128,256`, counts `256,512`, exponents `1,2`, and
+all four fixed sign laws.  The complete replay has `144` law rows and true
+spectra for every row.  There are no inherited `0.64` spectral-cap failures
+at `Q=80`, six at `Q=128`, and twelve at `Q=256`; all 18 are all-plus rows.
+
+For each row, `floor(N/20)` coordinates are removed by normalized Schur row
+mass and, separately, by principal-eigenvector coordinate mass.  The
+principal-submatrix spectrum is recomputed after each removal.  Every one of
+the 18 original failures persists under both restrictions.  The smallest
+retained spectrum is `0.86120283374232454` over all failures and
+`1.1843597700033823` among the six `Q=128` failures; the `Q=80` control's
+largest retained spectrum is `0.60313535281541197`.
+
+This is a finite, scoped bulk-persistence obstruction to the specific
+single-row/single-coordinate explanation.  It is not a universal
+renormalization theorem or an asymptotic bulk theorem.  Finite envelope
+inequalities and the rational anchor remain exact in the declared model.
+Producer, reverse-shell independent checker, 16-mutation stress, PDF QA, and
+local Bridge-B normal/optimized replay pass.  No source-uniform arithmetic
+`L2`, growing operator bound, fixed-power credit, Route-B reassembly, or
+twin-prime conclusion is licensed.  Official Session-named evaluator files
+remain absent, so local Bridge-B is fail-closed fallback evidence only.
+
+    TPC363_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_BULK_PERSISTENCE_OBSTRUCTION
+    TPC363_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+    TPC363_FINITE_ENVELOPE_INEQUALITIES = PROVED_EXACT_FINITE
+    TPC363_FIRST_Q128_FAILURE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC363_BULK_PERSISTENCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC363_SINGLE_ROW_SPIKE_EXPLANATION = REFUTED_SCOPED_ON_DECLARED_TRIMS
+    TPC363_EIGENVECTOR_DELOCALIZATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC363_RENORMALIZED_REPAIR = OPEN
+    TPC363_GROWING_OPERATOR_BOUND = OPEN
+    TPC363_SOURCE_UNIFORM_L2 = OPEN
+    TPC363_ARITHMETIC_ADVANCE = NO
+    TPC363_FIXED_POWER_CREDIT = 0
+    TPC363_FULL_GATE_B = OPEN
+    TPC363_TWIN_PRIME_RESULT = NONE
+    TPC363_STRONGEST_POSITIVE = ALL_18_HIGH_Q_FAILURES_PERSIST_AFTER_BOTH_5_PERCENT_TRIMS
+    TPC363_STRONGEST_OBSTRUCTION = SINGLE_ROW_AND_SINGLE_COORDINATE_EXPLANATION_REFUTED_SCOPED
+    TPC363_OPEN_THEOREM = EXPLICIT_HOLDOUT_RENORMALIZATION_OR_SHELL_REWEIGHTING
+    TPC363_REUSABLE_STRUCTURE = FAILURE_LOCALIZATION_PLUS_TARGETED_PRINCIPAL_RESTRICTION_CENSUS
+    TPC363_ROUND2_CLUE = TEST_RENORMALIZED_HIGH_Q_REPAIR_ON_EXPLICIT_HOLDOUT
+    TPC363_STATUS = NUMERICALLY_CERTIFIED_FINITE_BULK_PERSISTENCE_OBSTRUCTION
+
+TPC-363 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-363-bulk-persistence-localization/code/tpc363_bulk_persistence_localization.py --check
+    python -O -B papers/tpc-363-bulk-persistence-localization/code/tpc363_bulk_persistence_localization.py --check
+    python -B papers/tpc-363-bulk-persistence-localization/experiments/tpc363_independent_checker.py --check
+    python -O -B papers/tpc-363-bulk-persistence-localization/experiments/tpc363_independent_checker.py --check
+    python -B papers/tpc-363-bulk-persistence-localization/experiments/tpc363_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-363-bulk-persistence-localization/experiments/tpc363_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc363_bulk_persistence_localization_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc363_bulk_persistence_localization_checker.py --check
+
+TPC-363 增量 tail audit：上述 4 对共 8 次 invocation 均返回零、stderr 为空且 stdout
+逐对 byte-identical；Bridge-B 输出 `rows=144 / violations=18 /
+persistent_schur=18 / persistent_eigenvector=18`。这是 V216 的 finite
+bulk-persistence localization；声明 trims 外的 renormalization、growing operator
+bound、source-uniform arithmetic `L2`、fixed-power saving、Route-B reassembly、official
+evaluator pass 与 twin-prime result 仍未关闭。
+
+TPC-362 previous section: shell-scale cap obstruction
+-------------------------------------------------------
+
+TPC-362 is the previous sealed release.  It keeps the TPC-361 ordered panel
 `(313030,311166,321651)` fixed and widens the shell ladder to
 `Q=12,24,36,54,80,128,256,512`.  At counts `256,512`, exponents `1,2`, and
 the four fixed sign laws, the complete replay has `384` rows and true spectra
@@ -12919,7 +12987,11 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V214/TPC-361 是当前 release；其 independent high-origin finite tightness producer、
+V216/TPC-363 是当前 release；其 bulk-persistence localization producer、
+reverse-shell independent replay、certificate stress audit 与 literal masked-operator
+Bridge-B 已封存。V215/TPC-362 是上一 release；其 shell-scale finite obstruction、
+reverse-shell all-law replay、certificate stress audit 与 literal masked-operator
+Bridge-B 已封存。V214/TPC-361 的 independent high-origin finite tightness producer、
 reverse-shell independent replay、certificate stress audit 与 literal masked-operator
 Bridge-B 已封存。
 V210/TPC-357、V209/TPC-356、V208/TPC-355、V207/TPC-354、V206/TPC-353、V205/TPC-352、V204/TPC-351、
@@ -12928,7 +13000,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 457 对 normal/optimized 命令、914 次
+当前 curated cascade command set 共 461 对 normal/optimized 命令、922 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -12947,7 +13019,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362 各再追加末尾 4 对。
+	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 

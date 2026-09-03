@@ -3,13 +3,71 @@
 
 更新时间：2026-09-03
 
-状态：**TPC362_NUMERICALLY_CERTIFIED_FINITE_SHELL_SCALE_CAP_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC363_NUMERICALLY_CERTIFIED_FINITE_BULK_PERSISTENCE_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.156 current：TPC-362 shell-scale cap obstruction
+## 0.157 current：TPC-363 bulk persistence at the first shell-scale failure
+
+项目：papers/tpc-363-bulk-persistence-localization/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_BULK_PERSISTENCE_OBSTRUCTION**。
+
+TPC-363 承接 TPC-362 在 `Q=128` 的首个 normalized spectral-cap failure，固定
+TPC-361 的 ordered high-origin panel `(313030,311166,321651)`，在
+`Q=80,128,256`、counts `256,512`、exponents `1,2` 与四种 sign laws 上完成
+`144` 个全真谱 rows。`Q=80` 控制有 0 个 violation，`Q=128` 有 6 个、`Q=256`
+有 12 个；18 个全部为 all-plus。
+
+最强正结果：对每个 row 分别按 normalized Schur row mass 与 principal-eigenvector
+coordinate mass 删除 `floor(N/20)` 个坐标，再计算 principal-submatrix spectral
+norm；18/18 个原始 failure 在两种删减下均保留越界，全部 failure 的最小 retained
+spectrum 为 `0.86120283374232454`，Q=128 子集最小为 `1.1843597700033823`。
+Q=80 控制的最大 trimmed spectrum 为 `0.60313535281541197`。
+
+最强 obstruction：声明范围内的高-Q cap failure 不能归因于 single-row 或
+single-coordinate spike；这只是 finite targeted-trim refutation，不是 universal
+bulk theorem。principal eigenvector 的最大 coordinate mass 为
+`0.0065671250441509798`，minimum effective-support fraction 为
+`0.55114876369112986`，均只作 finite descriptive diagnostics。
+
+producer、reverse-shell independent replay、16-mutation stress、exact rational anchor、
+PDF 与 normal/optimized Bridge-B 均通过；official evaluator files absent，local
+Bridge-B 仍是 fail-closed fallback。`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`、`TWIN_PRIME_RESULT=NONE`；growing operator theorem、source-uniform
+arithmetic `L2`、Route-B reassembly 与 renormalized repair 仍 open。
+
+开放定理：在明确 holdout 上测试 shell reweighting/renormalization，或给出能解释
+高-Q bulk persistence 的 analytic row-geometry theorem；当前 finite certificate 不
+支付任何 power saving。
+
+可复用结构：
+
+    frozen Q=128 failure -> deterministic row/eigenvector scores
+      -> five-percent principal restrictions -> persistence census
+      -> finite bulk obstruction firewall
+
+ROUND2_CLUE：`TEST_RENORMALIZED_HIGH_Q_REPAIR_ON_EXPLICIT_HOLDOUT`。
+
+    TPC363_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_BULK_PERSISTENCE_OBSTRUCTION
+    TPC363_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+    TPC363_FINITE_ENVELOPE_INEQUALITIES = PROVED_EXACT_FINITE
+    TPC363_FIRST_Q128_FAILURE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC363_BULK_PERSISTENCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC363_SINGLE_ROW_SPIKE_EXPLANATION = REFUTED_SCOPED_ON_DECLARED_TRIMS
+    TPC363_EIGENVECTOR_DELOCALIZATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC363_RENORMALIZED_REPAIR = OPEN
+    TPC363_GROWING_OPERATOR_BOUND = OPEN
+    TPC363_SOURCE_UNIFORM_L2 = OPEN
+    TPC363_ARITHMETIC_ADVANCE = NO
+    TPC363_FIXED_POWER_CREDIT = 0
+    TPC363_FULL_GATE_B = OPEN
+    TPC363_TWIN_PRIME_RESULT = NONE
+    TPC363_STATUS = NUMERICALLY_CERTIFIED_FINITE_BULK_PERSISTENCE_OBSTRUCTION
+
+## 0.156 previous：TPC-362 shell-scale cap obstruction
 
 项目：papers/tpc-362-shell-scale-cap-obstruction/
 
