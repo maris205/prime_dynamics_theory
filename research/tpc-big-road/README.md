@@ -1,6 +1,52 @@
-# TPC big road V221 / TPC-368: second predeclared origin-family replication
+# TPC big road V222 / TPC-369: third predeclared origin-family audit
 
-## V221 current anchor: TPC-368
+## V222 current anchor: TPC-369
+
+更新时间：2026-09-03
+
+当前 TPC-369 proof 为 bridge_b_tpc369_third_origin_family_audit.md，checker 为
+tpc_bridge_b_tpc369_third_origin_family_audit_checker.py，编号论文为
+../../papers/tpc-369-third-origin-family-audit/。
+
+TPC-369 在第三个 predeclared origin family `1010001+401j` 上复现 TPC-368 的
+long-window phase。indices `(0,20,40)` 在任何 signed response、source、law result 或
+geometry score 读取前固定，得到 `(1010001,1018021,1026041)`；随后对 beta `0,2`、counts
+`512,1024`、`Q=512,2048,8192`、exponent `1` 与四种 sign laws 完成 `144` 个全真谱
+rows。beta=2 在 count=1024 的 `Q=2048,8192`、all-plus rows 上逐 origin 出现 6 个
+spectral violations，最大谱为 `0.67410489800609708`，而 72 个 beta=2 rows 均无
+Schur violation；beta=0 对照有 18 个 spectral 与 18 个 Schur violations。
+
+初始 exact anchor `[1010342,1010355)` 对两个 beta 都有零 geometry row，故记为
+`REFUTED_SCOPED`；只读 unsigned geometry 的首个正区间规则在 offset 4 选出
+`[1010346,1010359)`，并由 independent checker 与 30-mutation stress 复核。该有限修复
+不建立 origin/window uniformity、asymptotic transfer、source-valid normalization、
+growing operator theorem、source-uniform arithmetic `L2`、fixed-power credit、Route-B
+reassembly 或 twin-prime result；arithmetic advance 为 NO，fixed-power credit 为 0，
+`FULL_GATE_B=OPEN`。official evaluator files absent，local Bridge-B 为 fail-closed fallback。
+下一步优先测试 count-2048 window；若 phase 改变则转 residue-phase localization。
+
+    TPC369_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC369_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC369_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+    TPC369_THIRD_ORIGIN_FAMILY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC369_BETA2_PHASE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC369_BETA2_FAILURE_PATTERN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC369_INITIAL_ANCHOR_POSITIVITY = REFUTED_SCOPED
+    TPC369_REPAIRED_ANCHOR_RULE = PROVED_EXACT_FINITE
+    TPC369_ORIGIN_UNIFORMITY = OPEN
+    TPC369_WINDOW_UNIFORMITY = OPEN
+    TPC369_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC369_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC369_GROWING_OPERATOR_BOUND = OPEN
+    TPC369_SOURCE_UNIFORM_L2 = OPEN
+    TPC369_ARITHMETIC_ADVANCE = NO
+    TPC369_FIXED_POWER_CREDIT = 0
+    TPC369_FULL_GATE_B = OPEN
+    TPC369_TWIN_PRIME_RESULT = NONE
+    TPC369_STATUS = NUMERICALLY_CERTIFIED_FINITE_THIRD_ORIGIN_FAMILY_AUDIT
+    TPC369_ROUND2_CLUE = TEST_COUNT_2048_ORIGIN_PHASE_OR_RESIDUE_PHASE
+
+## V221 previous anchor: TPC-368
 
 更新时间：2026-09-03
 

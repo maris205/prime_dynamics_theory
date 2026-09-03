@@ -2,14 +2,31 @@
 
 更新时间：2026-09-03
 
-当前地图版本：V221 / TPC-368
+当前地图版本：V222 / TPC-369
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-368`（`NUMERICALLY_CERTIFIED_FINITE_PREDECLARED_ORIGIN_REPLICATION`）；
-对应论文目录为 `papers/tpc-368-predeclared-origin-replication/`。
+当前编号锚点：`TPC-369`（`NUMERICALLY_CERTIFIED_FINITE_THIRD_ORIGIN_FAMILY_AUDIT`）；
+对应论文目录为 `papers/tpc-369-third-origin-family-audit/`。
 
-TPC-368 是当前地图位置：在第二个 predeclared origin family
+TPC-369 是当前地图位置：在第三个 predeclared origin family
+`1010001+401j` 的 indices `(0,20,40)` 上复现 TPC-368 的 long-window phase，得到
+`(1010001,1018021,1026041)`；选择不读取 response、source、law result 或 geometry score。
+随后在 beta `0,2`、counts `512,1024`、`Q=512,2048,8192`、exponent `1` 与四种 sign laws
+上完成 `144` 个全真谱 rows。beta=2 在 count=1024 的 `Q=2048,8192`、all-plus rows
+出现 6 个 spectral violations，最大谱为 `0.67410489800609708`，且 72 个 beta=2 rows
+均无 Schur violation；beta=0 对照有 18 个 spectral 与 18 个 Schur violations。
+
+本轮另发现并公开记录 exact-anchor obstruction：初始 `[1010342,1010355)` 对两个 beta
+都有 zero geometry row，记为 `REFUTED_SCOPED`；unsigned、response-blind 的首个正几何
+规则在 offset 4 选出 `[1010346,1010359)`，由独立 checker 复核。该 repair 不改变 main
+panel，也不建立 origin/window uniformity、asymptotic transfer、source-valid normalization、
+growing operator bound、source-uniform arithmetic `L2`、fixed-power credit、Route-B
+reassembly 或 twin-prime result；arithmetic advance 为 NO，fixed-power credit 为 0，
+`FULL_GATE_B=OPEN`。下一关优先是 count-2048 window；若 phase 改变则转 residue-phase
+localization。
+
+TPC-368 是上一地图位置：在第二个 predeclared origin family
 `810001+353j` 的 indices `(0,20,40)` 上复现 TPC-367 的 long-window phase，得到
 `(810001,817061,824121)`；选择不读取 response、source、law result 或 geometry score。
 随后在 beta `0,2`、counts `512,1024`、`Q=512,2048,8192`、exponent `1` 与四种 sign laws
@@ -24,25 +41,76 @@ growing operator bound、source-uniform arithmetic `L2`、fixed-power credit、R
 reassembly 或 twin-prime result；arithmetic advance 为 NO。下一步是第三个 predeclared
 origin family 或 count-2048 window，必要时做 residue-phase localization。
 
-    YOU ARE HERE = V221 / TPC-368
-    TPC368_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
-    TPC368_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
-    TPC368_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
-    TPC368_SECOND_ORIGIN_FAMILY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC368_BETA2_LONG_WINDOW_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC368_BETA2_FAILURE_PATTERN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC368_ORIGIN_UNIFORMITY = OPEN
-    TPC368_WINDOW_UNIFORMITY = OPEN
-    TPC368_BETA2_ASYMPTOTIC_REPAIR = OPEN
-    TPC368_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
-    TPC368_GROWING_OPERATOR_BOUND = OPEN
-    TPC368_SOURCE_UNIFORM_L2 = OPEN
-    TPC368_ARITHMETIC_ADVANCE = NO
-    TPC368_FIXED_POWER_CREDIT = 0
-    TPC368_FULL_GATE_B = OPEN
-    TPC368_TWIN_PRIME_RESULT = NONE
-    TPC368_STATUS = NUMERICALLY_CERTIFIED_FINITE_PREDECLARED_ORIGIN_REPLICATION
-    TPC368_ROUND2_CLUE = TEST_BETA2_THIRD_ORIGIN_FAMILY_OR_COUNT_2048
+    YOU ARE HERE = V222 / TPC-369
+    TPC369_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC369_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC369_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+    TPC369_THIRD_ORIGIN_FAMILY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC369_BETA2_PHASE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC369_BETA2_FAILURE_PATTERN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC369_INITIAL_ANCHOR_POSITIVITY = REFUTED_SCOPED
+    TPC369_REPAIRED_ANCHOR_RULE = PROVED_EXACT_FINITE
+    TPC369_ORIGIN_UNIFORMITY = OPEN
+    TPC369_WINDOW_UNIFORMITY = OPEN
+    TPC369_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC369_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC369_GROWING_OPERATOR_BOUND = OPEN
+    TPC369_SOURCE_UNIFORM_L2 = OPEN
+    TPC369_ARITHMETIC_ADVANCE = NO
+    TPC369_FIXED_POWER_CREDIT = 0
+    TPC369_FULL_GATE_B = OPEN
+    TPC369_TWIN_PRIME_RESULT = NONE
+    TPC369_STATUS = NUMERICALLY_CERTIFIED_FINITE_THIRD_ORIGIN_FAMILY_AUDIT
+    TPC369_ROUND2_CLUE = TEST_COUNT_2048_ORIGIN_PHASE_OR_RESIDUE_PHASE
+
+## 5.152 V222 / TPC-369：third predeclared origin-family audit
+
+TPC-369 的完整 finite package 位于
+`papers/tpc-369-third-origin-family-audit/`。它在第三个预声明 origin family 上逐键复现
+TPC-368 的六个 beta=2 failure keys；这是一项独立的有限 hostile audit，不是 origin-uniform
+theorem。
+
+候选 grid 为 `1010001+401j`、`0<=j<41`，indices `(0,20,40)` 在 signed replay 前固定，
+得到 `(1010001,1018021,1026041)`。在 beta `0,2`、counts `512,1024`、
+`Q=512,2048,8192`、exponent `1` 与四种 fixed sign laws 上完成 `144` 个全真谱 rows。
+beta=2 在 count=512 的全部 36 个 law rows 通过 spectral cap，且其 72 个 rows 均无
+Schur-cap violation；count=1024 的 `Q=2048,8192`、all-plus rows 在三个 origins 各越界
+一次，共 6 个 spectral violations，最大谱为 `0.67410489800609708`。beta=0 对照有
+`18/72` spectral 与 `18/72` Schur violations。
+
+最强正结果：TPC-367/TPC-368 的 finite six-key phase 在第三个 origin family 逐键复制。
+最强 obstruction：该 pattern 在再次改变 origin phase 后仍阻塞 count-1024 cap transfer。
+此外，初始 exact anchor `[1010342,1010355)` 的 zero geometry 是一个明确的
+`REFUTED_SCOPED` 局部声明；确定性 unsigned scan 选出的 `[1010346,1010359)` repair
+不改变 main panel。exact rational anchor、reverse-shell independent replay、30-mutation
+stress、PDF 与 local Bridge-B 均通过；official evaluator files absent，故 local bridge
+仍是 fail-closed evidence。
+
+    TPC369_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC369_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC369_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+    TPC369_THIRD_ORIGIN_FAMILY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC369_BETA2_PHASE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC369_BETA2_FAILURE_PATTERN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC369_INITIAL_ANCHOR_POSITIVITY = REFUTED_SCOPED
+    TPC369_REPAIRED_ANCHOR_RULE = PROVED_EXACT_FINITE
+    TPC369_ORIGIN_UNIFORMITY = OPEN
+    TPC369_WINDOW_UNIFORMITY = OPEN
+    TPC369_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC369_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC369_GROWING_OPERATOR_BOUND = OPEN
+    TPC369_SOURCE_UNIFORM_L2 = OPEN
+    TPC369_ARITHMETIC_ADVANCE = NO
+    TPC369_FIXED_POWER_CREDIT = 0
+    TPC369_FULL_GATE_B = OPEN
+    TPC369_TWIN_PRIME_RESULT = NONE
+    TPC369_STATUS = NUMERICALLY_CERTIFIED_FINITE_THIRD_ORIGIN_FAMILY_AUDIT
+    TPC369_ROUND2_CLUE = TEST_COUNT_2048_ORIGIN_PHASE_OR_RESIDUE_PHASE
+
+下一关：count-2048 window；若 phase 断裂，转入 residue-phase localization，否则继续记录
+finite obstruction 的范围。source-valid normalization、growing operator bound、source-uniform
+arithmetic `L2`、prime-shell reassembly、fixed-power credit 与 twin-prime endpoint 仍为
+OPEN/NO/NONE。
 
 ## 5.151 V221 / TPC-368：second predeclared origin-family replication
 
@@ -10356,6 +10424,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-03 | V222 / TPC-369 | Bridge B / Gate B：third predeclared origin-family finite audit; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-369` | 承接 TPC-368；第三个 `1010001+401j` predeclared family 完成 144 个全法真谱 rows，beta=2 在 count=1024、高-Q、all-plus/exponent-1 逐键复现 6 个 spectral violations，Schur 0；初始 exact anchor 零几何并由 unsigned first-positive rule 修复；下一步 count-2048 window 或 residue-phase localization |
 | 2026-09-03 | V221 / TPC-368 | Bridge B / Gate B：second predeclared origin-family finite replication; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-368` | 承接 TPC-367；第二个 `810001+353j` predeclared family 完成 144 个全法真谱 rows，beta=2 在 count=1024、高-Q、all-plus/exponent-1 逐键复现 6 个 spectral violations，Schur 0；下一步第三个 family 或 count-2048 window |
 | 2026-09-03 | V220 / TPC-367 | Bridge B / Gate B：predeclared long-window finite obstruction; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-367` | 承接 TPC-366；预声明 `(620001,626141,632281)` origins，在 counts `512,1024` 与 `Q=512,2048,8192` 完成 288 个全法真谱 rows；beta=2 在 count=1024 的高-Q all-plus/exponent-1 rows 出现 6 个 spectral violations，Schur 0；下一步第二个 predeclared origin family replication |
 | 2026-09-03 | V219 / TPC-366 | Bridge A / Gate B：fixed beta=2 higher-Q finite scale ladder completed; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-366` | 承接 TPC-365；41 个候选只用 unsigned geometry selection 选出 `(623071,631360,629211)`，新 panel 在 `Q=512..8192` 五锚点完成 480 个全法真谱 rows；beta=2 在 240/240 行低于 `0.64/0.83`，beta=0 各有 60/240 violations；最大谱相对 parent 上升 `0.00815`，下一步更长 windows 与 unselected origins |

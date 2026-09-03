@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--368 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--369 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -651,6 +651,16 @@ long-window phase，得到 `(810001,817061,824121)`；在 exponent=1、counts `5
 或 asymptotic theorem；含 exact anchor、独立 reverse-shell replay、29-mutation stress、
 PDF 与 local Bridge-B checker，growing operator bound、source-uniform arithmetic L2 与
 arithmetic advance 仍为 OPEN/NO。
+
+papers/tpc-369-third-origin-family-audit - TPC-369 已完成项目 - 在第三个
+predeclared origin family `1010001+401j` 的 indices `(0,20,40)` 上完成 144 个全法真谱
+rows，并逐键复现 TPC-368 的 6 个 beta=2、count=1024、高-Q、all-plus spectral
+violations；Schur 为 0/72，beta=0 对照为 18/18。初始 exact anchor
+`[1010342,1010355)` 的零几何被明确记为 `REFUTED_SCOPED`，响应盲首个正几何规则修复为
+`[1010346,1010359)`。这是第三 origin family 的 finite scoped audit，不是 origin/window
+uniformity、asymptotic theorem 或 arithmetic advance；含 exact anchor repair、独立
+reverse-shell replay、30-mutation stress、PDF 与 local Bridge-B checker，growing operator
+bound、source-uniform arithmetic L2 与 arithmetic advance 仍为 OPEN/NO。
 
 papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram
 operator 的 6-row masked response ledger；zero/background/twin/prime-power gain

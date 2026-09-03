@@ -1,6 +1,60 @@
 # TPC HANDOFF
 
-TPC-368 current section: second predeclared origin-family replication
+TPC-369 current section: third predeclared origin-family audit
+--------------------------------------------------------------
+
+TPC-369 is the current sealed release.  It carries the fixed beta=2 rule and
+replays the TPC-368 long-window phase on a third, independently declared
+origin family.  The candidate grid is `1010001+401j`, `0<=j<41`; indices
+`(0,20,40)` are fixed before any response, source, law result, or geometry
+score is read, giving origins `(1010001,1018021,1026041)`.  Counts `512,1024`,
+shell anchors `Q=512,2048,8192`, exponent `1`, four fixed laws, and beta
+`0,2` give 144 true-spectral rows.
+
+Beta=2 has no spectral-cap failure in the 36 count-512 rows and no Schur-cap
+failure in any of its 72 rows.  At count 1024, all three origins fail the
+spectral cap at `Q=2048` and `Q=8192` for exponent one and the all-plus law,
+giving the same six finite failure keys as TPC-368; the maximum is
+`0.67410489800609708`.  The beta=0 control has 18 spectral and 18 Schur
+failures.  The first proposed exact anchor `[1010342,1010355)` has a zero
+geometry row for both beta values and is explicitly `REFUTED_SCOPED`; an
+unsigned, response-blind first-positive scan selects `[1010346,1010359)` at
+offset four.  This repair is finite and does not alter the main panel.
+
+The exact weighted-square geometry, anchor obstruction/repair, independent
+reverse-shell replay, 30-mutation stress test, paper PDF, and local
+fail-closed Bridge-B are part of the release.  Official Route-A/Route-B
+evaluator files remain absent.  `ARITHMETIC_ADVANCE=NO`,
+`FIXED_POWER_CREDIT=0`, and `FULL_GATE_B=OPEN`; the next finite question is a
+count-2048 window, with residue-phase localization as the fallback if its
+failure pattern changes.
+
+    TPC369_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC369_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC369_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+    TPC369_THIRD_ORIGIN_FAMILY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC369_BETA2_PHASE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC369_BETA2_FAILURE_PATTERN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC369_INITIAL_ANCHOR_POSITIVITY = REFUTED_SCOPED
+    TPC369_REPAIRED_ANCHOR_RULE = PROVED_EXACT_FINITE
+    TPC369_ORIGIN_UNIFORMITY = OPEN
+    TPC369_WINDOW_UNIFORMITY = OPEN
+    TPC369_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC369_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC369_GROWING_OPERATOR_BOUND = OPEN
+    TPC369_SOURCE_UNIFORM_L2 = OPEN
+    TPC369_ARITHMETIC_ADVANCE = NO
+    TPC369_FIXED_POWER_CREDIT = 0
+    TPC369_FULL_GATE_B = OPEN
+    TPC369_TWIN_PRIME_RESULT = NONE
+    TPC369_STRONGEST_POSITIVE = THIRD_ORIGIN_FAMILY_FAILURE_KEY_REPLICATION
+    TPC369_STRONGEST_OBSTRUCTION = COUNT_1024_HIGH_Q_ALL_PLUS_FAILURE_PERSISTS
+    TPC369_OPEN_THEOREM = COUNT_2048_WINDOW_OR_RESIDUE_PHASE_AUDIT
+    TPC369_REUSABLE_STRUCTURE = PREDECLARED_ORIGIN_LONG_WINDOW_PHASE_REPLAY_WITH_ANCHOR_FIREWALL
+    TPC369_ROUND2_CLUE = TEST_COUNT_2048_ORIGIN_PHASE_OR_RESIDUE_PHASE
+    TPC369_STATUS = NUMERICALLY_CERTIFIED_FINITE_THIRD_ORIGIN_FAMILY_AUDIT
+
+TPC-368 previous section: second predeclared origin-family replication
 ---------------------------------------------------------------------
 
 TPC-368 is the current sealed release.  It carries the fixed beta=2 rule and
@@ -164,6 +218,23 @@ have empty stderr, and emit byte-identical stdout.  This is V219 finite
 higher-Q evidence only; scale uniformity, source validity, growing operator
 bound, arithmetic `L2`, fixed-power saving, full Gate B, and the twin-prime
 endpoint remain open.
+
+TPC-369 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-369-third-origin-family-audit/code/tpc369_third_origin_family_audit.py --check
+    python -O -B papers/tpc-369-third-origin-family-audit/code/tpc369_third_origin_family_audit.py --check
+    python -B papers/tpc-369-third-origin-family-audit/experiments/tpc369_independent_checker.py --check
+    python -O -B papers/tpc-369-third-origin-family-audit/experiments/tpc369_independent_checker.py --check
+    python -B papers/tpc-369-third-origin-family-audit/experiments/tpc369_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-369-third-origin-family-audit/experiments/tpc369_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc369_third_origin_family_audit_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc369_third_origin_family_audit_checker.py --check
+
+TPC-369 tail audit is required to return zero with empty stderr and
+byte-identical normal/optimized stdout.  It is finite third-family evidence
+only: the six beta=2 long-window spectral failures and the exact-anchor repair
+do not pay arithmetic or fixed-power credit and do not close Route-A/Route-B.
 
 TPC-368 reproducibility commands:
 
@@ -13131,6 +13202,11 @@ TPC-207 数学 trigger：`true`；TPC-207 已创建：`true`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
+`papers/tpc-369-third-origin-family-audit/README.md`、
+`papers/tpc-369-third-origin-family-audit/notes/theorem_ledger.md`、
+`papers/tpc-369-third-origin-family-audit/notes/route_evaluation.md`、
+`research/tpc-big-road/bridge_b_tpc369_third_origin_family_audit.md`、
+`research/tpc-big-road/tpc_bridge_b_tpc369_third_origin_family_audit_checker.py`、
 `research/tpc-big-road/README.md`、
 `research/tpc-big-road/TPC_ROUTE_MAP.md`、
 `papers/tpc-241-top-prime-collision-sharpness/README.md`、
@@ -13315,7 +13391,9 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V221/TPC-368 是当前 release；其 second predeclared origin-family producer、
+V222/TPC-369 是当前 release；其 third predeclared origin-family producer、
+reverse-shell independent replay、certificate stress audit 与 literal masked-operator
+Bridge-B 已封存。V221/TPC-368 是上一 release；其 second predeclared origin-family producer、
 reverse-shell independent replay、certificate stress audit 与 literal masked-operator
 Bridge-B 已封存。V220/TPC-367 是上一 release；其 predeclared long-window producer、
 reverse-shell independent replay、certificate stress audit 与 literal masked-operator
@@ -13338,7 +13416,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 481 对 normal/optimized 命令、962 次
+当前 curated cascade command set 共 485 对 normal/optimized 命令、970 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -13357,7 +13435,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
