@@ -2,14 +2,64 @@
 
 更新时间：2026-09-03
 
-当前地图版本：V224 / TPC-371
+当前地图版本：V225 / TPC-372
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-371`（`NUMERICALLY_CERTIFIED_FINITE_BLOCK_PHASE_LOCALIZATION`）；
-对应论文目录为 `papers/tpc-371-block-phase-localization/`。
+当前编号锚点：`TPC-372`（`NUMERICALLY_CERTIFIED_FINITE_FULL_WINDOW_DECOMPOSITION`）；
+对应论文目录为 `papers/tpc-372-full-window-offblock-decomposition/`。
 
-TPC-371 是当前地图位置：在 TPC-370 的三个继承 origin 上保持 count-2048 full window，
+TPC-372 是当前地图位置：保持 TPC-370 的 count-2048 full-window normalization，把
+all-plus matrix 按预声明的八块 mask 分解为 `T=D+R`，完成 `18` 个全真 rows。beta=2
+的 full matrix 有 `6` 个高-Q spectral-cap failures，而 block-diagonal `D` 与 off-block
+`R` 各有 `0` 个 spectral failures；六个 full failure rows 上反三角下界均为正，最大为
+`0.19398264343312976`。这说明有限面板上的 excess 需要 common-normalization 的
+sum/coherence，但不构成 off-block causality theorem。
+
+继承 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核，未用于 main-panel
+选择。该结果仍是 finite scoped evidence：不建立 origin/window uniformity、source-valid
+normalization、growing operator bound、source-uniform arithmetic `L2`、prime-shell
+reassembly、fixed-power credit、Route-B closure 或 twin-prime result；
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。official evaluator
+files absent，local Bridge-B 仍为 fail-closed evidence。下一关固定同一 full-window
+normalization，做 extremal eigenmode 的 block-separation audit。
+
+    YOU ARE HERE = V225 / TPC-372
+    TPC372_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+    TPC372_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
+    TPC372_DECOMPOSITION_IDENTITY = NUMERICALLY_CERTIFIED_FINITE
+    TPC372_FULL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+    TPC372_BETA2_FULL_FAILURE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC372_BLOCK_DIAGONAL_PHASE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC372_OFF_BLOCK_NECESSITY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC372_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC372_ORIGIN_UNIFORMITY = OPEN
+    TPC372_WINDOW_UNIFORMITY = OPEN
+    TPC372_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC372_GROWING_OPERATOR_BOUND = OPEN
+    TPC372_SOURCE_UNIFORM_L2 = OPEN
+    TPC372_ARITHMETIC_ADVANCE = NO
+    TPC372_FIXED_POWER_CREDIT = 0
+    TPC372_FULL_GATE_B = OPEN
+    TPC372_TWIN_PRIME_RESULT = NONE
+    TPC372_STATUS = NUMERICALLY_CERTIFIED_FINITE_FULL_WINDOW_DECOMPOSITION
+    TPC372_ROUND2_CLUE = TEST_EIGENMODE_BLOCK_SEPARATION
+
+## 5.155 V225 / TPC-372：full-window block/off-block decomposition
+
+TPC-372 的完整 finite package 位于
+`papers/tpc-372-full-window-offblock-decomposition/`。它在同一 full-window normalization
+下用固定八块 mask 写出 `T=D+R`，并在三个 origins、三个 Q anchors 与 beta `0,2` 上完成
+`18` 个 rows。beta=2 的 full matrix 有 6 个高-Q spectral failures，而 `D`、`R` 各自
+均无 spectral failure；六行的反三角 off-block 下界为正，最大为 `0.19398264343312976`。
+
+这只是 common-normalization sum/coherence 的 finite evidence，不能升级为 off-block
+causality、positivity、dominance 或 asymptotic theorem。下一关是 extremal eigenmode 的
+block-separation profile。
+
+## V224 previous anchor: TPC-371
+
+TPC-371 是上一地图位置：在 TPC-370 的三个继承 origin 上保持 count-2048 full window，
 预声明切成八个连续的 256-point blocks，对每个 block 完成同一 shell、law、beta 面板，
 共 `576` 个 block-local 真谱 rows。beta=2 的 `288/288` 行全部通过 spectral 与 Schur
 working caps，最大 normalized spectrum 为 `0.5536333251967529`；beta=0 对照有
@@ -26,7 +76,7 @@ reassembly、fixed-power credit、Route-B closure 或 twin-prime result；
 files absent，local Bridge-B 仍为 fail-closed evidence。下一关保持 full-window normalization，
 做固定 block-diagonal/off-block decomposition，测试 cross-block coherence。
 
-    YOU ARE HERE = V224 / TPC-371
+    PREVIOUS ANCHOR = V224 / TPC-371
     TPC371_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
     TPC371_BLOCK_PARTITION = PROVED_EXACT_FINITE_PREDECLARED
     TPC371_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
@@ -10536,6 +10586,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-03 | V225 / TPC-372 | Bridge B / Gate B：full-window block/off-block decomposition; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-372` | 承接 TPC-371；固定三个 origin 与 count `2048`，同一 full-window normalization 下完成 18 个 `T=D+R` rows；beta=2 full matrix 有 6 个 failure，而 D/R 各为 0，反三角 off-block 下界均为正；下一步 extremal eigenmode block separation |
 | 2026-09-03 | V224 / TPC-371 | Bridge B / Gate B：block-local phase localization; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-371` | 承接 TPC-370；固定三个 origin 与 count `2048`，切成 8 个 256-point blocks，完成 576 个 block-local rows；beta=2 的 288 行均通过 spectral/Schur，parent 的独立归一化 block-local failure 假设 scoped-refuted；下一步 common-normalization off-block coherence |
 | 2026-09-03 | V223 / TPC-370 | Bridge B / Gate B：count-2048 finite-window audit; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-370` | 承接 TPC-369；固定第三 origin family 与 count `2048`，完成 72 个全法真谱 rows；beta=2 在高-Q/all-plus 三 origin 上保留 6 个 spectral violations、Schur 0，support signature 与 parent 一致，但最大谱升至 `0.7109998953`，有限 magnitude stability 不成立；下一步 count-2048 phase localization |
 | 2026-09-03 | V222 / TPC-369 | Bridge B / Gate B：third predeclared origin-family finite audit; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-369` | 承接 TPC-368；第三个 `1010001+401j` predeclared family 完成 144 个全法真谱 rows，beta=2 在 count=1024、高-Q、all-plus/exponent-1 逐键复现 6 个 spectral violations，Schur 0；初始 exact anchor 零几何并由 unsigned first-positive rule 修复；下一步 count-2048 window 或 residue-phase localization |

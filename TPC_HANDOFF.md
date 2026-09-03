@@ -1,9 +1,58 @@
 # TPC HANDOFF
 
-TPC-371 current section: block-local phase localization
--------------------------------------------------------
+TPC-372 current section: full-window block/off-block decomposition
+------------------------------------------------------------------
 
-TPC-371 is the current sealed release.  It inherits the three response-blind
+TPC-372 is the current sealed release.  It keeps the TPC-370 count-2048
+full-window normalization and decomposes each all-plus matrix with a fixed
+eight-block mask as `T=D+R`, over three origins, three Q anchors, and beta
+`0,2`, for 18 true-spectral rows.  All three matrices use the same
+full-window square-energy geometry.
+
+For beta=2, the full matrix has six high-Q spectral-cap failures, while the
+block-diagonal component `D` and off-block component `R` each have zero
+spectral-cap failures.  On every full failure row the reverse triangle
+inequality gives a positive finite lower bound
+`||R||_2 >= ||T||_2-||D||_2`; the maximum recorded lower bound is
+`0.19398264343312976`.  This is common-normalization sum/coherence evidence,
+not an off-block causal or asymptotic theorem.
+
+The inherited exact anchor `[1010346,1010359)` is rechecked by exact rational
+geometry and is not used to select the main panel.  The exact decomposition,
+independent reverse-shell replay, 33-mutation stress test, paper PDF, and
+local fail-closed Bridge-B are part of the release.  Official Route-A/Route-B
+evaluator files remain absent.  `ARITHMETIC_ADVANCE=NO`,
+`FIXED_POWER_CREDIT=0`, and `FULL_GATE_B=OPEN`; the next finite question is
+the extremal-eigenmode block-separation profile.
+
+    TPC372_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+    TPC372_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
+    TPC372_DECOMPOSITION_IDENTITY = NUMERICALLY_CERTIFIED_FINITE
+    TPC372_FULL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+    TPC372_BETA2_FULL_FAILURE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC372_BLOCK_DIAGONAL_PHASE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC372_OFF_BLOCK_NECESSITY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC372_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC372_ORIGIN_UNIFORMITY = OPEN
+    TPC372_WINDOW_UNIFORMITY = OPEN
+    TPC372_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC372_GROWING_OPERATOR_BOUND = OPEN
+    TPC372_SOURCE_UNIFORM_L2 = OPEN
+    TPC372_ARITHMETIC_ADVANCE = NO
+    TPC372_FIXED_POWER_CREDIT = 0
+    TPC372_FULL_GATE_B = OPEN
+    TPC372_TWIN_PRIME_RESULT = NONE
+    TPC372_STRONGEST_POSITIVE = COMMON_NORMALIZATION_DECOMPOSITION_AND_POSITIVE_OFF_BLOCK_LOWER_BOUND
+    TPC372_STRONGEST_OBSTRUCTION = COMPONENTS_SUBCAP_WHILE_SUM_EXCEEDS_CAP
+    TPC372_OPEN_THEOREM = EXTREMAL_EIGENMODE_BLOCK_SEPARATION
+    TPC372_REUSABLE_STRUCTURE = COMMON_NORMALIZATION_D_PLUS_R_WITH_REVERSE_TRIANGLE
+    TPC372_ROUND2_CLUE = TEST_EIGENMODE_BLOCK_SEPARATION
+    TPC372_STATUS = NUMERICALLY_CERTIFIED_FINITE_FULL_WINDOW_DECOMPOSITION
+
+TPC-371 previous section: block-local phase localization
+---------------------------------------------------------
+
+TPC-371 is the previous sealed release.  It inherits the three response-blind
 origins and count-2048 full-window protocol from TPC-370, then predeclares
 eight contiguous blocks of length 256 and audits every block with the same
 shell anchors `Q=512,2048,8192`, exponent one, four fixed laws, and beta
@@ -293,6 +342,24 @@ TPC-369 tail audit is required to return zero with empty stderr and
 byte-identical normal/optimized stdout.  It is finite third-family evidence
 only: the six beta=2 long-window spectral failures and the exact-anchor repair
 do not pay arithmetic or fixed-power credit and do not close Route-A/Route-B.
+
+TPC-372 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-372-full-window-offblock-decomposition/code/tpc372_full_window_offblock_decomposition.py --check
+    python -O -B papers/tpc-372-full-window-offblock-decomposition/code/tpc372_full_window_offblock_decomposition.py --check
+    python -B papers/tpc-372-full-window-offblock-decomposition/experiments/tpc372_independent_checker.py --check
+    python -O -B papers/tpc-372-full-window-offblock-decomposition/experiments/tpc372_independent_checker.py --check
+    python -B papers/tpc-372-full-window-offblock-decomposition/experiments/tpc372_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-372-full-window-offblock-decomposition/experiments/tpc372_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc372_full_window_offblock_decomposition_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc372_full_window_offblock_decomposition_checker.py --check
+
+TPC-372 tail audit is required to return zero with empty stderr and
+byte-identical normal/optimized stdout. It is finite common-normalization
+decomposition evidence only: the off-block necessity statement does not pay
+arithmetic or fixed-power credit and does not close Route-A/Route-B. The next
+declared question is extremal-eigenmode block separation.
 
 TPC-371 reproducibility commands:
 
@@ -13490,7 +13557,9 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V224/TPC-371 是当前 release；其 block-local phase producer、
+V225/TPC-372 是当前 release；其 full-window block/off-block producer、
+independent reverse-shell replay、certificate stress audit 与 literal masked-operator
+Bridge-B 已封存。V224/TPC-371 是上一 release；其 block-local phase producer、
 independent reverse-shell replay、certificate stress audit 与 literal masked-operator
 Bridge-B 已封存。V223/TPC-370 是上一 release；其 count-2048 producer、
 independent reverse-shell replay、certificate stress audit 与 literal masked-operator
@@ -13519,7 +13588,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 493 对 normal/optimized 命令、986 次
+当前 curated cascade command set 共 497 对 normal/optimized 命令、994 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -13538,7 +13607,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369、TPC-370、TPC-371 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369、TPC-370、TPC-371、TPC-372 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 

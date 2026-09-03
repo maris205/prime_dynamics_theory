@@ -3,13 +3,70 @@
 
 更新时间：2026-09-03
 
-状态：**TPC371_NUMERICALLY_CERTIFIED_FINITE_BLOCK_PHASE_LOCALIZATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC372_NUMERICALLY_CERTIFIED_FINITE_FULL_WINDOW_DECOMPOSITION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.165 current：TPC-371 block-local phase localization
+## 0.166 current：TPC-372 full-window block/off-block decomposition
+
+项目：papers/tpc-372-full-window-offblock-decomposition/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_FULL_WINDOW_DECOMPOSITION**。
+
+TPC-372 在 TPC-370 的 count-2048 full-window normalization 下，把每个 all-plus matrix
+按预声明的八块 contiguous mask 分解为 `T=D+R`，其中 `D` 保留同块 entries，`R` 为
+off-block remainder；三个 origins、三个 Q anchors 与 beta `0,2` 共 `18` 个 rows。
+所有 component 都使用同一 full-window square-energy geometry，因而分解是同一归一化下
+的 exact finite identity，而不是把三个不同 domain 的 norm 直接比较。
+
+最强正结果：beta=2 的 full matrix 有六个高-Q spectral-cap failures，但 `D` 与 `R` 各自
+有 `0` 个 spectral-cap failures；六个 full-failure rows 上反三角下界
+`||R||_2 >= ||T||_2-||D||_2` 均为正，最大为 `0.19398264343312976`。最强 obstruction：
+该有限结果只显示 sum/coherence 必须参与越界，不能识别 `R` 为因果机制，也不能推出
+off-block positivity、dominance 或 asymptotic transfer。beta=0 对照有 `9/9` full
+spectral/Schur failures，off-block 有 `6` 个 spectral failures。
+
+继承 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核，未用于 main-panel
+选择。producer、独立 descending-shell replay、33-mutation stress、PDF 与 local Bridge-B
+组成 package；official evaluator files absent，local bridge 仍为 fail-closed evidence。
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
+
+开放定理：在相同 full-window normalization 下，对六个 beta=2 failure rows 的 extremal
+eigenmode 做预声明 block-separation profile，判断 cross-block coherence 的结构形态，
+并寻找可推广的 operator bound；origin/window uniformity、source-valid normalization、
+source-uniform arithmetic `L2` 与 Route-B reassembly 仍 open。
+
+可复用结构：
+
+    local normalized obstruction -> common full normalization -> D+R identity
+      -> reverse-triangle necessity -> eigenmode block-separation audit
+
+ROUND2_CLUE：`TEST_EIGENMODE_BLOCK_SEPARATION`。
+
+```text
+TPC372_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+TPC372_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
+TPC372_DECOMPOSITION_IDENTITY = NUMERICALLY_CERTIFIED_FINITE
+TPC372_FULL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+TPC372_BETA2_FULL_FAILURE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC372_BLOCK_DIAGONAL_PHASE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC372_OFF_BLOCK_NECESSITY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC372_CROSS_BLOCK_CAUSALITY = OPEN
+TPC372_ORIGIN_UNIFORMITY = OPEN
+TPC372_WINDOW_UNIFORMITY = OPEN
+TPC372_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC372_GROWING_OPERATOR_BOUND = OPEN
+TPC372_SOURCE_UNIFORM_L2 = OPEN
+TPC372_ARITHMETIC_ADVANCE = NO
+TPC372_FIXED_POWER_CREDIT = 0
+TPC372_FULL_GATE_B = OPEN
+TPC372_TWIN_PRIME_RESULT = NONE
+TPC372_STATUS = NUMERICALLY_CERTIFIED_FINITE_FULL_WINDOW_DECOMPOSITION
+```
+
+## 0.165 previous：TPC-371 block-local phase localization
 
 项目：papers/tpc-371-block-phase-localization/
 

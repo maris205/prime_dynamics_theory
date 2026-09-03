@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--371 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--372 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -672,6 +672,16 @@ causality theorem。含独立 descending-shell replay、36-mutation stress、PDF
 Bridge-B checker；cross-block coherence、source-valid normalization、growing operator
 bound、source-uniform arithmetic L2、arithmetic advance、fixed-power credit 与 full Gate B
 仍为 OPEN/OPEN/NO/0/OPEN。
+
+papers/tpc-372-full-window-offblock-decomposition - TPC-372 已完成项目 - 保持
+TPC-370 的 count-2048 full-window normalization，把 18 个 all-plus rows 精确分解为
+同一归一化下的 block-diagonal `D` 与 off-block `R`，满足 `T=D+R`。beta=2 的 full
+matrix 有 6 个高-Q spectral violations，而 `D` 与 `R` 各自均为 0；六个 failure row
+上 `||R||_2 >= ||T||_2-||D||_2` 的有限下界均为正，最大为 `0.1939826434`。这是
+common-normalization sum/coherence evidence，不是 off-block causality 或渐近结论；含
+独立 reverse-shell replay、33-mutation stress、PDF 与 local Bridge-B checker，cross-block
+causality、source-valid normalization、growing operator bound、source-uniform arithmetic
+L2、arithmetic advance、fixed-power credit 与 full Gate B 仍为 OPEN/OPEN/NO/0/OPEN。
 
 papers/tpc-369-third-origin-family-audit - TPC-369 已完成项目 - 在第三个
 predeclared origin family `1010001+401j` 的 indices `(0,20,40)` 上完成 144 个全法真谱

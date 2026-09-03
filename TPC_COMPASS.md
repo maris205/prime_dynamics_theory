@@ -1,29 +1,64 @@
 # TPC distilled map and bold channel
 
-## V224 / TPC-371 current anchor
+## V225 / TPC-372 current anchor
 
 更新时间：2026-09-03
 
 当前入口：proof 为
-research/tpc-big-road/bridge_b_tpc371_block_phase_localization.md，checker 为
-tpc_bridge_b_tpc371_block_phase_localization_checker.py，编号论文为
-papers/tpc-371-block-phase-localization/。
+research/tpc-big-road/bridge_b_tpc372_full_window_offblock_decomposition.md，checker 为
+tpc_bridge_b_tpc372_full_window_offblock_decomposition_checker.py，编号论文为
+papers/tpc-372-full-window-offblock-decomposition/。
 
-TPC-371 是当前位置：在 TPC-370 的三个继承 origin 上保持 count-2048 的 full window，
-预声明切成八个连续的 256-point blocks，并对每个 block 完成同一 shell、law、beta 面板，
-共 `576` 个 block-local 真谱 rows。beta=2 的 `288/288` 行同时通过 spectral 与 Schur
-working caps，最大 normalized spectrum 为 `0.5536333251967529`；beta=0 对照有
-`72/288` 个 spectral 与 `72/288` 个 Schur violations。TPC-370 的 full-window-normalized
-对象仍有六个 beta=2 高-Q/all-plus failures，因此“parent failure 已在某个独立归一化
-256-point block 中出现”这一有限假设被 `REFUTED_SCOPED`。由于 block normalization
-发生改变，这不是 cross-block causality theorem。
+TPC-372 是当前位置：保持 TPC-370 的 count-2048 full-window normalization，把每个
+all-plus matrix 按预声明的八块 mask 分解为 `T=D+R`，共完成 `18` 个全真 rows。beta=2
+的 full matrix 有 `6` 个高-Q spectral-cap failures，而 block-diagonal `D` 与 off-block
+`R` 各有 `0` 个 spectral failures；在六个 full failure rows 上，反三角不等式给出的
+`||R||_2 >= ||T||_2-||D||_2` 下界均为正，最大为 `0.19398264343312976`。这说明该
+有限面板上的 excess 需要 common-normalization 的 sum/coherence，但不构成 off-block
+因果归因。
 
 继承的 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核，未用于 main
+panel 选择。producer、独立 descending-shell replay、33-mutation stress、PDF 与 local
+Bridge-B 均纳入 package；official evaluator files absent，local Bridge-B 仍为 fail-closed
+fallback。`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关
+固定同一 full-window normalization，做 extremal eigenmode 的 block-separation audit。
+
+    TPC372_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+    TPC372_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
+    TPC372_DECOMPOSITION_IDENTITY = NUMERICALLY_CERTIFIED_FINITE
+    TPC372_FULL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+    TPC372_BETA2_FULL_FAILURE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC372_BLOCK_DIAGONAL_PHASE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC372_OFF_BLOCK_NECESSITY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC372_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC372_ORIGIN_UNIFORMITY = OPEN
+    TPC372_WINDOW_UNIFORMITY = OPEN
+    TPC372_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC372_GROWING_OPERATOR_BOUND = OPEN
+    TPC372_SOURCE_UNIFORM_L2 = OPEN
+    TPC372_ARITHMETIC_ADVANCE = NO
+    TPC372_FIXED_POWER_CREDIT = 0
+    TPC372_FULL_GATE_B = OPEN
+    TPC372_TWIN_PRIME_RESULT = NONE
+    TPC372_STATUS = NUMERICALLY_CERTIFIED_FINITE_FULL_WINDOW_DECOMPOSITION
+    TPC372_ROUND2_CLUE = TEST_EIGENMODE_BLOCK_SEPARATION
+
+## V224 / TPC-371 previous anchor
+
+TPC-371 在 TPC-370 的三个继承 origin 上保持 count-2048 full window，预声明切成八个
+连续的 256-point blocks，并对每个 block 完成同一 shell、law、beta 面板，共 `576` 个
+block-local 真谱 rows。beta=2 的 `288/288` 行同时通过 spectral 与 Schur working caps，
+最大 normalized spectrum 为 `0.5536333251967529`；beta=0 对照有 `72/288` 个 spectral
+与 `72/288` 个 Schur violations。TPC-370 的 full-window-normalized 对象仍有六个 beta=2
+高-Q/all-plus failures，因此“parent failure 已在某个独立归一化 256-point block 中出现”
+这一有限假设被 `REFUTED_SCOPED`；由于 block normalization 改变，这不是 cross-block
+causality theorem。
+
+继承 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核，未用于 main
 panel 选择。producer、独立 descending-shell replay、36-mutation stress、PDF 与 local
 Bridge-B 均纳入 package；official evaluator files absent，local Bridge-B 仍为 fail-closed
 fallback。`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关
-保持 full-window normalization，做固定 block-diagonal/off-block decomposition，测试
-cross-block coherence。
+保持 full-window normalization，做固定 block-diagonal/off-block decomposition。
 
     TPC371_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
     TPC371_BLOCK_PARTITION = PROVED_EXACT_FINITE_PREDECLARED

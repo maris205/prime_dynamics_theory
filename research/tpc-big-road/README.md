@@ -1,6 +1,47 @@
-# TPC big road V224 / TPC-371: block-local phase localization
+# TPC big road V225 / TPC-372: full-window block/off-block decomposition
 
-## V224 current anchor: TPC-371
+## V225 current anchor: TPC-372
+
+更新时间：2026-09-03
+
+当前 TPC-372 proof 为 bridge_b_tpc372_full_window_offblock_decomposition.md，checker 为
+tpc_bridge_b_tpc372_full_window_offblock_decomposition_checker.py，编号论文为
+../../papers/tpc-372-full-window-offblock-decomposition/。
+
+TPC-372 在 TPC-370 的 count-2048 full-window normalization 下，把每个 all-plus matrix
+按预声明的八块 mask 分解为 `T=D+R`，完成 `18` 个全真 rows。beta=2 的 full matrix 有
+`6` 个高-Q spectral-cap failures，而 block-diagonal `D` 与 off-block `R` 各有 `0` 个
+spectral failures；六个 full failure rows 上的反三角下界均为正，最大为
+`0.19398264343312976`。这是 common-normalization sum/coherence evidence，不是 off-block
+causality theorem。
+
+继承的 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核，未用于 main-panel
+选择。producer、独立 descending-shell replay、33-mutation stress、PDF 与 local Bridge-B
+均纳入 package；official evaluator files absent，local Bridge-B 仍为 fail-closed fallback。
+arithmetic advance 为 NO，fixed-power credit 为 0，`FULL_GATE_B=OPEN`。下一关固定同一
+full-window normalization，做 extremal eigenmode 的 block-separation audit。
+
+    TPC372_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+    TPC372_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
+    TPC372_DECOMPOSITION_IDENTITY = NUMERICALLY_CERTIFIED_FINITE
+    TPC372_FULL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+    TPC372_BETA2_FULL_FAILURE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC372_BLOCK_DIAGONAL_PHASE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC372_OFF_BLOCK_NECESSITY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC372_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC372_ORIGIN_UNIFORMITY = OPEN
+    TPC372_WINDOW_UNIFORMITY = OPEN
+    TPC372_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC372_GROWING_OPERATOR_BOUND = OPEN
+    TPC372_SOURCE_UNIFORM_L2 = OPEN
+    TPC372_ARITHMETIC_ADVANCE = NO
+    TPC372_FIXED_POWER_CREDIT = 0
+    TPC372_FULL_GATE_B = OPEN
+    TPC372_TWIN_PRIME_RESULT = NONE
+    TPC372_STATUS = NUMERICALLY_CERTIFIED_FINITE_FULL_WINDOW_DECOMPOSITION
+    TPC372_ROUND2_CLUE = TEST_EIGENMODE_BLOCK_SEPARATION
+
+## V224 previous anchor: TPC-371
 
 更新时间：2026-09-03
 
