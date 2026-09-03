@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--367 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--368 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -640,6 +640,16 @@ count=512 全部通过 spectral cap，但 count=1024 在 `Q=2048,8192` 的 all-p
 有限长窗口 transfer 的 scoped obstruction，非 asymptotic theorem、source-valid normalization
 或 arithmetic advance；含 exact anchor、独立 reverse-shell replay、28-mutation stress、PDF
 与 local Bridge-B checker，growing operator bound、source-uniform arithmetic L2 与
+arithmetic advance 仍为 OPEN/NO。
+
+papers/tpc-368-predeclared-origin-replication - TPC-368 已完成项目 - 在第二个
+predeclared origin family `810001+353j` 的 indices `(0,20,40)` 上复现 TPC-367 的
+long-window phase，得到 `(810001,817061,824121)`；在 exponent=1、counts `512,1024`、
+`Q=512,2048,8192` 与四种 sign laws 的 144 个全法真谱 rows 中，beta=2 再次出现
+6 个 count=1024、高-Q、all-plus spectral violations，Schur 为 0/72，beta=0 对照为
+18/18。这是第二 origin family 的 finite scoped replication，不是 origin/window uniformity
+或 asymptotic theorem；含 exact anchor、独立 reverse-shell replay、29-mutation stress、
+PDF 与 local Bridge-B checker，growing operator bound、source-uniform arithmetic L2 与
 arithmetic advance 仍为 OPEN/NO。
 
 papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram

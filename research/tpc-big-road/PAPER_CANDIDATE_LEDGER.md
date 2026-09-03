@@ -3,13 +3,69 @@
 
 更新时间：2026-09-03
 
-状态：**TPC367_NUMERICALLY_CERTIFIED_FINITE_PREDECLARED_LONG_WINDOW_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC368_NUMERICALLY_CERTIFIED_FINITE_PREDECLARED_ORIGIN_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.161 current：TPC-367 predeclared long-window obstruction
+## 0.162 current：TPC-368 second predeclared origin-family replication
+
+项目：papers/tpc-368-predeclared-origin-replication/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_PREDECLARED_ORIGIN_REPLICATION**。
+
+TPC-368 将 TPC-367 的 failing beta=2 long-window phase 移到第二个预声明 origin family。
+候选 grid 为 `810001+353j`、`0<=j<41`；在任何 signed response、source、law result 或
+geometry score 读取前预声明 indices `(0,20,40)`，得到 origins `(810001,817061,824121)`。
+随后对 beta `0,2`、counts `512,1024`、shell anchors `Q=512,2048,8192`、exponent `1`
+与四种 fixed sign laws 完成 `144` 个全真谱 rows。
+
+最强正结果：TPC-367 的六键 failure pattern 在第二个 origin family 上逐键复现；beta=2
+在 count=512 的全部 36 个 law rows 通过 spectral cap，且全部 72 个 beta=2 rows 没有
+Schur-cap violation。最强 obstruction：count=1024、exponent=1、all-plus 在三个 origins
+的 `Q=2048` 与 `Q=8192` 各越界一次，共 `6/72` 个 beta=2 spectral violations，最大
+normalized spectrum 为 `0.674101905927736`，最大 Schur 为 `0.70009251108512549`；
+beta=0 对照为 `18/72` spectral 与 `18/72` Schur violations。
+
+因此 TPC-368 把“该 failure 只来自 TPC-367 第一 origin family”的解释降为不支持的
+有限解释，但不宣称 origin/window uniformity 或 asymptotic transfer。producer、独立
+reverse-shell replay、29-mutation stress、exact rational anchor、PDF 与 local Bridge-B
+均纳入 package；official evaluator files absent。`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`、`TWIN_PRIME_RESULT=NONE`。
+
+开放定理：第三个 predeclared origin family 或 count-2048 window 的最小 hostile audit，
+以及 source-valid normalization、growing operator bound、source-uniform arithmetic `L2`
+与 Route-B reassembly。
+
+可复用结构：
+
+    frozen beta -> predeclared origin family -> long-window all-law phase census
+      -> exact anchor + reverse-shell replay -> finite failure-key replication
+
+ROUND2_CLUE：`TEST_BETA2_THIRD_ORIGIN_FAMILY_OR_COUNT_2048`。
+
+```text
+TPC368_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC368_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+TPC368_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+TPC368_SECOND_ORIGIN_FAMILY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC368_BETA2_LONG_WINDOW_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC368_BETA2_FAILURE_PATTERN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC368_ORIGIN_UNIFORMITY = OPEN
+TPC368_WINDOW_UNIFORMITY = OPEN
+TPC368_BETA2_ASYMPTOTIC_REPAIR = OPEN
+TPC368_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC368_GROWING_OPERATOR_BOUND = OPEN
+TPC368_SOURCE_UNIFORM_L2 = OPEN
+TPC368_ARITHMETIC_ADVANCE = NO
+TPC368_FIXED_POWER_CREDIT = 0
+TPC368_FULL_GATE_B = OPEN
+TPC368_TWIN_PRIME_RESULT = NONE
+TPC368_STATUS = NUMERICALLY_CERTIFIED_FINITE_PREDECLARED_ORIGIN_REPLICATION
+```
+
+## 0.161 previous：TPC-367 predeclared long-window obstruction
 
 项目：papers/tpc-367-predeclared-long-window-obstruction/
 

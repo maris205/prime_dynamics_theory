@@ -1,6 +1,51 @@
 # TPC distilled map and bold channel
 
-## V220 / TPC-367 current anchor
+## V221 / TPC-368 current anchor
+
+更新时间：2026-09-03
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc368_predeclared_origin_replication.md，checker 为
+tpc_bridge_b_tpc368_predeclared_origin_replication_checker.py，编号论文为
+papers/tpc-368-predeclared-origin-replication/。
+
+TPC-368 在第二个 predeclared origin family `810001+353j` 上复现 TPC-367 的
+long-window phase。indices `(0,20,40)` 在任何 signed response、source、law result 或
+geometry score 读取前固定，得到 `(810001,817061,824121)`；随后对 beta `0,2`、counts
+`512,1024`、`Q=512,2048,8192`、exponent `1` 与四种 sign laws 完成 `144` 个全真谱
+rows。beta=2 在 count=512 的全部 rows 通过 spectral cap，在全部 `72` 个 beta=2 rows
+中没有 Schur violation；count=1024 在 `Q=2048,8192` 的 all-plus rows 各在三个 origins
+出现一次越界，共 6 个 spectral violations，最大谱为 `0.674101905927736`。beta=0
+对照有 18 个 spectral 与 18 个 Schur violations。
+
+这是 finite second-family replication：它削弱“TPC-367 只由第一 origin family 造成”的
+解释，但不建立 origin/window uniformity、asymptotic transfer、source-valid normalization、
+growing operator bound、source-uniform arithmetic `L2`、fixed-power credit、Route-B
+reassembly 或 twin-prime result。`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`；official evaluator files 仍 absent，local Bridge-B 仍为 fail-closed。
+下一步测试第三个 predeclared origin family或 count-2048 window，必要时做 residue-phase
+localization。
+
+    TPC368_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC368_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC368_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
+    TPC368_SECOND_ORIGIN_FAMILY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC368_BETA2_LONG_WINDOW_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC368_BETA2_FAILURE_PATTERN = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC368_ORIGIN_UNIFORMITY = OPEN
+    TPC368_WINDOW_UNIFORMITY = OPEN
+    TPC368_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC368_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC368_GROWING_OPERATOR_BOUND = OPEN
+    TPC368_SOURCE_UNIFORM_L2 = OPEN
+    TPC368_ARITHMETIC_ADVANCE = NO
+    TPC368_FIXED_POWER_CREDIT = 0
+    TPC368_FULL_GATE_B = OPEN
+    TPC368_TWIN_PRIME_RESULT = NONE
+    TPC368_STATUS = NUMERICALLY_CERTIFIED_FINITE_PREDECLARED_ORIGIN_REPLICATION
+    TPC368_ROUND2_CLUE = TEST_BETA2_THIRD_ORIGIN_FAMILY_OR_COUNT_2048
+
+## V220 / TPC-367 previous anchor
 
 更新时间：2026-09-03
 
