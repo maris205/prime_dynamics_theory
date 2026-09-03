@@ -1,0 +1,28 @@
+# TPC-367 claim firewall
+
+```text
+TPC367_ORIGIN_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC367_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+TPC367_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+TPC367_LONG_WINDOW_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC367_UNSELECTED_ORIGIN_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC367_BETA2_LONG_WINDOW_TRANSFER = REFUTED_SCOPED
+TPC367_BETA2_EXPONENT_SENSITIVITY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC367_BETA2_ASYMPTOTIC_REPAIR = OPEN
+TPC367_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC367_GROWING_OPERATOR_BOUND = OPEN
+TPC367_SOURCE_UNIFORM_L2 = OPEN
+TPC367_ARITHMETIC_ADVANCE = NO
+TPC367_FIXED_POWER_CREDIT = 0
+TPC367_FULL_GATE_B = OPEN
+TPC367_TWIN_PRIME_RESULT = NONE
+```
+
+`REFUTED_SCOPED` refers only to the finite statement “the beta=2 spectral cap
+holds on this declared 1024-point, three-origin, higher-`Q` panel.”  It is not
+a refutation of beta=2 elsewhere or asymptotically.
+
+The official `propose.md`, `skills/route-a-evaluator.md`, and
+`skills/route-b-evaluator.md` files are absent in this checkout.  The local
+Bridge-B result must therefore be read as fail-closed repository evidence,
+not as an official route-evaluator decision.

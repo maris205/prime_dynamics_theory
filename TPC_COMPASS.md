@@ -1,6 +1,50 @@
 # TPC distilled map and bold channel
 
-## V219 / TPC-366 current anchor
+## V220 / TPC-367 current anchor
+
+更新时间：2026-09-03
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc367_predeclared_long_window_obstruction.md，checker 为
+tpc_bridge_b_tpc367_predeclared_long_window_obstruction_checker.py，编号论文为
+papers/tpc-367-predeclared-long-window-obstruction/。
+
+TPC-367 将 TPC-366 的 beta=2 higher-`Q` 测试改成预声明 origins，并把窗口 count 从
+`512` 扩展到 `1024`。在 candidate grid `620001+307j` 的 indices `(0,20,40)` 上固定
+origins `(620001,626141,632281)`，不使用 response、source 或 geometry score；随后对
+beta `0,2`、counts `512,1024`、`Q=512,2048,8192`、exponents `1,2` 与四种 sign laws
+完成 `288` 个全真谱 rows。beta=2 在 count=512 的全部 rows 通过 spectral cap，且全
+`144` 行无 Schur violation；但 count=1024 在 `Q=2048,8192` 的 all-plus/exponent-1
+rows 出现 `6` 个 spectral-cap violations，最大谱为 `0.67410738070824539`。beta=0
+对照有 `36` 个 spectral 与 `36` 个 Schur violations。
+
+这是 finite predeclared long-window obstruction：仅 refute 本声明 panel 上的 transfer
+statement，不 refute beta=2 的其他窗口或渐近行为。它不产生 source-valid normalization、
+growing operator bound、source-uniform arithmetic `L2`、fixed-power credit、Route-B
+reassembly 或 twin-prime result；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`。official evaluator files 仍 absent，local Bridge-B 仍为 fail-closed。
+下一步固定 failing exponent/window scale，在第二个 predeclared origin family 上做独立
+replication；若不复现则转入 residue-phase localization。
+
+    TPC367_ORIGIN_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC367_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC367_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC367_LONG_WINDOW_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC367_UNSELECTED_ORIGIN_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC367_BETA2_LONG_WINDOW_TRANSFER = REFUTED_SCOPED
+    TPC367_BETA2_EXPONENT_SENSITIVITY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC367_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC367_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC367_GROWING_OPERATOR_BOUND = OPEN
+    TPC367_SOURCE_UNIFORM_L2 = OPEN
+    TPC367_ARITHMETIC_ADVANCE = NO
+    TPC367_FIXED_POWER_CREDIT = 0
+    TPC367_FULL_GATE_B = OPEN
+    TPC367_TWIN_PRIME_RESULT = NONE
+    TPC367_STATUS = NUMERICALLY_CERTIFIED_FINITE_PREDECLARED_LONG_WINDOW_OBSTRUCTION
+    TPC367_ROUND2_CLUE = TEST_BETA2_FAILURE_LOCALIZATION_ON_LONGER_WINDOWS
+
+## V219 / TPC-366 previous anchor
 
 更新时间：2026-09-03
 

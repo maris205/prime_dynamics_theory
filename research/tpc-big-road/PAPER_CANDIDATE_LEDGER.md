@@ -3,13 +3,68 @@
 
 更新时间：2026-09-03
 
-状态：**TPC366_NUMERICALLY_CERTIFIED_FINITE_BETA2_HIGHER_Q_LADDER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC367_NUMERICALLY_CERTIFIED_FINITE_PREDECLARED_LONG_WINDOW_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.160 current：TPC-366 fixed beta=2 higher-Q ladder
+## 0.161 current：TPC-367 predeclared long-window obstruction
+
+项目：papers/tpc-367-predeclared-long-window-obstruction/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_PREDECLARED_LONG_WINDOW_OBSTRUCTION**。
+
+TPC-367 冻结 TPC-366 的 beta=2 规则，同时移除 geometry-ranked origin selection 与短窗口
+限制。候选 grid 为 `620001+307j`、`0<=j<41`；在任何 signed response、source 或
+geometry score 读取前预声明 indices `(0,20,40)`，得到 origins
+`(620001,626141,632281)`。随后对 beta `0,2`、counts `512,1024`、shell anchors
+`Q=512,2048,8192`、exponents `1,2` 与四种 fixed sign laws 完成 `288` 个全真谱 rows。
+
+最强正结果：beta=2 在 count=512 的 72 个 rows 全部低于 spectral cap `0.64`，且其
+全部 144 个 rows 没有 Schur-cap `0.83` violation；count=1024 的高-Q rows 仍保留
+有限可解释结构。最强 obstruction：count=1024、exponent=1、all-plus 在三个预声明
+origins 的 `Q=2048` 与 `Q=8192` 各越界一次，共 `6/144` 个 beta=2 spectral violations，
+最大 normalized spectrum 为 `0.67410738070824539`，而最大 Schur 为
+`0.70009945776422788`。beta=0 对照为 `36/144` spectral 与 `36/144` Schur violations。
+
+因此 TPC-367 只把“beta=2 在该声明长窗口 panel 上保持 spectral cap”记为
+`REFUTED_SCOPED`；不 refute 其他 windows、origins 或 asymptotic behavior。producer、
+reverse-shell independent replay、28-mutation stress、exact rational anchor、PDF 与 local
+Bridge-B 均纳入 package；official evaluator files absent。`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`、`TWIN_PRIME_RESULT=NONE`。
+
+开放定理：固定 failing exponent/window scale，在第二个 predeclared origin family 上
+独立复制该 phase；若不复制则定位 residue-phase dependence。source-valid normalization、
+growing operator bound、source-uniform arithmetic `L2` 与 Route-B reassembly 仍 open。
+
+可复用结构：
+
+    frozen beta -> predeclared response-blind origins -> long-window all-law phase census
+      -> exact anchor + reverse-shell replay -> scoped obstruction localization
+
+ROUND2_CLUE：`TEST_BETA2_FAILURE_LOCALIZATION_ON_LONGER_WINDOWS`。
+
+```text
+TPC367_ORIGIN_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC367_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+TPC367_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+TPC367_LONG_WINDOW_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC367_UNSELECTED_ORIGIN_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC367_BETA2_LONG_WINDOW_TRANSFER = REFUTED_SCOPED
+TPC367_BETA2_EXPONENT_SENSITIVITY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC367_BETA2_ASYMPTOTIC_REPAIR = OPEN
+TPC367_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC367_GROWING_OPERATOR_BOUND = OPEN
+TPC367_SOURCE_UNIFORM_L2 = OPEN
+TPC367_ARITHMETIC_ADVANCE = NO
+TPC367_FIXED_POWER_CREDIT = 0
+TPC367_FULL_GATE_B = OPEN
+TPC367_TWIN_PRIME_RESULT = NONE
+TPC367_STATUS = NUMERICALLY_CERTIFIED_FINITE_PREDECLARED_LONG_WINDOW_OBSTRUCTION
+```
+
+## 0.160 previous：TPC-366 fixed beta=2 higher-Q ladder
 
 项目：papers/tpc-366-beta2-higher-q-ladder/
 

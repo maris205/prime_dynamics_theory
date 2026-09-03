@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--366 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--367 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -631,6 +631,16 @@ geometry-selected panel 上把 shell ladder 扩展到 `Q=512,1024,2048,4096,8192
 normalization 或 arithmetic advance；含 exact anchor、独立 reverse-shell replay、23-mutation
 stress、PDF 与 local Bridge-B checker，growing operator bound、source-uniform arithmetic
 L2 与 arithmetic advance 仍为 OPEN/NO。
+
+papers/tpc-367-predeclared-long-window-obstruction - TPC-367 已完成项目 - 去除
+geometry-ranked origin selection，预声明 `(620001,626141,632281)` 三个等距 origins，
+在 counts `512,1024` 与 `Q=512,2048,8192` 上完成 288 个全法真谱 rows。beta=2 在
+count=512 全部通过 spectral cap，但 count=1024 在 `Q=2048,8192` 的 all-plus、exponent-1
+行出现 6/144 个 spectral violations，Schur 为 0/144；beta=0 对照为 36/36。这是
+有限长窗口 transfer 的 scoped obstruction，非 asymptotic theorem、source-valid normalization
+或 arithmetic advance；含 exact anchor、独立 reverse-shell replay、28-mutation stress、PDF
+与 local Bridge-B checker，growing operator bound、source-uniform arithmetic L2 与
+arithmetic advance 仍为 OPEN/NO。
 
 papers/tpc-336-masked-signed-gram-response - TPC-336 前置项目 - 固定 signed-Gram
 operator 的 6-row masked response ledger；zero/background/twin/prime-power gain

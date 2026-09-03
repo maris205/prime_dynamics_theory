@@ -2,14 +2,48 @@
 
 更新时间：2026-09-03
 
-当前地图版本：V219 / TPC-366
+当前地图版本：V220 / TPC-367
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-366`（`NUMERICALLY_CERTIFIED_FINITE_BETA2_HIGHER_Q_LADDER`）；
-对应论文目录为 `papers/tpc-366-beta2-higher-q-ladder/`。
+当前编号锚点：`TPC-367`（`NUMERICALLY_CERTIFIED_FINITE_PREDECLARED_LONG_WINDOW_OBSTRUCTION`）；
+对应论文目录为 `papers/tpc-367-predeclared-long-window-obstruction/`。
 
-TPC-366 是当前地图位置：冻结 TPC-365 的 beta=2 规则，在 41 个候选起点上只用
+TPC-367 是当前地图位置：固定 beta=2，将 origins 预声明为 candidate grid
+`620001+307j` 的 indices `(0,20,40)`，得到 `(620001,626141,632281)`，不使用 response、
+source 或 geometry score；随后在 counts `512,1024`、`Q=512,2048,8192`、exponents
+`1,2` 与四种 sign laws 上完成 `288` 个全真谱 rows。beta=2 在 count=512 的全部 rows
+通过 spectral cap，且 144 行均无 Schur violation；count=1024 在 `Q=2048,8192` 的
+all-plus/exponent-1 rows 出现 6 个 spectral violations，最大谱为 `0.67410738070824539`。
+beta=0 对照有 36 个 spectral 与 36 个 Schur violations。
+
+这是 finite predeclared long-window obstruction，仅 refute 本声明 panel 的 transfer
+statement，不 refute 其他窗口或渐近行为；source-valid normalization、growing operator
+bound、source-uniform arithmetic `L2`、fixed-power credit、Route-B reassembly 与
+twin-prime result 仍未关闭，arithmetic advance 为 NO。official evaluator files absent，
+local Bridge-B 仍为 fail-closed fallback。下一步固定 failing exponent/window scale，在
+第二个 predeclared origin family 上做 replication，若不复现则转入 residue-phase localization。
+
+    YOU ARE HERE = V220 / TPC-367
+    TPC367_ORIGIN_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC367_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC367_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC367_LONG_WINDOW_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC367_UNSELECTED_ORIGIN_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC367_BETA2_LONG_WINDOW_TRANSFER = REFUTED_SCOPED
+    TPC367_BETA2_EXPONENT_SENSITIVITY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC367_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC367_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC367_GROWING_OPERATOR_BOUND = OPEN
+    TPC367_SOURCE_UNIFORM_L2 = OPEN
+    TPC367_ARITHMETIC_ADVANCE = NO
+    TPC367_FIXED_POWER_CREDIT = 0
+    TPC367_FULL_GATE_B = OPEN
+    TPC367_TWIN_PRIME_RESULT = NONE
+    TPC367_STATUS = NUMERICALLY_CERTIFIED_FINITE_PREDECLARED_LONG_WINDOW_OBSTRUCTION
+    TPC367_ROUND2_CLUE = TEST_BETA2_FAILURE_LOCALIZATION_ON_LONGER_WINDOWS
+
+TPC-366 是上一地图位置：冻结 TPC-365 的 beta=2 规则，在 41 个候选起点上只用
 256-point unsigned weighted geometry 做 response-blind greedy selection，选出
 `(623071,631360,629211)`；随后在新 panel 的 beta `0,2`、四种 sign laws、两档 counts、
 五个 `Q=512,1024,2048,4096,8192` anchors 与两种 exponents 上完成 `480` 个全真谱 rows。
@@ -24,7 +58,7 @@ spectrum/Schur 为 `0.62448287758976528/0.65368278287004711`；beta=0 对照各�
 NO。official evaluator files absent，local Bridge-B 仍为 fail-closed fallback。下一步固定
 beta=2，测试更长 windows 与 predeclared/unselected origins。
 
-    YOU ARE HERE = V219 / TPC-366
+    PREVIOUS ANCHOR = V219 / TPC-366
     TPC366_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
     TPC366_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
     TPC366_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_480_ROWS
@@ -1684,6 +1718,50 @@ strongest positive result：exact two-term normalization, dominant exponent and 
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
 
+## 5.150 V220 / TPC-367：predeclared long-window obstruction
+
+TPC-367 固定 TPC-366 的 beta=2 规则，并同时移除 geometry-ranked origin selection 与
+短窗口限制。候选 grid 为 `620001+307j`、`0<=j<41`；在 signed replay 前预声明 indices
+`(0,20,40)`，得到 `(620001,626141,632281)`，不使用 response、source 或 geometry score。
+随后按 beta `0,2`、counts `512,1024`、`Q=512,2048,8192`、exponents `1,2` 与四种
+fixed sign laws 完成 `288` 个全真谱 rows。
+
+beta=2 在 count=512 的 72 个 rows 全部低于 spectral cap，并在全部 144 个 beta=2 rows
+中没有 Schur-cap violation；但 count=1024、exponent=1、all-plus 的三 origins 在
+`Q=2048` 与 `Q=8192` 各出现一次越界，共 `6/144` 个 spectral violations，最大谱为
+`0.67410738070824539`。beta=0 对照在 spectral 与 Schur cap 上各有 `36/144` 个
+violations。这个结果把 TPC-366 的有限 transfer statement 标为 `REFUTED_SCOPED`，
+但不对其他窗口、其他 origins 或渐近行为作否定。
+
+最强正结果：预声明 origins 下，beta=2 在 count=512 的整个测试梯子仍通过 spectral cap，
+且 Schur cap 对全部 beta=2 rows 稳定。最强 obstruction：窗口从 512 延长到 1024 后，
+高-Q、exponent-one、all-plus failure 在三个 origins 同步出现。开放定理仍是
+source-valid normalization、growing operator bound、source-uniform arithmetic `L2` 与
+prime-shell reassembly；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`，official evaluator files absent，local Bridge-B 仅为 fail-closed fallback。
+
+下一步：固定 failing exponent/window scale，在第二个 predeclared origin family 上做独立
+replication；若不复现，则进入 residue-phase localization，而非重新搜索 beta。
+
+    YOU ARE HERE = V220 / TPC-367
+    TPC367_ORIGIN_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC367_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC367_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC367_LONG_WINDOW_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC367_UNSELECTED_ORIGIN_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC367_BETA2_LONG_WINDOW_TRANSFER = REFUTED_SCOPED
+    TPC367_BETA2_EXPONENT_SENSITIVITY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC367_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC367_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC367_GROWING_OPERATOR_BOUND = OPEN
+    TPC367_SOURCE_UNIFORM_L2 = OPEN
+    TPC367_ARITHMETIC_ADVANCE = NO
+    TPC367_FIXED_POWER_CREDIT = 0
+    TPC367_FULL_GATE_B = OPEN
+    TPC367_TWIN_PRIME_RESULT = NONE
+    TPC367_STATUS = NUMERICALLY_CERTIFIED_FINITE_PREDECLARED_LONG_WINDOW_OBSTRUCTION
+    TPC367_ROUND2_CLUE = TEST_BETA2_FAILURE_LOCALIZATION_ON_LONGER_WINDOWS
+
 ## 5.149 V219 / TPC-366：fixed beta=2 higher-Q ladder
 
 TPC-366 冻结 TPC-365 的 beta=2 规则，不再按更高 `Q` 重新拟合权重。在候选 origins
@@ -1707,7 +1785,7 @@ reassembly 仍没有证明。因此 `ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDI
 下一步：固定 beta=2，测试更长 windows 与 predeclared/unselected origins；若出现 failure，
 按 window、origin、Q 与 sign law 定位，若继续通过也只记为 finite scoped evidence。
 
-    YOU ARE HERE = V219 / TPC-366
+    PREVIOUS ANCHOR = V219 / TPC-366
     TPC366_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
     TPC366_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
     TPC366_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_480_ROWS
@@ -10196,6 +10274,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-03 | V220 / TPC-367 | Bridge B / Gate B：predeclared long-window finite obstruction; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-367` | 承接 TPC-366；预声明 `(620001,626141,632281)` origins，在 counts `512,1024` 与 `Q=512,2048,8192` 完成 288 个全法真谱 rows；beta=2 在 count=1024 的高-Q all-plus/exponent-1 rows 出现 6 个 spectral violations，Schur 0；下一步第二个 predeclared origin family replication |
 | 2026-09-03 | V219 / TPC-366 | Bridge A / Gate B：fixed beta=2 higher-Q finite scale ladder completed; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-366` | 承接 TPC-365；41 个候选只用 unsigned geometry selection 选出 `(623071,631360,629211)`，新 panel 在 `Q=512..8192` 五锚点完成 480 个全法真谱 rows；beta=2 在 240/240 行低于 `0.64/0.83`，beta=0 各有 60/240 violations；最大谱相对 parent 上升 `0.00815`，下一步更长 windows 与 unselected origins |
 | 2026-09-03 | V218 / TPC-365 | Bridge A / Gate B：fixed beta=2 response-blind fresh-holdout transfer completed; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-365` | 承接 TPC-364；51 个候选只用 unsigned geometry selection 选出 `(413342,410258,416940)`，新 panel 完成 384 个全法真谱 rows；beta=2 在 192/192 行低于 `0.64`，beta=0 有 30/192 violations，最大谱差相对 parent 为 `4.43e-05`；下一步固定 beta=2 攻击更高 Q 与新 scale ladder |
 | 2026-09-03 | V217 / TPC-364 | Bridge A / Gate B：explicit shell-tilt phase diagram completed; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-364` | 承接 TPC-363；固定三 origins，在五个 integer beta、`Q=80,128,256,512`、两档 counts、两种 exponents、四种 laws 上完成 960 个真谱 rows；beta=2 在 192/192 行低于 `0.64`，其余 beta 的 failure counts 为 `63/36/30/30`；下一步 beta=2 response-blind fresh holdout |
