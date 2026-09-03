@@ -1,6 +1,74 @@
 # TPC HANDOFF
 
-TPC-365 current section: beta=2 response-blind fresh holdout
+TPC-366 current section: fixed beta=2 higher-Q ladder
+------------------------------------------------------
+
+TPC-366 is the current sealed release.  It freezes the beta=2 rule carried
+from TPC-365 and attacks shell scale on a new finite panel.  The response-
+blind selection scans 41 candidate origins `620001+307j`, `0<=j<41`, using
+only unsigned weighted square geometry on 256-point pilots over
+`Q=512,1024,2048,4096,8192` and exponents `1,2`.  Descending geometry spread,
+origin tie-break, and the greedy minimum separation 2048 rule select the
+ordered origins `(623071,631360,629211)`.  Signed response, source vector,
+and sign law are not read until after selection is frozen.
+
+The frozen comparison uses beta `0,2`, counts `256,512`, five Q anchors,
+exponents `1,2`, and all four fixed sign laws, giving 480 true-spectral rows.
+Beta=2 has zero spectral-cap and zero Schur-cap violations in all 240 rows;
+its maximum normalized spectrum is `0.62448287758976528` and maximum
+normalized Schur value is `0.65368278287004711`.  The beta=0 control has 60
+violations of each cap in 240 rows.  The beta=2 maximum is not monotone: it
+exceeds TPC-365's `0.61633188509480319` by `0.0081509924949620949`.
+
+This is finite higher-Q scale evidence on a geometry-selected,
+response-blind panel.  It is not a shell-uniform operator theorem, source-
+valid arithmetic normalization, source-uniform arithmetic `L2` estimate,
+fixed-power saving, Route-A/Route-B pass, or twin-prime conclusion.  Official
+Session-named evaluator files remain absent, so local Bridge-B is fail-closed
+fallback evidence only.  The next experiment keeps beta=2 fixed and attacks
+the remaining selection and window objections with longer windows and
+predeclared/unselected origins.
+
+    TPC366_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+    TPC366_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC366_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_480_ROWS
+    TPC366_HIGHER_Q_LADDER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC366_BETA2_HIGHER_Q_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC366_BETA2_SCALE_UNIFORMITY = OPEN
+    TPC366_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC366_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC366_GROWING_OPERATOR_BOUND = OPEN
+    TPC366_SOURCE_UNIFORM_L2 = OPEN
+    TPC366_ARITHMETIC_ADVANCE = NO
+    TPC366_FIXED_POWER_CREDIT = 0
+    TPC366_FULL_GATE_B = OPEN
+    TPC366_TWIN_PRIME_RESULT = NONE
+    TPC366_STRONGEST_POSITIVE = FIXED_BETA2_HIGHER_Q_FINITE_CAP_OBSERVATION
+    TPC366_STRONGEST_OBSTRUCTION = NONMONOTONE_SCALE_AND_GEOMETRY_SELECTION_REMAIN
+    TPC366_OPEN_THEOREM = LONGER_WINDOWS_AND_UNSELECTED_ORIGIN_HOLDOUT
+    TPC366_REUSABLE_STRUCTURE = FROZEN_WEIGHT_PLUS_ALL_LAW_HIGHER_Q_REPLAY
+    TPC366_ROUND2_CLUE = TEST_BETA2_ON_LONGER_WINDOWS_AND_UNSELECTED_ORIGINS
+    TPC366_STATUS = NUMERICALLY_CERTIFIED_FINITE_BETA2_HIGHER_Q_LADDER
+
+TPC-366 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    python -B papers/tpc-366-beta2-higher-q-ladder/code/tpc366_beta2_higher_q_ladder.py --check
+    python -O -B papers/tpc-366-beta2-higher-q-ladder/code/tpc366_beta2_higher_q_ladder.py --check
+    python -B papers/tpc-366-beta2-higher-q-ladder/experiments/tpc366_independent_checker.py --check
+    python -O -B papers/tpc-366-beta2-higher-q-ladder/experiments/tpc366_independent_checker.py --check
+    python -B papers/tpc-366-beta2-higher-q-ladder/experiments/tpc366_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-366-beta2-higher-q-ladder/experiments/tpc366_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc366_beta2_higher_q_ladder_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc366_beta2_higher_q_ladder_checker.py --check
+
+TPC-366 incremental tail audit: all four normal/optimized pairs return zero,
+have empty stderr, and emit byte-identical stdout.  This is V219 finite
+higher-Q evidence only; scale uniformity, source validity, growing operator
+bound, arithmetic `L2`, fixed-power saving, full Gate B, and the twin-prime
+endpoint remain open.
+
+TPC-365 previous section: beta=2 response-blind fresh holdout
 -------------------------------------------------------------
 
 TPC-365 is the current sealed release.  It freezes the beta=2 rule found by
@@ -13116,7 +13184,9 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V218/TPC-365 是当前 release；其 beta=2 fresh-holdout producer、
+V219/TPC-366 是当前 release；其 fixed beta=2 higher-Q ladder producer、
+reverse-shell independent replay、certificate stress audit 与 literal masked-operator
+Bridge-B 已封存。V218/TPC-365 是上一 release；其 beta=2 fresh-holdout producer、
 reverse-shell independent replay、certificate stress audit 与 literal masked-operator
 Bridge-B 已封存。V217/TPC-364 是上一 release；其 prime-shell tilt phase-diagram producer、
 reverse-shell independent replay、certificate stress audit 与 literal masked-operator
@@ -13133,7 +13203,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 469 对 normal/optimized 命令、938 次
+当前 curated cascade command set 共 473 对 normal/optimized 命令、946 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -13152,7 +13222,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365 各再追加末尾 4 对。
+	TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 

@@ -3,13 +3,72 @@
 
 更新时间：2026-09-03
 
-状态：**TPC365_NUMERICALLY_CERTIFIED_FINITE_BETA2_FRESH_HOLDOUT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC366_NUMERICALLY_CERTIFIED_FINITE_BETA2_HIGHER_Q_LADDER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.159 current：TPC-365 beta=2 response-blind fresh holdout
+## 0.160 current：TPC-366 fixed beta=2 higher-Q ladder
+
+项目：papers/tpc-366-beta2-higher-q-ladder/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_BETA2_HIGHER_Q_LADDER**。
+
+TPC-366 冻结 TPC-365 的 beta=2 规则，不再按更高 `Q` 重新拟合权重。先在
+`620001+307j`、`0<=j<41` 的 41 个候选起点上，以 256-point pilot 的 unsigned
+weighted geometry spread 做 response-blind selection；按 descending score、origin
+tie-break 与最小间隔 `2048` 的 greedy rule，选出 ordered origins
+`(623071,631360,629211)`。selection 不读取 signed response、source vector 或 sign law。
+
+选择冻结后，比较 beta `0,2`，在 counts `256,512`、shell anchors
+`Q=512,1024,2048,4096,8192`、exponents `1,2` 与四种 fixed sign laws 上完成 `480` 个
+全真谱 rows。beta=2 在 `240/240` 行低于 inherited spectral cap `0.64` 与 Schur cap
+`0.83`，最大 normalized spectrum 为 `0.62448287758976528`，最大 normalized Schur 为
+`0.65368278287004711`；beta=0 对照在两种 cap 上各有 `60/240` 个 violations，最大谱为
+`1.6419614115857373`。beta=2 的最大谱相对 TPC-365 增加
+`0.0081509924949620949`，所以不把该梯子写成单调衰减或 uniform transfer。
+
+最强正结果：固定 beta=2 在新 higher-`Q` 五锚点 panel 上保留有限 spectral/Schur cap
+observation，并由反向 shell 独立重放。最强 obstruction：panel 仍由 unsigned geometry
+选择，窗口有限，且 beta=2 的尺度统计非单调；没有 source-valid normalization 或
+growing operator theorem。因此不升级为 asymptotic repair。
+
+producer、reverse-shell independent replay、23-mutation stress、exact rational anchor、
+PDF 与 normal/optimized Bridge-B 均通过；official evaluator files absent，local Bridge-B
+仍为 fail-closed fallback。`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`、`TWIN_PRIME_RESULT=NONE`。
+
+开放定理：在固定 beta=2 的条件下，去除 geometry selection 的特殊性并增加窗口长度，
+测试 predeclared/unselected origins 的 cap 稳定性；随后仍需证明 source validity、growing
+operator control 与 arithmetic reassembly。
+
+可复用结构：
+
+    frozen beta -> response-blind geometry selection -> higher-Q all-law ladder
+      -> beta=0 control -> reverse replay + exact anchor -> scale/window obstruction firewall
+
+ROUND2_CLUE：`TEST_BETA2_ON_LONGER_WINDOWS_AND_UNSELECTED_ORIGINS`。
+
+```text
+TPC366_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+TPC366_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+TPC366_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_480_ROWS
+TPC366_HIGHER_Q_LADDER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC366_BETA2_HIGHER_Q_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC366_BETA2_SCALE_UNIFORMITY = OPEN
+TPC366_BETA2_ASYMPTOTIC_REPAIR = OPEN
+TPC366_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC366_GROWING_OPERATOR_BOUND = OPEN
+TPC366_SOURCE_UNIFORM_L2 = OPEN
+TPC366_ARITHMETIC_ADVANCE = NO
+TPC366_FIXED_POWER_CREDIT = 0
+TPC366_FULL_GATE_B = OPEN
+TPC366_TWIN_PRIME_RESULT = NONE
+TPC366_STATUS = NUMERICALLY_CERTIFIED_FINITE_BETA2_HIGHER_Q_LADDER
+```
+
+## 0.159 previous：TPC-365 beta=2 response-blind fresh holdout
 
 项目：papers/tpc-365-beta2-fresh-holdout/
 

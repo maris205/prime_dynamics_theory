@@ -1,6 +1,47 @@
 # TPC distilled map and bold channel
 
-## V218 / TPC-365 current anchor
+## V219 / TPC-366 current anchor
+
+更新时间：2026-09-03
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc366_beta2_higher_q_ladder.md，checker 为
+tpc_bridge_b_tpc366_beta2_higher_q_ladder_checker.py，编号论文为
+papers/tpc-366-beta2-higher-q-ladder/。
+
+TPC-366 冻结 TPC-365 的 beta=2 规则，先在 41 个候选起点上只用 256-point unsigned
+weighted geometry 做 response-blind greedy selection，选出 `(623071,631360,629211)`；
+随后在新 panel 的 beta `0,2`、四种 sign laws、counts `256,512`、五个
+`Q=512,1024,2048,4096,8192` anchors 与 exponents `1,2` 上完成 `480` 个全真谱 rows。
+beta=2 在 `240/240` 行低于 inherited `0.64` spectral 与 `0.83` Schur working caps，最大
+normalized spectrum/Schur 为 `0.62448287758976528/0.65368278287004711`；beta=0 对照
+各有 `60/240` 个 violations。
+
+这是 geometry-selected、response-blind 的 finite higher-`Q` scale evidence：beta=2 的
+最大谱相对 TPC-365 上升 `0.0081509924949620949`，因此不宣称单调衰减或 shell-uniform
+transfer。它不产生 source-valid normalization、growing operator bound、source-uniform
+arithmetic `L2`、fixed-power credit、Route-B reassembly 或 twin-prime result；arithmetic
+advance 为 NO。official evaluator files 仍 absent，local Bridge-B 仍 fail-closed。下一步
+固定 beta=2，测试更长 windows 与 predeclared/unselected origins。
+
+    TPC366_GEOMETRY_SELECTION = PROVED_EXACT_FINITE_RESPONSE_BLIND
+    TPC366_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC366_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_480_ROWS
+    TPC366_HIGHER_Q_LADDER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC366_BETA2_HIGHER_Q_CAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC366_BETA2_SCALE_UNIFORMITY = OPEN
+    TPC366_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC366_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC366_GROWING_OPERATOR_BOUND = OPEN
+    TPC366_SOURCE_UNIFORM_L2 = OPEN
+    TPC366_ARITHMETIC_ADVANCE = NO
+    TPC366_FIXED_POWER_CREDIT = 0
+    TPC366_FULL_GATE_B = OPEN
+    TPC366_TWIN_PRIME_RESULT = NONE
+    TPC366_STATUS = NUMERICALLY_CERTIFIED_FINITE_BETA2_HIGHER_Q_LADDER
+    TPC366_ROUND2_CLUE = TEST_BETA2_ON_LONGER_WINDOWS_AND_UNSELECTED_ORIGINS
+
+## V218 / TPC-365 previous anchor
 
 更新时间：2026-09-03
 
