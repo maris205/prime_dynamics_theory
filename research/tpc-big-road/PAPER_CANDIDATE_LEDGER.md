@@ -3,13 +3,71 @@
 
 更新时间：2026-09-03
 
-状态：**TPC369_NUMERICALLY_CERTIFIED_FINITE_THIRD_ORIGIN_FAMILY_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC370_NUMERICALLY_CERTIFIED_FINITE_COUNT_2048_WINDOW_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.163 current：TPC-369 third predeclared origin-family audit
+## 0.164 current：TPC-370 count-2048 finite-window audit
+
+项目：papers/tpc-370-count-2048-window-audit/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_COUNT_2048_WINDOW_AUDIT**。
+
+TPC-370 在 TPC-369 的第三个 response-blind origin family 上只改变窗口 count，固定
+`N=2048`、origins `(1010001,1018021,1026041)`、shell anchors `Q=512,2048,8192`、
+exponent `1`、四种 fixed sign laws 与 beta `0,2`，完成 `72` 个全真谱 rows。origin grid
+`1010001+401j` 与 indices `(0,20,40)` 在任何 response、source、law score 或 geometry
+ranking 读取前已冻结。
+
+最强正结果：beta=2 的六键 origin/`Q`/law support 继续出现，恰为三个 origins 的
+`Q=2048,8192`、all-plus rows；去掉刻意改变的 count 坐标后，它与 TPC-369 parent
+signature 完全一致。beta=2 在 `Q=512` 无 spectral violation，且 36 个 beta=2 rows
+无 Schur violation。最强 obstruction：beta=2 最大 normalized spectrum 由 parent 的
+`0.67410489800609708` 升至 `0.71099989528234753`，有限差为
+`0.036894997276250452`；因此 support persistence 不等于 magnitude stability。beta=0
+对照有 `9/36` spectral 与 `9/36` Schur violations。
+
+继承的 exact anchor `[1010346,1010359)` 在 `Q=4`、shell `{5,7}` 上由 exact rational
+geometry 重新验证，但没有重新选择 main-panel 参数。producer、独立 descending-shell
+replay、32-mutation stress、PDF 与 local Bridge-B 组成完整 package；official evaluator
+files absent，故 local bridge 仍是 fail-closed evidence。`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`、`TWIN_PRIME_RESULT=NONE`。
+
+开放定理：在 count-2048 下定位 origin/residue/high-Q phase，并进一步寻找去除有限
+support persistence 与 magnitude drift 的 uniform operator theorem；source-valid
+normalization、growing operator bound、source-uniform arithmetic `L2` 与 Route-B
+reassembly 仍 open。
+
+可复用结构：
+
+    frozen origin family -> one-coordinate count audit -> support quotient comparison
+      -> magnitude-drift diagnostic -> independent replay + claim firewall
+
+ROUND2_CLUE：`TEST_COUNT_2048_PHASE_LOCALIZATION`。
+
+```text
+TPC370_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+TPC370_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+TPC370_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+TPC370_COUNT_2048_WINDOW = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC370_BETA2_PHASE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC370_BETA2_PARENT_SIGNATURE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC370_ORIGIN_UNIFORMITY = OPEN
+TPC370_WINDOW_UNIFORMITY = OPEN
+TPC370_BETA2_ASYMPTOTIC_REPAIR = OPEN
+TPC370_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC370_GROWING_OPERATOR_BOUND = OPEN
+TPC370_SOURCE_UNIFORM_L2 = OPEN
+TPC370_ARITHMETIC_ADVANCE = NO
+TPC370_FIXED_POWER_CREDIT = 0
+TPC370_FULL_GATE_B = OPEN
+TPC370_TWIN_PRIME_RESULT = NONE
+TPC370_STATUS = NUMERICALLY_CERTIFIED_FINITE_COUNT_2048_WINDOW_AUDIT
+```
+
+## 0.163 previous：TPC-369 third predeclared origin-family audit
 
 项目：papers/tpc-369-third-origin-family-audit/
 

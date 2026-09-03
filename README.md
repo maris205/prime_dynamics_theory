@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--369 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--370 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -651,6 +651,17 @@ long-window phase，得到 `(810001,817061,824121)`；在 exponent=1、counts `5
 或 asymptotic theorem；含 exact anchor、独立 reverse-shell replay、29-mutation stress、
 PDF 与 local Bridge-B checker，growing operator bound、source-uniform arithmetic L2 与
 arithmetic advance 仍为 OPEN/NO。
+
+papers/tpc-370-count-2048-window-audit - TPC-370 已完成项目 - 在 TPC-369 的第三个
+origin family 上只改变 count 为 `2048`，完成 72 个全法真谱 rows；beta=2 在三个 origins
+的 `Q=2048,8192`、all-plus rows 上仍有 6 个 spectral violations，`Q=512` 无 failure，
+且 beta=2 无 Schur violation；beta=0 对照为 9/9。去掉 count 坐标后六键 support 与
+TPC-369 parent 一致，但最大谱由 `0.67410489800609708` 升至
+`0.71099989528234753`，有限差 `0.036894997276250452`，故不宣称 magnitude stability
+或 asymptotic transfer；含 inherited exact anchor、独立 reverse-shell replay、32-mutation
+stress、PDF 与 local Bridge-B checker，source-valid normalization、growing operator bound、
+source-uniform arithmetic L2、arithmetic advance、fixed-power credit 与 full Gate B 仍为
+OPEN/NO/0/OPEN。
 
 papers/tpc-369-third-origin-family-audit - TPC-369 已完成项目 - 在第三个
 predeclared origin family `1010001+401j` 的 indices `(0,20,40)` 上完成 144 个全法真谱

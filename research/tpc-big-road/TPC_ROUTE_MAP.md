@@ -2,14 +2,92 @@
 
 更新时间：2026-09-03
 
-当前地图版本：V222 / TPC-369
+当前地图版本：V223 / TPC-370
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-369`（`NUMERICALLY_CERTIFIED_FINITE_THIRD_ORIGIN_FAMILY_AUDIT`）；
-对应论文目录为 `papers/tpc-369-third-origin-family-audit/`。
+当前编号锚点：`TPC-370`（`NUMERICALLY_CERTIFIED_FINITE_COUNT_2048_WINDOW_AUDIT`）；
+对应论文目录为 `papers/tpc-370-count-2048-window-audit/`。
 
-TPC-369 是当前地图位置：在第三个 predeclared origin family
+TPC-370 是当前地图位置：在 TPC-369 已冻结的第三个 response-blind origin family
+上只把窗口 count 改为 `2048`，保持 origins `(1010001,1018021,1026041)`、
+`Q=512,2048,8192`、exponent `1`、四种 sign laws 与 beta `0,2`，完成 `72` 个全真谱
+rows。beta=2 在三个 origins 的高-Q/all-plus rows 仍有 `6` 个 spectral violations，
+但最大谱升至 `0.71099989528234753`；beta=2 无 Schur violation，beta=0 对照为
+`9/36` spectral 与 `9/36` Schur violations。去掉刻意变化的 count 坐标后，六键
+origin/`Q`/law support 与 TPC-369 parent 一致，但幅度不稳定，因此下一关是
+count-2048 的 origin/residue/high-Q phase localization，而不是渐近外推。
+
+该结果仍是 finite scoped evidence：不建立 origin/window uniformity、source-valid
+normalization、growing operator bound、source-uniform arithmetic `L2`、prime-shell
+reassembly、fixed-power credit、Route-B closure 或 twin-prime result；
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。official
+evaluator files absent，local Bridge-B 仍为 fail-closed evidence。
+
+    YOU ARE HERE = V223 / TPC-370
+    TPC370_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+    TPC370_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC370_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+    TPC370_COUNT_2048_WINDOW = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC370_BETA2_PHASE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC370_BETA2_PARENT_SIGNATURE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC370_ORIGIN_UNIFORMITY = OPEN
+    TPC370_WINDOW_UNIFORMITY = OPEN
+    TPC370_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC370_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC370_GROWING_OPERATOR_BOUND = OPEN
+    TPC370_SOURCE_UNIFORM_L2 = OPEN
+    TPC370_ARITHMETIC_ADVANCE = NO
+    TPC370_FIXED_POWER_CREDIT = 0
+    TPC370_FULL_GATE_B = OPEN
+    TPC370_TWIN_PRIME_RESULT = NONE
+    TPC370_STATUS = NUMERICALLY_CERTIFIED_FINITE_COUNT_2048_WINDOW_AUDIT
+    TPC370_ROUND2_CLUE = TEST_COUNT_2048_PHASE_LOCALIZATION
+
+## 5.153 V223 / TPC-370：count-2048 finite-window audit
+
+TPC-370 的完整 finite package 位于
+`papers/tpc-370-count-2048-window-audit/`。它把 TPC-369 的第三 origin family
+固定下来，只改变 count 到 `2048`，以区分 failure support persistence 与 magnitude
+stability。预声明 grid `1010001+401j` 的 indices `(0,20,40)` 产生
+`(1010001,1018021,1026041)`；主 panel 共 `72` 个 rows。
+
+beta=2 的 6 个 spectral failures 精确出现在三个 origins 的 `Q=2048,8192`、
+all-plus rows；`Q=512` 无 failure，36 个 beta=2 rows 无 Schur failure。beta=0
+有 `9/36` spectral 与 `9/36` Schur violations。beta=2 最大谱为
+`0.71099989528234753`，parent TPC-369 为 `0.67410489800609708`，有限差为
+`0.036894997276250452`。因此 support signature 在 count 变化后仍复现，但幅度
+稳定性被该有限比较否定（仅 scoped）。
+
+继承 exact anchor `[1010346,1010359)` 由 exact rational geometry 与独立 checker
+复核；不重新选择 main-panel 参数。producer、reverse-shell independent replay、
+32-mutation stress、PDF 与 local Bridge-B 均属于 package；official evaluator files
+absent，local bridge 不代表官方 Route-A/Route-B pass。
+
+    TPC370_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+    TPC370_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
+    TPC370_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+    TPC370_COUNT_2048_WINDOW = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC370_BETA2_PHASE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC370_BETA2_PARENT_SIGNATURE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC370_ORIGIN_UNIFORMITY = OPEN
+    TPC370_WINDOW_UNIFORMITY = OPEN
+    TPC370_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC370_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC370_GROWING_OPERATOR_BOUND = OPEN
+    TPC370_SOURCE_UNIFORM_L2 = OPEN
+    TPC370_ARITHMETIC_ADVANCE = NO
+    TPC370_FIXED_POWER_CREDIT = 0
+    TPC370_FULL_GATE_B = OPEN
+    TPC370_TWIN_PRIME_RESULT = NONE
+    TPC370_STATUS = NUMERICALLY_CERTIFIED_FINITE_COUNT_2048_WINDOW_AUDIT
+    TPC370_ROUND2_CLUE = TEST_COUNT_2048_PHASE_LOCALIZATION
+
+下一关：在 count-2048 下按新的预声明 origin/residue/high-Q partition 做 phase
+localization；若发现局部相位差异，记录为 finite localization obstruction，不将其
+解释为 uniform asymptotic behavior。
+
+TPC-369 是上一地图位置：在第三个 predeclared origin family
 `1010001+401j` 的 indices `(0,20,40)` 上复现 TPC-368 的 long-window phase，得到
 `(1010001,1018021,1026041)`；选择不读取 response、source、law result 或 geometry score。
 随后在 beta `0,2`、counts `512,1024`、`Q=512,2048,8192`、exponent `1` 与四种 sign laws
@@ -41,7 +119,7 @@ growing operator bound、source-uniform arithmetic `L2`、fixed-power credit、R
 reassembly 或 twin-prime result；arithmetic advance 为 NO。下一步是第三个 predeclared
 origin family 或 count-2048 window，必要时做 residue-phase localization。
 
-    YOU ARE HERE = V222 / TPC-369
+    PREVIOUS ANCHOR = V222 / TPC-369
     TPC369_ORIGIN_FAMILY_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC369_WEIGHTED_GEOMETRY_POSITIVITY = PROVED_EXACT_FINITE
     TPC369_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_144_ROWS
@@ -10424,6 +10502,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-03 | V223 / TPC-370 | Bridge B / Gate B：count-2048 finite-window audit; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-370` | 承接 TPC-369；固定第三 origin family 与 count `2048`，完成 72 个全法真谱 rows；beta=2 在高-Q/all-plus 三 origin 上保留 6 个 spectral violations、Schur 0，support signature 与 parent 一致，但最大谱升至 `0.7109998953`，有限 magnitude stability 不成立；下一步 count-2048 phase localization |
 | 2026-09-03 | V222 / TPC-369 | Bridge B / Gate B：third predeclared origin-family finite audit; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-369` | 承接 TPC-368；第三个 `1010001+401j` predeclared family 完成 144 个全法真谱 rows，beta=2 在 count=1024、高-Q、all-plus/exponent-1 逐键复现 6 个 spectral violations，Schur 0；初始 exact anchor 零几何并由 unsigned first-positive rule 修复；下一步 count-2048 window 或 residue-phase localization |
 | 2026-09-03 | V221 / TPC-368 | Bridge B / Gate B：second predeclared origin-family finite replication; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-368` | 承接 TPC-367；第二个 `810001+353j` predeclared family 完成 144 个全法真谱 rows，beta=2 在 count=1024、高-Q、all-plus/exponent-1 逐键复现 6 个 spectral violations，Schur 0；下一步第三个 family 或 count-2048 window |
 | 2026-09-03 | V220 / TPC-367 | Bridge B / Gate B：predeclared long-window finite obstruction; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-367` | 承接 TPC-366；预声明 `(620001,626141,632281)` origins，在 counts `512,1024` 与 `Q=512,2048,8192` 完成 288 个全法真谱 rows；beta=2 在 count=1024 的高-Q all-plus/exponent-1 rows 出现 6 个 spectral violations，Schur 0；下一步第二个 predeclared origin family replication |

@@ -1,13 +1,48 @@
 # TPC distilled map and bold channel
 
-## V222 / TPC-369 current anchor
+## V223 / TPC-370 current anchor
 
 更新时间：2026-09-03
 
 当前入口：proof 为
-research/tpc-big-road/bridge_b_tpc369_third_origin_family_audit.md，checker 为
-tpc_bridge_b_tpc369_third_origin_family_audit_checker.py，编号论文为
-papers/tpc-369-third-origin-family-audit/。
+research/tpc-big-road/bridge_b_tpc370_count_2048_window_audit.md，checker 为
+tpc_bridge_b_tpc370_count_2048_window_audit_checker.py，编号论文为
+papers/tpc-370-count-2048-window-audit/。
+
+TPC-370 是当前位置：承接 TPC-369 的第三个 response-blind origin family，只把窗口
+count 改为 `2048`，保留 origins `(1010001,1018021,1026041)`、`Q=512,2048,8192`、
+exponent `1`、四种 sign laws 与 beta `0,2`，完成 `72` 个全真谱 rows。beta=2 在三个
+origins 的 `Q=2048,8192`、all-plus rows 上仍有 6 个 spectral violations，`Q=512`
+无 violation，36 个 beta=2 rows 无 Schur violation；beta=0 对照有 9 个 spectral 与 9
+个 Schur violations。去掉 count 坐标后，六键 origin/`Q`/law support 与 TPC-369
+parent 一致，但最大谱由 `0.67410489800609708` 升至 `0.71099989528234753`，有限差
+为 `0.036894997276250452`，所以 support persistence 与 magnitude stability 分开记。
+
+继承 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核。该结果仍是
+finite scoped evidence，不建立 origin/window uniformity、source-valid normalization、
+growing operator bound、source-uniform arithmetic `L2`、prime-shell reassembly、
+fixed-power credit、Route-B closure 或 twin-prime result；`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。下一关是 count-2048 origin/residue/high-Q
+phase localization。
+
+    TPC370_FINITE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+    TPC370_COUNT_2048_WINDOW = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC370_BETA2_PHASE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC370_BETA2_PARENT_SIGNATURE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC370_ORIGIN_UNIFORMITY = OPEN
+    TPC370_WINDOW_UNIFORMITY = OPEN
+    TPC370_BETA2_ASYMPTOTIC_REPAIR = OPEN
+    TPC370_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC370_GROWING_OPERATOR_BOUND = OPEN
+    TPC370_SOURCE_UNIFORM_L2 = OPEN
+    TPC370_ARITHMETIC_ADVANCE = NO
+    TPC370_FIXED_POWER_CREDIT = 0
+    TPC370_FULL_GATE_B = OPEN
+    TPC370_TWIN_PRIME_RESULT = NONE
+    TPC370_STATUS = NUMERICALLY_CERTIFIED_FINITE_COUNT_2048_WINDOW_AUDIT
+    TPC370_ROUND2_CLUE = TEST_COUNT_2048_PHASE_LOCALIZATION
+
+## V222 / TPC-369 previous anchor
 
 TPC-369 在第三个 predeclared origin family `1010001+401j` 上复现 TPC-368 的
 long-window phase。indices `(0,20,40)` 在任何 signed response、source、law result 或
