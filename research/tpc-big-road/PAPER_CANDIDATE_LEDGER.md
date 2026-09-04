@@ -3,13 +3,76 @@
 
 更新时间：2026-09-05
 
-状态：**TPC389_NUMERICALLY_CERTIFIED_FINITE_C1_LONG_HORIZON_SLOPE_STRESS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC390_NUMERICALLY_CERTIFIED_FINITE_C1_RECURSIVE_SLOPE_COMPOSITION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.183 current：TPC-389 c=1 long-horizon slope stress
+## 0.184 current：TPC-390 c=1 recursive slope composition
+
+项目：papers/tpc-390-c1-recursive-slope-composition/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_RECURSIVE_SLOPE_COMPOSITION_AUDIT**。
+
+TPC-390 承接 TPC-389，把其 32 个 horizon slopes 在读出新 family 前完全冻结，
+并在第四个 coordinate-disjoint affine grid `a_j=3000001+401j` 上测试第二次
+recursive composition。预先冻结 indices `(0,10,20,30,40)`；前三个 origins
+`(3000001,3004011,3008021)` 在 `N=1024,1280` 作 calibration，后两个
+`(3012031,3016041)` 在 `N=1536` 作 holdout。fixed-three-block/full-relative
+band、`Q=2048,8192`、四个 laws 与两种 normalization 形成 256 rows、32 cells。
+
+最强正结果：local-control forecast 为 `32/32`，且 sequential/direct recursive
+power composition 的最大残差只有 `3.3306690738754696e-16`。one-step parent
+为 `30/32`，recursive parent 仅为 `23/32`；最大绝对误差分别为
+`0.03633754623843255`、`0.025804438647033412`、`0.049074165168337847`。
+N=1024、N=1280 与 N=1536 holdout stability 分别为 `28/32`、`25/32`、
+`26/32`。最强 obstruction 是 fixed-`c3` branch 的 pooled recursive failures，
+最大误差来自 alternating-index、`Q=2048`；one-step parent 的两个失败也位于
+alternating-index、`Q=2048` 的 pooled cells。spectral diagnostic 在 `64/256`
+rows 失败，Schur failures 为 `0/256`。
+
+开放定理：能否在 source-valid normalization 下证明 growing operator 与
+origin/count-uniform recursive horizon control，并继续支付 source-uniform
+arithmetic `L2`。当前结果不支付 arithmetic advance、fixed-power credit、
+Route-B reassembly 或 twin-prime 结论。
+
+可复用结构：
+
+    hashed TPC-389 slope interface
+      -> fresh three-level calibration/holdout ladder
+      -> one-step/local/two-step recursive forecast census
+      -> composition identity + reverse-shell replay + mutation firewall
+
+ROUND2_CLUE：`LOCALIZE_C1_RECURSIVE_HORIZON_OBSTRUCTION`。
+
+```text
+TPC390_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC390_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC390_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+TPC390_RECURSIVE_PANEL = NUMERICALLY_CERTIFIED_FINITE_256_ROWS
+TPC390_PARENT_ONE_STEP_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC390_LOCAL_CONTROL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC390_RECURSIVE_COMPOSITION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC390_COMPOSITION_IDENTITY = PROVED_EXACT_FINITE_NUMERICAL_IDENTITY
+TPC390_ORIGIN_UNIFORMITY = OPEN
+TPC390_COUNT_UNIFORMITY = OPEN
+TPC390_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC390_GROWING_OPERATOR_BOUND = OPEN
+TPC390_SOURCE_UNIFORM_L2 = OPEN
+TPC390_ARITHMETIC_ADVANCE = NO
+TPC390_FIXED_POWER_CREDIT = 0
+TPC390_FULL_GATE_B = OPEN
+TPC390_TWIN_PRIME_RESULT = NONE
+TPC390_STRONGEST_POSITIVE = LOCAL_CONTROL_AND_COMPOSITION_IDENTITY
+TPC390_STRONGEST_OBSTRUCTION = RECURSIVE_23_OF_32_AND_4_9_PERCENT_MAX_ERROR
+TPC390_OPEN_THEOREM = SOURCE_VALID_RECURSIVE_HORIZON_CONTROL
+TPC390_REUSABLE_STRUCTURE = HASHED_PARENT_TWO_STAGE_COMPOSITION_AUDIT
+TPC390_ROUND2_CLUE = LOCALIZE_C1_RECURSIVE_HORIZON_OBSTRUCTION
+TPC390_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_RECURSIVE_SLOPE_COMPOSITION_AUDIT
+```
+
+## 0.183 previous：TPC-389 c=1 long-horizon slope stress
 
 项目：papers/tpc-389-c1-long-horizon-slope-stress/
 

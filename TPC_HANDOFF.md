@@ -1,9 +1,76 @@
 # TPC HANDOFF
 
-TPC-389 current section: c=1 long-horizon slope stress
+TPC-390 current section: c=1 recursive slope composition
+-----------------------------------------------------------
+
+TPC-390 is the current finite release. It locks the TPC-389 certificate's
+32 horizon slopes before reading a fourth coordinate-disjoint origin family.
+On the affine grid `a_j=3000001+401j`, indices `(0,10,20,30,40)` are frozen
+first. Origins `(3000001,3004011,3008021)` are calibration at `N=1024` and
+`N=1280`; `(3012031,3016041)` are holdout at `N=1536`. The panel uses
+fixed-three-block and full-relative bands, `Q=2048,8192`, beta=2, exponent 1,
+height 66, four laws, and local or calibration-pooled normalization.
+
+The complete panel has 256 rows and 32 cells. The one-step parent forecast,
+same-family local control, and two-step recursive parent composition pass
+`30/32`, `32/32`, and `23/32` under the predeclared 3% finite cap. Their
+maximum absolute errors are respectively `0.03633754623843255`,
+`0.025804438647033412`, and `0.049074165168337847`. The sequential/direct
+composition residual is `3.3306690738754696e-16` at maximum. Stability counts
+are `28/32`, `25/32`, and `26/32` at `N=1024`, `N=1280`, and the `N=1536`
+holdout. The inherited `0.64` spectral diagnostic fails on `64/256` rows,
+while Schur failures are `0/256`.
+
+This is a finite recursive-horizon obstruction audit. It is not an
+origin-uniform, count-uniform, source-valid, growing-operator, source-uniform
+arithmetic `L2`, Route-B, or twin-prime theorem. Official Route-A/Route-B
+evaluator files remain absent; local Bridge-B is fail-closed repository
+evidence. The exact anchor is `[3000001,3000014)` with shell `[11,13]`.
+
+    TPC390_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC390_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC390_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC390_RECURSIVE_PANEL = NUMERICALLY_CERTIFIED_FINITE_256_ROWS
+    TPC390_PARENT_ONE_STEP_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC390_LOCAL_CONTROL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC390_RECURSIVE_COMPOSITION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC390_COMPOSITION_IDENTITY = PROVED_EXACT_FINITE_NUMERICAL_IDENTITY
+    TPC390_ORIGIN_UNIFORMITY = OPEN
+    TPC390_COUNT_UNIFORMITY = OPEN
+    TPC390_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC390_GROWING_OPERATOR_BOUND = OPEN
+    TPC390_SOURCE_UNIFORM_L2 = OPEN
+    TPC390_ARITHMETIC_ADVANCE = NO
+    TPC390_FIXED_POWER_CREDIT = 0
+    TPC390_FULL_GATE_B = OPEN
+    TPC390_TWIN_PRIME_RESULT = NONE
+    TPC390_STRONGEST_POSITIVE = LOCAL_CONTROL_AND_COMPOSITION_IDENTITY
+    TPC390_STRONGEST_OBSTRUCTION = RECURSIVE_23_OF_32_AND_4_9_PERCENT_MAX_ERROR
+    TPC390_OPEN_THEOREM = SOURCE_VALID_RECURSIVE_HORIZON_CONTROL
+    TPC390_REUSABLE_STRUCTURE = HASHED_PARENT_TWO_STAGE_COMPOSITION_AUDIT
+    TPC390_ROUND2_CLUE = LOCALIZE_C1_RECURSIVE_HORIZON_OBSTRUCTION
+    TPC390_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_RECURSIVE_SLOPE_COMPOSITION_AUDIT
+
+TPC-390 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-390-c1-recursive-slope-composition/code/tpc390_recursive_slope_composition.py --check
+    python -O -B papers/tpc-390-c1-recursive-slope-composition/code/tpc390_recursive_slope_composition.py --check
+    python -B papers/tpc-390-c1-recursive-slope-composition/experiments/tpc390_independent_checker.py --check
+    python -O -B papers/tpc-390-c1-recursive-slope-composition/experiments/tpc390_independent_checker.py --check
+    python -B papers/tpc-390-c1-recursive-slope-composition/experiments/tpc390_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-390-c1-recursive-slope-composition/experiments/tpc390_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc390_c1_recursive_slope_composition_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc390_c1_recursive_slope_composition_checker.py --check
+
+The next finite question is `LOCALIZE_C1_RECURSIVE_HORIZON_OBSTRUCTION`.
+Any interpretation remains finite until a genuine growing argument is supplied.
+
+TPC-389 previous section: c=1 long-horizon slope stress
 --------------------------------------------------------
 
-TPC-389 is the current finite release. It locks the TPC-388 certificate's
+TPC-389 is the previous finite release. It locks the TPC-388 certificate's
 32 cell-wise slopes before reading a third coordinate-disjoint origin family.
 On the affine grid `a_j=2800001+401j`, indices `(0,10,20,30,40)` are frozen
 first. Origins `(2800001,2804011,2808021)` are calibration at `N=768` and

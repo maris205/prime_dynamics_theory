@@ -9,7 +9,26 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-389 在第三个 coordinate-disjoint origin family 上把
+当前主线最新位置：TPC-390 在第四个 coordinate-disjoint origin family 上测试
+TPC-389 frozen slope interface 的第二次 recursive composition。三起点在
+`N=1024,1280` calibration，两起点在 `N=1536` holdout；256-row、32-cell panel
+中 one-step parent、local control、recursive parent 分别为 `30/32,32/32,23/32`，
+最大误差分别为 `0.03633754623843255`、`0.025804438647033412`、
+`0.049074165168337847`。composition identity residual 仅为
+`3.3306690738754696e-16`，所以主要 obstruction 是 slope horizon transfer，
+不是两阶段公式的数值不一致。stability 为 `28/32,25/32,26/32`，spectral
+failures 为 `64/256`，Schur failures 为 `0/256`。这是 finite scoped
+recursive-composition audit，不是 source-valid growing theorem、arithmetic
+`L2` 或 twin-prime result；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`。当前项目为
+`papers/tpc-390-c1-recursive-slope-composition/`，下一关是
+`LOCALIZE_C1_RECURSIVE_HORIZON_OBSTRUCTION`。
+
+papers/tpc-390-c1-recursive-slope-composition - TPC-390 current project；含
+256-row recursive forecast certificate、failure localization、独立 reverse-shell
+replay、25-mutation stress、proof package/PDF 与 local fail-closed Bridge-B checker。
+
+上一位置：TPC-389 在第三个 coordinate-disjoint origin family 上把
 TPC-388 的 frozen slope interface 推进到更长的 `N=1024 -> 1280` horizon。
 三起点在 `N=768,1024` calibration，两起点在 `N=1280` holdout；256-row、32-cell
 panel 的 anchored parent、local control 与 recursive parent forecast 均为 `32/32`
@@ -22,7 +41,7 @@ source-valid normalization、arithmetic `L2` 或 twin-prime result。当前项�
 `TEST_C1_RECURSIVE_SLOPE_COMPOSITION`；`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
 
-papers/tpc-389-c1-long-horizon-slope-stress - TPC-389 current project；含
+papers/tpc-389-c1-long-horizon-slope-stress - TPC-389 previous project；含
 256-row long-horizon certificate、三类 forecast audit、独立 reverse-shell replay、
 25-mutation stress、proof package/2-page PDF 与 local fail-closed Bridge-B checker。
 
