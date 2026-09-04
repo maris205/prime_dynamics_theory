@@ -3,13 +3,76 @@
 
 更新时间：2026-09-04
 
-状态：**TPC375_NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_STABILITY / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC376_NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_HOLDOUT_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.169 current：TPC-375 bandwidth stability and minimal cutoff
+## 0.170 current：TPC-376 response-blind bandwidth holdout replication
+
+项目：papers/tpc-376-bandwidth-holdout-replication/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_HOLDOUT_REPLICATION**。
+
+TPC-376 承接 TPC-375 的 `c=1` 规则，并在早先候选网格
+`a_j=1010001+401j` 中预声明、冻结而未参与训练的 indices `(5,15,30)` 上做
+response-blind holdout。三个 holdout origins 为 `(1012006,1016016,1022031)`；
+count `2048`、八个连续 256-point blocks、`Q=(512,2048,8192)`、kernel exponent
+`1`、beta `2` 与 all-plus law 均保持不变，形成完整 9-row panel。
+
+最强正结果：`c=1` band 的 spectral failure profile 按 Q 为 `(0,3,3)`，即 6/9
+rows，精确保留 TPC-375 的高-Q support pattern；Schur failure 为 `0/9`。selected
+full-mode absolute-Rayleigh retention 为
+`0.93760019185559207--0.976941204869197`，最大 tail fraction 为
+`0.062399808144408715`。producer、独立 reverse-shell replay、23-mutation stress、
+exact anchor 与 local Bridge-B 均通过。
+
+最强 obstruction：holdout 的定义是 grid-index disjoint，而不是 coordinate-interval
+disjoint；两个低索引窗口与邻近训练窗口有少量重叠。因此不能把该结果解释为独立物理
+样本，也不能升级为 origin/window uniformity、window-scale stability、cross-block
+causality、source-valid normalization、growing operator bound 或 arithmetic
+`L2`。official evaluator files 仍缺失，local Bridge-B 只是 fail-closed repository
+evidence；arithmetic advance 为 NO，fixed-power credit 为 0，twin-prime endpoint
+仍 NONE。
+
+开放定理：在同一 full-window normalization 与 `c=1` band rule 下，预声明的不同
+window scale/count holdout 是否仍保持该 Q-profile，并能否区分 support replication
+与有限尺度偶然性。
+
+可复用结构：
+
+    response-blind grid reservation
+      -> common full-window normalization
+      -> fixed band/tail Rayleigh decomposition
+      -> complete holdout panel
+      -> reverse-shell replay + mutation firewall
+      -> scale/count holdout
+
+ROUND2_CLUE：`TEST_C1_WINDOW_SCALE_HOLDOUT`。
+
+```text
+TPC376_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC376_COMMON_NORMALIZATION = PROVED_EXACT_FINITE_INHERITED
+TPC376_HOLDOUT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_9_ROWS
+TPC376_C1_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC376_PARENT_Q_PROFILE_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC376_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC376_ORIGIN_UNIFORMITY = OPEN
+TPC376_WINDOW_UNIFORMITY = OPEN
+TPC376_C1_SCALE_STABILITY = OPEN
+TPC376_CROSS_BLOCK_CAUSALITY = OPEN
+TPC376_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC376_GROWING_OPERATOR_BOUND = OPEN
+TPC376_SOURCE_UNIFORM_L2 = OPEN
+TPC376_ARITHMETIC_ADVANCE = NO
+TPC376_FIXED_POWER_CREDIT = 0
+TPC376_FULL_GATE_B = OPEN
+TPC376_TWIN_PRIME_RESULT = NONE
+TPC376_STATUS = NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_HOLDOUT_REPLICATION
+```
+
+## 0.169 previous：TPC-375 bandwidth stability and minimal cutoff
 
 项目：papers/tpc-375-bandwidth-stability-minimal-cutoff/
 

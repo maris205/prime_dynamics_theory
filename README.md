@@ -9,6 +9,21 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线最新位置：TPC-376 已在 TPC-375 的 `c=1` 规则上完成预声明、response-blind
+grid-index holdout。固定 holdout indices `(5,15,30)`、count `2048`、三个
+`Q={512,2048,8192}` anchors 的 9-row panel 给出 band spectral failure profile
+`(0,3,3)`，即 6/9 failures，Schur failures 为 `0/9`；selected full-mode
+Rayleigh retention 为 `0.93760019185559207--0.976941204869197`。这是有限
+grid-index replication，且部分坐标区间与训练窗口重叠，因此不宣称独立样本、origin/window
+uniformity、arithmetic `L2`、growing theorem 或 twin-prime result。当前项目为
+`papers/tpc-376-bandwidth-holdout-replication/`，下一关是预声明的
+`TEST_C1_WINDOW_SCALE_HOLDOUT`；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`。
+
+papers/tpc-376-bandwidth-holdout-replication - TPC-376 current project；含
+grid-index holdout 的 9-row certificate、独立 reverse-shell replay、23-mutation
+stress、2-page PDF 与 local fail-closed Bridge-B checker。
+
 当前主线状态：TPC-337--375 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339

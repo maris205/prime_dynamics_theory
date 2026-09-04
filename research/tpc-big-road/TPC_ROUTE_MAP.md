@@ -2,49 +2,85 @@
 
 更新时间：2026-09-04
 
-当前地图版本：V228 / TPC-375
+当前地图版本：V229 / TPC-376
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-375`（`NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_STABILITY`）；
-对应论文目录为 `papers/tpc-375-bandwidth-stability-minimal-cutoff/`。
+当前编号锚点：`TPC-376`（`NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_HOLDOUT_REPLICATION`）；
+对应论文目录为 `papers/tpc-376-bandwidth-holdout-replication/`。
 
-TPC-375 是当前位置：承接 TPC-374 的 near-block band，在同一 count-2048 full-window
-normalization 下冻结完整 9-row beta=2/all-plus 面板，比较预声明 block-distance
-cutoffs `c=0,1,2,3`。spectral failure census 为 `0/9,6/9,6/9,6/9`，其中
-`c=1` 首次精确复现 parent 的六个高-Q/all-plus failure keys；四个 cutoff 的 beta=2
-Schur failures 均为 `0/9`。这是 finite minimal-cutoff census，不构成全局 bandwidth
-optimum、causality、uniform theorem 或 asymptotic transfer。
+TPC-376 是当前位置：承接 TPC-375 的 `c=1` band，在早先网格
+`a_j=1010001+401j` 中预声明并冻结 indices `(5,15,30)` 作为 response-blind
+grid-index holdout。count `2048`、八个 256-point blocks、beta `2`、all-plus law 与
+`Q=512,2048,8192` 形成完整 9-row panel；spectral failure profile 按 Q 为
+`0/3,3/3,3/3`，Schur failures 为 `0/9`，与 TPC-375 的高-Q support profile
+一致。selected full-mode Rayleigh retention 为
+`0.93760019185559207--0.976941204869197`。
 
-继承 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核，未用于 main-panel
-选择。该结果仍是 finite scoped evidence：不建立 origin/window uniformity、source-valid
-normalization、growing operator bound、source-uniform arithmetic `L2`、prime-shell
-reassembly、fixed-power credit、Route-B closure 或 twin-prime result；`ARITHMETIC_ADVANCE=NO`、
-`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。official evaluator files absent，local Bridge-B
-仍为 fail-closed evidence。下一关固定 `c=1`，测试新 origin/window holdout 的 stability。
+这是有限 grid-index holdout，不是 coordinate-interval-disjoint sample：两个低索引窗口
+与邻近训练窗口有少量坐标重叠。因此不构成 origin/window uniformity、window-scale
+stability、causality、source-uniform arithmetic `L2`、growing operator theorem 或
+asymptotic transfer。
 
-    YOU ARE HERE = V228 / TPC-375
-    TPC375_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
-    TPC375_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
-    TPC375_NESTED_BAND_MASKS = PROVED_EXACT_FINITE_PREDECLARED
-    TPC375_BANDWIDTH_REPLAY = NUMERICALLY_CERTIFIED_FINITE_9_ROWS
-    TPC375_FAILURE_CUTOFF_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC375_PARENT_SUPPORT_REPRODUCTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC375_RAYLEIGH_RETENTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC375_MINIMAL_CUTOFF = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC375_BANDWIDTH_UNIFORMITY = OPEN
-    TPC375_CROSS_BLOCK_CAUSALITY = OPEN
-    TPC375_ORIGIN_UNIFORMITY = OPEN
-    TPC375_WINDOW_UNIFORMITY = OPEN
-    TPC375_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
-    TPC375_GROWING_OPERATOR_BOUND = OPEN
-    TPC375_SOURCE_UNIFORM_L2 = OPEN
-    TPC375_ARITHMETIC_ADVANCE = NO
-    TPC375_FIXED_POWER_CREDIT = 0
-    TPC375_FULL_GATE_B = OPEN
-    TPC375_TWIN_PRIME_RESULT = NONE
-    TPC375_STATUS = NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_STABILITY
-    TPC375_ROUND2_CLUE = TEST_BANDWIDTH_HOLDOUT
+继承 exact anchor `[1012006,1012019)` 由 exact rational geometry 复核，未用于 main-panel
+选择。producer、独立 reverse-shell replay、23-mutation stress、2-page PDF 与 local
+Bridge-B 均纳入 package；official evaluator files absent，local Bridge-B 仍为 fail-closed
+evidence。`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关
+为 `TEST_C1_WINDOW_SCALE_HOLDOUT`。
+
+    YOU ARE HERE = V229 / TPC-376
+    TPC376_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC376_COMMON_NORMALIZATION = PROVED_EXACT_FINITE_INHERITED
+    TPC376_HOLDOUT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_9_ROWS
+    TPC376_C1_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC376_PARENT_Q_PROFILE_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC376_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC376_ORIGIN_UNIFORMITY = OPEN
+    TPC376_WINDOW_UNIFORMITY = OPEN
+    TPC376_C1_SCALE_STABILITY = OPEN
+    TPC376_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC376_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC376_GROWING_OPERATOR_BOUND = OPEN
+    TPC376_SOURCE_UNIFORM_L2 = OPEN
+    TPC376_ARITHMETIC_ADVANCE = NO
+    TPC376_FIXED_POWER_CREDIT = 0
+    TPC376_FULL_GATE_B = OPEN
+    TPC376_TWIN_PRIME_RESULT = NONE
+    TPC376_STRONGEST_POSITIVE = FINITE_RESPONSE_BLIND_HOLDOUT_REPEATS_PARENT_Q_PROFILE
+    TPC376_STRONGEST_OBSTRUCTION = GRID_HOLDOUT_NOT_INTERVAL_DISJOINT_AND_NO_SCALE_THEOREM
+    TPC376_OPEN_THEOREM = PREDECLARED_C1_WINDOW_SCALE_HOLDOUT
+    TPC376_REUSABLE_STRUCTURE = FROZEN_GRID_INDEX_HOLDOUT_WITH_COMMON_BAND_TAIL_RAYLEIGH_AUDIT
+    TPC376_ROUND2_CLUE = TEST_C1_WINDOW_SCALE_HOLDOUT
+    TPC376_STATUS = NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_HOLDOUT_REPLICATION
+
+## 5.159 V229 / TPC-376：response-blind bandwidth holdout replication
+
+TPC-376 的完整 finite package 位于 `papers/tpc-376-bandwidth-holdout-replication/`。
+它把 TPC-375 的 `c=1` 规则移到预声明 grid-index holdout `(5,15,30)`，对应 origins
+`(1012006,1016016,1022031)`。完整 9-row beta=2/all-plus panel 的 spectral failure
+profile 为 `(0,3,3)`，Schur failure 为 `0/9`；selected full-mode band retention
+范围为 `0.93760019185559207--0.976941204869197`。
+
+该 holdout 只保证 index-level response blindness；低索引窗口与训练窗口有少量坐标重叠，
+所以不宣称 interval-disjointness 或独立样本。它给出 parent Q-profile 的 finite
+replication，但 origin/window uniformity、scale stability、cross-block causality、
+source-valid normalization、growing operator bound、source-uniform arithmetic `L2`、
+fixed-power credit 与 twin-prime endpoint 仍 open/zero。下一步测试同一 `c=1` 规则的
+window-scale/count holdout。
+
+    TPC376_HOLDOUT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_9_ROWS
+    TPC376_C1_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC376_PARENT_Q_PROFILE_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC376_GRID_INDEX_PROTOCOL = PROVED_EXACT_FINITE_RESPONSE_BLIND
+    TPC376_INTERVAL_DISJOINTNESS = NOT_CLAIMED
+    TPC376_WINDOW_SCALE_STABILITY = OPEN
+    TPC376_ORIGIN_UNIFORMITY = OPEN
+    TPC376_ARITHMETIC_ADVANCE = NO
+    TPC376_FIXED_POWER_CREDIT = 0
+    TPC376_FULL_GATE_B = OPEN
+    TPC376_TWIN_PRIME_RESULT = NONE
+    TPC376_STATUS = NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_HOLDOUT_REPLICATION
+    TPC376_ROUND2_CLUE = TEST_C1_WINDOW_SCALE_HOLDOUT
 
 ## 5.158 V228 / TPC-375：bandwidth stability and minimal cutoff
 
@@ -10679,6 +10715,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-04 | V229 / TPC-376 | Bridge B / Gate B：response-blind bandwidth holdout replication; source-valid normalization、window-scale stability、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-376` | 承接 TPC-375；固定 grid-index holdout `(5,15,30)`、count-2048 full-window normalization 与完整 9-row beta=2/all-plus panel，`c=1` spectral profile 为 `0/3,3/3,3/3`、Schur `0/9`；部分坐标窗口重叠，下一步 `c=1` window-scale/count holdout |
 | 2026-09-04 | V228 / TPC-375 | Bridge B / Gate B：bandwidth stability and minimal cutoff; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-375` | 承接 TPC-374；固定 count-2048 full-window normalization 与完整 9-row beta=2/all-plus panel，比较 `c=0,1,2,3`，spectral failure census 为 `0/9,6/9,6/9,6/9`，`c=1` 首次复现六个 parent high-Q keys；下一步 `c=1` 新 origin/window holdout |
 | 2026-09-03 | V227 / TPC-374 | Bridge B / Gate B：near-block band truncation; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-374` | 承接 TPC-373；固定同一 count-2048 full-window normalization，预声明 block distance `0--3` 的 `B3`，完成 18 个 full/band/tail rows；beta=2 band 精确复现 6 个 full spectral failures，六行 mode retention 至少 `0.9915711764`；下一步 bandwidth stability |
 | 2026-09-03 | V226 / TPC-373 | Bridge B / Gate B：extremal-eigenmode block separation; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-373` | 承接 TPC-372；固定三个 origin 与 count `2048`，对 18 个 rows 做八层 block-distance Rayleigh audit；18/18 为 minimum mode、distance 0 dominant，六个 beta=2 failure rows 全层同号且 d=0--3 至少占 99.157%；下一步 near-block band truncation |

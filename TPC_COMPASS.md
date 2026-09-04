@@ -1,8 +1,57 @@
 # TPC distilled map and bold channel
 
-## V228 / TPC-375 current anchor
+## V229 / TPC-376 current anchor
 
 更新时间：2026-09-04
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc376_bandwidth_holdout_replication.md，checker 为
+tpc_bridge_b_tpc376_bandwidth_holdout_replication_checker.py，编号论文为
+papers/tpc-376-bandwidth-holdout-replication/。
+
+TPC-376 承接 TPC-375 的 `c=1` bandwidth rule，并把早先 candidate grid
+`a_j=1010001+401j` 中预留、未参与训练的 indices `(5,15,30)` 固定为
+response-blind holdout。完整的 9-row beta=2/all-plus panel 使用 count `2048`、八个
+256-point blocks 与 `Q=512,2048,8192`。band spectral failure census 按 Q 为
+`0/3,3/3,3/3`，即 6/9；Schur failures 为 `0/9`，与 TPC-375 的 support profile
+相同。selected full-mode absolute-Rayleigh retention 为
+`0.93760019185559207--0.976941204869197`。
+
+这里的 holdout 是 grid-index protocol，不是 interval-disjointness：两个低索引窗口与
+邻近训练窗口有少量坐标重叠，因而不能把它解释为独立物理样本。结果只证明有限
+response-blind replay 与 scoped profile replication；origin/window uniformity、window
+scale stability、cross-block causality、source-valid normalization、growing operator
+bound、source-uniform arithmetic `L2`、fixed-power credit 与 twin-prime endpoint 仍未关闭。
+官方 evaluator files 仍缺失，local Bridge-B 只作 fail-closed repository evidence。
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关为
+`TEST_C1_WINDOW_SCALE_HOLDOUT`。
+
+    YOU ARE HERE = V229 / TPC-376
+    TPC376_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC376_COMMON_NORMALIZATION = PROVED_EXACT_FINITE_INHERITED
+    TPC376_HOLDOUT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_9_ROWS
+    TPC376_C1_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC376_PARENT_Q_PROFILE_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC376_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC376_ORIGIN_UNIFORMITY = OPEN
+    TPC376_WINDOW_UNIFORMITY = OPEN
+    TPC376_C1_SCALE_STABILITY = OPEN
+    TPC376_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC376_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC376_GROWING_OPERATOR_BOUND = OPEN
+    TPC376_SOURCE_UNIFORM_L2 = OPEN
+    TPC376_ARITHMETIC_ADVANCE = NO
+    TPC376_FIXED_POWER_CREDIT = 0
+    TPC376_FULL_GATE_B = OPEN
+    TPC376_TWIN_PRIME_RESULT = NONE
+    TPC376_STRONGEST_POSITIVE = FINITE_RESPONSE_BLIND_HOLDOUT_REPEATS_PARENT_Q_PROFILE
+    TPC376_STRONGEST_OBSTRUCTION = GRID_HOLDOUT_NOT_INTERVAL_DISJOINT_AND_NO_SCALE_THEOREM
+    TPC376_OPEN_THEOREM = PREDECLARED_C1_WINDOW_SCALE_HOLDOUT
+    TPC376_REUSABLE_STRUCTURE = FROZEN_GRID_INDEX_HOLDOUT_WITH_COMMON_BAND_TAIL_RAYLEIGH_AUDIT
+    TPC376_ROUND2_CLUE = TEST_C1_WINDOW_SCALE_HOLDOUT
+    TPC376_STATUS = NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_HOLDOUT_REPLICATION
+
+## V228 / TPC-375 previous anchor
 
 当前入口：proof 为
 research/tpc-big-road/bridge_b_tpc375_bandwidth_stability_minimal_cutoff.md，checker 为

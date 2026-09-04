@@ -1,9 +1,65 @@
 # TPC HANDOFF
 
-TPC-375 current section: bandwidth stability and minimal cutoff
----------------------------------------------------------------
+TPC-376 current section: response-blind bandwidth holdout replication
+---------------------------------------------------------------------
 
-TPC-375 is the current sealed release.  It inherits TPC-374's count-2048
+TPC-376 is the current sealed release. It inherits TPC-375's count-2048
+full-window normalization and fixes the `c=1` band before reading any
+holdout response. The response-blind candidate grid is
+`a_j=1010001+401j`, with training indices `(0,20,40)` and reserved holdout
+indices `(5,15,30)`, giving origins `(1012006,1016016,1022031)`. The complete
+beta=2/all-plus panel has Q anchors `Q=512,2048,8192` (9 rows).
+
+The c=1 spectral failure profile is `0/3,3/3,3/3` by increasing Q, hence
+6/9 failures, exactly the parent Q-support profile; the Schur failure count
+is `0/9`. The selected full-mode absolute-Rayleigh retention is
+`0.93760019185559207--0.976941204869197`, and the largest recorded tail
+fraction is `0.062399808144408715`.
+
+This is a finite grid-index holdout, not a coordinate-interval-disjoint
+sample: the two lower-index holdout windows overlap neighboring training
+windows by a small number of coordinates. It therefore does not establish
+origin/window uniformity, window-scale stability, cross-block causality, a
+growing operator bound, source-uniform arithmetic `L2`, an arithmetic
+power saving, Route-B reassembly, or a twin-prime result. Official
+Route-A/Route-B evaluator files remain absent; local Bridge-B is fail-closed
+repository evidence. `ARITHMETIC_ADVANCE=NO`, `FIXED_POWER_CREDIT=0`, and
+`FULL_GATE_B=OPEN`; the next finite question is
+`TEST_C1_WINDOW_SCALE_HOLDOUT`.
+
+The inherited exact anchor `[1012006,1012019)` is checked by exact rational
+geometry and is not used for main-panel selection. The producer, independent
+reverse-shell replay, 23-mutation stress test, 2-page PDF, and local
+Bridge-B are included in the release.
+
+    TPC376_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC376_COMMON_NORMALIZATION = PROVED_EXACT_FINITE_INHERITED
+    TPC376_HOLDOUT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_9_ROWS
+    TPC376_C1_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC376_PARENT_Q_PROFILE_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC376_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC376_ORIGIN_UNIFORMITY = OPEN
+    TPC376_WINDOW_UNIFORMITY = OPEN
+    TPC376_C1_SCALE_STABILITY = OPEN
+    TPC376_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC376_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC376_GROWING_OPERATOR_BOUND = OPEN
+    TPC376_SOURCE_UNIFORM_L2 = OPEN
+    TPC376_ARITHMETIC_ADVANCE = NO
+    TPC376_FIXED_POWER_CREDIT = 0
+    TPC376_FULL_GATE_B = OPEN
+    TPC376_TWIN_PRIME_RESULT = NONE
+    TPC376_STRONGEST_POSITIVE = FINITE_RESPONSE_BLIND_HOLDOUT_REPEATS_PARENT_Q_PROFILE
+    TPC376_STRONGEST_OBSTRUCTION = GRID_HOLDOUT_NOT_INTERVAL_DISJOINT_AND_NO_SCALE_THEOREM
+    TPC376_OPEN_THEOREM = PREDECLARED_C1_WINDOW_SCALE_HOLDOUT
+    TPC376_REUSABLE_STRUCTURE = FROZEN_GRID_INDEX_HOLDOUT_WITH_COMMON_BAND_TAIL_RAYLEIGH_AUDIT
+    TPC376_ROUND2_CLUE = TEST_C1_WINDOW_SCALE_HOLDOUT
+    TPC376_STATUS = NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_HOLDOUT_REPLICATION
+
+TPC-375 previous section: bandwidth stability and minimal cutoff
+-----------------------------------------------------------------
+
+TPC-375 is the previous sealed release.  It inherits TPC-374's count-2048
 full-window normalization and freezes, before reading any cutoff result,
 the complete beta=2/all-plus panel with three origins and Q anchors
 `Q=512,2048,8192` (9 rows).  It compares the nested bands `B_c` for
@@ -547,6 +603,19 @@ TPC-375 reproducibility commands:
     python -O -B papers/tpc-375-bandwidth-stability-minimal-cutoff/experiments/tpc375_adversarial_certificate_stress.py --check
     python -B research/tpc-big-road/tpc_bridge_b_tpc375_bandwidth_stability_minimal_cutoff_checker.py --check
     python -O -B research/tpc-big-road/tpc_bridge_b_tpc375_bandwidth_stability_minimal_cutoff_checker.py --check
+
+TPC-376 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-376-bandwidth-holdout-replication/code/tpc376_bandwidth_holdout_replication.py --check
+    python -O -B papers/tpc-376-bandwidth-holdout-replication/code/tpc376_bandwidth_holdout_replication.py --check
+    python -B papers/tpc-376-bandwidth-holdout-replication/experiments/tpc376_independent_checker.py --check
+    python -O -B papers/tpc-376-bandwidth-holdout-replication/experiments/tpc376_independent_checker.py --check
+    python -B papers/tpc-376-bandwidth-holdout-replication/experiments/tpc376_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-376-bandwidth-holdout-replication/experiments/tpc376_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc376_bandwidth_holdout_replication_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc376_bandwidth_holdout_replication_checker.py --check
 
 
 TPC-374 tail audit is required to return zero with empty stderr and
@@ -13769,7 +13838,9 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V228/TPC-375 是当前 release；其 bandwidth-stability/minimal-cutoff producer、
+V229/TPC-376 是当前 release；其 response-blind bandwidth-holdout producer、
+independent reverse-shell replay、certificate stress audit 与 literal masked-operator
+Bridge-B 已封存。V228/TPC-375 是上一 release；其 bandwidth-stability/minimal-cutoff producer、
 independent reverse-shell replay、certificate stress audit 与 literal masked-operator
 Bridge-B 已封存。V227/TPC-374 是上一 release；其 near-block band-truncation producer、
 independent reverse-shell replay、certificate stress audit 与 literal masked-operator
@@ -13806,7 +13877,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 509 对 normal/optimized 命令、1018 次
+当前 curated cascade command set 共 513 对 normal/optimized 命令、1026 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -13825,7 +13896,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369、TPC-370、TPC-371、TPC-372、TPC-373、TPC-374、TPC-375 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369、TPC-370、TPC-371、TPC-372、TPC-373、TPC-374、TPC-375、TPC-376 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -15795,7 +15866,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-375 current release 入口：
+TPC-376 current release 入口：
+
+papers/tpc-376-bandwidth-holdout-replication/README.md
+papers/tpc-376-bandwidth-holdout-replication/PAPER_PLAN.md
+papers/tpc-376-bandwidth-holdout-replication/DERIVATION_PACKAGE.md
+papers/tpc-376-bandwidth-holdout-replication/PROOF_PACKAGE.md
+papers/tpc-376-bandwidth-holdout-replication/code/tpc376_bandwidth_holdout_replication.py
+papers/tpc-376-bandwidth-holdout-replication/experiments/tpc376_independent_checker.py
+papers/tpc-376-bandwidth-holdout-replication/experiments/tpc376_adversarial_certificate_stress.py
+papers/tpc-376-bandwidth-holdout-replication/results/tpc376_certificate.json
+papers/tpc-376-bandwidth-holdout-replication/notes/theorem_ledger.md
+papers/tpc-376-bandwidth-holdout-replication/notes/claim_firewall.md
+papers/tpc-376-bandwidth-holdout-replication/notes/computational_protocol.md
+papers/tpc-376-bandwidth-holdout-replication/notes/route_evaluation.md
+papers/tpc-376-bandwidth-holdout-replication/paper/main.tex
+papers/tpc-376-bandwidth-holdout-replication/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc376_bandwidth_holdout_replication.md
+research/tpc-big-road/tpc_bridge_b_tpc376_bandwidth_holdout_replication_checker.py
+
+TPC-375 previous release 入口：
 
 papers/tpc-375-bandwidth-stability-minimal-cutoff/README.md
 papers/tpc-375-bandwidth-stability-minimal-cutoff/PAPER_PLAN.md
