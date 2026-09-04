@@ -1,54 +1,81 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-09-03
+更新时间：2026-09-04
 
-当前地图版本：V227 / TPC-374
+当前地图版本：V228 / TPC-375
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-374`（`NUMERICALLY_CERTIFIED_FINITE_NEAR_BLOCK_BAND_TRUNCATION`）；
-对应论文目录为 `papers/tpc-374-near-block-band-truncation/`。
+当前编号锚点：`TPC-375`（`NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_STABILITY`）；
+对应论文目录为 `papers/tpc-375-bandwidth-stability-minimal-cutoff/`。
 
-TPC-374 是当前地图位置：承接 TPC-373 的 near-block Rayleigh profile，在同一
-count-2048 full-window normalization 下预声明保留 block distance `0,1,2,3` 的
-near-block band `B3`，对完整 `18` 个 rows 同时重放 full matrix、band 与 tail。beta=2
-的 band 精确复现 full matrix 的六个高-Q/all-plus spectral failures，即三个 origins
-的 `Q=2048,8192`；full 与 band 的 beta=2 Schur failures 均为 `0/9`。六个 failure
-rows 上 selected full-mode 的 band absolute-Rayleigh retention 为
-`0.99157117644491055--0.99157357537480051`，tail fraction 至多
-`0.0084288235550895561`。这是有限 near-block operator reproduction，不构成 causality、
-bandwidth-uniformity 或 asymptotic theorem。
+TPC-375 是当前位置：承接 TPC-374 的 near-block band，在同一 count-2048 full-window
+normalization 下冻结完整 9-row beta=2/all-plus 面板，比较预声明 block-distance
+cutoffs `c=0,1,2,3`。spectral failure census 为 `0/9,6/9,6/9,6/9`，其中
+`c=1` 首次精确复现 parent 的六个高-Q/all-plus failure keys；四个 cutoff 的 beta=2
+Schur failures 均为 `0/9`。这是 finite minimal-cutoff census，不构成全局 bandwidth
+optimum、causality、uniform theorem 或 asymptotic transfer。
 
 继承 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核，未用于 main-panel
 选择。该结果仍是 finite scoped evidence：不建立 origin/window uniformity、source-valid
 normalization、growing operator bound、source-uniform arithmetic `L2`、prime-shell
 reassembly、fixed-power credit、Route-B closure 或 twin-prime result；`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。official evaluator files absent，local Bridge-B
-仍为 fail-closed evidence。下一关固定同一 normalization，测试更小预声明带宽的 stability。
+仍为 fail-closed evidence。下一关固定 `c=1`，测试新 origin/window holdout 的 stability。
 
-    YOU ARE HERE = V227 / TPC-374
-    TPC374_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
-    TPC374_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
-    TPC374_NEAR_BLOCK_BAND = PROVED_EXACT_FINITE_PREDECLARED
-    TPC374_BAND_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
-    TPC374_BAND_FAILURE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC374_PARENT_FAILURE_REPRODUCTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC374_RAYLEIGH_RETENTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC374_TAIL_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC374_BAND_OPERATOR_UNIFORMITY = OPEN
-    TPC374_CROSS_BLOCK_CAUSALITY = OPEN
-    TPC374_ORIGIN_UNIFORMITY = OPEN
-    TPC374_WINDOW_UNIFORMITY = OPEN
-    TPC374_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
-    TPC374_GROWING_OPERATOR_BOUND = OPEN
-    TPC374_SOURCE_UNIFORM_L2 = OPEN
-    TPC374_ARITHMETIC_ADVANCE = NO
-    TPC374_FIXED_POWER_CREDIT = 0
-    TPC374_FULL_GATE_B = OPEN
-    TPC374_TWIN_PRIME_RESULT = NONE
-    TPC374_STATUS = NUMERICALLY_CERTIFIED_FINITE_NEAR_BLOCK_BAND_TRUNCATION
-    TPC374_ROUND2_CLUE = TEST_BANDWIDTH_STABILITY
+    YOU ARE HERE = V228 / TPC-375
+    TPC375_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+    TPC375_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
+    TPC375_NESTED_BAND_MASKS = PROVED_EXACT_FINITE_PREDECLARED
+    TPC375_BANDWIDTH_REPLAY = NUMERICALLY_CERTIFIED_FINITE_9_ROWS
+    TPC375_FAILURE_CUTOFF_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC375_PARENT_SUPPORT_REPRODUCTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC375_RAYLEIGH_RETENTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC375_MINIMAL_CUTOFF = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC375_BANDWIDTH_UNIFORMITY = OPEN
+    TPC375_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC375_ORIGIN_UNIFORMITY = OPEN
+    TPC375_WINDOW_UNIFORMITY = OPEN
+    TPC375_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC375_GROWING_OPERATOR_BOUND = OPEN
+    TPC375_SOURCE_UNIFORM_L2 = OPEN
+    TPC375_ARITHMETIC_ADVANCE = NO
+    TPC375_FIXED_POWER_CREDIT = 0
+    TPC375_FULL_GATE_B = OPEN
+    TPC375_TWIN_PRIME_RESULT = NONE
+    TPC375_STATUS = NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_STABILITY
+    TPC375_ROUND2_CLUE = TEST_BANDWIDTH_HOLDOUT
 
+## 5.158 V228 / TPC-375：bandwidth stability and minimal cutoff
+
+TPC-375 的完整 finite package 位于 `papers/tpc-375-bandwidth-stability-minimal-cutoff/`。
+它承接 TPC-374 的 `B3`，在相同 count-2048 full-window normalization 下冻结完整
+9-row beta=2/all-plus panel，比较 block-distance cutoffs `c=0,1,2,3`。
+spectral failure census 为 `0/9,6/9,6/9,6/9`，四个 cutoff 的 Schur failures
+均为 `0/9`；`c=1` 是声明有限列表中首次复现 parent 的六个高-Q failure keys。
+三个 `Q=512` rows 在所有 cutoff 下均未失败。
+
+这是 finite minimal-cutoff evidence：`c=1` 不是全局 bandwidth optimum，也不说明
+adjacent-block interactions 具有因果性或随窗口增长保持；origin/window uniformity、
+source-valid normalization、growing operator bound、source-uniform arithmetic `L2`、
+fixed-power credit、Route-B closure 与 twin-prime result 仍 open/zero。
+producer、独立 descending-shell replay、24-mutation stress、2-page PDF 与 local
+Bridge-B 均已纳入 package；official evaluator files absent，local bridge 为 fail-closed
+repository evidence。下一关固定 `c=1`，进入新 origin/window holdout。
+
+    TPC375_FAILURE_CUTOFF_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC375_PARENT_SUPPORT_REPRODUCTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC375_MINIMAL_CUTOFF = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC375_BANDWIDTH_UNIFORMITY = OPEN
+    TPC375_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC375_ORIGIN_UNIFORMITY = OPEN
+    TPC375_WINDOW_UNIFORMITY = OPEN
+    TPC375_ARITHMETIC_ADVANCE = NO
+    TPC375_FIXED_POWER_CREDIT = 0
+    TPC375_FULL_GATE_B = OPEN
+    TPC375_TWIN_PRIME_RESULT = NONE
+    TPC375_STATUS = NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_STABILITY
+    TPC375_ROUND2_CLUE = TEST_BANDWIDTH_HOLDOUT
 ## 5.157 V227 / TPC-374：near-block band truncation
 
 TPC-374 的完整 finite package 位于 `papers/tpc-374-near-block-band-truncation/`。
@@ -10652,6 +10679,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-04 | V228 / TPC-375 | Bridge B / Gate B：bandwidth stability and minimal cutoff; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-375` | 承接 TPC-374；固定 count-2048 full-window normalization 与完整 9-row beta=2/all-plus panel，比较 `c=0,1,2,3`，spectral failure census 为 `0/9,6/9,6/9,6/9`，`c=1` 首次复现六个 parent high-Q keys；下一步 `c=1` 新 origin/window holdout |
 | 2026-09-03 | V227 / TPC-374 | Bridge B / Gate B：near-block band truncation; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-374` | 承接 TPC-373；固定同一 count-2048 full-window normalization，预声明 block distance `0--3` 的 `B3`，完成 18 个 full/band/tail rows；beta=2 band 精确复现 6 个 full spectral failures，六行 mode retention 至少 `0.9915711764`；下一步 bandwidth stability |
 | 2026-09-03 | V226 / TPC-373 | Bridge B / Gate B：extremal-eigenmode block separation; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-373` | 承接 TPC-372；固定三个 origin 与 count `2048`，对 18 个 rows 做八层 block-distance Rayleigh audit；18/18 为 minimum mode、distance 0 dominant，六个 beta=2 failure rows 全层同号且 d=0--3 至少占 99.157%；下一步 near-block band truncation |
 | 2026-09-03 | V225 / TPC-372 | Bridge B / Gate B：full-window block/off-block decomposition; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-372` | 承接 TPC-371；固定三个 origin 与 count `2048`，同一 full-window normalization 下完成 18 个 `T=D+R` rows；beta=2 full matrix 有 6 个 failure，而 D/R 各为 0，反三角 off-block 下界均为正；下一步 extremal eigenmode block separation |

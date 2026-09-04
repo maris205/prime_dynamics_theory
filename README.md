@@ -9,7 +9,7 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-337--374 已完成一条连续的 twin-prime finite audit chain。TPC-337
+当前主线状态：TPC-337--375 已完成一条连续的 twin-prime finite audit chain。TPC-337
 把四个 source masks 接入五个 coordinate controls 的 output covariance；TPC-338 将
 control orbit 扩展到九个并发现 signed covariance 的 ensemble sign reversal；TPC-339
 用 support-restricted Frobenius envelope 替代 sign heuristic；TPC-340 再加入 global
@@ -703,6 +703,17 @@ selected full-mode 的 absolute Rayleigh retention 至少为 `0.9915711764449105
 29-mutation stress、PDF 与 local Bridge-B checker，source-valid normalization、growing
 operator bound、source-uniform arithmetic L2、arithmetic advance、fixed-power credit 与
 full Gate B 仍为 OPEN/OPEN/NO/0/OPEN。
+
+papers/tpc-375-bandwidth-stability-minimal-cutoff - TPC-375 已完成项目 - 在同一
+count-2048 full-window normalization 下，把 nested block-distance cutoffs
+`c=0,1,2,3` 固定到完整 9-row beta=2/all-plus 面板；spectral failure census 为
+`0/9,6/9,6/9,6/9`，其中 `c=1` 首次精确复现 TPC-374 的六个高-Q failure keys，
+四个 cutoff 的 Schur failures 均为 `0/9`。这是 finite minimal-cutoff census，
+不是全局 bandwidth optimum、causality 或 uniform theorem；含独立 reverse-shell replay、
+24-mutation stress、2-page PDF 与 local Bridge-B checker，source-uniform arithmetic L2、
+growing operator bound、arithmetic advance、fixed-power credit 与 full Gate B 仍为
+OPEN/OPEN/NO/0/OPEN。
+
 
 papers/tpc-369-third-origin-family-audit - TPC-369 已完成项目 - 在第三个
 predeclared origin family `1010001+401j` 的 indices `(0,20,40)` 上完成 144 个全法真谱

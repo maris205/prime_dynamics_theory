@@ -1,9 +1,65 @@
 # TPC HANDOFF
 
-TPC-374 current section: near-block band truncation
+TPC-375 current section: bandwidth stability and minimal cutoff
+---------------------------------------------------------------
+
+TPC-375 is the current sealed release.  It inherits TPC-374's count-2048
+full-window normalization and freezes, before reading any cutoff result,
+the complete beta=2/all-plus panel with three origins and Q anchors
+`Q=512,2048,8192` (9 rows).  It compares the nested bands `B_c` for
+block-distance cutoffs `c=0,1,2,3`; every band uses the same full-window
+square-energy geometry as the full matrix.
+
+The spectral failure census is `0/9,6/9,6/9,6/9` for `c=0,1,2,3`,
+respectively, while all four beta=2 Schur censuses are `0/9`.  Cutoff
+`c=1` is the first hit in the declared finite list whose failure-key set
+equals TPC-374's six high-Q/all-plus parent keys; the three `Q=512` rows
+never fail.  The selected full-mode absolute-Rayleigh retention over all
+nine rows at `c=1` is `0.93759913028905661--0.9769476322189844`.
+
+This is a finite minimal-cutoff census only.  It is not a global bandwidth
+optimum, a cross-block causal statement, a growing-window operator bound,
+an origin/window transfer theorem, an arithmetic estimate, or a twin-prime
+result.  Official Route-A/Route-B evaluator files remain absent; local
+Bridge-B is fail-closed repository evidence.  `ARITHMETIC_ADVANCE=NO`,
+`FIXED_POWER_CREDIT=0`, and `FULL_GATE_B=OPEN`; the next finite question
+is a `c=1` origin/window holdout.
+
+The inherited exact anchor `[1010346,1010359)` is rechecked by exact
+rational geometry and is not used for row or cutoff selection.  The
+producer, independent descending-shell replay, 24-mutation stress test,
+2-page PDF, and local Bridge-B are included in the release.
+
+    TPC375_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+    TPC375_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
+    TPC375_NESTED_BAND_MASKS = PROVED_EXACT_FINITE_PREDECLARED
+    TPC375_BANDWIDTH_REPLAY = NUMERICALLY_CERTIFIED_FINITE_9_ROWS
+    TPC375_FAILURE_CUTOFF_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC375_PARENT_SUPPORT_REPRODUCTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC375_RAYLEIGH_RETENTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC375_MINIMAL_CUTOFF = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC375_BANDWIDTH_UNIFORMITY = OPEN
+    TPC375_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC375_ORIGIN_UNIFORMITY = OPEN
+    TPC375_WINDOW_UNIFORMITY = OPEN
+    TPC375_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC375_GROWING_OPERATOR_BOUND = OPEN
+    TPC375_SOURCE_UNIFORM_L2 = OPEN
+    TPC375_ARITHMETIC_ADVANCE = NO
+    TPC375_FIXED_POWER_CREDIT = 0
+    TPC375_FULL_GATE_B = OPEN
+    TPC375_TWIN_PRIME_RESULT = NONE
+    TPC375_STRONGEST_POSITIVE = FINITE_MINIMAL_CUTOFF_C1_MATCHES_PARENT_SUPPORT
+    TPC375_STRONGEST_OBSTRUCTION = NO_BANDWIDTH_UNIFORMITY_OR_HOLDOUT_TRANSFER
+    TPC375_OPEN_THEOREM = PREDECLARED_C1_BANDWIDTH_HOLDOUT
+    TPC375_REUSABLE_STRUCTURE = FULL_NORMALIZATION_NESTED_BAND_RAYLEIGH_IDENTITY
+    TPC375_ROUND2_CLUE = TEST_BANDWIDTH_HOLDOUT
+    TPC375_STATUS = NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_STABILITY
+
+TPC-374 previous section: near-block band truncation
 ----------------------------------------------------
 
-TPC-374 is the current sealed release.  It inherits TPC-373's count-2048
+TPC-374 is the previous sealed release.  It inherits TPC-373's count-2048
 full-window normalization and fixes, before reading any result, the band
 `B3` containing block distances `0,1,2,3` in the eight contiguous
 256-point-block partition.  The complete panel has three response-blind
@@ -478,6 +534,20 @@ TPC-374 reproducibility commands:
     python -O -B papers/tpc-374-near-block-band-truncation/experiments/tpc374_adversarial_certificate_stress.py --check
     python -B research/tpc-big-road/tpc_bridge_b_tpc374_near_block_band_truncation_checker.py --check
     python -O -B research/tpc-big-road/tpc_bridge_b_tpc374_near_block_band_truncation_checker.py --check
+
+TPC-375 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-375-bandwidth-stability-minimal-cutoff/code/tpc375_bandwidth_stability_minimal_cutoff.py --check
+    python -O -B papers/tpc-375-bandwidth-stability-minimal-cutoff/code/tpc375_bandwidth_stability_minimal_cutoff.py --check
+    python -B papers/tpc-375-bandwidth-stability-minimal-cutoff/experiments/tpc375_independent_checker.py --check
+    python -O -B papers/tpc-375-bandwidth-stability-minimal-cutoff/experiments/tpc375_independent_checker.py --check
+    python -B papers/tpc-375-bandwidth-stability-minimal-cutoff/experiments/tpc375_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-375-bandwidth-stability-minimal-cutoff/experiments/tpc375_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc375_bandwidth_stability_minimal_cutoff_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc375_bandwidth_stability_minimal_cutoff_checker.py --check
+
 
 TPC-374 tail audit is required to return zero with empty stderr and
 byte-identical normal/optimized stdout.  It is finite near-block operator
@@ -13699,7 +13769,9 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V227/TPC-374 是当前 release；其 near-block band-truncation producer、
+V228/TPC-375 是当前 release；其 bandwidth-stability/minimal-cutoff producer、
+independent reverse-shell replay、certificate stress audit 与 literal masked-operator
+Bridge-B 已封存。V227/TPC-374 是上一 release；其 near-block band-truncation producer、
 independent reverse-shell replay、certificate stress audit 与 literal masked-operator
 Bridge-B 已封存。V226/TPC-373 是上一 release；其 extremal-eigenmode block-separation producer、
 independent reverse-shell replay、certificate stress audit 与 literal masked-operator
@@ -13734,7 +13806,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 505 对 normal/optimized 命令、1010 次
+当前 curated cascade command set 共 509 对 normal/optimized 命令、1018 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -13753,7 +13825,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369、TPC-370、TPC-371、TPC-372、TPC-373、TPC-374 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369、TPC-370、TPC-371、TPC-372、TPC-373、TPC-374、TPC-375 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -15723,7 +15795,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-358 current release 入口：
+TPC-375 current release 入口：
+
+papers/tpc-375-bandwidth-stability-minimal-cutoff/README.md
+papers/tpc-375-bandwidth-stability-minimal-cutoff/PAPER_PLAN.md
+papers/tpc-375-bandwidth-stability-minimal-cutoff/DERIVATION_PACKAGE.md
+papers/tpc-375-bandwidth-stability-minimal-cutoff/PROOF_PACKAGE.md
+papers/tpc-375-bandwidth-stability-minimal-cutoff/code/tpc375_bandwidth_stability_minimal_cutoff.py
+papers/tpc-375-bandwidth-stability-minimal-cutoff/experiments/tpc375_independent_checker.py
+papers/tpc-375-bandwidth-stability-minimal-cutoff/experiments/tpc375_adversarial_certificate_stress.py
+papers/tpc-375-bandwidth-stability-minimal-cutoff/results/tpc375_certificate.json
+papers/tpc-375-bandwidth-stability-minimal-cutoff/notes/theorem_ledger.md
+papers/tpc-375-bandwidth-stability-minimal-cutoff/notes/claim_firewall.md
+papers/tpc-375-bandwidth-stability-minimal-cutoff/notes/computational_protocol.md
+papers/tpc-375-bandwidth-stability-minimal-cutoff/notes/route_evaluation.md
+papers/tpc-375-bandwidth-stability-minimal-cutoff/paper/main.tex
+papers/tpc-375-bandwidth-stability-minimal-cutoff/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc375_bandwidth_stability_minimal_cutoff.md
+research/tpc-big-road/tpc_bridge_b_tpc375_bandwidth_stability_minimal_cutoff_checker.py
+
+TPC-358 previous release 入口：
 
 papers/tpc-358-fresh-origin-spectral-holdout/README.md
 papers/tpc-358-fresh-origin-spectral-holdout/PAPER_PLAN.md

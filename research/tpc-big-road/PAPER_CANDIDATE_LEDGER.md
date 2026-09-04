@@ -1,15 +1,75 @@
 
 # TPC big-road paper candidate ledger
 
-更新时间：2026-09-03
+更新时间：2026-09-04
 
-状态：**TPC374_NUMERICALLY_CERTIFIED_FINITE_NEAR_BLOCK_BAND_TRUNCATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC375_NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_STABILITY / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.168 current：TPC-374 near-block band truncation
+## 0.169 current：TPC-375 bandwidth stability and minimal cutoff
+
+项目：papers/tpc-375-bandwidth-stability-minimal-cutoff/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_STABILITY**。
+
+TPC-375 承接 TPC-374 的 near-block band，在相同 count-2048 full-window normalization
+下冻结三个 origins、三个 Q anchors、all-plus law、beta `2` 与完整 9-row panel，
+比较预声明 block-distance cutoffs `c=0,1,2,3`。四个 cutoff 的 spectral failure
+counts 分别为 `0/9,6/9,6/9,6/9`，而 beta=2 的 Schur failures 均为 `0/9`。
+`c=1` 是声明有限列表中首次精确复现 TPC-374 parent 的六个高-Q/all-plus failure
+keys；三个 `Q=512` rows 在四个 cutoff 下均未越过 spectral cap。
+
+最强正结果：finite minimal-cutoff census 与 parent support reproduction 均通过
+独立 descending-shell replay；selected full-mode absolute-Rayleigh retention 在
+`c=1` 的全 9-row panel 上为 `0.93759913028905661--0.9769476322189844`。
+最强 obstruction：`c=1` 只是在固定 panel、固定 count 与有限 cutoff list 中的
+first hit，不能升级为 global bandwidth optimum、causality、origin/window transfer
+或 growing operator theorem。source-uniform arithmetic `L2`、fixed-power credit 与
+twin-prime endpoint 仍未关闭。
+
+继承 exact anchor `[1010346,1010359)` 由 exact rational geometry 复核，未用于
+main-panel 或 cutoff 选择。producer、独立 replay、24-mutation stress、2-page PDF
+与 local Bridge-B 组成 package；official evaluator files absent，local bridge 仍为
+fail-closed evidence。
+
+开放定理：在同一 full-window normalization 下，预声明 `c=1` 是否能在新的
+origin/window holdout 上保持 parent failure support 与可控 tail profile。
+
+可复用结构：
+
+    full normalization -> nested predeclared bands
+      -> first-hit failure census -> selected-mode Rayleigh tail
+      -> independent reverse-shell replay -> bandwidth holdout
+
+ROUND2_CLUE：`TEST_BANDWIDTH_HOLDOUT`。
+
+```text
+TPC375_FULL_WINDOW_PROTOCOL = PROVED_EXACT_FINITE_INHERITED_RESPONSE_BLIND
+TPC375_COMMON_NORMALIZATION = PROVED_EXACT_FINITE
+TPC375_NESTED_BAND_MASKS = PROVED_EXACT_FINITE_PREDECLARED
+TPC375_BANDWIDTH_REPLAY = NUMERICALLY_CERTIFIED_FINITE_9_ROWS
+TPC375_FAILURE_CUTOFF_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC375_PARENT_SUPPORT_REPRODUCTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC375_RAYLEIGH_RETENTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC375_MINIMAL_CUTOFF = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC375_BANDWIDTH_UNIFORMITY = OPEN
+TPC375_CROSS_BLOCK_CAUSALITY = OPEN
+TPC375_ORIGIN_UNIFORMITY = OPEN
+TPC375_WINDOW_UNIFORMITY = OPEN
+TPC375_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC375_GROWING_OPERATOR_BOUND = OPEN
+TPC375_SOURCE_UNIFORM_L2 = OPEN
+TPC375_ARITHMETIC_ADVANCE = NO
+TPC375_FIXED_POWER_CREDIT = 0
+TPC375_FULL_GATE_B = OPEN
+TPC375_TWIN_PRIME_RESULT = NONE
+TPC375_STATUS = NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_STABILITY
+```
+
+## 0.168 previous：TPC-374 near-block band truncation
 
 项目：papers/tpc-374-near-block-band-truncation/
 
