@@ -1,6 +1,71 @@
 # TPC HANDOFF
 
-TPC-388 current section: c=1 cross-family slope transfer
+TPC-389 current section: c=1 long-horizon slope stress
+--------------------------------------------------------
+
+TPC-389 is the current finite release. It locks the TPC-388 certificate's
+32 cell-wise slopes before reading a third coordinate-disjoint origin family.
+On the affine grid `a_j=2800001+401j`, indices `(0,10,20,30,40)` are frozen
+first. Origins `(2800001,2804011,2808021)` are calibration at `N=768` and
+`N=1024`; `(2812031,2816041)` are holdout at `N=1280`. The panel crosses
+fixed-three-block and full-relative bands, `Q=2048,8192`, beta=2, exponent 1,
+height 66, four laws, and local or calibration-pooled normalization.
+
+The complete panel has 256 rows and 32 cells. Stability counts are `24/32`,
+`27/32`, and `24/32` at `N=768`, `N=1024`, and the `N=1280` holdout. The
+anchored TPC-388 parent forecast, same-family local control, and recursive
+parent forecast each pass `32/32` under the predeclared 3% finite cap. Their
+maximum absolute errors are respectively `0.017615584096739245`,
+`0.011997515978539264`, and `0.029949940590637381`. The inherited `0.64`
+spectral diagnostic fails on 64 rows, while Schur failures are `0/256`.
+
+This is finite long-horizon stress evidence. It is not an origin-uniform,
+count-uniform, source-valid, growing-operator, source-uniform arithmetic
+`L2`, Route-B, or twin-prime theorem. Official Route-A/Route-B evaluator files
+remain absent; local Bridge-B is fail-closed repository evidence. The exact
+anchor is `[2800001,2800014)` with shell `[11,13]`.
+
+    TPC389_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC389_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC389_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC389_LONG_HORIZON_PANEL = NUMERICALLY_CERTIFIED_FINITE_256_ROWS
+    TPC389_PARENT_HORIZON_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC389_LOCAL_CONTROL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC389_RECURSIVE_PARENT_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC389_ORIGIN_UNIFORMITY = OPEN
+    TPC389_COUNT_UNIFORMITY = OPEN
+    TPC389_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC389_GROWING_OPERATOR_BOUND = OPEN
+    TPC389_SOURCE_UNIFORM_L2 = OPEN
+    TPC389_ARITHMETIC_ADVANCE = NO
+    TPC389_FIXED_POWER_CREDIT = 0
+    TPC389_FULL_GATE_B = OPEN
+    TPC389_TWIN_PRIME_RESULT = NONE
+    TPC389_STRONGEST_POSITIVE = FINITE_LONG_HORIZON_SLOPE_STRESS
+    TPC389_STRONGEST_OBSTRUCTION = SPECTRAL_CAP_FAILURE_CENSUS_AT_N1280
+    TPC389_OPEN_THEOREM = SOURCE_VALID_ORIGIN_COUNT_UNIFORM_SLOPE_CONTROL
+    TPC389_REUSABLE_STRUCTURE = HASHED_PARENT_WITH_ANCHORED_AND_RECURSIVE_AUDITS
+    TPC389_ROUND2_CLUE = TEST_C1_RECURSIVE_SLOPE_COMPOSITION
+    TPC389_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_LONG_HORIZON_SLOPE_STRESS
+
+TPC-389 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-389-c1-long-horizon-slope-stress/code/tpc389_long_horizon_slope_stress.py --check
+    python -O -B papers/tpc-389-c1-long-horizon-slope-stress/code/tpc389_long_horizon_slope_stress.py --check
+    python -B papers/tpc-389-c1-long-horizon-slope-stress/experiments/tpc389_independent_checker.py --check
+    python -O -B papers/tpc-389-c1-long-horizon-slope-stress/experiments/tpc389_independent_checker.py --check
+    python -B papers/tpc-389-c1-long-horizon-slope-stress/experiments/tpc389_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-389-c1-long-horizon-slope-stress/experiments/tpc389_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc389_c1_long_horizon_slope_stress_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc389_c1_long_horizon_slope_stress_checker.py --check
+
+The next finite question is `TEST_C1_RECURSIVE_SLOPE_COMPOSITION`. Any
+long-horizon interpretation remains finite until a genuine growing argument is
+supplied.
+
+TPC-388 previous section: c=1 cross-family slope transfer
 --------------------------------------------------------
 
 TPC-388 is the current finite release. It locks the TPC-387 certificate's

@@ -9,7 +9,24 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-388 将 TPC-387 的 32 个 frozen count slopes 跨到第二个
+当前主线最新位置：TPC-389 在第三个 coordinate-disjoint origin family 上把
+TPC-388 的 frozen slope interface 推进到更长的 `N=1024 -> 1280` horizon。
+三起点在 `N=768,1024` calibration，两起点在 `N=1280` holdout；256-row、32-cell
+panel 的 anchored parent、local control 与 recursive parent forecast 均为 `32/32`
+通过预声明 3% finite cap，最大误差分别为 `0.017615584096739245`、
+`0.011997515978539264`、`0.029949940590637381`。稳定 cells 为
+`24/32,27/32,24/32`，spectral failures 为 `64/256`，Schur failures 为
+`0/256`。这是有限 long-horizon stress certificate，不是 origin/count uniformity、
+source-valid normalization、arithmetic `L2` 或 twin-prime result。当前项目为
+`papers/tpc-389-c1-long-horizon-slope-stress/`，下一关是
+`TEST_C1_RECURSIVE_SLOPE_COMPOSITION`；`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
+
+papers/tpc-389-c1-long-horizon-slope-stress - TPC-389 current project；含
+256-row long-horizon certificate、三类 forecast audit、独立 reverse-shell replay、
+25-mutation stress、proof package/2-page PDF 与 local fail-closed Bridge-B checker。
+
+当前主线最新位置（previous）：TPC-388 将 TPC-387 的 32 个 frozen count slopes 跨到第二个
 coordinate-disjoint origin family `(2600001,2604011,2608021,2612031,2616041)`。
 新的 256-row、32-cell panel 仍采用 `N=512,768` calibration 与 `N=1024`
 holdout；parent slope 不重拟合，32/32 transfer cells 通过 3% finite cap，
@@ -21,7 +38,7 @@ result。当前项目为 `papers/tpc-388-c1-cross-family-slope-transfer/`，下�
 `TEST_C1_CROSS_FAMILY_SLOPE_STRESS`；`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
 
-papers/tpc-388-c1-cross-family-slope-transfer - TPC-388 current project；含
+papers/tpc-388-c1-cross-family-slope-transfer - TPC-388 previous project；含
 256-row cross-family certificate、hashed parent-slope interface、独立 reverse-shell
 replay、25-mutation stress、proof package/2-page PDF 与 local fail-closed Bridge-B checker。
 

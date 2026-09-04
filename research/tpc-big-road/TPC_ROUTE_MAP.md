@@ -1,15 +1,26 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-09-04
+更新时间：2026-09-05
 
-当前地图版本：V241 / TPC-388
+当前地图版本：V242 / TPC-389
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-388`（`NUMERICALLY_CERTIFIED_FINITE_C1_CROSS_FAMILY_SLOPE_TRANSFER`）；
-对应论文目录为 `papers/tpc-388-c1-cross-family-slope-transfer/`。
+当前编号锚点：`TPC-389`（`NUMERICALLY_CERTIFIED_FINITE_C1_LONG_HORIZON_SLOPE_STRESS`）；
+对应论文目录为 `papers/tpc-389-c1-long-horizon-slope-stress/`。
 
-TPC-388 是当前位置：在第二个 fresh coordinate-disjoint origin family
+TPC-389 是当前位置：在第三个 fresh coordinate-disjoint origin family
+`(2800001,2804011,2808021,2812031,2816041)` 上冻结 TPC-388 的 32 个
+cell-wise slopes，并把 horizon 从 `N=1024` 推到 `N=1280`。三-origin
+`N=768,1024` calibration 与两-origin `N=1280` holdout 形成 256-row、32-cell
+panel；anchored parent、local control 与 recursive parent forecast 都为 `32/32`，
+最大误差分别为 `0.017615584096739245`、`0.011997515978539264`、
+`0.029949940590637381`。stability census 为 `24/32,27/32,24/32`，spectral
+failures `64/256`，Schur failures `0/256`。这仍是 finite stress evidence，
+不建立 source-valid normalization、origin/count uniformity、growing operator、
+arithmetic `L2` 或 twin-prime endpoint。
+
+TPC-388 是上一位置：在第二个 fresh coordinate-disjoint origin family
 `(2600001,2604011,2608021,2612031,2616041)` 上冻结 TPC-387 的 32 个
 cell-wise count slopes，不重拟合 parent slope；新的三-origin `N=512,768`
 calibration 与两-origin `N=1024` holdout 形成 256-row、32-cell panel。
@@ -27,7 +38,48 @@ files 仍缺失，local bridge 只作 fail-closed evidence。`ARITHMETIC_ADVANCE
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关为
 `TEST_C1_CROSS_FAMILY_SLOPE_STRESS`。
 
-## 5.171 V241 / TPC-388：c=1 cross-family slope transfer
+## 5.172 V242 / TPC-389：c=1 long-horizon slope stress
+
+TPC-389 的 finite package 位于 `papers/tpc-389-c1-long-horizon-slope-stress/`。
+它锁定 TPC-388 的 parent certificate 与 32 个 slope interface，再在新 affine
+grid `a_j=2800001+401j` 上预先冻结 indices `(0,10,20,30,40)`，得到 origins
+`(2800001,2804011,2808021,2812031,2816041)`。前三个 origins 在 `N=768,1024`
+作 calibration，后两个在 `N=1280` 作 holdout；parent slope 不重拟合，local
+fit 只作 control，另外记录 recursive parent composition。两种 band、两组 Q、
+四个 laws 与两种 normalization 形成 256 rows 与 32 cells。
+
+anchored parent、local-control 与 recursive parent forecast 均通过 3% finite cap
+（`32/32`）；最大误差分别为 `0.017615584096739245`、`0.011997515978539264`、
+`0.029949940590637381`。N=768、N=1024、N=1280 holdout 的 stability 为
+`24/32`、`27/32`、`24/32`；64/256 rows 超过 inherited `0.64` spectral cap，
+Schur failures 为 `0/256`。recursive 最大误差接近有限 cap，因此它是 stress
+signal 而非 asymptotic composition law。
+
+    YOU ARE HERE = V242 / TPC-389
+    TPC389_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC389_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC389_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC389_LONG_HORIZON_PANEL = NUMERICALLY_CERTIFIED_FINITE_256_ROWS
+    TPC389_PARENT_HORIZON_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC389_LOCAL_CONTROL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC389_RECURSIVE_PARENT_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC389_ORIGIN_UNIFORMITY = OPEN
+    TPC389_COUNT_UNIFORMITY = OPEN
+    TPC389_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC389_GROWING_OPERATOR_BOUND = OPEN
+    TPC389_SOURCE_UNIFORM_L2 = OPEN
+    TPC389_ARITHMETIC_ADVANCE = NO
+    TPC389_FIXED_POWER_CREDIT = 0
+    TPC389_FULL_GATE_B = OPEN
+    TPC389_TWIN_PRIME_RESULT = NONE
+    TPC389_STRONGEST_POSITIVE = FINITE_LONG_HORIZON_SLOPE_STRESS
+    TPC389_STRONGEST_OBSTRUCTION = SPECTRAL_CAP_FAILURE_CENSUS_AT_N1280
+    TPC389_OPEN_THEOREM = SOURCE_VALID_ORIGIN_COUNT_UNIFORM_SLOPE_CONTROL
+    TPC389_REUSABLE_STRUCTURE = HASHED_PARENT_WITH_ANCHORED_AND_RECURSIVE_AUDITS
+    TPC389_ROUND2_CLUE = TEST_C1_RECURSIVE_SLOPE_COMPOSITION
+    TPC389_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_LONG_HORIZON_SLOPE_STRESS
+
+## 5.171 V241 / TPC-388：c=1 cross-family slope transfer (previous)
 
 TPC-388 的 finite package 位于 `papers/tpc-388-c1-cross-family-slope-transfer/`。
 它锁定 TPC-387 的 32 个 calibration slopes，再在新 affine grid
@@ -43,7 +95,7 @@ parent transfer 与 local control 都为 `32/32` 通过 3% finite cap，最大�
 failures 为 `0/256`。这是有限 origin-transfer certificate，不是 origin-uniform
 slope theorem。
 
-    YOU ARE HERE = V241 / TPC-388
+    YOU ARE HERE = V241 / TPC-388 (previous)
     TPC388_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC388_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
     TPC388_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
@@ -11249,6 +11301,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-05 | V242 / TPC-389 | Bridge B / Gate B：c=1 long-horizon frozen-slope stress; origin/count uniformity、source-valid normalization、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-389 | 承接 TPC-388；第三个 fresh family `(2800001,2804011,2808021,2812031,2816041)`，`N=768,1024` calibration 到 `N=1280` holdout，anchored/local/recursive forecasts 均 `32/32` 在 3% 内，最大误差 `0.0176155841/0.0119975160/0.0299499406`，stability `24/32,27/32,24/32`，spectral failures `64/256`；下一步 TEST_C1_RECURSIVE_SLOPE_COMPOSITION |
 | 2026-09-05 | V241 / TPC-388 | Bridge B / Gate B：c=1 cross-family frozen slope transfer; origin/count uniformity、source-valid normalization、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-388 | 承接 TPC-387；第二个 fresh family `(2600001,2604011,2608021,2612031,2616041)`，parent slopes 不重拟合，256-row panel 的 parent/local forecasts 均 `32/32` 在 3% 内，最大 parent error `0.0234026666`，stability `24/32,24/32,28/32`，spectral failures `40/256`；下一步 TEST_C1_CROSS_FAMILY_SLOPE_STRESS |
 | 2026-09-04 | V240 / TPC-387 | Bridge B / Gate B：c=1 count-ladder renormalization; count-uniformity、source-valid normalization、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-387 | 承接 TPC-386；fresh origins `(2400001,2404011,2408021,2412031,2416041)`，前三个 origins 在 `N=512,768` calibration、后两个在 `N=1024` holdout，fixed-three-block/full-relative 两种 band mode、四 laws 与两种 normalization 完成 256-row panel；calibration stability `24/32,24/32`，holdout stable `28/32`，32/32 slope forecasts 在 3% 内，40/256 spectral-cap failures；下一步 TEST_C1_COUNT_LADDER_SECOND_HOLDOUT |
 | 2026-09-04 | V239 / TPC-386 | Bridge B / Gate B：c=1 count-holdout bandwidth audit; count-uniformity、source-valid normalization、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-386 | 承接 TPC-385；fresh origins `(2200001,2204011,2208021,2212031,2216041)`，前三个 `N=512` calibration、后两个 `N=1024` holdout，fixed-three-block/full-relative 两种 band mode、四 laws 与两种 normalization 完成 160-row panel；holdout stable `28/32`，all-plus 高-Q count ratios `1.0652--1.1295`，继承 `0.64` spectral cap 在 16 个 all-plus holdout rows 失败；下一步 TEST_C1_COUNT_LADDER_RENORMALIZATION |

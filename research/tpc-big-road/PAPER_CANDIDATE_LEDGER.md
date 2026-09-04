@@ -1,15 +1,77 @@
 
 # TPC big-road paper candidate ledger
 
-更新时间：2026-09-04
+更新时间：2026-09-05
 
-状态：**TPC388_NUMERICALLY_CERTIFIED_FINITE_C1_CROSS_FAMILY_SLOPE_TRANSFER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC389_NUMERICALLY_CERTIFIED_FINITE_C1_LONG_HORIZON_SLOPE_STRESS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.182 current：TPC-388 c=1 cross-family slope transfer
+## 0.183 current：TPC-389 c=1 long-horizon slope stress
+
+项目：papers/tpc-389-c1-long-horizon-slope-stress/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_LONG_HORIZON_SLOPE_STRESS**。
+
+TPC-389 承接 TPC-388 的 cross-family slope result，把 32 个 parent slopes 在
+读出当前 family 前完全冻结，并在第三个 coordinate-disjoint affine grid
+`a_j=2800001+401j` 上测试更长的 count horizon。预先冻结 indices
+`(0,10,20,30,40)`；前三个 origins `(2800001,2804011,2808021)` 在
+`N=768,1024` 作 calibration，后两个 `(2812031,2816041)` 在 `N=1280` 作
+holdout。fixed-three-block/full-relative band、`Q=2048,8192`、四个 laws 与
+两种 normalization 形成 256 rows、32 cells。
+
+最强正结果：anchored parent、same-family local control、以及从 `N=768` 起的
+recursive parent forecast 均为 `32/32` 通过预声明 3% finite cap，最大绝对误差
+分别为 `0.017615584096739245`、`0.011997515978539264`、
+`0.029949940590637381`。N=768、N=1024 与 N=1280 holdout stability 分别为
+`24/32`、`27/32`、`24/32`。最强 obstruction：inherited `0.64` spectral
+diagnostic 在 `64/256` rows 失败，虽 Schur failures 为 `0/256`；recursive
+最大误差已经接近有限 3% 边界。因此这只是 finite long-horizon stress，不是
+count/origin-uniform slope theorem。
+
+开放定理：能否在 source-valid normalization 下证明 growing operator 与
+origin/count-uniform slope control，并继续支付 source-uniform arithmetic `L2`。
+当前结果不支付 arithmetic advance、fixed-power credit、Route-B reassembly 或
+twin-prime 结论。
+
+可复用结构：
+
+    hashed TPC-388 slope interface
+      -> fresh three-level calibration/holdout ladder
+      -> anchored + local + recursive forecast census
+      -> reverse-shell replay + mutation firewall
+
+ROUND2_CLUE：`TEST_C1_RECURSIVE_SLOPE_COMPOSITION`。
+
+```text
+TPC389_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC389_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC389_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+TPC389_LONG_HORIZON_PANEL = NUMERICALLY_CERTIFIED_FINITE_256_ROWS
+TPC389_PARENT_HORIZON_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC389_LOCAL_CONTROL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC389_RECURSIVE_PARENT_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC389_ORIGIN_UNIFORMITY = OPEN
+TPC389_COUNT_UNIFORMITY = OPEN
+TPC389_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC389_GROWING_OPERATOR_BOUND = OPEN
+TPC389_SOURCE_UNIFORM_L2 = OPEN
+TPC389_ARITHMETIC_ADVANCE = NO
+TPC389_FIXED_POWER_CREDIT = 0
+TPC389_FULL_GATE_B = OPEN
+TPC389_TWIN_PRIME_RESULT = NONE
+TPC389_STRONGEST_POSITIVE = FINITE_LONG_HORIZON_SLOPE_STRESS
+TPC389_STRONGEST_OBSTRUCTION = SPECTRAL_CAP_FAILURE_CENSUS_AT_N1280
+TPC389_OPEN_THEOREM = SOURCE_VALID_ORIGIN_COUNT_UNIFORM_SLOPE_CONTROL
+TPC389_REUSABLE_STRUCTURE = HASHED_PARENT_WITH_ANCHORED_AND_RECURSIVE_AUDITS
+TPC389_ROUND2_CLUE = TEST_C1_RECURSIVE_SLOPE_COMPOSITION
+TPC389_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_LONG_HORIZON_SLOPE_STRESS
+```
+
+## 0.182 previous：TPC-388 c=1 cross-family slope transfer
 
 项目：papers/tpc-388-c1-cross-family-slope-transfer/
 
