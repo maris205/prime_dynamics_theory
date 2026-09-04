@@ -3,13 +3,75 @@
 
 更新时间：2026-09-05
 
-状态：**TPC390_NUMERICALLY_CERTIFIED_FINITE_C1_RECURSIVE_SLOPE_COMPOSITION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC391_NUMERICALLY_CERTIFIED_FINITE_C1_RECURSIVE_HORIZON_LOCALIZATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.184 current：TPC-390 c=1 recursive slope composition
+## 0.185 current：TPC-391 c=1 recursive horizon localization
+
+项目：papers/tpc-391-c1-recursive-horizon-localization/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_RECURSIVE_HORIZON_LOCALIZATION_AUDIT**。
+
+TPC-391 承接 TPC-390，把其 32 个 horizon slopes 在读出新 family 前完全冻结，
+并在第五个 coordinate-disjoint affine grid `a_j=3400001+401j` 上加入
+`N=1152,1280,1408` 三个中间 calibration horizons，再对两个预声明 holdout
+origins 读取 `N=1536`。indices `(0,10,20,30,40)`、fixed-three-block/
+full-relative bands、`Q=2048,8192`、四个 laws 与两种 normalization 保持不变，
+形成 448 rows、32 cells 的完整 trajectory panel。
+
+最强正结果：parent forecast 在 `N=1152,1280,1408,1536` 的通过数为
+`32/32,32/32,32/32,23/32`，same-family local control 四层均为 `32/32`；
+recursive composition 的最大 direct/staged residual 为
+`4.4408920985006262e-16`。最强 obstruction：9 个 parent cells 首次在
+terminal `N=1536` 越过 3% finite cap；parent 最大误差依四层为
+`0.0097231600284870545,0.019799860658296864,0.029171461379271735,
+0.051733528427127862`。稳定 cells 为 `24/32,24/32,24/32,24/32,30/32`；
+spectral failures 为 `112/448`，Schur failures 为 `0/448`。
+
+开放定理：能否在 source-valid normalization 下证明 normalization phase diagram
+与 growing operator/origin-uniform control，并继续支付 source-uniform arithmetic
+`L2`。当前结果不支付 arithmetic advance、fixed-power credit、Route-B
+reassembly 或 twin-prime 结论。
+
+可复用结构：
+
+    hashed TPC-390 recursive interface
+      -> fresh multi-horizon calibration/holdout ladder
+      -> parent/local trajectory and first-crossing census
+      -> exact composition identity + reverse-shell replay + mutation firewall
+
+ROUND2_CLUE：`TEST_C1_NORMALIZATION_PHASE_DIAGRAM`。
+
+~~~text
+TPC391_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC391_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC391_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+TPC391_HORIZON_PANEL = NUMERICALLY_CERTIFIED_FINITE_448_ROWS
+TPC391_PARENT_HORIZON_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC391_LOCAL_CONTROL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC391_HORIZON_TRAJECTORY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC391_RECURSIVE_COMPOSITION = PROVED_EXACT_FINITE_NUMERICAL_IDENTITY
+TPC391_ORIGIN_UNIFORMITY = OPEN
+TPC391_COUNT_UNIFORMITY = OPEN
+TPC391_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC391_GROWING_OPERATOR_BOUND = OPEN
+TPC391_SOURCE_UNIFORM_L2 = OPEN
+TPC391_ARITHMETIC_ADVANCE = NO
+TPC391_FIXED_POWER_CREDIT = 0
+TPC391_FULL_GATE_B = OPEN
+TPC391_TWIN_PRIME_RESULT = NONE
+TPC391_STRONGEST_POSITIVE = ALL_HORIZONS_LOCAL_CONTROL_32_OF_32
+TPC391_STRONGEST_OBSTRUCTION = NINE_PARENT_CELLS_FIRST_CROSS_AT_1536
+TPC391_OPEN_THEOREM = SOURCE_VALID_NORMALIZATION_PHASE_DIAGRAM
+TPC391_REUSABLE_STRUCTURE = FROZEN_INTERFACE_FIRST_CROSSING_TRAJECTORY
+TPC391_ROUND2_CLUE = TEST_C1_NORMALIZATION_PHASE_DIAGRAM
+TPC391_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_RECURSIVE_HORIZON_LOCALIZATION_AUDIT
+~~~
+
+## 0.184 previous：TPC-390 c=1 recursive slope composition
 
 项目：papers/tpc-390-c1-recursive-slope-composition/
 

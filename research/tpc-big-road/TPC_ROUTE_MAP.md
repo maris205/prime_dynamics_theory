@@ -2,23 +2,27 @@
 
 更新时间：2026-09-05
 
-当前地图版本：V243 / TPC-390
+当前地图版本：V244 / TPC-391
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-390`（`NUMERICALLY_CERTIFIED_FINITE_C1_RECURSIVE_SLOPE_COMPOSITION_AUDIT`）；
-对应论文目录为 `papers/tpc-390-c1-recursive-slope-composition/`。
+当前编号锚点：`TPC-391`（`NUMERICALLY_CERTIFIED_FINITE_C1_RECURSIVE_HORIZON_LOCALIZATION_AUDIT`）；
+对应论文目录为 `papers/tpc-391-c1-recursive-horizon-localization/`。
 
-TPC-390 是当前位置：在第四个 fresh coordinate-disjoint origin family
-`(3000001,3004011,3008021,3012031,3016041)` 上冻结 TPC-389 的 32 个
-cell-wise horizon slopes，测试 `N=1024,1280 -> 1536` 的第二次 recursive
-composition。one-step parent、local control、recursive parent 分别为
-`30/32,32/32,23/32`，最大误差分别为 `0.03633754623843255`、
-`0.025804438647033412`、`0.049074165168337847`；composition identity residual
-为 `3.3306690738754696e-16`。stability 为 `28/32,25/32,26/32`，spectral
-failures `64/256`，Schur failures `0/256`。这是 finite recursive-horizon
-obstruction audit，不建立 source-valid normalization、origin/count uniformity、
-growing operator、arithmetic `L2` 或 twin-prime endpoint。
+TPC-391 是当前位置：在第五个 fresh coordinate-disjoint origin family
+`(3400001,3404011,3408021,3412031,3416041)` 上冻结 TPC-390 的 32 个
+cell-wise horizon slopes，并插入 `N=1152,1280,1408` 三个中间 calibration
+horizons，再在 `N=1536` 做预声明 holdout。448-row、32-cell panel 中
+parent forecast 在四个 horizons 的通过数为
+`32/32,32/32,32/32,23/32`，local control 四层均为 `32/32`，恰有 9 个
+parent cells 首次在终端 `N=1536` 越过 3% cap。parent 最大误差为
+`0.0097231600284870545,0.019799860658296864,0.029171461379271735,
+0.051733528427127862`；recursive composition residual 为
+`4.4408920985006262e-16`。spectral failures `112/448`，Schur failures
+`0/448`。这是 finite scoped horizon-localization audit，不建立 source-valid
+normalization、origin/count uniformity、growing operator、arithmetic `L2`
+或 twin-prime endpoint；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`。下一关为 `TEST_C1_NORMALIZATION_PHASE_DIAGRAM`。
 
 TPC-389 是上一位置：在第三个 fresh coordinate-disjoint origin family
 `(2800001,2804011,2808021,2812031,2816041)` 上冻结 TPC-388 的 32 个
@@ -49,7 +53,54 @@ files 仍缺失，local bridge 只作 fail-closed evidence。`ARITHMETIC_ADVANCE
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关为
 `TEST_C1_CROSS_FAMILY_SLOPE_STRESS`。
 
-## 5.173 V243 / TPC-390：c=1 recursive slope composition
+## 5.174 V244 / TPC-391：c=1 recursive horizon localization
+
+TPC-391 的 finite package 位于
+`papers/tpc-391-c1-recursive-horizon-localization/`。它锁定 TPC-390 的
+32 个 horizon slopes，在第五个 coordinate-disjoint affine grid
+`a_j=3400001+401j` 上预先冻结 indices `(0,10,20,30,40)`，并把
+`N=1152,1280,1408` 作为 calibration-only intermediate horizons，
+`N=1536` 作为两个 holdout origins 的 terminal readout。固定
+fixed-three-block/full-relative bands、`Q=2048,8192`、四个 laws 与两种
+normalization，形成 448 rows、32 cells。
+
+parent forecast 在 `N=1152,1280,1408,1536` 的通过数为
+`32/32,32/32,32/32,23/32`；same-family local control 四层均为
+`32/32`。9 个 parent cells 首次在 `N=1536` 越过预声明 3% finite cap，
+parent 最大误差依次为
+`0.0097231600284870545,0.019799860658296864,0.029171461379271735,
+0.051733528427127862`。recursive composition 的 direct/staged residual
+为 `4.4408920985006262e-16`；stable cells 为
+`24/32,24/32,24/32,24/32,30/32`，spectral failures 为 `112/448`，
+Schur failures 为 `0/448`。这定位了本有限 proxy panel 上的 horizon
+crossing，但不提供 source-valid growing theorem。
+
+    YOU ARE HERE = V244 / TPC-391
+    TPC391_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC391_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC391_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC391_HORIZON_PANEL = NUMERICALLY_CERTIFIED_FINITE_448_ROWS
+    TPC391_PARENT_HORIZON_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC391_LOCAL_CONTROL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC391_HORIZON_TRAJECTORY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC391_RECURSIVE_COMPOSITION = PROVED_EXACT_FINITE_NUMERICAL_IDENTITY
+    TPC391_ORIGIN_UNIFORMITY = OPEN
+    TPC391_COUNT_UNIFORMITY = OPEN
+    TPC391_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC391_GROWING_OPERATOR_BOUND = OPEN
+    TPC391_SOURCE_UNIFORM_L2 = OPEN
+    TPC391_ARITHMETIC_ADVANCE = NO
+    TPC391_FIXED_POWER_CREDIT = 0
+    TPC391_FULL_GATE_B = OPEN
+    TPC391_TWIN_PRIME_RESULT = NONE
+    TPC391_STRONGEST_POSITIVE = ALL_HORIZONS_LOCAL_CONTROL_32_OF_32
+    TPC391_STRONGEST_OBSTRUCTION = NINE_PARENT_CELLS_FIRST_CROSS_AT_1536
+    TPC391_OPEN_THEOREM = SOURCE_VALID_NORMALIZATION_PHASE_DIAGRAM
+    TPC391_REUSABLE_STRUCTURE = FROZEN_INTERFACE_FIRST_CROSSING_TRAJECTORY
+    TPC391_ROUND2_CLUE = TEST_C1_NORMALIZATION_PHASE_DIAGRAM
+    TPC391_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_RECURSIVE_HORIZON_LOCALIZATION_AUDIT
+
+## 5.173 V243 / TPC-390：c=1 recursive slope composition (previous)
 
 TPC-390 的 finite package 位于 `papers/tpc-390-c1-recursive-slope-composition/`。
 它锁定 TPC-389 的 parent certificate 与 32 个 horizon slope interface，再在
@@ -63,7 +114,7 @@ local control、two-step recursive composition 分别为 `30/32,32/32,23/32`，
 failures `64/256`，Schur failures `0/256`。这是 finite scoped obstruction，
 不是 recursive asymptotic theorem。
 
-    YOU ARE HERE = V243 / TPC-390
+    YOU ARE HERE = V243 / TPC-390 (previous)
     TPC390_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC390_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
     TPC390_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
@@ -11351,6 +11402,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-05 | V244 / TPC-391 | Bridge B / Gate B：c=1 recursive horizon localization; origin/count uniformity、source-valid normalization、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-391 | 承接 TPC-390；第五个 fresh family `(3400001,3404011,3408021,3412031,3416041)`，`N=1024,1152,1280,1408` calibration 到 `N=1536` holdout，parent forecasts `32/32,32/32,32/32,23/32`，local controls 四层 `32/32`，9 个 terminal first crossings，最大误差 `0.0097231600/0.0197998607/0.0291714614/0.0517335284`，composition residual `4.44e-16`，spectral failures `112/448`；下一步 TEST_C1_NORMALIZATION_PHASE_DIAGRAM |
 | 2026-09-05 | V243 / TPC-390 | Bridge B / Gate B：c=1 recursive slope composition obstruction audit; origin/count uniformity、source-valid normalization、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-390 | 承接 TPC-389；第四个 fresh family `(3000001,3004011,3008021,3012031,3016041)`，`N=1024,1280` calibration 到 `N=1536` holdout，one-step/local/recursive forecasts `30/32,32/32,23/32`，最大误差 `0.0363375462/0.0258044386/0.0490741652`，composition residual `3.33e-16`，stability `28/32,25/32,26/32`，spectral failures `64/256`；下一步 LOCALIZE_C1_RECURSIVE_HORIZON_OBSTRUCTION |
 | 2026-09-05 | V242 / TPC-389 | Bridge B / Gate B：c=1 long-horizon frozen-slope stress; origin/count uniformity、source-valid normalization、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-389 | 承接 TPC-388；第三个 fresh family `(2800001,2804011,2808021,2812031,2816041)`，`N=768,1024` calibration 到 `N=1280` holdout，anchored/local/recursive forecasts 均 `32/32` 在 3% 内，最大误差 `0.0176155841/0.0119975160/0.0299499406`，stability `24/32,27/32,24/32`，spectral failures `64/256`；下一步 TEST_C1_RECURSIVE_SLOPE_COMPOSITION |
 | 2026-09-05 | V241 / TPC-388 | Bridge B / Gate B：c=1 cross-family frozen slope transfer; origin/count uniformity、source-valid normalization、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-388 | 承接 TPC-387；第二个 fresh family `(2600001,2604011,2608021,2612031,2616041)`，parent slopes 不重拟合，256-row panel 的 parent/local forecasts 均 `32/32` 在 3% 内，最大 parent error `0.0234026666`，stability `24/32,24/32,28/32`，spectral failures `40/256`；下一步 TEST_C1_CROSS_FAMILY_SLOPE_STRESS |

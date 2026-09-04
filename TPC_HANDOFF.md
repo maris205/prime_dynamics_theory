@@ -1,6 +1,77 @@
 # TPC HANDOFF
 
-TPC-390 current section: c=1 recursive slope composition
+TPC-391 current section: c=1 recursive horizon localization
+--------------------------------------------------------------
+
+TPC-391 is the current finite release. It locks the TPC-390 certificate's
+32 horizon slopes before reading a fifth coordinate-disjoint origin family.
+On the affine grid `a_j=3400001+401j`, indices `(0,10,20,30,40)` are
+frozen first. Origins `(3400001,3404011,3408021)` are calibration at
+`N=1024,1152,1280,1408`; `(3412031,3416041)` are holdout at
+`N=1536`. The panel uses fixed-three-block and full-relative bands,
+`Q=2048,8192`, beta=2, exponent 1, height 66, four laws, and local or
+calibration-pooled normalization.
+
+The complete panel has 448 rows and 32 cells. Parent forecasts at
+`N=1152,1280,1408,1536` pass `32/32,32/32,32/32,23/32`; same-family
+local controls pass `32/32` at every horizon. Exactly nine parent cells
+cross the predeclared 3% finite cap for the first time at `N=1536`.
+Parent maximum absolute errors by horizon are
+`0.0097231600284870545`, `0.019799860658296864`,
+`0.029171461379271735`, and `0.051733528427127862`. The recursive
+direct/staged composition residual is `4.4408920985006262e-16`.
+Stable-cell counts are `24/32,24/32,24/32,24/32,30/32`; the inherited
+`0.64` spectral diagnostic fails on `112/448` rows, while Schur failures
+are `0/448`.
+
+This is a finite recursive-horizon localization audit. It is not an
+origin-uniform, count-uniform, source-valid, growing-operator, source-uniform
+arithmetic `L2`, Route-B, or twin-prime theorem. Official Route-A/Route-B
+evaluator files remain absent; local Bridge-B is fail-closed repository
+evidence. The exact anchor is `[3400001,3400014)` with shell `[11,13]`.
+
+    TPC391_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC391_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC391_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC391_HORIZON_PANEL = NUMERICALLY_CERTIFIED_FINITE_448_ROWS
+    TPC391_PARENT_HORIZON_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC391_LOCAL_CONTROL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC391_HORIZON_TRAJECTORY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC391_RECURSIVE_COMPOSITION = PROVED_EXACT_FINITE_NUMERICAL_IDENTITY
+    TPC391_ORIGIN_UNIFORMITY = OPEN
+    TPC391_COUNT_UNIFORMITY = OPEN
+    TPC391_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC391_GROWING_OPERATOR_BOUND = OPEN
+    TPC391_SOURCE_UNIFORM_L2 = OPEN
+    TPC391_ARITHMETIC_ADVANCE = NO
+    TPC391_FIXED_POWER_CREDIT = 0
+    TPC391_FULL_GATE_B = OPEN
+    TPC391_TWIN_PRIME_RESULT = NONE
+    TPC391_STRONGEST_POSITIVE = ALL_HORIZONS_LOCAL_CONTROL_32_OF_32
+    TPC391_STRONGEST_OBSTRUCTION = NINE_PARENT_CELLS_FIRST_CROSS_AT_1536
+    TPC391_OPEN_THEOREM = SOURCE_VALID_NORMALIZATION_PHASE_DIAGRAM
+    TPC391_REUSABLE_STRUCTURE = FROZEN_INTERFACE_FIRST_CROSSING_TRAJECTORY
+    TPC391_ROUND2_CLUE = TEST_C1_NORMALIZATION_PHASE_DIAGRAM
+    TPC391_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_RECURSIVE_HORIZON_LOCALIZATION_AUDIT
+
+TPC-391 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-391-c1-recursive-horizon-localization/code/tpc391_recursive_horizon_localization.py --check
+    python -O -B papers/tpc-391-c1-recursive-horizon-localization/code/tpc391_recursive_horizon_localization.py --check
+    python -B papers/tpc-391-c1-recursive-horizon-localization/experiments/tpc391_independent_checker.py --check
+    python -O -B papers/tpc-391-c1-recursive-horizon-localization/experiments/tpc391_independent_checker.py --check
+    python -B papers/tpc-391-c1-recursive-horizon-localization/experiments/tpc391_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-391-c1-recursive-horizon-localization/experiments/tpc391_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc391_c1_recursive_horizon_localization_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc391_c1_recursive_horizon_localization_checker.py --check
+
+The next finite question is `TEST_C1_NORMALIZATION_PHASE_DIAGRAM`. Any
+interpretation remains finite until a genuine source-valid growing argument
+is supplied.
+
+TPC-390 previous section: c=1 recursive slope composition
 -----------------------------------------------------------
 
 TPC-390 is the current finite release. It locks the TPC-389 certificate's
@@ -14741,14 +14812,24 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V241/TPC-388 是当前 release；其 c=1 cross-family frozen-slope-transfer producer、
+V244/TPC-391 是当前 release；其 c=1 recursive-horizon-localization producer、
 independent reverse-shell replay、25-mutation certificate stress audit 与
-literal masked-operator Bridge-B 已封存。TPC-388 的 parent-slope transfer 与
-same-family control 均为 `32/32`，最大 parent/local errors 为
-`0.023402666610706224` 与 `0.02447192072430493`，stability 为
-`24/32,24/32,28/32`，spectral failures 为 `40/256`、Schur failures 为
-`0/256`；该 finite result 不支付 arithmetic `L2`、fixed-power credit 或
-official Route-A/Route-B gate。V240/TPC-387 是上一 release；其 c=1
+literal masked-operator Bridge-B 已封存。TPC-391 的 parent horizon transfer
+在 `N=1152,1280,1408,1536` 的通过数为
+`32/32,32/32,32/32,23/32`，local controls 四层为 `32/32`，9 个 cells
+首次在终端 horizon 越过 3% cap，最大 parent errors 为
+`0.0097231600284870545,0.019799860658296864,0.029171461379271735,
+0.051733528427127862`，spectral failures 为 `112/448`、Schur failures 为
+`0/448`；该 finite result 不支付 arithmetic `L2`、fixed-power credit 或
+official Route-A/Route-B gate。V243/TPC-390 是上一 release；其 c=1
+recursive-slope-composition producer、independent reverse-shell replay、
+25-mutation certificate stress audit 与 literal masked-operator Bridge-B 已封存。
+V242/TPC-389 是上一 release；其 c=1 long-horizon-slope-stress producer、
+independent reverse-shell replay、25-mutation certificate stress audit 与
+literal masked-operator Bridge-B 已封存。V241/TPC-388 是上一 release；其 c=1
+cross-family frozen-slope-transfer producer、
+independent reverse-shell replay、25-mutation certificate stress audit 与
+literal masked-operator Bridge-B 已封存。V240/TPC-387 是上一 release；其 c=1
 count-ladder renormalization producer、
 independent reverse-shell replay、25-mutation certificate stress audit 与
 literal masked-operator Bridge-B 已封存。V239/TPC-386 是上一 release；其 c=1
@@ -16809,7 +16890,64 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-388 current release 入口：
+TPC-391 current release 入口：
+
+papers/tpc-391-c1-recursive-horizon-localization/README.md
+papers/tpc-391-c1-recursive-horizon-localization/PAPER_PLAN.md
+papers/tpc-391-c1-recursive-horizon-localization/DERIVATION_PACKAGE.md
+papers/tpc-391-c1-recursive-horizon-localization/PROOF_PACKAGE.md
+papers/tpc-391-c1-recursive-horizon-localization/code/tpc391_recursive_horizon_localization.py
+papers/tpc-391-c1-recursive-horizon-localization/experiments/tpc391_independent_checker.py
+papers/tpc-391-c1-recursive-horizon-localization/experiments/tpc391_adversarial_certificate_stress.py
+papers/tpc-391-c1-recursive-horizon-localization/results/tpc391_certificate.json
+papers/tpc-391-c1-recursive-horizon-localization/notes/theorem_ledger.md
+papers/tpc-391-c1-recursive-horizon-localization/notes/claim_firewall.md
+papers/tpc-391-c1-recursive-horizon-localization/notes/computational_protocol.md
+papers/tpc-391-c1-recursive-horizon-localization/notes/route_evaluation.md
+papers/tpc-391-c1-recursive-horizon-localization/paper/main.tex
+papers/tpc-391-c1-recursive-horizon-localization/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc391_c1_recursive_horizon_localization.md
+research/tpc-big-road/tpc_bridge_b_tpc391_c1_recursive_horizon_localization_checker.py
+
+TPC-390 previous release 入口：
+
+papers/tpc-390-c1-recursive-slope-composition/README.md
+papers/tpc-390-c1-recursive-slope-composition/PAPER_PLAN.md
+papers/tpc-390-c1-recursive-slope-composition/DERIVATION_PACKAGE.md
+papers/tpc-390-c1-recursive-slope-composition/PROOF_PACKAGE.md
+papers/tpc-390-c1-recursive-slope-composition/code/tpc390_recursive_slope_composition.py
+papers/tpc-390-c1-recursive-slope-composition/experiments/tpc390_independent_checker.py
+papers/tpc-390-c1-recursive-slope-composition/experiments/tpc390_adversarial_certificate_stress.py
+papers/tpc-390-c1-recursive-slope-composition/results/tpc390_certificate.json
+papers/tpc-390-c1-recursive-slope-composition/notes/theorem_ledger.md
+papers/tpc-390-c1-recursive-slope-composition/notes/claim_firewall.md
+papers/tpc-390-c1-recursive-slope-composition/notes/computational_protocol.md
+papers/tpc-390-c1-recursive-slope-composition/notes/route_evaluation.md
+papers/tpc-390-c1-recursive-slope-composition/paper/main.tex
+papers/tpc-390-c1-recursive-slope-composition/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc390_c1_recursive_slope_composition.md
+research/tpc-big-road/tpc_bridge_b_tpc390_c1_recursive_slope_composition_checker.py
+
+TPC-389 previous release 入口：
+
+papers/tpc-389-c1-long-horizon-slope-stress/README.md
+papers/tpc-389-c1-long-horizon-slope-stress/PAPER_PLAN.md
+papers/tpc-389-c1-long-horizon-slope-stress/DERIVATION_PACKAGE.md
+papers/tpc-389-c1-long-horizon-slope-stress/PROOF_PACKAGE.md
+papers/tpc-389-c1-long-horizon-slope-stress/code/tpc389_long_horizon_slope_stress.py
+papers/tpc-389-c1-long-horizon-slope-stress/experiments/tpc389_independent_checker.py
+papers/tpc-389-c1-long-horizon-slope-stress/experiments/tpc389_adversarial_certificate_stress.py
+papers/tpc-389-c1-long-horizon-slope-stress/results/tpc389_certificate.json
+papers/tpc-389-c1-long-horizon-slope-stress/notes/theorem_ledger.md
+papers/tpc-389-c1-long-horizon-slope-stress/notes/claim_firewall.md
+papers/tpc-389-c1-long-horizon-slope-stress/notes/computational_protocol.md
+papers/tpc-389-c1-long-horizon-slope-stress/notes/route_evaluation.md
+papers/tpc-389-c1-long-horizon-slope-stress/paper/main.tex
+papers/tpc-389-c1-long-horizon-slope-stress/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc389_c1_long_horizon_slope_stress.md
+research/tpc-big-road/tpc_bridge_b_tpc389_c1_long_horizon_slope_stress_checker.py
+
+TPC-388 previous release 入口：
 
 papers/tpc-388-c1-cross-family-slope-transfer/README.md
 papers/tpc-388-c1-cross-family-slope-transfer/PAPER_PLAN.md

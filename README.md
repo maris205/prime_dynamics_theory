@@ -9,7 +9,26 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-390 在第四个 coordinate-disjoint origin family 上测试
+当前主线最新位置：TPC-391 在第五个 coordinate-disjoint origin family 上
+把 TPC-390 的递归 horizon obstruction 定位到预声明的终端 horizon。三起点在
+`N=1024,1152,1280,1408` calibration，两起点在 `N=1536` holdout；448-row、
+32-cell panel 中 parent forecast 在 `N=1152,1280,1408,1536` 的通过数为
+`32/32,32/32,32/32,23/32`，local control 四层均为 `32/32`，恰有 9 个
+parent cells 首次在 `N=1536` 越过 3% cap。parent 最大误差为
+`0.0097231600284870545,0.019799860658296864,0.029171461379271735,
+0.051733528427127862`；recursive composition residual 为
+`4.4408920985006262e-16`。spectral failures 为 `112/448`，Schur failures
+为 `0/448`。这是 finite scoped horizon-localization audit，不是 source-valid
+growing theorem、arithmetic `L2` 或 twin-prime result；`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。当前项目为
+`papers/tpc-391-c1-recursive-horizon-localization/`，下一关是
+`TEST_C1_NORMALIZATION_PHASE_DIAGRAM`。
+
+papers/tpc-391-c1-recursive-horizon-localization - TPC-391 current project；含
+448-row horizon trajectory certificate、独立 reverse-shell replay、25-mutation
+stress、proof package/PDF 与 local fail-closed Bridge-B checker。
+
+上一位置：TPC-390 在第四个 coordinate-disjoint origin family 上测试
 TPC-389 frozen slope interface 的第二次 recursive composition。三起点在
 `N=1024,1280` calibration，两起点在 `N=1536` holdout；256-row、32-cell panel
 中 one-step parent、local control、recursive parent 分别为 `30/32,32/32,23/32`，
@@ -20,11 +39,11 @@ TPC-389 frozen slope interface 的第二次 recursive composition。三起点在
 failures 为 `64/256`，Schur failures 为 `0/256`。这是 finite scoped
 recursive-composition audit，不是 source-valid growing theorem、arithmetic
 `L2` 或 twin-prime result；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
-`FULL_GATE_B=OPEN`。当前项目为
+`FULL_GATE_B=OPEN`。项目为
 `papers/tpc-390-c1-recursive-slope-composition/`，下一关是
 `LOCALIZE_C1_RECURSIVE_HORIZON_OBSTRUCTION`。
 
-papers/tpc-390-c1-recursive-slope-composition - TPC-390 current project；含
+papers/tpc-390-c1-recursive-slope-composition - TPC-390 previous project；含
 256-row recursive forecast certificate、failure localization、独立 reverse-shell
 replay、25-mutation stress、proof package/PDF 与 local fail-closed Bridge-B checker。
 
