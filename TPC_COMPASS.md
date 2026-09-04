@@ -1,6 +1,63 @@
 # TPC distilled map and bold channel
 
-## V232 / TPC-379 current anchor
+## V233 / TPC-380 current anchor
+
+更新时间：2026-09-04
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc380_c1_law_control_count_replay.md，checker 为
+tpc_bridge_b_tpc380_c1_law_control_count_replay_checker.py，编号论文为
+papers/tpc-380-c1-law-control-count-replay/。
+
+TPC-380 把 TPC-379 的 `c=1` four-law panel 提升到一个新的
+coordinate-disjoint affine-origin panel，并固定 `N=2048`、八个 256-point blocks、
+`Q=512,2048,8192`、beta `2`、exponent `1` 与 height `66`。在读取任何 response、
+signed metric 或 geometry score 前冻结 grid `a_j=1300001+401j` 的 indices
+`(0,20,40)`，得到 origins `(1300001,1308021,1316041)`；四个预声明 laws
+`all_plus`、`alternating_index`、`mod4_character` 与 `half_split` 共形成 36-row
+Cartesian panel，并共享同一 square-energy geometry 与 `c=1` mask。
+
+all-plus 的 spectral failure profile 仍为 `(0,3,3)`（6/9），三个 signed controls
+均为 `(0,0,0)`；总计 6/36 spectral failures，Schur failures 为 0/36。因而最强
+正结果是有限 count-persistence，最强 obstruction 是高-Q separation 仍依赖
+all-plus law。q=8 exact anchor 为 `[1300014,1300027)`、shell `[11,13]`；首个
+13-point 子区间的 residue degeneracy 及其 deterministic finite positivity repair
+已在 proof package 中显式记录。
+
+这仍不是 count/law/origin/scale uniformity、source-valid normalization、growing
+operator theorem、source-uniform arithmetic `L2`、fixed-power saving、Route-B
+reassembly 或 twin-prime result。官方 evaluator files 仍缺失，local Bridge-B 只作
+fail-closed repository evidence；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`。下一关为 `TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY`。
+
+    YOU ARE HERE = V233 / TPC-380
+    TPC380_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC380_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC380_COMMON_GEOMETRY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
+    TPC380_LAW_FAMILY = PROVED_EXACT_FINITE_PREDECLARED
+    TPC380_COUNT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_36_ROWS
+    TPC380_ALL_PLUS_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC380_SIGNED_CONTROL_SUBCAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC380_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC380_LAW_UNIFORMITY = OPEN
+    TPC380_ORIGIN_UNIFORMITY = OPEN
+    TPC380_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC380_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC380_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC380_GROWING_OPERATOR_BOUND = OPEN
+    TPC380_SOURCE_UNIFORM_L2 = OPEN
+    TPC380_ARITHMETIC_ADVANCE = NO
+    TPC380_FIXED_POWER_CREDIT = 0
+    TPC380_FULL_GATE_B = OPEN
+    TPC380_TWIN_PRIME_RESULT = NONE
+    TPC380_STRONGEST_POSITIVE = FINITE_COUNT_2048_REPLAY_ON_THREE_FRESH_ORIGINS
+    TPC380_STRONGEST_OBSTRUCTION = ALL_PLUS_SEPARATION_REMAINS_LAW_DEPENDENT
+    TPC380_OPEN_THEOREM = SOURCE_VALID_ORIGIN_FAMILY_UNIFORMITY_AND_GROWING_LAW_CONTROL
+    TPC380_REUSABLE_STRUCTURE = COMMON_GEOMETRY_COUNT_REPLAY_WITH_EXACT_ANCHOR_REVERSE_SHELL_AND_STRESS_FIREWALL
+    TPC380_ROUND2_CLUE = TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY
+    TPC380_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_COUNT_REPLAY
+
+## V232 / TPC-379 previous anchor
 
 更新时间：2026-09-04
 
@@ -24,7 +81,7 @@ causality、growing operator bound、source-uniform arithmetic `L2`、fixed-powe
 repository evidence；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
 `FULL_GATE_B=OPEN`。下一关是 `TEST_C1_LAW_CONTROL_COUNT_REPLAY`。
 
-    YOU ARE HERE = V232 / TPC-379
+    YOU ARE HERE = V232 / TPC-379 (previous)
     TPC379_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC379_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
     TPC379_COMMON_GEOMETRY = PROVED_EXACT_FINITE_LAW_INDEPENDENT

@@ -1,6 +1,61 @@
-# TPC big road V232 / TPC-379: c=1 cross-holdout law control
+# TPC big road V233 / TPC-380: c=1 law-control count replay
 
-## V232 current anchor: TPC-379
+## V233 current anchor: TPC-380
+
+更新时间：2026-09-04
+
+当前 TPC-380 proof 为 bridge_b_tpc380_c1_law_control_count_replay.md，checker 为
+tpc_bridge_b_tpc380_c1_law_control_count_replay_checker.py，编号论文为
+../../papers/tpc-380-c1-law-control-count-replay/。
+
+TPC-380 把 TPC-379 的 four-law `c=1` panel 复放到新的 coordinate-disjoint affine
+grid `a_j=1300001+401j`、`0<=j<41`，在任何 response、signed metric 或 geometry
+score 读取前冻结 indices `(0,20,40)`，对应 origins
+`(1300001,1308021,1316041)`。固定 count `2048`、八个连续 256-point blocks、
+`Q=512,2048,8192`、beta `2`、exponent `1`、height `66` 与同一 common
+square-energy geometry/common `c=1` mask，完整比较 all-plus、alternating-index、
+mod-4-character 与 half-split 四个 laws。
+
+all-plus profile 为 `(0,3,3)`，三个 signed controls 均为 `(0,0,0)`；总计 6/36
+spectral-cap failures，Schur failures 为 0/36。最强正结果是有限 count-2048
+profile persistence；最强 obstruction 是 separation 仍特异于 all-plus law。q=8
+exact anchor 为 `[1300014,1300027)`、shell `[11,13]`，其 initial residue-degenerate
+attempt 与 deterministic finite positivity repair 均有审计记录。
+
+这不是 law/origin/scale uniformity、source-valid normalization、cross-block causality、
+growing operator theorem、source-uniform arithmetic `L2`、power saving、Route-B
+reassembly 或 twin-prime result。official evaluator files 仍缺失，local Bridge-B 是
+fail-closed fallback；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`。下一关为 `TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY`。
+
+    YOU ARE HERE = V233 / TPC-380
+    TPC380_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC380_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC380_COMMON_GEOMETRY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
+    TPC380_LAW_FAMILY = PROVED_EXACT_FINITE_PREDECLARED
+    TPC380_COUNT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_36_ROWS
+    TPC380_ALL_PLUS_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC380_SIGNED_CONTROL_SUBCAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC380_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC380_LAW_UNIFORMITY = OPEN
+    TPC380_ORIGIN_UNIFORMITY = OPEN
+    TPC380_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC380_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC380_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC380_GROWING_OPERATOR_BOUND = OPEN
+    TPC380_SOURCE_UNIFORM_L2 = OPEN
+    TPC380_ARITHMETIC_ADVANCE = NO
+    TPC380_FIXED_POWER_CREDIT = 0
+    TPC380_FULL_GATE_B = OPEN
+    TPC380_TWIN_PRIME_RESULT = NONE
+    TPC380_STRONGEST_POSITIVE = FINITE_COUNT_2048_REPLAY_ON_THREE_FRESH_ORIGINS
+    TPC380_STRONGEST_OBSTRUCTION = ALL_PLUS_SEPARATION_REMAINS_LAW_DEPENDENT
+    TPC380_OPEN_THEOREM = SOURCE_VALID_ORIGIN_FAMILY_UNIFORMITY_AND_GROWING_LAW_CONTROL
+    TPC380_REUSABLE_STRUCTURE = COMMON_GEOMETRY_COUNT_REPLAY_WITH_EXACT_ANCHOR_REVERSE_SHELL_AND_STRESS_FIREWALL
+    TPC380_ROUND2_CLUE = TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY
+    TPC380_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_COUNT_REPLAY
+
+## V232 previous anchor: TPC-379
 
 更新时间：2026-09-04
 

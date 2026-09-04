@@ -2,32 +2,75 @@
 
 更新时间：2026-09-04
 
-当前地图版本：V232 / TPC-379
+当前地图版本：V233 / TPC-380
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-379`（`NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL`）；
-对应论文目录为 `papers/tpc-379-c1-crossholdout-law-control/`。
+当前编号锚点：`TPC-380`（`NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_COUNT_REPLAY`）；
+对应论文目录为 `papers/tpc-380-c1-law-control-count-replay/`。
 
-TPC-379 是当前位置：在新的 coordinate-disjoint affine grid 上预声明 indices
-`(0,20,40)`，对应 origins `(1200001,1208021,1216041)`；固定 `N=1024`、四个
+TPC-380 是当前位置：在新的 coordinate-disjoint affine grid 上预声明 indices
+`(0,20,40)`，对应 origins `(1300001,1308021,1316041)`；固定 `N=2048`、八个
 256-point blocks、`Q=512,2048,8192`、beta `2`、exponent `1`，并保持同一个
 `c=1` mask 与 common square-energy geometry。完整 36-row panel 比较 all-plus、
-alternating-index、mod-4-character 与 half-split 四个 laws。all-plus profile 为
+alternating-index、mod-4-character 与 half-split 四个 laws。all-plus profile 仍为
 `(0,3,3)`（6/9），三个 signed controls 均为 `(0,0,0)`；总计 6/36 spectral
 failures、Schur failures 为 0/36。
 
-这是有限 response-blind law-control obstruction：all-plus high-Q signature 在三个
-signed controls 中全部消失，故不能把它提升为 law-invariant mask property，也不能
-选择 arithmetic law。law/origin/window uniformity、cross-block causality、source-valid
-normalization、growing operator theorem、source-uniform arithmetic `L2`、fixed-power
-credit 与 twin-prime endpoint 均未关闭。producer、独立 direct-sieve replay、
-25-mutation stress、2-page PDF 与 local Bridge-B 已封存；official evaluator files
-仍缺失，local bridge 只作 fail-closed evidence。`ARITHMETIC_ADVANCE=NO`、
+这是有限 response-blind count-persistence 与 law-control obstruction：all-plus
+high-Q signature 在三个 signed controls 中全部消失，故不能把它提升为 law-invariant
+mask property，也不能选择 arithmetic law。law/origin/window uniformity、cross-block
+causality、source-valid normalization、growing operator theorem、source-uniform
+arithmetic `L2`、fixed-power credit 与 twin-prime endpoint 均未关闭。producer、独立
+direct-sieve replay、25-mutation stress、2-page PDF 与 local Bridge-B 已封存；official
+evaluator files 仍缺失，local bridge 只作 fail-closed evidence。`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关为
-`TEST_C1_LAW_CONTROL_COUNT_REPLAY`。
+`TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY`。
 
-## 5.162 V232 / TPC-379：c=1 cross-holdout law control
+## 5.163 V233 / TPC-380：c=1 law-control count replay
+
+TPC-380 的 finite package 位于 `papers/tpc-380-c1-law-control-count-replay/`。
+它把 TPC-379 的 four-law `c=1` panel 放到新的 coordinate-disjoint affine grid
+`a_j=1300001+401j`，在读取任何 response、signed metric 或 geometry score 前固定
+indices `(0,20,40)`。count 从 `1024` 提升到 `2048`，使用八个连续 256-point blocks；
+三 origins 与三 Q anchors、四个 laws 形成完整 36 rows，共用 square-energy geometry
+和 c=1 band。
+
+all-plus 的 profile 为 `(0,3,3)`，三个 signed controls 均为 `(0,0,0)`，所以
+spectral failures 为 `6/36`、Schur failures 为 `0/36`；这是有限 count persistence，
+同时再次显示 high-Q separation 对 law 敏感。exact q=8 anchor 为 `[1300014,1300027)`，
+shell `[11,13]`；首个候选子区间的 residue degeneracy 与已选 window 内的 deterministic
+positivity repair 均被记录。结果不建立 origin-family uniformity、growing law、
+source-uniform arithmetic `L2`、power saving 或 twin-prime endpoint。
+
+    YOU ARE HERE = V233 / TPC-380
+    TPC380_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC380_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC380_COMMON_GEOMETRY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
+    TPC380_LAW_FAMILY = PROVED_EXACT_FINITE_PREDECLARED
+    TPC380_COUNT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_36_ROWS
+    TPC380_ALL_PLUS_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC380_SIGNED_CONTROL_SUBCAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC380_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC380_LAW_UNIFORMITY = OPEN
+    TPC380_ORIGIN_UNIFORMITY = OPEN
+    TPC380_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC380_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC380_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC380_GROWING_OPERATOR_BOUND = OPEN
+    TPC380_SOURCE_UNIFORM_L2 = OPEN
+    TPC380_ARITHMETIC_ADVANCE = NO
+    TPC380_FIXED_POWER_CREDIT = 0
+    TPC380_FULL_GATE_B = OPEN
+    TPC380_TWIN_PRIME_RESULT = NONE
+    TPC380_STRONGEST_POSITIVE = FINITE_COUNT_2048_REPLAY_ON_THREE_FRESH_ORIGINS
+    TPC380_STRONGEST_OBSTRUCTION = ALL_PLUS_SEPARATION_REMAINS_LAW_DEPENDENT
+    TPC380_OPEN_THEOREM = SOURCE_VALID_ORIGIN_FAMILY_UNIFORMITY_AND_GROWING_LAW_CONTROL
+    TPC380_REUSABLE_STRUCTURE = COMMON_GEOMETRY_COUNT_REPLAY_WITH_EXACT_ANCHOR_REVERSE_SHELL_AND_STRESS_FIREWALL
+    TPC380_ROUND2_CLUE = TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY
+    TPC380_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_COUNT_REPLAY
+
+## 5.162 V232 / TPC-379：c=1 cross-holdout law control (previous)
 
 TPC-379 的 finite package 位于 `papers/tpc-379-c1-crossholdout-law-control/`。
 它把 TPC-378 的 all-plus support signature 与三个预声明 signed controls 放在同一
@@ -47,7 +90,7 @@ reverse-shell replay、25-mutation stress 与双模式 Bridge-B 均通过。
 independent replay -> mutation firewall`。下一 clue 为
 `TEST_C1_LAW_CONTROL_COUNT_REPLAY`。
 
-    YOU ARE HERE = V232 / TPC-379
+    YOU ARE HERE = V232 / TPC-379 (previous)
     TPC379_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC379_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
     TPC379_COMMON_GEOMETRY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
@@ -10879,6 +10922,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-04 | V233 / TPC-380 | Bridge B / Gate B：c=1 law-control count replay; source-valid normalization、law/origin/scale uniformity、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-380 | 承接 TPC-379；新的 coordinate-disjoint affine origins (1300001,1308021,1316041)、count 2048、八个 256-point blocks 与四个预声明 laws 完成 36-row panel；all-plus profile (0/3,3/3,3/3)，signed controls 均 (0/3,0/3,0/3)，spectral 6/36、Schur 0/36；下一步 TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY |
 | 2026-09-04 | V232 / TPC-379 | Bridge B / Gate B：c=1 cross-holdout law control; source-valid normalization、law/origin/scale uniformity、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-379 | 承接 TPC-378；新 coordinate-disjoint origins (1200001,1208021,1216041)、count 1024、四个预声明 laws 与 common geometry/mask 完成 36-row panel；all-plus profile (0/3,3/3,3/3)，signed controls 均 (0/3,0/3,0/3)，spectral 6/36、Schur 0/36；下一步 TEST_C1_LAW_CONTROL_COUNT_REPLAY |
 | 2026-09-04 | V231 / TPC-378 | Bridge B / Gate B：c=1 scale-origin cross-holdout; source-valid normalization、origin/window uniformity、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-378` | 承接 TPC-377；新的 coordinate-disjoint affine grid 固定 indices `(0,20,40)`、origins `(1100001,1108021,1116041)`，endpoint counts `1024,2048`，完成 18-row beta=2/all-plus panel，两个 count 均为 `(0/3,3/3,3/3)`、spectral `12/18`、Schur `0/18`；下一步 `TEST_C1_CROSSHOLDOUT_LAW_CONTROL` |
 | 2026-09-04 | V230 / TPC-377 | Bridge B / Gate B：c=1 window-scale holdout; source-valid normalization、origin cross-holdout、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-377` | 承接 TPC-376；固定三个 response-blind origins 与 nested-prefix counts `1024,1536,2048`，完成 27-row beta=2/all-plus panel，三个 count 均为 `(0/3,3/3,3/3)`、spectral `18/27`、Schur `0/27`；下一步 `c=1` scale/origin cross-holdout |

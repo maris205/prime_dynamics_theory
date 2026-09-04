@@ -3,13 +3,77 @@
 
 更新时间：2026-09-04
 
-状态：**TPC379_NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC380_NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_COUNT_REPLAY / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.173 current：TPC-379 c=1 cross-holdout law control
+## 0.174 current：TPC-380 c=1 law-control count replay
+
+项目：papers/tpc-380-c1-law-control-count-replay/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_COUNT_REPLAY**。
+
+TPC-380 承接 TPC-379 的 four-law `c=1` signature，在新的 affine grid
+`a_j=1300001+401j`、`0<=j<41` 上于任何 response、signed metric 或 geometry score
+读取前冻结 indices `(0,20,40)`，得到 origins `(1300001,1308021,1316041)`。
+固定 `N=2048`、八个连续 256-point blocks、beta `2`、kernel exponent `1`、height
+`66`、`Q=(512,2048,8192)`、同一 common square-energy geometry 与 `c=1` mask，
+在完整 36-row Cartesian panel 上比较预声明的 `all_plus`、`alternating_index`、
+`mod4_character`、`half_split` 四个 laws。
+
+最强正结果：all-plus 的 band spectral failure profile 仍为 `(0,3,3)`，即 6/9；
+三个 signed controls 均为 `(0,0,0)`；全 panel 为 6/36 spectral failures 与 0/36
+Schur failures。exact q=8 anchor、producer、独立 direct-sieve reverse-shell replay、
+25-mutation stress 与 local Bridge-B 均通过（官方 evaluator 文件仍缺失）。
+
+最强 obstruction：TPC-379 的 high-Q separation 在 count `2048` 仍只出现在
+all-plus law 下，不能提升为 law-invariant mask property；因而 count persistence
+也不等于 law/origin/scale uniformity。q=8 的首个 13-point 子区间 residue-degenerate，
+已在已选 window 内用 deterministic finite positivity repair 固定到
+`[1300014,1300027)`，这不是 row 或结果选择依据。
+
+开放定理：在 source-valid normalization 下，能否对一个自然、被选择且可增长的
+prime-shell law 建立 origin-family uniform control，并将其与这些 diagnostic signed
+controls 区分开。
+
+可复用结构：
+
+    response-blind affine grid
+      -> exact coordinate separation
+      -> common geometry and c=1 mask
+      -> four-law count replay
+      -> exact anchor + reverse-shell replay
+      -> semantic mutation firewall
+
+ROUND2_CLUE：`TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY`。
+
+```text
+TPC380_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC380_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC380_COMMON_GEOMETRY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
+TPC380_LAW_FAMILY = PROVED_EXACT_FINITE_PREDECLARED
+TPC380_COUNT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_36_ROWS
+TPC380_ALL_PLUS_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC380_SIGNED_CONTROL_SUBCAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC380_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC380_LAW_UNIFORMITY = OPEN
+TPC380_ORIGIN_UNIFORMITY = OPEN
+TPC380_WINDOW_SCALE_UNIFORMITY = OPEN
+TPC380_CROSS_BLOCK_CAUSALITY = OPEN
+TPC380_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC380_GROWING_OPERATOR_BOUND = OPEN
+TPC380_SOURCE_UNIFORM_L2 = OPEN
+TPC380_ARITHMETIC_ADVANCE = NO
+TPC380_FIXED_POWER_CREDIT = 0
+TPC380_FULL_GATE_B = OPEN
+TPC380_TWIN_PRIME_RESULT = NONE
+TPC380_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_COUNT_REPLAY
+TPC380_ROUND2_CLUE = TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY
+```
+
+## 0.173 previous：TPC-379 c=1 cross-holdout law control
 
 项目：papers/tpc-379-c1-crossholdout-law-control/
 

@@ -9,20 +9,23 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-379 在新的 coordinate-disjoint affine-origin panel 上，将
-TPC-378 的 all-plus `c=1` signature 与三个预声明 signed controls 做同几何比较。固定
-origins `(1200001,1208021,1216041)`、`N=1024`、`Q={512,2048,8192}` 与四个 laws，
-完成 36-row panel。all-plus 的 spectral failure profile 为 `(0,3,3)`（6/9），而
+当前主线最新位置：TPC-380 在新的 coordinate-disjoint affine-origin panel 上，
+将 TPC-379 的 four-law `c=1` signature 复放到 `N=2048` 的八个 256-point blocks。
+固定 origins `(1300001,1308021,1316041)`、`Q={512,2048,8192}` 与四个 laws，
+完成 36-row panel。all-plus 的 spectral failure profile 仍为 `(0,3,3)`（6/9），而
 `alternating_index`、`mod4_character`、`half_split` 均为 `(0,0,0)`；总计 6/36
 spectral failures，Schur failures 为 0/36。这是有限、response-blind 的
-sign-law-dependence obstruction：不能把 inherited high-Q signature 解释为
-law-invariant operator property，更不能宣称 origin/law uniformity、growing theorem、
-arithmetic `L2` 或 twin-prime result。当前项目为
-`papers/tpc-379-c1-crossholdout-law-control/`，下一关是
-`TEST_C1_LAW_CONTROL_COUNT_REPLAY`；`ARITHMETIC_ADVANCE=NO`、
+count-persistence 与 sign-law-dependence obstruction：不能把它解释为 count/law/origin
+uniformity、growing theorem、arithmetic `L2` 或 twin-prime result。当前项目为
+`papers/tpc-380-c1-law-control-count-replay/`，下一关是
+`TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY`；`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
 
-papers/tpc-379-c1-crossholdout-law-control - TPC-379 current project；含 36-row
+papers/tpc-380-c1-law-control-count-replay - TPC-380 current project；含 36-row
+count-replay certificate、独立 reverse-shell replay、25-mutation stress、2-page PDF
+与 local fail-closed Bridge-B checker。
+
+papers/tpc-379-c1-crossholdout-law-control - TPC-379 previous project；含 36-row
 law-control certificate、独立 reverse-shell replay、25-mutation stress、2-page PDF
 与 local fail-closed Bridge-B checker。
 

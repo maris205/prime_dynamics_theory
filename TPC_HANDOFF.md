@@ -1,9 +1,65 @@
 # TPC HANDOFF
 
-TPC-379 current section: c=1 cross-holdout law control
-------------------------------------------------------
+TPC-380 current section: c=1 law-control count replay
+-------------------------------------------------------
 
-TPC-379 is the current sealed release. It freezes, before reading any
+TPC-380 is the current sealed finite release. It freezes, before reading any
+response or metric, the affine grid `a_j=1300001+401j`, `0<=j<41`, and
+indices `(0,20,40)`, giving the coordinate-disjoint origins
+`(1300001,1308021,1316041)`. The fixed window has `N=2048`, eight contiguous
+256-point blocks, the inherited `c=1` band, beta=2, exponent 1, height 66,
+and Q anchors `Q=512,2048,8192`. Four predeclared laws
+`all_plus`, `alternating_index`, `mod4_character`, and `half_split` share one
+square-energy geometry, giving a complete 36-row Cartesian panel.
+
+The all-plus profile is `0/3,3/3,3/3`, while each signed control has
+`0/3,0/3,0/3`. Thus there are 6/36 spectral-cap failures and 0/36 Schur-cap
+failures. The exact q=8 anchor is `[1300014,1300027)` with shell `[11,13]`;
+the initial residue-degenerate subinterval and the deterministic finite
+positivity repair inside the already selected window are explicitly recorded.
+The producer, independent direct-sieve reverse-shell replay, 25-mutation stress
+test, 2-page PDF, and local Bridge-B are sealed.
+
+This is finite count-persistence plus a law-control obstruction: the inherited
+high-Q all-plus separation recurs at count 2048 but disappears under all three
+declared signed controls. It is not law/origin/scale uniformity, source-valid
+normalization, cross-block causality, a growing operator bound, source-uniform
+arithmetic `L2`, arithmetic power saving, Route-B reassembly, or a twin-prime
+result. Official Route-A/Route-B evaluator files remain absent; local Bridge-B
+is fail-closed repository evidence.
+`ARITHMETIC_ADVANCE=NO`, `FIXED_POWER_CREDIT=0`, and `FULL_GATE_B=OPEN`; the
+next finite question is `TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY`.
+
+    TPC380_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC380_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC380_COMMON_GEOMETRY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
+    TPC380_LAW_FAMILY = PROVED_EXACT_FINITE_PREDECLARED
+    TPC380_COUNT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_36_ROWS
+    TPC380_ALL_PLUS_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC380_SIGNED_CONTROL_SUBCAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC380_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC380_LAW_UNIFORMITY = OPEN
+    TPC380_ORIGIN_UNIFORMITY = OPEN
+    TPC380_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC380_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC380_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC380_GROWING_OPERATOR_BOUND = OPEN
+    TPC380_SOURCE_UNIFORM_L2 = OPEN
+    TPC380_ARITHMETIC_ADVANCE = NO
+    TPC380_FIXED_POWER_CREDIT = 0
+    TPC380_FULL_GATE_B = OPEN
+    TPC380_TWIN_PRIME_RESULT = NONE
+    TPC380_STRONGEST_POSITIVE = FINITE_COUNT_2048_REPLAY_ON_THREE_FRESH_ORIGINS
+    TPC380_STRONGEST_OBSTRUCTION = ALL_PLUS_SEPARATION_REMAINS_LAW_DEPENDENT
+    TPC380_OPEN_THEOREM = SOURCE_VALID_ORIGIN_FAMILY_UNIFORMITY_AND_GROWING_LAW_CONTROL
+    TPC380_REUSABLE_STRUCTURE = COMMON_GEOMETRY_COUNT_REPLAY_WITH_EXACT_ANCHOR_REVERSE_SHELL_AND_STRESS_FIREWALL
+    TPC380_ROUND2_CLUE = TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY
+    TPC380_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_COUNT_REPLAY
+
+TPC-379 previous section: c=1 cross-holdout law control
+---------------------------------------------------------
+
+TPC-379 is the previous sealed release. It freezes, before reading any
 response or metric, the affine grid `a_j=1200001+401j`, `0<=j<41`, and
 indices `(0,20,40)`, giving the coordinate-disjoint origins
 `(1200001,1208021,1216041)`. The fixed window has `N=1024`, four contiguous
@@ -767,6 +823,19 @@ TPC-379 reproducibility commands:
     python -O -B papers/tpc-379-c1-crossholdout-law-control/experiments/tpc379_adversarial_certificate_stress.py --check
     python -B research/tpc-big-road/tpc_bridge_b_tpc379_c1_crossholdout_law_control_checker.py --check
     python -O -B research/tpc-big-road/tpc_bridge_b_tpc379_c1_crossholdout_law_control_checker.py --check
+
+TPC-380 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-380-c1-law-control-count-replay/code/tpc380_c1_law_control_count_replay.py --check
+    python -O -B papers/tpc-380-c1-law-control-count-replay/code/tpc380_c1_law_control_count_replay.py --check
+    python -B papers/tpc-380-c1-law-control-count-replay/experiments/tpc380_independent_checker.py --check
+    python -O -B papers/tpc-380-c1-law-control-count-replay/experiments/tpc380_independent_checker.py --check
+    python -B papers/tpc-380-c1-law-control-count-replay/experiments/tpc380_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-380-c1-law-control-count-replay/experiments/tpc380_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc380_c1_law_control_count_replay_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc380_c1_law_control_count_replay_checker.py --check
 
 
 TPC-374 tail audit is required to return zero with empty stderr and
@@ -13795,6 +13864,12 @@ TPC-207 数学 trigger：`true`；TPC-207 已创建：`true`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
+`papers/tpc-380-c1-law-control-count-replay/README.md`、
+`papers/tpc-380-c1-law-control-count-replay/PROOF_PACKAGE.md`、
+`papers/tpc-380-c1-law-control-count-replay/notes/theorem_ledger.md`、
+`papers/tpc-380-c1-law-control-count-replay/notes/route_evaluation.md`、
+`research/tpc-big-road/bridge_b_tpc380_c1_law_control_count_replay.md`、
+`research/tpc-big-road/tpc_bridge_b_tpc380_c1_law_control_count_replay_checker.py`、
 `papers/tpc-379-c1-crossholdout-law-control/README.md`、
 `papers/tpc-379-c1-crossholdout-law-control/PROOF_PACKAGE.md`、
 `papers/tpc-379-c1-crossholdout-law-control/notes/theorem_ledger.md`、
@@ -13995,7 +14070,9 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V232/TPC-379 是当前 release；其 c=1 law-control producer、
+V233/TPC-380 是当前 release；其 c=1 law-control count-replay producer、
+independent direct-sieve reverse-shell replay、25-mutation certificate stress audit 与
+literal masked-operator Bridge-B 已封存。V232/TPC-379 是上一 release；其 c=1 law-control producer、
 independent direct-sieve reverse-shell replay、25-mutation certificate stress audit 与
 literal masked-operator Bridge-B 已封存。V231/TPC-378 是上一 release；其 c=1
 scale-origin-crossholdout producer、
@@ -14041,7 +14118,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 525 对 normal/optimized 命令、1050 次
+当前 curated cascade command set 共 529 对 normal/optimized 命令、1058 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -14064,11 +14141,11 @@ TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
-本轮 TPC-379 发布前选定的最新 tail cascade 共 48 对
-normal/optimized 命令、96 次 invocation：47 个既有基线 Bridge-B checker
-与 TPC-379 新 checker 均返回零、保持空 stderr，且每对 stdout
-byte-identical。该 48 对 tail audit 是本轮实际执行的增量回归；上面的
-525 对是按历史 release 累计的 curated command-set 计数。
+本轮 TPC-380 发布前选定的最新 tail cascade 共 49 对
+normal/optimized 命令、98 次 invocation：48 个既有基线 Bridge-B checker
+与 TPC-380 新 checker 均返回零、保持空 stderr，且每对 stdout
+byte-identical。该 49 对 tail audit 是本轮实际执行的增量回归；上面的
+529 对是按历史 release 累计的 curated command-set 计数。
 
 V184/TPC-331 的新增 4 对由本项目 bridge 与 standalone tail checks 逐项验证；其
 finite decomposition 不代表 source-uniform arithmetic `L2` 或 official Route-A/Route-B

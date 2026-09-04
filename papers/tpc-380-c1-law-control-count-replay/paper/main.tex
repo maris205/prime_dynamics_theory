@@ -1,0 +1,160 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=0.70in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\begin{document}
+\small
+\begin{center}
+{\Large\bf A Count-Replay Audit of a Finite $c=1$ Prime-Shell Law Control}\\[5pt]
+Liang Wang\\
+School of Mathematics and Statistics, Huazhong University of Science and
+Technology (HUST), Wuhan, China\\
+September 4, 2026
+\end{center}
+
+\begin{abstract}
+TPC-379 found that a finite high-$Q$ spectral signature of the all-plus
+prime-shell law disappeared under three diagnostic signed controls.  This
+paper tests the most immediate continuation: does the separation survive at
+the larger fixed count $N=2048$?  On a fresh coordinate-disjoint affine
+panel, the complete $3\times3\times4=36$ row experiment again gives the
+all-plus profile $(0,3,3)$ and the three signed-control profiles $(0,0,0)$.
+There are six spectral-cap failures and no Schur-cap failures.  The result is
+finite count persistence with a law-dependence obstruction; it is neither a
+scale-uniform theorem nor a twin-prime result.
+\end{abstract}
+
+\section{Question and claim boundary}
+
+The finite operator family is designed to expose where a proposed near-block
+Route-B bridge needs uniformity.  TPC-379 held the count at $1024$ and found
+an all-plus high-$Q$ profile that did not occur for three fixed signed laws.
+Here only the count and the coordinate-disjoint origin panel change.  The
+same $c=1$ mask, normalization, shell ladder, and law family are retained.
+
+All assertions below are scoped to one explicit finite computation.  The
+signed laws are diagnostic controls; they are not asserted to be source-valid
+arithmetic weights.  In particular, finite sub-cap values do not pay an
+arithmetic loss or close either route gate.
+
+\section{Finite operator}
+
+For $I=[a,a+N-1]\cap\mathbb Z$, $Q<p\leq2Q$, and $u,t\in I$, set
+\[
+ K_p(u,t)=p\left(\frac pQ\right)^2
+ \frac{66^2}{66^2+(u-t)^2}
+ \left({\bf1}_{p\mid(u-t)}-\frac1{p-1}\right)
+ {\bf1}_{u\ne t}{\bf1}_{p\nmid u}{\bf1}_{p\nmid t}.
+\]
+For a declared law $\ell$ with signs $s_p(\ell)\in\{-1,1\}$, define
+\[
+ A_\ell(u,t)=\sum_{Q<p\leq2Q}s_p(\ell)K_p(u,t),\quad
+ G(u)=\sum_{t\in I}\sum_{Q<p\leq2Q}K_p(u,t)^2,
+ \quad T_\ell(u,t)=\frac{A_\ell(u,t)}{\sqrt{G(u)G(t)}}.
+\]
+The four laws are all-plus, alternating shell index, the sign of $p\bmod4$,
+and a first-half/second-half shell split.  With
+$b(u)=\lfloor(u-a)/256\rfloor$, the common band and tail are
+\[
+ B_\ell(u,t)=T_\ell(u,t){\bf1}_{|b(u)-b(t)|\leq1},\qquad
+ R_\ell=T_\ell-B_\ell.
+\]
+For every unit eigenvector $v$ of $T_\ell$ with eigenvalue $\lambda$,
+\[
+ v^{\mathsf T}B_\ell v+v^{\mathsf T}R_\ell v=\lambda
+\]
+is an exact finite identity.
+
+\section{Predeclared count-replay protocol}
+
+Before any response or metric is read, fix
+\[
+ a_j=1300001+401j,\quad 0\leq j<41,
+\]
+and select indices $(0,20,40)$, giving origins
+$(1300001,1308021,1316041)$.  Use $N=2048$, eight contiguous blocks of
+length $256$, beta $2$, exponent one, height $66$, and $Q=512,2048,8192$.
+The spectral and Schur caps are $0.64$ and $0.83$.  All four laws are
+evaluated at every origin and every $Q$ before the profile is summarized.
+
+The current intervals are disjoint from the declared TPC-376--379 intervals
+by exact integer endpoint comparisons.  The first 13-point subinterval at the
+first origin is degenerate for the $q=8$ anchor; the fixed subinterval
+$[1300014,1300027)$ is used instead.  At $q=8$ its shell is $\{11,13\}$,
+and exact rational arithmetic checks positive common geometry and symmetry for
+all four laws.  This anchor is an audit object, not a row-selection signal.
+
+\section{Results}
+
+Table~\ref{tab:count} gives band spectral-cap failures among the three origins
+at each shell scale.
+
+\begin{table}[ht]
+\centering
+\caption{TPC-380 finite count-2048 law-control panel.}
+\label{tab:count}
+\scriptsize
+\begin{tabular}{l c c c r}
+\toprule
+law & $Q=512$ & $Q=2048$ & $Q=8192$ & max band spectral\\
+\midrule
+all\_plus & $0/3$ & $3/3$ & $3/3$ & 0.666945567\\
+alternating\_index & $0/3$ & $0/3$ & $0/3$ & 0.007764638\\
+mod4\_character & $0/3$ & $0/3$ & $0/3$ & 0.012038214\\
+half\_split & $0/3$ & $0/3$ & $0/3$ & 0.216134294\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Thus the all-plus profile is $(0,3,3)$ and each signed control has profile
+$(0,0,0)$.  The total spectral census is $6/36$ and the Schur census is
+$0/36$.  The corresponding maximum band spectral values in the displayed
+law order are approximately
+\[
+0.66694556698889795,\quad 0.0077646382652031094,\quad
+0.012038214320188189,\quad 0.21613429440676551.
+\]
+The certificate records all full/band metrics, selected-mode Rayleigh terms,
+and finite numerical residuals.
+
+\section{Independent audit}
+
+The producer locks the TPC-379 source and canonical certificate, and writes a
+canonical JSON certificate.  A separate checker uses a direct sieve through
+$20000$, reverse shell accumulation, independent sign construction, common
+geometry, and independent full and band eigensystems without importing the
+TPC-380 producer.  A 25-mutation stress suite changes protocol, count, laws,
+rows, census, clue, and firewall fields; every mutation must be rejected.
+Normal and optimized runs require empty standard error and byte-identical
+summaries.  The local Bridge-B repeats these finite checks and locks the
+stable project artifacts.
+
+\section{Route status and conclusion}
+
+The Session-named Route-A and Route-B evaluator files are absent from this
+checkout, so the local route note and Bridge-B are fail-closed repository
+evidence rather than an official evaluator verdict.  The exact finite
+protocol, endpoint separation, common geometry, four laws, and Rayleigh split
+are proved finite statements.  The replay and failure census are numerically
+certified finite statements.
+
+The strongest positive result is persistence of the TPC-379 all-plus
+high-$Q$ profile at the larger count on a fresh panel.  The strongest
+obstruction is that the persistence remains law-dependent, so it cannot be
+promoted to a law-invariant mask theorem.  Law/origin/scale uniformity,
+source-valid normalization, cross-block causality, a growing operator bound,
+source-uniform arithmetic $L^2$, signed prime-shell reassembly, and a
+twin-prime conclusion remain open.  The certificate records
+\[
+\texttt{ARITHMETIC\_ADVANCE=NO},\qquad
+\texttt{FIXED\_POWER\_CREDIT=0},\qquad
+\texttt{FULL\_GATE\_B=OPEN}.
+\]
+The next minimal finite question is
+\texttt{TEST\_C1\_LAW\_CONTROL\_ORIGIN\_FAMILY\_REPLAY}.
+
+\end{document}
