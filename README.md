@@ -9,18 +9,24 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-377 已将 TPC-376 的预声明 `c=1` band 推进到
-`N={1024,1536,2048}` 的 nested-prefix scale ladder，在三个 holdout origins 与
-`Q={512,2048,8192}` 上完成 27-row panel。三个 count 的 spectral failure profile
-均为 `(0,3,3)`，总计 18/27 spectral failures、Schur failures 为 0/27；selected-mode
-band-Rayleigh retention 为 `0.93760019185559207--0.98047323365759775`。这是有限
-scale support persistence，谱幅度随 count 变化，故不宣称 window-scale uniformity、
-growing operator theorem、arithmetic `L2` 或 twin-prime result。当前项目为
-`papers/tpc-377-c1-window-scale-holdout/`，下一关是
-`TEST_C1_SCALE_ORIGIN_CROSSHOLDOUT`；`ARITHMETIC_ADVANCE=NO`、
+当前主线最新位置：TPC-378 将 TPC-377 的预声明 `c=1` band 推进到一个新的、与
+TPC-376/TPC-377 最大窗口坐标互斥的 affine-origin cross-holdout。固定 grid indices
+`(0,20,40)` 对应 origins `(1100001,1108021,1116041)`，endpoint counts 为
+`N={1024,2048}`，`Q={512,2048,8192}`，完成 18-row panel。两个 count 的
+spectral failure profile 均为 `(0,3,3)`，总计 12/18 spectral failures、Schur
+failures 为 0/18；selected-mode band-Rayleigh retention 为
+`0.93759972206138864--0.98046528117382914`。这是有限 response-blind
+coordinate-disjoint support transfer，谱幅度与 normalization 仍是 scale-specific，
+故不宣称 origin/window uniformity、growing operator theorem、arithmetic `L2` 或
+twin-prime result。当前项目为 `papers/tpc-378-c1-scale-origin-crossholdout/`，
+下一关是 `TEST_C1_CROSSHOLDOUT_LAW_CONTROL`；`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
 
-papers/tpc-377-c1-window-scale-holdout - TPC-377 current project；含 27-row
+papers/tpc-378-c1-scale-origin-crossholdout - TPC-378 current project；含 18-row
+cross-holdout certificate、独立 reverse-shell replay、24-mutation stress、2-page
+PDF 与 local fail-closed Bridge-B checker。
+
+papers/tpc-377-c1-window-scale-holdout - TPC-377 previous project；含 27-row
 scale certificate、独立 reverse-shell replay、24-mutation stress、2-page PDF 与
 local fail-closed Bridge-B checker。
 

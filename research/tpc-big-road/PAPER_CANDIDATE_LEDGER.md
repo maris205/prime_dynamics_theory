@@ -3,13 +3,80 @@
 
 更新时间：2026-09-04
 
-状态：**TPC377_NUMERICALLY_CERTIFIED_FINITE_C1_WINDOW_SCALE_HOLDOUT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC378_NUMERICALLY_CERTIFIED_FINITE_C1_SCALE_ORIGIN_CROSSHOLDOUT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.171 current：TPC-377 c=1 window-scale holdout
+## 0.172 current：TPC-378 c=1 scale–origin cross-holdout
+
+项目：papers/tpc-378-c1-scale-origin-crossholdout/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_SCALE_ORIGIN_CROSSHOLDOUT**。
+
+TPC-378 承接 TPC-377 的 `c=1` band，并把它移到新的 affine candidate grid
+`a_j=1100001+401j`、`0<=j<41`。在任何 response、signed metric 或 geometry
+score 读取前固定 indices `(0,20,40)`，得到 origins
+`(1100001,1108021,1116041)`；这些 origins 的最大 endpoint intervals 与
+TPC-376/TPC-377 最大窗口由 exact integer inequalities 分离。Endpoint counts
+`N=(1024,2048)`、连续 256-point blocks、beta `2`、all-plus law、kernel exponent
+`1` 与 `Q=(512,2048,8192)` 形成完整 18-row Cartesian panel。
+
+最强正结果：两个 count 的 `c=1` band spectral failure profile 均为 `(0,3,3)`，
+总计 `12/18` spectral failures，而 Schur failures 为 `0/18`；因此 TPC-377 的
+有限 Q-support signature 在三个新的 coordinate-disjoint origins 和两个 endpoint
+scales 上均转移。selected full-mode band-Rayleigh retention 为
+`0.93759972206138864--0.98046528117382914`，最大 tail fraction 为
+`0.062400277938610291`；exact anchor、producer、独立 reverse-shell replay、
+24-mutation stress 与 local Bridge-B 复核。
+
+最强 obstruction：这是 cap-support transfer 而非 magnitude law；谱幅度随 count/origin
+变化，各 count 使用自身 normalization，且 cross-block causality、source-validity 与
+growing operator uniformity 都没有被证明。因此 origin/window uniformity、source-uniform
+arithmetic `L2`、fixed-power credit 与 twin-prime endpoint 仍未关闭；official
+Route-A/Route-B evaluator files 仍缺失，local Bridge-B 只是 fail-closed repository
+evidence，arithmetic advance 为 NO。
+
+开放定理：在同一 response-blind c=1 框架中，改变 prime-shell law 后，cross-holdout
+profile 是否仍保持，及能否在 source-valid normalization 下建立真正的 origin/scale
+uniformity。
+
+可复用结构：
+
+    affine response-blind grid
+      -> exact coordinate-disjointness against prior windows
+      -> endpoint nested-prefix panel with inherited c=1 band
+      -> complete profile census and band/tail Rayleigh audit
+      -> independent reverse-shell replay + mutation firewall
+      -> law-control holdout
+
+ROUND2_CLUE：`TEST_C1_CROSSHOLDOUT_LAW_CONTROL`。
+
+```text
+TPC378_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC378_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC378_COMMON_BAND_RULE = PROVED_EXACT_FINITE_INHERITED
+TPC378_SCALE_ORIGIN_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+TPC378_C1_PROFILE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC378_PARENT_PROFILE_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC378_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC378_ORIGIN_UNIFORMITY = OPEN
+TPC378_WINDOW_SCALE_UNIFORMITY = OPEN
+TPC378_SPECTRAL_MAGNITUDE_UNIFORMITY = OPEN
+TPC378_CROSS_BLOCK_CAUSALITY = OPEN
+TPC378_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC378_GROWING_OPERATOR_BOUND = OPEN
+TPC378_SOURCE_UNIFORM_L2 = OPEN
+TPC378_ARITHMETIC_ADVANCE = NO
+TPC378_FIXED_POWER_CREDIT = 0
+TPC378_FULL_GATE_B = OPEN
+TPC378_TWIN_PRIME_RESULT = NONE
+TPC378_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_SCALE_ORIGIN_CROSSHOLDOUT
+TPC378_ROUND2_CLUE = TEST_C1_CROSSHOLDOUT_LAW_CONTROL
+```
+
+## 0.171 previous：TPC-377 c=1 window-scale holdout
 
 项目：papers/tpc-377-c1-window-scale-holdout/
 

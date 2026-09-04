@@ -2,29 +2,78 @@
 
 更新时间：2026-09-04
 
-当前地图版本：V230 / TPC-377
+当前地图版本：V231 / TPC-378
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-377`（`NUMERICALLY_CERTIFIED_FINITE_C1_WINDOW_SCALE_HOLDOUT`）；
-对应论文目录为 `papers/tpc-377-c1-window-scale-holdout/`。
+当前编号锚点：`TPC-378`（`NUMERICALLY_CERTIFIED_FINITE_C1_SCALE_ORIGIN_CROSSHOLDOUT`）；
+对应论文目录为 `papers/tpc-378-c1-scale-origin-crossholdout/`。
 
-TPC-377 是当前位置：承接 TPC-376 的 `c=1` band，在三个既定 response-blind origins
-`(1012006,1016016,1022031)` 上预声明 nested-prefix counts
-`(1024,1536,2048)`，保持 block length `256`、beta `2`、all-plus law、exponent `1`
-与 `Q=512,2048,8192`，完成 27-row panel。三个 count 的 spectral failure profile
-均为 `(0,3,3)`，总计 `18/27`；Schur failures 为 `0/27`。selected full-mode
-band-Rayleigh retention 为 `0.93760019185559207--0.98047323365759775`。
+TPC-378 是当前位置：承接 TPC-377 的 `c=1` band，在新的 coordinate-disjoint affine
+grid 上预声明 indices `(0,20,40)`，对应 origins `(1100001,1108021,1116041)`；
+endpoint counts 为 `(1024,2048)`，保持 block length `256`、beta `2`、all-plus law、
+exponent `1` 与 `Q=512,2048,8192`，完成 18-row panel。两个 count 的 spectral failure
+profile 均为 `(0,3,3)`，总计 `12/18`；Schur failures 为 `0/18`。selected full-mode
+band-Rayleigh retention 为 `0.93759972206138864--0.98046528117382914`。
 
-这是有限 scale-profile persistence：谱幅度随 count 变化，且各 count separately normalized，
-因此不构成 window-scale uniformity、origin uniformity、cross-block causality、growing
-operator theorem、source-uniform arithmetic `L2` 或 twin-prime result。producer、独立
-reverse-shell replay、24-mutation stress、2-page PDF 与 local Bridge-B 已封存；official
-evaluator files 仍缺失，local bridge 只作 fail-closed evidence。`ARITHMETIC_ADVANCE=NO`、
-`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关为
-`TEST_C1_SCALE_ORIGIN_CROSSHOLDOUT`。
+这是有限 response-blind coordinate-disjoint support transfer：谱幅度随 count/origin
+变化，且各 count separately normalized，因此不构成 origin/window uniformity、cross-block
+causality、growing operator theorem、source-uniform arithmetic `L2` 或 twin-prime result。
+producer、独立 reverse-shell replay、24-mutation stress、2-page PDF 与 local Bridge-B 已
+封存；official evaluator files 仍缺失，local bridge 只作 fail-closed evidence。
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关为
+`TEST_C1_CROSSHOLDOUT_LAW_CONTROL`。
 
-TPC-376 是上一 release：承接 TPC-375 的 `c=1` band，在早先网格
+## 5.161 V231 / TPC-378：c=1 scale–origin cross-holdout
+
+TPC-378 的完整 finite package 位于 `papers/tpc-378-c1-scale-origin-crossholdout/`。
+它把 TPC-377 的 `c=1` band 移到新的 affine grid
+`a_j=1100001+401j`、`0<=j<41`，在读取任何 response、signed metric 或 geometry
+score 前固定 indices `(0,20,40)`。三个新 origins 的最大 `N=2048` intervals 与
+TPC-376/TPC-377 最大 intervals 由 exact integer endpoint inequalities 分离；在每个
+origin 上同时测试 nested endpoint counts `1024,2048`，共 18 个 Cartesian rows。
+
+完整 panel 的 profile 为 `(0,3,3)` at each count，故有 `12/18` spectral-cap failures
+与 `0/18` Schur failures；selected full-mode band-Rayleigh retention 为
+`0.93759972206138864--0.98046528117382914`，最大 tail fraction 为
+`0.062400277938610291`。这是 parent support signature 在 fresh coordinate-disjoint
+origins 上的有限 transfer，不是 magnitude stability 或 uniformity theorem。
+
+最强 obstruction 是 threshold profile 与 scale-specific normalization：高-Q 谱幅度
+仍随 count/origin 变化，cross-block causality、source-valid normalization、growing
+operator bound 和 arithmetic `L2` 均未关闭。official evaluator files absent；local
+Bridge-B 仅为 fail-closed repository evidence。下一有限测试为
+`TEST_C1_CROSSHOLDOUT_LAW_CONTROL`。
+
+    YOU ARE HERE = V231 / TPC-378
+    TPC378_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC378_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC378_COMMON_BAND_RULE = PROVED_EXACT_FINITE_INHERITED
+    TPC378_SCALE_ORIGIN_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+    TPC378_C1_PROFILE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC378_PARENT_PROFILE_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC378_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC378_ORIGIN_UNIFORMITY = OPEN
+    TPC378_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC378_SPECTRAL_MAGNITUDE_UNIFORMITY = OPEN
+    TPC378_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC378_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC378_GROWING_OPERATOR_BOUND = OPEN
+    TPC378_SOURCE_UNIFORM_L2 = OPEN
+    TPC378_ARITHMETIC_ADVANCE = NO
+    TPC378_FIXED_POWER_CREDIT = 0
+    TPC378_FULL_GATE_B = OPEN
+    TPC378_TWIN_PRIME_RESULT = NONE
+    TPC378_STRONGEST_POSITIVE = FINITE_PROFILE_TRANSFERS_TO_THREE_FRESH_COORDINATE_DISJOINT_ORIGINS_AT_TWO_COUNTS
+    TPC378_STRONGEST_OBSTRUCTION = THRESHOLD_PROFILE_WITH_SCALE_SPECIFIC_NORMALIZATION_AND_MOVING_MAGNITUDES
+    TPC378_OPEN_THEOREM = PREDECLARED_C1_CROSSHOLDOUT_LAW_CONTROL_AND_SOURCE_VALID_UNIFORMITY
+    TPC378_REUSABLE_STRUCTURE = AFFINE_GRID_SELECTION_WITH_EXACT_INTERVAL_SEPARATION_AND_BAND_TAIL_AUDIT
+    TPC378_ROUND2_CLUE = TEST_C1_CROSSHOLDOUT_LAW_CONTROL
+    TPC378_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_SCALE_ORIGIN_CROSSHOLDOUT
+
+## 5.160 V230 / TPC-377：c=1 window-scale holdout (previous)
+
+TPC-377 是上一 release：承接 TPC-375 的 `c=1` band，在早先网格
 `a_j=1010001+401j` 中预声明并冻结 indices `(5,15,30)` 作为 response-blind
 grid-index holdout。count `2048`、八个 256-point blocks、beta `2`、all-plus law 与
 `Q=512,2048,8192` 形成完整 9-row panel；spectral failure profile 按 Q 为
@@ -10780,6 +10829,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-04 | V231 / TPC-378 | Bridge B / Gate B：c=1 scale-origin cross-holdout; source-valid normalization、origin/window uniformity、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-378` | 承接 TPC-377；新的 coordinate-disjoint affine grid 固定 indices `(0,20,40)`、origins `(1100001,1108021,1116041)`，endpoint counts `1024,2048`，完成 18-row beta=2/all-plus panel，两个 count 均为 `(0/3,3/3,3/3)`、spectral `12/18`、Schur `0/18`；下一步 `TEST_C1_CROSSHOLDOUT_LAW_CONTROL` |
 | 2026-09-04 | V230 / TPC-377 | Bridge B / Gate B：c=1 window-scale holdout; source-valid normalization、origin cross-holdout、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-377` | 承接 TPC-376；固定三个 response-blind origins 与 nested-prefix counts `1024,1536,2048`，完成 27-row beta=2/all-plus panel，三个 count 均为 `(0/3,3/3,3/3)`、spectral `18/27`、Schur `0/27`；下一步 `c=1` scale/origin cross-holdout |
 | 2026-09-04 | V229 / TPC-376 | Bridge B / Gate B：response-blind bandwidth holdout replication; source-valid normalization、window-scale stability、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-376` | 承接 TPC-375；固定 grid-index holdout `(5,15,30)`、count-2048 full-window normalization 与完整 9-row beta=2/all-plus panel，`c=1` spectral profile 为 `0/3,3/3,3/3`、Schur `0/9`；部分坐标窗口重叠，下一步 `c=1` window-scale/count holdout |
 | 2026-09-04 | V228 / TPC-375 | Bridge B / Gate B：bandwidth stability and minimal cutoff; source-valid normalization、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-375` | 承接 TPC-374；固定 count-2048 full-window normalization 与完整 9-row beta=2/all-plus panel，比较 `c=0,1,2,3`，spectral failure census 为 `0/9,6/9,6/9,6/9`，`c=1` 首次复现六个 parent high-Q keys；下一步 `c=1` 新 origin/window holdout |
