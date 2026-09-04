@@ -2,29 +2,79 @@
 
 更新时间：2026-09-04
 
-当前地图版本：V231 / TPC-378
+当前地图版本：V232 / TPC-379
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-378`（`NUMERICALLY_CERTIFIED_FINITE_C1_SCALE_ORIGIN_CROSSHOLDOUT`）；
-对应论文目录为 `papers/tpc-378-c1-scale-origin-crossholdout/`。
+当前编号锚点：`TPC-379`（`NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL`）；
+对应论文目录为 `papers/tpc-379-c1-crossholdout-law-control/`。
 
-TPC-378 是当前位置：承接 TPC-377 的 `c=1` band，在新的 coordinate-disjoint affine
-grid 上预声明 indices `(0,20,40)`，对应 origins `(1100001,1108021,1116041)`；
-endpoint counts 为 `(1024,2048)`，保持 block length `256`、beta `2`、all-plus law、
-exponent `1` 与 `Q=512,2048,8192`，完成 18-row panel。两个 count 的 spectral failure
-profile 均为 `(0,3,3)`，总计 `12/18`；Schur failures 为 `0/18`。selected full-mode
-band-Rayleigh retention 为 `0.93759972206138864--0.98046528117382914`。
+TPC-379 是当前位置：在新的 coordinate-disjoint affine grid 上预声明 indices
+`(0,20,40)`，对应 origins `(1200001,1208021,1216041)`；固定 `N=1024`、四个
+256-point blocks、`Q=512,2048,8192`、beta `2`、exponent `1`，并保持同一个
+`c=1` mask 与 common square-energy geometry。完整 36-row panel 比较 all-plus、
+alternating-index、mod-4-character 与 half-split 四个 laws。all-plus profile 为
+`(0,3,3)`（6/9），三个 signed controls 均为 `(0,0,0)`；总计 6/36 spectral
+failures、Schur failures 为 0/36。
 
-这是有限 response-blind coordinate-disjoint support transfer：谱幅度随 count/origin
-变化，且各 count separately normalized，因此不构成 origin/window uniformity、cross-block
-causality、growing operator theorem、source-uniform arithmetic `L2` 或 twin-prime result。
-producer、独立 reverse-shell replay、24-mutation stress、2-page PDF 与 local Bridge-B 已
-封存；official evaluator files 仍缺失，local bridge 只作 fail-closed evidence。
-`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关为
-`TEST_C1_CROSSHOLDOUT_LAW_CONTROL`。
+这是有限 response-blind law-control obstruction：all-plus high-Q signature 在三个
+signed controls 中全部消失，故不能把它提升为 law-invariant mask property，也不能
+选择 arithmetic law。law/origin/window uniformity、cross-block causality、source-valid
+normalization、growing operator theorem、source-uniform arithmetic `L2`、fixed-power
+credit 与 twin-prime endpoint 均未关闭。producer、独立 direct-sieve replay、
+25-mutation stress、2-page PDF 与 local Bridge-B 已封存；official evaluator files
+仍缺失，local bridge 只作 fail-closed evidence。`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关为
+`TEST_C1_LAW_CONTROL_COUNT_REPLAY`。
 
-## 5.161 V231 / TPC-378：c=1 scale–origin cross-holdout
+## 5.162 V232 / TPC-379：c=1 cross-holdout law control
+
+TPC-379 的 finite package 位于 `papers/tpc-379-c1-crossholdout-law-control/`。
+它把 TPC-378 的 all-plus support signature 与三个预声明 signed controls 放在同一
+common geometry 和同一 c=1 band 下比较。三 origins 与三 Q anchors 构成每个 law
+9 rows，总计 36 rows；所有选择在 response 或 metric 读取前完成。
+
+结果 profile 依 law 为 all-plus `(0,3,3)`、alternating-index `(0,0,0)`、
+mod-4-character `(0,0,0)`、half-split `(0,0,0)`。这是一个明确的 finite
+law-dependence obstruction：它否定本面板上的 law-invariant hypothesis，但不提供
+source-valid law selection 或任何 arithmetic advance。exact q=8 anchor、独立
+reverse-shell replay、25-mutation stress 与双模式 Bridge-B 均通过。
+
+最强正结果：common-geometry、common-mask、四 law 的完整 response-blind panel 可
+独立重放。最强 obstruction：all-plus 高-Q threshold 在全部 signed controls 中消失。
+开放定理是 source-valid growing law 的选择与控制；可复用结构是
+`affine grid -> exact interval separation -> common geometry/mask -> law panel ->
+independent replay -> mutation firewall`。下一 clue 为
+`TEST_C1_LAW_CONTROL_COUNT_REPLAY`。
+
+    YOU ARE HERE = V232 / TPC-379
+    TPC379_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC379_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC379_COMMON_GEOMETRY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
+    TPC379_LAW_FAMILY = PROVED_EXACT_FINITE_PREDECLARED
+    TPC379_LAW_CONTROL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_36_ROWS
+    TPC379_ALL_PLUS_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC379_SIGNED_CONTROL_SUBCAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC379_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC379_LAW_UNIFORMITY = OPEN
+    TPC379_ORIGIN_UNIFORMITY = OPEN
+    TPC379_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC379_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC379_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC379_GROWING_OPERATOR_BOUND = OPEN
+    TPC379_SOURCE_UNIFORM_L2 = OPEN
+    TPC379_ARITHMETIC_ADVANCE = NO
+    TPC379_FIXED_POWER_CREDIT = 0
+    TPC379_FULL_GATE_B = OPEN
+    TPC379_TWIN_PRIME_RESULT = NONE
+    TPC379_STRONGEST_POSITIVE = COMPLETE_COMMON_GEOMETRY_LAW_CONTROL_PANEL_ON_THREE_NEW_ORIGINS
+    TPC379_STRONGEST_OBSTRUCTION = ALL_PLUS_HIGH_Q_SIGNATURE_DISAPPEARS_UNDER_EVERY_DECLARED_SIGNED_CONTROL
+    TPC379_OPEN_THEOREM = SOURCE_VALID_LAW_SELECTION_AND_GROWING_LAW_UNIFORMITY
+    TPC379_REUSABLE_STRUCTURE = COMMON_GEOMETRY_COMMON_MASK_LAW_CONTROL_WITH_EXACT_ANCHOR_AND_REVERSE_SHELL_REPLAY
+    TPC379_ROUND2_CLUE = TEST_C1_LAW_CONTROL_COUNT_REPLAY
+    TPC379_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL
+
+## 5.161 V231 / TPC-378：c=1 scale–origin cross-holdout (previous)
 
 TPC-378 的完整 finite package 位于 `papers/tpc-378-c1-scale-origin-crossholdout/`。
 它把 TPC-377 的 `c=1` band 移到新的 affine grid
@@ -10829,6 +10879,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-04 | V232 / TPC-379 | Bridge B / Gate B：c=1 cross-holdout law control; source-valid normalization、law/origin/scale uniformity、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-379 | 承接 TPC-378；新 coordinate-disjoint origins (1200001,1208021,1216041)、count 1024、四个预声明 laws 与 common geometry/mask 完成 36-row panel；all-plus profile (0/3,3/3,3/3)，signed controls 均 (0/3,0/3,0/3)，spectral 6/36、Schur 0/36；下一步 TEST_C1_LAW_CONTROL_COUNT_REPLAY |
 | 2026-09-04 | V231 / TPC-378 | Bridge B / Gate B：c=1 scale-origin cross-holdout; source-valid normalization、origin/window uniformity、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-378` | 承接 TPC-377；新的 coordinate-disjoint affine grid 固定 indices `(0,20,40)`、origins `(1100001,1108021,1116041)`，endpoint counts `1024,2048`，完成 18-row beta=2/all-plus panel，两个 count 均为 `(0/3,3/3,3/3)`、spectral `12/18`、Schur `0/18`；下一步 `TEST_C1_CROSSHOLDOUT_LAW_CONTROL` |
 | 2026-09-04 | V230 / TPC-377 | Bridge B / Gate B：c=1 window-scale holdout; source-valid normalization、origin cross-holdout、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-377` | 承接 TPC-376；固定三个 response-blind origins 与 nested-prefix counts `1024,1536,2048`，完成 27-row beta=2/all-plus panel，三个 count 均为 `(0/3,3/3,3/3)`、spectral `18/27`、Schur `0/27`；下一步 `c=1` scale/origin cross-holdout |
 | 2026-09-04 | V229 / TPC-376 | Bridge B / Gate B：response-blind bandwidth holdout replication; source-valid normalization、window-scale stability、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-376` | 承接 TPC-375；固定 grid-index holdout `(5,15,30)`、count-2048 full-window normalization 与完整 9-row beta=2/all-plus panel，`c=1` spectral profile 为 `0/3,3/3,3/3`、Schur `0/9`；部分坐标窗口重叠，下一步 `c=1` window-scale/count holdout |

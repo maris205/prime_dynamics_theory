@@ -9,20 +9,24 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-378 将 TPC-377 的预声明 `c=1` band 推进到一个新的、与
-TPC-376/TPC-377 最大窗口坐标互斥的 affine-origin cross-holdout。固定 grid indices
-`(0,20,40)` 对应 origins `(1100001,1108021,1116041)`，endpoint counts 为
-`N={1024,2048}`，`Q={512,2048,8192}`，完成 18-row panel。两个 count 的
-spectral failure profile 均为 `(0,3,3)`，总计 12/18 spectral failures、Schur
-failures 为 0/18；selected-mode band-Rayleigh retention 为
-`0.93759972206138864--0.98046528117382914`。这是有限 response-blind
-coordinate-disjoint support transfer，谱幅度与 normalization 仍是 scale-specific，
-故不宣称 origin/window uniformity、growing operator theorem、arithmetic `L2` 或
-twin-prime result。当前项目为 `papers/tpc-378-c1-scale-origin-crossholdout/`，
-下一关是 `TEST_C1_CROSSHOLDOUT_LAW_CONTROL`；`ARITHMETIC_ADVANCE=NO`、
+当前主线最新位置：TPC-379 在新的 coordinate-disjoint affine-origin panel 上，将
+TPC-378 的 all-plus `c=1` signature 与三个预声明 signed controls 做同几何比较。固定
+origins `(1200001,1208021,1216041)`、`N=1024`、`Q={512,2048,8192}` 与四个 laws，
+完成 36-row panel。all-plus 的 spectral failure profile 为 `(0,3,3)`（6/9），而
+`alternating_index`、`mod4_character`、`half_split` 均为 `(0,0,0)`；总计 6/36
+spectral failures，Schur failures 为 0/36。这是有限、response-blind 的
+sign-law-dependence obstruction：不能把 inherited high-Q signature 解释为
+law-invariant operator property，更不能宣称 origin/law uniformity、growing theorem、
+arithmetic `L2` 或 twin-prime result。当前项目为
+`papers/tpc-379-c1-crossholdout-law-control/`，下一关是
+`TEST_C1_LAW_CONTROL_COUNT_REPLAY`；`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
 
-papers/tpc-378-c1-scale-origin-crossholdout - TPC-378 current project；含 18-row
+papers/tpc-379-c1-crossholdout-law-control - TPC-379 current project；含 36-row
+law-control certificate、独立 reverse-shell replay、25-mutation stress、2-page PDF
+与 local fail-closed Bridge-B checker。
+
+papers/tpc-378-c1-scale-origin-crossholdout - TPC-378 previous project；含 18-row
 cross-holdout certificate、独立 reverse-shell replay、24-mutation stress、2-page
 PDF 与 local fail-closed Bridge-B checker。
 

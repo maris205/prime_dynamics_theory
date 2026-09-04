@@ -1,58 +1,64 @@
 # TPC HANDOFF
 
-TPC-378 current section: c=1 scale–origin cross-holdout
---------------------------------------------------------
+TPC-379 current section: c=1 cross-holdout law control
+------------------------------------------------------
 
-TPC-378 is the current sealed release. It inherits TPC-377's `c=1` band and
-freezes, before reading any response, the affine candidate grid
-`a_j=1100001+401j`, `0<=j<41`, with indices `(0,20,40)`. The resulting origins
-`(1100001,1108021,1116041)` are coordinate-disjoint from the largest declared
-TPC-376/TPC-377 intervals. Endpoint counts are `N=1024,2048`; every count
-uses contiguous 256-point blocks, its own full-window square-energy
-normalization, beta=2, the all-plus law, kernel exponent 1, and Q anchors
-`Q=512,2048,8192`, giving a complete 18-row Cartesian panel.
+TPC-379 is the current sealed release. It freezes, before reading any
+response or metric, the affine grid `a_j=1200001+401j`, `0<=j<41`, and
+indices `(0,20,40)`, giving the coordinate-disjoint origins
+`(1200001,1208021,1216041)`. The fixed window has `N=1024`, four contiguous
+256-point blocks, the inherited `c=1` band, beta=2, exponent 1, height 66,
+and Q anchors `Q=512,2048,8192`. Four predeclared laws
+`all_plus`, `alternating_index`, `mod4_character`, and `half_split` share one
+square-energy geometry, giving a complete 36-row Cartesian panel.
 
-Both count levels have the c=1 spectral failure profile `0/3,3/3,3/3`, for
-12/18 spectral failures in total; Schur failures are 0/18. Selected full-mode
-absolute-Rayleigh retention is
-`0.93759972206138864--0.98046528117382914`. The exact anchor, producer,
-independent reverse-shell replay, 24-mutation stress test, 2-page PDF, and
-local Bridge-B are sealed in the package.
+The all-plus profile is `0/3,3/3,3/3`, while each signed control has
+`0/3,0/3,0/3`. Thus there are 6/36 spectral-cap failures and 0/36 Schur-cap
+failures. The exact anchor, producer, independent direct-sieve reverse-shell
+replay, 25-mutation stress test, 2-page PDF, and local Bridge-B are sealed.
 
-This is finite response-blind coordinate-disjoint support transfer only.
-Spectral magnitudes vary with origin/count and normalization is count-specific,
-so this does not establish origin or window-scale uniformity, cross-block
-causality, a growing operator bound, source-uniform arithmetic `L2`, an
-arithmetic power saving, Route-B reassembly, or a twin-prime result. Official
-Route-A/Route-B evaluator files remain absent; local Bridge-B is fail-closed
-repository evidence. `ARITHMETIC_ADVANCE=NO`, `FIXED_POWER_CREDIT=0`, and
-`FULL_GATE_B=OPEN`; the next finite question is
-`TEST_C1_CROSSHOLDOUT_LAW_CONTROL`.
+This is a finite response-blind law-control obstruction: the inherited
+high-Q all-plus signature disappears under every declared signed control, so
+it is not law-invariant on this panel. The controls are diagnostic laws, not
+source-valid arithmetic objects. Law/origin/scale uniformity, normalization
+source validity, cross-block causality, a growing operator bound, source-uniform
+arithmetic `L2`, arithmetic power saving, Route-B reassembly, and a twin-prime
+result remain unproved. Official Route-A/Route-B evaluator files remain
+absent; local Bridge-B is fail-closed repository evidence.
+`ARITHMETIC_ADVANCE=NO`, `FIXED_POWER_CREDIT=0`, and `FULL_GATE_B=OPEN`; the
+next finite question is `TEST_C1_LAW_CONTROL_COUNT_REPLAY`.
 
-    TPC378_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
-    TPC378_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
-    TPC378_COMMON_BAND_RULE = PROVED_EXACT_FINITE_INHERITED
-    TPC378_SCALE_ORIGIN_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
-    TPC378_C1_PROFILE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC378_PARENT_PROFILE_REPLICATION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC378_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC378_ORIGIN_UNIFORMITY = OPEN
-    TPC378_WINDOW_SCALE_UNIFORMITY = OPEN
-    TPC378_SPECTRAL_MAGNITUDE_UNIFORMITY = OPEN
-    TPC378_CROSS_BLOCK_CAUSALITY = OPEN
-    TPC378_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
-    TPC378_GROWING_OPERATOR_BOUND = OPEN
-    TPC378_SOURCE_UNIFORM_L2 = OPEN
-    TPC378_ARITHMETIC_ADVANCE = NO
-    TPC378_FIXED_POWER_CREDIT = 0
-    TPC378_FULL_GATE_B = OPEN
-    TPC378_TWIN_PRIME_RESULT = NONE
-    TPC378_STRONGEST_POSITIVE = FINITE_PROFILE_TRANSFERS_TO_THREE_FRESH_COORDINATE_DISJOINT_ORIGINS_AT_TWO_COUNTS
-    TPC378_STRONGEST_OBSTRUCTION = THRESHOLD_PROFILE_WITH_SCALE_SPECIFIC_NORMALIZATION_AND_MOVING_MAGNITUDES
-    TPC378_OPEN_THEOREM = PREDECLARED_C1_CROSSHOLDOUT_LAW_CONTROL_AND_SOURCE_VALID_UNIFORMITY
-    TPC378_REUSABLE_STRUCTURE = AFFINE_GRID_SELECTION_WITH_EXACT_INTERVAL_SEPARATION_AND_BAND_TAIL_AUDIT
-    TPC378_ROUND2_CLUE = TEST_C1_CROSSHOLDOUT_LAW_CONTROL
-    TPC378_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_SCALE_ORIGIN_CROSSHOLDOUT
+    TPC379_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC379_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC379_COMMON_GEOMETRY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
+    TPC379_LAW_FAMILY = PROVED_EXACT_FINITE_PREDECLARED
+    TPC379_LAW_CONTROL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_36_ROWS
+    TPC379_ALL_PLUS_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC379_SIGNED_CONTROL_SUBCAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC379_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC379_LAW_UNIFORMITY = OPEN
+    TPC379_ORIGIN_UNIFORMITY = OPEN
+    TPC379_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC379_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC379_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC379_GROWING_OPERATOR_BOUND = OPEN
+    TPC379_SOURCE_UNIFORM_L2 = OPEN
+    TPC379_ARITHMETIC_ADVANCE = NO
+    TPC379_FIXED_POWER_CREDIT = 0
+    TPC379_FULL_GATE_B = OPEN
+    TPC379_TWIN_PRIME_RESULT = NONE
+    TPC379_STRONGEST_POSITIVE = COMPLETE_COMMON_GEOMETRY_LAW_CONTROL_PANEL_ON_THREE_NEW_ORIGINS
+    TPC379_STRONGEST_OBSTRUCTION = ALL_PLUS_HIGH_Q_SIGNATURE_DISAPPEARS_UNDER_EVERY_DECLARED_SIGNED_CONTROL
+    TPC379_OPEN_THEOREM = SOURCE_VALID_LAW_SELECTION_AND_GROWING_LAW_UNIFORMITY
+    TPC379_REUSABLE_STRUCTURE = COMMON_GEOMETRY_COMMON_MASK_LAW_CONTROL_WITH_EXACT_ANCHOR_AND_REVERSE_SHELL_REPLAY
+    TPC379_ROUND2_CLUE = TEST_C1_LAW_CONTROL_COUNT_REPLAY
+    TPC379_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL
+
+TPC-378 previous section: c=1 scale–origin cross-holdout
+----------------------------------------------------------
+
+TPC-378 remains a sealed finite coordinate-disjoint support-transfer release.
+Its detailed section is retained below; it is no longer the current anchor.
 
 TPC-377 previous section: c=1 window-scale holdout
 ----------------------------------------------------
@@ -748,6 +754,19 @@ TPC-378 reproducibility commands:
     python -O -B papers/tpc-378-c1-scale-origin-crossholdout/experiments/tpc378_adversarial_certificate_stress.py --check
     python -B research/tpc-big-road/tpc_bridge_b_tpc378_c1_scale_origin_crossholdout_checker.py --check
     python -O -B research/tpc-big-road/tpc_bridge_b_tpc378_c1_scale_origin_crossholdout_checker.py --check
+
+TPC-379 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-379-c1-crossholdout-law-control/code/tpc379_c1_crossholdout_law_control.py --check
+    python -O -B papers/tpc-379-c1-crossholdout-law-control/code/tpc379_c1_crossholdout_law_control.py --check
+    python -B papers/tpc-379-c1-crossholdout-law-control/experiments/tpc379_independent_checker.py --check
+    python -O -B papers/tpc-379-c1-crossholdout-law-control/experiments/tpc379_independent_checker.py --check
+    python -B papers/tpc-379-c1-crossholdout-law-control/experiments/tpc379_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-379-c1-crossholdout-law-control/experiments/tpc379_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc379_c1_crossholdout_law_control_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc379_c1_crossholdout_law_control_checker.py --check
 
 
 TPC-374 tail audit is required to return zero with empty stderr and
@@ -13776,6 +13795,12 @@ TPC-207 数学 trigger：`true`；TPC-207 已创建：`true`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
+`papers/tpc-379-c1-crossholdout-law-control/README.md`、
+`papers/tpc-379-c1-crossholdout-law-control/PROOF_PACKAGE.md`、
+`papers/tpc-379-c1-crossholdout-law-control/notes/theorem_ledger.md`、
+`papers/tpc-379-c1-crossholdout-law-control/notes/route_evaluation.md`、
+`research/tpc-big-road/bridge_b_tpc379_c1_crossholdout_law_control.md`、
+`research/tpc-big-road/tpc_bridge_b_tpc379_c1_crossholdout_law_control_checker.py`、
 `papers/tpc-370-count-2048-window-audit/README.md`、
 `papers/tpc-370-count-2048-window-audit/notes/theorem_ledger.md`、
 `papers/tpc-370-count-2048-window-audit/notes/route_evaluation.md`、
@@ -13970,7 +13995,10 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V231/TPC-378 是当前 release；其 c=1 scale-origin-crossholdout producer、
+V232/TPC-379 是当前 release；其 c=1 law-control producer、
+independent direct-sieve reverse-shell replay、25-mutation certificate stress audit 与
+literal masked-operator Bridge-B 已封存。V231/TPC-378 是上一 release；其 c=1
+scale-origin-crossholdout producer、
 independent reverse-shell replay、certificate stress audit 与 literal masked-operator
 Bridge-B 已封存。V230/TPC-377 是上一 release；其 c=1 window-scale-holdout producer、
 independent reverse-shell replay、certificate stress audit 与 literal masked-operator
@@ -14013,7 +14041,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 521 对 normal/optimized 命令、1042 次
+当前 curated cascade command set 共 525 对 normal/optimized 命令、1050 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -14032,9 +14060,15 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369、TPC-370、TPC-371、TPC-372、TPC-373、TPC-374、TPC-375、TPC-376、TPC-377、TPC-378 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369、TPC-370、TPC-371、TPC-372、TPC-373、TPC-374、TPC-375、TPC-376、TPC-377、TPC-378、TPC-379 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
+
+本轮 TPC-379 发布前选定的最新 tail cascade 共 48 对
+normal/optimized 命令、96 次 invocation：47 个既有基线 Bridge-B checker
+与 TPC-379 新 checker 均返回零、保持空 stderr，且每对 stdout
+byte-identical。该 48 对 tail audit 是本轮实际执行的增量回归；上面的
+525 对是按历史 release 累计的 curated command-set 计数。
 
 V184/TPC-331 的新增 4 对由本项目 bridge 与 standalone tail checks 逐项验证；其
 finite decomposition 不代表 source-uniform arithmetic `L2` 或 official Route-A/Route-B

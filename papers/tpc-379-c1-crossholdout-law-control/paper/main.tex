@@ -1,0 +1,173 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=0.70in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\begin{document}
+\small
+\begin{center}
+{\Large\bf A Finite Law-Control Obstruction for the $c=1$ Prime-Shell Band}\\[5pt]
+Liang Wang\\
+School of Mathematics and Statistics, Huazhong University of Science and
+Technology (HUST), Wuhan, China\\
+September 4, 2026
+\end{center}
+
+\begin{abstract}
+TPC-378 transferred a finite $c=1$ band-support profile to three fresh
+coordinate-disjoint origins. This paper tests whether the profile is a
+property of the common mask and square-energy geometry, or of the all-plus
+prime-shell law. We compare four predeclared laws on a new affine-grid
+panel. The complete panel has 36 rows with $N=1024$ and
+$Q=512,2048,8192$. The all-plus law has profile $(0,3,3)$, while every
+signed control has profile $(0,0,0)$; there are 6 spectral-cap failures and
+no Schur-cap failures. This is a finite sign-law-dependence obstruction,
+not an arithmetic or twin-prime theorem.
+\end{abstract}
+
+\section{Question and claim boundary}
+
+The preceding finite experiments used the all-plus shell sum
+\[
+ A(u,t)=\sum_{Q<p\leq 2Q}K_p(u,t).
+\]
+Its normalized near-block band exceeded the working spectral cap at the two
+larger $Q$ anchors. The present experiment holds the geometry, band, origins,
+count, and $Q$ ladder fixed while changing only a predeclared sign law.
+
+All conclusions concern one explicit finite panel. A signed control is a
+diagnostic sign sequence, not a character sum known to represent the
+twin-prime source. The terms \texttt{OPEN}, \texttt{MODELING\_CHOICE\_OPEN},
+and \texttt{NO} in the project firewall are part of the result.
+
+\section{Finite operator and four laws}
+
+For $I=[a,a+N-1]\cap\mathbb Z$, $p\in(Q,2Q]$, and $u,t\in I$, put
+\[
+ K_p(u,t)=p\left(\frac pQ\right)^2
+ \frac{66^2}{66^2+(u-t)^2}
+ \left({\bf1}_{p\mid(u-t)}-\frac1{p-1}\right)
+ \mathbf{1}_{u\ne t}\mathbf{1}_{p\nmid u}\mathbf{1}_{p\nmid t}.
+\]
+For a law $\ell$ with signs $s_p(\ell)\in\{\!-1,1\}$, define
+\[
+ A_\ell(u,t)=\sum_{Q<p\leq2Q}s_p(\ell)K_p(u,t),\qquad
+ G(u)=\sum_{t\in I}\sum_{Q<p\leq2Q}K_p(u,t)^2,
+\]
+\[
+ T_\ell(u,t)=\frac{A_\ell(u,t)}{\sqrt{G(u)G(t)}}.
+\]
+The geometry $G$ is common to all four laws. The signs are fixed in the
+ordered prime shell as follows:
+\[
+\begin{array}{c|l}
+\ell&s_p(\ell)\\ \hline
+\text{all\_plus}&1\\
+\text{alternating\_index}&(-1)^{\operatorname{index}(p)}\\
+\text{mod4\_character}&1\text{ if }p\equiv1\pmod4,\ -1\text{ otherwise}\\
+\text{half\_split}&1\text{ on the first shell half, }-1\text{ on the second}
+\end{array}
+\]
+For $b(u)=\lfloor(u-a)/256\rfloor$, use the common band and tail
+\[
+ B_\ell(u,t)=T_\ell(u,t)\mathbf{1}_{|b(u)-b(t)|\leq1},\qquad
+ R_\ell=T_\ell-B_\ell.
+\]
+For any unit eigenvector $v$ of $T_\ell$ with eigenvalue $\lambda$,
+\[
+ v^{\mathsf T}B_\ell v+v^{\mathsf T}R_\ell v=\lambda
+\]
+is an exact finite identity.
+
+\section{Predeclared protocol}
+
+Before any metric is read, fix
+\[
+ a_j=1200001+401j,\quad 0\leq j<41,
+\]
+and select indices $(0,20,40)$, giving origins
+$(1200001,1208021,1216041)$. Use $N=1024$, four contiguous blocks of
+length 256, exponent one, beta $2$, height $66$, and band cutoff one.
+The complete $3\times3\times4=36$ Cartesian panel uses
+$Q=512,2048,8192$, with spectral and Schur caps $0.64$ and $0.83$.
+No origin, law, row, or failure census is selected from a response.
+
+The current intervals are disjoint from the largest declared intervals in
+TPC-376--378 by exact endpoint inequalities. The exact anchor
+$[1200001,1200014)$ at $Q=8$ has shell $\{11,13\}$; rational arithmetic
+checks positive common geometry and symmetry for every law. Its geometry
+digest is
+\texttt{4436feb8f2abf5450599e5d9185c28e245f07c9829000812e8ab0eb18726eb86}.
+
+\section{Results}
+
+Table~\ref{tab:law} reports band spectral-cap failures among the three
+origins at each $Q$.
+
+\begin{table}[ht]
+\centering
+\caption{Finite law-control panel.}
+\label{tab:law}
+\scriptsize
+\begin{tabular}{l c c c r r}
+\toprule
+law & $Q=512$ & $Q=2048$ & $Q=8192$ & max spectral & max Schur\\
+\midrule
+all\_plus & $0/3$ & $3/3$ & $3/3$ & 0.653347588 & 0.679884719\\
+alternating\_index & $0/3$ & $0/3$ & $0/3$ & 0.009408454 & 0.027602425\\
+mod4\_character & $0/3$ & $0/3$ & $0/3$ & 0.011835976 & 0.026614970\\
+half\_split & $0/3$ & $0/3$ & $0/3$ & 0.211734949 & 0.222094649\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Thus the all-plus profile is $(0,3,3)$ and each signed control has profile
+$(0,0,0)$. The total spectral census is $6/36$ and the Schur census is
+$0/36$. The largest band spectral values in the displayed law order are
+0.65334758792533143, 0.0094084540584888146, 0.011835976723613296, and
+0.2117349490215118. The selected full-mode band-Rayleigh absolute retention
+over all rows ranges from 0.0045649378279021191 to 0.98047576299453554;
+the maximum absolute tail fraction is 0.99543506217209821.
+
+\section{Audits and interpretation}
+
+The producer writes a canonical JSON certificate and locks the TPC-378
+source and certificate. An independent checker uses a direct sieve through
+20000, reverse-shell accumulation, independent sign patterns, common
+geometry, and independent full and band eigensystems without importing the
+TPC-379 producer. Normal and optimized runs are byte-identical. A
+25-mutation stress suite changes protocol, law, row, census, and firewall
+fields; every mutation is rejected. Local Bridge-B repeats these checks and
+locks the stable project artifacts and diagnostic-free compile log.
+
+The strongest positive result is a complete finite, response-blind,
+coordinate-disjoint comparison on one common geometry. The strongest
+obstruction is that the all-plus high-$Q$ signature disappears under all
+three signed controls. It therefore cannot be promoted as a law-invariant
+property of the finite mask; this is not a theorem choosing a law.
+
+\section{Route status and conclusion}
+
+The official Session-named Route-A and Route-B evaluator files are absent
+from this checkout. The project route note and local Bridge-B are fail-closed
+repository evidence rather than an official evaluator verdict. The exact
+finite protocol, coordinate separation, common geometry, sign definitions,
+and band/tail identity are proved finite statements. The replay and census
+are numerically certified finite statements.
+
+Source-validity of the normalization, law/origin/scale uniformity,
+cross-block causality, a growing operator bound, source-uniform $L^2$, and
+signed prime-shell reassembly remain open. The certificate records
+\[
+ \texttt{ARITHMETIC\_ADVANCE=NO},\qquad
+ \texttt{FIXED\_POWER\_CREDIT=0},\qquad
+ \texttt{FULL\_GATE\_B=OPEN},
+\]
+with no twin-prime conclusion. The next minimal finite test is
+\texttt{TEST\_C1\_LAW\_CONTROL\_COUNT\_REPLAY}: repeat the frozen law family
+at count 2048 on a new response-blind origin panel.
+
+\end{document}

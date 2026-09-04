@@ -3,13 +3,80 @@
 
 更新时间：2026-09-04
 
-状态：**TPC378_NUMERICALLY_CERTIFIED_FINITE_C1_SCALE_ORIGIN_CROSSHOLDOUT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC379_NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.172 current：TPC-378 c=1 scale–origin cross-holdout
+## 0.173 current：TPC-379 c=1 cross-holdout law control
+
+项目：papers/tpc-379-c1-crossholdout-law-control/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL**。
+
+TPC-379 承接 TPC-378 的 all-plus `c=1` profile，冻结新的 affine grid
+`a_j=1200001+401j`、`0<=j<41`，并在任何 response、signed metric 或 geometry
+score 读取前选择 indices `(0,20,40)`，得到 origins
+`(1200001,1208021,1216041)`。固定 `N=1024`、四个 256-point blocks、
+beta `2`、kernel exponent `1`、height `66`、`Q=(512,2048,8192)` 与同一个
+common square-energy geometry；在完整 36-row Cartesian panel 上比较四个预声明 laws：
+`all_plus`、`alternating_index`、`mod4_character`、`half_split`。
+
+最强正结果：all-plus 的 band spectral failure profile 为 `(0,3,3)`，即 6/9；
+三个 signed controls 的 profile 均为 `(0,0,0)`；全 panel 为 6/36 spectral failures
+与 0/36 Schur failures。exact q=8 anchor、producer、独立 direct-sieve
+reverse-shell replay、25-mutation stress 与 local Bridge-B 均通过。
+
+最强 obstruction：TPC-378 继承的 high-Q all-plus signature 在三个预声明 signed
+controls 中全部消失，因此该 signature 不能在此 finite model 中被提升为
+law-invariant mask property。signed controls 只是诊断 laws，并未被证明是 arithmetic
+source；law selection、origin/scale uniformity、source-valid normalization、growing
+operator bound、source-uniform arithmetic `L2` 与 Route-B reassembly 均仍 open。
+official evaluator files 仍缺失，local Bridge-B 只是 fail-closed repository evidence；
+arithmetic advance 为 NO，fixed-power credit 为 0，twin-prime endpoint 为 NONE。
+
+开放定理：在 source-valid normalization 下，能否从 twin-prime source 自然推出一个
+被选择且在 growing windows 上受控的 prime-shell law，并把它与这些 finite diagnostic
+controls 区分开。
+
+可复用结构：
+
+    response-blind affine grid
+      -> exact interval separation
+      -> common geometry and common c=1 mask
+      -> complete four-law Cartesian panel
+      -> exact anchor + reverse-shell replay
+      -> semantic mutation firewall
+      -> count-replay clue
+
+ROUND2_CLUE：`TEST_C1_LAW_CONTROL_COUNT_REPLAY`。
+
+```text
+TPC379_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC379_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC379_COMMON_GEOMETRY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
+TPC379_LAW_FAMILY = PROVED_EXACT_FINITE_PREDECLARED
+TPC379_LAW_CONTROL_REPLAY = NUMERICALLY_CERTIFIED_FINITE_36_ROWS
+TPC379_ALL_PLUS_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC379_SIGNED_CONTROL_SUBCAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC379_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC379_LAW_UNIFORMITY = OPEN
+TPC379_ORIGIN_UNIFORMITY = OPEN
+TPC379_WINDOW_SCALE_UNIFORMITY = OPEN
+TPC379_CROSS_BLOCK_CAUSALITY = OPEN
+TPC379_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC379_GROWING_OPERATOR_BOUND = OPEN
+TPC379_SOURCE_UNIFORM_L2 = OPEN
+TPC379_ARITHMETIC_ADVANCE = NO
+TPC379_FIXED_POWER_CREDIT = 0
+TPC379_FULL_GATE_B = OPEN
+TPC379_TWIN_PRIME_RESULT = NONE
+TPC379_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL
+TPC379_ROUND2_CLUE = TEST_C1_LAW_CONTROL_COUNT_REPLAY
+```
+
+## 0.172 previous：TPC-378 c=1 scale–origin cross-holdout
 
 项目：papers/tpc-378-c1-scale-origin-crossholdout/
 
