@@ -2,12 +2,26 @@
 
 更新时间：2026-09-05
 
-当前地图版本：V244 / TPC-391
+当前地图版本：V245 / TPC-392
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-391`（`NUMERICALLY_CERTIFIED_FINITE_C1_RECURSIVE_HORIZON_LOCALIZATION_AUDIT`）；
-对应论文目录为 `papers/tpc-391-c1-recursive-horizon-localization/`。
+当前编号锚点：`TPC-392`（`NUMERICALLY_CERTIFIED_FINITE_C1_NORMALIZATION_PHASE_DIAGRAM_AUDIT`）；
+对应论文目录为 `papers/tpc-392-c1-normalization-phase-diagram/`。
+
+TPC-392 是当前位置：承接 TPC-391 的 normalization phase clue，在新的
+coordinate-disjoint origin family `(3800001,3804011,3808021,3812031,3816041)`
+上预声明 `N=1024,1280` calibration 与 `N=1536` terminal holdout，固定
+`fixed_c3` band、两组 Q、四个 laws，并比较四种 normalization。256-row、
+32-cell panel 中，local-diagonal forecast 为 `7/8`，pooled/origin/frozen
+三种 scalar 均为 `8/8`；唯一失败是 alternating-index、`Q=8192` 的
+local-diagonal cell，误差 `0.034106850682897649`。terminal mean ordering 为
+frozen > origin > pooled > local；spectral failures `64/256`，Schur failures
+`0/256`，stable holdout `24/32`。这是 finite scoped normalization-phase
+evidence，不建立 source-valid normalization、origin/count uniformity、growing
+operator、arithmetic `L2` 或 twin-prime endpoint；`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。下一关为
+`TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT`。
 
 TPC-391 是当前位置：在第五个 fresh coordinate-disjoint origin family
 `(3400001,3404011,3408021,3412031,3416041)` 上冻结 TPC-390 的 32 个
@@ -52,6 +66,40 @@ replay、25-mutation stress、2-page PDF 与 local Bridge-B 已封存；official
 files 仍缺失，local bridge 只作 fail-closed evidence。`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关为
 `TEST_C1_CROSS_FAMILY_SLOPE_STRESS`。
+
+## 5.175 V245 / TPC-392：c=1 normalization phase diagram
+
+TPC-392 的 finite package 位于
+`papers/tpc-392-c1-normalization-phase-diagram/`。它在第六个
+coordinate-disjoint affine grid `a_j=3800001+401j` 上预先冻结 indices
+`(0,10,20,30,40)`，前三个 origins 在 `N=1024,1280` 作 calibration，后两个
+只在 `N=1536` 作 holdout。固定 `fixed_c3` band、`Q=2048,8192`、四个 laws，
+比较 `local_diagonal`、`pooled_train_scalar`、`origin_scalar` 与
+`frozen_train_1024_scalar`，形成 256 rows、32 cells。
+
+    YOU ARE HERE = V245 / TPC-392
+    TPC392_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC392_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC392_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC392_NORMALIZATION_PANEL = NUMERICALLY_CERTIFIED FINITE_256_ROWS
+    TPC392_SCALAR_DEFINITIONS = PROVED_EXACT_FINITE_DECLARED
+    TPC392_PHASE_COMPARISON = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC392_CALIBRATION_FORECAST = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC392_ORIGIN_UNIFORMITY = OPEN
+    TPC392_COUNT_UNIFORMITY = OPEN
+    TPC392_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC392_GROWING_OPERATOR_BOUND = OPEN
+    TPC392_SOURCE_UNIFORM_L2 = OPEN
+    TPC392_ARITHMETIC_ADVANCE = NO
+    TPC392_FIXED_POWER_CREDIT = 0
+    TPC392_FULL_GATE_B = OPEN
+    TPC392_TWIN_PRIME_RESULT = NONE
+    TPC392_STRONGEST_POSITIVE = THREE_SCALAR_NORMALIZATIONS_8_OF_8
+    TPC392_STRONGEST_OBSTRUCTION = LOCAL_DIAGONAL_HIGH_Q_ALTERNATING_1_OF_8_FAIL
+    TPC392_OPEN_THEOREM = SOURCE_VALID_NORMALIZATION_AND_ORIGIN_UNIFORMITY
+    TPC392_REUSABLE_STRUCTURE = RESPONSE_BLIND_NORMALIZATION_PHASE_PANEL
+    TPC392_ROUND2_CLUE = TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT
+    TPC392_STATUS = NUMERICALLY CERTIFIED FINITE C1 NORMALIZATION PHASE DIAGRAM AUDIT
 
 ## 5.174 V244 / TPC-391：c=1 recursive horizon localization
 
@@ -11402,6 +11450,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-05 | V245 / TPC-392 | Bridge B / Gate B：c=1 normalization phase diagram; source-valid normalization、origin/count uniformity、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-392 | 承接 TPC-391；第六个 fresh family `(3800001,3804011,3808021,3812031,3816041)`，`N=1024,1280` calibration 到 `N=1536` holdout，四种 normalization 的 forecast pass `7/8,8/8,8/8,8/8`，唯一 local-diagonal high-Q alternating failure，最大误差 `0.0341068507`，spectral failures `64/256`；下一步 TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT |
 | 2026-09-05 | V244 / TPC-391 | Bridge B / Gate B：c=1 recursive horizon localization; origin/count uniformity、source-valid normalization、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-391 | 承接 TPC-390；第五个 fresh family `(3400001,3404011,3408021,3412031,3416041)`，`N=1024,1152,1280,1408` calibration 到 `N=1536` holdout，parent forecasts `32/32,32/32,32/32,23/32`，local controls 四层 `32/32`，9 个 terminal first crossings，最大误差 `0.0097231600/0.0197998607/0.0291714614/0.0517335284`，composition residual `4.44e-16`，spectral failures `112/448`；下一步 TEST_C1_NORMALIZATION_PHASE_DIAGRAM |
 | 2026-09-05 | V243 / TPC-390 | Bridge B / Gate B：c=1 recursive slope composition obstruction audit; origin/count uniformity、source-valid normalization、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-390 | 承接 TPC-389；第四个 fresh family `(3000001,3004011,3008021,3012031,3016041)`，`N=1024,1280` calibration 到 `N=1536` holdout，one-step/local/recursive forecasts `30/32,32/32,23/32`，最大误差 `0.0363375462/0.0258044386/0.0490741652`，composition residual `3.33e-16`，stability `28/32,25/32,26/32`，spectral failures `64/256`；下一步 LOCALIZE_C1_RECURSIVE_HORIZON_OBSTRUCTION |
 | 2026-09-05 | V242 / TPC-389 | Bridge B / Gate B：c=1 long-horizon frozen-slope stress; origin/count uniformity、source-valid normalization、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-389 | 承接 TPC-388；第三个 fresh family `(2800001,2804011,2808021,2812031,2816041)`，`N=768,1024` calibration 到 `N=1280` holdout，anchored/local/recursive forecasts 均 `32/32` 在 3% 内，最大误差 `0.0176155841/0.0119975160/0.0299499406`，stability `24/32,27/32,24/32`，spectral failures `64/256`；下一步 TEST_C1_RECURSIVE_SLOPE_COMPOSITION |

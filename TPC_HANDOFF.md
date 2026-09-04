@@ -1,9 +1,77 @@
 # TPC HANDOFF
 
-TPC-391 current section: c=1 recursive horizon localization
+TPC-392 current section: c=1 normalization phase diagram
+----------------------------------------------------------
+
+TPC-392 is the current finite release.  It follows TPC-391's normalization
+phase clue on a fresh coordinate-disjoint affine grid `a_j=3800001+401j`.
+Indices `(0,10,20,30,40)` are fixed before readout.  Origins
+`(3800001,3804011,3808021)` are calibration at `N=1024,1280`, while
+`(3812031,3816041)` are terminal holdouts at `N=1536`.  The panel fixes the
+`fixed_c3` band, `Q=2048,8192`, beta=2, exponent 1, height 66, four laws, and
+four predeclared normalizations: local diagonal, pooled train scalar, origin
+scalar, and frozen train-1024 scalar.
+
+The complete panel has 256 rows and 32 cells.  Forecast passes for local,
+pooled, origin, and frozen normalization are `7/8,8/8,8/8,8/8`; the only
+failure is the alternating-index, `Q=8192` local-diagonal cell, with error
+`0.034106850682897649`.  Maximum errors are
+`0.034106850682897649`, `0.0275714873542654`,
+`0.028962999969161629`, and `0.02757148735426429`.  Terminal means order as
+frozen > origin > pooled > local.  Stability counts are `25/32,28/32,24/32`
+at `N=1024,1280,1536`; spectral failures are `64/256`, Schur failures
+`0/256`.
+
+This is finite normalization-phase evidence, not a source-valid, growing,
+origin/count-uniform, arithmetic `L2`, Route-B, or twin-prime theorem.
+Official Route-A/Route-B evaluator files remain absent; local Bridge-B is
+fail-closed repository evidence.  The exact anchor is `[3800001,3800014)`
+with shell `[11,13]`.
+
+    TPC392_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC392_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC392_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC392_NORMALIZATION_PANEL = NUMERICALLY CERTIFIED FINITE_256_ROWS
+    TPC392_SCALAR_DEFINITIONS = PROVED_EXACT_FINITE_DECLARED
+    TPC392_PHASE_COMPARISON = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC392_CALIBRATION_FORECAST = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC392_ORIGIN_UNIFORMITY = OPEN
+    TPC392_COUNT_UNIFORMITY = OPEN
+    TPC392_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC392_GROWING_OPERATOR_BOUND = OPEN
+    TPC392_SOURCE_UNIFORM_L2 = OPEN
+    TPC392_ARITHMETIC_ADVANCE = NO
+    TPC392_FIXED_POWER_CREDIT = 0
+    TPC392_FULL_GATE_B = OPEN
+    TPC392_TWIN_PRIME_RESULT = NONE
+    TPC392_STRONGEST_POSITIVE = THREE_SCALAR_NORMALIZATIONS_8_OF_8
+    TPC392_STRONGEST_OBSTRUCTION = LOCAL_DIAGONAL_HIGH_Q_ALTERNATING_1_OF_8_FAIL
+    TPC392_OPEN_THEOREM = SOURCE_VALID_NORMALIZATION_AND_ORIGIN_UNIFORMITY
+    TPC392_REUSABLE_STRUCTURE = RESPONSE_BLIND_NORMALIZATION_PHASE_PANEL
+    TPC392_ROUND2_CLUE = TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT
+    TPC392_STATUS = NUMERICALLY CERTIFIED FINITE C1 NORMALIZATION PHASE DIAGRAM AUDIT
+
+TPC-392 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-392-c1-normalization-phase-diagram/code/tpc392_c1_normalization_phase_diagram.py --check
+    python -O -B papers/tpc-392-c1-normalization-phase-diagram/code/tpc392_c1_normalization_phase_diagram.py --check
+    python -B papers/tpc-392-c1-normalization-phase-diagram/experiments/tpc392_independent_checker.py --check
+    python -O -B papers/tpc-392-c1-normalization-phase-diagram/experiments/tpc392_independent_checker.py --check
+    python -B papers/tpc-392-c1-normalization-phase-diagram/experiments/tpc392_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-392-c1-normalization-phase-diagram/experiments/tpc392_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc392_c1_normalization_phase_diagram_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc392_c1_normalization_phase_diagram_checker.py --check
+
+The next finite question is `TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT`.  Any
+interpretation remains finite until a genuine source-valid growing argument
+is supplied.
+
+TPC-391 previous section: c=1 recursive horizon localization
 --------------------------------------------------------------
 
-TPC-391 is the current finite release. It locks the TPC-390 certificate's
+TPC-391 is the previous finite release. It locks the TPC-390 certificate's
 32 horizon slopes before reading a fifth coordinate-disjoint origin family.
 On the affine grid `a_j=3400001+401j`, indices `(0,10,20,30,40)` are
 frozen first. Origins `(3400001,3404011,3408021)` are calibration at
@@ -14812,7 +14880,16 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V244/TPC-391 是当前 release；其 c=1 recursive-horizon-localization producer、
+V245/TPC-392 是当前 release；其 c=1 normalization-phase-diagram producer、
+independent reverse-shell replay、25-mutation certificate stress audit 与
+literal masked-operator Bridge-B 已封存。TPC-392 的 256-row、32-cell panel
+比较四种预声明 normalization；local-diagonal forecast 为 `7/8`，三种 scalar
+normalization 均为 `8/8`，唯一失败是 alternating-index、`Q=8192` 的
+local-diagonal cell，误差 `0.034106850682897649`；spectral failures 为
+`64/256`，Schur failures 为 `0/256`，stable holdout 为 `24/32`。该 finite
+结果不支付 arithmetic `L2`、fixed-power credit 或 official Route-A/Route-B
+gate，下一关为 `TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT`。
+V244/TPC-391 是上一 release；其 c=1 recursive-horizon-localization producer、
 independent reverse-shell replay、25-mutation certificate stress audit 与
 literal masked-operator Bridge-B 已封存。TPC-391 的 parent horizon transfer
 在 `N=1152,1280,1408,1536` 的通过数为
@@ -14923,6 +15000,14 @@ Bridge-B 输出为 `TPC387_BRIDGE_CHECK=PASS rows=256 cells=32 renorm_pass=32/32
 spectral_failures=40 stable_holdout=28/32`。这两项新增 finite count audits
 不改变 curated historical cascade 的计数，也不支付 arithmetic `L2`、
 fixed-power credit 或 official Route-A/Route-B gate。
+
+随后封存的 TPC-388、TPC-389、TPC-390、TPC-391 与 TPC-392 也各自完成了
+producer、independent replay、mutation stress、PDF QA 与 local Bridge-B 的
+normal/optimized 审计。TPC-392 的 Bridge-B 输出为
+`TPC392_BRIDGE_CHECK=PASS rows=256 cells=32 forecast_passes=local:7/8,pooled:8/8,origin:8/8,frozen:8/8 spectral_failures=64 schur_failures=0 stable_holdout=24/32 local_max_error=0.034106850682897649`。
+这些新增 finite audits 不改变 curated historical cascade 的计数，也不支付
+arithmetic `L2`、fixed-power credit 或 official Route-A/Route-B gate；下一项
+响应盲实验为 `TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT`。
 
 V184/TPC-331 的新增 4 对由本项目 bridge 与 standalone tail checks 逐项验证；其
 finite decomposition 不代表 source-uniform arithmetic `L2` 或 official Route-A/Route-B
@@ -16890,7 +16975,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-391 current release 入口：
+TPC-392 current release 入口：
+
+papers/tpc-392-c1-normalization-phase-diagram/README.md
+papers/tpc-392-c1-normalization-phase-diagram/PAPER_PLAN.md
+papers/tpc-392-c1-normalization-phase-diagram/DERIVATION_PACKAGE.md
+papers/tpc-392-c1-normalization-phase-diagram/PROOF_PACKAGE.md
+papers/tpc-392-c1-normalization-phase-diagram/code/tpc392_c1_normalization_phase_diagram.py
+papers/tpc-392-c1-normalization-phase-diagram/experiments/tpc392_independent_checker.py
+papers/tpc-392-c1-normalization-phase-diagram/experiments/tpc392_adversarial_certificate_stress.py
+papers/tpc-392-c1-normalization-phase-diagram/results/tpc392_certificate.json
+papers/tpc-392-c1-normalization-phase-diagram/notes/theorem_ledger.md
+papers/tpc-392-c1-normalization-phase-diagram/notes/claim_firewall.md
+papers/tpc-392-c1-normalization-phase-diagram/notes/computational_protocol.md
+papers/tpc-392-c1-normalization-phase-diagram/notes/route_evaluation.md
+papers/tpc-392-c1-normalization-phase-diagram/paper/main.tex
+papers/tpc-392-c1-normalization-phase-diagram/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc392_c1_normalization_phase_diagram.md
+research/tpc-big-road/tpc_bridge_b_tpc392_c1_normalization_phase_diagram_checker.py
+
+TPC-391 previous release 入口：
 
 papers/tpc-391-c1-recursive-horizon-localization/README.md
 papers/tpc-391-c1-recursive-horizon-localization/PAPER_PLAN.md

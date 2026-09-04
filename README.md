@@ -9,7 +9,24 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-391 在第五个 coordinate-disjoint origin family 上
+当前主线最新位置：TPC-392 在第六个 coordinate-disjoint origin family 上比较
+四种预声明 normalization。三起点在 `N=1024,1280` calibration，两起点在
+`N=1536` holdout；256-row、32-cell panel 中 local-diagonal forecast 为 `7/8`，
+pooled/origin/frozen 三种 scalar normalization 均为 `8/8`。唯一失败是
+alternating-index、`Q=8192` 的 local-diagonal cell，误差为
+`0.034106850682897649`；terminal mean ordering 为 frozen > origin > pooled > local。
+spectral failures 为 `64/256`，Schur failures 为 `0/256`，stable holdout 为
+`24/32`。这是 finite scoped normalization-phase audit，不是 source-valid growing
+theorem、arithmetic `L2` 或 twin-prime result；`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。当前项目为
+`papers/tpc-392-c1-normalization-phase-diagram/`，下一关是
+`TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT`。
+
+papers/tpc-392-c1-normalization-phase-diagram - TPC-392 current project；含
+256-row normalization phase certificate、独立 reverse-shell replay、25-mutation
+stress、proof package/PDF 与 local fail-closed Bridge-B checker。
+
+上一位置：TPC-391 在第五个 coordinate-disjoint origin family 上
 把 TPC-390 的递归 horizon obstruction 定位到预声明的终端 horizon。三起点在
 `N=1024,1152,1280,1408` calibration，两起点在 `N=1536` holdout；448-row、
 32-cell panel 中 parent forecast 在 `N=1152,1280,1408,1536` 的通过数为

@@ -3,13 +3,75 @@
 
 更新时间：2026-09-05
 
-状态：**TPC391_NUMERICALLY_CERTIFIED_FINITE_C1_RECURSIVE_HORIZON_LOCALIZATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC392_NUMERICALLY_CERTIFIED_FINITE_C1_NORMALIZATION_PHASE_DIAGRAM_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.185 current：TPC-391 c=1 recursive horizon localization
+## 0.186 current：TPC-392 c=1 normalization phase diagram
+
+项目：papers/tpc-392-c1-normalization-phase-diagram/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_NORMALIZATION_PHASE_DIAGRAM_AUDIT**。
+
+TPC-392 承接 TPC-391 的 normalization phase clue，在新的
+coordinate-disjoint affine grid `a_j=3800001+401j` 上预先冻结 indices
+`(0,10,20,30,40)`。前三个 origins `(3800001,3804011,3808021)` 在
+`N=1024,1280` 作 calibration，后两个 `(3812031,3816041)` 只在
+`N=1536` 作 terminal holdout。固定 `fixed_c3` band、`Q=2048,8192`、四个
+laws，并比较四种预声明 normalization：local diagonal、pooled train scalar、
+origin scalar、frozen train-1024 scalar。完整面板为 256 rows、32 cells。
+
+最强正结果：三种 scalar normalization 的 terminal forecast 均为 `8/8`
+通过 3% finite cap；local diagonal 为 `7/8`。最强 obstruction：唯一失败是
+alternating-index、`Q=8192` 的 local-diagonal cell，forecast error 为
+`0.034106850682897649`；三种 scalar 的最大误差分别为
+`0.0275714873542654,0.028962999969161629,0.02757148735426429`。
+terminal mean ordering 为 frozen > origin > pooled > local；spectral failures
+为 `64/256`，Schur failures 为 `0/256`；stable cells 为 `25/32,28/32,24/32`
+（`N=1024,1280,1536`）。
+
+开放定理：能否证明某一 normalization 对 growing source operator 有效，并得到
+origin/count uniformity、growing operator bound 与 source-uniform arithmetic
+`L2`。当前结果不支付 arithmetic advance、fixed-power credit、Route-B
+reassembly 或 twin-prime 结论。
+
+可复用结构：
+
+    hashed parent interface (read-only)
+      -> response-blind four-normalization panel
+      -> calibration/holdout forecast phase census
+      -> descending-shell replay + 25-mutation firewall + Bridge-B locks
+
+ROUND2_CLUE：`TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT`。
+
+~~~text
+TPC392_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC392_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC392_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+TPC392_NORMALIZATION_PANEL = NUMERICALLY CERTIFIED FINITE_256_ROWS
+TPC392_SCALAR_DEFINITIONS = PROVED_EXACT_FINITE_DECLARED
+TPC392_PHASE_COMPARISON = NUMERICALLY CERTIFIED FINITE_SCOPED
+TPC392_CALIBRATION_FORECAST = NUMERICALLY CERTIFIED FINITE_SCOPED
+TPC392_ORIGIN_UNIFORMITY = OPEN
+TPC392_COUNT_UNIFORMITY = OPEN
+TPC392_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC392_GROWING_OPERATOR_BOUND = OPEN
+TPC392_SOURCE_UNIFORM_L2 = OPEN
+TPC392_ARITHMETIC_ADVANCE = NO
+TPC392_FIXED_POWER_CREDIT = 0
+TPC392_FULL_GATE_B = OPEN
+TPC392_TWIN_PRIME_RESULT = NONE
+TPC392_STRONGEST_POSITIVE = THREE_SCALAR_NORMALIZATIONS_8_OF_8
+TPC392_STRONGEST_OBSTRUCTION = LOCAL_DIAGONAL_HIGH_Q_ALTERNATING_1_OF_8_FAIL
+TPC392_OPEN_THEOREM = SOURCE_VALID_NORMALIZATION_AND_ORIGIN_UNIFORMITY
+TPC392_REUSABLE_STRUCTURE = RESPONSE_BLIND_NORMALIZATION_PHASE_PANEL
+TPC392_ROUND2_CLUE = TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT
+TPC392_STATUS = NUMERICALLY CERTIFIED FINITE C1 NORMALIZATION PHASE DIAGRAM AUDIT
+~~~
+
+## 0.185 previous：TPC-391 c=1 recursive horizon localization
 
 项目：papers/tpc-391-c1-recursive-horizon-localization/
 

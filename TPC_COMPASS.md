@@ -1,13 +1,51 @@
 # TPC distilled map and bold channel
 
-## V244 / TPC-391 current anchor
+## V245 / TPC-392 current anchor
 
 更新时间：2026-09-05
 
 当前入口：proof 为
-papers/tpc-391-c1-recursive-horizon-localization/PROOF_PACKAGE.md，checker 为
-research/tpc-big-road/tpc_bridge_b_tpc391_c1_recursive_horizon_localization_checker.py，
-编号论文为 papers/tpc-391-c1-recursive-horizon-localization/。
+papers/tpc-392-c1-normalization-phase-diagram/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc392_c1_normalization_phase_diagram_checker.py，
+编号论文为 papers/tpc-392-c1-normalization-phase-diagram/。
+
+TPC-392 在第六个 fresh coordinate-disjoint origin family
+`(3800001,3804011,3808021,3812031,3816041)` 上固定 `fixed_c3` band、
+`Q=2048,8192`、四个 laws 与四种 normalization。前三个 origins 在
+`N=1024,1280` 作 calibration，后两个只在 `N=1536` 作 holdout，形成
+256-row、32-cell phase panel。local-diagonal forecast 为 `7/8`，
+pooled/origin/frozen 三种 scalar 均为 `8/8`；唯一失败是 alternating-index、
+`Q=8192` 的 local-diagonal cell，最大误差 `0.034106850682897649`。
+terminal mean ordering 为 frozen > origin > pooled > local；spectral failures
+为 `64/256`，Schur failures 为 `0/256`，stable holdout 为 `24/32`。这是
+finite normalization-phase evidence，不是 source-valid normalization、
+origin/count-uniform theorem、arithmetic `L2` 或 twin-prime endpoint。
+
+    YOU ARE HERE = V245 / TPC-392
+    TPC392_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC392_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC392_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC392_NORMALIZATION_PANEL = NUMERICALLY CERTIFIED FINITE_256_ROWS
+    TPC392_SCALAR_DEFINITIONS = PROVED_EXACT_FINITE_DECLARED
+    TPC392_PHASE_COMPARISON = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC392_CALIBRATION_FORECAST = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC392_ORIGIN_UNIFORMITY = OPEN
+    TPC392_COUNT_UNIFORMITY = OPEN
+    TPC392_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC392_GROWING_OPERATOR_BOUND = OPEN
+    TPC392_SOURCE_UNIFORM_L2 = OPEN
+    TPC392_ARITHMETIC_ADVANCE = NO
+    TPC392_FIXED_POWER_CREDIT = 0
+    TPC392_FULL_GATE_B = OPEN
+    TPC392_TWIN_PRIME_RESULT = NONE
+    TPC392_STRONGEST_POSITIVE = THREE_SCALAR_NORMALIZATIONS_8_OF_8
+    TPC392_STRONGEST_OBSTRUCTION = LOCAL_DIAGONAL_HIGH_Q_ALTERNATING_1_OF_8_FAIL
+    TPC392_OPEN_THEOREM = SOURCE_VALID_NORMALIZATION_AND_ORIGIN_UNIFORMITY
+    TPC392_REUSABLE_STRUCTURE = RESPONSE_BLIND_NORMALIZATION_PHASE_PANEL
+    TPC392_ROUND2_CLUE = TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT
+    TPC392_STATUS = NUMERICALLY CERTIFIED FINITE C1 NORMALIZATION PHASE DIAGRAM AUDIT
+
+## V244 / TPC-391 previous anchor
 
 TPC-391 在第五个 fresh coordinate-disjoint origin family
 `(3400001,3404011,3408021,3412031,3416041)` 上冻结 TPC-390 的 32 个
