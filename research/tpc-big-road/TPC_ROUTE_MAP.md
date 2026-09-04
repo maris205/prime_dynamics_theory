@@ -2,32 +2,73 @@
 
 更新时间：2026-09-04
 
-当前地图版本：V236 / TPC-383
+当前地图版本：V237 / TPC-384
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-383`（`NUMERICALLY_CERTIFIED_FINITE_C1_POOLED_NORMALIZATION_AUDIT`）；
-对应论文目录为 `papers/tpc-383-c1-pooled-normalization-audit/`。
+当前编号锚点：`TPC-384`（`NUMERICALLY_CERTIFIED_FINITE_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM`）；
+对应论文目录为 `papers/tpc-384-c1-bandwidth-normalization-phase-diagram/`。
 
-TPC-383 是当前位置：在 fresh coordinate-disjoint origins `(1600001,1608021,1616041)`
-上固定 `N=512`、四个 128-point blocks、`c=1`、三组 Q 与四个 laws，比较
-local-diagonal 与 pooled-scalar normalization。完整 72-row panel 的两种 stability
-census 均为 `9/12`；all-plus high-Q spread 分别为 `1.1394111498671383e-5` 与
-`4.6321361430822112e-5`，pooled 相对 local mean 的 shift 为
-`0.036457251256851203`。alternating-index pooled high-Q spread 为
-`0.10104585338571119`，所以 transfer 仍然 law-dependent；该有限 audit 不支付
-source-valid normalization、arithmetic advance 或 fixed-power credit。
+TPC-384 是当前位置：在 fresh coordinate-disjoint origins `(1800001,1808021,1816041)`
+上固定同一 raw prime-shell geometry，交叉 `c=0,1,2,3` 四个 block bandwidth、
+local-diagonal/pooled-scalar 两种 normalization、三组 Q 与四个 laws，形成
+288-row、96-cell phase diagram。stable-cell counts（local, pooled）依 c 为
+`(6,7),(8,7),(8,8),(8,8)`；all-plus pooled high-Q mean 从
+`0.36656315295619812` 升到 `0.63888760360944985`，仍低于 `0.64` cap。
+pooled/local high-Q shift 在 c=0 为 `-0.097684465801723214`，在 c=1,2,3 为正；
+这是有限 phase observation，不是 bandwidth monotonicity theorem。
 
-这是有限 normalization transfer 与 calibration/law obstruction：all-plus origin shape
-在 local 与 pooled 两种约定下均通过有限 stability cap，但绝对 mean 发生非零 shift，
-且 alternating law 仍不稳定。它不建立 origin/scale uniformity、source-valid
-normalization、growing operator theorem、source-uniform arithmetic `L2`、fixed-power
-saving 或 twin-prime endpoint。producer、独立 reverse-shell replay、25-mutation
-stress、2-page PDF 与 local Bridge-B 已封存；official evaluator files 仍缺失，local
-bridge 只作 fail-closed evidence。`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
-`FULL_GATE_B=OPEN`；下一关为 `TEST_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM`。
+这是有限 bandwidth phase 与 calibration/law obstruction：all-plus 在高 bandwidth
+接近 spectral cap，但 origin spread 仍 law- and normalization-dependent，且没有
+统一性或单调性定理。它不建立 source-valid normalization、growing operator theorem、
+source-uniform arithmetic `L2`、fixed-power saving 或 twin-prime endpoint。producer、
+独立 reverse-shell replay、25-mutation stress、2-page PDF 与 local Bridge-B 已封存；
+official evaluator files 仍缺失，local bridge 只作 fail-closed evidence。
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关为
+`TEST_C1_BANDWIDTH_ORIGIN_HOLDOUT`。
 
-## 5.166 V236 / TPC-383：c=1 pooled-normalization audit
+## 5.167 V237 / TPC-384：c=1 bandwidth-normalization phase diagram
+
+TPC-384 的 finite package 位于
+`papers/tpc-384-c1-bandwidth-normalization-phase-diagram/`。
+它在新的 affine grid `a_j=1800001+401j` 上预声明并冻结 indices `(0,20,40)`，
+得到 origins `(1800001,1808021,1816041)`。固定 `N=512`、四个连续 128-point
+blocks、`Q=512,2048,8192`、四个 laws，与同一 raw geometry 下的四个 bandwidth
+`c=0,1,2,3` 及 local-diagonal/pooled-scalar normalization 交叉，形成 288 rows。
+
+stable cells（local, pooled）依 c 为 `(6,7),(8,7),(8,8),(8,8)`；all-plus pooled
+high-Q mean 的四个值为
+`0.36656315295619812, 0.59976783258284894, 0.63384010801912960,
+0.63888760360944985`。全部 288 rows 在本 panel 中均未超过 spectral cap 或 Schur
+cap；但 alternating-index 的 c=3 pooled high-Q origin spread 为
+`0.039758700305072295`，故有限 transfer 不是 law-uniform theorem。
+
+    YOU ARE HERE = V237 / TPC-384
+    TPC384_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC384_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC384_BANDWIDTH_PHASE_PANEL = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC384_LOCAL_POOLED_NORMALIZATION_CROSSING = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC384_ORIGIN_SPREAD_CENSUS = NUMERICALLY CERTIFIED FINITE SCOPED
+    TPC384_ALL_PLUS_HIGH_Q_BAND_PHASE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC384_SCHUR_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC384_BANDWIDTH_MONOTONICITY = OPEN
+    TPC384_ORIGIN_UNIFORMITY = OPEN
+    TPC384_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC384_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC384_GROWING_OPERATOR_BOUND = OPEN
+    TPC384_SOURCE_UNIFORM_L2 = OPEN
+    TPC384_ARITHMETIC_ADVANCE = NO
+    TPC384_FIXED_POWER_CREDIT = 0
+    TPC384_FULL_GATE_B = OPEN
+    TPC384_TWIN_PRIME_RESULT = NONE
+    TPC384_STRONGEST_POSITIVE = FINITE_BANDWIDTH_PHASE_WITH_ALL_PLUS_CAP_APPROACH
+    TPC384_STRONGEST_OBSTRUCTION = LAW_DEPENDENT_SPREAD_AND_UNPROVED_MONOTONICITY
+    TPC384_OPEN_THEOREM = SOURCE_VALID_BANDWIDTH_ORIGIN_UNIFORMITY
+    TPC384_REUSABLE_STRUCTURE = COMMON_GEOMETRY_BANDWIDTH_SWEEP_WITH_DUAL_NORMALIZATION
+    TPC384_ROUND2_CLUE = TEST_C1_BANDWIDTH_ORIGIN_HOLDOUT
+    TPC384_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM
+
+## 5.166 V236 / TPC-383：c=1 pooled-normalization audit (previous)
 
 TPC-383 的 finite package 位于 `papers/tpc-383-c1-pooled-normalization-audit/`。
 它在新的 coordinate-disjoint affine grid `a_j=1600001+401j` 上预声明并冻结
@@ -42,7 +83,7 @@ shift 为 `0.036457251256851203`。alternating-index 的 pooled high-Q spread �
 `0.10104585338571119`。这是有限 shape transfer 与 calibration separation，不是
 source-valid normalization theorem。
 
-    YOU ARE HERE = V236 / TPC-383
+    YOU ARE HERE = V236 / TPC-383 (previous)
     TPC383_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC383_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
     TPC383_NORMALIZATION_FAMILY = PROVED_EXACT_FINITE_LAW_INDEPENDENT

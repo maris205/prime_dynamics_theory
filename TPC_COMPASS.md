@@ -1,6 +1,44 @@
 # TPC distilled map and bold channel
 
-## V236 / TPC-383 current anchor
+## V237 / TPC-384 current anchor
+
+更新时间：2026-09-04
+
+当前入口：proof 为
+papers/tpc-384-c1-bandwidth-normalization-phase-diagram/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc384_c1_bandwidth_normalization_phase_diagram_checker.py，
+编号论文为 papers/tpc-384-c1-bandwidth-normalization-phase-diagram/。
+
+TPC-384 在 fresh coordinate-disjoint origins `(1800001,1808021,1816041)` 上，
+固定同一 raw prime-shell geometry，交叉 `c=0,1,2,3` 四个预声明 block bandwidth
+与 local/pooled 两种 normalization，形成 288-row、96-cell phase diagram。
+stable-cell counts（local, pooled）依 c 为 `(6,7),(8,7),(8,8),(8,8)`；all-plus
+pooled high-Q mean 从 `0.36656315295619812` 升到 `0.63888760360944985`，仍低于
+0.64 cap。pooled/local high-Q shift 在 c=0 为 `-0.097684465801723214`，在
+c=1,2,3 为正；这只是有限 bandwidth phase 与 calibration observation，未证明
+monotonicity、source-valid normalization 或 arithmetic advance。
+
+    YOU ARE HERE = V237 / TPC-384
+    TPC384_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC384_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC384_BANDWIDTH_PHASE_PANEL = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC384_LOCAL_POOLED_NORMALIZATION_CROSSING = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC384_ORIGIN_SPREAD_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC384_ALL_PLUS_HIGH_Q_BAND_PHASE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC384_SCHUR_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC384_BANDWIDTH_MONOTONICITY = OPEN
+    TPC384_ORIGIN_UNIFORMITY = OPEN
+    TPC384_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC384_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC384_GROWING_OPERATOR_BOUND = OPEN
+    TPC384_SOURCE_UNIFORM_L2 = OPEN
+    TPC384_ARITHMETIC_ADVANCE = NO
+    TPC384_FIXED_POWER_CREDIT = 0
+    TPC384_FULL_GATE_B = OPEN
+    TPC384_TWIN_PRIME_RESULT = NONE
+    TPC384_ROUND2_CLUE = TEST_C1_BANDWIDTH_ORIGIN_HOLDOUT
+
+## V236 / TPC-383 previous anchor
 
 更新时间：2026-09-04
 

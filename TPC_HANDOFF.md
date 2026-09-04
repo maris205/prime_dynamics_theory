@@ -1,9 +1,60 @@
 # TPC HANDOFF
 
-TPC-383 current section: c=1 pooled-normalization audit
---------------------------------------------------------
+TPC-384 current section: c=1 bandwidth--normalization phase diagram
+---------------------------------------------------------------------
 
-TPC-383 is the current sealed finite release. It freezes, before reading any
+TPC-384 is the current sealed finite release. It freezes, before reading any
+response or metric, the fresh affine grid `a_j=1800001+401j`, `0<=j<41`, and
+indices `(0,20,40)`, giving origins `(1800001,1808021,1816041)`. The fixed
+window has `N=512`, four contiguous 128-point blocks, beta=2, exponent 1,
+height 66, and Q anchors `Q=512,2048,8192`. It crosses the four predeclared
+block-distance bandwidths `c=0,1,2,3` with local-diagonal and pooled-scalar
+normalization, producing a complete 288-row Cartesian panel over four laws.
+
+The stable-cell counts (local, pooled) are `(6,7),(8,7),(8,8),(8,8)` as
+`c=0,1,2,3`. The all-plus pooled high-Q mean rises through
+`0.36656315295619812, 0.59976783258284894, 0.63384010801912960,
+0.63888760360944985`, still below the fixed `0.64` spectral cap. The
+pooled/local high-Q shift is `-0.097684465801723214` at `c=0` and positive
+at `c=1,2,3`; this is a finite phase observation, not a monotonicity theorem.
+All 288 rows remain below the spectral and Schur caps on this panel.
+
+This is finite bandwidth/normalization evidence plus a law-dependent
+obstruction. It is not source-valid normalization, a growing operator bound,
+source-uniform arithmetic `L2`, arithmetic power saving, Route-B reassembly,
+or a twin-prime result. Official Route-A/Route-B evaluator files remain
+absent; local Bridge-B is fail-closed repository evidence.
+`ARITHMETIC_ADVANCE=NO`, `FIXED_POWER_CREDIT=0`, and `FULL_GATE_B=OPEN`; the
+next finite question is `TEST_C1_BANDWIDTH_ORIGIN_HOLDOUT`.
+
+    TPC384_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC384_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC384_BANDWIDTH_PHASE_PANEL = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+    TPC384_LOCAL_POOLED_NORMALIZATION_CROSSING = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC384_ORIGIN_SPREAD_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC384_ALL_PLUS_HIGH_Q_BAND_PHASE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC384_SCHUR_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC384_BANDWIDTH_MONOTONICITY = OPEN
+    TPC384_ORIGIN_UNIFORMITY = OPEN
+    TPC384_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC384_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC384_GROWING_OPERATOR_BOUND = OPEN
+    TPC384_SOURCE_UNIFORM_L2 = OPEN
+    TPC384_ARITHMETIC_ADVANCE = NO
+    TPC384_FIXED_POWER_CREDIT = 0
+    TPC384_FULL_GATE_B = OPEN
+    TPC384_TWIN_PRIME_RESULT = NONE
+    TPC384_STRONGEST_POSITIVE = FINITE_BANDWIDTH_PHASE_WITH_ALL_PLUS_CAP_APPROACH
+    TPC384_STRONGEST_OBSTRUCTION = LAW_DEPENDENT_SPREAD_AND_UNPROVED_MONOTONICITY
+    TPC384_OPEN_THEOREM = SOURCE_VALID_BANDWIDTH_ORIGIN_UNIFORMITY
+    TPC384_REUSABLE_STRUCTURE = COMMON_GEOMETRY_BANDWIDTH_SWEEP_WITH_DUAL_NORMALIZATION
+    TPC384_ROUND2_CLUE = TEST_C1_BANDWIDTH_ORIGIN_HOLDOUT
+    TPC384_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM
+
+TPC-383 previous section: c=1 pooled-normalization audit
+---------------------------------------------------------
+
+TPC-383 is the previous sealed finite release. It freezes, before reading any
 response or metric, the affine grid `a_j=1600001+401j`, `0<=j<41`, and
 indices `(0,20,40)`, giving origins `(1600001,1608021,1616041)`. The fixed
 window has `N=512`, four contiguous 128-point blocks, the inherited `c=1`
@@ -94,7 +145,7 @@ next finite question is `TEST_C1_POOLED_NORMALIZATION_CROSS_ORIGIN`.
 TPC-381 previous section: c=1 law-control origin-family replay
 -----------------------------------------------------------------
 
-TPC-381 is the current sealed finite release. It freezes, before reading any
+TPC-381 is a previous sealed finite release. It freezes, before reading any
 response or metric, the affine grid `a_j=1400001+401j`, `0<=j<41`, and
 indices `(0,20,40)`, giving the coordinate-disjoint origins
 `(1400001,1408021,1416041)`. The fixed window has `N=2048`, eight contiguous
@@ -1020,6 +1071,19 @@ TPC-383 reproducibility commands:
     python -O -B papers/tpc-383-c1-pooled-normalization-audit/experiments/tpc383_adversarial_certificate_stress.py --check
     python -B research/tpc-big-road/tpc_bridge_b_tpc383_c1_pooled_normalization_audit_checker.py --check
     python -O -B research/tpc-big-road/tpc_bridge_b_tpc383_c1_pooled_normalization_audit_checker.py --check
+
+TPC-384 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-384-c1-bandwidth-normalization-phase-diagram/code/tpc384_c1_bandwidth_normalization_phase_diagram.py --check
+    python -O -B papers/tpc-384-c1-bandwidth-normalization-phase-diagram/code/tpc384_c1_bandwidth_normalization_phase_diagram.py --check
+    python -B papers/tpc-384-c1-bandwidth-normalization-phase-diagram/experiments/tpc384_independent_checker.py --check
+    python -O -B papers/tpc-384-c1-bandwidth-normalization-phase-diagram/experiments/tpc384_independent_checker.py --check
+    python -B papers/tpc-384-c1-bandwidth-normalization-phase-diagram/experiments/tpc384_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-384-c1-bandwidth-normalization-phase-diagram/experiments/tpc384_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc384_c1_bandwidth_normalization_phase_diagram_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc384_c1_bandwidth_normalization_phase_diagram_checker.py --check
 
 
 TPC-374 tail audit is required to return zero with empty stderr and
@@ -14048,6 +14112,18 @@ TPC-207 数学 trigger：`true`；TPC-207 已创建：`true`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
+`papers/tpc-384-c1-bandwidth-normalization-phase-diagram/README.md`、
+`papers/tpc-384-c1-bandwidth-normalization-phase-diagram/PROOF_PACKAGE.md`、
+`papers/tpc-384-c1-bandwidth-normalization-phase-diagram/notes/theorem_ledger.md`、
+`papers/tpc-384-c1-bandwidth-normalization-phase-diagram/notes/route_evaluation.md`、
+`research/tpc-big-road/bridge_b_tpc384_c1_bandwidth_normalization_phase_diagram.md`、
+`research/tpc-big-road/tpc_bridge_b_tpc384_c1_bandwidth_normalization_phase_diagram_checker.py`、
+`papers/tpc-383-c1-pooled-normalization-audit/README.md`、
+`papers/tpc-383-c1-pooled-normalization-audit/PROOF_PACKAGE.md`、
+`papers/tpc-383-c1-pooled-normalization-audit/notes/theorem_ledger.md`、
+`papers/tpc-383-c1-pooled-normalization-audit/notes/route_evaluation.md`、
+`research/tpc-big-road/bridge_b_tpc383_c1_pooled_normalization_audit.md`、
+`research/tpc-big-road/tpc_bridge_b_tpc383_c1_pooled_normalization_audit_checker.py`、
 `papers/tpc-380-c1-law-control-count-replay/README.md`、
 `papers/tpc-380-c1-law-control-count-replay/PROOF_PACKAGE.md`、
 `papers/tpc-380-c1-law-control-count-replay/notes/theorem_ledger.md`、

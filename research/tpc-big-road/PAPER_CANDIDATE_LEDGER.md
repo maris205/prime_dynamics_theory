@@ -3,13 +3,68 @@
 
 更新时间：2026-09-04
 
-状态：**TPC383_NUMERICALLY_CERTIFIED_FINITE_C1_POOLED_NORMALIZATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC384_NUMERICALLY_CERTIFIED_FINITE_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.177 current：TPC-383 c=1 pooled-normalization audit
+## 0.178 current：TPC-384 c=1 bandwidth-normalization phase diagram
+
+项目：papers/tpc-384-c1-bandwidth-normalization-phase-diagram/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM**。
+
+TPC-384 在新的 coordinate-disjoint affine grid `a_j=1800001+401j` 上，在读取任何
+response、signed metric 或 geometry score 前冻结 indices `(0,20,40)`，得到 origins
+`(1800001,1808021,1816041)`。固定 `N=512`、四个连续 128-point blocks、
+`Q=(512,2048,8192)`、beta `2`、exponent `1`、height `66`、四个 laws，交叉预声明
+的 bandwidth `c=0,1,2,3` 与 local-diagonal/pooled-scalar normalization，形成
+288 rows 与 96 个 origin-spread cells。
+
+最强正结果：all-plus pooled high-Q mean 随 c 的四个有限值为
+`0.36656315295619812, 0.59976783258284894, 0.63384010801912960,
+0.63888760360944985`，stable-cell counts（local, pooled）为
+`(6,7),(8,7),(8,8),(8,8)`。最强 obstruction：该上升序列仍只是 finite observation，
+不能支付 bandwidth monotonicity；origin spread 与 calibration 也保持 law- and
+normalization-dependent，故不能提升为 source-valid operator bound。
+
+开放定理：在 source-valid normalization 下，能否对 bandwidth、origin 与 arithmetic
+law 建立可增长的统一控制，并解释接近 spectral cap 的 all-plus phase。
+
+可复用结构：
+
+    common raw geometry
+      -> response-blind fresh origin panel
+      -> predeclared bandwidth sweep
+      -> local/pooled normalization crossing
+      -> complete phase certificate + independent replay + mutation firewall
+
+ROUND2_CLUE：`TEST_C1_BANDWIDTH_ORIGIN_HOLDOUT`。
+
+```text
+TPC384_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC384_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC384_BANDWIDTH_PHASE_PANEL = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
+TPC384_LOCAL_POOLED_NORMALIZATION_CROSSING = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC384_ORIGIN_SPREAD_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC384_ALL_PLUS_HIGH_Q_BAND_PHASE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC384_SCHUR_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC384_BANDWIDTH_MONOTONICITY = OPEN
+TPC384_ORIGIN_UNIFORMITY = OPEN
+TPC384_WINDOW_SCALE_UNIFORMITY = OPEN
+TPC384_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC384_GROWING_OPERATOR_BOUND = OPEN
+TPC384_SOURCE_UNIFORM_L2 = OPEN
+TPC384_ARITHMETIC_ADVANCE = NO
+TPC384_FIXED_POWER_CREDIT = 0
+TPC384_FULL_GATE_B = OPEN
+TPC384_TWIN_PRIME_RESULT = NONE
+TPC384_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM
+TPC384_ROUND2_CLUE = TEST_C1_BANDWIDTH_ORIGIN_HOLDOUT
+```
+
+## 0.177 previous：TPC-383 c=1 pooled-normalization audit
 
 项目：papers/tpc-383-c1-pooled-normalization-audit/
 

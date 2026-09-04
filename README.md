@@ -9,7 +9,23 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-383 在 fresh coordinate-disjoint origins
+当前主线最新位置：TPC-384 在 fresh coordinate-disjoint origins
+`(1800001,1808021,1816041)` 上固定同一 raw prime-shell geometry，完成
+`c=0,1,2,3` 四个 bandwidth 与 local/pooled 两种 normalization 的 288-row
+phase diagram。all-plus pooled high-Q mean 从 `0.36656315295619812`（c=0）
+升到 `0.63888760360944985`（c=3，仍低于 0.64 cap）；stable-cell counts
+依 bandwidth 为 `(6,7),(8,7),(8,8),(8,8)`（local, pooled）。这是有限
+bandwidth phase 与 calibration/law obstruction，不是 bandwidth monotonicity、
+source-valid normalization、arithmetic `L2` 或 twin-prime result。当前项目为
+`papers/tpc-384-c1-bandwidth-normalization-phase-diagram/`，下一关是
+`TEST_C1_BANDWIDTH_ORIGIN_HOLDOUT`；`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
+
+papers/tpc-384-c1-bandwidth-normalization-phase-diagram - TPC-384 current project；含
+288-row bandwidth/normalization certificate、独立 reverse-shell replay、25-mutation
+stress、2-page PDF 与 local fail-closed Bridge-B checker。
+
+当前主线最新位置（previous）：TPC-383 在 fresh coordinate-disjoint origins
 `(1600001,1608021,1616041)` 上，把 TPC-382 的 magnitude audit 延伸到
 local-diagonal 与 pooled-scalar 两种 normalization。完整 72-row panel 的
 两种 stability census 均为 9/12；all-plus 的 pooled high-Q spread 为
@@ -22,7 +38,7 @@ result。当前项目为
 `TEST_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM`；`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
 
-papers/tpc-383-c1-pooled-normalization-audit - TPC-383 current project；含
+papers/tpc-383-c1-pooled-normalization-audit - TPC-383 previous project；含
 72-row local/pooled certificate、独立 reverse-shell replay、25-mutation stress、
 2-page PDF 与 local fail-closed Bridge-B checker。
 
