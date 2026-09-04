@@ -9,7 +9,25 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-386 在 fresh coordinate-disjoint origins
+当前主线最新位置：TPC-387 在 fresh coordinate-disjoint origins
+`(2400001,2404011,2408021,2412031,2416041)` 上把 `N=512,768` 固定为
+calibration ladder，并把两个新 origins 的 `N=1024` 固定为 holdout。完整
+256-row、32-cell panel 对每个 band mode、normalization、law 与 Q 只用前三个
+origins 的两级均值拟合 log-count slope；32 个 endpoint forecasts 全部通过
+预声明的 3% finite cap，最大绝对误差为 `0.026051162042932119`。两级 calibration
+稳定 cells 为 `24/32,24/32`，holdout 为 `28/32`；40 个 inherited `0.64`
+spectral failures 与 0 个 Schur failures 被独立复现。这是 finite calibration-only
+renormalization 与 obstruction localization，不是 count-uniformity、source-valid
+normalization、arithmetic `L2` 或 twin-prime result。当前项目为
+`papers/tpc-387-c1-count-ladder-renormalization/`，下一关是
+`TEST_C1_COUNT_LADDER_SECOND_HOLDOUT`；`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
+
+papers/tpc-387-c1-count-ladder-renormalization - TPC-387 current project；含
+256-row count-ladder certificate、独立 reverse-shell replay、25-mutation stress、
+proof package/2-page PDF 与 local fail-closed Bridge-B checker。
+
+当前主线最新位置（previous）：TPC-386 在 fresh coordinate-disjoint origins
 `(2200001,2204011,2208021,2212031,2216041)` 上把 count 从 calibration 的
 `N=512` 改为 holdout 的 `N=1024`，并固定 fixed-three-block/full-relative 两种
 band mode。完整 160-row、32-cell panel 的 all-plus `Q=8192` holdout/calibration
@@ -18,11 +36,11 @@ ratios 为 `1.0652156493536045, 1.1112204434769593, 1.0858538657474437,
 `N=1024` rows 全部失败，但 Schur failures 为 0/160，holdout stable cells 为
 `28/32`。这是 finite count-transfer 与 fixed-cap obstruction，不是 count-uniformity、
 source-valid normalization、arithmetic `L2` 或 twin-prime result。当前项目为
-`papers/tpc-386-c1-count-holdout-bandwidth/`，下一关是
-`TEST_C1_COUNT_LADDER_RENORMALIZATION`；`ARITHMETIC_ADVANCE=NO`、
+`papers/tpc-386-c1-count-holdout-bandwidth/`，下一关已转为
+`TEST_C1_COUNT_LADDER_SECOND_HOLDOUT`；`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
 
-papers/tpc-386-c1-count-holdout-bandwidth - TPC-386 current project；含
+papers/tpc-386-c1-count-holdout-bandwidth - TPC-386 previous project；含
 160-row count-holdout certificate、独立 reverse-shell replay、25-mutation stress、
 proof package/2-page PDF 与 local fail-closed Bridge-B checker。
 

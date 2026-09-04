@@ -1,31 +1,98 @@
 # TPC HANDOFF
 
-TPC-386 current section: c=1 count-holdout bandwidth audit
------------------------------------------------------------
+TPC-387 current section: c=1 count-ladder renormalization
+---------------------------------------------------------
 
-TPC-386 is the current finite release. It locks the TPC-385 producer,
+TPC-387 is the current finite release. It locks the TPC-386 producer and
+certificate before reading a fresh count ladder. On the affine grid
+`a_j=2400001+401j`, indices `(0,10,20,30,40)` are frozen first. Origins
+`(2400001,2404011,2408021)` are calibration at both `N=512` and `N=768`;
+`(2412031,2416041)` are holdout at `N=1024`. The panel crosses fixed-three-block
+and full-relative bands, `Q=2048,8192`, beta=2, exponent 1, height 66, four
+laws, and local or calibration-pooled normalization.
+
+The complete panel has 256 rows and 32 cells. Calibration stability counts
+are `24/32` at `N=512` and `24/32` at `N=768`; holdout stability is `28/32`.
+For every cell, a log-count slope is fitted from calibration means only and
+extrapolated once to the endpoint. All 32 endpoint forecasts pass the
+predeclared 3% finite renormalization cap; the maximum absolute error is
+`0.026051162042932119`. The inherited `0.64` spectral diagnostic still fails
+on 40 rows, while Schur failures are `0/256`.
+
+This is a finite calibration-only repair and obstruction localization. It is
+not count-uniformity, source-valid normalization, a growing operator bound,
+source-uniform arithmetic `L2`, arithmetic power saving, Route-B reassembly,
+or a twin-prime result. Official Route-A/Route-B evaluator files remain
+absent; local Bridge-B is fail-closed repository evidence. The exact anchor is
+`[2400001,2400014)` with shell `[11,13]`.
+
+    TPC387_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC387_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC387_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC387_COUNT_LADDER_PANEL = NUMERICALLY_CERTIFIED_FINITE_256_ROWS
+    TPC387_CALIBRATION_SLOPE_REPAIR = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC387_RENORM_FORECAST_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC387_FIXED_CAP_REPAIR = OPEN
+    TPC387_COUNT_UNIFORMITY = OPEN
+    TPC387_BANDWIDTH_RENORMALIZATION = OPEN
+    TPC387_LAW_UNIFORMITY = OPEN
+    TPC387_ORIGIN_UNIFORMITY = OPEN
+    TPC387_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC387_GROWING_OPERATOR_BOUND = OPEN
+    TPC387_SOURCE_UNIFORM_L2 = OPEN
+    TPC387_ARITHMETIC_ADVANCE = NO
+    TPC387_FIXED_POWER_CREDIT = 0
+    TPC387_FULL_GATE_B = OPEN
+    TPC387_TWIN_PRIME_RESULT = NONE
+    TPC387_STRONGEST_POSITIVE = FINITE_PANEL_WIDE_COUNT_LADDER_RENORMALIZATION
+    TPC387_STRONGEST_OBSTRUCTION = FINITE_SPECTRAL_CAP_FAILURE_CENSUS
+    TPC387_OPEN_THEOREM = SOURCE_VALID_COUNT_UNIFORM_OPERATOR_CONTROL
+    TPC387_REUSABLE_STRUCTURE = CALIBRATION_ONLY_COUNT_LADDER_WITH_FRESH_HOLDOUT
+    TPC387_ROUND2_CLUE = TEST_C1_COUNT_LADDER_SECOND_HOLDOUT
+    TPC387_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_COUNT_LADDER_RENORMALIZATION
+
+TPC-387 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-387-c1-count-ladder-renormalization/code/tpc387_c1_count_ladder_renormalization.py --check
+    python -O -B papers/tpc-387-c1-count-ladder-renormalization/code/tpc387_c1_count_ladder_renormalization.py --check
+    python -B papers/tpc-387-c1-count-ladder-renormalization/experiments/tpc387_independent_checker.py --check
+    python -O -B papers/tpc-387-c1-count-ladder-renormalization/experiments/tpc387_independent_checker.py --check
+    python -B papers/tpc-387-c1-count-ladder-renormalization/experiments/tpc387_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-387-c1-count-ladder-renormalization/experiments/tpc387_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc387_c1_count_ladder_renormalization_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc387_c1_count_ladder_renormalization_checker.py --check
+
+The next finite question is `TEST_C1_COUNT_LADDER_SECOND_HOLDOUT`. Any
+count-ladder interpretation remains finite until a genuine growing argument
+is supplied.
+
+TPC-386 previous section: c=1 count-holdout bandwidth audit
+------------------------------------------------------------
+
+TPC-386 is a previous sealed finite release. It locks the TPC-385 producer,
 certificate, and all-plus `Q=8192` reference before reading the new panel.
-On a new affine grid `a_j=2200001+401j`, indices `(0,10,20,30,40)` are
-frozen first. Origins `(2200001,2204011,2208021)` are calibration at `N=512`;
-`(2212031,2216041)` are holdout at `N=1024`. The panel crosses fixed-three-block
+On a new affine grid `a_j=2200001+401j`, indices `(0,10,20,30,40)` were
+frozen first. Origins `(2200001,2204011,2208021)` were calibration at `N=512`;
+`(2212031,2216041)` were holdout at `N=1024`. The panel crossed fixed-three-block
 and full-relative bands, `Q=2048,8192`, beta=2, exponent 1, height 66, four
 laws, and local or calibration-pooled normalization.
 
 The complete panel has 160 rows and 32 cells. Calibration and holdout
 stability counts are `20/32` and `28/32`; all Schur rows are below `0.83`.
-The inherited `0.64` spectral diagnostic fails on 16 rows, exactly the
+The inherited `0.64` spectral diagnostic failed on 16 rows, exactly the
 all-plus `N=1024` rows under both modes, normalizations, and Q values. At
-`Q=8192`, the all-plus holdout/calibration ratios are
+`Q=8192`, the all-plus holdout/calibration ratios were
 `1.0652156493536045`, `1.1112204434769593`, `1.0858538657474437`, and
 `1.1294445356950271` in fixed/local, fixed/pooled, full/local, full/pooled
-order; all are inside a deliberately broad 20% finite audit envelope.
+order; all were inside a deliberately broad 20% finite audit envelope.
 
-This is a finite count-transfer result plus a fixed-cap obstruction. It is
+This was a finite count-transfer result plus a fixed-cap obstruction. It was
 not count-uniformity, source-valid normalization, a growing operator bound,
 source-uniform arithmetic `L2`, arithmetic power saving, Route-B reassembly,
-or a twin-prime result. Official Route-A/Route-B evaluator files remain
-absent; local Bridge-B is fail-closed repository evidence. The exact anchor is
-`[2200001,2200014)` with shell `[11,13]`.
+or a twin-prime result. The exact anchor was `[2200001,2200014)` with shell
+`[11,13]`.
 
     TPC386_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC386_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
@@ -51,27 +118,7 @@ absent; local Bridge-B is fail-closed repository evidence. The exact anchor is
     TPC386_ROUND2_CLUE = TEST_C1_COUNT_LADDER_RENORMALIZATION
     TPC386_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_COUNT_HOLDOUT_BANDWIDTH
 
-Reproduction commands:
-
-    export PYTHONDONTWRITEBYTECODE=1
-    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
-    python -B papers/tpc-386-c1-count-holdout-bandwidth/code/tpc386_c1_count_holdout_bandwidth.py --check
-    python -O -B papers/tpc-386-c1-count-holdout-bandwidth/code/tpc386_c1_count_holdout_bandwidth.py --check
-    python -B papers/tpc-386-c1-count-holdout-bandwidth/experiments/tpc386_independent_checker.py --check
-    python -O -B papers/tpc-386-c1-count-holdout-bandwidth/experiments/tpc386_independent_checker.py --check
-    python -B papers/tpc-386-c1-count-holdout-bandwidth/experiments/tpc386_adversarial_certificate_stress.py --check
-    python -O -B papers/tpc-386-c1-count-holdout-bandwidth/experiments/tpc386_adversarial_certificate_stress.py --check
-    python -B research/tpc-big-road/tpc_bridge_b_tpc386_c1_count_holdout_bandwidth_checker.py --check
-    python -O -B research/tpc-big-road/tpc_bridge_b_tpc386_c1_count_holdout_bandwidth_checker.py --check
-
-The next finite question is `TEST_C1_COUNT_LADDER_RENORMALIZATION`. Any
-count-ladder interpretation remains finite until a genuine growing argument
-is supplied.
-
-TPC-385 previous section: c=1 bandwidth-phase origin holdout
--------------------------------------------------------------
-
-TPC-385 is the current sealed finite release. It locks the TPC-384 producer,
+TPC-385 is the previous sealed finite release. It locks the TPC-384 producer,
 certificate, and all-plus `Q=8192` phase means as response-blind forecasts.
 On a new affine grid `a_j=2000001+401j`, indices `(0,10,20,30,40)` are frozen
 before any response or metric read. Origins `(2000001,2004011,2008021)` are
@@ -1218,6 +1265,32 @@ TPC-385 reproducibility commands:
     python -O -B papers/tpc-385-c1-bandwidth-origin-holdout/experiments/tpc385_adversarial_certificate_stress.py --check
     python -B research/tpc-big-road/tpc_bridge_b_tpc385_c1_bandwidth_origin_holdout_checker.py --check
     python -O -B research/tpc-big-road/tpc_bridge_b_tpc385_c1_bandwidth_origin_holdout_checker.py --check
+
+TPC-386 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-386-c1-count-holdout-bandwidth/code/tpc386_c1_count_holdout_bandwidth.py --check
+    python -O -B papers/tpc-386-c1-count-holdout-bandwidth/code/tpc386_c1_count_holdout_bandwidth.py --check
+    python -B papers/tpc-386-c1-count-holdout-bandwidth/experiments/tpc386_independent_checker.py --check
+    python -O -B papers/tpc-386-c1-count-holdout-bandwidth/experiments/tpc386_independent_checker.py --check
+    python -B papers/tpc-386-c1-count-holdout-bandwidth/experiments/tpc386_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-386-c1-count-holdout-bandwidth/experiments/tpc386_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc386_c1_count_holdout_bandwidth_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc386_c1_count_holdout_bandwidth_checker.py --check
+
+TPC-387 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-387-c1-count-ladder-renormalization/code/tpc387_c1_count_ladder_renormalization.py --check
+    python -O -B papers/tpc-387-c1-count-ladder-renormalization/code/tpc387_c1_count_ladder_renormalization.py --check
+    python -B papers/tpc-387-c1-count-ladder-renormalization/experiments/tpc387_independent_checker.py --check
+    python -O -B papers/tpc-387-c1-count-ladder-renormalization/experiments/tpc387_independent_checker.py --check
+    python -B papers/tpc-387-c1-count-ladder-renormalization/experiments/tpc387_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-387-c1-count-ladder-renormalization/experiments/tpc387_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc387_c1_count_ladder_renormalization_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc387_c1_count_ladder_renormalization_checker.py --check
 
 
 TPC-374 tail audit is required to return zero with empty stderr and
@@ -14470,11 +14543,14 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V233/TPC-380 是当前 release；其 c=1 law-control count-replay producer、
-independent direct-sieve reverse-shell replay、25-mutation certificate stress audit 与
-literal masked-operator Bridge-B 已封存。V232/TPC-379 是上一 release；其 c=1 law-control producer、
-independent direct-sieve reverse-shell replay、25-mutation certificate stress audit 与
-literal masked-operator Bridge-B 已封存。V231/TPC-378 是上一 release；其 c=1
+V240/TPC-387 是当前 release；其 c=1 count-ladder renormalization producer、
+independent reverse-shell replay、25-mutation certificate stress audit 与
+literal masked-operator Bridge-B 已封存。V239/TPC-386 是上一 release；其 c=1
+count-holdout bandwidth producer、independent direct-sieve reverse-shell replay、
+25-mutation certificate stress audit 与 literal masked-operator Bridge-B 已封存。
+V238/TPC-385 是上一 release；其 c=1 bandwidth-origin holdout producer、
+independent reverse-shell replay、25-mutation certificate stress audit 与
+literal masked-operator Bridge-B 已封存。V237/TPC-384 是上一 release；其 c=1
 scale-origin-crossholdout producer、
 independent reverse-shell replay、certificate stress audit 与 literal masked-operator
 Bridge-B 已封存。V230/TPC-377 是上一 release；其 c=1 window-scale-holdout producer、
@@ -14553,6 +14629,13 @@ normal/optimized 审计；TPC-385 的 Bridge-B 输出为
 `TPC385_BRIDGE_CHECK=PASS rows=160 cells=32 holdout_forecasts=4/4 stable_holdout=28/32`。
 这些新增 finite audits 不改变 curated historical count，也不支付 arithmetic
 `L2`、fixed-power credit 或 official Route-A/Route-B gate。
+
+随后封存的 TPC-386 与 TPC-387 也各自完成了 producer、independent replay、
+mutation stress、PDF QA 与 local Bridge-B 的 normal/optimized 审计。TPC-387 的
+Bridge-B 输出为 `TPC387_BRIDGE_CHECK=PASS rows=256 cells=32 renorm_pass=32/32
+spectral_failures=40 stable_holdout=28/32`。这两项新增 finite count audits
+不改变 curated historical cascade 的计数，也不支付 arithmetic `L2`、
+fixed-power credit 或 official Route-A/Route-B gate。
 
 V184/TPC-331 的新增 4 对由本项目 bridge 与 standalone tail checks 逐项验证；其
 finite decomposition 不代表 source-uniform arithmetic `L2` 或 official Route-A/Route-B
@@ -16519,6 +16602,44 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 ```
 
 随后优先读取：
+
+TPC-387 current release 入口：
+
+papers/tpc-387-c1-count-ladder-renormalization/README.md
+papers/tpc-387-c1-count-ladder-renormalization/PAPER_PLAN.md
+papers/tpc-387-c1-count-ladder-renormalization/DERIVATION_PACKAGE.md
+papers/tpc-387-c1-count-ladder-renormalization/PROOF_PACKAGE.md
+papers/tpc-387-c1-count-ladder-renormalization/code/tpc387_c1_count_ladder_renormalization.py
+papers/tpc-387-c1-count-ladder-renormalization/experiments/tpc387_independent_checker.py
+papers/tpc-387-c1-count-ladder-renormalization/experiments/tpc387_adversarial_certificate_stress.py
+papers/tpc-387-c1-count-ladder-renormalization/results/tpc387_certificate.json
+papers/tpc-387-c1-count-ladder-renormalization/notes/theorem_ledger.md
+papers/tpc-387-c1-count-ladder-renormalization/notes/claim_firewall.md
+papers/tpc-387-c1-count-ladder-renormalization/notes/computational_protocol.md
+papers/tpc-387-c1-count-ladder-renormalization/notes/route_evaluation.md
+papers/tpc-387-c1-count-ladder-renormalization/paper/main.tex
+papers/tpc-387-c1-count-ladder-renormalization/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc387_c1_count_ladder_renormalization.md
+research/tpc-big-road/tpc_bridge_b_tpc387_c1_count_ladder_renormalization_checker.py
+
+TPC-386 previous release 入口：
+
+papers/tpc-386-c1-count-holdout-bandwidth/README.md
+papers/tpc-386-c1-count-holdout-bandwidth/PAPER_PLAN.md
+papers/tpc-386-c1-count-holdout-bandwidth/DERIVATION_PACKAGE.md
+papers/tpc-386-c1-count-holdout-bandwidth/PROOF_PACKAGE.md
+papers/tpc-386-c1-count-holdout-bandwidth/code/tpc386_c1_count_holdout_bandwidth.py
+papers/tpc-386-c1-count-holdout-bandwidth/experiments/tpc386_independent_checker.py
+papers/tpc-386-c1-count-holdout-bandwidth/experiments/tpc386_adversarial_certificate_stress.py
+papers/tpc-386-c1-count-holdout-bandwidth/results/tpc386_certificate.json
+papers/tpc-386-c1-count-holdout-bandwidth/notes/theorem_ledger.md
+papers/tpc-386-c1-count-holdout-bandwidth/notes/claim_firewall.md
+papers/tpc-386-c1-count-holdout-bandwidth/notes/computational_protocol.md
+papers/tpc-386-c1-count-holdout-bandwidth/notes/route_evaluation.md
+papers/tpc-386-c1-count-holdout-bandwidth/paper/main.tex
+papers/tpc-386-c1-count-holdout-bandwidth/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc386_c1_count_holdout_bandwidth.md
+research/tpc-big-road/tpc_bridge_b_tpc386_c1_count_holdout_bandwidth_checker.py
 
 TPC-378 current release 入口：
 

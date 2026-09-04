@@ -1,12 +1,52 @@
-# TPC big road V239 / TPC-386: c=1 count-holdout bandwidth audit
+# TPC big road V240 / TPC-387: c=1 count-ladder renormalization
 
-## V239 current anchor: TPC-386
+## V240 current anchor: TPC-387
 
 更新时间：2026-09-04
 
-当前 TPC-386 proof package 位于 `../../papers/tpc-386-c1-count-holdout-bandwidth/`，
-checker 为 `tpc_bridge_b_tpc386_c1_count_holdout_bandwidth_checker.py`。
-在 fresh coordinate-disjoint origins `(2200001,2204011,2208021,2212031,2216041)`
+当前 TPC-387 proof package 位于 `../../papers/tpc-387-c1-count-ladder-renormalization/`，
+checker 为 `tpc_bridge_b_tpc387_c1_count_ladder_renormalization_checker.py`。
+在 fresh coordinate-disjoint origins `(2400001,2404011,2408021,2412031,2416041)`
+上预声明三个 origins 的 `N=512,768` calibration ladder 与两个 origins 的
+`N=1024` holdout，固定 fixed-three-block/full-relative 两种 band mode、
+`Q=2048,8192`、四个 laws 与 local/calibration-extrapolated pooled normalization，
+形成 256-row、32-cell panel。两个 calibration levels 的 stability census 为
+`24/32,24/32`，holdout 为 `28/32`；32 个 calibration-slope endpoint forecasts
+均通过 3% cap，最大绝对误差为 `0.026051162042932119`。继承的 `0.64`
+spectral diagnostic 有 40/256 个 finite failures，而 Schur failures 为 `0/256`；
+这是有限 calibration-only renormalization，不是 count-uniform theorem。
+
+    YOU ARE HERE = V240 / TPC-387
+    TPC387_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC387_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC387_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC387_COUNT_LADDER_PANEL = NUMERICALLY_CERTIFIED_FINITE_256_ROWS
+    TPC387_CALIBRATION_SLOPE_REPAIR = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC387_RENORM_FORECAST_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC387_FIXED_CAP_REPAIR = OPEN
+    TPC387_COUNT_UNIFORMITY = OPEN
+    TPC387_BANDWIDTH_RENORMALIZATION = OPEN
+    TPC387_LAW_UNIFORMITY = OPEN
+    TPC387_ORIGIN_UNIFORMITY = OPEN
+    TPC387_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC387_GROWING_OPERATOR_BOUND = OPEN
+    TPC387_SOURCE_UNIFORM_L2 = OPEN
+    TPC387_ARITHMETIC_ADVANCE = NO
+    TPC387_FIXED_POWER_CREDIT = 0
+    TPC387_FULL_GATE_B = OPEN
+    TPC387_TWIN_PRIME_RESULT = NONE
+    TPC387_STRONGEST_POSITIVE = FINITE_PANEL_WIDE_COUNT_LADDER_RENORMALIZATION
+    TPC387_STRONGEST_OBSTRUCTION = FINITE_SPECTRAL_CAP_FAILURE_CENSUS
+    TPC387_OPEN_THEOREM = SOURCE_VALID_COUNT_UNIFORM_OPERATOR_CONTROL
+    TPC387_REUSABLE_STRUCTURE = CALIBRATION_ONLY_COUNT_LADDER_WITH_FRESH_HOLDOUT
+    TPC387_ROUND2_CLUE = TEST_C1_COUNT_LADDER_SECOND_HOLDOUT
+    TPC387_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_COUNT_LADDER_RENORMALIZATION
+
+## V239 previous anchor: TPC-386
+
+更新时间：2026-09-04
+
+TPC-386 在 fresh coordinate-disjoint origins `(2200001,2204011,2208021,2212031,2216041)`
 上预声明三个 `N=512` calibration 与两个 `N=1024` holdout，固定
 fixed-three-block/full-relative 两种 band mode、`Q=2048,8192`、四个 laws 与
 local/calibration-pooled 两种 normalization，形成 160-row、32-cell panel。
@@ -16,7 +56,6 @@ calibration 与 holdout stability census 为 `20/32` 与 `28/32`；all-plus `Q=8
 spectral diagnostic 在 16 个 all-plus `N=1024` rows 失败，而 Schur failures 为
 `0/160`；这是有限 count-transfer 与 fixed-cap obstruction。
 
-    YOU ARE HERE = V239 / TPC-386
     TPC386_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC386_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
     TPC386_PARENT_PHASE_REFERENCE = PROVED_EXACT_FINITE_HASHED

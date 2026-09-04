@@ -3,13 +3,75 @@
 
 更新时间：2026-09-04
 
-状态：**TPC386_NUMERICALLY_CERTIFIED_FINITE_C1_COUNT_HOLDOUT_BANDWIDTH / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC387_NUMERICALLY_CERTIFIED_FINITE_C1_COUNT_LADDER_RENORMALIZATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.180 current：TPC-386 c=1 count-holdout bandwidth audit
+## 0.181 current：TPC-387 c=1 count-ladder renormalization
+
+项目：papers/tpc-387-c1-count-ladder-renormalization/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_COUNT_LADDER_RENORMALIZATION**。
+
+TPC-387 承接 TPC-386 的 count-induced spectral-cap obstruction，在新的
+coordinate-disjoint affine grid `a_j=2400001+401j` 上冻结 indices
+`(0,10,20,30,40)`。前三个 origins 在 `N=512` 与 `N=768` 两个层级都只作
+calibration，后两个 origins 只在 `N=1024` 作为 holdout；fixed-three-block 与
+full-relative band、`Q=2048,8192`、四个 laws、local 与 calibration-pooled
+normalization 形成完整 256 rows 与 32 cells。每个 cell 的 log-count slope
+只由两个 calibration means 拟合，再对 holdout endpoint 做一次预声明外推。
+
+最强正结果：32/32 个 cell 的 endpoint renormalization error 均不超过 3%，
+最大绝对误差为 `0.026051162042932119`；N=512、N=768、N=1024 holdout 的
+stability census 分别为 `24/32`、`24/32`、`28/32`。最强 obstruction：继承的
+`0.64` spectral diagnostic 在 40/256 rows 失败，虽然 Schur failures 为 0/256；
+因此 slope repair 只是有限经验外推，不能成为 count-uniform operator theorem。
+
+开放定理：能否在 source-valid normalization 下证明 count ladder 的统一 slope、
+控制 fixed-cap failure，并继续获得 source-uniform arithmetic `L2`。当前结果不
+支付 arithmetic advance、fixed-power credit、Route-B reassembly 或 twin-prime
+结论。
+
+可复用结构：
+
+    locked parent reference
+      -> calibration-only two-level count ladder
+      -> fresh endpoint-origin holdout
+      -> panel-wide slope/renormalization census
+      -> reverse-shell replay + mutation firewall
+
+ROUND2_CLUE：`TEST_C1_COUNT_LADDER_SECOND_HOLDOUT`。
+
+```text
+TPC387_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC387_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC387_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+TPC387_COUNT_LADDER_PANEL = NUMERICALLY_CERTIFIED_FINITE_256_ROWS
+TPC387_CALIBRATION_SLOPE_REPAIR = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC387_RENORM_FORECAST_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC387_FIXED_CAP_REPAIR = OPEN
+TPC387_COUNT_UNIFORMITY = OPEN
+TPC387_BANDWIDTH_RENORMALIZATION = OPEN
+TPC387_LAW_UNIFORMITY = OPEN
+TPC387_ORIGIN_UNIFORMITY = OPEN
+TPC387_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC387_GROWING_OPERATOR_BOUND = OPEN
+TPC387_SOURCE_UNIFORM_L2 = OPEN
+TPC387_ARITHMETIC_ADVANCE = NO
+TPC387_FIXED_POWER_CREDIT = 0
+TPC387_FULL_GATE_B = OPEN
+TPC387_TWIN_PRIME_RESULT = NONE
+TPC387_STRONGEST_POSITIVE = FINITE_PANEL_WIDE_COUNT_LADDER_RENORMALIZATION
+TPC387_STRONGEST_OBSTRUCTION = FINITE_SPECTRAL_CAP_FAILURE_CENSUS
+TPC387_OPEN_THEOREM = SOURCE_VALID_COUNT_UNIFORM_OPERATOR_CONTROL
+TPC387_REUSABLE_STRUCTURE = CALIBRATION_ONLY_COUNT_LADDER_WITH_FRESH_HOLDOUT
+TPC387_ROUND2_CLUE = TEST_C1_COUNT_LADDER_SECOND_HOLDOUT
+TPC387_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_COUNT_LADDER_RENORMALIZATION
+```
+
+## 0.180 previous：TPC-386 c=1 count-holdout bandwidth audit
 
 项目：papers/tpc-386-c1-count-holdout-bandwidth/
 
