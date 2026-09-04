@@ -1,8 +1,52 @@
-# TPC big road V229 / TPC-376: response-blind bandwidth holdout
+# TPC big road V230 / TPC-377: c=1 window-scale holdout
 
-## V229 current anchor: TPC-376
+## V230 current anchor: TPC-377
 
 更新时间：2026-09-04
+
+当前 TPC-377 proof 为 bridge_b_tpc377_c1_window_scale_holdout.md，checker 为
+tpc_bridge_b_tpc377_c1_window_scale_holdout_checker.py，编号论文为
+../../papers/tpc-377-c1-window-scale-holdout/。
+
+TPC-377 承接 TPC-376 的 `c=1` band，在三个既定 response-blind origins 上冻结
+nested-prefix counts `(1024,1536,2048)`，并保持 block length `256`、beta `2`、
+all-plus law、exponent `1` 与 `Q=512,2048,8192`。完整 27-row panel 在每个 count
+都给出 spectral profile `0/3,3/3,3/3`，总计 18/27 failures；Schur failures
+为 `0/27`。selected full-mode band-Rayleigh retention 为
+`0.93760019185559207--0.98047323365759775`。
+
+这是有限 nested-prefix scale persistence；谱幅度随 count 变化，不能升级为 window-scale
+uniformity 或 growing theorem。origin uniformity、source-valid normalization、source-uniform
+arithmetic `L2`、fixed-power credit 与 twin-prime result 仍 open/zero。official evaluator
+files 仍缺失，local Bridge-B 是 fail-closed fallback；下一关为
+`TEST_C1_SCALE_ORIGIN_CROSSHOLDOUT`。
+
+    YOU ARE HERE = V230 / TPC-377
+    TPC377_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC377_NESTED_PREFIX_PROTOCOL = PROVED_EXACT_FINITE
+    TPC377_COMMON_NORMALIZATION = PROVED_EXACT_FINITE_INHERITED
+    TPC377_SCALE_LADDER_REPLAY = NUMERICALLY_CERTIFIED_FINITE_27_ROWS
+    TPC377_C1_PROFILE_STABILITY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC377_PARENT_Q_PROFILE_PERSISTENCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC377_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC377_ORIGIN_UNIFORMITY = OPEN
+    TPC377_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC377_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC377_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC377_GROWING_OPERATOR_BOUND = OPEN
+    TPC377_SOURCE_UNIFORM_L2 = OPEN
+    TPC377_ARITHMETIC_ADVANCE = NO
+    TPC377_FIXED_POWER_CREDIT = 0
+    TPC377_FULL_GATE_B = OPEN
+    TPC377_TWIN_PRIME_RESULT = NONE
+    TPC377_STRONGEST_POSITIVE = FINITE_C1_PROFILE_PERSISTS_ACROSS_THREE_COUNTS_AND_ORIGINS
+    TPC377_STRONGEST_OBSTRUCTION = SCALE_MAGNITUDE_CHANGES_AND_NO_GROWING_NORMALIZATION_THEOREM
+    TPC377_OPEN_THEOREM = PREDECLARED_C1_SCALE_ORIGIN_CROSSHOLDOUT
+    TPC377_REUSABLE_STRUCTURE = NESTED_PREFIX_SCALE_LADDER_WITH_COMMON_BAND_TAIL_RAYLEIGH_AUDIT
+    TPC377_ROUND2_CLUE = TEST_C1_SCALE_ORIGIN_CROSSHOLDOUT
+    TPC377_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_WINDOW_SCALE_HOLDOUT
+
+## V229 previous anchor: TPC-376
 
 当前 TPC-376 proof 为 bridge_b_tpc376_bandwidth_holdout_replication.md，checker 为
 tpc_bridge_b_tpc376_bandwidth_holdout_replication_checker.py，编号论文为

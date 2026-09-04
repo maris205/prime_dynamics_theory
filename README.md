@@ -9,6 +9,21 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线最新位置：TPC-377 已将 TPC-376 的预声明 `c=1` band 推进到
+`N={1024,1536,2048}` 的 nested-prefix scale ladder，在三个 holdout origins 与
+`Q={512,2048,8192}` 上完成 27-row panel。三个 count 的 spectral failure profile
+均为 `(0,3,3)`，总计 18/27 spectral failures、Schur failures 为 0/27；selected-mode
+band-Rayleigh retention 为 `0.93760019185559207--0.98047323365759775`。这是有限
+scale support persistence，谱幅度随 count 变化，故不宣称 window-scale uniformity、
+growing operator theorem、arithmetic `L2` 或 twin-prime result。当前项目为
+`papers/tpc-377-c1-window-scale-holdout/`，下一关是
+`TEST_C1_SCALE_ORIGIN_CROSSHOLDOUT`；`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
+
+papers/tpc-377-c1-window-scale-holdout - TPC-377 current project；含 27-row
+scale certificate、独立 reverse-shell replay、24-mutation stress、2-page PDF 与
+local fail-closed Bridge-B checker。
+
 当前主线最新位置：TPC-376 已在 TPC-375 的 `c=1` 规则上完成预声明、response-blind
 grid-index holdout。固定 holdout indices `(5,15,30)`、count `2048`、三个
 `Q={512,2048,8192}` anchors 的 9-row panel 给出 band spectral failure profile
@@ -20,7 +35,7 @@ uniformity、arithmetic `L2`、growing theorem 或 twin-prime result。当前项
 `TEST_C1_WINDOW_SCALE_HOLDOUT`；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
 `FULL_GATE_B=OPEN`。
 
-papers/tpc-376-bandwidth-holdout-replication - TPC-376 current project；含
+papers/tpc-376-bandwidth-holdout-replication - TPC-376 previous project；含
 grid-index holdout 的 9-row certificate、独立 reverse-shell replay、23-mutation
 stress、2-page PDF 与 local fail-closed Bridge-B checker。
 

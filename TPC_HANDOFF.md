@@ -1,9 +1,61 @@
 # TPC HANDOFF
 
-TPC-376 current section: response-blind bandwidth holdout replication
----------------------------------------------------------------------
+TPC-377 current section: c=1 window-scale holdout
+--------------------------------------------------
 
-TPC-376 is the current sealed release. It inherits TPC-375's count-2048
+TPC-377 is the current sealed release. It inherits TPC-376's `c=1` band and
+freezes, before reading any response, the nested-prefix count ladder
+`N=1024,1536,2048` on the three established response-blind holdout origins
+`(1012006,1016016,1022031)`. Every count uses contiguous 256-point blocks,
+its own full-window square-energy normalization, beta=2, the all-plus law,
+kernel exponent 1, and Q anchors `Q=512,2048,8192`, giving a complete 27-row
+Cartesian panel.
+
+All three count levels have the c=1 spectral failure profile `0/3,3/3,3/3`,
+for 18/27 spectral failures in total; Schur failures are 0/27. Selected
+full-mode absolute-Rayleigh retention is
+`0.93760019185559207--0.98047323365759775`. The exact anchor, producer,
+independent reverse-shell replay, 24-mutation stress test, 2-page PDF, and
+local Bridge-B are sealed in the package.
+
+This is finite nested-prefix scale persistence only. Spectral magnitudes vary
+with count and normalization is count-specific, so this does not establish
+window-scale uniformity, origin uniformity, cross-block causality, a growing
+operator bound, source-uniform arithmetic `L2`, an arithmetic power saving,
+Route-B reassembly, or a twin-prime result. Official Route-A/Route-B
+evaluator files remain absent; local Bridge-B is fail-closed repository
+evidence. `ARITHMETIC_ADVANCE=NO`, `FIXED_POWER_CREDIT=0`, and
+`FULL_GATE_B=OPEN`; the next finite question is
+`TEST_C1_SCALE_ORIGIN_CROSSHOLDOUT`.
+
+    TPC377_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC377_NESTED_PREFIX_PROTOCOL = PROVED_EXACT_FINITE
+    TPC377_COMMON_NORMALIZATION = PROVED_EXACT_FINITE_INHERITED
+    TPC377_SCALE_LADDER_REPLAY = NUMERICALLY_CERTIFIED_FINITE_27_ROWS
+    TPC377_C1_PROFILE_STABILITY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC377_PARENT_Q_PROFILE_PERSISTENCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC377_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC377_ORIGIN_UNIFORMITY = OPEN
+    TPC377_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC377_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC377_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC377_GROWING_OPERATOR_BOUND = OPEN
+    TPC377_SOURCE_UNIFORM_L2 = OPEN
+    TPC377_ARITHMETIC_ADVANCE = NO
+    TPC377_FIXED_POWER_CREDIT = 0
+    TPC377_FULL_GATE_B = OPEN
+    TPC377_TWIN_PRIME_RESULT = NONE
+    TPC377_STRONGEST_POSITIVE = FINITE_C1_PROFILE_PERSISTS_ACROSS_THREE_COUNTS_AND_ORIGINS
+    TPC377_STRONGEST_OBSTRUCTION = SCALE_MAGNITUDE_CHANGES_AND_NO_GROWING_NORMALIZATION_THEOREM
+    TPC377_OPEN_THEOREM = PREDECLARED_C1_SCALE_ORIGIN_CROSSHOLDOUT
+    TPC377_REUSABLE_STRUCTURE = NESTED_PREFIX_SCALE_LADDER_WITH_COMMON_BAND_TAIL_RAYLEIGH_AUDIT
+    TPC377_ROUND2_CLUE = TEST_C1_SCALE_ORIGIN_CROSSHOLDOUT
+    TPC377_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_WINDOW_SCALE_HOLDOUT
+
+TPC-376 previous section: response-blind bandwidth holdout replication
+-----------------------------------------------------------------------
+
+TPC-376 is the previous sealed release. It inherits TPC-375's count-2048
 full-window normalization and fixes the `c=1` band before reading any
 holdout response. The response-blind candidate grid is
 `a_j=1010001+401j`, with training indices `(0,20,40)` and reserved holdout
@@ -616,6 +668,19 @@ TPC-376 reproducibility commands:
     python -O -B papers/tpc-376-bandwidth-holdout-replication/experiments/tpc376_adversarial_certificate_stress.py --check
     python -B research/tpc-big-road/tpc_bridge_b_tpc376_bandwidth_holdout_replication_checker.py --check
     python -O -B research/tpc-big-road/tpc_bridge_b_tpc376_bandwidth_holdout_replication_checker.py --check
+
+TPC-377 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-377-c1-window-scale-holdout/code/tpc377_c1_window_scale_holdout.py --check
+    python -O -B papers/tpc-377-c1-window-scale-holdout/code/tpc377_c1_window_scale_holdout.py --check
+    python -B papers/tpc-377-c1-window-scale-holdout/experiments/tpc377_independent_checker.py --check
+    python -O -B papers/tpc-377-c1-window-scale-holdout/experiments/tpc377_independent_checker.py --check
+    python -B papers/tpc-377-c1-window-scale-holdout/experiments/tpc377_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-377-c1-window-scale-holdout/experiments/tpc377_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc377_c1_window_scale_holdout_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc377_c1_window_scale_holdout_checker.py --check
 
 
 TPC-374 tail audit is required to return zero with empty stderr and
@@ -13838,7 +13903,9 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V229/TPC-376 是当前 release；其 response-blind bandwidth-holdout producer、
+V230/TPC-377 是当前 release；其 c=1 window-scale-holdout producer、
+independent reverse-shell replay、certificate stress audit 与 literal masked-operator
+Bridge-B 已封存。V229/TPC-376 是上一 release；其 response-blind bandwidth-holdout producer、
 independent reverse-shell replay、certificate stress audit 与 literal masked-operator
 Bridge-B 已封存。V228/TPC-375 是上一 release；其 bandwidth-stability/minimal-cutoff producer、
 independent reverse-shell replay、certificate stress audit 与 literal masked-operator
@@ -13877,7 +13944,7 @@ TPC-342、TPC-341、TPC-340、TPC-339、TPC-338、TPC-337、TPC-336、TPC-335、
 TPC-333、TPC-332、TPC-331、TPC-330、TPC-329、TPC-328、TPC-327、TPC-326、TPC-325、
 TPC-324、TPC-323、TPC-322、TPC-321、TPC-320、TPC-319、TPC-318、TPC-317、TPC-316
 及更早版本仍按历史顺序保留。
-当前 curated cascade command set 共 513 对 normal/optimized 命令、1026 次
+当前 curated cascade command set 共 517 对 normal/optimized 命令、1034 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
@@ -13896,7 +13963,7 @@ TPC-321 再追加末尾 4 对，TPC-322 再追加末尾 4 对，TPC-323 再追�
 TPC-324 再追加末尾 4 对，TPC-325 再追加末尾 4 对，TPC-326 再追加末尾 4 对，
 TPC-327 再追加末尾 4 对，TPC-328 再追加末尾 4 对，TPC-329 再追加末尾 4 对，
 TPC-330 再追加末尾 4 对，TPC-331 再追加末尾 4 对，TPC-332、TPC-333、TPC-334、
-TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369、TPC-370、TPC-371、TPC-372、TPC-373、TPC-374、TPC-375、TPC-376 各再追加末尾 4 对。
+TPC-335、TPC-336、TPC-337、TPC-338、TPC-339、TPC-340、TPC-341、TPC-342、TPC-343、TPC-344、TPC-345、TPC-346、TPC-347、TPC-348、TPC-349、TPC-350、TPC-351、TPC-352、TPC-353、TPC-354、TPC-355、TPC-356、TPC-357、TPC-358、TPC-359、TPC-360、TPC-361、TPC-362、TPC-363、TPC-364、TPC-365、TPC-366、TPC-367、TPC-368、TPC-369、TPC-370、TPC-371、TPC-372、TPC-373、TPC-374、TPC-375、TPC-376、TPC-377 各再追加末尾 4 对。
 V183/TPC-330 的新增 4 对由
 本项目 bridge 与 standalone tail checks 逐项验证；其余历史组合未因重复计算而再次运行。
 
@@ -15866,7 +15933,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-376 current release 入口：
+TPC-377 current release 入口：
+
+papers/tpc-377-c1-window-scale-holdout/README.md
+papers/tpc-377-c1-window-scale-holdout/PAPER_PLAN.md
+papers/tpc-377-c1-window-scale-holdout/DERIVATION_PACKAGE.md
+papers/tpc-377-c1-window-scale-holdout/PROOF_PACKAGE.md
+papers/tpc-377-c1-window-scale-holdout/code/tpc377_c1_window_scale_holdout.py
+papers/tpc-377-c1-window-scale-holdout/experiments/tpc377_independent_checker.py
+papers/tpc-377-c1-window-scale-holdout/experiments/tpc377_adversarial_certificate_stress.py
+papers/tpc-377-c1-window-scale-holdout/results/tpc377_certificate.json
+papers/tpc-377-c1-window-scale-holdout/notes/theorem_ledger.md
+papers/tpc-377-c1-window-scale-holdout/notes/claim_firewall.md
+papers/tpc-377-c1-window-scale-holdout/notes/computational_protocol.md
+papers/tpc-377-c1-window-scale-holdout/notes/route_evaluation.md
+papers/tpc-377-c1-window-scale-holdout/paper/main.tex
+papers/tpc-377-c1-window-scale-holdout/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc377_c1_window_scale_holdout.md
+research/tpc-big-road/tpc_bridge_b_tpc377_c1_window_scale_holdout_checker.py
+
+TPC-376 previous release 入口：
 
 papers/tpc-376-bandwidth-holdout-replication/README.md
 papers/tpc-376-bandwidth-holdout-replication/PAPER_PLAN.md

@@ -3,13 +3,80 @@
 
 更新时间：2026-09-04
 
-状态：**TPC376_NUMERICALLY_CERTIFIED_FINITE_BANDWIDTH_HOLDOUT_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC377_NUMERICALLY_CERTIFIED_FINITE_C1_WINDOW_SCALE_HOLDOUT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.170 current：TPC-376 response-blind bandwidth holdout replication
+## 0.171 current：TPC-377 c=1 window-scale holdout
+
+项目：papers/tpc-377-c1-window-scale-holdout/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_WINDOW_SCALE_HOLDOUT**。
+
+TPC-377 承接 TPC-376 的 `c=1` band，在三个既定 response-blind holdout origins
+`(1012006,1016016,1022031)` 上预先冻结 nested-prefix count ladder
+`N=(1024,1536,2048)`。每个 count 采用连续 256-point blocks、分别的 full-window
+square-energy normalization、beta `2`、all-plus law、kernel exponent `1` 与
+`Q=(512,2048,8192)`，形成完整的 27-row Cartesian panel；count 与 row response
+均未参与选择。
+
+最强正结果：三个 count 的 `c=1` band spectral failure profile 都是 `(0,3,3)`，
+总计 `18/27` spectral failures，而 Schur failures 为 `0/27`，因此在该有限
+scale ladder 上保留了 TPC-376 的 Q-support signature。selected full-mode
+band-Rayleigh retention 为 `0.93760019185559207--0.98047323365759775`，并由
+exact anchor、producer、独立 reverse-shell replay、24-mutation stress 与 local
+Bridge-B 复核。
+
+最强 obstruction：谱幅度随 count 改变，且各 count 使用自身 normalization；因此
+不能从 profile persistence 推出 window-scale uniformity、cross-block causality 或
+growing operator bound。origin uniformity、source-valid normalization、source-uniform
+arithmetic `L2`、fixed-power credit 与 twin-prime endpoint 仍未关闭；official
+Route-A/Route-B evaluator files 仍缺失，local Bridge-B 只是 fail-closed repository
+evidence，arithmetic advance 为 NO。
+
+开放定理：在同一 `c=1` 规则下，新的 response-blind scale/origin cross-holdout 是否
+仍保持该有限 Q-profile，并能否将 support persistence 与有限尺度偶然性区分开。
+
+可复用结构：
+
+    frozen response-blind origins
+      -> predeclared nested-prefix count ladder
+      -> common band rule and per-count normalization audit
+      -> complete Cartesian panel
+      -> reverse-shell replay + mutation firewall
+      -> scale/origin cross-holdout
+
+ROUND2_CLUE：`TEST_C1_SCALE_ORIGIN_CROSSHOLDOUT`。
+
+```text
+TPC377_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC377_NESTED_PREFIX_PROTOCOL = PROVED_EXACT_FINITE
+TPC377_COMMON_NORMALIZATION = PROVED_EXACT_FINITE_INHERITED
+TPC377_SCALE_LADDER_REPLAY = NUMERICALLY_CERTIFIED_FINITE_27_ROWS
+TPC377_C1_PROFILE_STABILITY = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC377_PARENT_Q_PROFILE_PERSISTENCE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC377_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC377_ORIGIN_UNIFORMITY = OPEN
+TPC377_WINDOW_SCALE_UNIFORMITY = OPEN
+TPC377_CROSS_BLOCK_CAUSALITY = OPEN
+TPC377_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC377_GROWING_OPERATOR_BOUND = OPEN
+TPC377_SOURCE_UNIFORM_L2 = OPEN
+TPC377_ARITHMETIC_ADVANCE = NO
+TPC377_FIXED_POWER_CREDIT = 0
+TPC377_FULL_GATE_B = OPEN
+TPC377_TWIN_PRIME_RESULT = NONE
+TPC377_STRONGEST_POSITIVE = FINITE_C1_PROFILE_PERSISTS_ACROSS_THREE_COUNTS_AND_ORIGINS
+TPC377_STRONGEST_OBSTRUCTION = SCALE_MAGNITUDE_CHANGES_AND_NO_GROWING_NORMALIZATION_THEOREM
+TPC377_OPEN_THEOREM = PREDECLARED_C1_SCALE_ORIGIN_CROSSHOLDOUT
+TPC377_REUSABLE_STRUCTURE = NESTED_PREFIX_SCALE_LADDER_WITH_COMMON_BAND_TAIL_RAYLEIGH_AUDIT
+TPC377_ROUND2_CLUE = TEST_C1_SCALE_ORIGIN_CROSSHOLDOUT
+TPC377_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_WINDOW_SCALE_HOLDOUT
+```
+
+## 0.170 previous：TPC-376 response-blind bandwidth holdout replication
 
 项目：papers/tpc-376-bandwidth-holdout-replication/
 
