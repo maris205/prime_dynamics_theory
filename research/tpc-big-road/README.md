@@ -1,80 +1,80 @@
-# TPC big road V233 / TPC-380: c=1 law-control count replay
+# TPC big road V234 / TPC-381: c=1 law-control origin-family replay
 
-## V233 current anchor: TPC-380
+## V234 current anchor: TPC-381
 
 更新时间：2026-09-04
 
-当前 TPC-380 proof 为 bridge_b_tpc380_c1_law_control_count_replay.md，checker 为
-tpc_bridge_b_tpc380_c1_law_control_count_replay_checker.py，编号论文为
-../../papers/tpc-380-c1-law-control-count-replay/。
+当前 TPC-381 proof 为 bridge_b_tpc381_c1_origin_family_replay.md，checker 为
+tpc_bridge_b_tpc381_c1_origin_family_replay_checker.py，编号论文为
+../../papers/tpc-381-c1-origin-family-replay/。
 
-TPC-380 把 TPC-379 的 four-law `c=1` panel 复放到新的 coordinate-disjoint affine
-grid `a_j=1300001+401j`、`0<=j<41`，在任何 response、signed metric 或 geometry
+TPC-381 把 TPC-380 的 four-law `c=1` panel 复放到新的 coordinate-disjoint affine
+grid `a_j=1400001+401j`、`0<=j<41`，在任何 response、signed metric 或 geometry
 score 读取前冻结 indices `(0,20,40)`，对应 origins
-`(1300001,1308021,1316041)`。固定 count `2048`、八个连续 256-point blocks、
+`(1400001,1408021,1416041)`。固定 count `2048`、八个连续 256-point blocks、
 `Q=512,2048,8192`、beta `2`、exponent `1`、height `66` 与同一 common
 square-energy geometry/common `c=1` mask，完整比较 all-plus、alternating-index、
 mod-4-character 与 half-split 四个 laws。
 
 all-plus profile 为 `(0,3,3)`，三个 signed controls 均为 `(0,0,0)`；总计 6/36
-spectral-cap failures，Schur failures 为 0/36。最强正结果是有限 count-2048
+spectral-cap failures，Schur failures 为 0/36。最强正结果是有限 origin-family
 profile persistence；最强 obstruction 是 separation 仍特异于 all-plus law。q=8
-exact anchor 为 `[1300014,1300027)`、shell `[11,13]`，其 initial residue-degenerate
-attempt 与 deterministic finite positivity repair 均有审计记录。
+exact anchor 为 `[1400001,1400014)`、shell `[11,13]`，由 exact rational geometry
+复核。
 
 这不是 law/origin/scale uniformity、source-valid normalization、cross-block causality、
 growing operator theorem、source-uniform arithmetic `L2`、power saving、Route-B
 reassembly 或 twin-prime result。official evaluator files 仍缺失，local Bridge-B 是
 fail-closed fallback；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
-`FULL_GATE_B=OPEN`。下一关为 `TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY`。
+`FULL_GATE_B=OPEN`。下一关为 `TEST_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT`。
 
-    YOU ARE HERE = V233 / TPC-380
-    TPC380_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
-    TPC380_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
-    TPC380_COMMON_GEOMETRY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
-    TPC380_LAW_FAMILY = PROVED_EXACT_FINITE_PREDECLARED
-    TPC380_COUNT_REPLAY = NUMERICALLY_CERTIFIED_FINITE_36_ROWS
-    TPC380_ALL_PLUS_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC380_SIGNED_CONTROL_SUBCAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC380_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC380_LAW_UNIFORMITY = OPEN
-    TPC380_ORIGIN_UNIFORMITY = OPEN
-    TPC380_WINDOW_SCALE_UNIFORMITY = OPEN
-    TPC380_CROSS_BLOCK_CAUSALITY = OPEN
-    TPC380_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
-    TPC380_GROWING_OPERATOR_BOUND = OPEN
-    TPC380_SOURCE_UNIFORM_L2 = OPEN
-    TPC380_ARITHMETIC_ADVANCE = NO
-    TPC380_FIXED_POWER_CREDIT = 0
-    TPC380_FULL_GATE_B = OPEN
-    TPC380_TWIN_PRIME_RESULT = NONE
-    TPC380_STRONGEST_POSITIVE = FINITE_COUNT_2048_REPLAY_ON_THREE_FRESH_ORIGINS
-    TPC380_STRONGEST_OBSTRUCTION = ALL_PLUS_SEPARATION_REMAINS_LAW_DEPENDENT
-    TPC380_OPEN_THEOREM = SOURCE_VALID_ORIGIN_FAMILY_UNIFORMITY_AND_GROWING_LAW_CONTROL
-    TPC380_REUSABLE_STRUCTURE = COMMON_GEOMETRY_COUNT_REPLAY_WITH_EXACT_ANCHOR_REVERSE_SHELL_AND_STRESS_FIREWALL
-    TPC380_ROUND2_CLUE = TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY
-    TPC380_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_COUNT_REPLAY
+    YOU ARE HERE = V234 / TPC-381
+    TPC381_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC381_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC381_COMMON_GEOMETRY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
+    TPC381_LAW_FAMILY = PROVED_EXACT_FINITE_PREDECLARED
+    TPC381_ORIGIN_FAMILY_REPLAY = NUMERICALLY_CERTIFIED_FINITE_36_ROWS
+    TPC381_ALL_PLUS_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC381_SIGNED_CONTROL_SUBCAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC381_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC381_LAW_UNIFORMITY = OPEN
+    TPC381_ORIGIN_UNIFORMITY = OPEN
+    TPC381_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC381_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC381_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC381_GROWING_OPERATOR_BOUND = OPEN
+    TPC381_SOURCE_UNIFORM_L2 = OPEN
+    TPC381_ARITHMETIC_ADVANCE = NO
+    TPC381_FIXED_POWER_CREDIT = 0
+    TPC381_FULL_GATE_B = OPEN
+    TPC381_TWIN_PRIME_RESULT = NONE
+    TPC381_STRONGEST_POSITIVE = FINITE_ORIGIN_FAMILY_REPLAY_ON_THREE_FRESH_ORIGINS
+    TPC381_STRONGEST_OBSTRUCTION = ALL_PLUS_SEPARATION_REMAINS_LAW_DEPENDENT
+    TPC381_OPEN_THEOREM = SOURCE_VALID_ORIGIN_UNIFORMITY_AND_GROWING_LAW_CONTROL
+    TPC381_REUSABLE_STRUCTURE = COMMON_GEOMETRY_ORIGIN_FAMILY_LADDER_WITH_EXACT_ANCHOR_REVERSE_SHELL_AND_STRESS_FIREWALL
+    TPC381_ROUND2_CLUE = TEST_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT
+    TPC381_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY
 
-## V232 previous anchor: TPC-379
+## V233 previous anchor: TPC-380
 
 更新时间：2026-09-04
 
-当前 TPC-379 proof 为 bridge_b_tpc379_c1_crossholdout_law_control.md，checker 为
-tpc_bridge_b_tpc379_c1_crossholdout_law_control_checker.py，编号论文为
-../../papers/tpc-379-c1-crossholdout-law-control/。
+上一版本 TPC-380 proof 为 bridge_b_tpc380_c1_law_control_count_replay.md，checker 为
+tpc_bridge_b_tpc380_c1_law_control_count_replay_checker.py，编号论文为
+../../papers/tpc-380-c1-law-control-count-replay/。
 
-TPC-379 在新的 coordinate-disjoint affine grid 上冻结 response-blind indices
-`(0,20,40)`，对应 origins `(1200001,1208021,1216041)`。在 count `1024`、四个
+TPC-380 在新的 coordinate-disjoint affine grid 上冻结 response-blind indices
+`(0,20,40)`，对应 origins `(1300001,1308021,1316041)`。在 count `2048`、八个
 256-point blocks、`Q=512,2048,8192`、beta `2`、exponent `1` 和同一个 `c=1` mask
 下，完整 36-row panel 比较 all-plus、alternating-index、mod-4 与 half-split laws。
 all-plus profile 为 `0/3,3/3,3/3`，三个 signed controls 均为 `0/3,0/3,0/3`；总计
 6/36 spectral failures，Schur failures 为 0/36。
 
-这是有限 response-blind law-control obstruction：高-Q signature 依赖 all-plus law，
-而不是已证的 law-invariant mask property。它不选择 arithmetic law，不能升级为
-law/origin/window uniformity、growing theorem、source-uniform arithmetic `L2` 或
+这是有限 response-blind count-replay 与 law-control obstruction：高-Q signature 依赖
+all-plus law，而不是已证的 law-invariant mask property。它不选择 arithmetic law，不能
+升级为 law/origin/window uniformity、growing theorem、source-uniform arithmetic `L2` 或
 twin-prime result。official evaluator files 仍缺失，local Bridge-B 是 fail-closed
-fallback；下一关为 `TEST_C1_LAW_CONTROL_COUNT_REPLAY`。
+fallback；下一关为 `TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY`。
 
     YOU ARE HERE = V232 / TPC-379
     TPC379_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND

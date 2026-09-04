@@ -1,9 +1,63 @@
 # TPC HANDOFF
 
-TPC-380 current section: c=1 law-control count replay
--------------------------------------------------------
+TPC-381 current section: c=1 law-control origin-family replay
+---------------------------------------------------------------
 
-TPC-380 is the current sealed finite release. It freezes, before reading any
+TPC-381 is the current sealed finite release. It freezes, before reading any
+response or metric, the affine grid `a_j=1400001+401j`, `0<=j<41`, and
+indices `(0,20,40)`, giving the coordinate-disjoint origins
+`(1400001,1408021,1416041)`. The fixed window has `N=2048`, eight contiguous
+256-point blocks, the inherited `c=1` band, beta=2, exponent 1, height 66,
+and Q anchors `Q=512,2048,8192`. Four predeclared laws
+`all_plus`, `alternating_index`, `mod4_character`, and `half_split` share one
+square-energy geometry, giving a complete 36-row Cartesian panel.
+
+The all-plus profile is `0/3,3/3,3/3`, while each signed control has
+`0/3,0/3,0/3`. Thus there are 6/36 spectral-cap failures and 0/36 Schur-cap
+failures. The exact q=8 anchor is `[1400001,1400014)` with shell `[11,13]`.
+The producer, independent direct-sieve reverse-shell replay, 25-mutation
+stress test, 2-page PDF, and local Bridge-B are sealed.
+
+This is finite origin-family persistence plus a law-control obstruction: the
+high-Q all-plus separation recurs on three fresh origins but disappears under
+all three declared signed controls. It is not law/origin/scale uniformity,
+source-valid normalization, a growing operator bound, source-uniform
+arithmetic `L2`, arithmetic power saving, Route-B reassembly, or a twin-prime
+result. Official Route-A/Route-B evaluator files remain absent; local Bridge-B
+is fail-closed repository evidence.
+`ARITHMETIC_ADVANCE=NO`, `FIXED_POWER_CREDIT=0`, and `FULL_GATE_B=OPEN`; the
+next finite question is `TEST_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT`.
+
+    TPC381_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC381_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC381_COMMON_GEOMETRY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
+    TPC381_LAW_FAMILY = PROVED_EXACT_FINITE_PREDECLARED
+    TPC381_ORIGIN_FAMILY_REPLAY = NUMERICALLY_CERTIFIED_FINITE_36_ROWS
+    TPC381_ALL_PLUS_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC381_SIGNED_CONTROL_SUBCAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC381_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC381_LAW_UNIFORMITY = OPEN
+    TPC381_ORIGIN_UNIFORMITY = OPEN
+    TPC381_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC381_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC381_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC381_GROWING_OPERATOR_BOUND = OPEN
+    TPC381_SOURCE_UNIFORM_L2 = OPEN
+    TPC381_ARITHMETIC_ADVANCE = NO
+    TPC381_FIXED_POWER_CREDIT = 0
+    TPC381_FULL_GATE_B = OPEN
+    TPC381_TWIN_PRIME_RESULT = NONE
+    TPC381_STRONGEST_POSITIVE = FINITE_ORIGIN_FAMILY_REPLAY_ON_THREE_FRESH_ORIGINS
+    TPC381_STRONGEST_OBSTRUCTION = ALL_PLUS_SEPARATION_REMAINS_LAW_DEPENDENT
+    TPC381_OPEN_THEOREM = SOURCE_VALID_ORIGIN_UNIFORMITY_AND_GROWING_LAW_CONTROL
+    TPC381_REUSABLE_STRUCTURE = COMMON_GEOMETRY_ORIGIN_FAMILY_LADDER_WITH_EXACT_ANCHOR_REVERSE_SHELL_AND_STRESS_FIREWALL
+    TPC381_ROUND2_CLUE = TEST_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT
+    TPC381_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY
+
+TPC-380 previous section: c=1 law-control count replay
+---------------------------------------------------------
+
+TPC-380 is the previous sealed finite release. It freezes, before reading any
 response or metric, the affine grid `a_j=1300001+401j`, `0<=j<41`, and
 indices `(0,20,40)`, giving the coordinate-disjoint origins
 `(1300001,1308021,1316041)`. The fixed window has `N=2048`, eight contiguous
@@ -836,6 +890,19 @@ TPC-380 reproducibility commands:
     python -O -B papers/tpc-380-c1-law-control-count-replay/experiments/tpc380_adversarial_certificate_stress.py --check
     python -B research/tpc-big-road/tpc_bridge_b_tpc380_c1_law_control_count_replay_checker.py --check
     python -O -B research/tpc-big-road/tpc_bridge_b_tpc380_c1_law_control_count_replay_checker.py --check
+
+TPC-381 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-381-c1-origin-family-replay/code/tpc381_c1_origin_family_replay.py --check
+    python -O -B papers/tpc-381-c1-origin-family-replay/code/tpc381_c1_origin_family_replay.py --check
+    python -B papers/tpc-381-c1-origin-family-replay/experiments/tpc381_independent_checker.py --check
+    python -O -B papers/tpc-381-c1-origin-family-replay/experiments/tpc381_independent_checker.py --check
+    python -B papers/tpc-381-c1-origin-family-replay/experiments/tpc381_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-381-c1-origin-family-replay/experiments/tpc381_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc381_c1_origin_family_replay_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc381_c1_origin_family_replay_checker.py --check
 
 
 TPC-374 tail audit is required to return zero with empty stderr and

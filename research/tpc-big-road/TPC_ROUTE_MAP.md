@@ -2,22 +2,22 @@
 
 更新时间：2026-09-04
 
-当前地图版本：V233 / TPC-380
+当前地图版本：V234 / TPC-381
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-380`（`NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_COUNT_REPLAY`）；
-对应论文目录为 `papers/tpc-380-c1-law-control-count-replay/`。
+当前编号锚点：`TPC-381`（`NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY`）；
+对应论文目录为 `papers/tpc-381-c1-origin-family-replay/`。
 
-TPC-380 是当前位置：在新的 coordinate-disjoint affine grid 上预声明 indices
-`(0,20,40)`，对应 origins `(1300001,1308021,1316041)`；固定 `N=2048`、八个
+TPC-381 是当前位置：在新的 coordinate-disjoint affine grid 上预声明 indices
+`(0,20,40)`，对应 origins `(1400001,1408021,1416041)`；固定 `N=2048`、八个
 256-point blocks、`Q=512,2048,8192`、beta `2`、exponent `1`，并保持同一个
 `c=1` mask 与 common square-energy geometry。完整 36-row panel 比较 all-plus、
 alternating-index、mod-4-character 与 half-split 四个 laws。all-plus profile 仍为
 `(0,3,3)`（6/9），三个 signed controls 均为 `(0,0,0)`；总计 6/36 spectral
 failures、Schur failures 为 0/36。
 
-这是有限 response-blind count-persistence 与 law-control obstruction：all-plus
+这是有限 response-blind origin-family persistence 与 law-control obstruction：all-plus
 high-Q signature 在三个 signed controls 中全部消失，故不能把它提升为 law-invariant
 mask property，也不能选择 arithmetic law。law/origin/window uniformity、cross-block
 causality、source-valid normalization、growing operator theorem、source-uniform
@@ -25,9 +25,54 @@ arithmetic `L2`、fixed-power credit 与 twin-prime endpoint 均未关闭。prod
 direct-sieve replay、25-mutation stress、2-page PDF 与 local Bridge-B 已封存；official
 evaluator files 仍缺失，local bridge 只作 fail-closed evidence。`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关为
-`TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY`。
+`TEST_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT`。
 
-## 5.163 V233 / TPC-380：c=1 law-control count replay
+## 5.164 V234 / TPC-381：c=1 law-control origin-family replay
+
+TPC-381 的 finite package 位于 `papers/tpc-381-c1-origin-family-replay/`。
+它把 TPC-380 的 count-2048 four-law panel 放到新的 coordinate-disjoint affine
+grid `a_j=1400001+401j`，并在读取任何 response、signed metric 或 geometry score
+前固定 indices `(0,20,40)`，得到 origins `(1400001,1408021,1416041)`。八个连续
+256-point blocks、三组 Q anchors、四个 laws 形成完整 36 rows，共用 square-energy
+geometry 与 c=1 band。
+
+all-plus 的 profile 为 `(0,3,3)`，三个 signed controls 均为 `(0,0,0)`，因此
+spectral failures 为 `6/36`、Schur failures 为 `0/36`。这是有限 origin-family
+replay 与 law-dependence obstruction：TPC-380 的高-Q signature 在新 origins 上
+保持，但仍只属于 all-plus law。exact q=8 anchor 为 `[1400001,1400014)`、shell
+`[11,13]`；独立 reverse-shell replay、25-mutation stress 与双模式 local Bridge-B
+均通过。该结果不建立 origin uniformity、source-valid arithmetic normalization、
+growing operator theorem、source-uniform arithmetic `L2`、power saving 或 twin-prime
+endpoint。
+
+    YOU ARE HERE = V234 / TPC-381
+    TPC381_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC381_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC381_COMMON_GEOMETRY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
+    TPC381_LAW_FAMILY = PROVED_EXACT_FINITE_PREDECLARED
+    TPC381_ORIGIN_FAMILY_REPLAY = NUMERICALLY CERTIFIED FINITE_36_ROWS
+    TPC381_ALL_PLUS_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC381_SIGNED_CONTROL_SUBCAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC381_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC381_LAW_UNIFORMITY = OPEN
+    TPC381_ORIGIN_UNIFORMITY = OPEN
+    TPC381_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC381_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC381_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC381_GROWING_OPERATOR_BOUND = OPEN
+    TPC381_SOURCE_UNIFORM_L2 = OPEN
+    TPC381_ARITHMETIC_ADVANCE = NO
+    TPC381_FIXED_POWER_CREDIT = 0
+    TPC381_FULL_GATE_B = OPEN
+    TPC381_TWIN_PRIME_RESULT = NONE
+    TPC381_STRONGEST_POSITIVE = FINITE_ORIGIN_FAMILY_REPLAY_ON_THREE_FRESH_ORIGINS
+    TPC381_STRONGEST_OBSTRUCTION = ALL_PLUS_SEPARATION_REMAINS_LAW_DEPENDENT
+    TPC381_OPEN_THEOREM = SOURCE_VALID_ORIGIN_UNIFORMITY_AND_GROWING_LAW_CONTROL
+    TPC381_REUSABLE_STRUCTURE = COMMON_GEOMETRY_ORIGIN_FAMILY_LADDER_WITH_EXACT_ANCHOR_REVERSE_SHELL_AND_STRESS_FIREWALL
+    TPC381_ROUND2_CLUE = TEST_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT
+    TPC381_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY
+
+## 5.163 V233 / TPC-380：c=1 law-control count replay (previous)
 
 TPC-380 的 finite package 位于 `papers/tpc-380-c1-law-control-count-replay/`。
 它把 TPC-379 的 four-law `c=1` panel 放到新的 coordinate-disjoint affine grid

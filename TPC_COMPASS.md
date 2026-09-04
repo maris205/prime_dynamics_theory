@@ -1,6 +1,61 @@
 # TPC distilled map and bold channel
 
-## V233 / TPC-380 current anchor
+## V234 / TPC-381 current anchor
+
+更新时间：2026-09-04
+
+当前入口：proof 为
+research/tpc-big-road/bridge_b_tpc381_c1_origin_family_replay.md，checker 为
+tpc_bridge_b_tpc381_c1_origin_family_replay_checker.py，编号论文为
+papers/tpc-381-c1-origin-family-replay/。
+
+TPC-381 在新的 coordinate-disjoint affine-origin family 上复放 TPC-380 的
+`N=2048`、八个 256-point blocks、`Q=512,2048,8192`、beta `2`、exponent `1`、
+height `66` 与 `c=1` four-law panel。grid `a_j=1400001+401j` 的 indices
+`(0,20,40)` 在读取任何 response、signed metric 或 geometry score 前冻结，得到
+origins `(1400001,1408021,1416041)`；完整 36-row panel 共用 square-energy
+geometry 与 band mask。
+
+all-plus profile 为 `(0,3,3)`（6/9），三个 signed controls 均为 `(0,0,0)`；
+总计 6/36 spectral failures，Schur failures 为 0/36。最强正结果是 finite
+origin-family persistence；最强 obstruction 是 separation 仍依赖 all-plus law。
+q=8 exact anchor 为 `[1400001,1400014)`、shell `[11,13]`，并由 exact rational
+geometry 复核。
+
+这仍不是 origin/law/scale uniformity、source-valid normalization、growing operator
+theorem、source-uniform arithmetic `L2`、fixed-power saving、Route-B reassembly 或
+twin-prime result。官方 evaluator files 仍缺失，local Bridge-B 只作 fail-closed
+repository evidence；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`。下一关为 `TEST_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT`。
+
+    YOU ARE HERE = V234 / TPC-381
+    TPC381_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC381_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC381_COMMON_GEOMETRY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
+    TPC381_LAW_FAMILY = PROVED_EXACT_FINITE_PREDECLARED
+    TPC381_ORIGIN_FAMILY_REPLAY = NUMERICALLY_CERTIFIED_FINITE_36_ROWS
+    TPC381_ALL_PLUS_FAILURE_PROFILE = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC381_SIGNED_CONTROL_SUBCAP = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC381_RAYLEIGH_TAIL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC381_LAW_UNIFORMITY = OPEN
+    TPC381_ORIGIN_UNIFORMITY = OPEN
+    TPC381_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC381_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC381_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC381_GROWING_OPERATOR_BOUND = OPEN
+    TPC381_SOURCE_UNIFORM_L2 = OPEN
+    TPC381_ARITHMETIC_ADVANCE = NO
+    TPC381_FIXED_POWER_CREDIT = 0
+    TPC381_FULL_GATE_B = OPEN
+    TPC381_TWIN_PRIME_RESULT = NONE
+    TPC381_STRONGEST_POSITIVE = FINITE_ORIGIN_FAMILY_REPLAY_ON_THREE_FRESH_ORIGINS
+    TPC381_STRONGEST_OBSTRUCTION = ALL_PLUS_SEPARATION_REMAINS_LAW_DEPENDENT
+    TPC381_OPEN_THEOREM = SOURCE_VALID_ORIGIN_UNIFORMITY_AND_GROWING_LAW_CONTROL
+    TPC381_REUSABLE_STRUCTURE = COMMON_GEOMETRY_ORIGIN_FAMILY_LADDER_WITH_EXACT_ANCHOR_REVERSE_SHELL_AND_STRESS_FIREWALL
+    TPC381_ROUND2_CLUE = TEST_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT
+    TPC381_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY
+
+## V233 / TPC-380 previous anchor
 
 更新时间：2026-09-04
 
@@ -30,7 +85,7 @@ reassembly 或 twin-prime result。官方 evaluator files 仍缺失，local Brid
 fail-closed repository evidence；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
 `FULL_GATE_B=OPEN`。下一关为 `TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY`。
 
-    YOU ARE HERE = V233 / TPC-380
+    YOU ARE HERE = V233 / TPC-380 (previous)
     TPC380_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC380_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
     TPC380_COMMON_GEOMETRY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
