@@ -3,13 +3,73 @@
 
 更新时间：2026-09-04
 
-状态：**TPC387_NUMERICALLY_CERTIFIED_FINITE_C1_COUNT_LADDER_RENORMALIZATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC388_NUMERICALLY_CERTIFIED_FINITE_C1_CROSS_FAMILY_SLOPE_TRANSFER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.181 current：TPC-387 c=1 count-ladder renormalization
+## 0.182 current：TPC-388 c=1 cross-family slope transfer
+
+项目：papers/tpc-388-c1-cross-family-slope-transfer/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_CROSS_FAMILY_SLOPE_TRANSFER**。
+
+TPC-388 承接 TPC-387 的第二 holdout clue，把 TPC-387 certificate 中的 32 个
+cell-wise count slopes 在读出新 family 前完全冻结，然后应用到第二个
+coordinate-disjoint affine grid `a_j=2600001+401j`，indices `(0,10,20,30,40)`。
+新的 origins `(2600001,2604011,2608021)` 在 `N=512,768` 作 calibration，
+`(2612031,2616041)` 只在 `N=1024` 作 holdout；fixed-three-block/full-relative
+band、`Q=2048,8192`、四个 laws 与两种 normalization 形成 256 rows、32 cells。
+
+最强正结果：不重拟合 parent slope 的跨 family transfer 为 `32/32`，同 family
+local-slope control 也为 `32/32`，均通过预声明 3% finite cap；最大 parent
+transfer error 为 `0.023402666610706224`，local-control maximum 为
+`0.02447192072430493`。N=512、N=768、N=1024 holdout stability 分别为
+`24/32`、`24/32`、`28/32`。最强 obstruction：inherited `0.64` spectral
+diagnostic 在 `40/256` rows 失败，虽 Schur failures 为 `0/256`；因此跨族
+transfer 仍不能升级为 origin-uniform 或 count-uniform theorem。
+
+开放定理：能否在 source-valid normalization 下证明 origin-uniform slope transfer
+与 growing operator control，并继续获得 source-uniform arithmetic `L2`。当前结果
+不支付 arithmetic advance、fixed-power credit、Route-B reassembly 或 twin-prime
+结论。
+
+可复用结构：
+
+    hashed parent certificate
+      -> frozen cross-family slope interface
+      -> fresh calibration/holdout origin family
+      -> local-fit control
+      -> reverse-shell replay + mutation firewall
+
+ROUND2_CLUE：`TEST_C1_CROSS_FAMILY_SLOPE_STRESS`。
+
+```text
+TPC388_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC388_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC388_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+TPC388_CROSS_FAMILY_PANEL = NUMERICALLY_CERTIFIED_FINITE_256_ROWS
+TPC388_PARENT_SLOPE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC388_LOCAL_CONTROL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC388_ORIGIN_UNIFORMITY = OPEN
+TPC388_COUNT_UNIFORMITY = OPEN
+TPC388_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC388_GROWING_OPERATOR_BOUND = OPEN
+TPC388_SOURCE_UNIFORM_L2 = OPEN
+TPC388_ARITHMETIC_ADVANCE = NO
+TPC388_FIXED_POWER_CREDIT = 0
+TPC388_FULL_GATE_B = OPEN
+TPC388_TWIN_PRIME_RESULT = NONE
+TPC388_STRONGEST_POSITIVE = FINITE_CROSS_FAMILY_FROZEN_SLOPE_TRANSFER
+TPC388_STRONGEST_OBSTRUCTION = INHERITED_SPECTRAL_CAP_FAILURE_CENSUS
+TPC388_OPEN_THEOREM = SOURCE_VALID_ORIGIN_UNIFORM_SLOPE_CONTROL
+TPC388_REUSABLE_STRUCTURE = HASHED_PARENT_SLOPE_WITH_LOCAL_CONTROL
+TPC388_ROUND2_CLUE = TEST_C1_CROSS_FAMILY_SLOPE_STRESS
+TPC388_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_CROSS_FAMILY_SLOPE_TRANSFER
+```
+
+## 0.181 previous：TPC-387 c=1 count-ladder renormalization
 
 项目：papers/tpc-387-c1-count-ladder-renormalization/
 

@@ -1,9 +1,75 @@
 # TPC HANDOFF
 
-TPC-387 current section: c=1 count-ladder renormalization
----------------------------------------------------------
+TPC-388 current section: c=1 cross-family slope transfer
+--------------------------------------------------------
 
-TPC-387 is the current finite release. It locks the TPC-386 producer and
+TPC-388 is the current finite release. It locks the TPC-387 certificate's
+32 cell-wise count slopes before reading a second coordinate-disjoint origin
+family. On the affine grid `a_j=2600001+401j`, indices `(0,10,20,30,40)` are
+frozen first. Origins `(2600001,2604011,2608021)` are calibration at `N=512`
+and `N=768`; `(2612031,2616041)` are holdout at `N=1024`. The panel crosses
+fixed-three-block and full-relative bands, `Q=2048,8192`, beta=2, exponent 1,
+height 66, four laws, and local or current-family calibration-pooled
+normalization.
+
+The complete panel has 256 rows and 32 cells. Calibration stability counts
+are `24/32` at `N=512` and `24/32` at `N=768`; holdout stability is `28/32`.
+The frozen TPC-387 parent-slope transfer passes `32/32` cells, and the
+same-family recalibration control also passes `32/32`; the maximum parent
+transfer error is `0.023402666610706224` and the local-control maximum is
+`0.02447192072430493`. The inherited `0.64` spectral diagnostic still fails
+on 40 rows, while Schur failures are `0/256`.
+
+This is finite cross-family slope-transfer evidence. It is not an
+origin-uniform or count-uniform theorem, source-valid normalization, growing
+operator bound, source-uniform arithmetic `L2`, arithmetic power saving,
+Route-B reassembly, or a twin-prime result. Official Route-A/Route-B
+evaluator files remain absent; local Bridge-B is fail-closed repository
+evidence. The exact anchor is `[2600001,2600014)` with shell `[11,13]`.
+
+    TPC388_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC388_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC388_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC388_CROSS_FAMILY_PANEL = NUMERICALLY_CERTIFIED_FINITE_256_ROWS
+    TPC388_PARENT_SLOPE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC388_LOCAL_CONTROL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC388_ORIGIN_UNIFORMITY = OPEN
+    TPC388_COUNT_UNIFORMITY = OPEN
+    TPC388_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC388_GROWING_OPERATOR_BOUND = OPEN
+    TPC388_SOURCE_UNIFORM_L2 = OPEN
+    TPC388_ARITHMETIC_ADVANCE = NO
+    TPC388_FIXED_POWER_CREDIT = 0
+    TPC388_FULL_GATE_B = OPEN
+    TPC388_TWIN_PRIME_RESULT = NONE
+    TPC388_STRONGEST_POSITIVE = FINITE_CROSS_FAMILY_FROZEN_SLOPE_TRANSFER
+    TPC388_STRONGEST_OBSTRUCTION = INHERITED_SPECTRAL_CAP_FAILURE_CENSUS
+    TPC388_OPEN_THEOREM = SOURCE_VALID_ORIGIN_UNIFORM_SLOPE_CONTROL
+    TPC388_REUSABLE_STRUCTURE = HASHED_PARENT_SLOPE_WITH_LOCAL_CONTROL
+    TPC388_ROUND2_CLUE = TEST_C1_CROSS_FAMILY_SLOPE_STRESS
+    TPC388_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_CROSS_FAMILY_SLOPE_TRANSFER
+
+TPC-388 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-388-c1-cross-family-slope-transfer/code/tpc388_c1_cross_family_slope_transfer.py --check
+    python -O -B papers/tpc-388-c1-cross-family-slope-transfer/code/tpc388_c1_cross_family_slope_transfer.py --check
+    python -B papers/tpc-388-c1-cross-family-slope-transfer/experiments/tpc388_independent_checker.py --check
+    python -O -B papers/tpc-388-c1-cross-family-slope-transfer/experiments/tpc388_independent_checker.py --check
+    python -B papers/tpc-388-c1-cross-family-slope-transfer/experiments/tpc388_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-388-c1-cross-family-slope-transfer/experiments/tpc388_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc388_c1_cross_family_slope_transfer_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc388_c1_cross_family_slope_transfer_checker.py --check
+
+The next finite question is `TEST_C1_CROSS_FAMILY_SLOPE_STRESS`. Any
+cross-family interpretation remains finite until a genuine growing argument
+is supplied.
+
+TPC-387 previous section: c=1 count-ladder renormalization
+-----------------------------------------------------------
+
+TPC-387 is a previous sealed finite release. It locks the TPC-386 producer and
 certificate before reading a fresh count ladder. On the affine grid
 `a_j=2400001+401j`, indices `(0,10,20,30,40)` are frozen first. Origins
 `(2400001,2404011,2408021)` are calibration at both `N=512` and `N=768`;
@@ -14543,7 +14609,15 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V240/TPC-387 是当前 release；其 c=1 count-ladder renormalization producer、
+V241/TPC-388 是当前 release；其 c=1 cross-family frozen-slope-transfer producer、
+independent reverse-shell replay、25-mutation certificate stress audit 与
+literal masked-operator Bridge-B 已封存。TPC-388 的 parent-slope transfer 与
+same-family control 均为 `32/32`，最大 parent/local errors 为
+`0.023402666610706224` 与 `0.02447192072430493`，stability 为
+`24/32,24/32,28/32`，spectral failures 为 `40/256`、Schur failures 为
+`0/256`；该 finite result 不支付 arithmetic `L2`、fixed-power credit 或
+official Route-A/Route-B gate。V240/TPC-387 是上一 release；其 c=1
+count-ladder renormalization producer、
 independent reverse-shell replay、25-mutation certificate stress audit 与
 literal masked-operator Bridge-B 已封存。V239/TPC-386 是上一 release；其 c=1
 count-holdout bandwidth producer、independent direct-sieve reverse-shell replay、
@@ -16603,7 +16677,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-387 current release 入口：
+TPC-388 current release 入口：
+
+papers/tpc-388-c1-cross-family-slope-transfer/README.md
+papers/tpc-388-c1-cross-family-slope-transfer/PAPER_PLAN.md
+papers/tpc-388-c1-cross-family-slope-transfer/DERIVATION_PACKAGE.md
+papers/tpc-388-c1-cross-family-slope-transfer/PROOF_PACKAGE.md
+papers/tpc-388-c1-cross-family-slope-transfer/code/tpc388_c1_cross_family_slope_transfer.py
+papers/tpc-388-c1-cross-family-slope-transfer/experiments/tpc388_independent_checker.py
+papers/tpc-388-c1-cross-family-slope-transfer/experiments/tpc388_adversarial_certificate_stress.py
+papers/tpc-388-c1-cross-family-slope-transfer/results/tpc388_certificate.json
+papers/tpc-388-c1-cross-family-slope-transfer/notes/theorem_ledger.md
+papers/tpc-388-c1-cross-family-slope-transfer/notes/claim_firewall.md
+papers/tpc-388-c1-cross-family-slope-transfer/notes/computational_protocol.md
+papers/tpc-388-c1-cross-family-slope-transfer/notes/route_evaluation.md
+papers/tpc-388-c1-cross-family-slope-transfer/paper/main.tex
+papers/tpc-388-c1-cross-family-slope-transfer/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc388_c1_cross_family_slope_transfer.md
+research/tpc-big-road/tpc_bridge_b_tpc388_c1_cross_family_slope_transfer_checker.py
+
+TPC-387 previous release 入口：
 
 papers/tpc-387-c1-count-ladder-renormalization/README.md
 papers/tpc-387-c1-count-ladder-renormalization/PAPER_PLAN.md

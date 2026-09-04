@@ -1,22 +1,58 @@
-# TPC big road V240 / TPC-387: c=1 count-ladder renormalization
+# TPC big road V241 / TPC-388: c=1 cross-family slope transfer
 
-## V240 current anchor: TPC-387
+## V241 current anchor: TPC-388
+
+更新时间：2026-09-05
+
+当前 TPC-388 proof package 位于 `../../papers/tpc-388-c1-cross-family-slope-transfer/`，
+checker 为 `tpc_bridge_b_tpc388_c1_cross_family_slope_transfer_checker.py`。
+在第二个 fresh coordinate-disjoint origin family
+`(2600001,2604011,2608021,2612031,2616041)` 上冻结 TPC-387 的 parent slopes，
+用三个 origins 的 `N=512,768` calibration 与两个 origins 的 `N=1024` holdout
+形成 256-row、32-cell panel。parent slope 不重拟合，32/32 parent-transfer cells
+与 32/32 same-family controls 均通过 3% cap；最大 parent error 为
+`0.023402666610706224`，local-control maximum 为 `0.02447192072430493`。
+stability census 为 `24/32,24/32,28/32`；inherited `0.64` spectral diagnostic
+有 40/256 个 finite failures，Schur failures 为 `0/256`。这是有限 cross-family
+slope transfer，不是 origin-uniform theorem。
+
+    YOU ARE HERE = V241 / TPC-388
+    TPC388_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC388_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC388_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC388_CROSS_FAMILY_PANEL = NUMERICALLY_CERTIFIED_FINITE_256_ROWS
+    TPC388_PARENT_SLOPE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC388_LOCAL_CONTROL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC388_ORIGIN_UNIFORMITY = OPEN
+    TPC388_COUNT_UNIFORMITY = OPEN
+    TPC388_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC388_GROWING_OPERATOR_BOUND = OPEN
+    TPC388_SOURCE_UNIFORM_L2 = OPEN
+    TPC388_ARITHMETIC_ADVANCE = NO
+    TPC388_FIXED_POWER_CREDIT = 0
+    TPC388_FULL_GATE_B = OPEN
+    TPC388_TWIN_PRIME_RESULT = NONE
+    TPC388_STRONGEST_POSITIVE = FINITE_CROSS_FAMILY_FROZEN_SLOPE_TRANSFER
+    TPC388_STRONGEST_OBSTRUCTION = INHERITED_SPECTRAL_CAP_FAILURE_CENSUS
+    TPC388_OPEN_THEOREM = SOURCE_VALID_ORIGIN_UNIFORM_SLOPE_CONTROL
+    TPC388_REUSABLE_STRUCTURE = HASHED_PARENT_SLOPE_WITH_LOCAL_CONTROL
+    TPC388_ROUND2_CLUE = TEST_C1_CROSS_FAMILY_SLOPE_STRESS
+    TPC388_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_CROSS_FAMILY_SLOPE_TRANSFER
+
+## V240 previous anchor: TPC-387
 
 更新时间：2026-09-04
 
-当前 TPC-387 proof package 位于 `../../papers/tpc-387-c1-count-ladder-renormalization/`，
-checker 为 `tpc_bridge_b_tpc387_c1_count_ladder_renormalization_checker.py`。
-在 fresh coordinate-disjoint origins `(2400001,2404011,2408021,2412031,2416041)`
-上预声明三个 origins 的 `N=512,768` calibration ladder 与两个 origins 的
-`N=1024` holdout，固定 fixed-three-block/full-relative 两种 band mode、
-`Q=2048,8192`、四个 laws 与 local/calibration-extrapolated pooled normalization，
-形成 256-row、32-cell panel。两个 calibration levels 的 stability census 为
-`24/32,24/32`，holdout 为 `28/32`；32 个 calibration-slope endpoint forecasts
-均通过 3% cap，最大绝对误差为 `0.026051162042932119`。继承的 `0.64`
-spectral diagnostic 有 40/256 个 finite failures，而 Schur failures 为 `0/256`；
-这是有限 calibration-only renormalization，不是 count-uniform theorem。
+TPC-387 在 fresh coordinate-disjoint origins `(2400001,2404011,2408021,2412031,2416041)`
+上完成 256-row count-ladder renormalization；32/32 calibration forecasts 通过 3%
+finite cap，最大误差为 `0.026051162042932119`，但 40/256 spectral diagnostics
+仍失败，Schur failures 为 `0/256`。这是有限 calibration-only repair，不是
+count-uniform theorem；其下一关已由 TPC-388 完成 cross-family slope transfer。
 
-    YOU ARE HERE = V240 / TPC-387
+    TPC387_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_COUNT_LADDER_RENORMALIZATION
+    TPC387_ARITHMETIC_ADVANCE = NO
+    TPC387_FIXED_POWER_CREDIT = 0
+    TPC387_FULL_GATE_B = OPEN
     TPC387_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC387_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
     TPC387_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
@@ -31,16 +67,12 @@ spectral diagnostic 有 40/256 个 finite failures，而 Schur failures 为 `0/2
     TPC387_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
     TPC387_GROWING_OPERATOR_BOUND = OPEN
     TPC387_SOURCE_UNIFORM_L2 = OPEN
-    TPC387_ARITHMETIC_ADVANCE = NO
-    TPC387_FIXED_POWER_CREDIT = 0
-    TPC387_FULL_GATE_B = OPEN
     TPC387_TWIN_PRIME_RESULT = NONE
     TPC387_STRONGEST_POSITIVE = FINITE_PANEL_WIDE_COUNT_LADDER_RENORMALIZATION
     TPC387_STRONGEST_OBSTRUCTION = FINITE_SPECTRAL_CAP_FAILURE_CENSUS
     TPC387_OPEN_THEOREM = SOURCE_VALID_COUNT_UNIFORM_OPERATOR_CONTROL
     TPC387_REUSABLE_STRUCTURE = CALIBRATION_ONLY_COUNT_LADDER_WITH_FRESH_HOLDOUT
     TPC387_ROUND2_CLUE = TEST_C1_COUNT_LADDER_SECOND_HOLDOUT
-    TPC387_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_COUNT_LADDER_RENORMALIZATION
 
 ## V239 previous anchor: TPC-386
 

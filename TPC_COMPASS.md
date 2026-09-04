@@ -1,13 +1,50 @@
 # TPC distilled map and bold channel
 
-## V240 / TPC-387 current anchor
+## V241 / TPC-388 current anchor
 
-更新时间：2026-09-04
+更新时间：2026-09-05
 
 当前入口：proof 为
-papers/tpc-387-c1-count-ladder-renormalization/PROOF_PACKAGE.md，checker 为
-research/tpc-big-road/tpc_bridge_b_tpc387_c1_count_ladder_renormalization_checker.py，
-编号论文为 papers/tpc-387-c1-count-ladder-renormalization/。
+papers/tpc-388-c1-cross-family-slope-transfer/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc388_c1_cross_family_slope_transfer_checker.py，
+编号论文为 papers/tpc-388-c1-cross-family-slope-transfer/。
+
+TPC-388 在第二个 fresh coordinate-disjoint origin family
+`(2600001,2604011,2608021,2612031,2616041)` 上冻结 TPC-387 的 32 个
+cell-wise count slopes，不重新拟合 parent slope。新的 256-row、32-cell panel
+仍使用 `N=512,768` calibration 与 `N=1024` holdout；parent transfer 与
+same-family local control 均为 `32/32`，最大 parent-transfer error 为
+`0.023402666610706224`，local-control maximum 为 `0.02447192072430493`。
+stability census 为 `24/32,24/32,28/32`；40/256 rows 超过 inherited `0.64`
+spectral diagnostic，Schur failures 为 `0/256`。这是有限 cross-family slope
+transfer，不能升级为 origin-uniform theorem。
+
+    YOU ARE HERE = V241 / TPC-388
+    TPC388_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC388_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC388_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC388_CROSS_FAMILY_PANEL = NUMERICALLY_CERTIFIED_FINITE_256_ROWS
+    TPC388_PARENT_SLOPE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC388_LOCAL_CONTROL = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC388_ORIGIN_UNIFORMITY = OPEN
+    TPC388_COUNT_UNIFORMITY = OPEN
+    TPC388_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC388_GROWING_OPERATOR_BOUND = OPEN
+    TPC388_SOURCE_UNIFORM_L2 = OPEN
+    TPC388_ARITHMETIC_ADVANCE = NO
+    TPC388_FIXED_POWER_CREDIT = 0
+    TPC388_FULL_GATE_B = OPEN
+    TPC388_TWIN_PRIME_RESULT = NONE
+    TPC388_STRONGEST_POSITIVE = FINITE_CROSS_FAMILY_FROZEN_SLOPE_TRANSFER
+    TPC388_STRONGEST_OBSTRUCTION = INHERITED_SPECTRAL_CAP_FAILURE_CENSUS
+    TPC388_OPEN_THEOREM = SOURCE_VALID_ORIGIN_UNIFORM_SLOPE_CONTROL
+    TPC388_REUSABLE_STRUCTURE = HASHED_PARENT_SLOPE_WITH_LOCAL_CONTROL
+    TPC388_ROUND2_CLUE = TEST_C1_CROSS_FAMILY_SLOPE_STRESS
+    TPC388_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_CROSS_FAMILY_SLOPE_TRANSFER
+
+## V240 / TPC-387 previous anchor
+
+更新时间：2026-09-04
 
 TPC-387 在 fresh coordinate-disjoint origins
 `(2400001,2404011,2408021,2412031,2416041)` 上预先划分三个 origins 的
@@ -20,7 +57,7 @@ calibration-slope endpoint forecasts 全部通过 3% finite cap，最大绝对�
 Schur failures 为 `0/256`。这是有限 calibration-only renormalization，不能升级为
 count-uniform theorem。
 
-    YOU ARE HERE = V240 / TPC-387
+    YOU ARE HERE = V240 / TPC-387 (previous)
     TPC387_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC387_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
     TPC387_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED

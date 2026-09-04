@@ -9,7 +9,23 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-387 在 fresh coordinate-disjoint origins
+当前主线最新位置：TPC-388 将 TPC-387 的 32 个 frozen count slopes 跨到第二个
+coordinate-disjoint origin family `(2600001,2604011,2608021,2612031,2616041)`。
+新的 256-row、32-cell panel 仍采用 `N=512,768` calibration 与 `N=1024`
+holdout；parent slope 不重拟合，32/32 transfer cells 通过 3% finite cap，
+same-family control 也是 32/32，最大 parent error 为 `0.023402666610706224`。
+稳定 cells 为 `24/32,24/32,28/32`，spectral failures 为 `40/256`，Schur
+failures 为 `0/256`。这是有限 cross-family slope-transfer certificate，不是
+origin/count uniformity、source-valid normalization、arithmetic `L2` 或 twin-prime
+result。当前项目为 `papers/tpc-388-c1-cross-family-slope-transfer/`，下一关是
+`TEST_C1_CROSS_FAMILY_SLOPE_STRESS`；`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
+
+papers/tpc-388-c1-cross-family-slope-transfer - TPC-388 current project；含
+256-row cross-family certificate、hashed parent-slope interface、独立 reverse-shell
+replay、25-mutation stress、proof package/2-page PDF 与 local fail-closed Bridge-B checker。
+
+当前主线最新位置（previous）：TPC-387 在 fresh coordinate-disjoint origins
 `(2400001,2404011,2408021,2412031,2416041)` 上把 `N=512,768` 固定为
 calibration ladder，并把两个新 origins 的 `N=1024` 固定为 holdout。完整
 256-row、32-cell panel 对每个 band mode、normalization、law 与 Q 只用前三个
@@ -20,10 +36,10 @@ spectral failures 与 0 个 Schur failures 被独立复现。这是 finite calib
 renormalization 与 obstruction localization，不是 count-uniformity、source-valid
 normalization、arithmetic `L2` 或 twin-prime result。当前项目为
 `papers/tpc-387-c1-count-ladder-renormalization/`，下一关是
-`TEST_C1_COUNT_LADDER_SECOND_HOLDOUT`；`ARITHMETIC_ADVANCE=NO`、
+`TEST_C1_CROSS_FAMILY_SLOPE_STRESS`；`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
 
-papers/tpc-387-c1-count-ladder-renormalization - TPC-387 current project；含
+papers/tpc-387-c1-count-ladder-renormalization - TPC-387 previous project；含
 256-row count-ladder certificate、独立 reverse-shell replay、25-mutation stress、
 proof package/2-page PDF 与 local fail-closed Bridge-B checker。
 
