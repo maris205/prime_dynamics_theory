@@ -3,13 +3,69 @@
 
 更新时间：2026-09-04
 
-状态：**TPC384_NUMERICALLY_CERTIFIED_FINITE_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC385_NUMERICALLY_CERTIFIED_FINITE_C1_BANDWIDTH_ORIGIN_HOLDOUT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.178 current：TPC-384 c=1 bandwidth-normalization phase diagram
+## 0.179 current：TPC-385 c=1 bandwidth-phase origin holdout
+
+项目：papers/tpc-385-c1-bandwidth-origin-holdout/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_BANDWIDTH_ORIGIN_HOLDOUT**。
+
+TPC-385 锁定 TPC-384 的 parent code/certificate 与四个 all-plus `Q=8192`
+phase forecasts，然后在新的 coordinate-disjoint affine grid `a_j=2000001+401j`
+上冻结 indices `(0,10,20,30,40)`。前三个 origins
+`(2000001,2004011,2008021)` 只用于 calibration-only pooled geometry，后两个
+`(2012031,2016041)` 是 holdout。固定 `N=512`、`c=(2,3)`、`Q=(2048,8192)`、
+四个 laws 与 local/calibration-pooled 两种 normalization，形成 160 rows 与 32
+role-separated cells。
+
+最强正结果：all-plus `Q=8192` 的四个 parent-forecast holdout errors 为
+`9.3242400794378472e-06, -2.4091103006462619e-05,
+9.5520761251517647e-06, -2.4194960054838229e-05`，全部通过预声明的 1% cap；
+calibration/holdout stable-cell census 为 `26/32` 与 `28/32`。最强 obstruction：
+alternating-index 在 `c=3,Q=2048` 的 local holdout spread 为
+`0.033223638943350384`，因此 transfer 不是 law-uniform。
+
+开放定理：在 source-valid normalization 下，能否把这个 calibration-blind
+high-bandwidth transfer 推进到 count、origin 与 arithmetic law 的增长族控制。
+
+可复用结构：
+
+    locked parent phase forecast
+      -> calibration-only pooled scalar
+      -> response-blind fresh origin holdout
+      -> role-separated spread and forecast-error census
+      -> independent replay + mutation firewall
+
+ROUND2_CLUE：`TEST_C1_HOLDOUT_COUNT_BANDWIDTH`。
+
+```text
+TPC385_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC385_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC385_PARENT_PHASE_REFERENCE = PROVED_EXACT_FINITE_HASHED
+TPC385_ORIGIN_HOLDOUT_PANEL = NUMERICALLY_CERTIFIED_FINITE_160_ROWS
+TPC385_HOLDOUT_HIGH_Q_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC385_FORECAST_ERROR_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC385_BANDWIDTH_MONOTONICITY = OPEN
+TPC385_LAW_UNIFORMITY = OPEN
+TPC385_ORIGIN_UNIFORMITY = OPEN
+TPC385_COUNT_SCALE_UNIFORMITY = OPEN
+TPC385_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC385_GROWING_OPERATOR_BOUND = OPEN
+TPC385_SOURCE_UNIFORM_L2 = OPEN
+TPC385_ARITHMETIC_ADVANCE = NO
+TPC385_FIXED_POWER_CREDIT = 0
+TPC385_FULL_GATE_B = OPEN
+TPC385_TWIN_PRIME_RESULT = NONE
+TPC385_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_BANDWIDTH_ORIGIN_HOLDOUT
+TPC385_ROUND2_CLUE = TEST_C1_HOLDOUT_COUNT_BANDWIDTH
+```
+
+## 0.178 previous：TPC-384 c=1 bandwidth-normalization phase diagram
 
 项目：papers/tpc-384-c1-bandwidth-normalization-phase-diagram/
 

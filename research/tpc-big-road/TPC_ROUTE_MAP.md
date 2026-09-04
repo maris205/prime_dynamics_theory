@@ -2,32 +2,72 @@
 
 更新时间：2026-09-04
 
-当前地图版本：V237 / TPC-384
+当前地图版本：V238 / TPC-385
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-384`（`NUMERICALLY_CERTIFIED_FINITE_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM`）；
-对应论文目录为 `papers/tpc-384-c1-bandwidth-normalization-phase-diagram/`。
+当前编号锚点：`TPC-385`（`NUMERICALLY_CERTIFIED_FINITE_C1_BANDWIDTH_ORIGIN_HOLDOUT`）；
+对应论文目录为 `papers/tpc-385-c1-bandwidth-origin-holdout/`。
 
-TPC-384 是当前位置：在 fresh coordinate-disjoint origins `(1800001,1808021,1816041)`
-上固定同一 raw prime-shell geometry，交叉 `c=0,1,2,3` 四个 block bandwidth、
-local-diagonal/pooled-scalar 两种 normalization、三组 Q 与四个 laws，形成
-288-row、96-cell phase diagram。stable-cell counts（local, pooled）依 c 为
-`(6,7),(8,7),(8,8),(8,8)`；all-plus pooled high-Q mean 从
-`0.36656315295619812` 升到 `0.63888760360944985`，仍低于 `0.64` cap。
-pooled/local high-Q shift 在 c=0 为 `-0.097684465801723214`，在 c=1,2,3 为正；
-这是有限 phase observation，不是 bandwidth monotonicity theorem。
+TPC-385 是当前位置：在 fresh coordinate-disjoint origins
+`(2000001,2004011,2008021,2012031,2016041)` 上预声明前三个 calibration、后两个
+holdout，固定 `N=512`、`c=2,3`、`Q=2048,8192`、四个 laws 与
+local/calibration-pooled 两种 normalization，形成 160-row、32-cell panel。
+all-plus `Q=8192` 的四个 parent-forecast holdout errors 全部小于
+`2.4194960054838229e-5`，但 alternating-index 的 `(c,Q)=(3,2048)` local
+holdout spread 为 `0.033223638943350384`，所以 transfer 仍非 law-uniform。
 
-这是有限 bandwidth phase 与 calibration/law obstruction：all-plus 在高 bandwidth
-接近 spectral cap，但 origin spread 仍 law- and normalization-dependent，且没有
-统一性或单调性定理。它不建立 source-valid normalization、growing operator theorem、
+这是有限 origin-holdout transfer 与 law obstruction：calibration-only pooled scalar
+不使用 holdout geometry，且四个 all-plus 高-Q forecast 均通过 1% cap；它不建立
+source-valid normalization、origin/count/law uniformity、growing operator theorem、
 source-uniform arithmetic `L2`、fixed-power saving 或 twin-prime endpoint。producer、
 独立 reverse-shell replay、25-mutation stress、2-page PDF 与 local Bridge-B 已封存；
 official evaluator files 仍缺失，local bridge 只作 fail-closed evidence。
 `ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关为
-`TEST_C1_BANDWIDTH_ORIGIN_HOLDOUT`。
+`TEST_C1_HOLDOUT_COUNT_BANDWIDTH`。
 
-## 5.167 V237 / TPC-384：c=1 bandwidth-normalization phase diagram
+## 5.168 V238 / TPC-385：c=1 bandwidth-phase origin holdout
+
+TPC-385 的 finite package 位于 `papers/tpc-385-c1-bandwidth-origin-holdout/`。
+它锁定 TPC-384 的 producer/certificate 与 all-plus `Q=8192` phase forecasts，
+再在新 affine grid `a_j=2000001+401j` 上冻结 indices `(0,10,20,30,40)`。
+前三个 origins `(2000001,2004011,2008021)` 只用于 calibration-only pooled
+geometry，后两个 `(2012031,2016041)` 是 holdout；所有角色在 metric 读取前固定。
+
+固定 `N=512`、四个连续 128-point blocks、`c=2,3`、`Q=2048,8192`、四个 laws
+与 local/calibration-pooled normalization，形成 160 rows。calibration/holdout
+stable cells 为 `26/32` 与 `28/32`，全部 160 rows 未超过 spectral 或 Schur cap。
+四个 all-plus `Q=8192` forecast errors 为
+`9.3242400794378472e-06, -2.4091103006462619e-05,
+9.5520761251517647e-06, -2.4194960054838229e-05`；最大 holdout spread
+`0.033223638943350384` 来自 alternating-index 的 `c=3,Q=2048` local cell。
+
+    YOU ARE HERE = V238 / TPC-385
+    TPC385_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC385_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC385_PARENT_PHASE_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC385_ORIGIN_HOLDOUT_PANEL = NUMERICALLY CERTIFIED FINITE_160_ROWS
+    TPC385_HOLDOUT_HIGH_Q_TRANSFER = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC385_FORECAST_ERROR_CENSUS = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC385_BANDWIDTH_MONOTONICITY = OPEN
+    TPC385_LAW_UNIFORMITY = OPEN
+    TPC385_ORIGIN_UNIFORMITY = OPEN
+    TPC385_COUNT_SCALE_UNIFORMITY = OPEN
+    TPC385_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC385_GROWING_OPERATOR_BOUND = OPEN
+    TPC385_SOURCE_UNIFORM_L2 = OPEN
+    TPC385_ARITHMETIC_ADVANCE = NO
+    TPC385_FIXED_POWER_CREDIT = 0
+    TPC385_FULL_GATE_B = OPEN
+    TPC385_TWIN_PRIME_RESULT = NONE
+    TPC385_STRONGEST_POSITIVE = FINITE_ALL_PLUS_HIGH_Q_ORIGIN_HOLDOUT_TRANSFER
+    TPC385_STRONGEST_OBSTRUCTION = SIGNED_LAW_HOLDOUT_SPREAD_AND_NO_COUNT_THEOREM
+    TPC385_OPEN_THEOREM = SOURCE_VALID_COUNT_BANDWIDTH_HOLDOUT_CONTROL
+    TPC385_REUSABLE_STRUCTURE = CALIBRATION_ONLY_NORMALIZATION_WITH_RESPONSE_BLIND_ORIGIN_HOLDOUT
+    TPC385_ROUND2_CLUE = TEST_C1_HOLDOUT_COUNT_BANDWIDTH
+    TPC385_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_BANDWIDTH_ORIGIN_HOLDOUT
+
+## 5.167 V237 / TPC-384：c=1 bandwidth-normalization phase diagram (previous)
 
 TPC-384 的 finite package 位于
 `papers/tpc-384-c1-bandwidth-normalization-phase-diagram/`。
@@ -43,7 +83,7 @@ high-Q mean 的四个值为
 cap；但 alternating-index 的 c=3 pooled high-Q origin spread 为
 `0.039758700305072295`，故有限 transfer 不是 law-uniform theorem。
 
-    YOU ARE HERE = V237 / TPC-384
+    YOU ARE HERE = V237 / TPC-384 (previous)
     TPC384_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC384_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
     TPC384_BANDWIDTH_PHASE_PANEL = NUMERICALLY_CERTIFIED_FINITE_288_ROWS
@@ -11084,6 +11124,9 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-04 | V238 / TPC-385 | Bridge B / Gate B：c=1 bandwidth-phase origin holdout; source-valid normalization、origin/count/law uniformity、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-385 | 承接 TPC-384；新 coordinate-disjoint affine grid `(2000001,2004011,2008021,2012031,2016041)`，前三个 calibration、后两个 holdout，`c=2,3`、`Q=2048,8192`、四 laws 与两种 normalization 完成 160-row panel；stable cells `26/32` 与 `28/32`，all-plus 高-Q forecast `4/4` 在 1% 内，最大 signed holdout spread `0.0332236389`；下一步 TEST_C1_HOLDOUT_COUNT_BANDWIDTH |
+| 2026-09-04 | V237 / TPC-384 | Bridge B / Gate B：c=1 bandwidth-normalization phase diagram; source-valid normalization、bandwidth/origin uniformity、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-384 | 承接 TPC-383；fresh origins `(1800001,1808021,1816041)`、四个 bandwidth、两种 normalization、four laws 与三组 Q 完成 288-row phase；all-plus pooled high-Q `0.3665632 -> 0.6388876`，下一步 TEST_C1_BANDWIDTH_ORIGIN_HOLDOUT |
+| 2026-09-04 | V236 / TPC-383 | Bridge B / Gate B：c=1 pooled-normalization audit; source-valid normalization、origin/law uniformity、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-383 | 承接 TPC-382；fresh origins `(1600001,1608021,1616041)`、local/pooled normalization 与 four-law 72-row panel；两种 stability census `9/12`，下一步 TEST_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM |
 | 2026-09-04 | V233 / TPC-380 | Bridge B / Gate B：c=1 law-control count replay; source-valid normalization、law/origin/scale uniformity、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-380 | 承接 TPC-379；新的 coordinate-disjoint affine origins (1300001,1308021,1316041)、count 2048、八个 256-point blocks 与四个预声明 laws 完成 36-row panel；all-plus profile (0/3,3/3,3/3)，signed controls 均 (0/3,0/3,0/3)，spectral 6/36、Schur 0/36；下一步 TEST_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY |
 | 2026-09-04 | V232 / TPC-379 | Bridge B / Gate B：c=1 cross-holdout law control; source-valid normalization、law/origin/scale uniformity、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-379 | 承接 TPC-378；新 coordinate-disjoint origins (1200001,1208021,1216041)、count 1024、四个预声明 laws 与 common geometry/mask 完成 36-row panel；all-plus profile (0/3,3/3,3/3)，signed controls 均 (0/3,0/3,0/3)，spectral 6/36、Schur 0/36；下一步 TEST_C1_LAW_CONTROL_COUNT_REPLAY |
 | 2026-09-04 | V231 / TPC-378 | Bridge B / Gate B：c=1 scale-origin cross-holdout; source-valid normalization、origin/window uniformity、growing masked operator bound、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B open | `TPC-378` | 承接 TPC-377；新的 coordinate-disjoint affine grid 固定 indices `(0,20,40)`、origins `(1100001,1108021,1116041)`，endpoint counts `1024,2048`，完成 18-row beta=2/all-plus panel，两个 count 均为 `(0/3,3/3,3/3)`、spectral `12/18`、Schur `0/18`；下一步 `TEST_C1_CROSSHOLDOUT_LAW_CONTROL` |

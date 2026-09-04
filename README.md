@@ -9,7 +9,24 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-384 在 fresh coordinate-disjoint origins
+当前主线最新位置：TPC-385 在 fresh coordinate-disjoint origins
+`(2000001,2004011,2008021,2012031,2016041)` 上，将前三个 origin 固定为
+calibration、后两个固定为 holdout，用 calibration-only pooled geometry 检验
+TPC-384 的高 bandwidth phase。`c=2,3`、`Q=2048,8192`、四个 laws 与两种
+normalization 形成 160-row、32-cell panel；all-plus `Q=8192` 的四个 holdout
+forecast error 全部小于 `2.4194960054838229e-5`，但 alternating-index 在
+`(c,Q)=(3,2048)` 的 holdout spread 达到 `0.033223638943350384`。这是有限
+origin-holdout transfer 与 law obstruction，不是 origin/count uniformity、source-valid
+normalization、arithmetic `L2` 或 twin-prime result。当前项目为
+`papers/tpc-385-c1-bandwidth-origin-holdout/`，下一关是
+`TEST_C1_HOLDOUT_COUNT_BANDWIDTH`；`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
+
+papers/tpc-385-c1-bandwidth-origin-holdout - TPC-385 current project；含
+160-row calibration/holdout certificate、独立 reverse-shell replay、25-mutation
+stress、2-page PDF 与 local fail-closed Bridge-B checker。
+
+当前主线最新位置（previous）：TPC-384 在 fresh coordinate-disjoint origins
 `(1800001,1808021,1816041)` 上固定同一 raw prime-shell geometry，完成
 `c=0,1,2,3` 四个 bandwidth 与 local/pooled 两种 normalization 的 288-row
 phase diagram。all-plus pooled high-Q mean 从 `0.36656315295619812`（c=0）
@@ -21,7 +38,7 @@ source-valid normalization、arithmetic `L2` 或 twin-prime result。当前项�
 `TEST_C1_BANDWIDTH_ORIGIN_HOLDOUT`；`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
 
-papers/tpc-384-c1-bandwidth-normalization-phase-diagram - TPC-384 current project；含
+papers/tpc-384-c1-bandwidth-normalization-phase-diagram - TPC-384 previous project；含
 288-row bandwidth/normalization certificate、独立 reverse-shell replay、25-mutation
 stress、2-page PDF 与 local fail-closed Bridge-B checker。
 

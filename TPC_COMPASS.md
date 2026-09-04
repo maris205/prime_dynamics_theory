@@ -1,6 +1,43 @@
 # TPC distilled map and bold channel
 
-## V237 / TPC-384 current anchor
+## V238 / TPC-385 current anchor
+
+更新时间：2026-09-04
+
+当前入口：proof 为
+papers/tpc-385-c1-bandwidth-origin-holdout/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc385_c1_bandwidth_origin_holdout_checker.py，
+编号论文为 papers/tpc-385-c1-bandwidth-origin-holdout/。
+
+TPC-385 在 fresh coordinate-disjoint origins
+`(2000001,2004011,2008021,2012031,2016041)` 上预先划分三个 calibration
+origins 与两个 holdout origins。固定 `N=512`、`c=2,3`、`Q=2048,8192`、四个
+laws，并用 calibration-only pooled scalar 与 local diagonal 两种 normalization
+形成 160-row、32-cell panel。all-plus `Q=8192` 的四个 parent-forecast holdout
+errors 均在 `2.42e-5` 以内；但 alternating-index 的 `(c,Q)=(3,2048)` holdout
+spread 为 `0.033223638943350384`，所以 transfer 仍非 law-uniform。
+
+    YOU ARE HERE = V238 / TPC-385
+    TPC385_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC385_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC385_PARENT_PHASE_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC385_ORIGIN_HOLDOUT_PANEL = NUMERICALLY_CERTIFIED_FINITE_160_ROWS
+    TPC385_HOLDOUT_HIGH_Q_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC385_FORECAST_ERROR_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC385_BANDWIDTH_MONOTONICITY = OPEN
+    TPC385_LAW_UNIFORMITY = OPEN
+    TPC385_ORIGIN_UNIFORMITY = OPEN
+    TPC385_COUNT_SCALE_UNIFORMITY = OPEN
+    TPC385_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC385_GROWING_OPERATOR_BOUND = OPEN
+    TPC385_SOURCE_UNIFORM_L2 = OPEN
+    TPC385_ARITHMETIC_ADVANCE = NO
+    TPC385_FIXED_POWER_CREDIT = 0
+    TPC385_FULL_GATE_B = OPEN
+    TPC385_TWIN_PRIME_RESULT = NONE
+    TPC385_ROUND2_CLUE = TEST_C1_HOLDOUT_COUNT_BANDWIDTH
+
+## V237 / TPC-384 previous anchor
 
 更新时间：2026-09-04
 

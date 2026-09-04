@@ -1,9 +1,62 @@
 # TPC HANDOFF
 
-TPC-384 current section: c=1 bandwidth--normalization phase diagram
+TPC-385 current section: c=1 bandwidth-phase origin holdout
+-------------------------------------------------------------
+
+TPC-385 is the current sealed finite release. It locks the TPC-384 producer,
+certificate, and all-plus `Q=8192` phase means as response-blind forecasts.
+On a new affine grid `a_j=2000001+401j`, indices `(0,10,20,30,40)` are frozen
+before any response or metric read. Origins `(2000001,2004011,2008021)` are
+calibration only; `(2012031,2016041)` are holdout. The panel fixes `N=512`,
+four 128-point blocks, `c=2,3`, beta=2, exponent 1, height 66,
+`Q=2048,8192`, four laws, and local or calibration-pooled normalization.
+
+The complete panel has 160 rows and 32 role-separated cells. Calibration and
+holdout stability counts are `26/32` and `28/32`; all rows are below the
+finite spectral and Schur caps. The four all-plus `Q=8192` holdout forecast
+errors are `9.3242400794378472e-06`, `-2.4091103006462619e-05`,
+`9.5520761251517647e-06`, and `-2.4194960054838229e-05`, all below the
+predeclared one-percent cap. The largest holdout spread is
+`0.033223638943350384` for alternating-index at `(c,Q)=(3,2048)` under
+local normalization.
+
+This is finite origin-holdout transfer plus a law obstruction. It is not
+source-valid normalization, bandwidth/origin/count/law uniformity, a growing
+operator bound, source-uniform arithmetic `L2`, arithmetic power saving,
+Route-B reassembly, or a twin-prime result. Official Route-A/Route-B
+evaluator files remain absent; local Bridge-B is fail-closed repository
+evidence. `ARITHMETIC_ADVANCE=NO`, `FIXED_POWER_CREDIT=0`, and
+`FULL_GATE_B=OPEN`; the next finite question is
+`TEST_C1_HOLDOUT_COUNT_BANDWIDTH`.
+
+    TPC385_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC385_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC385_PARENT_PHASE_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC385_ORIGIN_HOLDOUT_PANEL = NUMERICALLY_CERTIFIED_FINITE_160_ROWS
+    TPC385_HOLDOUT_HIGH_Q_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC385_FORECAST_ERROR_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC385_BANDWIDTH_MONOTONICITY = OPEN
+    TPC385_LAW_UNIFORMITY = OPEN
+    TPC385_ORIGIN_UNIFORMITY = OPEN
+    TPC385_COUNT_SCALE_UNIFORMITY = OPEN
+    TPC385_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC385_GROWING_OPERATOR_BOUND = OPEN
+    TPC385_SOURCE_UNIFORM_L2 = OPEN
+    TPC385_ARITHMETIC_ADVANCE = NO
+    TPC385_FIXED_POWER_CREDIT = 0
+    TPC385_FULL_GATE_B = OPEN
+    TPC385_TWIN_PRIME_RESULT = NONE
+    TPC385_STRONGEST_POSITIVE = FINITE_ALL_PLUS_HIGH_Q_ORIGIN_HOLDOUT_TRANSFER
+    TPC385_STRONGEST_OBSTRUCTION = SIGNED_LAW_HOLDOUT_SPREAD_AND_NO_COUNT_THEOREM
+    TPC385_OPEN_THEOREM = SOURCE_VALID_COUNT_BANDWIDTH_HOLDOUT_CONTROL
+    TPC385_REUSABLE_STRUCTURE = CALIBRATION_ONLY_NORMALIZATION_WITH_RESPONSE_BLIND_ORIGIN_HOLDOUT
+    TPC385_ROUND2_CLUE = TEST_C1_HOLDOUT_COUNT_BANDWIDTH
+    TPC385_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_BANDWIDTH_ORIGIN_HOLDOUT
+
+TPC-384 previous section: c=1 bandwidth--normalization phase diagram
 ---------------------------------------------------------------------
 
-TPC-384 is the current sealed finite release. It freezes, before reading any
+TPC-384 is a previous sealed finite release. It freezes, before reading any
 response or metric, the fresh affine grid `a_j=1800001+401j`, `0<=j<41`, and
 indices `(0,20,40)`, giving origins `(1800001,1808021,1816041)`. The fixed
 window has `N=512`, four contiguous 128-point blocks, beta=2, exponent 1,
@@ -1084,6 +1137,19 @@ TPC-384 reproducibility commands:
     python -O -B papers/tpc-384-c1-bandwidth-normalization-phase-diagram/experiments/tpc384_adversarial_certificate_stress.py --check
     python -B research/tpc-big-road/tpc_bridge_b_tpc384_c1_bandwidth_normalization_phase_diagram_checker.py --check
     python -O -B research/tpc-big-road/tpc_bridge_b_tpc384_c1_bandwidth_normalization_phase_diagram_checker.py --check
+
+TPC-385 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-385-c1-bandwidth-origin-holdout/code/tpc385_c1_bandwidth_origin_holdout.py --check
+    python -O -B papers/tpc-385-c1-bandwidth-origin-holdout/code/tpc385_c1_bandwidth_origin_holdout.py --check
+    python -B papers/tpc-385-c1-bandwidth-origin-holdout/experiments/tpc385_independent_checker.py --check
+    python -O -B papers/tpc-385-c1-bandwidth-origin-holdout/experiments/tpc385_independent_checker.py --check
+    python -B papers/tpc-385-c1-bandwidth-origin-holdout/experiments/tpc385_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-385-c1-bandwidth-origin-holdout/experiments/tpc385_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc385_c1_bandwidth_origin_holdout_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc385_c1_bandwidth_origin_holdout_checker.py --check
 
 
 TPC-374 tail audit is required to return zero with empty stderr and
@@ -14112,6 +14178,12 @@ TPC-207 数学 trigger：`true`；TPC-207 已创建：`true`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
+`papers/tpc-385-c1-bandwidth-origin-holdout/README.md`、
+`papers/tpc-385-c1-bandwidth-origin-holdout/PROOF_PACKAGE.md`、
+`papers/tpc-385-c1-bandwidth-origin-holdout/notes/theorem_ledger.md`、
+`papers/tpc-385-c1-bandwidth-origin-holdout/notes/route_evaluation.md`、
+`research/tpc-big-road/bridge_b_tpc385_c1_bandwidth_origin_holdout.md`、
+`research/tpc-big-road/tpc_bridge_b_tpc385_c1_bandwidth_origin_holdout_checker.py`、
 `papers/tpc-384-c1-bandwidth-normalization-phase-diagram/README.md`、
 `papers/tpc-384-c1-bandwidth-normalization-phase-diagram/PROOF_PACKAGE.md`、
 `papers/tpc-384-c1-bandwidth-normalization-phase-diagram/notes/theorem_ledger.md`、
@@ -14406,6 +14478,13 @@ normal/optimized 命令、98 次 invocation：48 个既有基线 Bridge-B checke
 与 TPC-380 新 checker 均返回零、保持空 stderr，且每对 stdout
 byte-identical。该 49 对 tail audit 是本轮实际执行的增量回归；上面的
 529 对是按历史 release 累计的 curated command-set 计数。
+
+随后封存的 TPC-381、TPC-382、TPC-383、TPC-384 与 TPC-385 各自完成了
+producer、independent replay、mutation stress、PDF QA 与 local Bridge-B 的
+normal/optimized 审计；TPC-385 的 Bridge-B 输出为
+`TPC385_BRIDGE_CHECK=PASS rows=160 cells=32 holdout_forecasts=4/4 stable_holdout=28/32`。
+这些新增 finite audits 不改变 curated historical count，也不支付 arithmetic
+`L2`、fixed-power credit 或 official Route-A/Route-B gate。
 
 V184/TPC-331 的新增 4 对由本项目 bridge 与 standalone tail checks 逐项验证；其
 finite decomposition 不代表 source-uniform arithmetic `L2` 或 official Route-A/Route-B
