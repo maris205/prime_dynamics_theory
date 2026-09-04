@@ -3,13 +3,70 @@
 
 更新时间：2026-09-04
 
-状态：**TPC385_NUMERICALLY_CERTIFIED_FINITE_C1_BANDWIDTH_ORIGIN_HOLDOUT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC386_NUMERICALLY_CERTIFIED_FINITE_C1_COUNT_HOLDOUT_BANDWIDTH / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.179 current：TPC-385 c=1 bandwidth-phase origin holdout
+## 0.180 current：TPC-386 c=1 count-holdout bandwidth audit
+
+项目：papers/tpc-386-c1-count-holdout-bandwidth/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_COUNT_HOLDOUT_BANDWIDTH**。
+
+TPC-386 锁定 TPC-385 的 parent code/certificate 与 all-plus `Q=8192` reference，
+然后在新的 coordinate-disjoint affine grid `a_j=2200001+401j` 上冻结 indices
+`(0,10,20,30,40)`。前三个 origins `(2200001,2204011,2208021)` 只作
+`N=512` calibration，后两个 `(2212031,2216041)` 是 `N=1024` holdout；count role、
+fixed-three-block 与 full-relative band mode 均在任何 response/metric 读取前固定。
+四个 laws、两种 normalization、两组 Q 交叉形成 160 rows 与 32 cells。
+
+最强正结果：all-plus `Q=8192` 的四个 holdout/calibration ratios 为
+`1.0652156493536045, 1.1112204434769593, 1.0858538657474437,
+1.1294445356950271`，均落在预声明的宽松 20% finite transfer envelope；holdout
+stable-cell census 为 `28/32`，全部 Schur rows 低于 `0.83`。最强 obstruction：
+继承的 `0.64` spectral diagnostic 在 16 个 all-plus `N=1024` rows 全部失败，
+且 fixed-three-block mode 已足以触发失败，故不能把 TPC-385 的 finite cap 升级为
+count-uniform cap。
+
+开放定理：在 source-valid normalization 下，能否沿 count ladder 建立 growing
+operator bound，并解释端点 normalization 的增幅；任何 arithmetic `L2` 与 twin-prime
+reassembly 仍未触及。
+
+可复用结构：
+
+    locked parent reference
+      -> calibration-only pooled geometry
+      -> response-blind count-role holdout
+      -> fixed-band/full-band obstruction split
+      -> independent reverse-shell replay + mutation firewall
+
+ROUND2_CLUE：`TEST_C1_COUNT_LADDER_RENORMALIZATION`。
+
+```text
+TPC386_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC386_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC386_PARENT_PHASE_REFERENCE = PROVED_EXACT_FINITE_HASHED
+TPC386_COUNT_HOLDOUT_PANEL = NUMERICALLY_CERTIFIED_FINITE_160_ROWS
+TPC386_ALL_PLUS_COUNT_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC386_FIXED_SPECTRAL_CAP_TRANSFER = REFUTED_FINITE_SCOPED
+TPC386_COUNT_UNIFORMITY = OPEN
+TPC386_BANDWIDTH_RENORMALIZATION = OPEN
+TPC386_LAW_UNIFORMITY = OPEN
+TPC386_ORIGIN_UNIFORMITY = OPEN
+TPC386_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC386_GROWING_OPERATOR_BOUND = OPEN
+TPC386_SOURCE_UNIFORM_L2 = OPEN
+TPC386_ARITHMETIC_ADVANCE = NO
+TPC386_FIXED_POWER_CREDIT = 0
+TPC386_FULL_GATE_B = OPEN
+TPC386_TWIN_PRIME_RESULT = NONE
+TPC386_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_COUNT_HOLDOUT_BANDWIDTH
+TPC386_ROUND2_CLUE = TEST_C1_COUNT_LADDER_RENORMALIZATION
+```
+
+## 0.179 previous：TPC-385 c=1 bandwidth-phase origin holdout
 
 项目：papers/tpc-385-c1-bandwidth-origin-holdout/
 

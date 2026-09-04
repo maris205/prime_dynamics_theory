@@ -1,41 +1,45 @@
 # TPC distilled map and bold channel
 
-## V238 / TPC-385 current anchor
+## V239 / TPC-386 current anchor
 
 更新时间：2026-09-04
 
 当前入口：proof 为
-papers/tpc-385-c1-bandwidth-origin-holdout/PROOF_PACKAGE.md，checker 为
-research/tpc-big-road/tpc_bridge_b_tpc385_c1_bandwidth_origin_holdout_checker.py，
-编号论文为 papers/tpc-385-c1-bandwidth-origin-holdout/。
+papers/tpc-386-c1-count-holdout-bandwidth/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc386_c1_count_holdout_bandwidth_checker.py，
+编号论文为 papers/tpc-386-c1-count-holdout-bandwidth/。
 
-TPC-385 在 fresh coordinate-disjoint origins
-`(2000001,2004011,2008021,2012031,2016041)` 上预先划分三个 calibration
-origins 与两个 holdout origins。固定 `N=512`、`c=2,3`、`Q=2048,8192`、四个
-laws，并用 calibration-only pooled scalar 与 local diagonal 两种 normalization
-形成 160-row、32-cell panel。all-plus `Q=8192` 的四个 parent-forecast holdout
-errors 均在 `2.42e-5` 以内；但 alternating-index 的 `(c,Q)=(3,2048)` holdout
-spread 为 `0.033223638943350384`，所以 transfer 仍非 law-uniform。
+TPC-386 在 fresh coordinate-disjoint origins
+`(2200001,2204011,2208021,2212031,2216041)` 上预先划分三个 `N=512`
+calibration origins 与两个 `N=1024` holdout origins。固定 fixed-three-block 与
+full-relative 两种 band mode、`Q=2048,8192`、四个 laws 与两种 normalization，
+形成 160-row、32-cell panel。all-plus `Q=8192` 的四个 holdout/calibration
+ratios 为 `1.0652156493536045, 1.1112204434769593, 1.0858538657474437,
+1.1294445356950271`；继承的 `0.64` spectral cap 在 16 个 all-plus holdout rows
+失败，而 Schur failures 为 0/160，holdout stable cells 为 28/32。这是有限
+count-transfer 与 fixed-cap obstruction，不能升级为 count-uniform theorem。
 
-    YOU ARE HERE = V238 / TPC-385
-    TPC385_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
-    TPC385_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
-    TPC385_PARENT_PHASE_REFERENCE = PROVED_EXACT_FINITE_HASHED
-    TPC385_ORIGIN_HOLDOUT_PANEL = NUMERICALLY_CERTIFIED_FINITE_160_ROWS
-    TPC385_HOLDOUT_HIGH_Q_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC385_FORECAST_ERROR_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
-    TPC385_BANDWIDTH_MONOTONICITY = OPEN
-    TPC385_LAW_UNIFORMITY = OPEN
-    TPC385_ORIGIN_UNIFORMITY = OPEN
-    TPC385_COUNT_SCALE_UNIFORMITY = OPEN
-    TPC385_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
-    TPC385_GROWING_OPERATOR_BOUND = OPEN
-    TPC385_SOURCE_UNIFORM_L2 = OPEN
-    TPC385_ARITHMETIC_ADVANCE = NO
-    TPC385_FIXED_POWER_CREDIT = 0
-    TPC385_FULL_GATE_B = OPEN
-    TPC385_TWIN_PRIME_RESULT = NONE
-    TPC385_ROUND2_CLUE = TEST_C1_HOLDOUT_COUNT_BANDWIDTH
+    YOU ARE HERE = V239 / TPC-386
+    TPC386_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC386_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC386_PARENT_PHASE_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC386_COUNT_HOLDOUT_PANEL = NUMERICALLY_CERTIFIED_FINITE_160_ROWS
+    TPC386_ALL_PLUS_COUNT_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC386_FIXED_SPECTRAL_CAP_TRANSFER = REFUTED_FINITE_SCOPED
+    TPC386_COUNT_UNIFORMITY = OPEN
+    TPC386_BANDWIDTH_RENORMALIZATION = OPEN
+    TPC386_LAW_UNIFORMITY = OPEN
+    TPC386_ORIGIN_UNIFORMITY = OPEN
+    TPC386_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC386_GROWING_OPERATOR_BOUND = OPEN
+    TPC386_SOURCE_UNIFORM_L2 = OPEN
+    TPC386_ARITHMETIC_ADVANCE = NO
+    TPC386_FIXED_POWER_CREDIT = 0
+    TPC386_FULL_GATE_B = OPEN
+    TPC386_TWIN_PRIME_RESULT = NONE
+    TPC386_ROUND2_CLUE = TEST_C1_COUNT_LADDER_RENORMALIZATION
+
+## V238 / TPC-385 previous anchor
 
 ## V237 / TPC-384 previous anchor
 

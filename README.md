@@ -9,7 +9,24 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-385 在 fresh coordinate-disjoint origins
+当前主线最新位置：TPC-386 在 fresh coordinate-disjoint origins
+`(2200001,2204011,2208021,2212031,2216041)` 上把 count 从 calibration 的
+`N=512` 改为 holdout 的 `N=1024`，并固定 fixed-three-block/full-relative 两种
+band mode。完整 160-row、32-cell panel 的 all-plus `Q=8192` holdout/calibration
+ratios 为 `1.0652156493536045, 1.1112204434769593, 1.0858538657474437,
+1.1294445356950271`；继承的 `0.64` spectral diagnostic 在 16 个 all-plus
+`N=1024` rows 全部失败，但 Schur failures 为 0/160，holdout stable cells 为
+`28/32`。这是 finite count-transfer 与 fixed-cap obstruction，不是 count-uniformity、
+source-valid normalization、arithmetic `L2` 或 twin-prime result。当前项目为
+`papers/tpc-386-c1-count-holdout-bandwidth/`，下一关是
+`TEST_C1_COUNT_LADDER_RENORMALIZATION`；`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
+
+papers/tpc-386-c1-count-holdout-bandwidth - TPC-386 current project；含
+160-row count-holdout certificate、独立 reverse-shell replay、25-mutation stress、
+proof package/2-page PDF 与 local fail-closed Bridge-B checker。
+
+当前主线最新位置（previous）：TPC-385 在 fresh coordinate-disjoint origins
 `(2000001,2004011,2008021,2012031,2016041)` 上，将前三个 origin 固定为
 calibration、后两个固定为 holdout，用 calibration-only pooled geometry 检验
 TPC-384 的高 bandwidth phase。`c=2,3`、`Q=2048,8192`、四个 laws 与两种
@@ -22,7 +39,7 @@ normalization、arithmetic `L2` 或 twin-prime result。当前项目为
 `TEST_C1_HOLDOUT_COUNT_BANDWIDTH`；`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
 
-papers/tpc-385-c1-bandwidth-origin-holdout - TPC-385 current project；含
+papers/tpc-385-c1-bandwidth-origin-holdout - TPC-385 previous project；含
 160-row calibration/holdout certificate、独立 reverse-shell replay、25-mutation
 stress、2-page PDF 与 local fail-closed Bridge-B checker。
 

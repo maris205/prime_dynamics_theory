@@ -1,6 +1,74 @@
 # TPC HANDOFF
 
-TPC-385 current section: c=1 bandwidth-phase origin holdout
+TPC-386 current section: c=1 count-holdout bandwidth audit
+-----------------------------------------------------------
+
+TPC-386 is the current finite release. It locks the TPC-385 producer,
+certificate, and all-plus `Q=8192` reference before reading the new panel.
+On a new affine grid `a_j=2200001+401j`, indices `(0,10,20,30,40)` are
+frozen first. Origins `(2200001,2204011,2208021)` are calibration at `N=512`;
+`(2212031,2216041)` are holdout at `N=1024`. The panel crosses fixed-three-block
+and full-relative bands, `Q=2048,8192`, beta=2, exponent 1, height 66, four
+laws, and local or calibration-pooled normalization.
+
+The complete panel has 160 rows and 32 cells. Calibration and holdout
+stability counts are `20/32` and `28/32`; all Schur rows are below `0.83`.
+The inherited `0.64` spectral diagnostic fails on 16 rows, exactly the
+all-plus `N=1024` rows under both modes, normalizations, and Q values. At
+`Q=8192`, the all-plus holdout/calibration ratios are
+`1.0652156493536045`, `1.1112204434769593`, `1.0858538657474437`, and
+`1.1294445356950271` in fixed/local, fixed/pooled, full/local, full/pooled
+order; all are inside a deliberately broad 20% finite audit envelope.
+
+This is a finite count-transfer result plus a fixed-cap obstruction. It is
+not count-uniformity, source-valid normalization, a growing operator bound,
+source-uniform arithmetic `L2`, arithmetic power saving, Route-B reassembly,
+or a twin-prime result. Official Route-A/Route-B evaluator files remain
+absent; local Bridge-B is fail-closed repository evidence. The exact anchor is
+`[2200001,2200014)` with shell `[11,13]`.
+
+    TPC386_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC386_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC386_PARENT_PHASE_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC386_COUNT_HOLDOUT_PANEL = NUMERICALLY_CERTIFIED_FINITE_160_ROWS
+    TPC386_ALL_PLUS_COUNT_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC386_FIXED_SPECTRAL_CAP_TRANSFER = REFUTED_FINITE_SCOPED
+    TPC386_COUNT_UNIFORMITY = OPEN
+    TPC386_BANDWIDTH_RENORMALIZATION = OPEN
+    TPC386_LAW_UNIFORMITY = OPEN
+    TPC386_ORIGIN_UNIFORMITY = OPEN
+    TPC386_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC386_GROWING_OPERATOR_BOUND = OPEN
+    TPC386_SOURCE_UNIFORM_L2 = OPEN
+    TPC386_ARITHMETIC_ADVANCE = NO
+    TPC386_FIXED_POWER_CREDIT = 0
+    TPC386_FULL_GATE_B = OPEN
+    TPC386_TWIN_PRIME_RESULT = NONE
+    TPC386_STRONGEST_POSITIVE = FINITE_ALL_PLUS_COUNT_TRANSFER_WITH_ORIGIN_HOLDOUT
+    TPC386_STRONGEST_OBSTRUCTION = FINITE_SPECTRAL_CAP_FAILURE_AT_N1024
+    TPC386_OPEN_THEOREM = SOURCE_VALID_COUNT_UNIFORM_OPERATOR_CONTROL
+    TPC386_REUSABLE_STRUCTURE = COUNT_ROLE_SPLIT_WITH_FIXED_AND_FULL_BAND_COMPARISON
+    TPC386_ROUND2_CLUE = TEST_C1_COUNT_LADDER_RENORMALIZATION
+    TPC386_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_COUNT_HOLDOUT_BANDWIDTH
+
+Reproduction commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-386-c1-count-holdout-bandwidth/code/tpc386_c1_count_holdout_bandwidth.py --check
+    python -O -B papers/tpc-386-c1-count-holdout-bandwidth/code/tpc386_c1_count_holdout_bandwidth.py --check
+    python -B papers/tpc-386-c1-count-holdout-bandwidth/experiments/tpc386_independent_checker.py --check
+    python -O -B papers/tpc-386-c1-count-holdout-bandwidth/experiments/tpc386_independent_checker.py --check
+    python -B papers/tpc-386-c1-count-holdout-bandwidth/experiments/tpc386_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-386-c1-count-holdout-bandwidth/experiments/tpc386_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc386_c1_count_holdout_bandwidth_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc386_c1_count_holdout_bandwidth_checker.py --check
+
+The next finite question is `TEST_C1_COUNT_LADDER_RENORMALIZATION`. Any
+count-ladder interpretation remains finite until a genuine growing argument
+is supplied.
+
+TPC-385 previous section: c=1 bandwidth-phase origin holdout
 -------------------------------------------------------------
 
 TPC-385 is the current sealed finite release. It locks the TPC-384 producer,

@@ -2,31 +2,75 @@
 
 更新时间：2026-09-04
 
-当前地图版本：V238 / TPC-385
+当前地图版本：V239 / TPC-386
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-385`（`NUMERICALLY_CERTIFIED_FINITE_C1_BANDWIDTH_ORIGIN_HOLDOUT`）；
-对应论文目录为 `papers/tpc-385-c1-bandwidth-origin-holdout/`。
+当前编号锚点：`TPC-386`（`NUMERICALLY_CERTIFIED_FINITE_C1_COUNT_HOLDOUT_BANDWIDTH`）；
+对应论文目录为 `papers/tpc-386-c1-count-holdout-bandwidth/`。
 
-TPC-385 是当前位置：在 fresh coordinate-disjoint origins
-`(2000001,2004011,2008021,2012031,2016041)` 上预声明前三个 calibration、后两个
-holdout，固定 `N=512`、`c=2,3`、`Q=2048,8192`、四个 laws 与
-local/calibration-pooled 两种 normalization，形成 160-row、32-cell panel。
-all-plus `Q=8192` 的四个 parent-forecast holdout errors 全部小于
-`2.4194960054838229e-5`，但 alternating-index 的 `(c,Q)=(3,2048)` local
-holdout spread 为 `0.033223638943350384`，所以 transfer 仍非 law-uniform。
+TPC-386 是当前位置：在 fresh coordinate-disjoint origins
+`(2200001,2204011,2208021,2212031,2216041)` 上预声明三个 `N=512` calibration、
+两个 `N=1024` holdout，固定 fixed-three-block/full-relative 两种 band mode、
+`Q=2048,8192`、四个 laws 与两种 normalization，形成 160-row、32-cell panel。
+all-plus `Q=8192` 的四个 holdout/calibration ratios 为
+`1.0652156493536045, 1.1112204434769593, 1.0858538657474437,
+1.1294445356950271`；继承的 `0.64` spectral diagnostic 在 16 个 all-plus
+`N=1024` rows 失败，而 Schur failures 为 `0/160`，holdout stable cells 为
+`28/32`。这是有限 count-transfer 与 fixed-cap obstruction，不能升级为
+count-uniform theorem。
 
-这是有限 origin-holdout transfer 与 law obstruction：calibration-only pooled scalar
-不使用 holdout geometry，且四个 all-plus 高-Q forecast 均通过 1% cap；它不建立
-source-valid normalization、origin/count/law uniformity、growing operator theorem、
+这是有限 count holdout 与 cap obstruction：calibration-only pooled scalar 不使用
+holdout geometry，且四个 ratio 均在宽松 20% finite audit envelope；它不建立
+source-valid normalization、count/origin/law uniformity、growing operator theorem、
 source-uniform arithmetic `L2`、fixed-power saving 或 twin-prime endpoint。producer、
 独立 reverse-shell replay、25-mutation stress、2-page PDF 与 local Bridge-B 已封存；
 official evaluator files 仍缺失，local bridge 只作 fail-closed evidence。
 `ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关为
-`TEST_C1_HOLDOUT_COUNT_BANDWIDTH`。
+`TEST_C1_COUNT_LADDER_RENORMALIZATION`。
 
-## 5.168 V238 / TPC-385：c=1 bandwidth-phase origin holdout
+## 5.169 V239 / TPC-386：c=1 count-holdout bandwidth audit
+
+TPC-386 的 finite package 位于 `papers/tpc-386-c1-count-holdout-bandwidth/`。
+它锁定 TPC-385 的 producer/certificate 与 all-plus `Q=8192` reference，在新
+affine grid `a_j=2200001+401j` 上冻结 indices `(0,10,20,30,40)`。前三个 origins
+只作 `N=512` calibration，后两个只作 `N=1024` holdout；count roles、fixed
+three-block band 与 full-relative band 在读出前固定。
+
+完整 panel 有 160 rows 与 32 cells，calibration/holdout stable counts 为
+`20/32` 与 `28/32`。在 all-plus `Q=8192` 中，fixed/local、fixed/pooled、
+full/local、full/pooled 的 holdout/calibration ratios 分别为
+`1.0652156493536045, 1.1112204434769593, 1.0858538657474437,
+1.1294445356950271`；四者均通过预声明的 20% finite ratio envelope。另一方面，
+继承的 `0.64` spectral cap 在 16 个 all-plus `N=1024` rows 全部失败，而 fixed
+band 已经失败，说明新增 count 的 obstruction 不能归因于远端 block pairs。
+
+    YOU ARE HERE = V239 / TPC-386
+    TPC386_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC386_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC386_PARENT_PHASE_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC386_COUNT_HOLDOUT_PANEL = NUMERICALLY_CERTIFIED_FINITE_160_ROWS
+    TPC386_ALL_PLUS_COUNT_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC386_FIXED_SPECTRAL_CAP_TRANSFER = REFUTED_FINITE_SCOPED
+    TPC386_COUNT_UNIFORMITY = OPEN
+    TPC386_BANDWIDTH_RENORMALIZATION = OPEN
+    TPC386_LAW_UNIFORMITY = OPEN
+    TPC386_ORIGIN_UNIFORMITY = OPEN
+    TPC386_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC386_GROWING_OPERATOR_BOUND = OPEN
+    TPC386_SOURCE_UNIFORM_L2 = OPEN
+    TPC386_ARITHMETIC_ADVANCE = NO
+    TPC386_FIXED_POWER_CREDIT = 0
+    TPC386_FULL_GATE_B = OPEN
+    TPC386_TWIN_PRIME_RESULT = NONE
+    TPC386_STRONGEST_POSITIVE = FINITE_ALL_PLUS_COUNT_TRANSFER_WITH_ORIGIN_HOLDOUT
+    TPC386_STRONGEST_OBSTRUCTION = FINITE_SPECTRAL_CAP_FAILURE_AT_N1024
+    TPC386_OPEN_THEOREM = SOURCE_VALID_COUNT_UNIFORM_OPERATOR_CONTROL
+    TPC386_REUSABLE_STRUCTURE = COUNT_ROLE_SPLIT_WITH_FIXED_AND_FULL_BAND_COMPARISON
+    TPC386_ROUND2_CLUE = TEST_C1_COUNT_LADDER_RENORMALIZATION
+    TPC386_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_COUNT_HOLDOUT_BANDWIDTH
+
+## 5.168 V238 / TPC-385：c=1 bandwidth-phase origin holdout (previous)
 
 TPC-385 的 finite package 位于 `papers/tpc-385-c1-bandwidth-origin-holdout/`。
 它锁定 TPC-384 的 producer/certificate 与 all-plus `Q=8192` phase forecasts，
@@ -42,7 +86,7 @@ stable cells 为 `26/32` 与 `28/32`，全部 160 rows 未超过 spectral 或 Sc
 9.5520761251517647e-06, -2.4194960054838229e-05`；最大 holdout spread
 `0.033223638943350384` 来自 alternating-index 的 `c=3,Q=2048` local cell。
 
-    YOU ARE HERE = V238 / TPC-385
+    YOU ARE HERE = V238 / TPC-385 (previous)
     TPC385_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC385_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
     TPC385_PARENT_PHASE_REFERENCE = PROVED_EXACT_FINITE_HASHED
@@ -11124,6 +11168,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-04 | V239 / TPC-386 | Bridge B / Gate B：c=1 count-holdout bandwidth audit; count-uniformity、source-valid normalization、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-386 | 承接 TPC-385；fresh origins `(2200001,2204011,2208021,2212031,2216041)`，前三个 `N=512` calibration、后两个 `N=1024` holdout，fixed-three-block/full-relative 两种 band mode、四 laws 与两种 normalization 完成 160-row panel；holdout stable `28/32`，all-plus 高-Q count ratios `1.0652--1.1295`，继承 `0.64` spectral cap 在 16 个 all-plus holdout rows 失败；下一步 TEST_C1_COUNT_LADDER_RENORMALIZATION |
 | 2026-09-04 | V238 / TPC-385 | Bridge B / Gate B：c=1 bandwidth-phase origin holdout; source-valid normalization、origin/count/law uniformity、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-385 | 承接 TPC-384；新 coordinate-disjoint affine grid `(2000001,2004011,2008021,2012031,2016041)`，前三个 calibration、后两个 holdout，`c=2,3`、`Q=2048,8192`、四 laws 与两种 normalization 完成 160-row panel；stable cells `26/32` 与 `28/32`，all-plus 高-Q forecast `4/4` 在 1% 内，最大 signed holdout spread `0.0332236389`；下一步 TEST_C1_HOLDOUT_COUNT_BANDWIDTH |
 | 2026-09-04 | V237 / TPC-384 | Bridge B / Gate B：c=1 bandwidth-normalization phase diagram; source-valid normalization、bandwidth/origin uniformity、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-384 | 承接 TPC-383；fresh origins `(1800001,1808021,1816041)`、四个 bandwidth、两种 normalization、four laws 与三组 Q 完成 288-row phase；all-plus pooled high-Q `0.3665632 -> 0.6388876`，下一步 TEST_C1_BANDWIDTH_ORIGIN_HOLDOUT |
 | 2026-09-04 | V236 / TPC-383 | Bridge B / Gate B：c=1 pooled-normalization audit; source-valid normalization、origin/law uniformity、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-383 | 承接 TPC-382；fresh origins `(1600001,1608021,1616041)`、local/pooled normalization 与 four-law 72-row panel；两种 stability census `9/12`，下一步 TEST_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM |
