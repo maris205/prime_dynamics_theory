@@ -2,31 +2,71 @@
 
 更新时间：2026-09-04
 
-当前地图版本：V235 / TPC-382
+当前地图版本：V236 / TPC-383
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-382`（`NUMERICALLY_CERTIFIED_FINITE_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT`）；
-对应论文目录为 `papers/tpc-382-c1-origin-family-magnitude-audit/`。
+当前编号锚点：`TPC-383`（`NUMERICALLY_CERTIFIED_FINITE_C1_POOLED_NORMALIZATION_AUDIT`）；
+对应论文目录为 `papers/tpc-383-c1-pooled-normalization-audit/`。
 
-TPC-382 是当前位置：它锁定 TPC-379、TPC-380、TPC-381 的 finite certificates，
-将 TPC-380/TPC-381 的六-origin N=2048 values 作为 same-count cohort，并将 TPC-379
-N=1024 保留为显式 scale control。same-count all-plus high-Q spread 为
-`8.0645464844910632e-6`，四-law stability census 为 `8/12`；N=2048 相对 N=1024
-matched all-plus high-Q mean 的 absolute contrast 为 `0.020813995160269608`，
-所以窄义跨 count 1% invariance 被 refute。该有限 aggregation 不支付 arithmetic
-advance、source-valid normalization 或 fixed-power credit。
+TPC-383 是当前位置：在 fresh coordinate-disjoint origins `(1600001,1608021,1616041)`
+上固定 `N=512`、四个 128-point blocks、`c=1`、三组 Q 与四个 laws，比较
+local-diagonal 与 pooled-scalar normalization。完整 72-row panel 的两种 stability
+census 均为 `9/12`；all-plus high-Q spread 分别为 `1.1394111498671383e-5` 与
+`4.6321361430822112e-5`，pooled 相对 local mean 的 shift 为
+`0.036457251256851203`。alternating-index pooled high-Q spread 为
+`0.10104585338571119`，所以 transfer 仍然 law-dependent；该有限 audit 不支付
+source-valid normalization、arithmetic advance 或 fixed-power credit。
 
-这是有限 hash-locked magnitude aggregation 与 scale obstruction：同 count all-plus
-高-Q stability 在六个 locked origins 上成立，但窄义跨 count 1% invariance 失败。
-它不建立 origin/scale uniformity、source-valid normalization、growing operator theorem、
-source-uniform arithmetic `L2`、fixed-power saving 或 twin-prime endpoint。producer、
-独立 aggregation replay、25-mutation stress、2-page PDF 与 local Bridge-B 已封存；
-official evaluator files 仍缺失，local bridge 只作 fail-closed evidence。
-`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关为
-`TEST_C1_POOLED_NORMALIZATION_CROSS_ORIGIN`。
+这是有限 normalization transfer 与 calibration/law obstruction：all-plus origin shape
+在 local 与 pooled 两种约定下均通过有限 stability cap，但绝对 mean 发生非零 shift，
+且 alternating law 仍不稳定。它不建立 origin/scale uniformity、source-valid
+normalization、growing operator theorem、source-uniform arithmetic `L2`、fixed-power
+saving 或 twin-prime endpoint。producer、独立 reverse-shell replay、25-mutation
+stress、2-page PDF 与 local Bridge-B 已封存；official evaluator files 仍缺失，local
+bridge 只作 fail-closed evidence。`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`；下一关为 `TEST_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM`。
 
-## 5.165 V235 / TPC-382：c=1 origin-family magnitude audit
+## 5.166 V236 / TPC-383：c=1 pooled-normalization audit
+
+TPC-383 的 finite package 位于 `papers/tpc-383-c1-pooled-normalization-audit/`。
+它在新的 coordinate-disjoint affine grid `a_j=1600001+401j` 上预声明并冻结
+indices `(0,20,40)`，得到 origins `(1600001,1608021,1616041)`。固定 `N=512`、
+四个连续 128-point blocks、`c=1`、`Q=512,2048,8192`、四个 laws 与两种
+normalizations，形成 72 rows。local-diagonal 使用 row-wise square-energy whitening；
+pooled-scalar 使用三 origins 的 common geometry mean。
+
+两种 normalization 的稳定 cells 都为 `9/12`。all-plus high-Q relative spread
+分别为 `1.1394111498671383e-5` 与 `4.6321361430822112e-5`；pooled/local mean
+shift 为 `0.036457251256851203`。alternating-index 的 pooled high-Q spread 为
+`0.10104585338571119`。这是有限 shape transfer 与 calibration separation，不是
+source-valid normalization theorem。
+
+    YOU ARE HERE = V236 / TPC-383
+    TPC383_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC383_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC383_NORMALIZATION_FAMILY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
+    TPC383_LOCAL_POOLED_PANEL = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+    TPC383_ALL_PLUS_HIGH_Q_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC383_NORMALIZATION_MAGNITUDE_SHIFT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC383_LAW_SPREAD_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC383_ORIGIN_UNIFORMITY = OPEN
+    TPC383_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC383_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC383_GROWING_OPERATOR_BOUND = OPEN
+    TPC383_SOURCE_UNIFORM_L2 = OPEN
+    TPC383_ARITHMETIC_ADVANCE = NO
+    TPC383_FIXED_POWER_CREDIT = 0
+    TPC383_FULL_GATE_B = OPEN
+    TPC383_TWIN_PRIME_RESULT = NONE
+    TPC383_STRONGEST_POSITIVE = FINITE_ALL_PLUS_TRANSFER_UNDER_TWO_NORMALIZATIONS
+    TPC383_STRONGEST_OBSTRUCTION = NORMALIZATION_SHIFT_AND_ALTERNATING_LAW_INSTABILITY
+    TPC383_OPEN_THEOREM = SOURCE_VALID_BANDWIDTH_NORMALIZATION_AND_LAW_UNIFORMITY
+    TPC383_REUSABLE_STRUCTURE = FRESH_AFFINE_HOLDOUT_COMMON_GEOMETRY_TWO_NORMALIZATION_PANEL
+    TPC383_ROUND2_CLUE = TEST_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM
+    TPC383_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_POOLED_NORMALIZATION_AUDIT
+
+## 5.165 V235 / TPC-382：c=1 origin-family magnitude audit (previous)
 
 TPC-382 的 finite package 位于 `papers/tpc-382-c1-origin-family-magnitude-audit/`。
 它不读取新 response，而是锁定 TPC-379、TPC-380、TPC-381 的 code/certificate

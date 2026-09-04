@@ -1,6 +1,44 @@
 # TPC distilled map and bold channel
 
-## V235 / TPC-382 current anchor
+## V236 / TPC-383 current anchor
+
+更新时间：2026-09-04
+
+当前入口：proof 为
+papers/tpc-383-c1-pooled-normalization-audit/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc383_c1_pooled_normalization_audit_checker.py，
+编号论文为 papers/tpc-383-c1-pooled-normalization-audit/。
+
+TPC-383 在 fresh coordinate-disjoint origins `(1600001,1608021,1616041)` 上，
+固定 `N=512`、四个 128-point blocks、`c=1`、三组 Q 与四个 laws，比较
+local-diagonal 和 pooled-scalar normalization。完整 72-row panel 的两种
+stability census 均为 `9/12`；all-plus high-Q spread 分别为
+`1.1394111498671383e-5` 与 `4.6321361430822112e-5`，pooled 相对 local
+mean 的 shift 为 `0.036457251256851203`。alternating-index 的 pooled
+high-Q spread 为 `0.10104585338571119`，显示 transfer 仍 law-dependent。
+这只是 finite normalization audit，不验证 source-valid normalization，也不支付
+arithmetic、fixed-power 或 twin-prime gate。
+
+    YOU ARE HERE = V236 / TPC-383
+    TPC383_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC383_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC383_NORMALIZATION_FAMILY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
+    TPC383_LOCAL_POOLED_PANEL = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+    TPC383_ALL_PLUS_HIGH_Q_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC383_NORMALIZATION_MAGNITUDE_SHIFT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC383_LAW_SPREAD_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC383_ORIGIN_UNIFORMITY = OPEN
+    TPC383_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC383_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC383_GROWING_OPERATOR_BOUND = OPEN
+    TPC383_SOURCE_UNIFORM_L2 = OPEN
+    TPC383_ARITHMETIC_ADVANCE = NO
+    TPC383_FIXED_POWER_CREDIT = 0
+    TPC383_FULL_GATE_B = OPEN
+    TPC383_TWIN_PRIME_RESULT = NONE
+    TPC383_ROUND2_CLUE = TEST_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM
+
+## V235 / TPC-382 previous anchor
 
 更新时间：2026-09-04
 

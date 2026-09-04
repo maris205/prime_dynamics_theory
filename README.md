@@ -9,7 +9,24 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-382 对 TPC-380/TPC-381 的六-origin、count-2048
+当前主线最新位置：TPC-383 在 fresh coordinate-disjoint origins
+`(1600001,1608021,1616041)` 上，把 TPC-382 的 magnitude audit 延伸到
+local-diagonal 与 pooled-scalar 两种 normalization。完整 72-row panel 的
+两种 stability census 均为 9/12；all-plus 的 pooled high-Q spread 为
+`4.6321361430822112e-5`，相对 local mean 的 calibration shift 为
+`3.6457251256851203%`，而 alternating-index pooled high-Q spread 为
+`0.10104585338571119`。这是有限 normalization transfer 与 law-dependent
+obstruction，不是 source-valid normalization、arithmetic `L2` 或 twin-prime
+result。当前项目为
+`papers/tpc-383-c1-pooled-normalization-audit/`，下一关是
+`TEST_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM`；`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
+
+papers/tpc-383-c1-pooled-normalization-audit - TPC-383 current project；含
+72-row local/pooled certificate、独立 reverse-shell replay、25-mutation stress、
+2-page PDF 与 local fail-closed Bridge-B checker。
+
+当前主线最新位置（previous）：TPC-382 对 TPC-380/TPC-381 的六-origin、count-2048
 cohort 做了 hash-locked magnitude audit。三组 Q 的 all-plus 高-Q pooled
 spread 为 `8.0645464844910632e-6`，同 count 稳定单元为 8/12；TPC-379 的
 N=1024 scale control 与 N=2048 matched mean 相差 `2.0813995160269608%`，
@@ -20,7 +37,7 @@ law-dependent magnitude evidence，不是 origin/scale uniformity、arithmetic
 `TEST_C1_POOLED_NORMALIZATION_CROSS_ORIGIN`；`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
 
-papers/tpc-382-c1-origin-family-magnitude-audit - TPC-382 current project；含
+papers/tpc-382-c1-origin-family-magnitude-audit - TPC-382 previous project；含
 72-value same-count magnitude certificate、scale control、独立 aggregation replay、
 25-mutation stress、2-page PDF 与 local fail-closed Bridge-B checker。
 

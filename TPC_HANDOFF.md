@@ -1,9 +1,56 @@
 # TPC HANDOFF
 
-TPC-382 current section: c=1 origin-family magnitude audit
------------------------------------------------------------
+TPC-383 current section: c=1 pooled-normalization audit
+--------------------------------------------------------
 
-TPC-382 is the current sealed finite release. It locks the TPC-379, TPC-380,
+TPC-383 is the current sealed finite release. It freezes, before reading any
+response or metric, the affine grid `a_j=1600001+401j`, `0<=j<41`, and
+indices `(0,20,40)`, giving origins `(1600001,1608021,1616041)`. The fixed
+window has `N=512`, four contiguous 128-point blocks, the inherited `c=1`
+band, beta=2, exponent 1, height 66, and Q anchors `Q=512,2048,8192`.
+Four predeclared laws are evaluated under local-diagonal and pooled-scalar
+normalization, giving a complete 72-row Cartesian panel.
+
+Both normalization choices have 9/12 stable origin-spread cells. The all-plus
+high-Q spreads are `1.1394111498671383e-5` (local) and
+`4.6321361430822112e-5` (pooled); the pooled/local high-Q mean shift is
+`0.036457251256851203`. The alternating-index pooled high-Q spread is
+`0.10104585338571119`. This is finite normalization transfer plus a
+law-dependent obstruction. It is not source-valid normalization, a growing
+operator bound, source-uniform arithmetic `L2`, arithmetic power saving,
+Route-B reassembly, or a twin-prime result. Official Route-A/Route-B
+evaluator files remain absent; local Bridge-B is fail-closed repository
+evidence. `ARITHMETIC_ADVANCE=NO`, `FIXED_POWER_CREDIT=0`, and
+`FULL_GATE_B=OPEN`; the next finite question is
+`TEST_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM`.
+
+    TPC383_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC383_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC383_NORMALIZATION_FAMILY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
+    TPC383_LOCAL_POOLED_PANEL = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+    TPC383_ALL_PLUS_HIGH_Q_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC383_NORMALIZATION_MAGNITUDE_SHIFT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC383_LAW_SPREAD_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC383_ORIGIN_UNIFORMITY = OPEN
+    TPC383_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC383_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC383_GROWING_OPERATOR_BOUND = OPEN
+    TPC383_SOURCE_UNIFORM_L2 = OPEN
+    TPC383_ARITHMETIC_ADVANCE = NO
+    TPC383_FIXED_POWER_CREDIT = 0
+    TPC383_FULL_GATE_B = OPEN
+    TPC383_TWIN_PRIME_RESULT = NONE
+    TPC383_STRONGEST_POSITIVE = FINITE_ALL_PLUS_TRANSFER_UNDER_TWO_NORMALIZATIONS
+    TPC383_STRONGEST_OBSTRUCTION = NORMALIZATION_SHIFT_AND_ALTERNATING_LAW_INSTABILITY
+    TPC383_OPEN_THEOREM = SOURCE_VALID_BANDWIDTH_NORMALIZATION_AND_LAW_UNIFORMITY
+    TPC383_REUSABLE_STRUCTURE = FRESH_AFFINE_HOLDOUT_COMMON_GEOMETRY_TWO_NORMALIZATION_PANEL
+    TPC383_ROUND2_CLUE = TEST_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM
+    TPC383_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_POOLED_NORMALIZATION_AUDIT
+
+TPC-382 previous section: c=1 origin-family magnitude audit
+-------------------------------------------------------------
+
+TPC-382 is the previous sealed finite release. It locks the TPC-379, TPC-380,
 and TPC-381 producer sources and canonical certificates before aggregation.
 The TPC-380/TPC-381 N=2048 panels form a same-count cohort of six origins,
 three Q anchors, and four laws (72 values); TPC-379 N=1024 is retained only as
@@ -960,6 +1007,19 @@ TPC-382 reproducibility commands:
     python -O -B papers/tpc-382-c1-origin-family-magnitude-audit/experiments/tpc382_adversarial_certificate_stress.py --check
     python -B research/tpc-big-road/tpc_bridge_b_tpc382_c1_origin_family_magnitude_audit_checker.py --check
     python -O -B research/tpc-big-road/tpc_bridge_b_tpc382_c1_origin_family_magnitude_audit_checker.py --check
+
+TPC-383 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-383-c1-pooled-normalization-audit/code/tpc383_c1_pooled_normalization_audit.py --check
+    python -O -B papers/tpc-383-c1-pooled-normalization-audit/code/tpc383_c1_pooled_normalization_audit.py --check
+    python -B papers/tpc-383-c1-pooled-normalization-audit/experiments/tpc383_independent_checker.py --check
+    python -O -B papers/tpc-383-c1-pooled-normalization-audit/experiments/tpc383_independent_checker.py --check
+    python -B papers/tpc-383-c1-pooled-normalization-audit/experiments/tpc383_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-383-c1-pooled-normalization-audit/experiments/tpc383_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc383_c1_pooled_normalization_audit_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc383_c1_pooled_normalization_audit_checker.py --check
 
 
 TPC-374 tail audit is required to return zero with empty stderr and

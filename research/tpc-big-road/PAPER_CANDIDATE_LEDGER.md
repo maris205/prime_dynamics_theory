@@ -3,13 +3,68 @@
 
 更新时间：2026-09-04
 
-状态：**TPC382_NUMERICALLY_CERTIFIED_FINITE_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC383_NUMERICALLY_CERTIFIED_FINITE_C1_POOLED_NORMALIZATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.176 current：TPC-382 c=1 origin-family magnitude audit
+## 0.177 current：TPC-383 c=1 pooled-normalization audit
+
+项目：papers/tpc-383-c1-pooled-normalization-audit/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_POOLED_NORMALIZATION_AUDIT**。
+
+TPC-383 在新的 coordinate-disjoint affine grid `a_j=1600001+401j` 上，在读取
+任何 response、signed metric 或 geometry score 前冻结 indices `(0,20,40)`，得到
+origins `(1600001,1608021,1616041)`。固定 `N=512`、四个连续 128-point blocks、
+`c=1`、beta `2`、kernel exponent `1`、height `66`、`Q=(512,2048,8192)` 与四个
+laws，完整比较 local-diagonal 与 pooled-scalar 两种 normalization，形成 72-row
+Cartesian panel。
+
+最强正结果：两种 normalization 的 origin-spread stability census 都为 `9/12`，
+all-plus high-Q spread 分别为 `1.1394111498671383e-5` 与
+`4.6321361430822112e-5`，因此有限的 shape transfer 在两种约定下成立。最强
+obstruction：pooled 相对 local 的 all-plus high-Q mean shift 为
+`0.036457251256851203`，且 alternating-index pooled high-Q spread 为
+`0.10104585338571119`；这证明 transfer 不等于 normalization calibration 或
+law uniformity。
+
+开放定理：在 source-valid normalization 下，能否把有限 shape transfer 推进到
+bandwidth、origin 与 law 的可增长统一控制。
+
+可复用结构：
+
+    fresh affine holdout
+      -> common raw geometry and c=1 mask
+      -> local/pooled normalization crossing
+      -> complete law/Q panel
+      -> independent reverse-shell replay + mutation firewall
+
+ROUND2_CLUE：`TEST_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM`。
+
+```text
+TPC383_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC383_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC383_NORMALIZATION_FAMILY = PROVED_EXACT_FINITE_LAW_INDEPENDENT
+TPC383_LOCAL_POOLED_PANEL = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+TPC383_ALL_PLUS_HIGH_Q_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC383_NORMALIZATION_MAGNITUDE_SHIFT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC383_LAW_SPREAD_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC383_ORIGIN_UNIFORMITY = OPEN
+TPC383_WINDOW_SCALE_UNIFORMITY = OPEN
+TPC383_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC383_GROWING_OPERATOR_BOUND = OPEN
+TPC383_SOURCE_UNIFORM_L2 = OPEN
+TPC383_ARITHMETIC_ADVANCE = NO
+TPC383_FIXED_POWER_CREDIT = 0
+TPC383_FULL_GATE_B = OPEN
+TPC383_TWIN_PRIME_RESULT = NONE
+TPC383_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_POOLED_NORMALIZATION_AUDIT
+TPC383_ROUND2_CLUE = TEST_C1_BANDWIDTH_NORMALIZATION_PHASE_DIAGRAM
+```
+
+## 0.176 previous：TPC-382 c=1 origin-family magnitude audit
 
 项目：papers/tpc-382-c1-origin-family-magnitude-audit/
 
