@@ -1,7 +1,51 @@
 # TPC HANDOFF
 
-TPC-381 current section: c=1 law-control origin-family replay
----------------------------------------------------------------
+TPC-382 current section: c=1 origin-family magnitude audit
+-----------------------------------------------------------
+
+TPC-382 is the current sealed finite release. It locks the TPC-379, TPC-380,
+and TPC-381 producer sources and canonical certificates before aggregation.
+The TPC-380/TPC-381 N=2048 panels form a same-count cohort of six origins,
+three Q anchors, and four laws (72 values); TPC-379 N=1024 is retained only as
+an explicitly labelled scale control. The one-percent relative-spread cap is
+fixed before aggregation.
+
+The same-count all-plus high-Q spread is `8.0645464844910632e-6`, and the
+four-law stability census is 8/12. The matched all-plus high-Q mean changes by
+`0.020813995160269608` between the N=1024 scale control and the N=2048 cohort,
+so the narrowly stated cross-count one-percent invariance is
+`REFUTED_FINITE_SCOPED`. This is finite magnitude evidence only; it is not
+origin/scale uniformity, source-valid normalization, a growing operator bound,
+source-uniform arithmetic `L2`, arithmetic power saving, Route-B reassembly,
+or a twin-prime result. Official Route-A/Route-B evaluator files remain
+absent; local Bridge-B is fail-closed repository evidence.
+`ARITHMETIC_ADVANCE=NO`, `FIXED_POWER_CREDIT=0`, and `FULL_GATE_B=OPEN`; the
+next finite question is `TEST_C1_POOLED_NORMALIZATION_CROSS_ORIGIN`.
+
+    TPC382_PARENT_LOCKS = PROVED_EXACT_FINITE_HASHED
+    TPC382_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_CERTIFICATE_BLIND
+    TPC382_SAME_N_ORIGIN_MAGNITUDE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_72_VALUES
+    TPC382_ALL_PLUS_HIGH_Q_STABILITY_1PCT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC382_LAW_DEPENDENT_MAGNITUDE_SPREAD = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC382_CROSS_COUNT_MAGNITUDE_INVARIANCE = REFUTED_FINITE_SCOPED
+    TPC382_ORIGIN_UNIFORMITY = OPEN
+    TPC382_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC382_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC382_GROWING_OPERATOR_BOUND = OPEN
+    TPC382_SOURCE_UNIFORM_L2 = OPEN
+    TPC382_ARITHMETIC_ADVANCE = NO
+    TPC382_FIXED_POWER_CREDIT = 0
+    TPC382_FULL_GATE_B = OPEN
+    TPC382_TWIN_PRIME_RESULT = NONE
+    TPC382_STRONGEST_POSITIVE = FINITE_SAME_COUNT_ALL_PLUS_HIGH_Q_MAGNITUDE_STABILITY
+    TPC382_STRONGEST_OBSTRUCTION = ONE_PERCENT_CROSS_COUNT_MAGNITUDE_INVARIANCE_REFUTED
+    TPC382_OPEN_THEOREM = SOURCE_VALID_POOLED_ORIGIN_UNIFORMITY_AND_SCALE_LAW
+    TPC382_REUSABLE_STRUCTURE = HASH_LOCKED_MULTI_RELEASE_COHORT_AGGREGATION_WITH_EXPLICIT_SCALE_CONTROL
+    TPC382_ROUND2_CLUE = TEST_C1_POOLED_NORMALIZATION_CROSS_ORIGIN
+    TPC382_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT
+
+TPC-381 previous section: c=1 law-control origin-family replay
+-----------------------------------------------------------------
 
 TPC-381 is the current sealed finite release. It freezes, before reading any
 response or metric, the affine grid `a_j=1400001+401j`, `0<=j<41`, and
@@ -903,6 +947,19 @@ TPC-381 reproducibility commands:
     python -O -B papers/tpc-381-c1-origin-family-replay/experiments/tpc381_adversarial_certificate_stress.py --check
     python -B research/tpc-big-road/tpc_bridge_b_tpc381_c1_origin_family_replay_checker.py --check
     python -O -B research/tpc-big-road/tpc_bridge_b_tpc381_c1_origin_family_replay_checker.py --check
+
+TPC-382 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-382-c1-origin-family-magnitude-audit/code/tpc382_c1_origin_family_magnitude_audit.py --check
+    python -O -B papers/tpc-382-c1-origin-family-magnitude-audit/code/tpc382_c1_origin_family_magnitude_audit.py --check
+    python -B papers/tpc-382-c1-origin-family-magnitude-audit/experiments/tpc382_independent_checker.py --check
+    python -O -B papers/tpc-382-c1-origin-family-magnitude-audit/experiments/tpc382_independent_checker.py --check
+    python -B papers/tpc-382-c1-origin-family-magnitude-audit/experiments/tpc382_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-382-c1-origin-family-magnitude-audit/experiments/tpc382_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc382_c1_origin_family_magnitude_audit_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc382_c1_origin_family_magnitude_audit_checker.py --check
 
 
 TPC-374 tail audit is required to return zero with empty stderr and

@@ -9,7 +9,22 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-381 在新的 coordinate-disjoint origin family 上，
+当前主线最新位置：TPC-382 对 TPC-380/TPC-381 的六-origin、count-2048
+cohort 做了 hash-locked magnitude audit。三组 Q 的 all-plus 高-Q pooled
+spread 为 `8.0645464844910632e-6`，同 count 稳定单元为 8/12；TPC-379 的
+N=1024 scale control 与 N=2048 matched mean 相差 `2.0813995160269608%`，
+因此窄义的跨 count 1% 不变性被有限地 refute。该结果仍是 finite
+law-dependent magnitude evidence，不是 origin/scale uniformity、arithmetic
+`L2` 或 twin-prime result。当前项目为
+`papers/tpc-382-c1-origin-family-magnitude-audit/`，下一关是
+`TEST_C1_POOLED_NORMALIZATION_CROSS_ORIGIN`；`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
+
+papers/tpc-382-c1-origin-family-magnitude-audit - TPC-382 current project；含
+72-value same-count magnitude certificate、scale control、独立 aggregation replay、
+25-mutation stress、2-page PDF 与 local fail-closed Bridge-B checker。
+
+当前主线最新位置（previous）：TPC-381 在新的 coordinate-disjoint origin family 上，
 把 TPC-380 的 four-law `c=1` count-2048 panel 复放到 origins
 `(1400001,1408021,1416041)`。固定 `N=2048`、八个 256-point blocks、
 `Q={512,2048,8192}` 与四个 laws，完成 36-row panel；all-plus profile 仍为
@@ -21,7 +36,7 @@ growing theorem、arithmetic `L2` 或 twin-prime result。当前项目为
 `TEST_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT`；`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。
 
-papers/tpc-381-c1-origin-family-replay - TPC-381 current project；含 36-row
+papers/tpc-381-c1-origin-family-replay - TPC-381 previous project；含 36-row
 origin-family replay certificate、独立 reverse-shell replay、25-mutation stress、
 2-page PDF 与 local fail-closed Bridge-B checker。
 

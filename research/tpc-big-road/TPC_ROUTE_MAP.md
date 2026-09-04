@@ -2,32 +2,68 @@
 
 更新时间：2026-09-04
 
-当前地图版本：V234 / TPC-381
+当前地图版本：V235 / TPC-382
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-381`（`NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY`）；
-对应论文目录为 `papers/tpc-381-c1-origin-family-replay/`。
+当前编号锚点：`TPC-382`（`NUMERICALLY_CERTIFIED_FINITE_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT`）；
+对应论文目录为 `papers/tpc-382-c1-origin-family-magnitude-audit/`。
 
-TPC-381 是当前位置：在新的 coordinate-disjoint affine grid 上预声明 indices
-`(0,20,40)`，对应 origins `(1400001,1408021,1416041)`；固定 `N=2048`、八个
-256-point blocks、`Q=512,2048,8192`、beta `2`、exponent `1`，并保持同一个
-`c=1` mask 与 common square-energy geometry。完整 36-row panel 比较 all-plus、
-alternating-index、mod-4-character 与 half-split 四个 laws。all-plus profile 仍为
-`(0,3,3)`（6/9），三个 signed controls 均为 `(0,0,0)`；总计 6/36 spectral
-failures、Schur failures 为 0/36。
+TPC-382 是当前位置：它锁定 TPC-379、TPC-380、TPC-381 的 finite certificates，
+将 TPC-380/TPC-381 的六-origin N=2048 values 作为 same-count cohort，并将 TPC-379
+N=1024 保留为显式 scale control。same-count all-plus high-Q spread 为
+`8.0645464844910632e-6`，四-law stability census 为 `8/12`；N=2048 相对 N=1024
+matched all-plus high-Q mean 的 absolute contrast 为 `0.020813995160269608`，
+所以窄义跨 count 1% invariance 被 refute。该有限 aggregation 不支付 arithmetic
+advance、source-valid normalization 或 fixed-power credit。
 
-这是有限 response-blind origin-family persistence 与 law-control obstruction：all-plus
-high-Q signature 在三个 signed controls 中全部消失，故不能把它提升为 law-invariant
-mask property，也不能选择 arithmetic law。law/origin/window uniformity、cross-block
-causality、source-valid normalization、growing operator theorem、source-uniform
-arithmetic `L2`、fixed-power credit 与 twin-prime endpoint 均未关闭。producer、独立
-direct-sieve replay、25-mutation stress、2-page PDF 与 local Bridge-B 已封存；official
-evaluator files 仍缺失，local bridge 只作 fail-closed evidence。`ARITHMETIC_ADVANCE=NO`、
-`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关为
-`TEST_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT`。
+这是有限 hash-locked magnitude aggregation 与 scale obstruction：同 count all-plus
+高-Q stability 在六个 locked origins 上成立，但窄义跨 count 1% invariance 失败。
+它不建立 origin/scale uniformity、source-valid normalization、growing operator theorem、
+source-uniform arithmetic `L2`、fixed-power saving 或 twin-prime endpoint。producer、
+独立 aggregation replay、25-mutation stress、2-page PDF 与 local Bridge-B 已封存；
+official evaluator files 仍缺失，local bridge 只作 fail-closed evidence。
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`；下一关为
+`TEST_C1_POOLED_NORMALIZATION_CROSS_ORIGIN`。
 
-## 5.164 V234 / TPC-381：c=1 law-control origin-family replay
+## 5.165 V235 / TPC-382：c=1 origin-family magnitude audit
+
+TPC-382 的 finite package 位于 `papers/tpc-382-c1-origin-family-magnitude-audit/`。
+它不读取新 response，而是锁定 TPC-379、TPC-380、TPC-381 的 code/certificate
+provenance。TPC-380 与 TPC-381 的 N=2048 panels 提供六个 origins、三组 Q 与四个
+laws 的 72 个 same-count values；TPC-379 的 N=1024 panel 是显式 scale control。
+相对 spread cap `0.01` 在 aggregation 前固定。
+
+same-count all-plus high-Q spread 为 `8.0645464844910632e-6`，稳定 cells 为
+`8/12`；四个不稳定 cells 是 alternating-index 的三个 Q 与 mod-4 character 的
+Q=512。matched all-plus high-Q 的 N=2048/N=1024 absolute contrast 为
+`0.020813995160269608`，因此有限的跨 count one-percent hypothesis 被
+`REFUTED_FINITE_SCOPED`。该结论是 magnitude audit，不是渐近 uniformity theorem。
+
+    YOU ARE HERE = V235 / TPC-382
+    TPC382_PARENT_LOCKS = PROVED_EXACT_FINITE_HASHED
+    TPC382_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_CERTIFICATE_BLIND
+    TPC382_SAME_N_ORIGIN_MAGNITUDE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_72_VALUES
+    TPC382_ALL_PLUS_HIGH_Q_STABILITY_1PCT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC382_LAW_DEPENDENT_MAGNITUDE_SPREAD = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC382_CROSS_COUNT_MAGNITUDE_INVARIANCE = REFUTED_FINITE_SCOPED
+    TPC382_ORIGIN_UNIFORMITY = OPEN
+    TPC382_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC382_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC382_GROWING_OPERATOR_BOUND = OPEN
+    TPC382_SOURCE_UNIFORM_L2 = OPEN
+    TPC382_ARITHMETIC_ADVANCE = NO
+    TPC382_FIXED_POWER_CREDIT = 0
+    TPC382_FULL_GATE_B = OPEN
+    TPC382_TWIN_PRIME_RESULT = NONE
+    TPC382_STRONGEST_POSITIVE = FINITE_SAME_COUNT_ALL_PLUS_HIGH_Q_MAGNITUDE_STABILITY
+    TPC382_STRONGEST_OBSTRUCTION = ONE_PERCENT_CROSS_COUNT_MAGNITUDE_INVARIANCE_REFUTED
+    TPC382_OPEN_THEOREM = SOURCE_VALID_POOLED_ORIGIN_UNIFORMITY_AND_SCALE_LAW
+    TPC382_REUSABLE_STRUCTURE = HASH_LOCKED_MULTI_RELEASE_COHORT_AGGREGATION_WITH_EXPLICIT_SCALE_CONTROL
+    TPC382_ROUND2_CLUE = TEST_C1_POOLED_NORMALIZATION_CROSS_ORIGIN
+    TPC382_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT
+
+## 5.164 V234 / TPC-381：c=1 law-control origin-family replay (previous)
 
 TPC-381 的 finite package 位于 `papers/tpc-381-c1-origin-family-replay/`。
 它把 TPC-380 的 count-2048 four-law panel 放到新的 coordinate-disjoint affine

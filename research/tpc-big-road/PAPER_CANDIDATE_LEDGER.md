@@ -3,13 +3,65 @@
 
 更新时间：2026-09-04
 
-状态：**TPC381_NUMERICALLY_CERTIFIED_FINITE_C1_LAW_CONTROL_ORIGIN_FAMILY_REPLAY / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC382_NUMERICALLY_CERTIFIED_FINITE_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.175 current：TPC-381 c=1 law-control origin-family replay
+## 0.176 current：TPC-382 c=1 origin-family magnitude audit
+
+项目：papers/tpc-382-c1-origin-family-magnitude-audit/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT**。
+
+TPC-382 不重新选择 response 或 origin，而是锁定 TPC-379、TPC-380、TPC-381 的
+producer code 与 canonical certificates，构造一个可审计的 magnitude cohort。TPC-380
+与 TPC-381 的 N=2048 panels 合并为六个 origins、三组 Q、四个 laws 的 72 个
+same-count values；TPC-379 的 N=1024 panel 作为明确标记的 scale control。相对
+spread cap `0.01` 在 aggregation 前固定。
+
+最强正结果：same-count cohort 的 all-plus high-Q spread 为
+`8.0645464844910632e-6`，四-law stability census 为 `8/12`。最强 obstruction：
+N=2048 matched all-plus high-Q mean 相对 N=1024 scale control 的 absolute contrast
+为 `0.020813995160269608`，因此窄义的跨 count 1% magnitude invariance 被
+`REFUTED_FINITE_SCOPED`。四个 out-of-cap stability cells 是 alternating-index 的
+三个 Q cells 与 mod-4 character 的 Q=512 cell。
+
+开放定理：在 source-valid normalization 下，能否把同 count origin stability 推进到
+可增长的 origin/scale family，并给出自然 arithmetic law 的统一 magnitude control。
+
+可复用结构：
+
+    locked parent certificates
+      -> same-count cohort separation
+      -> explicit scale-control contrast
+      -> law/Q stability census
+      -> independent aggregation replay + mutation firewall
+
+ROUND2_CLUE：`TEST_C1_POOLED_NORMALIZATION_CROSS_ORIGIN`。
+
+```text
+TPC382_PARENT_LOCKS = PROVED_EXACT_FINITE_HASHED
+TPC382_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_CERTIFICATE_BLIND
+TPC382_SAME_N_ORIGIN_MAGNITUDE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_72_VALUES
+TPC382_ALL_PLUS_HIGH_Q_STABILITY_1PCT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC382_LAW_DEPENDENT_MAGNITUDE_SPREAD = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+TPC382_CROSS_COUNT_MAGNITUDE_INVARIANCE = REFUTED_FINITE_SCOPED
+TPC382_ORIGIN_UNIFORMITY = OPEN
+TPC382_WINDOW_SCALE_UNIFORMITY = OPEN
+TPC382_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+TPC382_GROWING_OPERATOR_BOUND = OPEN
+TPC382_SOURCE_UNIFORM_L2 = OPEN
+TPC382_ARITHMETIC_ADVANCE = NO
+TPC382_FIXED_POWER_CREDIT = 0
+TPC382_FULL_GATE_B = OPEN
+TPC382_TWIN_PRIME_RESULT = NONE
+TPC382_STATUS = NUMERICALLY_CERTIFIED_FINITE_C1_ORIGIN_FAMILY_MAGNITUDE_AUDIT
+TPC382_ROUND2_CLUE = TEST_C1_POOLED_NORMALIZATION_CROSS_ORIGIN
+```
+
+## 0.175 previous：TPC-381 c=1 law-control origin-family replay
 
 项目：papers/tpc-381-c1-origin-family-replay/
 

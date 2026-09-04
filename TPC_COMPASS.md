@@ -1,6 +1,42 @@
 # TPC distilled map and bold channel
 
-## V234 / TPC-381 current anchor
+## V235 / TPC-382 current anchor
+
+更新时间：2026-09-04
+
+当前入口：proof 为
+papers/tpc-382-c1-origin-family-magnitude-audit/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc382_c1_origin_family_magnitude_audit_checker.py，
+编号论文为 papers/tpc-382-c1-origin-family-magnitude-audit/。
+
+TPC-382 将已封存的 TPC-380 与 TPC-381 count-2048 panels 合并为六个
+hash-locked origins 的 magnitude cohort，并保留 TPC-379 的 N=1024 panel 作为
+明确的 scale control。same-count cohort 的 all-plus high-Q relative spread 为
+`8.0645464844910632e-6`，四-law stability census 为 8/12；N=2048 与 N=1024
+matched all-plus high-Q mean 的 absolute contrast 为 `0.020813995160269608`，
+故窄义的跨 count 1% invariance 在此有限审计中被 refute。该 aggregation 不选择
+arithmetic law，也不支付 source-valid normalization、growing operator、arithmetic
+`L2` 或 fixed-power credit。
+
+    YOU ARE HERE = V235 / TPC-382
+    TPC382_PARENT_LOCKS = PROVED_EXACT_FINITE_HASHED
+    TPC382_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_CERTIFICATE_BLIND
+    TPC382_SAME_N_ORIGIN_MAGNITUDE_AUDIT = NUMERICALLY_CERTIFIED_FINITE_72_VALUES
+    TPC382_ALL_PLUS_HIGH_Q_STABILITY_1PCT = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC382_LAW_DEPENDENT_MAGNITUDE_SPREAD = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC382_CROSS_COUNT_MAGNITUDE_INVARIANCE = REFUTED_FINITE_SCOPED
+    TPC382_ORIGIN_UNIFORMITY = OPEN
+    TPC382_WINDOW_SCALE_UNIFORMITY = OPEN
+    TPC382_NORMALIZATION_SOURCE_VALIDITY = MODELING_CHOICE_OPEN
+    TPC382_GROWING_OPERATOR_BOUND = OPEN
+    TPC382_SOURCE_UNIFORM_L2 = OPEN
+    TPC382_ARITHMETIC_ADVANCE = NO
+    TPC382_FIXED_POWER_CREDIT = 0
+    TPC382_FULL_GATE_B = OPEN
+    TPC382_TWIN_PRIME_RESULT = NONE
+    TPC382_ROUND2_CLUE = TEST_C1_POOLED_NORMALIZATION_CROSS_ORIGIN
+
+## V234 / TPC-381 previous anchor
 
 更新时间：2026-09-04
 
