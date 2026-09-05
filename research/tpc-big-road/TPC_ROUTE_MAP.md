@@ -2,54 +2,73 @@
 
 更新时间：2026-09-05
 
-当前地图版本：V251 / TPC-398
+当前地图版本：V252 / TPC-399
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-398`（`NUMERICALLY_CERTIFIED_FINITE_C1_INTERPOLATION_ENDPOINT_MICROGRID_AUDIT`）；
-对应论文目录为 `papers/tpc-398-c1-interpolation-endpoint-microgrid/`。
+当前编号锚点：`TPC-399`（`NUMERICALLY_CERTIFIED_FINITE_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_AUDIT`）；
+对应论文目录为 `papers/tpc-399-c1-endpoint-microgrid-cross-family/`。
 
-TPC-398 是当前位置：承接 TPC-397 的 endpoint microgrid clue，在新的
+TPC-399 是当前位置：承接 TPC-398 的 cross-family replication clue，在第二个
 coordinate-disjoint affine family
-`(6800001,6803209,6806417,6809625,6812833,6816041)` 上，预先冻结 3 个
+`(7200001,7203209,7206417,7209625,7212833,7216041)` 上预先冻结 3 个
 calibration 与 3 个 holdout origins，全部使用 `N=1024`。四个有限 matrix
 probes `lambda=7/8,15/16,31/32,1` 与四种 normalization 形成 96-row、16-cell
 panel。前三个 probes 的 12/16 cells 通过 1% origin-spread 门，endpoint
-`lambda=1` 的四个 cells 均失败，最大 spread 为 `0.075600654173434007`；
-parent-relative calibration/holdout 各为 `3/4` per normalization，失败 law
-为 `31/32`，最大 holdout error 为 `0.044971523016385406`；within-family
-transfer 为 `4/4` per normalization。谱与 Schur cap 在此有限面板均无失败。
-13-point rational anchor 对四个插值恒等式给出 exact finite 证明。这是 finite endpoint
-microgrid evidence，不建立 source-valid origin-uniform theorem、growing operator、
-arithmetic `L2` 或 twin-prime endpoint；`ARITHMETIC_ADVANCE=NO`、
-`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。下一关为
-`TEST_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_REPLICATION`。
+`lambda=1` 的四个 cells 均失败，最大 spread 为 `0.062549688932650421`。
+相对 hash-locked TPC-398 direct same-law all-origin means，calibration 与
+holdout transfer 均为 `4/4` per normalization，最大 holdout error 为
+`0.0027174217101944009`；within-family transfer 也均为 `4/4`。谱与 Schur
+cap 在此有限面板均无失败。13-point rational anchor 对四个插值恒等式给出
+exact finite 证明。这是 finite cross-family endpoint-microgrid evidence，不建立
+source-valid origin-uniform theorem、growing operator、arithmetic `L2` 或
+twin-prime endpoint；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`。下一关为
+`TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION`。
 
-    YOU ARE HERE = V251 / TPC-398
-    TPC398_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
-    TPC398_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
-    TPC398_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
-    TPC398_INTERPOLATION_IDENTITY = PROVED_EXACT_FINITE_LINEAR_MATRIX_IDENTITY
-    TPC398_INTERPOLATION_PANEL = NUMERICALLY CERTIFIED FINITE_96_ROWS
-    TPC398_ORIGIN_PHASE = NUMERICALLY CERTIFIED FINITE SCOPED
-    TPC398_PARENT_INTERPOLATED_TRANSFER = NUMERICALLY CERTIFIED FINITE SCOPED
-    TPC398_SPECTRAL_ENVELOPE = NUMERICALLY_CERTIFIED_FINITE_SCOPED_ONLY
-    TPC398_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE SCOPED ONLY
-    TPC398_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
-    TPC398_GROWING_OPERATOR_BOUND = OPEN
-    TPC398_SOURCE_UNIFORM_L2 = OPEN
-    TPC398_ARITHMETIC_ADVANCE = NO
-    TPC398_FIXED_POWER_CREDIT = 0
-    TPC398_FULL_GATE_B = OPEN
-    TPC398_TWIN_PRIME_RESULT = NONE
-    TPC398_STRONGEST_POSITIVE = ORIGIN_STABLE_THROUGH_LAMBDA_31_OF_32
-    TPC398_STRONGEST_OBSTRUCTION = PARENT_TRANSFER_FAILS_AT_LAMBDA_31_OF_32_AND_ENDPOINT_SPREAD
-    TPC398_OPEN_THEOREM = SOURCE_VALID_ENDPOINT_MICROGRID_TRANSFER_THEORY
-    TPC398_REUSABLE_STRUCTURE = HASHED_SEGMENT_ENDPOINT_INTERFACE_DUAL_GATE_PANEL
-    TPC398_ROUND2_CLUE = TEST_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_REPLICATION
-    TPC398_STATUS = NUMERICALLY CERTIFIED FINITE C1 INTERPOLATION ENDPOINT MICROGRID AUDIT
+    YOU ARE HERE = V252 / TPC-399
+    TPC399_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC399_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC399_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED_TPC398
+    TPC399_INTERPOLATION_IDENTITY = PROVED_EXACT_FINITE_LINEAR_MATRIX_IDENTITY
+    TPC399_INTERPOLATION_PANEL = NUMERICALLY CERTIFIED FINITE_96_ROWS
+    TPC399_ORIGIN_PHASE = NUMERICALLY CERTIFIED FINITE SCOPED
+    TPC399_PARENT_CROSS_FAMILY_TRANSFER = NUMERICALLY CERTIFIED FINITE SCOPED
+    TPC399_SPECTRAL_ENVELOPE = NUMERICALLY_CERTIFIED_FINITE_SCOPED_ONLY
+    TPC399_SCHUR_ENVELOPE = NUMERICALLY_CERTIFIED_FINITE_SCOPED_ONLY
+    TPC399_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC399_GROWING_OPERATOR_BOUND = OPEN
+    TPC399_SOURCE_UNIFORM_L2 = OPEN
+    TPC399_ARITHMETIC_ADVANCE = NO
+    TPC399_FIXED_POWER_CREDIT = 0
+    TPC399_FULL_GATE_B = OPEN
+    TPC399_TWIN_PRIME_RESULT = NONE
+    TPC399_STRONGEST_POSITIVE = SAME_LAW_CROSS_FAMILY_CALIBRATION_AND_HOLDOUT_16_OF_16
+    TPC399_STRONGEST_OBSTRUCTION = ENDPOINT_LAMBDA_1_ORIGIN_SPREAD_4_OF_4
+    TPC399_OPEN_THEOREM = SOURCE_VALID_ENDPOINT_MICROGRID_ORIGIN_UNIFORMITY
+    TPC399_REUSABLE_STRUCTURE = HASHED_SAME_LAW_INTERFACE_DUAL_GATE_FRESH_FAMILY_PANEL
+    TPC399_ROUND2_CLUE = TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION
+    TPC399_STATUS = NUMERICALLY CERTIFIED FINITE C1 ENDPOINT MICROGRID CROSS-FAMILY AUDIT
 
-## 5.181 V251 / TPC-398：c=1 interpolation endpoint microgrid
+## 5.182 V252 / TPC-399：c=1 endpoint microgrid cross-family replication
+
+TPC-399 的 finite package 位于
+`papers/tpc-399-c1-endpoint-microgrid-cross-family/`，Bridge-B checker 为
+`tpc_bridge_b_tpc399_c1_endpoint_microgrid_cross_family_checker.py`。它在第二个
+coordinate-disjoint affine family 上冻结 3 个 calibration 与 3 个 holdout
+origins，全部使用 `N=1024`。四个 finite interpolation probes
+`7/8,15/16,31/32,1` 与四种 normalization 形成 96-row、16-cell panel。
+前三个 probes 的 12 个 cells 通过 1% origin-spread 门，endpoint `lambda=1`
+的四个 cells 均失败，最大 spread `0.062549688932650421`。TPC-398 的同 law
+all-origin means 先由 code/certificate hash 锁定，随后被直接用作 baseline；
+没有 segment refit。cross-family calibration 与 holdout 均为 `4/4` per
+normalization，最大 holdout error `0.0027174217101944009`；within-family
+transfer 也为 `4/4`，spectral/Schur failures 均为 `0/96`。rational anchor 的
+四个 identities 为 exact finite。该结果复现了 mean-transfer 的有限稳定性，
+同时保留 endpoint origin-spread obstruction；下一步为
+`TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION`。
+
+## 5.181 V251 / TPC-398（previous）：c=1 interpolation endpoint microgrid
 
 TPC-398 的 finite package 位于 `papers/tpc-398-c1-interpolation-endpoint-microgrid/`，
 Bridge-B checker 为 `tpc_bridge_b_tpc398_c1_interpolation_endpoint_microgrid_checker.py`。
@@ -11587,6 +11606,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-05 | V252 / TPC-399 | Bridge B / Gate B：c=1 finite endpoint microgrid cross-family replication; source-valid endpoint transfer theory、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-399 | 承接 TPC-398 的 cross-family replication clue；第二个 coordinate-disjoint affine family `(7200001,7203209,7206417,7209625,7212833,7216041)`，`N=1024`，四个 exact probes `lambda=7/8,15/16,31/32,1` 与四种 normalization 完成 96-row、16-cell panel；cross-family calibration/holdout 均 per normalization `4/4`，within-family transfer `4/4`，origin-stable `12/16`，endpoint `lambda=1` 四 cell origin failure，最大 spread `0.0625496889`，最大 cross-family holdout error `0.0027174217`，spectral/Schur `0/96`；下一步 TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION |
 | 2026-09-05 | V251 / TPC-398 | Bridge B / Gate B：c=1 finite interpolation endpoint microgrid; source-valid endpoint transfer theory、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-398 | 承接 TPC-397；新的 fresh family `(6800001,6803209,6806417,6809625,6812833,6816041)`，`N=1024`，四个 exact finite matrix probes `lambda=7/8,15/16,31/32,1` 与四种 normalization 完成 96-row、16-cell panel；origin-stable `12/16`，parent calibration/holdout 各 per normalization `3/4`（`31/32` failure），within-family transfer `4/4`，endpoint 四 cell origin failure，最大 spread `0.0756006542`，最大 holdout error `0.0449715230`，spectral/Schur `0/96`；下一步 TEST_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_REPLICATION |
 | 2026-09-05 | V250 / TPC-397 | Bridge B / Gate B：c=1 finite interpolation endpoint localization replication; source-valid interpolation endpoint theory、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-397 | 承接 TPC-396；第五个 fresh family `(6400001,6403209,6406417,6409625,6412833,6416041)`，`N=1024`，四个 exact finite matrix probes `lambda=3/4,5/6,11/12,1` 与四种 normalization 完成 96-row、16-cell panel；origin-stable `12/16`，parent calibration/holdout 与 within-family transfer 均 per normalization `4/4`，endpoint `lambda=1` 四 cell origin failure，最大 spread `0.0485567529`，spectral/Schur `0/96`；下一步 TEST_C1_INTERPOLATION_ENDPOINT_MICROGRID |
 | 2026-09-05 | V249 / TPC-396 | Bridge B / Gate B：c=1 finite signed-law interpolation phase localization; source-valid interpolation transition、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-396 | 承接 TPC-395；第四个 fresh family `(6000001,6003209,6006417,6009625,6012833,6016041)`，`N=1024`，四个 exact finite matrix probes `lambda=0,1/3,2/3,1` 与四种 normalization 完成 96-row、16-cell panel；origin-stable `12/16`，parent holdout `16/16`，scalar transfer `3/4`、local `4/4`，endpoint `lambda=1` 四 cell origin failure，最大 spread `0.0940704384`，spectral failures `24/96`，Schur `0/96`；下一步 TEST_C1_INTERPOLATION_TRANSITION_REPLICATION |

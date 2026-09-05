@@ -3,13 +3,80 @@
 
 更新时间：2026-09-05
 
-状态：**TPC398_NUMERICALLY_CERTIFIED_FINITE_C1_INTERPOLATION_ENDPOINT_MICROGRID_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC399_NUMERICALLY_CERTIFIED_FINITE_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.192 current：TPC-398 c=1 interpolation endpoint microgrid
+## 0.193 current：TPC-399 c=1 endpoint microgrid cross-family replication
+
+项目：papers/tpc-399-c1-endpoint-microgrid-cross-family/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_AUDIT**。
+
+TPC-399 承接 TPC-398 的
+`TEST_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_REPLICATION`，在第二个
+coordinate-disjoint affine grid `a_j=7200001+401j` 上预先冻结 indices
+`(0,8,16,24,32,40)`。前三个 origins
+`(7200001,7203209,7206417)` 作 calibration，后三个
+`(7209625,7212833,7216041)` 作 holdout；所有窗口使用 `N=1024`，固定
+`fixed_c3`、`Q=8192`、beta=2、exponent=1、height=66 与四种 normalization。
+四个 finite probes `lambda=7/8,15/16,31/32,1` 形成 96 rows、16 cells。
+TPC-398 的 16 个 same-law all-origin means 由 code/certificate SHA-256
+接口锁定，并直接作为 response-blind parent baseline；没有 segment refit。
+
+最强正结果：所有四种 normalization 的 cross-family calibration 与 holdout
+均为 `4/4`，即 16/16 cells 在两个 cohort role 均通过 3% cap；最大 calibration
+误差为 `0.010915543232415503`，最大 holdout 误差为
+`0.0027174217101944009`。16 个 within-family transfer cells 也全部通过；
+谱与 Schur failures 均为 `0/96`。13-point rational anchor 对四个插值恒等式
+给出 exact finite 证明。
+
+最强 obstruction：`lambda=1` 仍在四种 normalization 下全部越过 1%
+origin-spread 门，最大 spread `0.062549688932650421`，尽管它的跨族 cohort
+误差远低于 3% cap。有限 mean transfer 因而不能升级为 origin-uniformity。
+
+开放定理：该有限 dual-gate 模式是否有 source-valid、growing 解析解释仍完全
+开放；source-uniform arithmetic `L2`、Route-B reassembly 与 twin-prime 结论
+未支付，fixed-power credit 为 0。
+
+可复用结构：
+
+    hashed TPC-398 direct same-law interface (read-only)
+      -> exact rational endpoint microgrid
+      -> second fresh same-count six-origin calibration/holdout panel
+      -> independent reverse-shell replay + 28-mutation firewall
+      -> PDF/Bridge-B artifact locks
+
+ROUND2_CLUE：TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION。
+
+~~~text
+TPC399_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC399_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC399_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED_TPC398
+TPC399_INTERPOLATION_IDENTITY = PROVED_EXACT_FINITE_LINEAR_MATRIX_IDENTITY
+TPC399_INTERPOLATION_PANEL = NUMERICALLY CERTIFIED FINITE_96_ROWS
+TPC399_ORIGIN_PHASE = NUMERICALLY CERTIFIED FINITE SCOPED
+TPC399_PARENT_CROSS_FAMILY_TRANSFER = NUMERICALLY CERTIFIED FINITE SCOPED
+TPC399_SPECTRAL_ENVELOPE = NUMERICALLY_CERTIFIED_FINITE_SCOPED_ONLY
+TPC399_SCHUR_ENVELOPE = NUMERICALLY_CERTIFIED_FINITE_SCOPED_ONLY
+TPC399_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC399_GROWING_OPERATOR_BOUND = OPEN
+TPC399_SOURCE_UNIFORM_L2 = OPEN
+TPC399_ARITHMETIC_ADVANCE = NO
+TPC399_FIXED_POWER_CREDIT = 0
+TPC399_FULL_GATE_B = OPEN
+TPC399_TWIN_PRIME_RESULT = NONE
+TPC399_STRONGEST_POSITIVE = SAME_LAW_CROSS_FAMILY_CALIBRATION_AND_HOLDOUT_16_OF_16
+TPC399_STRONGEST_OBSTRUCTION = ENDPOINT_LAMBDA_1_ORIGIN_SPREAD_4_OF_4
+TPC399_OPEN_THEOREM = SOURCE_VALID_ENDPOINT_MICROGRID_ORIGIN_UNIFORMITY
+TPC399_REUSABLE_STRUCTURE = HASHED_SAME_LAW_INTERFACE_DUAL_GATE_FRESH_FAMILY_PANEL
+TPC399_ROUND2_CLUE = TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION
+TPC399_STATUS = NUMERICALLY CERTIFIED FINITE C1 ENDPOINT MICROGRID CROSS-FAMILY AUDIT
+~~~
+
+## 0.192 previous：TPC-398 c=1 interpolation endpoint microgrid
 
 项目：papers/tpc-398-c1-interpolation-endpoint-microgrid/
 

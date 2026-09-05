@@ -1,0 +1,221 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.76in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\setlength{\emergencystretch}{3em}
+
+\title{TPC-399: Cross-Family Replication of a Finite C1 Endpoint Microgrid}
+\author{Liang Wang\\
+School of Mathematics and Statistics, Huazhong University\\
+of Science and Technology (HUST), Wuhan, China}
+\date{September 5, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-398 reported a finite endpoint microgrid on one affine family: the
+interior probes through $\lambda=31/32$ were origin-stable, whereas the
+endpoint $\lambda=1$ was not.  TPC-399 tests the smallest natural continuation,
+namely a second coordinate-disjoint family with the same response-blind
+protocol.  Its 96-row panel compares each current same-law cohort mean with a
+hash-locked all-origin mean from TPC-398.  Every one of the 16 law/normalization
+cells passes both the three-percent calibration and holdout transfer caps, and
+all 16 within-family transfers pass.  At the same time, the endpoint $\lambda=1$
+fails the one-percent origin-spread rule in all four normalizations, with
+maximum spreads between $0.0622195$ and $0.0625497$.  The result is a finite
+cross-family replication together with a finite obstruction to inferring origin
+uniformity from mean transfer.  It is not an arithmetic, asymptotic,
+Route-A/Route-B, or twin-prime theorem.
+\end{abstract}
+
+\section{Question and claim boundary}
+
+The preceding TPC-398 audit used a response-blind grid of four finite matrix
+probes and found a diagnostic split: origin stability persisted through
+$31/32$, but the endpoint lost stability.  The present paper asks whether this
+split is reproducible on a fresh family, while keeping the parent comparison
+frozen before reading the new response.
+
+All objects below are finite proxy objects.  In particular, a fractional
+coefficient in a matrix interpolation is not asserted to be an arithmetic
+character, a prime sign law, or a source weight.  The claim firewall is
+\[
+ \texttt{ARITHMETIC\_ADVANCE=NO},\qquad
+ \texttt{FIXED\_POWER\_CREDIT=0},\qquad
+ \texttt{FULL\_GATE\_B=OPEN}.
+\]
+The official Session evaluator files are absent from this checkout, so the
+local proof, independent checker, and Bridge-B artifacts provide finite
+consistency evidence only.
+
+\section{Finite construction}
+
+For a prime $p\in(Q,2Q]$, set $Q=8192$, $H=66$, exponent one, and $\beta=2$.
+The component used in the certificate is
+\begin{align*}
+ K_p(u,v)={}&p(p/Q)^2\frac{H^2}{H^2+(u-v)^2}
+ \left(\mathbf 1_{p\mid u-v}-\frac{1}{p-1}\right)\\
+ &\qquad\cdot\mathbf 1_{u\ne v}\mathbf 1_{p\nmid u}\mathbf 1_{p\nmid v}.
+\end{align*}
+Let
+\[
+ G(u)=\sum_{p\in(Q,2Q]}\sum_v K_p(u,v)^2.
+\]
+If the prime shell is indexed increasingly, define
+\[
+ M_+=\sum_p K_p,\qquad
+ M_{\rm alt}=\sum_p(-1)^{\operatorname{index}(p)}K_p.
+\]
+The four probes are the exact finite combinations
+\[
+ M_\lambda=(1-\lambda)M_+ + \lambda M_{\rm alt},qquad
+ \lambda\in\left\{\frac78,\frac{15}{16},\frac{31}{32},1\right\}.
+\]
+This identity is linear algebra and is checked separately with exact rational
+arithmetic at a small anchor; it is not a claim about an underlying
+arithmetic interpolation.
+
+The fresh candidate family is
+\[
+ a_j=7200001+401j,\quad 0\leq j<41,
+\]
+with selected indices $(0,8,16,24,32,40)$.  The origins are
+\[
+ 7200001,\ 7203209,\ 7206417,\ 7209625,\ 7212833,\ 7216041.
+\]
+The first three are calibration origins and the last three are holdout
+origins.  Each window has $N=1024$ points, split into eight blocks of length
+128.  The fixed $c=3$ band retains block pairs whose block-index difference is
+at most three.
+
+\section{Diagnostics and frozen parent interface}
+
+We record four normalizations: local diagonal, pooled calibration scalar,
+current-origin scalar, and first-calibration frozen scalar.  If
+$S_\lambda(o)$ denotes the resulting masked spectral diagnostic, its declared
+origin spread is
+\[
+ R_\lambda=\frac{\max_o S_\lambda(o)-\min_o S_\lambda(o)}
+ {\operatorname{mean}_o S_\lambda(o)}.
+\]
+The origin cap is $R_\lambda\leq0.01$.  Finite spectral and Schur caps are
+0.64 and 0.83, respectively.
+
+TPC-398 is imported only through its hash-locked code and canonical
+certificate.  For each law and normalization, let
+$B^{(398)}_\lambda$ be its recorded all-origin mean.  The current cohort
+errors are defined directly by
+\[
+ E_{\rm cal}=\frac{\operatorname{mean}_{o\in\mathcal C}S_\lambda(o)}
+ {B^{(398)}_\lambda}-1,\qquad
+ E_{\rm hold}=\frac{\operatorname{mean}_{o\in\mathcal H}S_\lambda(o)}
+ {B^{(398)}_\lambda}-1.
+\]
+The cap for both is 0.03.  No segment interpolation or response-dependent fit
+is performed.  The within-family transfer error is
+\[
+ E_{\rm within}=\frac{\operatorname{mean}_{o\in\mathcal H}S_\lambda(o)}
+ {\operatorname{mean}_{o\in\mathcal C}S_\lambda(o)}-1,
+\]
+also tested at cap 0.03.
+
+The parent locks are
+\begin{center}
+\small\ttfamily
+code: 10c55a6b9e3c4dc11674780f7d1d98508d223729e18ffde7f27a88d7790a3382\\
+certificate: 3f944db8218d8c18a2f2c756dcaf26483afe18e4ac681695beba56b222256150
+\end{center}
+
+The producer accumulates the shell in ascending order.  An independent
+checker accumulates it in descending order, reconstructs the matrices, and
+recomputes all aggregates without importing producer functions.  At the exact
+anchor $[7200001,7200014)$ with $Q=8$ and shell $\{11,13\}$, `Fraction'
+arithmetic verifies positive geometry, symmetry, and all four interpolation
+identities.
+
+\section{Results}
+
+\begin{table}[t]
+\centering
+\caption{TPC-399 finite panel.  Counts are across the four laws.}
+\label{tab:summary}
+\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+normalization & origin & cross-cal & cross-hold & within & max $R$\\
+\midrule
+local diagonal & 3/4 & 4/4 & 4/4 & 4/4 & 0.0622194516\\
+pooled train scalar & 3/4 & 4/4 & 4/4 & 4/4 & 0.0625496889\\
+origin scalar & 3/4 & 4/4 & 4/4 & 4/4 & 0.0625446188\\
+frozen train--1024 scalar & 3/4 & 4/4 & 4/4 & 4/4 & 0.0625496889\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The interior laws $7/8$, $15/16$, and $31/32$ pass the one-percent
+origin-spread cap under all four normalizations.  The endpoint law $1$ passes
+none, giving 12 of 16 origin-stable cells.  The maximum absolute cross-family
+calibration errors, in local, pooled, origin, and frozen order, are
+\[
+0.0109155432,\quad 0.0105206423,\quad
+0.0105131815,\quad 0.0105299678,
+\]
+and the corresponding holdout maxima are
+\[
+0.0027174217,\quad 0.0021628845,\quad
+0.0021636109,\quad 0.0021721329.
+\]
+All 16 cross-family calibration cells and all 16 cross-family holdout cells
+pass.  The maximum absolute within-family transfer errors in the same order
+are $0.0081096008$, $0.0082707443$, $0.0082627033$, and $0.0082707443$;
+all 16 pass.  No spectral or Schur row fails among the 96 rows.
+
+\section{Interpretation and route ledger}
+
+The strongest positive result is a response-blind second-family replication:
+the 16 frozen same-law TPC-398 means transfer to the new family at the
+declared three-percent scale in both cohort roles.  The strongest obstruction
+is that this transfer does not remove endpoint origin instability: at
+$\lambda=1$, the maximum spread remains 6.22--6.25 percent.  Thus mean
+transfer and origin uniformity are empirically separate finite diagnostics.
+
+The reusable structure is a direct hash-locked same-law interface, exact finite
+matrix interpolation, coordinate-disjoint calibration/holdout families,
+reverse-order replay, and separate origin and transfer gates.  The next
+response-blind clue is
+\[
+ \texttt{ROUND2\_CLUE=TEST\_C1\_ENDPOINT\_MICROGRID\_THIRD\_FAMILY\_REPLICATION}.
+\]
+
+The theorem ledger is intentionally conservative:
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+status & finite scope\\
+\midrule
+PROVED\_EXACT\_FINITE & selection, disjointness, hashes, anchor identities\\
+NUMERICALLY\_CERTIFIED & 96 rows and stated aggregate flags\\
+OPEN & source-valid uniformity, growing bounds, arithmetic $L^2$\\
+NONE & arithmetic advance, fixed-power credit, twin-prime result\\
+\bottomrule
+\end{tabular}
+\end{center}
+Route-A is not officially evaluated because its Session evaluator is absent;
+Route-B remains open.  The certificate makes no claim about a source-uniform
+estimate, an arithmetic $L^2$ bound, a growing operator, or the twin-prime
+conjecture.
+
+\section*{Reproduction}
+
+The project directory contains the required README, code, experiments, results,
+notes, proof package, and Bridge-B artifacts.  The canonical certificate is
+`results/tpc399\_certificate.json'.  The release contains byte-identical
+`paper/main.pdf' and `paper/paper.pdf'.  The README lists normal and optimized
+commands for the producer, independent checker, mutation stress test, and
+Bridge-B checker.
+
+\end{document}
