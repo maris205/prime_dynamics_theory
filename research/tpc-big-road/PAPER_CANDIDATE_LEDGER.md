@@ -3,13 +3,56 @@
 
 更新时间：2026-09-05
 
-状态：**TPC402_PROVED_EXACT_FINITE_SIGNED_DIAGONAL_TERM_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC403_PROVED_EXACT_FINITE_CRT_PROXY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.196 current：TPC-402 c=1 signed diagonal-deletion term audit
+## 0.197 current：TPC-403 c=1 CRT-origin proxy obstruction
+
+项目：papers/tpc-403-c1-crt-origin-proxy-obstruction/
+
+类型：**PROVED_EXACT_FINITE_CRT_PROXY_OBSTRUCTION**。
+
+TPC-403 constructs an unbounded CRT-origin adversary for the TPC-402 proxy.
+For distinct primes `p_0<...<p_{2m-1}` with `p_i>N`, the congruences
+`o=0 (mod p_{2k})` and `o=-N (mod p_{2k+1})` force positive sign primes to
+hit window offset 0 and negative sign primes to first hit offset `N`, outside
+the half-open window.  Thus the exact signed coefficient at `(o,o+1)` is
+`T_1 P_-`, not controlled by the global scalar `A_sigma=P_+-P_-`.
+The four finite cases `m=1,2,3,4` use the first shell primes and pass exact
+CRT, mask, coefficient, reverse-replay, and stress checks.
+
+最强正结果：a proved exact CRT proxy construction above every origin bound,
+with raw ratios `T_1P_-/|A_sigma|` approximately
+`411.13,411.43,514.63,374.42` in the four audited cases。
+
+最强 obstruction：the construction is not a bounded-interval origin theorem,
+and local geometry normalization may absorb the raw coefficient。
+
+开放定理：normalized growing obstruction, arithmetic sign identification,
+source-uniform arithmetic `L2`, strict `1/400`, Route-B reassembly and twin
+primes remain open/none。
+
+可复用结构：CRT mask-profile separation、corrected `-N` congruence、exact
+raw coefficient identity、response-blind reverse replay 与 mutation firewall。
+
+ROUND2_CLUE：`TEST_C1_CRT_PROXY_NORMALIZATION_BOUNDARY`。
+
+~~~text
+TPC403_CRT_PROXY_OBSTRUCTION = PROVED_EXACT_FINITE
+TPC403_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+TPC403_NORMALIZED_GROWING_OBSTRUCTION = OPEN
+TPC403_ARITHMETIC_ADVANCE = NO
+TPC403_FIXED_POWER_CREDIT = 0
+TPC403_FULL_GATE_B = OPEN
+TPC403_TWIN_PRIME_RESULT = NONE
+TPC403_ROUND2_CLUE = TEST_C1_CRT_PROXY_NORMALIZATION_BOUNDARY
+TPC403_STATUS = PROVED EXACT FINITE CRT PROXY OBSTRUCTION
+~~~
+
+## 0.196 previous：TPC-402 c=1 signed diagonal-deletion term audit
 
 项目：papers/tpc-402-c1-signed-diagonal-term-audit/
 

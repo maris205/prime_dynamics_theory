@@ -1,6 +1,50 @@
 # TPC HANDOFF
 
-TPC-402 current section: c=1 signed diagonal-deletion term audit
+TPC-403 current section: c=1 CRT-origin proxy obstruction
+-----------------------------------------------------------
+
+TPC-403 is an exact finite continuation of TPC-402.  In the same declared TPC
+proxy, with `N=1024`, `Q=8192`, `H=66`, choose alternating-index synthetic
+signs on any finite set of shell primes `p_i>N` and impose
+`o=0 (mod p_even)`, `o=-N (mod p_odd)`.  CRT gives an origin above every
+prescribed bound.  Positive primes hit window offset zero; negative primes
+first hit the exterior offset `N`.  Therefore the adjacent raw coefficient is
+exactly `M_sigma(o,o+1)=T_1 P_-`, even when `A_sigma=P_+-P_-` is small.
+
+The producer and independent reverse-CRT replay audit `m=1,2,3,4` using the
+first shell primes.  All four exact cases pass the CRT residues, mask profile,
+raw coefficient identity, and response-blind stress checks.  The raw ratios
+`T_1P_-/|A_sigma|` are approximately `411.13`, `411.43`, `514.63`, and
+`374.42`.  This is a proxy-level obstruction only: it is not a bounded-interval
+origin theorem, normalized growing lower bound, arithmetic sign theorem,
+arithmetic `L2`, Route-B closure, fixed-power saving, or twin-prime result.
+
+    TPC403_CRT_PROXY_OBSTRUCTION = PROVED_EXACT_FINITE
+    TPC403_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC403_NORMALIZED_GROWING_OBSTRUCTION = OPEN
+    TPC403_ARITHMETIC_ADVANCE = NO
+    TPC403_FIXED_POWER_CREDIT = 0
+    TPC403_FULL_GATE_B = OPEN
+    TPC403_TWIN_PRIME_RESULT = NONE
+    TPC403_STRONGEST_POSITIVE = EXACT_CRT_ORIGIN_MASK_PROFILE_SEPARATION
+    TPC403_STRONGEST_OBSTRUCTION = NORMALIZATION_AND_BOUNDED_ORIGIN_SCOPE
+    TPC403_OPEN_THEOREM = SOURCE_VALID_NORMALIZED_GROWING_BOUNDARY
+    TPC403_REUSABLE_STRUCTURE = CRT_MASK_SEPARATION_WITH_EXACT_RAW_COEFFICIENT
+    TPC403_ROUND2_CLUE = TEST_C1_CRT_PROXY_NORMALIZATION_BOUNDARY
+    TPC403_STATUS = PROVED EXACT FINITE CRT PROXY OBSTRUCTION
+
+TPC-403 reproducibility commands:
+
+    python -B papers/tpc-403-c1-crt-origin-proxy-obstruction/code/tpc403_c1_crt_origin_proxy_obstruction.py --check
+    python -O -B papers/tpc-403-c1-crt-origin-proxy-obstruction/code/tpc403_c1_crt_origin_proxy_obstruction.py --check
+    python -B papers/tpc-403-c1-crt-origin-proxy-obstruction/experiments/tpc403_independent_checker.py --check
+    python -O -B papers/tpc-403-c1-crt-origin-proxy-obstruction/experiments/tpc403_independent_checker.py --check
+    python -B papers/tpc-403-c1-crt-origin-proxy-obstruction/experiments/tpc403_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-403-c1-crt-origin-proxy-obstruction/experiments/tpc403_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc403_c1_crt_origin_proxy_obstruction_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc403_c1_crt_origin_proxy_obstruction_checker.py --check
+
+TPC-402 previous section: c=1 signed diagonal-deletion term audit
 -----------------------------------------------------------------
 
 TPC-402 continues TPC-401 in the finite production domain `N=1024`,
@@ -15497,10 +15541,10 @@ arithmetic `L2`、fixed-power credit 或 official Route-A/Route-B gate。
 
 TPC-398 发布后的封存 tail cascade 共 53 对 normal/optimized 命令、106 次
 invocation：此前 52 对 tail audit 加上 TPC-398 新 checker；每对要求零返回码、
-空 stderr 与 byte-identical stdout。TPC-399、TPC-400、TPC-401 与 TPC-402 的新
-checker 已在此基础上各完成一对增量 normal/optimized Bridge-B 审计，因此当前
-TPC-402 release tail audit 为 57 对、114 次 invocation；该计数与更早的 curated
-historical command-set 计数分开维护。
+空 stderr 与 byte-identical stdout。TPC-399、TPC-400、TPC-401、TPC-402 与
+TPC-403 的新 checker 已在此基础上各完成一对增量 normal/optimized Bridge-B
+审计，因此当前 TPC-403 release tail audit 为 58 对、116 次 invocation；该计数
+与更早的 curated historical command-set 计数分开维护。
 
 V184/TPC-331 的新增 4 对由本项目 bridge 与 standalone tail checks 逐项验证；其
 finite decomposition 不代表 source-uniform arithmetic `L2` 或 official Route-A/Route-B

@@ -1,24 +1,32 @@
-# TPC big road V255 / TPC-402: c=1 signed diagonal-deletion term audit
+# TPC big road V256 / TPC-403: c=1 CRT-origin proxy obstruction
 
-## V255 current anchor: TPC-402
+## V256 current anchor: TPC-403
 
 更新时间：2026-09-05
 
-当前 TPC-402 proof package 位于
-`../../papers/tpc-402-c1-signed-diagonal-term-audit/`，checker 为
-`tpc_bridge_b_tpc402_c1_signed_diagonal_term_audit_checker.py`。它在
-TPC-401 的生产域 coordinate-disjoint affine family `N=1024,Q=8192,H=66` 上，
-保留 sign law 为显式 modeling choice，定义 `A_sigma=sum_p sigma_p a_p` 与
-`b_sigma(u)=sum_{p|u} sigma_p a_p`，并证明 off-diagonal coefficient identity
-`M_sigma(u,v)=T_uv[-A_sigma+b_sigma(u)+b_sigma(v)]`。对 all-plus 与
-alternating-index 两种 laws，六个 TPC-400 origins、五个 positions 和 872 个
-shell primes 的 240 个 sampled law rows（每 law 120）共 209280 次 exact
-prime comparisons 全部通过。`N=13,Q=8,p=11` 的 active anchor boundary
-counterexample 明确标出适用边界。这是 proved exact finite analytic structure；
-它不能升级为 source-valid growing theorem、arithmetic `L2`、固定幂次 saving 或
+当前 TPC-403 proof package 位于
+`../../papers/tpc-403-c1-crt-origin-proxy-obstruction/`，checker 为
+`tpc_bridge_b_tpc403_c1_crt_origin_proxy_obstruction_checker.py`。它在
+TPC-402 production proxy 上固定 `N=1024,Q=8192,H=66` 与 synthetic
+alternating-index signs，使用 `o=0 (mod p_even)`、`o=-N (mod p_odd)` 的
+CRT construction，把正负 mask profile 分离。`m=1,2,3,4` 的四个 cases、
+CRT origins、raw coefficients 与 `M_sigma=T_1P_-` identities 均 exact；raw
+ratio 相对 `|A_sigma|` 约为 `411.13,411.43,514.63,374.42`。这是
+proved exact finite proxy obstruction，不建立 bounded-interval origin theorem、
+normalized growing bound、arithmetic sign identification、arithmetic `L2` 或
 twin-prime result。
 
-    YOU ARE HERE = V255 / TPC-402
+    YOU ARE HERE = V256 / TPC-403
+    TPC403_CRT_PROXY_OBSTRUCTION = PROVED_EXACT_FINITE
+    TPC403_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC403_NORMALIZED_GROWING_OBSTRUCTION = OPEN
+    TPC403_ARITHMETIC_ADVANCE = NO
+    TPC403_FIXED_POWER_CREDIT = 0
+    TPC403_FULL_GATE_B = OPEN
+    TPC403_TWIN_PRIME_RESULT = NONE
+    TPC403_ROUND2_CLUE = TEST_C1_CRT_PROXY_NORMALIZATION_BOUNDARY
+
+Historical TPC-402 record (not the current claim set):
     TPC402_ANALYTIC_STRUCTURE = PROVED_EXACT_FINITE
     TPC402_SIGN_LAW_SOURCE_IDENTIFICATION = OPEN
     TPC402_SOURCE_UNIFORM_L2 = OPEN

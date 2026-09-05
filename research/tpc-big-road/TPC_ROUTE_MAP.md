@@ -2,24 +2,34 @@
 
 更新时间：2026-09-05
 
-当前地图版本：V255 / TPC-402
+当前地图版本：V256 / TPC-403
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-402`（`PROVED_EXACT_FINITE_SIGNED_DIAGONAL_TERM_AUDIT`）；
-对应论文目录为 `papers/tpc-402-c1-signed-diagonal-term-audit/`。
+当前编号锚点：`TPC-403`（`PROVED_EXACT_FINITE_CRT_PROXY_OBSTRUCTION`）；
+对应论文目录为 `papers/tpc-403-c1-crt-origin-proxy-obstruction/`。
 
-TPC-402 是当前位置：承接 TPC-401 的 finite analytic decomposition，在
-`N=1024,Q=8192,H=66` 生产域内保留 all-plus 与 alternating-index 两种显式
-sign laws，证明 `M_sigma(u,v)=T_uv[-A_sigma+b_sigma(u)+b_sigma(v)]`。
-六个 TPC-400 origins、五个 positions、872 个 shell primes 形成 240 个
-sampled law rows 和 209280 次 exact prime comparisons，全部通过；
-`N=13,Q=8,p=11` 的 active anchor 是适用边界反例。这是 proved exact finite
-analytic structure，不识别 arithmetic sign law，不建立 source-valid growing
-theorem、arithmetic `L2`、固定幂次 saving 或 twin-prime result。下一关为
-`TEST_C1_SIGNED_DIAGONAL_TERM_GROWING_OBSTRUCTION`。
+TPC-403 是当前位置：承接 TPC-402 的 signed deletion identity，在同一 TPC
+proxy 中对 synthetic alternating-index law 构造 CRT-generated adversarial
+origins。对任意有限的 `p_0<...<p_{2m-1}` with `p_i>N`，取
+`o=0 (mod p_even)` 与 `o=-N (mod p_odd)`；CRT 给出任意下界以上的 origin，
+并使 `M_sigma(o,o+1)=T_1P_-`。`m=1,2,3,4` 的四个 exact cases 全部通过，
+raw ratio 相对 `|A_sigma|` 约为 `411.13,411.43,514.63,374.42`。这是
+proved exact finite proxy obstruction，不建立 bounded-interval origin theorem、
+normalized growing bound、arithmetic sign identification、arithmetic `L2` 或
+twin-prime result。下一关为 `TEST_C1_CRT_PROXY_NORMALIZATION_BOUNDARY`。
 
-    YOU ARE HERE = V255 / TPC-402
+    YOU ARE HERE = V256 / TPC-403
+    TPC403_CRT_PROXY_OBSTRUCTION = PROVED_EXACT_FINITE
+    TPC403_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC403_NORMALIZED_GROWING_OBSTRUCTION = OPEN
+    TPC403_ARITHMETIC_ADVANCE = NO
+    TPC403_FIXED_POWER_CREDIT = 0
+    TPC403_FULL_GATE_B = OPEN
+    TPC403_TWIN_PRIME_RESULT = NONE
+    TPC403_ROUND2_CLUE = TEST_C1_CRT_PROXY_NORMALIZATION_BOUNDARY
+
+Historical TPC-402 record (not the current claim set):
     TPC400_INTERPOLATION_PANEL = NUMERICAL_OBSERVATION_FINITE_FLOAT64_96_ROWS
     TPC400_ORIGIN_PHASE = NUMERICAL_OBSERVATION_FINITE_FLOAT64_SCOPED
     TPC400_PARENT_CROSS_FAMILY_TRANSFER = NUMERICAL_OBSERVATION_FINITE_FLOAT64_SCOPED
@@ -36,6 +46,15 @@ theorem、arithmetic `L2`、固定幂次 saving 或 twin-prime result。下一�
     TPC401_FIXED_POWER_CREDIT = 0
     TPC401_FULL_GATE_B = OPEN
     TPC401_ROUND2_CLUE = TEST_C1_DIAGONAL_DELETION_SIGNED_TERM_AUDIT
+
+## 5.186 V256 / TPC-403：c=1 CRT-origin proxy obstruction
+
+TPC-403 proves the corrected CRT mask-profile construction and audits four
+finite cases.  It is a raw-coefficient obstruction for the declared proxy:
+the unbounded origin class separates alternating positive and negative prime
+profiles, while normalized growing control and source sign identification
+remain open.  The next map edge is
+`TEST_C1_CRT_PROXY_NORMALIZATION_BOUNDARY`.
 
 ## 5.185 V255 / TPC-402：c=1 signed diagonal-deletion term audit
 

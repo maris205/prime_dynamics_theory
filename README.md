@@ -9,7 +9,15 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-402 对 TPC-401 的 signed diagonal-deletion coefficient 完成 exact finite audit。
+当前主线最新位置：TPC-403 用 CRT 构造了 signed deletion profile 的 exact finite proxy obstruction。
+对 `m=1,2,3,4` 的四个 CRT cases，偶数索引 shell primes 命中窗口位置 0，
+奇数索引 primes 的首个命中点被推到窗口外偏移 `N`；raw adjacent coefficient
+恒等于 `T_1 P_-`，相对 `|A_sigma|` 的四个 ratios 约为 `411.13, 411.43,
+514.63, 374.42`。这证明 mask profile 不能由小的 global signed scalar 单独
+控制，但只针对声明的 TPC proxy 与 synthetic alternating-index law；不支付
+normalized growing bound、arithmetic sign identification、arithmetic `L2`、
+fixed-power credit 或 twin-prime result。TPC-402 对 TPC-401 的 signed
+diagonal-deletion coefficient 完成 exact finite audit。
 两种 explicit modeling sign laws 的 240 个 sampled off-diagonal rows、209280 次
 prime-level comparisons 均由 Fraction arithmetic exact 重放；这仍不识别
 arithmetic sign law，不支付 arithmetic `L2`、growing uniformity、fixed-power
@@ -34,7 +42,10 @@ arithmetic `L2` 或 twin-prime result。`ARITHMETIC_ADVANCE=NO`、
 `papers/tpc-400-c1-endpoint-microgrid-third-family/`；TPC-402 的下一关是
 `TEST_C1_SIGNED_DIAGONAL_TERM_GROWING_OBSTRUCTION`。
 
-papers/tpc-402-c1-signed-diagonal-term-audit - TPC-402 current project；含
+papers/tpc-403-c1-crt-origin-proxy-obstruction - TPC-403 current project；含
+exact CRT construction、four-case Fraction certificate、reverse replay、stress、proof package/PDF。
+
+papers/tpc-402-c1-signed-diagonal-term-audit - TPC-402 previous project；含
 exact signed coefficient identity、two-law Fraction audit、active anchor boundary、独立 reverse replay、stress、proof package/PDF。
 
 papers/tpc-401-c1-diagonal-deletion-decomposition - TPC-401 previous project；含
