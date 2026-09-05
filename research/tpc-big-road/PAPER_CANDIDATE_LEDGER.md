@@ -3,13 +3,80 @@
 
 更新时间：2026-09-05
 
-状态：**TPC395_NUMERICALLY_CERTIFIED_FINITE_C1_ORIGIN_CROSS_FAMILY_HOLDOUT_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC396_NUMERICALLY_CERTIFIED_FINITE_C1_SIGNED_LAW_INTERPOLATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.189 current：TPC-395 c=1 cross-family origin holdout
+## 0.190 current：TPC-396 c=1 signed-law interpolation
+
+项目：papers/tpc-396-c1-signed-law-interpolation/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_SIGNED_LAW_INTERPOLATION_AUDIT**。
+
+TPC-396 承接 TPC-395 的 `TEST_C1_SIGNED_LAW_INTERPOLATION`，在第四个
+coordinate-disjoint affine grid `a_j=6000001+401j` 上预先冻结 indices
+`(0,8,16,24,32,40)`。前三个 origins
+`(6000001,6003209,6006417)` 作 calibration，后三个
+`(6009625,6012833,6016041)` 作 holdout；全部使用同一 `N=1024`，固定
+`fixed_c3`、`Q=8192`、beta=2、exponent=1、height=66 与四种既有
+normalization。四个有限 matrix probes 为 `lambda=0,1/3,2/3,1`，形成
+96 rows、16 cells。TPC-395 的 all-plus/alternating endpoint means 先哈希锁定，
+再按同一系数作 response-blind parent interpolation。
+
+最强正结果：`lambda=0,1/3,2/3` 在四种 normalization 下均通过 1%
+origin-spread 门，共 `12/16` cells；所有 16 个 parent-relative holdout
+comparisons 通过 3% cap，最大误差为 `0.0033105775404086435`。13-point
+rational anchor 对四个插值恒等式给出 exact finite 证明。
+
+最强 obstruction：`lambda=1` 的四个 origin-spread cells 全部失败，最大
+spread 为 `0.094070438394687927`；pooled/origin/frozen 三个 scalar
+normalization 的 within-family transfer 分别有一个 endpoint cell 越过 3%
+cap，最大误差为 `0.030792985412898766`。spectral failures 为 `24/96`，
+Schur failures 为 `0/96`。
+
+开放定理：有限插值面板中的 phase localization 是否有 source-valid、growing
+的解释，以及是否存在普适 transition threshold，仍完全开放；source-uniform
+arithmetic `L2`、Route-B reassembly 与 twin-prime 结论仍未支付，本项目
+fixed-power credit 为 0。
+
+可复用结构：
+
+    hashed TPC-395 endpoint interface (read-only)
+      -> exact rational matrix interpolation at four coefficients
+      -> fresh same-count six-origin calibration/holdout panel
+      -> independent reverse-shell replay + 28-mutation firewall
+      -> PDF/Bridge-B artifact locks
+
+ROUND2_CLUE：`TEST_C1_INTERPOLATION_TRANSITION_REPLICATION`。
+
+~~~text
+TPC396_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC396_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC396_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+TPC396_INTERPOLATION_IDENTITY = PROVED_EXACT_FINITE_LINEAR_MATRIX_IDENTITY
+TPC396_INTERPOLATION_PANEL = NUMERICALLY CERTIFIED FINITE_96_ROWS
+TPC396_ORIGIN_PHASE = NUMERICALLY CERTIFIED FINITE SCOPED
+TPC396_PARENT_INTERPOLATED_TRANSFER = NUMERICALLY CERTIFIED FINITE SCOPED
+TPC396_SPECTRAL_ENVELOPE = REFUTED_ON_DECLARED_FINITE_PANEL
+TPC396_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE SCOPED ONLY
+TPC396_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC396_GROWING_OPERATOR_BOUND = OPEN
+TPC396_SOURCE_UNIFORM_L2 = OPEN
+TPC396_ARITHMETIC_ADVANCE = NO
+TPC396_FIXED_POWER_CREDIT = 0
+TPC396_FULL_GATE_B = OPEN
+TPC396_TWIN_PRIME_RESULT = NONE
+TPC396_STRONGEST_POSITIVE = INTERIOR_COEFFICIENT_PHASE_LOCALIZATION_12_OF_16
+TPC396_STRONGEST_OBSTRUCTION = ENDPOINT_LAMBDA_1_ORIGIN_SPREAD_4_OF_4_AND_SCALAR_TRANSFER_3_OF_4_FAIL
+TPC396_OPEN_THEOREM = SOURCE_VALID_INTERPOLATION_TRANSITION_ORIGIN_THEORY
+TPC396_REUSABLE_STRUCTURE = HASHED_ENDPOINT_INTERFACE_EXACT_INTERPOLATION_HOLDOUT
+TPC396_ROUND2_CLUE = TEST_C1_INTERPOLATION_TRANSITION_REPLICATION
+TPC396_STATUS = NUMERICALLY CERTIFIED FINITE C1 SIGNED-LAW INTERPOLATION AUDIT
+~~~
+
+## 0.189 previous：TPC-395 c=1 cross-family origin holdout
 
 项目：papers/tpc-395-c1-origin-cross-family-holdout/
 

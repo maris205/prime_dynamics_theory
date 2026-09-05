@@ -9,7 +9,25 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-395 在第三个 coordinate-disjoint affine family 上
+当前主线最新位置：TPC-396 在第四个 coordinate-disjoint affine family 上执行
+`TEST_C1_SIGNED_LAW_INTERPOLATION`。6 个预先冻结 origins（3 个 calibration、3 个
+holdout）均使用 `N=1024`，并在四个精确有限 matrix interpolation coefficients
+`0,1/3,2/3,1` 与四种 normalization 上形成 96-row、16-cell panel。前三个
+coefficients 的 12 个 cells 通过 1% origin-spread 门，endpoint `lambda=1`
+的 4 个 cells 均失败（最大 spread `0.094070438394687927`）；parent-relative
+holdout 为 `16/16`，但三个 scalar endpoint transfer 越过 3% cap。rational
+anchor 的插值恒等式是 exact finite；数值 panel 仍是有限 proxy 证据，不是
+source-valid growing theorem、arithmetic `L2` 或 twin-prime result。
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。当前
+项目为 `papers/tpc-396-c1-signed-law-interpolation/`，下一关是
+`TEST_C1_INTERPOLATION_TRANSITION_REPLICATION`。
+
+papers/tpc-396-c1-signed-law-interpolation - TPC-396 current project；含
+96-row/16-cell interpolation certificate、exact rational anchor、独立
+reverse-shell replay、28-mutation stress、proof package/PDF 与 local
+fail-closed Bridge-B checker。
+
+上一位置：TPC-395 在第三个 coordinate-disjoint affine family 上
 执行 `TEST_C1_ORIGIN_CROSS_FAMILY_HOLDOUT`。6 个预先冻结的 origins
 （3 个 calibration、3 个 holdout）全部使用同一 `N=1024`，形成 48-row、8-cell
 panel；固定 `Q=8192`、`fixed_c3`、all-plus/alternating-index 两条 laws 与四种

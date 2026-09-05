@@ -1,6 +1,44 @@
-# TPC big road V248 / TPC-395: c=1 cross-family origin holdout
+# TPC big road V249 / TPC-396: c=1 signed-law interpolation
 
-## V248 current anchor: TPC-395
+## V249 current anchor: TPC-396
+
+更新时间：2026-09-05
+
+当前 TPC-396 proof package 位于
+`../../papers/tpc-396-c1-signed-law-interpolation/`，checker 为
+`tpc_bridge_b_tpc396_c1_signed_law_interpolation_checker.py`。在第四个
+coordinate-disjoint affine family
+`(6000001,6003209,6006417,6009625,6012833,6016041)` 上，3 个 origins 作
+calibration、3 个作 holdout，全部固定 `N=1024`。四个精确有限 probes
+`lambda=0,1/3,2/3,1` 与四种 normalization 形成 96-row、16-cell panel。
+前三个 probes 的 12/16 cells 通过 1% origin-spread 门，`lambda=1` 的四个
+cells 均失败，最大 spread `0.094070438394687927`；parent-relative holdout
+为 `16/16`，最大误差 `0.0033105775404086435`；within-family transfer 为
+local `4/4`、三个 scalar normalization 各 `3/4`。spectral failures 为
+`24/96`，Schur failures 为 `0/96`。13-point rational anchor 对四个
+interpolation identities 给出 exact finite 证明。这是有限 phase localization，
+不是 source-valid growing theorem、arithmetic `L2` 或 twin-prime result。
+
+    YOU ARE HERE = V249 / TPC-396
+    TPC396_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC396_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC396_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC396_INTERPOLATION_IDENTITY = PROVED_EXACT_FINITE_LINEAR_MATRIX_IDENTITY
+    TPC396_INTERPOLATION_PANEL = NUMERICALLY CERTIFIED FINITE_96_ROWS
+    TPC396_ORIGIN_PHASE = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC396_PARENT_INTERPOLATED_TRANSFER = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC396_SPECTRAL_ENVELOPE = REFUTED_ON_DECLARED_FINITE_PANEL
+    TPC396_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE_SCOPED_ONLY
+    TPC396_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC396_GROWING_OPERATOR_BOUND = OPEN
+    TPC396_SOURCE_UNIFORM_L2 = OPEN
+    TPC396_ARITHMETIC_ADVANCE = NO
+    TPC396_FIXED_POWER_CREDIT = 0
+    TPC396_FULL_GATE_B = OPEN
+    TPC396_TWIN_PRIME_RESULT = NONE
+    TPC396_ROUND2_CLUE = TEST_C1_INTERPOLATION_TRANSITION_REPLICATION
+
+## V248 previous anchor: TPC-395
 
 更新时间：2026-09-05
 

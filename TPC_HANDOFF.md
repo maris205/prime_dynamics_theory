@@ -1,6 +1,73 @@
 # TPC HANDOFF
 
-TPC-395 current section: c=1 cross-family origin holdout
+TPC-396 current section: c=1 signed-law interpolation
+-------------------------------------------------------
+
+TPC-396 is the current finite release.  It follows TPC-395's
+`TEST_C1_SIGNED_LAW_INTERPOLATION` clue on a fourth coordinate-disjoint affine
+grid `a_j=6000001+401j`.  Indices `(0,8,16,24,32,40)` are fixed before
+readout.  Origins `(6000001,6003209,6006417)` are calibration and
+`(6009625,6012833,6016041)` are holdout.  Every origin uses the same `N=1024`
+window.  The panel fixes `fixed_c3`, `Q=8192`, beta=2, exponent 1, height 66,
+four exact finite matrix probes `lambda=0,1/3,2/3,1`, and four predeclared
+normalizations.
+
+The complete panel has 96 rows and 16 cells.  `lambda=0,1/3,2/3` pass the
+one-percent origin-spread rule for all four normalizations (12/16 cells);
+`lambda=1` fails in all four, with maximum spread
+`0.094070438394687927`.  Parent-relative holdout transfer is `16/16`, with
+maximum error `0.0033105775404086435`; within-family transfer is local `4/4`
+and scalar `3/4` for each of the three scalar normalizations.  Spectral
+failures are `24/96`, Schur failures are `0/96`.  The rational 13-point anchor
+proves all four interpolation identities exactly.
+
+This is finite phase-localization evidence, not a source-valid growing
+origin-uniform theorem, an arithmetic `L2` estimate, a Route-B closure, or a
+twin-prime theorem.  Official Route-A/Route-B evaluator files remain absent;
+local Bridge-B is fail-closed repository evidence.  The exact anchor is
+`[6000001,6000014)` with shell `[11,13]`.
+
+    TPC396_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC396_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC396_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC396_INTERPOLATION_IDENTITY = PROVED_EXACT_FINITE_LINEAR_MATRIX_IDENTITY
+    TPC396_INTERPOLATION_PANEL = NUMERICALLY CERTIFIED FINITE_96_ROWS
+    TPC396_ORIGIN_PHASE = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC396_PARENT_INTERPOLATED_TRANSFER = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC396_SPECTRAL_ENVELOPE = REFUTED_ON_DECLARED_FINITE_PANEL
+    TPC396_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE_SCOPED_ONLY
+    TPC396_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC396_GROWING_OPERATOR_BOUND = OPEN
+    TPC396_SOURCE_UNIFORM_L2 = OPEN
+    TPC396_ARITHMETIC_ADVANCE = NO
+    TPC396_FIXED_POWER_CREDIT = 0
+    TPC396_FULL_GATE_B = OPEN
+    TPC396_TWIN_PRIME_RESULT = NONE
+    TPC396_STRONGEST_POSITIVE = INTERIOR_COEFFICIENT_PHASE_LOCALIZATION_12_OF_16
+    TPC396_STRONGEST_OBSTRUCTION = ENDPOINT_LAMBDA_1_ORIGIN_SPREAD_4_OF_4_AND_SCALAR_TRANSFER_3_OF_4_FAIL
+    TPC396_OPEN_THEOREM = SOURCE_VALID_INTERPOLATION_TRANSITION_ORIGIN_THEORY
+    TPC396_REUSABLE_STRUCTURE = HASHED_ENDPOINT_INTERFACE_EXACT_INTERPOLATION_HOLDOUT
+    TPC396_ROUND2_CLUE = TEST_C1_INTERPOLATION_TRANSITION_REPLICATION
+    TPC396_STATUS = NUMERICALLY CERTIFIED FINITE C1 SIGNED-LAW INTERPOLATION AUDIT
+
+TPC-396 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-396-c1-signed-law-interpolation/code/tpc396_c1_signed_law_interpolation.py --check
+    python -O -B papers/tpc-396-c1-signed-law-interpolation/code/tpc396_c1_signed_law_interpolation.py --check
+    python -B papers/tpc-396-c1-signed-law-interpolation/experiments/tpc396_independent_checker.py --check
+    python -O -B papers/tpc-396-c1-signed-law-interpolation/experiments/tpc396_independent_checker.py --check
+    python -B papers/tpc-396-c1-signed-law-interpolation/experiments/tpc396_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-396-c1-signed-law-interpolation/experiments/tpc396_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc396_c1_signed_law_interpolation_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc396_c1_signed_law_interpolation_checker.py --check
+
+The next finite question is `TEST_C1_INTERPOLATION_TRANSITION_REPLICATION`.
+Any interpretation remains finite until a genuine source-valid growing
+argument is supplied.
+
+TPC-395 previous section: c=1 cross-family origin holdout
 ---------------------------------------------------------
 
 TPC-395 is the current finite release.  It follows TPC-394's
@@ -15194,11 +15261,22 @@ within-family transfer 均为 `8/8`，最大跨族 holdout error 为
 Route-A/Route-B gate，下一项响应盲实验为
 `TEST_C1_SIGNED_LAW_INTERPOLATION`。
 
+随后封存的 TPC-396 也完成了 producer、independent reverse-shell replay、
+28-mutation stress、PDF QA 与 local Bridge-B 的 normal/optimized 审计。其
+96-row、16-cell interpolation panel 在 `lambda=0,1/3,2/3` 保留 origin
+stability（12/16 cells），而 endpoint `lambda=1` 的 4/4 cells 均越过
+1% origin-spread 门；parent-relative holdout 为 `16/16`，within-family
+transfer 为 local `4/4`、scalar `3/4`，spectral failures 为 `24/96`，
+Schur failures 为 `0/96`。rational anchor 的四个 interpolation identities
+为 exact finite。它不支付 arithmetic `L2`、fixed-power credit 或 official
+Route-A/Route-B gate，下一项响应盲实验为
+`TEST_C1_INTERPOLATION_TRANSITION_REPLICATION`。
+
 这些新增 finite audits 不改变 curated historical cascade 的计数，也不支付
 arithmetic `L2`、fixed-power credit 或 official Route-A/Route-B gate。
 
-TPC-395 发布后的最新 tail cascade 共 50 对 normal/optimized 命令、100 次
-invocation：此前 49 对 tail audit 加上 TPC-395 新 checker；每对要求零返回码、
+TPC-396 发布后的最新 tail cascade 共 51 对 normal/optimized 命令、102 次
+invocation：此前 50 对 tail audit 加上 TPC-396 新 checker；每对要求零返回码、
 空 stderr 与 byte-identical stdout。该计数与更早的 curated historical
 command-set 计数分开维护。
 
@@ -17168,7 +17246,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-395 current release 入口：
+TPC-396 current release 入口：
+
+papers/tpc-396-c1-signed-law-interpolation/README.md
+papers/tpc-396-c1-signed-law-interpolation/PAPER_PLAN.md
+papers/tpc-396-c1-signed-law-interpolation/DERIVATION_PACKAGE.md
+papers/tpc-396-c1-signed-law-interpolation/PROOF_PACKAGE.md
+papers/tpc-396-c1-signed-law-interpolation/code/tpc396_c1_signed_law_interpolation.py
+papers/tpc-396-c1-signed-law-interpolation/experiments/tpc396_independent_checker.py
+papers/tpc-396-c1-signed-law-interpolation/experiments/tpc396_adversarial_certificate_stress.py
+papers/tpc-396-c1-signed-law-interpolation/results/tpc396_certificate.json
+papers/tpc-396-c1-signed-law-interpolation/notes/theorem_ledger.md
+papers/tpc-396-c1-signed-law-interpolation/notes/claim_firewall.md
+papers/tpc-396-c1-signed-law-interpolation/notes/computational_protocol.md
+papers/tpc-396-c1-signed-law-interpolation/notes/route_evaluation.md
+papers/tpc-396-c1-signed-law-interpolation/paper/main.tex
+papers/tpc-396-c1-signed-law-interpolation/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc396_c1_signed_law_interpolation.md
+research/tpc-big-road/tpc_bridge_b_tpc396_c1_signed_law_interpolation_checker.py
+
+TPC-395 previous release 入口：
 
 papers/tpc-395-c1-origin-cross-family-holdout/README.md
 papers/tpc-395-c1-origin-cross-family-holdout/PAPER_PLAN.md
