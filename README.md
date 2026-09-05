@@ -9,8 +9,25 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-393 在新的 coordinate-disjoint origin family 上做
-针对 TPC-392 高 `Q` 异常的 adversarial holdout。三起点在 `N=1024,1280`
+当前主线最新位置：TPC-394 在全新的 affine origin ladder 上直接审计
+`TEST_C1_ORIGIN_UNIFORMITY_AFTER_REPLICATION`。8 个预先冻结的 origins
+（5 个 calibration、3 个 holdout）全部使用同一 `N=1024`，形成 64-row、8-cell
+panel；固定 `Q=8192`、`fixed_c3`、all-plus/alternating-index 两条 laws 与四种
+normalization。all-plus 的四种 origin spread 均低于 `4.4e-5`，alternating-index
+的四种 spread 为约 `0.0848--0.0929`，全部越过 1% 门；8 个 holdout-transfer
+cells 均通过 3% 门。spectral failures 为 `32/64`（全为 all-plus rows），Schur
+failures 为 `0/64`。这是 finite law-dependent origin obstruction audit，不是
+source-valid growing theorem、arithmetic `L2` 或 twin-prime result；
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。当前项目为
+`papers/tpc-394-c1-origin-uniformity-ladder/`，下一关是
+`TEST_C1_ORIGIN_CROSS_FAMILY_HOLDOUT`。
+
+papers/tpc-394-c1-origin-uniformity-ladder - TPC-394 current project；含
+64-row same-count origin-ladder certificate、独立 reverse-shell replay、
+25-mutation stress、proof package/PDF 与 local fail-closed Bridge-B checker。
+
+上一位置：TPC-393 在新的 coordinate-disjoint origin family 上做针对
+TPC-392 高 `Q` 异常的 adversarial holdout。三起点在 `N=1024,1280`
 calibration，两起点在 `N=1536` holdout；64-row、8-cell panel 只保留
 `Q=8192`、all-plus 与 alternating-index 两条 laws，并比较四种预声明
 normalization。四种 normalization 的 forecast 均为 `2/2`，所以 TPC-392 的
@@ -18,11 +35,11 @@ forecast anomaly 未在新族复现；但每个 count 的 stable cells 均为 `4
 正好对应 all-plus 通过、alternating 失败。spectral failures 为 `32/64`，
 Schur failures 为 `0/64`。这是 finite scoped adversarial holdout audit，不是
 source-valid growing theorem、arithmetic `L2` 或 twin-prime result；
-`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。当前项目为
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。项目为
 `papers/tpc-393-c1-normalization-adversarial-holdout/`，下一关是
 `TEST_C1_ORIGIN_UNIFORMITY_AFTER_REPLICATION`。
 
-papers/tpc-393-c1-normalization-adversarial-holdout - TPC-393 current project；含
+papers/tpc-393-c1-normalization-adversarial-holdout - TPC-393 previous project；含
 64-row adversarial normalization holdout certificate、独立 reverse-shell replay、
 25-mutation stress、proof package/PDF 与 local fail-closed Bridge-B checker。
 

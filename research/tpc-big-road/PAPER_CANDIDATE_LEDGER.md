@@ -3,13 +3,74 @@
 
 更新时间：2026-09-05
 
-状态：**TPC393_NUMERICALLY_CERTIFIED_FINITE_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC394_NUMERICALLY_CERTIFIED_FINITE_C1_ORIGIN_UNIFORMITY_LADDER_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.187 current：TPC-393 c=1 adversarial normalization holdout
+## 0.188 current：TPC-394 c=1 same-count origin-uniformity ladder
+
+项目：papers/tpc-394-c1-origin-uniformity-ladder/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_ORIGIN_UNIFORMITY_LADDER_AUDIT**。
+
+TPC-394 承接 TPC-393 的 `TEST_C1_ORIGIN_UNIFORMITY_AFTER_REPLICATION`，在
+新 coordinate-disjoint affine grid `a_j=5000001+401j` 上预先冻结 indices
+`(0,5,10,15,20,25,30,35)`。前五个 origins
+`(5000001,5002006,5004011,5006016,5008021)` 作 calibration，后三个
+`(5010026,5012031,5014036)` 作 holdout；全部使用同一 `N=1024`，固定
+`fixed_c3`、`Q=8192`、all-plus/alternating-index 两条 laws 与四种既有
+normalization，形成 64 rows、8 cells。
+
+最强正结果：四个 all-plus cells 的 all-origin relative spread 都远低于 1%，
+最大仅 `4.3100829568062604e-5`；所有八个 cells 的 holdout/calibration
+mean transfer 都通过预声明 3% cap，最大绝对误差
+`0.027694160160074421`。最强 obstruction：四个 alternating-index cells
+在四种 normalization 下均失败 1% origin-spread 门，spreads 从
+`0.084824884787110394` 至 `0.092863374514779065`；`32/64` rows 超过
+`0.64` spectral cap（全为 all-plus），Schur failures 为 `0/64`。
+
+开放定理：alternating origin-spread signal 是否能跨另一个 fresh family 保持，
+并且是否可被 source-valid growing operator 理论解释或否定。source-uniform
+arithmetic `L2`、Route-B reassembly 与 twin-prime 结论仍未支付；本项目
+fixed-power credit 为 0。
+
+可复用结构：
+
+    hashed TPC-393 parent (read-only)
+      -> fresh same-count eight-origin ladder
+      -> all-plus law control / alternating target
+      -> four frozen normalizations and calibration/holdout split
+      -> reverse-shell replay + 25-mutation firewall + Bridge-B locks
+
+ROUND2_CLUE：`TEST_C1_ORIGIN_CROSS_FAMILY_HOLDOUT`。
+
+~~~text
+TPC394_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC394_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC394_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+TPC394_ORIGIN_LADDER_PANEL = NUMERICALLY CERTIFIED FINITE_64_ROWS
+TPC394_ORIGIN_UNIFORMITY_AUDIT = NUMERICALLY CERTIFIED FINITE SCOPED
+TPC394_CALIBRATION_HOLDOUT_TRANSFER = NUMERICALLY CERTIFIED FINITE SCOPED
+TPC394_SPECTRAL_ENVELOPE = REFUTED_ON_DECLARED_FINITE_PANEL
+TPC394_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE SCOPED ONLY
+TPC394_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC394_GROWING_OPERATOR_BOUND = OPEN
+TPC394_SOURCE_UNIFORM_L2 = OPEN
+TPC394_ARITHMETIC_ADVANCE = NO
+TPC394_FIXED_POWER_CREDIT = 0
+TPC394_FULL_GATE_B = OPEN
+TPC394_TWIN_PRIME_RESULT = NONE
+TPC394_STRONGEST_POSITIVE = ALL_PLUS_4_OF_4_ORIGIN_STABLE_AND_8_OF_8_TRANSFER
+TPC394_STRONGEST_OBSTRUCTION = ALTERNATING_ORIGIN_SPREAD_4_OF_4_AND_32_OF_64_SPECTRAL_FAIL
+TPC394_OPEN_THEOREM = SOURCE_VALID_CROSS_FAMILY_ORIGIN_UNIFORMITY
+TPC394_REUSABLE_STRUCTURE = SAME_COUNT_ORIGIN_LADDER_WITH_LAW_CONTROL
+TPC394_ROUND2_CLUE = TEST_C1_ORIGIN_CROSS_FAMILY_HOLDOUT
+TPC394_STATUS = NUMERICALLY CERTIFIED FINITE C1 ORIGIN UNIFORMITY LADDER AUDIT
+~~~
+
+## 0.187 previous：TPC-393 c=1 adversarial normalization holdout
 
 项目：papers/tpc-393-c1-normalization-adversarial-holdout/
 

@@ -1,6 +1,73 @@
 # TPC HANDOFF
 
-TPC-393 current section: c=1 adversarial normalization holdout
+TPC-394 current section: c=1 same-count origin-uniformity ladder
+---------------------------------------------------------------
+
+TPC-394 is the current finite release.  It directly follows TPC-393's
+`TEST_C1_ORIGIN_UNIFORMITY_AFTER_REPLICATION` clue on a fresh coordinate-
+disjoint affine grid `a_j=5000001+401j`.  Indices
+`(0,5,10,15,20,25,30,35)` are fixed before readout.  The first five origins
+`(5000001,5002006,5004011,5006016,5008021)` form a calibration cohort and
+the last three `(5010026,5012031,5014036)` form a holdout cohort.  Every
+origin uses the same `N=1024` window, so the primary audit is a same-count
+origin-spread statistic rather than a count forecast.  The panel fixes
+`fixed_c3`, `Q=8192`, beta=2, exponent 1, height 66, the all-plus and
+alternating-index laws, and four predeclared normalizations.
+
+The complete panel has 64 rows and 8 cells.  All four all-plus cells pass the
+one-percent all-origin spread rule, with maximum all-plus spread
+`4.3100829568062604e-5`.  All four alternating-index cells fail the same
+rule, with spreads from `0.084824884787110394` to
+`0.092863374514779065`.  All 8 holdout/calibration transfer cells pass the
+three-percent cap; the largest error is `0.027694160160074421`.  Spectral
+failures are `32/64` (all-plus rows only), Schur failures are `0/64`.
+
+This is finite law-dependent origin-obstruction evidence, not a source-valid,
+growing origin-uniform, arithmetic `L2`, Route-B, or twin-prime theorem.
+Official Route-A/Route-B evaluator files remain absent; local Bridge-B is
+fail-closed repository evidence.  The exact anchor is `[5000001,5000014)`
+with shell `[11,13]`.
+
+    TPC394_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC394_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC394_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC394_ORIGIN_LADDER_PANEL = NUMERICALLY CERTIFIED FINITE_64_ROWS
+    TPC394_ORIGIN_UNIFORMITY_AUDIT = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC394_CALIBRATION_HOLDOUT_TRANSFER = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC394_SPECTRAL_ENVELOPE = REFUTED_ON_DECLARED_FINITE_PANEL
+    TPC394_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE_SCOPED_ONLY
+    TPC394_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC394_GROWING_OPERATOR_BOUND = OPEN
+    TPC394_SOURCE_UNIFORM_L2 = OPEN
+    TPC394_ARITHMETIC_ADVANCE = NO
+    TPC394_FIXED_POWER_CREDIT = 0
+    TPC394_FULL_GATE_B = OPEN
+    TPC394_TWIN_PRIME_RESULT = NONE
+    TPC394_STRONGEST_POSITIVE = ALL_PLUS_4_OF_4_ORIGIN_STABLE_AND_8_OF_8_TRANSFER
+    TPC394_STRONGEST_OBSTRUCTION = ALTERNATING_ORIGIN_SPREAD_4_OF_4_AND_32_OF_64_SPECTRAL_FAIL
+    TPC394_OPEN_THEOREM = SOURCE_VALID_CROSS_FAMILY_ORIGIN_UNIFORMITY
+    TPC394_REUSABLE_STRUCTURE = SAME_COUNT_ORIGIN_LADDER_WITH_LAW_CONTROL
+    TPC394_ROUND2_CLUE = TEST_C1_ORIGIN_CROSS_FAMILY_HOLDOUT
+    TPC394_STATUS = NUMERICALLY CERTIFIED FINITE C1 ORIGIN UNIFORMITY LADDER AUDIT
+
+TPC-394 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-394-c1-origin-uniformity-ladder/code/tpc394_c1_origin_uniformity_ladder.py --check
+    python -O -B papers/tpc-394-c1-origin-uniformity-ladder/code/tpc394_c1_origin_uniformity_ladder.py --check
+    python -B papers/tpc-394-c1-origin-uniformity-ladder/experiments/tpc394_independent_checker.py --check
+    python -O -B papers/tpc-394-c1-origin-uniformity-ladder/experiments/tpc394_independent_checker.py --check
+    python -B papers/tpc-394-c1-origin-uniformity-ladder/experiments/tpc394_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-394-c1-origin-uniformity-ladder/experiments/tpc394_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc394_c1_origin_uniformity_ladder_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc394_c1_origin_uniformity_ladder_checker.py --check
+
+The next finite question is `TEST_C1_ORIGIN_CROSS_FAMILY_HOLDOUT`.  Any
+interpretation remains finite until a genuine source-valid growing argument
+is supplied.
+
+TPC-393 previous section: c=1 adversarial normalization holdout
 ---------------------------------------------------------------
 
 TPC-393 is the current finite release.  It follows TPC-392's high-`Q`
@@ -14898,12 +14965,19 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V246/TPC-393 是当前 release；其 c=1 adversarial-normalization-holdout producer、
+V247/TPC-394 是当前 release；其 c=1 same-count origin-uniformity-ladder
+producer、independent reverse-shell replay、25-mutation certificate stress audit
+与 literal masked-operator Bridge-B 已封存。TPC-394 的 64-row、8-cell panel
+在四种 normalization 下均给出 all-plus 1% stable / alternating 1% failed 的
+law split；alternating 最大 spread 为 `0.092863374514779065`，8/8 holdout
+transfer cells 通过，spectral failures 为 `32/64`，Schur failures 为 `0/64`，
+下一关为 `TEST_C1_ORIGIN_CROSS_FAMILY_HOLDOUT`。
+V246/TPC-393 是上一 release；其 c=1 adversarial-normalization-holdout producer、
 independent reverse-shell replay、25-mutation certificate stress audit 与
 literal masked-operator Bridge-B 已封存。TPC-393 的 64-row、8-cell panel
 否定了 TPC-392 forecast anomaly 在新族上的复现，但保留 alternating origin-spread
-signal；spectral failures 为 `32/64`，Schur failures 为 `0/64`，下一关为
-`TEST_C1_ORIGIN_UNIFORMITY_AFTER_REPLICATION`。
+signal；spectral failures 为 `32/64`，Schur failures 为 `0/64`，其 clue 已由
+TPC-394 的 same-count ladder 直接测试。
 V245/TPC-392 是上一 release；其 c=1 normalization-phase-diagram producer、
 independent reverse-shell replay、25-mutation certificate stress audit 与
 literal masked-operator Bridge-B 已封存。TPC-392 的 256-row、32-cell panel
@@ -15037,9 +15111,17 @@ adversarial holdout 的 Bridge-B 输出为
 TPC-393 否定 TPC-392 forecast anomaly 在新族上的复现，但保留 alternating
 origin-spread obstruction；它仍不支付 arithmetic `L2`、fixed-power credit 或
 official Route-A/Route-B gate。
+随后封存的 TPC-394 也完成了 producer、independent reverse-shell replay、
+25-mutation stress、PDF QA 与 local Bridge-B 的 normal/optimized 审计。其
+64-row、8-cell same-count origin ladder 给出 all-plus 四 cell 通过与
+alternating 四 cell 失败 1% origin-spread 门的 law split；最大 alternating
+spread 为 `0.092863374514779065`，holdout transfer 为 `8/8`，spectral
+failures 为 `32/64`，Schur failures 为 `0/64`。它不支付 arithmetic `L2`、
+fixed-power credit 或 official Route-A/Route-B gate，下一项响应盲实验为
+`TEST_C1_ORIGIN_CROSS_FAMILY_HOLDOUT`。
 这些新增 finite audits 不改变 curated historical cascade 的计数，也不支付
 arithmetic `L2`、fixed-power credit 或 official Route-A/Route-B gate；下一项
-响应盲实验为 `TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT`。
+响应盲实验为 `TEST_C1_ORIGIN_CROSS_FAMILY_HOLDOUT`。
 
 V184/TPC-331 的新增 4 对由本项目 bridge 与 standalone tail checks 逐项验证；其
 finite decomposition 不代表 source-uniform arithmetic `L2` 或 official Route-A/Route-B
@@ -17007,7 +17089,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-393 current release 入口：
+TPC-394 current release 入口：
+
+papers/tpc-394-c1-origin-uniformity-ladder/README.md
+papers/tpc-394-c1-origin-uniformity-ladder/PAPER_PLAN.md
+papers/tpc-394-c1-origin-uniformity-ladder/DERIVATION_PACKAGE.md
+papers/tpc-394-c1-origin-uniformity-ladder/PROOF_PACKAGE.md
+papers/tpc-394-c1-origin-uniformity-ladder/code/tpc394_c1_origin_uniformity_ladder.py
+papers/tpc-394-c1-origin-uniformity-ladder/experiments/tpc394_independent_checker.py
+papers/tpc-394-c1-origin-uniformity-ladder/experiments/tpc394_adversarial_certificate_stress.py
+papers/tpc-394-c1-origin-uniformity-ladder/results/tpc394_certificate.json
+papers/tpc-394-c1-origin-uniformity-ladder/notes/theorem_ledger.md
+papers/tpc-394-c1-origin-uniformity-ladder/notes/claim_firewall.md
+papers/tpc-394-c1-origin-uniformity-ladder/notes/computational_protocol.md
+papers/tpc-394-c1-origin-uniformity-ladder/notes/route_evaluation.md
+papers/tpc-394-c1-origin-uniformity-ladder/paper/main.tex
+papers/tpc-394-c1-origin-uniformity-ladder/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc394_c1_origin_uniformity_ladder.md
+research/tpc-big-road/tpc_bridge_b_tpc394_c1_origin_uniformity_ladder_checker.py
+
+TPC-393 previous release 入口：
 
 papers/tpc-393-c1-normalization-adversarial-holdout/README.md
 papers/tpc-393-c1-normalization-adversarial-holdout/PAPER_PLAN.md

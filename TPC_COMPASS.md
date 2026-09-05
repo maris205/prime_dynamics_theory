@@ -1,13 +1,48 @@
 # TPC distilled map and bold channel
 
-## V246 / TPC-393 current anchor
+## V247 / TPC-394 current anchor
 
 更新时间：2026-09-05
 
 当前入口：proof 为
-papers/tpc-393-c1-normalization-adversarial-holdout/PROOF_PACKAGE.md，checker 为
-research/tpc-big-road/tpc_bridge_b_tpc393_c1_normalization_adversarial_holdout_checker.py，
-编号论文为 papers/tpc-393-c1-normalization-adversarial-holdout/。
+papers/tpc-394-c1-origin-uniformity-ladder/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc394_c1_origin_uniformity_ladder_checker.py，
+编号论文为 papers/tpc-394-c1-origin-uniformity-ladder/。
+
+TPC-394 在全新的 affine origin ladder
+`(5000001,5002006,5004011,5006016,5008021,5010026,5012031,5014036)` 上，
+预先冻结 5 个 calibration 与 3 个 holdout origins，所有 origin 使用同一
+`N=1024`。固定 `fixed_c3`、`Q=8192`、all-plus/alternating 两个 laws 与四种
+normalization，形成 64-row、8-cell same-count panel。all-plus 的四个
+origin-spread cells 均通过 1% 门，alternating 的四个均失败（spread 约
+`0.0848--0.0929`）；holdout transfer 为 `8/8`，spectral failures 为 `32/64`，
+Schur failures 为 `0/64`。这是 finite law-dependent obstruction audit，不是
+source-valid origin-uniform theorem、arithmetic `L2` 或 twin-prime endpoint。
+
+    YOU ARE HERE = V247 / TPC-394
+    TPC394_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC394_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC394_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC394_ORIGIN_LADDER_PANEL = NUMERICALLY CERTIFIED FINITE_64_ROWS
+    TPC394_ORIGIN_UNIFORMITY_AUDIT = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC394_CALIBRATION_HOLDOUT_TRANSFER = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC394_SPECTRAL_ENVELOPE = REFUTED_ON_DECLARED_FINITE_PANEL
+    TPC394_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE_SCOPED_ONLY
+    TPC394_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC394_GROWING_OPERATOR_BOUND = OPEN
+    TPC394_SOURCE_UNIFORM_L2 = OPEN
+    TPC394_ARITHMETIC_ADVANCE = NO
+    TPC394_FIXED_POWER_CREDIT = 0
+    TPC394_FULL_GATE_B = OPEN
+    TPC394_TWIN_PRIME_RESULT = NONE
+    TPC394_STRONGEST_POSITIVE = ALL_PLUS_4_OF_4_ORIGIN_STABLE_AND_8_OF_8_TRANSFER
+    TPC394_STRONGEST_OBSTRUCTION = ALTERNATING_ORIGIN_SPREAD_4_OF_4_AND_32_OF_64_SPECTRAL_FAIL
+    TPC394_OPEN_THEOREM = SOURCE_VALID_CROSS_FAMILY_ORIGIN_UNIFORMITY
+    TPC394_REUSABLE_STRUCTURE = SAME_COUNT_ORIGIN_LADDER_WITH_LAW_CONTROL
+    TPC394_ROUND2_CLUE = TEST_C1_ORIGIN_CROSS_FAMILY_HOLDOUT
+    TPC394_STATUS = NUMERICALLY CERTIFIED FINITE C1 ORIGIN UNIFORMITY LADDER AUDIT
+
+## V246 previous anchor: TPC-393
 
 TPC-393 在新的 fresh coordinate-disjoint origin family
 `(4200001,4204011,4208021,4212031,4216041)` 上固定 `fixed_c3`、`Q=8192`、
