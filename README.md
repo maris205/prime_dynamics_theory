@@ -9,23 +9,29 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-397 在第五个 coordinate-disjoint affine family 上执行
-`TEST_C1_INTERPOLATION_TRANSITION_REPLICATION`。6 个预先冻结 origins（3 个
-calibration、3 个 holdout）均使用 `N=1024`，并在四个精确有限 matrix
-interpolation coefficients `3/4,5/6,11/12,1` 与四种 normalization 上形成
-96-row、16-cell panel。前三个 coefficients 的 12 个 cells 通过 1% origin-spread
-门，endpoint `lambda=1` 的 4 个 cells 均失败（最大 spread
-`0.048556752880022216`）；parent-relative calibration、holdout 与
-within-family transfer 均为 `4/4` per normalization，最大 holdout error 为
-`0.024669590049843704`。rational anchor 的插值恒等式是 exact finite；本次
-谱与 Schur 诊断均为 `0/96` failures，但仍只是在声明的有限 proxy 上的
-scoped observation，不是 source-valid growing theorem、arithmetic `L2` 或
-twin-prime result。`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
-`FULL_GATE_B=OPEN`。当前项目为
-`papers/tpc-397-c1-interpolation-transition-replication/`，下一关是
-`TEST_C1_INTERPOLATION_ENDPOINT_MICROGRID`。
+当前主线最新位置：TPC-398 在新的 coordinate-disjoint affine family 上执行
+`TEST_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_REPLICATION` 的前置 endpoint
+microgrid audit。6 个预先冻结 origins（3 个 calibration、3 个 holdout）均使用
+`N=1024`，四个精确有限 matrix interpolation coefficients
+`7/8,15/16,31/32,1` 与四种 normalization 形成 96-row、16-cell panel。
+前三个 coefficients 的 12 个 cells 通过 1% origin-spread 门，endpoint
+`lambda=1` 的 4 个 cells 均失败（最大 spread
+`0.075600654173434007`）；parent-relative calibration/holdout 各为 `3/4`
+per normalization，失败 law 为 `31/32`，最大 holdout error 为
+`0.044971523016385406`；within-family transfer 均为 `4/4`。rational anchor
+的插值恒等式是 exact finite；谱与 Schur 诊断均为 `0/96` failures，但仍只
+是在声明的有限 proxy 上的 scoped observation，不是 source-valid growing
+theorem、arithmetic `L2` 或 twin-prime result。`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。当前项目为
+`papers/tpc-398-c1-interpolation-endpoint-microgrid/`，下一关是
+`TEST_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_REPLICATION`。
 
-papers/tpc-397-c1-interpolation-transition-replication - TPC-397 current project；含
+papers/tpc-398-c1-interpolation-endpoint-microgrid - TPC-398 current project；含
+96-row/16-cell endpoint-microgrid certificate、hash-locked TPC-397 segment
+interface、独立 reverse-shell replay、28-mutation stress、proof package/PDF
+与 local fail-closed Bridge-B checker。
+
+papers/tpc-397-c1-interpolation-transition-replication - TPC-397 previous project；含
 96-row/16-cell transition-replication certificate、hash-locked TPC-396 parent
 interface、独立 reverse-shell replay、28-mutation stress、proof package/PDF
 与 local fail-closed Bridge-B checker。
@@ -63,7 +69,7 @@ arithmetic `L2` 或 twin-prime result；`ARITHMETIC_ADVANCE=NO`、
 `papers/tpc-395-c1-origin-cross-family-holdout/`，下一关是
 `TEST_C1_SIGNED_LAW_INTERPOLATION`。
 
-papers/tpc-395-c1-origin-cross-family-holdout - TPC-395 current project；含
+papers/tpc-395-c1-origin-cross-family-holdout - TPC-395 previous project；含
 48-row/8-cell cross-family holdout certificate、独立 reverse-shell replay、
 25-mutation stress、proof package/PDF 与 local fail-closed Bridge-B checker。
 

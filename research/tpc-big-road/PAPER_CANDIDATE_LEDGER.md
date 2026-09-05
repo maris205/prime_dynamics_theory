@@ -3,13 +3,80 @@
 
 更新时间：2026-09-05
 
-状态：**TPC397_NUMERICALLY_CERTIFIED_FINITE_C1_INTERPOLATION_TRANSITION_REPLICATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC398_NUMERICALLY_CERTIFIED_FINITE_C1_INTERPOLATION_ENDPOINT_MICROGRID_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.191 current：TPC-397 c=1 interpolation transition replication
+## 0.192 current：TPC-398 c=1 interpolation endpoint microgrid
+
+项目：papers/tpc-398-c1-interpolation-endpoint-microgrid/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_INTERPOLATION_ENDPOINT_MICROGRID_AUDIT**。
+
+TPC-398 承接 TPC-397 的 TEST_C1_INTERPOLATION_ENDPOINT_MICROGRID，在新的
+coordinate-disjoint affine grid a_j=6800001+401j 上预先冻结 indices
+(0,8,16,24,32,40)。前三个 origins (6800001,6803209,6806417) 作
+calibration，后三个 (6809625,6812833,6816041) 作 holdout；全部使用同一
+N=1024，固定 fixed_c3、Q=8192、beta=2、exponent=1、height=66 与四种既有
+normalization。四个 finite matrix probes 为 lambda=7/8,15/16,31/32,1，
+形成 96 rows、16 cells。TPC-397 的 blend_3_4 与 blend_1 all-origin means
+先哈希锁定，再按 t=(lambda-3/4)/(1/4) 作 response-blind segment baseline。
+
+最强正结果：lambda=7/8,15/16,31/32 在四种 normalization 下均通过 1%
+origin-spread 门，共 12/16 cells；16 个 within-family transfer cells 全部
+通过 3% cap；谱与 Schur failures 均为 0/96。13-point rational anchor 对
+四个插值恒等式给出 exact finite 证明。
+
+最强 obstruction：lambda=1 在四种 normalization 下均越过 origin-spread
+门，最大 spread 为 0.075600654173434007；另一方面 lambda=31/32 虽然
+origin-stable，却在 parent-relative calibration 与 holdout comparison 中
+均约 4.5% 偏离冻结的 TPC-397 segment baseline，因此每种 normalization
+的 parent calibration/holdout 通过数均为 3/4。该诊断分裂不支持普适
+transition threshold。
+
+开放定理：endpoint microgrid 的 finite crossing 是否有 source-valid、growing
+的解析解释，及 parent scalar baseline 是否可迁移，仍完全开放；source-uniform
+arithmetic L2、Route-B reassembly 与 twin-prime 结论未支付，本项目
+fixed-power credit 为 0。
+
+可复用结构：
+
+    hashed TPC-397 segment endpoint interface (read-only)
+      -> exact rational endpoint microgrid
+      -> fresh same-count six-origin calibration/holdout panel
+      -> independent reverse-shell replay + 28-mutation firewall
+      -> PDF/Bridge-B artifact locks
+
+ROUND2_CLUE：TEST_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_REPLICATION。
+
+~~~text
+TPC398_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC398_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC398_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+TPC398_INTERPOLATION_IDENTITY = PROVED_EXACT_FINITE_LINEAR_MATRIX_IDENTITY
+TPC398_INTERPOLATION_PANEL = NUMERICALLY CERTIFIED FINITE_96_ROWS
+TPC398_ORIGIN_PHASE = NUMERICALLY CERTIFIED FINITE SCOPED
+TPC398_PARENT_INTERPOLATED_TRANSFER = NUMERICALLY CERTIFIED FINITE SCOPED
+TPC398_SPECTRAL_ENVELOPE = NUMERICALLY_CERTIFIED_FINITE_SCOPED_ONLY
+TPC398_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE SCOPED ONLY
+TPC398_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC398_GROWING_OPERATOR_BOUND = OPEN
+TPC398_SOURCE_UNIFORM_L2 = OPEN
+TPC398_ARITHMETIC_ADVANCE = NO
+TPC398_FIXED_POWER_CREDIT = 0
+TPC398_FULL_GATE_B = OPEN
+TPC398_TWIN_PRIME_RESULT = NONE
+TPC398_STRONGEST_POSITIVE = ORIGIN_STABLE_THROUGH_LAMBDA_31_OF_32
+TPC398_STRONGEST_OBSTRUCTION = PARENT_TRANSFER_FAILS_AT_LAMBDA_31_OF_32_AND_ENDPOINT_SPREAD
+TPC398_OPEN_THEOREM = SOURCE_VALID_ENDPOINT_MICROGRID_TRANSFER_THEORY
+TPC398_REUSABLE_STRUCTURE = HASHED_SEGMENT_ENDPOINT_INTERFACE_DUAL_GATE_PANEL
+TPC398_ROUND2_CLUE = TEST_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_REPLICATION
+TPC398_STATUS = NUMERICALLY CERTIFIED FINITE C1 INTERPOLATION ENDPOINT MICROGRID AUDIT
+~~~
+
+## 0.191 previous：TPC-397 c=1 interpolation transition replication
 
 项目：papers/tpc-397-c1-interpolation-transition-replication/
 

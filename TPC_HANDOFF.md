@@ -1,9 +1,79 @@
 # TPC HANDOFF
 
-TPC-397 current section: c=1 interpolation transition replication
+TPC-398 current section: c=1 interpolation endpoint microgrid
+----------------------------------------------------------------
+
+TPC-398 is the current finite release.  It follows TPC-397's
+TEST_C1_INTERPOLATION_ENDPOINT_MICROGRID clue on the fresh
+coordinate-disjoint affine grid a_j=6800001+401j.  Indices
+(0,8,16,24,32,40) are fixed before readout.  Origins
+(6800001,6803209,6806417) are calibration and
+(6809625,6812833,6816041) are holdout.  Every origin uses the same N=1024
+window.  The panel fixes fixed_c3, Q=8192, beta=2, exponent 1, height 66,
+four exact finite matrix probes lambda=7/8,15/16,31/32,1, and four
+predeclared normalizations.  The frozen parent interface is TPC-397's
+blend_3_4 and blend_1 all-origin means, interpolated on the segment
+t=(lambda-3/4)/(1/4).
+
+The complete panel has 96 rows and 16 cells.  lambda=7/8,15/16,31/32 pass
+the one-percent origin-spread rule for all four normalizations (12/16 cells);
+lambda=1 fails in all four, with maximum spread 0.075600654173434007.
+Parent-relative calibration and holdout comparisons pass for three of four
+laws under every normalization; 31/32 is the failing law and the maximum
+holdout error is 0.044971523016385406.  Within-family transfer is 4/4 per
+normalization, with no spectral or Schur row failures.  The rational 13-point
+anchor proves all four interpolation identities exactly.
+
+This is finite endpoint-microgrid evidence, not a source-valid growing
+origin-uniform theorem, an arithmetic L2 estimate, a Route-B closure, or a
+twin-prime theorem.  Official Route-A/Route-B evaluator files remain absent;
+local Bridge-B is fail-closed repository evidence.  The exact anchor is
+[6800001,6800014) with shell [11,13].
+
+    TPC398_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC398_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC398_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC398_INTERPOLATION_IDENTITY = PROVED_EXACT_FINITE_LINEAR_MATRIX_IDENTITY
+    TPC398_INTERPOLATION_PANEL = NUMERICALLY CERTIFIED FINITE_96_ROWS
+    TPC398_ORIGIN_PHASE = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC398_PARENT_INTERPOLATED_TRANSFER = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC398_SPECTRAL_ENVELOPE = NUMERICALLY_CERTIFIED_FINITE_SCOPED_ONLY
+    TPC398_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE SCOPED ONLY
+    TPC398_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC398_GROWING_OPERATOR_BOUND = OPEN
+    TPC398_SOURCE_UNIFORM_L2 = OPEN
+    TPC398_ARITHMETIC_ADVANCE = NO
+    TPC398_FIXED_POWER_CREDIT = 0
+    TPC398_FULL_GATE_B = OPEN
+    TPC398_TWIN_PRIME_RESULT = NONE
+    TPC398_STRONGEST_POSITIVE = ORIGIN_STABLE_THROUGH_LAMBDA_31_OF_32
+    TPC398_STRONGEST_OBSTRUCTION = PARENT_TRANSFER_FAILS_AT_LAMBDA_31_OF_32_AND_ENDPOINT_SPREAD
+    TPC398_OPEN_THEOREM = SOURCE_VALID_ENDPOINT_MICROGRID_TRANSFER_THEORY
+    TPC398_REUSABLE_STRUCTURE = HASHED_SEGMENT_ENDPOINT_INTERFACE_DUAL_GATE_PANEL
+    TPC398_ROUND2_CLUE = TEST_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_REPLICATION
+    TPC398_STATUS = NUMERICALLY CERTIFIED FINITE C1 INTERPOLATION ENDPOINT MICROGRID AUDIT
+
+TPC-398 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-398-c1-interpolation-endpoint-microgrid/code/tpc398_c1_interpolation_endpoint_microgrid.py --check
+    python -O -B papers/tpc-398-c1-interpolation-endpoint-microgrid/code/tpc398_c1_interpolation_endpoint_microgrid.py --check
+    python -B papers/tpc-398-c1-interpolation-endpoint-microgrid/experiments/tpc398_independent_checker.py --check
+    python -O -B papers/tpc-398-c1-interpolation-endpoint-microgrid/experiments/tpc398_independent_checker.py --check
+    python -B papers/tpc-398-c1-interpolation-endpoint-microgrid/experiments/tpc398_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-398-c1-interpolation-endpoint-microgrid/experiments/tpc398_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc398_c1_interpolation_endpoint_microgrid_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc398_c1_interpolation_endpoint_microgrid_checker.py --check
+
+The next finite question is TEST_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_REPLICATION.
+Any interpretation remains finite until a genuine source-valid growing
+argument is supplied.
+
+TPC-397 previous section: c=1 interpolation transition replication
 -------------------------------------------------------------------
 
-TPC-397 is the current finite release.  It follows TPC-396's
+TPC-397 is the previous finite release.  It follows TPC-396's
 `TEST_C1_INTERPOLATION_TRANSITION_REPLICATION` clue on a fifth
 coordinate-disjoint affine grid `a_j=6400001+401j`.  Indices
 `(0,8,16,24,32,40)` are fixed before readout.  Origins
@@ -67,6 +137,18 @@ TPC-397 reproducibility commands:
 The next finite question is `TEST_C1_INTERPOLATION_ENDPOINT_MICROGRID`.
 Any interpretation remains finite until a genuine source-valid growing
 argument is supplied.
+
+随后封存的 TPC-398 也完成了 producer、independent reverse-shell replay、28-mutation
+stress、PDF QA 与 local Bridge-B 的 normal/optimized 审计。其 96-row、16-cell
+endpoint-microgrid panel 在 `lambda=7/8,15/16,31/32` 保留 origin stability
+（12/16 cells），而 endpoint `lambda=1` 的 4/4 cells 均失败，最大 spread 为
+`0.075600654173434007`；parent-relative calibration/holdout 各为每种
+normalization `3/4`，失败 law 为 `31/32`，最大 holdout error 为
+`0.044971523016385406`；within-family transfer 均为 `4/4`，spectral 与
+Schur failures 均为 `0/96`。rational anchor 的四个 interpolation identities
+为 exact finite。它不支付 arithmetic `L2`、fixed-power credit 或 official
+Route-A/Route-B gate，下一项响应盲实验为
+`TEST_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_REPLICATION`。
 
 TPC-396 previous section: c=1 signed-law interpolation
 -------------------------------------------------------
@@ -15311,8 +15393,8 @@ anchor 的四个 interpolation identities 为 exact finite。它不支付 arithm
 这些新增 finite audits 不改变 curated historical cascade 的计数，也不支付
 arithmetic `L2`、fixed-power credit 或 official Route-A/Route-B gate。
 
-TPC-397 发布后的最新 tail cascade 共 52 对 normal/optimized 命令、104 次
-invocation：此前 51 对 tail audit 加上 TPC-397 新 checker；每对要求零返回码、
+TPC-398 发布后的最新 tail cascade 共 53 对 normal/optimized 命令、106 次
+invocation：此前 52 对 tail audit 加上 TPC-398 新 checker；每对要求零返回码、
 空 stderr 与 byte-identical stdout。该计数与更早的 curated historical
 command-set 计数分开维护。
 
