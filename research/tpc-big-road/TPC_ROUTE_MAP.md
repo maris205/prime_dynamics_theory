@@ -2,16 +2,16 @@
 
 更新时间：2026-09-05
 
-当前地图版本：V253 / TPC-400
+当前地图版本：V254 / TPC-401
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-400`（`NUMERICAL_OBSERVATION_FINITE_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_AUDIT`）；
-对应论文目录为 `papers/tpc-400-c1-endpoint-microgrid-third-family/`。
+当前编号锚点：`TPC-401`（`PROVED_EXACT_FINITE_PRODUCTION_DOMAIN_DIAGONAL_DELETION_AUDIT`）；
+对应论文目录为 `papers/tpc-401-c1-diagonal-deletion-decomposition/`。
 
-TPC-400 是当前位置：承接 TPC-399 的 third-family replication clue，在第三个
+TPC-401 是当前位置：承接 TPC-400 的 finite analytic clue，在其生产域
 coordinate-disjoint affine family
-`(7600001,7603209,7606417,7609625,7612833,7616041)` 上预先冻结 3 个
+`N=1024,Q=8192,H=66` 上审计
 calibration 与 3 个 holdout origins，全部使用 `N=1024`。四个有限 matrix
 probes `lambda=7/8,15/16,31/32,1` 与四种 normalization 形成 96-row、16-cell
 panel。前三个 probes 的 12/16 cells 通过 1% origin-spread 门，endpoint
@@ -24,16 +24,29 @@ exact finite 证明。这是 finite cross-family endpoint-microgrid evidence，�
 source-valid origin-uniform theorem、growing operator、arithmetic `L2` 或
 twin-prime endpoint；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
 `FULL_GATE_B=OPEN`。下一关为
-`TEST_C1_ENDPOINT_MICROGRID_FOURTH_FAMILY_REPLICATION`。
+`TEST_C1_DIAGONAL_DELETION_SIGNED_TERM_AUDIT`。
 
-    YOU ARE HERE = V253 / TPC-400
+    YOU ARE HERE = V254 / TPC-401
     TPC400_INTERPOLATION_PANEL = NUMERICAL_OBSERVATION_FINITE_FLOAT64_96_ROWS
     TPC400_ORIGIN_PHASE = NUMERICAL_OBSERVATION_FINITE_FLOAT64_SCOPED
     TPC400_PARENT_CROSS_FAMILY_TRANSFER = NUMERICAL_OBSERVATION_FINITE_FLOAT64_SCOPED
     TPC400_ARITHMETIC_ADVANCE = NO
     TPC400_FIXED_POWER_CREDIT = 0
     TPC400_FULL_GATE_B = OPEN
-    TPC400_ROUND2_CLUE = TEST_C1_ENDPOINT_MICROGRID_FOURTH_FAMILY_REPLICATION
+    TPC401_ANALYTIC_STRUCTURE = PROVED_EXACT_FINITE
+    TPC401_ARITHMETIC_ADVANCE = NO
+    TPC401_FIXED_POWER_CREDIT = 0
+    TPC401_FULL_GATE_B = OPEN
+    TPC401_ROUND2_CLUE = TEST_C1_DIAGONAL_DELETION_SIGNED_TERM_AUDIT
+
+## 5.184 V254 / TPC-401：c=1 diagonal-deletion decomposition
+
+TPC-401 proves the finite production-domain identity
+`K_p=-a_p(D_p T D_p-D_p)` under `N<Q<p`, and audits it with exact arithmetic
+over the six TPC-400 origins and 872 shell primes.  It also records the active
+anchor counterexample `N=13,Q=8,p=11`, preventing an overbroad use of the
+identity.  This is a proved finite analytic structure.  It does not pay an
+arithmetic or growing gate.  The next question audits the signed deletion term.
     TPC399_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC399_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
     TPC399_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED_TPC398

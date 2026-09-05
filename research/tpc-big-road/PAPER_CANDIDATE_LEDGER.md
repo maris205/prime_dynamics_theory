@@ -3,13 +3,51 @@
 
 更新时间：2026-09-05
 
-状态：**TPC400_NUMERICAL_OBSERVATION_FINITE_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC401_PROVED_EXACT_FINITE_PRODUCTION_DOMAIN_DIAGONAL_DELETION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.194 current：TPC-400 c=1 endpoint microgrid third-family replication
+## 0.195 current：TPC-401 c=1 exact diagonal-deletion decomposition
+
+项目：papers/tpc-401-c1-diagonal-deletion-decomposition/
+
+类型：**PROVED_EXACT_FINITE_PRODUCTION_DOMAIN_DIAGONAL_DELETION_AUDIT**。
+
+TPC-401 proves the exact production-domain reduction
+`K_p=-a_p(D_p T D_p-D_p)` whenever `N<Q<p`, and derives the corresponding
+geometry deletion formula.  An exact `Fraction` audit over the six TPC-400
+origins, five positions per origin, and the 872-prime shell checks 104640
+component rows.  The active anchor pair `u=7600001,v=7600012` with
+`N=13,Q=8,p=11` is a counterexample outside the hypotheses, so the boundary is
+explicitly fenced.
+
+最强正结果：生产域的 masked-kernel diagonal-deletion identity is proved exact finite。
+
+最强 obstruction：the exact anchor cannot be used for this simplification because
+`p=11` divides the active off-diagonal difference.
+
+开放定理：signed source identification, source-uniform arithmetic `L2`, growing
+uniformity, strict `1/400`, Route-B and twin primes remain open/none。
+
+可复用结构：exact coefficient decomposition、active boundary counterexample、
+canonical certificate、reverse-order replay 与 mutation firewall。
+
+ROUND2_CLUE：`TEST_C1_DIAGONAL_DELETION_SIGNED_TERM_AUDIT`。
+
+~~~text
+TPC401_ANALYTIC_STRUCTURE = PROVED_EXACT_FINITE
+TPC401_NUMERICAL_CERTIFICATION = NONE_NEEDED
+TPC401_ARITHMETIC_ADVANCE = NO
+TPC401_FIXED_POWER_CREDIT = 0
+TPC401_FULL_GATE_B = OPEN
+TPC401_TWIN_PRIME_RESULT = NONE
+TPC401_ROUND2_CLUE = TEST_C1_DIAGONAL_DELETION_SIGNED_TERM_AUDIT
+TPC401_STATUS = PROVED EXACT FINITE PRODUCTION DOMAIN DIAGONAL DELETION AUDIT
+~~~
+
+## 0.194 previous：TPC-400 c=1 endpoint microgrid third-family replication
 
 项目：papers/tpc-400-c1-endpoint-microgrid-third-family/
 

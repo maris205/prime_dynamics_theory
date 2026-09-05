@@ -1,14 +1,15 @@
-# TPC big road V253 / TPC-400: c=1 endpoint microgrid third-family replication
+# TPC big road V254 / TPC-401: c=1 diagonal-deletion decomposition
 
-## V253 current anchor: TPC-400
+## V254 current anchor: TPC-401
 
 更新时间：2026-09-05
 
-当前 TPC-400 proof package 位于
-`../../papers/tpc-400-c1-endpoint-microgrid-third-family/`，checker 为
-`tpc_bridge_b_tpc400_c1_endpoint_microgrid_third_family_checker.py`。它在第三个
+当前 TPC-401 proof package 位于
+`../../papers/tpc-401-c1-diagonal-deletion-decomposition/`，checker 为
+`tpc_bridge_b_tpc401_c1_diagonal_deletion_decomposition_checker.py`。它在
+TPC-400 的生产域
 coordinate-disjoint affine family
-`(7600001,7603209,7606417,7609625,7612833,7616041)` 上，使用 3 个
+`N=1024,Q=8192,H=66` 上，使用 TPC-400 的六个 origins
 calibration origins 与 3 个 holdout origins、固定 `N=1024`，对四个 exact
 probes `lambda=7/8,15/16,31/32,1` 和四种预声明 normalization 形成 96-row、
 16-cell panel。相对 hash-locked TPC-398 direct same-law all-origin means，

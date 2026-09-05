@@ -9,7 +9,12 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-400 在第三个 coordinate-disjoint affine family 上完成
+当前主线最新位置：TPC-401 对 TPC-400 生产域完成 exact diagonal-deletion decomposition
+审计。对 `N<Q<p` 的 104640 个抽样 component rows，divisibility indicator
+与 reduced component 恒等式均 exact；anchor `N=13,Q=8,p=11` 在 active masks
+下给出明确边界反例。这是 proved finite analytic structure，不支付 arithmetic
+`L2`、growing uniformity、fixed-power credit 或 twin-prime result。此前 TPC-400
+在第三个 coordinate-disjoint affine family 上完成
 `TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION`。6 个预先冻结 origins
 （3 个 calibration、3 个 holdout）均使用 `N=1024`，四个精确有限 matrix
 interpolation coefficients `7/8,15/16,31/32,1` 与四种 normalization 形成
@@ -25,7 +30,10 @@ arithmetic `L2` 或 twin-prime result。`ARITHMETIC_ADVANCE=NO`、
 `papers/tpc-400-c1-endpoint-microgrid-third-family/`，下一关是
 `TEST_C1_ENDPOINT_MICROGRID_FOURTH_FAMILY_REPLICATION`。
 
-papers/tpc-400-c1-endpoint-microgrid-third-family - TPC-400 current project；含
+papers/tpc-401-c1-diagonal-deletion-decomposition - TPC-401 current project；含
+exact production-domain decomposition proof、104640-row Fraction audit、active anchor counterexample、独立 reverse replay、stress、proof package/PDF。
+
+papers/tpc-400-c1-endpoint-microgrid-third-family - TPC-400 previous project；含
 96-row/16-cell third-family finite float64 observation、hash-locked TPC-399 same-law interface、
 独立 reverse-shell replay、28-mutation stress、proof package/PDF 与 local
 fail-closed Bridge-B checker。

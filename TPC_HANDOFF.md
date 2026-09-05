@@ -1,5 +1,43 @@
 # TPC HANDOFF
 
+TPC-401 current section: c=1 exact diagonal-deletion decomposition
+--------------------------------------------------------------------
+
+TPC-401 proves and independently audits the exact finite production-domain
+identity behind TPC-400.  For `N=1024`, `Q=8192`, `H=66`, and every shell prime
+`Q<p<=2Q`, every off-diagonal difference has absolute value below `p`, so
+`K_p=-a_p(D_p T D_p-D_p)` with `a_p=p(p/Q)^2/(p-1)`.  The exact producer
+audits 104640 component rows over six TPC-400 origins, five positions per
+origin, and all 872 shell primes; all divisibility indicators vanish and all
+reduced component identities agree.  The active anchor pair
+`u=7600001,v=7600012` with `N=13,Q=8,p=11` gives a nonzero counterexample to
+extending the identity outside `N<Q<p`.
+
+This is proved finite analytic structure.  It does not identify an arithmetic
+sign law, pay a source-normalization or strict `1/400` loss, provide arithmetic
+`L2`, close Route-B, or prove the twin-prime conjecture.  The official
+Route-A/Route-B evaluator files remain absent.
+
+    TPC401_ANALYTIC_STRUCTURE = PROVED_EXACT_FINITE
+    TPC401_NUMERICAL_CERTIFICATION = NONE_NEEDED
+    TPC401_ARITHMETIC_ADVANCE = NO
+    TPC401_FIXED_POWER_CREDIT = 0
+    TPC401_SOURCE_UNIFORM_L2 = OPEN
+    TPC401_FULL_GATE_B = OPEN
+    TPC401_TWIN_PRIME_RESULT = NONE
+    TPC401_STRONGEST_POSITIVE = PRODUCTION_DOMAIN_DIAGONAL_DELETION_IDENTITY
+    TPC401_STRONGEST_OBSTRUCTION = ACTIVE_ANCHOR_COUNTEREXAMPLE_OUTSIDE_DOMAIN
+    TPC401_OPEN_THEOREM = SIGNED_DIAGONAL_DELETION_SOURCE_AUDIT
+    TPC401_REUSABLE_STRUCTURE = EXACT_MASKED_KERNEL_DECOMPOSITION_WITH_BOUNDARY_FIREWALL
+    TPC401_ROUND2_CLUE = TEST_C1_DIAGONAL_DELETION_SIGNED_TERM_AUDIT
+    TPC401_STATUS = PROVED EXACT FINITE PRODUCTION DOMAIN DIAGONAL DELETION AUDIT
+
+TPC-401 reproducibility commands:
+
+    python -B papers/tpc-401-c1-diagonal-deletion-decomposition/code/tpc401_c1_diagonal_deletion_decomposition.py --check
+    python -B papers/tpc-401-c1-diagonal-deletion-decomposition/experiments/tpc401_independent_checker.py --check
+    python -B papers/tpc-401-c1-diagonal-deletion-decomposition/experiments/tpc401_adversarial_certificate_stress.py --check
+
 TPC-400 current section: c=1 endpoint microgrid third-family replication
 -------------------------------------------------------------------------
 
