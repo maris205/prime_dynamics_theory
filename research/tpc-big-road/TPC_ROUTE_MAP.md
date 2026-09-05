@@ -2,14 +2,70 @@
 
 更新时间：2026-09-05
 
-当前地图版本：V245 / TPC-392
+当前地图版本：V246 / TPC-393
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-392`（`NUMERICALLY_CERTIFIED_FINITE_C1_NORMALIZATION_PHASE_DIAGRAM_AUDIT`）；
-对应论文目录为 `papers/tpc-392-c1-normalization-phase-diagram/`。
+当前编号锚点：`TPC-393`（`NUMERICALLY_CERTIFIED_FINITE_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT_AUDIT`）；
+对应论文目录为 `papers/tpc-393-c1-normalization-adversarial-holdout/`。
 
-TPC-392 是当前位置：承接 TPC-391 的 normalization phase clue，在新的
+TPC-393 是当前位置：承接 TPC-392 的 high-$Q$ alternating/local-diagonal
+forecast anomaly，在新的 coordinate-disjoint family
+`(4200001,4204011,4208021,4212031,4216041)` 上只保留 `Q=8192` 与
+all-plus/alternating 两条 laws，比较四种 normalization。64-row、8-cell
+panel 中四种 normalization 的 forecast 均为 `2/2`，因此 TPC-392 的
+forecast separation 未在新族复现；但每个 count 的 stable cells 为 `4/8`，
+正好对应 all-plus 通过、alternating 失败。有限 spectral cap 在 `32/64`
+rows 失败，Schur cap 为 `0/64`。这是 finite scoped adversarial holdout
+evidence，不建立 source-valid normalization、origin/count uniformity、growing
+operator、arithmetic `L2` 或 twin-prime endpoint；`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。下一关为
+`TEST_C1_ORIGIN_UNIFORMITY_AFTER_REPLICATION`。
+
+    YOU ARE HERE = V246 / TPC-393
+    TPC393_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC393_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC393_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC393_NORMALIZATION_PANEL = NUMERICALLY CERTIFIED FINITE_64_ROWS
+    TPC393_SCALAR_DEFINITIONS = PROVED_EXACT_FINITE_DECLARED
+    TPC393_PHASE_COMPARISON = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC393_CALIBRATION_FORECAST = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC393_ORIGIN_UNIFORMITY = OPEN
+    TPC393_COUNT_UNIFORMITY = OPEN
+    TPC393_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC393_GROWING_OPERATOR_BOUND = OPEN
+    TPC393_SOURCE_UNIFORM_L2 = OPEN
+    TPC393_SPECTRAL_ENVELOPE = REFUTED_ON_DECLARED_FINITE_PANEL
+    TPC393_ARITHMETIC_ADVANCE = NO
+    TPC393_FIXED_POWER_CREDIT = 0
+    TPC393_FULL_GATE_B = OPEN
+    TPC393_TWIN_PRIME_RESULT = NONE
+    TPC393_STRONGEST_POSITIVE = FOUR_NORMALIZATIONS_FORECAST_2_OF_2
+    TPC393_STRONGEST_OBSTRUCTION = ALTERNATING_ORIGIN_SPREAD_AND_32_OF_64_SPECTRAL_FAIL
+    TPC393_OPEN_THEOREM = SOURCE_VALID_ORIGIN_UNIFORMITY_AND_SPECTRAL_REPLACEMENT
+    TPC393_REUSABLE_STRUCTURE = MINIMAL_ADVERSARIAL_NORMALIZATION_HOLDOUT
+    TPC393_ROUND2_CLUE = TEST_C1_ORIGIN_UNIFORMITY_AFTER_REPLICATION
+    TPC393_STATUS = NUMERICALLY CERTIFIED FINITE C1 NORMALIZATION ADVERSARIAL HOLDOUT AUDIT
+
+## 5.176 V246 / TPC-393：c=1 adversarial normalization holdout
+
+TPC-393 的 finite package 位于
+`papers/tpc-393-c1-normalization-adversarial-holdout/`，Bridge-B checker 为
+`tpc_bridge_b_tpc393_c1_normalization_adversarial_holdout_checker.py`。
+该项目将 TPC-392 的单一 high-$Q$ forecast anomaly 放入一组全新的、预先
+冻结角色的 affine intervals；父项目只作为 hash-locked read-only interface。
+
+面板固定 `Q=8192`、`fixed_c3`、all-plus 与 alternating-index，四种
+normalization，前三个 origins 在 `N=1024,1280` calibration，后两个在
+`N=1536` holdout。producer 与 descending-shell independent checker 均通过，
+普通/optimized 输出一致，25 个 mutation 均拒绝，PDF 与 Bridge-B 已封存。
+结果为 forecast `2/2` per normalization，stable `4/8` at each count，
+spectral failures `32/64`，Schur failures `0/64`。最重要的负结论是：
+forecast separation 未复现，但 alternating origin-spread signal 保留；下一
+项目应直接测试 origin-uniformity，并保留 all-plus control 与 spectral
+obstruction。
+
+TPC-392 是上一位置：承接 TPC-391 的 normalization phase clue，在新的
 coordinate-disjoint origin family `(3800001,3804011,3808021,3812031,3816041)`
 上预声明 `N=1024,1280` calibration 与 `N=1536` terminal holdout，固定
 `fixed_c3` band、两组 Q、四个 laws，并比较四种 normalization。256-row、

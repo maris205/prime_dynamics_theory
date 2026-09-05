@@ -3,13 +3,77 @@
 
 更新时间：2026-09-05
 
-状态：**TPC392_NUMERICALLY_CERTIFIED_FINITE_C1_NORMALIZATION_PHASE_DIAGRAM_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC393_NUMERICALLY_CERTIFIED_FINITE_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.186 current：TPC-392 c=1 normalization phase diagram
+## 0.187 current：TPC-393 c=1 adversarial normalization holdout
+
+项目：papers/tpc-393-c1-normalization-adversarial-holdout/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT_AUDIT**。
+
+TPC-393 承接 TPC-392 暴露的 high-$Q$ alternating-index/local-diagonal
+forecast separation，在新 coordinate-disjoint affine grid `a_j=4200001+401j`
+上预先冻结 indices `(0,10,20,30,40)`。前三个 origins
+`(4200001,4204011,4208021)` 在 `N=1024,1280` 作 calibration，后两个
+`(4212031,4216041)` 只在 `N=1536` 作 holdout；只保留 `Q=8192`、all-plus
+control 与 alternating-index target，以及四种既有 normalization，形成
+64 rows、8 cells。
+
+最强正结果：四种 normalization 在两条预声明 laws 上均为 `2/2` forecast
+通过，最大误差按 local/pooled/origin/frozen 为
+`0.01010300962072197,0.0097142554430971195,0.011039357664235361,
+0.0097142554430980077`；这否定了 TPC-392 forecast anomaly 在新族上的
+稳健性。最强 obstruction：每个 count 的 one-percent stable cells 都是
+`4/8`，恰为四个 all-plus cells 通过、四个 alternating cells 失败；此外
+`32/64` rows 超过 `0.64` spectral cap，而 Schur failures 为 `0/64`。
+terminal mean ordering 为 frozen > origin > pooled > local，scalar terminal
+level 相对 local 高约 `2.09%--3.69%`。
+
+开放定理：alternating origin-spread signal 是否能在新的 source-valid、growing
+family 中形成 origin-uniform obstruction，以及如何替换当前失效的 finite
+spectral envelope。source-uniform arithmetic `L2`、Route-B reassembly 与
+twin-prime 结论仍未支付；本项目 fixed-power credit 仍为 0。
+
+可复用结构：
+
+    hashed TPC-392 parent (read-only)
+      -> fresh response-blind all-plus/alternating holdout
+      -> four-normalization forecast and origin-spread split
+      -> reverse-shell replay + 25-mutation firewall + Bridge-B locks
+
+ROUND2_CLUE：`TEST_C1_ORIGIN_UNIFORMITY_AFTER_REPLICATION`。
+
+~~~text
+TPC393_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC393_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC393_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+TPC393_NORMALIZATION_PANEL = NUMERICALLY CERTIFIED FINITE_64_ROWS
+TPC393_SCALAR_DEFINITIONS = PROVED_EXACT_FINITE_DECLARED
+TPC393_PHASE_COMPARISON = NUMERICALLY CERTIFIED FINITE_SCOPED
+TPC393_CALIBRATION_FORECAST = NUMERICALLY CERTIFIED FINITE_SCOPED
+TPC393_ORIGIN_UNIFORMITY = OPEN
+TPC393_COUNT_UNIFORMITY = OPEN
+TPC393_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC393_GROWING_OPERATOR_BOUND = OPEN
+TPC393_SOURCE_UNIFORM_L2 = OPEN
+TPC393_SPECTRAL_ENVELOPE = REFUTED_ON_DECLARED_FINITE_PANEL
+TPC393_ARITHMETIC_ADVANCE = NO
+TPC393_FIXED_POWER_CREDIT = 0
+TPC393_FULL_GATE_B = OPEN
+TPC393_TWIN_PRIME_RESULT = NONE
+TPC393_STRONGEST_POSITIVE = FOUR_NORMALIZATIONS_FORECAST_2_OF_2
+TPC393_STRONGEST_OBSTRUCTION = ALTERNATING_ORIGIN_SPREAD_AND_32_OF_64_SPECTRAL_FAIL
+TPC393_OPEN_THEOREM = SOURCE_VALID_ORIGIN_UNIFORMITY_AND_SPECTRAL_REPLACEMENT
+TPC393_REUSABLE_STRUCTURE = MINIMAL_ADVERSARIAL_NORMALIZATION_HOLDOUT
+TPC393_ROUND2_CLUE = TEST_C1_ORIGIN_UNIFORMITY_AFTER_REPLICATION
+TPC393_STATUS = NUMERICALLY CERTIFIED FINITE C1 NORMALIZATION ADVERSARIAL HOLDOUT AUDIT
+~~~
+
+## 0.186 previous：TPC-392 c=1 normalization phase diagram
 
 项目：papers/tpc-392-c1-normalization-phase-diagram/
 

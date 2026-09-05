@@ -1,72 +1,90 @@
 # TPC HANDOFF
 
-TPC-392 current section: c=1 normalization phase diagram
-----------------------------------------------------------
+TPC-393 current section: c=1 adversarial normalization holdout
+---------------------------------------------------------------
 
-TPC-392 is the current finite release.  It follows TPC-391's normalization
-phase clue on a fresh coordinate-disjoint affine grid `a_j=3800001+401j`.
-Indices `(0,10,20,30,40)` are fixed before readout.  Origins
-`(3800001,3804011,3808021)` are calibration at `N=1024,1280`, while
-`(3812031,3816041)` are terminal holdouts at `N=1536`.  The panel fixes the
-`fixed_c3` band, `Q=2048,8192`, beta=2, exponent 1, height 66, four laws, and
-four predeclared normalizations: local diagonal, pooled train scalar, origin
-scalar, and frozen train-1024 scalar.
+TPC-393 is the current finite release.  It follows TPC-392's high-`Q`
+alternating-index/local-diagonal forecast anomaly on a fresh coordinate-
+disjoint affine grid `a_j=4200001+401j`.  Indices `(0,10,20,30,40)` are fixed
+before readout.  Origins `(4200001,4204011,4208021)` are calibration at
+`N=1024,1280`, while `(4212031,4216041)` are terminal holdouts at `N=1536`.
+The panel fixes `fixed_c3`, `Q=8192`, beta=2, exponent 1, height 66, the
+all-plus and alternating-index laws, and four predeclared normalizations.
 
-The complete panel has 256 rows and 32 cells.  Forecast passes for local,
-pooled, origin, and frozen normalization are `7/8,8/8,8/8,8/8`; the only
-failure is the alternating-index, `Q=8192` local-diagonal cell, with error
-`0.034106850682897649`.  Maximum errors are
-`0.034106850682897649`, `0.0275714873542654`,
-`0.028962999969161629`, and `0.02757148735426429`.  Terminal means order as
-frozen > origin > pooled > local.  Stability counts are `25/32,28/32,24/32`
-at `N=1024,1280,1536`; spectral failures are `64/256`, Schur failures
-`0/256`.
+The targeted panel has 64 rows and 8 cells.  Forecast passes for local,
+pooled, origin, and frozen normalization are `2/2,2/2,2/2,2/2`; the maximum
+errors are `0.01010300962072197`, `0.0097142554430971195`,
+`0.011039357664235361`, and `0.0097142554430980077`.  The prior forecast
+anomaly is therefore not reproduced on this fresh family.  Stable-cell counts
+are `4/8,4/8,4/8` at `N=1024,1280,1536`; all-plus cells pass and all
+alternating cells fail the one-percent origin-spread flag.  Spectral failures
+are `32/64`, Schur failures `0/64`, and terminal means order frozen > origin
+> pooled > local.
 
-This is finite normalization-phase evidence, not a source-valid, growing,
+This is finite adversarial-holdout evidence, not a source-valid, growing,
 origin/count-uniform, arithmetic `L2`, Route-B, or twin-prime theorem.
 Official Route-A/Route-B evaluator files remain absent; local Bridge-B is
-fail-closed repository evidence.  The exact anchor is `[3800001,3800014)`
+fail-closed repository evidence.  The exact anchor is `[4200001,4200014)`
 with shell `[11,13]`.
 
-    TPC392_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
-    TPC392_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
-    TPC392_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
-    TPC392_NORMALIZATION_PANEL = NUMERICALLY CERTIFIED FINITE_256_ROWS
-    TPC392_SCALAR_DEFINITIONS = PROVED_EXACT_FINITE_DECLARED
-    TPC392_PHASE_COMPARISON = NUMERICALLY CERTIFIED FINITE_SCOPED
-    TPC392_CALIBRATION_FORECAST = NUMERICALLY CERTIFIED FINITE_SCOPED
-    TPC392_ORIGIN_UNIFORMITY = OPEN
-    TPC392_COUNT_UNIFORMITY = OPEN
-    TPC392_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
-    TPC392_GROWING_OPERATOR_BOUND = OPEN
-    TPC392_SOURCE_UNIFORM_L2 = OPEN
-    TPC392_ARITHMETIC_ADVANCE = NO
-    TPC392_FIXED_POWER_CREDIT = 0
-    TPC392_FULL_GATE_B = OPEN
-    TPC392_TWIN_PRIME_RESULT = NONE
-    TPC392_STRONGEST_POSITIVE = THREE_SCALAR_NORMALIZATIONS_8_OF_8
-    TPC392_STRONGEST_OBSTRUCTION = LOCAL_DIAGONAL_HIGH_Q_ALTERNATING_1_OF_8_FAIL
-    TPC392_OPEN_THEOREM = SOURCE_VALID_NORMALIZATION_AND_ORIGIN_UNIFORMITY
-    TPC392_REUSABLE_STRUCTURE = RESPONSE_BLIND_NORMALIZATION_PHASE_PANEL
-    TPC392_ROUND2_CLUE = TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT
-    TPC392_STATUS = NUMERICALLY CERTIFIED FINITE C1 NORMALIZATION PHASE DIAGRAM AUDIT
+    TPC393_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC393_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC393_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC393_NORMALIZATION_PANEL = NUMERICALLY CERTIFIED FINITE_64_ROWS
+    TPC393_SCALAR_DEFINITIONS = PROVED_EXACT_FINITE_DECLARED
+    TPC393_PHASE_COMPARISON = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC393_CALIBRATION_FORECAST = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC393_ORIGIN_UNIFORMITY = OPEN
+    TPC393_COUNT_UNIFORMITY = OPEN
+    TPC393_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC393_GROWING_OPERATOR_BOUND = OPEN
+    TPC393_SOURCE_UNIFORM_L2 = OPEN
+    TPC393_SPECTRAL_ENVELOPE = REFUTED_ON_DECLARED_FINITE_PANEL
+    TPC393_ARITHMETIC_ADVANCE = NO
+    TPC393_FIXED_POWER_CREDIT = 0
+    TPC393_FULL_GATE_B = OPEN
+    TPC393_TWIN_PRIME_RESULT = NONE
+    TPC393_STRONGEST_POSITIVE = FOUR_NORMALIZATIONS_FORECAST_2_OF_2
+    TPC393_STRONGEST_OBSTRUCTION = ALTERNATING_ORIGIN_SPREAD_AND_32_OF_64_SPECTRAL_FAIL
+    TPC393_OPEN_THEOREM = SOURCE_VALID_ORIGIN_UNIFORMITY_AND_SPECTRAL_REPLACEMENT
+    TPC393_REUSABLE_STRUCTURE = MINIMAL_ADVERSARIAL_NORMALIZATION_HOLDOUT
+    TPC393_ROUND2_CLUE = TEST_C1_ORIGIN_UNIFORMITY_AFTER_REPLICATION
+    TPC393_STATUS = NUMERICALLY CERTIFIED FINITE C1 NORMALIZATION ADVERSARIAL HOLDOUT AUDIT
 
-TPC-392 reproducibility commands:
+TPC-393 reproducibility commands:
 
     export PYTHONDONTWRITEBYTECODE=1
     export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
-    python -B papers/tpc-392-c1-normalization-phase-diagram/code/tpc392_c1_normalization_phase_diagram.py --check
-    python -O -B papers/tpc-392-c1-normalization-phase-diagram/code/tpc392_c1_normalization_phase_diagram.py --check
-    python -B papers/tpc-392-c1-normalization-phase-diagram/experiments/tpc392_independent_checker.py --check
-    python -O -B papers/tpc-392-c1-normalization-phase-diagram/experiments/tpc392_independent_checker.py --check
-    python -B papers/tpc-392-c1-normalization-phase-diagram/experiments/tpc392_adversarial_certificate_stress.py --check
-    python -O -B papers/tpc-392-c1-normalization-phase-diagram/experiments/tpc392_adversarial_certificate_stress.py --check
-    python -B research/tpc-big-road/tpc_bridge_b_tpc392_c1_normalization_phase_diagram_checker.py --check
-    python -O -B research/tpc-big-road/tpc_bridge_b_tpc392_c1_normalization_phase_diagram_checker.py --check
+    python -B papers/tpc-393-c1-normalization-adversarial-holdout/code/tpc393_c1_normalization_adversarial_holdout.py --check
+    python -O -B papers/tpc-393-c1-normalization-adversarial-holdout/code/tpc393_c1_normalization_adversarial_holdout.py --check
+    python -B papers/tpc-393-c1-normalization-adversarial-holdout/experiments/tpc393_independent_checker.py --check
+    python -O -B papers/tpc-393-c1-normalization-adversarial-holdout/experiments/tpc393_independent_checker.py --check
+    python -B papers/tpc-393-c1-normalization-adversarial-holdout/experiments/tpc393_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-393-c1-normalization-adversarial-holdout/experiments/tpc393_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc393_c1_normalization_adversarial_holdout_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc393_c1_normalization_adversarial_holdout_checker.py --check
 
-The next finite question is `TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT`.  Any
+The next finite question is `TEST_C1_ORIGIN_UNIFORMITY_AFTER_REPLICATION`.  Any
 interpretation remains finite until a genuine source-valid growing argument
 is supplied.
+
+TPC-392 previous section: c=1 normalization phase diagram
+-------------------------------------------------------------
+
+TPC-392 is the immediately preceding finite release.  It compared four
+predeclared normalizations on the fresh grid `a_j=3800001+401j`, with three
+calibration origins at `N=1024,1280` and two `N=1536` holdouts.  Its complete
+panel had 256 rows and 32 cells; local-diagonal forecast passed `7/8`, while
+pooled/origin/frozen scalar choices passed `8/8`.  The only failure was the
+alternating-index, `Q=8192` local-diagonal cell with error
+`0.034106850682897649`.  Spectral failures were `64/256`, Schur failures
+`0/256`, and stable cells were `25/32,28/32,24/32`.
+
+TPC-392's strongest reusable result was the response-blind normalization
+panel.  Its strongest obstruction was the single high-`Q` forecast anomaly,
+which TPC-393 tested and did not reproduce on a new family.  Its recorded
+clue was `TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT`; no arithmetic advance,
+fixed-power credit, Route-B closure, or twin-prime result was assigned.
 
 TPC-391 previous section: c=1 recursive horizon localization
 --------------------------------------------------------------
@@ -14880,7 +14898,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V245/TPC-392 是当前 release；其 c=1 normalization-phase-diagram producer、
+V246/TPC-393 是当前 release；其 c=1 adversarial-normalization-holdout producer、
+independent reverse-shell replay、25-mutation certificate stress audit 与
+literal masked-operator Bridge-B 已封存。TPC-393 的 64-row、8-cell panel
+否定了 TPC-392 forecast anomaly 在新族上的复现，但保留 alternating origin-spread
+signal；spectral failures 为 `32/64`，Schur failures 为 `0/64`，下一关为
+`TEST_C1_ORIGIN_UNIFORMITY_AFTER_REPLICATION`。
+V245/TPC-392 是上一 release；其 c=1 normalization-phase-diagram producer、
 independent reverse-shell replay、25-mutation certificate stress audit 与
 literal masked-operator Bridge-B 已封存。TPC-392 的 256-row、32-cell panel
 比较四种预声明 normalization；local-diagonal forecast 为 `7/8`，三种 scalar
@@ -15005,6 +15029,14 @@ fixed-power credit 或 official Route-A/Route-B gate。
 producer、independent replay、mutation stress、PDF QA 与 local Bridge-B 的
 normal/optimized 审计。TPC-392 的 Bridge-B 输出为
 `TPC392_BRIDGE_CHECK=PASS rows=256 cells=32 forecast_passes=local:7/8,pooled:8/8,origin:8/8,frozen:8/8 spectral_failures=64 schur_failures=0 stable_holdout=24/32 local_max_error=0.034106850682897649`。
+
+随后封存的 TPC-393 也完成了 producer、independent replay、25-mutation
+stress、PDF QA 与 local Bridge-B 的 normal/optimized 审计。其 64-row、8-cell
+adversarial holdout 的 Bridge-B 输出为
+`TPC393_BRIDGE_CHECK=PASS rows=64 cells=8 forecast_passes=local:2/2,pooled:2/2,origin:2/2,frozen:2/2 spectral_failures=32 schur_failures=0 stable_holdout=4/8 local_max_error=0.01010300962072197`。
+TPC-393 否定 TPC-392 forecast anomaly 在新族上的复现，但保留 alternating
+origin-spread obstruction；它仍不支付 arithmetic `L2`、fixed-power credit 或
+official Route-A/Route-B gate。
 这些新增 finite audits 不改变 curated historical cascade 的计数，也不支付
 arithmetic `L2`、fixed-power credit 或 official Route-A/Route-B gate；下一项
 响应盲实验为 `TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT`。
@@ -16975,7 +17007,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-392 current release 入口：
+TPC-393 current release 入口：
+
+papers/tpc-393-c1-normalization-adversarial-holdout/README.md
+papers/tpc-393-c1-normalization-adversarial-holdout/PAPER_PLAN.md
+papers/tpc-393-c1-normalization-adversarial-holdout/DERIVATION_PACKAGE.md
+papers/tpc-393-c1-normalization-adversarial-holdout/PROOF_PACKAGE.md
+papers/tpc-393-c1-normalization-adversarial-holdout/code/tpc393_c1_normalization_adversarial_holdout.py
+papers/tpc-393-c1-normalization-adversarial-holdout/experiments/tpc393_independent_checker.py
+papers/tpc-393-c1-normalization-adversarial-holdout/experiments/tpc393_adversarial_certificate_stress.py
+papers/tpc-393-c1-normalization-adversarial-holdout/results/tpc393_certificate.json
+papers/tpc-393-c1-normalization-adversarial-holdout/notes/theorem_ledger.md
+papers/tpc-393-c1-normalization-adversarial-holdout/notes/claim_firewall.md
+papers/tpc-393-c1-normalization-adversarial-holdout/notes/computational_protocol.md
+papers/tpc-393-c1-normalization-adversarial-holdout/notes/route_evaluation.md
+papers/tpc-393-c1-normalization-adversarial-holdout/paper/main.tex
+papers/tpc-393-c1-normalization-adversarial-holdout/paper/paper.pdf
+research/tpc-big-road/bridge_b_tpc393_c1_normalization_adversarial_holdout.md
+research/tpc-big-road/tpc_bridge_b_tpc393_c1_normalization_adversarial_holdout_checker.py
+
+TPC-392 previous release 入口：
 
 papers/tpc-392-c1-normalization-phase-diagram/README.md
 papers/tpc-392-c1-normalization-phase-diagram/PAPER_PLAN.md

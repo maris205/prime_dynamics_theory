@@ -1,25 +1,51 @@
 # TPC distilled map and bold channel
 
-## V245 / TPC-392 current anchor
+## V246 / TPC-393 current anchor
 
 更新时间：2026-09-05
 
 当前入口：proof 为
-papers/tpc-392-c1-normalization-phase-diagram/PROOF_PACKAGE.md，checker 为
-research/tpc-big-road/tpc_bridge_b_tpc392_c1_normalization_phase_diagram_checker.py，
-编号论文为 papers/tpc-392-c1-normalization-phase-diagram/。
+papers/tpc-393-c1-normalization-adversarial-holdout/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc393_c1_normalization_adversarial_holdout_checker.py，
+编号论文为 papers/tpc-393-c1-normalization-adversarial-holdout/。
 
-TPC-392 在第六个 fresh coordinate-disjoint origin family
-`(3800001,3804011,3808021,3812031,3816041)` 上固定 `fixed_c3` band、
-`Q=2048,8192`、四个 laws 与四种 normalization。前三个 origins 在
+TPC-393 在新的 fresh coordinate-disjoint origin family
+`(4200001,4204011,4208021,4212031,4216041)` 上固定 `fixed_c3`、`Q=8192`、
+all-plus/alternating 两个 laws 与四种 normalization。前三个 origins 在
 `N=1024,1280` 作 calibration，后两个只在 `N=1536` 作 holdout，形成
-256-row、32-cell phase panel。local-diagonal forecast 为 `7/8`，
-pooled/origin/frozen 三种 scalar 均为 `8/8`；唯一失败是 alternating-index、
-`Q=8192` 的 local-diagonal cell，最大误差 `0.034106850682897649`。
-terminal mean ordering 为 frozen > origin > pooled > local；spectral failures
-为 `64/256`，Schur failures 为 `0/256`，stable holdout 为 `24/32`。这是
-finite normalization-phase evidence，不是 source-valid normalization、
-origin/count-uniform theorem、arithmetic `L2` 或 twin-prime endpoint。
+64-row、8-cell adversarial panel。四种 normalization 的 forecast 均为 `2/2`，
+因此 TPC-392 的 forecast anomaly 未在新族复现；stable cells 每个 count
+均为 `4/8`，正好对应 all-plus 通过、alternating 失败。spectral failures
+为 `32/64`，Schur failures 为 `0/64`。这是 finite scoped evidence，不是
+source-valid normalization、origin/count-uniform theorem、arithmetic `L2`
+或 twin-prime endpoint。
+
+    YOU ARE HERE = V246 / TPC-393
+    TPC393_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC393_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC393_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC393_NORMALIZATION_PANEL = NUMERICALLY CERTIFIED FINITE_64_ROWS
+    TPC393_SCALAR_DEFINITIONS = PROVED_EXACT_FINITE_DECLARED
+    TPC393_PHASE_COMPARISON = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC393_CALIBRATION_FORECAST = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC393_ORIGIN_UNIFORMITY = OPEN
+    TPC393_COUNT_UNIFORMITY = OPEN
+    TPC393_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC393_GROWING_OPERATOR_BOUND = OPEN
+    TPC393_SOURCE_UNIFORM_L2 = OPEN
+    TPC393_SPECTRAL_ENVELOPE = REFUTED_ON_DECLARED_FINITE_PANEL
+    TPC393_ARITHMETIC_ADVANCE = NO
+    TPC393_FIXED_POWER_CREDIT = 0
+    TPC393_FULL_GATE_B = OPEN
+    TPC393_TWIN_PRIME_RESULT = NONE
+    TPC393_STRONGEST_POSITIVE = FOUR_NORMALIZATIONS_FORECAST_2_OF_2
+    TPC393_STRONGEST_OBSTRUCTION = ALTERNATING_ORIGIN_SPREAD_AND_32_OF_64_SPECTRAL_FAIL
+    TPC393_OPEN_THEOREM = SOURCE_VALID_ORIGIN_UNIFORMITY_AND_SPECTRAL_REPLACEMENT
+    TPC393_REUSABLE_STRUCTURE = MINIMAL_ADVERSARIAL_NORMALIZATION_HOLDOUT
+    TPC393_ROUND2_CLUE = TEST_C1_ORIGIN_UNIFORMITY_AFTER_REPLICATION
+    TPC393_STATUS = NUMERICALLY CERTIFIED FINITE C1 NORMALIZATION ADVERSARIAL HOLDOUT AUDIT
+
+## V245 previous anchor: TPC-392
 
     YOU ARE HERE = V245 / TPC-392
     TPC392_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
