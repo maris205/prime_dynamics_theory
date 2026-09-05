@@ -2,52 +2,65 @@
 
 更新时间：2026-09-05
 
-当前地图版本：V249 / TPC-396
+当前地图版本：V250 / TPC-397
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-396`（`NUMERICALLY_CERTIFIED_FINITE_C1_SIGNED_LAW_INTERPOLATION_AUDIT`）；
-对应论文目录为 `papers/tpc-396-c1-signed-law-interpolation/`。
+当前编号锚点：`TPC-397`（`NUMERICALLY_CERTIFIED_FINITE_C1_INTERPOLATION_TRANSITION_REPLICATION_AUDIT`）；
+对应论文目录为 `papers/tpc-397-c1-interpolation-transition-replication/`。
 
-TPC-396 是当前位置：承接 TPC-395 的 signed-law interpolation clue，在第四个
+TPC-397 是当前位置：承接 TPC-396 的 finite interpolation transition clue，在第五个
 coordinate-disjoint affine family
-`(6000001,6003209,6006417,6009625,6012833,6016041)` 上，预先冻结 3 个
+`(6400001,6403209,6406417,6409625,6412833,6416041)` 上，预先冻结 3 个
 calibration 与 3 个 holdout origins，全部使用 `N=1024`。四个有限 matrix
-probes `lambda=0,1/3,2/3,1` 与四种 normalization 形成 96-row、16-cell
+probes `lambda=3/4,5/6,11/12,1` 与四种 normalization 形成 96-row、16-cell
 panel。前三个 probes 的 12/16 cells 通过 1% origin-spread 门，endpoint
-`lambda=1` 的四个 cells 均失败，最大 spread 为 `0.094070438394687927`；
-parent-relative holdout 为 `16/16`，最大误差为 `0.0033105775404086435`；
-within-family transfer 为 local `4/4`、三个 scalar normalization 各 `3/4`。
-spectral cap 在 `24/96` rows 失败，Schur cap 为 `0/96`。13-point rational
-anchor 对四个插值恒等式给出 exact finite 证明。这是 finite phase
-localization，不建立 source-valid origin-uniform theorem、growing operator、
-arithmetic `L2` 或 twin-prime endpoint；`ARITHMETIC_ADVANCE=NO`、
-`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。下一关为
-`TEST_C1_INTERPOLATION_TRANSITION_REPLICATION`。
+`lambda=1` 的四个 cells 均失败，最大 spread 为 `0.048556752880022216`；
+parent-relative calibration、holdout 与 within-family transfer 均为 `4/4`
+per normalization，最大 holdout error 为 `0.024669590049843704`。谱与 Schur
+cap 在此有限面板均无失败。13-point rational anchor 对四个插值恒等式给出
+exact finite 证明。这是 finite endpoint localization replication，不建立
+source-valid origin-uniform theorem、growing operator、arithmetic `L2` 或
+twin-prime endpoint；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
+`FULL_GATE_B=OPEN`。下一关为 `TEST_C1_INTERPOLATION_ENDPOINT_MICROGRID`。
 
-    YOU ARE HERE = V249 / TPC-396
-    TPC396_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
-    TPC396_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
-    TPC396_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
-    TPC396_INTERPOLATION_IDENTITY = PROVED_EXACT_FINITE_LINEAR_MATRIX_IDENTITY
-    TPC396_INTERPOLATION_PANEL = NUMERICALLY CERTIFIED FINITE_96_ROWS
-    TPC396_ORIGIN_PHASE = NUMERICALLY CERTIFIED FINITE SCOPED
-    TPC396_PARENT_INTERPOLATED_TRANSFER = NUMERICALLY CERTIFIED FINITE SCOPED
-    TPC396_SPECTRAL_ENVELOPE = REFUTED_ON_DECLARED_FINITE_PANEL
-    TPC396_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE_SCOPED_ONLY
-    TPC396_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
-    TPC396_GROWING_OPERATOR_BOUND = OPEN
-    TPC396_SOURCE_UNIFORM_L2 = OPEN
-    TPC396_ARITHMETIC_ADVANCE = NO
-    TPC396_FIXED_POWER_CREDIT = 0
-    TPC396_FULL_GATE_B = OPEN
-    TPC396_TWIN_PRIME_RESULT = NONE
-    TPC396_STRONGEST_POSITIVE = INTERIOR_COEFFICIENT_PHASE_LOCALIZATION_12_OF_16
-    TPC396_STRONGEST_OBSTRUCTION = ENDPOINT_LAMBDA_1_ORIGIN_SPREAD_4_OF_4_AND_SCALAR_TRANSFER_3_OF_4_FAIL
-    TPC396_OPEN_THEOREM = SOURCE_VALID_INTERPOLATION_TRANSITION_ORIGIN_THEORY
-    TPC396_REUSABLE_STRUCTURE = HASHED_ENDPOINT_INTERFACE_EXACT_INTERPOLATION_HOLDOUT
-    TPC396_ROUND2_CLUE = TEST_C1_INTERPOLATION_TRANSITION_REPLICATION
-    TPC396_STATUS = NUMERICALLY CERTIFIED FINITE C1 SIGNED-LAW INTERPOLATION AUDIT
+    YOU ARE HERE = V250 / TPC-397
+    TPC397_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC397_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC397_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC397_INTERPOLATION_IDENTITY = PROVED_EXACT_FINITE_LINEAR_MATRIX_IDENTITY
+    TPC397_INTERPOLATION_PANEL = NUMERICALLY CERTIFIED FINITE_96_ROWS
+    TPC397_ORIGIN_PHASE = NUMERICALLY CERTIFIED FINITE SCOPED
+    TPC397_PARENT_INTERPOLATED_TRANSFER = NUMERICALLY CERTIFIED FINITE SCOPED
+    TPC397_SPECTRAL_ENVELOPE = NUMERICALLY_CERTIFIED_FINITE_SCOPED_ONLY
+    TPC397_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE SCOPED ONLY
+    TPC397_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC397_GROWING_OPERATOR_BOUND = OPEN
+    TPC397_SOURCE_UNIFORM_L2 = OPEN
+    TPC397_ARITHMETIC_ADVANCE = NO
+    TPC397_FIXED_POWER_CREDIT = 0
+    TPC397_FULL_GATE_B = OPEN
+    TPC397_TWIN_PRIME_RESULT = NONE
+    TPC397_STRONGEST_POSITIVE = INTERIOR_ENDPOINT_TRANSITION_REPLICATED_12_OF_16
+    TPC397_STRONGEST_OBSTRUCTION = ENDPOINT_LAMBDA_1_ORIGIN_SPREAD_4_OF_4
+    TPC397_OPEN_THEOREM = SOURCE_VALID_INTERPOLATION_ENDPOINT_THEORY
+    TPC397_REUSABLE_STRUCTURE = HASHED_ENDPOINT_INTERFACE_FINE_GRID_HOLDOUT
+    TPC397_ROUND2_CLUE = TEST_C1_INTERPOLATION_ENDPOINT_MICROGRID
+    TPC397_STATUS = NUMERICALLY CERTIFIED FINITE C1 INTERPOLATION TRANSITION REPLICATION AUDIT
+
+## 5.180 V250 / TPC-397：c=1 interpolation transition replication
+
+TPC-397 的 finite package 位于 `papers/tpc-397-c1-interpolation-transition-replication/`，
+Bridge-B checker 为 `tpc_bridge_b_tpc397_c1_interpolation_transition_replication_checker.py`。
+在第五个 coordinate-disjoint affine family 上，四个 finite interpolation probes
+`3/4,5/6,11/12,1` 与四种 normalization 组成 96-row、16-cell panel。前三个
+probes 的 12 个 cells 通过 1% origin-spread 门，endpoint `lambda=1` 的四个
+cells 均失败，最大 spread `0.048556752880022216`；parent-relative calibration、
+holdout 与 within-family transfer 均为 `4/4` per normalization，最大 holdout
+error `0.024669590049843704`。spectral 与 Schur failures 均为 `0/96`，rational
+anchor 的四个 interpolation identities 为 exact finite。该结果在第二个 fresh
+family 上复现 endpoint localization，但仍是有限 proxy 证据；下一步为
+`TEST_C1_INTERPOLATION_ENDPOINT_MICROGRID`。
 
 ## 5.179 V249 / TPC-396：c=1 signed-law interpolation
 
@@ -11554,6 +11567,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-05 | V250 / TPC-397 | Bridge B / Gate B：c=1 finite interpolation endpoint localization replication; source-valid interpolation endpoint theory、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-397 | 承接 TPC-396；第五个 fresh family `(6400001,6403209,6406417,6409625,6412833,6416041)`，`N=1024`，四个 exact finite matrix probes `lambda=3/4,5/6,11/12,1` 与四种 normalization 完成 96-row、16-cell panel；origin-stable `12/16`，parent calibration/holdout 与 within-family transfer 均 per normalization `4/4`，endpoint `lambda=1` 四 cell origin failure，最大 spread `0.0485567529`，spectral/Schur `0/96`；下一步 TEST_C1_INTERPOLATION_ENDPOINT_MICROGRID |
 | 2026-09-05 | V249 / TPC-396 | Bridge B / Gate B：c=1 finite signed-law interpolation phase localization; source-valid interpolation transition、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-396 | 承接 TPC-395；第四个 fresh family `(6000001,6003209,6006417,6009625,6012833,6016041)`，`N=1024`，四个 exact finite matrix probes `lambda=0,1/3,2/3,1` 与四种 normalization 完成 96-row、16-cell panel；origin-stable `12/16`，parent holdout `16/16`，scalar transfer `3/4`、local `4/4`，endpoint `lambda=1` 四 cell origin failure，最大 spread `0.0940704384`，spectral failures `24/96`，Schur `0/96`；下一步 TEST_C1_INTERPOLATION_TRANSITION_REPLICATION |
 | 2026-09-05 | V245 / TPC-392 | Bridge B / Gate B：c=1 normalization phase diagram; source-valid normalization、origin/count uniformity、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-392 | 承接 TPC-391；第六个 fresh family `(3800001,3804011,3808021,3812031,3816041)`，`N=1024,1280` calibration 到 `N=1536` holdout，四种 normalization 的 forecast pass `7/8,8/8,8/8,8/8`，唯一 local-diagonal high-Q alternating failure，最大误差 `0.0341068507`，spectral failures `64/256`；下一步 TEST_C1_NORMALIZATION_ADVERSARIAL_HOLDOUT |
 | 2026-09-05 | V244 / TPC-391 | Bridge B / Gate B：c=1 recursive horizon localization; origin/count uniformity、source-valid normalization、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-391 | 承接 TPC-390；第五个 fresh family `(3400001,3404011,3408021,3412031,3416041)`，`N=1024,1152,1280,1408` calibration 到 `N=1536` holdout，parent forecasts `32/32,32/32,32/32,23/32`，local controls 四层 `32/32`，9 个 terminal first crossings，最大误差 `0.0097231600/0.0197998607/0.0291714614/0.0517335284`，composition residual `4.44e-16`，spectral failures `112/448`；下一步 TEST_C1_NORMALIZATION_PHASE_DIAGRAM |

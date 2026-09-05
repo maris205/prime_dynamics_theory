@@ -1,13 +1,52 @@
 # TPC distilled map and bold channel
 
-## V249 / TPC-396 current anchor
+## V250 / TPC-397 current anchor
 
 更新时间：2026-09-05
 
 当前入口：proof 为
-papers/tpc-396-c1-signed-law-interpolation/PROOF_PACKAGE.md，checker 为
-research/tpc-big-road/tpc_bridge_b_tpc396_c1_signed_law_interpolation_checker.py，
-编号论文为 papers/tpc-396-c1-signed-law-interpolation/。
+papers/tpc-397-c1-interpolation-transition-replication/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc397_c1_interpolation_transition_replication_checker.py，
+编号论文为 papers/tpc-397-c1-interpolation-transition-replication/。
+
+TPC-397 承接 TPC-396 的 finite interpolation transition clue，在第五个
+coordinate-disjoint affine family
+`(6400001,6403209,6406417,6409625,6412833,6416041)` 上冻结 3 个
+calibration 与 3 个 holdout origins，全部使用 `N=1024`。四个有限 matrix
+probes 为 `lambda=3/4,5/6,11/12,1`，并与四种 normalization 组合成
+96-row、16-cell panel。前三个 probes 的 12/16 cells 通过 1% origin-spread
+门；endpoint `lambda=1` 的四个 cells 均失败，最大 spread 为
+`0.048556752880022216`。parent-relative calibration、holdout 与
+within-family transfer 均为 `4/4` per normalization，最大 holdout error 为
+`0.024669590049843704`。谱与 Schur 诊断均为 `0/96` failures，但这只是
+有限 scoped observation；rational anchor 证明四个插值恒等式，仍不构成
+source-valid growing theorem、arithmetic `L2` 或 twin-prime result。
+
+    YOU ARE HERE = V250 / TPC-397
+    TPC397_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC397_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC397_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC397_INTERPOLATION_IDENTITY = PROVED_EXACT_FINITE_LINEAR_MATRIX_IDENTITY
+    TPC397_INTERPOLATION_PANEL = NUMERICALLY CERTIFIED FINITE_96_ROWS
+    TPC397_ORIGIN_PHASE = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC397_PARENT_INTERPOLATED_TRANSFER = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC397_SPECTRAL_ENVELOPE = NUMERICALLY_CERTIFIED_FINITE_SCOPED_ONLY
+    TPC397_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE SCOPED ONLY
+    TPC397_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC397_GROWING_OPERATOR_BOUND = OPEN
+    TPC397_SOURCE_UNIFORM_L2 = OPEN
+    TPC397_ARITHMETIC_ADVANCE = NO
+    TPC397_FIXED_POWER_CREDIT = 0
+    TPC397_FULL_GATE_B = OPEN
+    TPC397_TWIN_PRIME_RESULT = NONE
+    TPC397_STRONGEST_POSITIVE = INTERIOR_ENDPOINT_TRANSITION_REPLICATED_12_OF_16
+    TPC397_STRONGEST_OBSTRUCTION = ENDPOINT_LAMBDA_1_ORIGIN_SPREAD_4_OF_4
+    TPC397_OPEN_THEOREM = SOURCE_VALID_INTERPOLATION_ENDPOINT_THEORY
+    TPC397_REUSABLE_STRUCTURE = HASHED_ENDPOINT_INTERFACE_FINE_GRID_HOLDOUT
+    TPC397_ROUND2_CLUE = TEST_C1_INTERPOLATION_ENDPOINT_MICROGRID
+    TPC397_STATUS = NUMERICALLY CERTIFIED FINITE C1 INTERPOLATION TRANSITION REPLICATION AUDIT
+
+## V249 previous anchor: TPC-396
 
 TPC-396 承接 TPC-395 的 signed-law interpolation clue，在第四个
 coordinate-disjoint affine family

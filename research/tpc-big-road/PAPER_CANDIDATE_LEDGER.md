@@ -3,13 +3,80 @@
 
 更新时间：2026-09-05
 
-状态：**TPC396_NUMERICALLY_CERTIFIED_FINITE_C1_SIGNED_LAW_INTERPOLATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC397_NUMERICALLY_CERTIFIED_FINITE_C1_INTERPOLATION_TRANSITION_REPLICATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.190 current：TPC-396 c=1 signed-law interpolation
+## 0.191 current：TPC-397 c=1 interpolation transition replication
+
+项目：papers/tpc-397-c1-interpolation-transition-replication/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_INTERPOLATION_TRANSITION_REPLICATION_AUDIT**。
+
+TPC-397 承接 TPC-396 的 `TEST_C1_INTERPOLATION_TRANSITION_REPLICATION`，在第五个
+coordinate-disjoint affine grid `a_j=6400001+401j` 上预先冻结 indices
+`(0,8,16,24,32,40)`。前三个 origins
+`(6400001,6403209,6406417)` 作 calibration，后三个
+`(6409625,6412833,6416041)` 作 holdout；全部使用同一 `N=1024`，固定
+`fixed_c3`、`Q=8192`、beta=2、exponent=1、height=66 与四种既有
+normalization。四个有限 matrix probes 为 `lambda=3/4,5/6,11/12,1`，形成
+96 rows、16 cells；TPC-396 的 `blend_0`/`blend_1` endpoint means 先哈希锁定，
+再作 response-blind parent interpolation。
+
+最强正结果：`lambda=3/4,5/6,11/12` 在四种 normalization 下均通过 1%
+origin-spread 门，共 `12/16` cells；parent-relative calibration、holdout
+与 within-family transfer 均为 `4/4` per normalization，最大 holdout error
+为 `0.024669590049843704`。13-point rational anchor 对四个插值恒等式给出
+exact finite 证明；谱与 Schur 诊断在此声明面板均为 `0/96` failures，但只作
+finite scoped evidence。
+
+最强 obstruction：endpoint `lambda=1` 的四个 origin-spread cells 全部失败，
+最大 spread 为 `0.048556752880022216`，而三个 interior probes 仍通过 1%
+门。因此在第二个 fresh family 上复现了 endpoint localization，但没有得到
+普适 threshold、source-valid growing theorem、arithmetic `L2`、Route-B
+reassembly 或 twin-prime 结论；本项目 fixed-power credit 为 0。
+
+开放定理：有限 interpolation endpoint transition 是否有 source-valid、growing
+的解析解释，以及 endpoint phase 是否存在可迁移的普适理论，仍完全开放。
+
+可复用结构：
+
+    hashed TPC-396 endpoint interface (read-only)
+      -> exact rational matrix interpolation at a finer endpoint grid
+      -> fresh same-count six-origin calibration/holdout panel
+      -> independent reverse-shell replay + 28-mutation firewall
+      -> PDF/Bridge-B artifact locks
+
+ROUND2_CLUE：`TEST_C1_INTERPOLATION_ENDPOINT_MICROGRID`。
+
+~~~text
+TPC397_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC397_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC397_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+TPC397_INTERPOLATION_IDENTITY = PROVED_EXACT_FINITE_LINEAR_MATRIX_IDENTITY
+TPC397_INTERPOLATION_PANEL = NUMERICALLY CERTIFIED FINITE_96_ROWS
+TPC397_ORIGIN_PHASE = NUMERICALLY CERTIFIED FINITE SCOPED
+TPC397_PARENT_INTERPOLATED_TRANSFER = NUMERICALLY CERTIFIED FINITE SCOPED
+TPC397_SPECTRAL_ENVELOPE = NUMERICALLY_CERTIFIED_FINITE_SCOPED_ONLY
+TPC397_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE SCOPED ONLY
+TPC397_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC397_GROWING_OPERATOR_BOUND = OPEN
+TPC397_SOURCE_UNIFORM_L2 = OPEN
+TPC397_ARITHMETIC_ADVANCE = NO
+TPC397_FIXED_POWER_CREDIT = 0
+TPC397_FULL_GATE_B = OPEN
+TPC397_TWIN_PRIME_RESULT = NONE
+TPC397_STRONGEST_POSITIVE = INTERIOR_ENDPOINT_TRANSITION_REPLICATED_12_OF_16
+TPC397_STRONGEST_OBSTRUCTION = ENDPOINT_LAMBDA_1_ORIGIN_SPREAD_4_OF_4
+TPC397_OPEN_THEOREM = SOURCE_VALID_INTERPOLATION_ENDPOINT_THEORY
+TPC397_REUSABLE_STRUCTURE = HASHED_ENDPOINT_INTERFACE_FINE_GRID_HOLDOUT
+TPC397_ROUND2_CLUE = TEST_C1_INTERPOLATION_ENDPOINT_MICROGRID
+TPC397_STATUS = NUMERICALLY CERTIFIED FINITE C1 INTERPOLATION TRANSITION REPLICATION AUDIT
+~~~
+
+## 0.190 previous：TPC-396 c=1 signed-law interpolation
 
 项目：papers/tpc-396-c1-signed-law-interpolation/
 
