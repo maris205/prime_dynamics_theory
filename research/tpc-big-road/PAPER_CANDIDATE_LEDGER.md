@@ -3,13 +3,52 @@
 
 更新时间：2026-09-05
 
-状态：**TPC406_PROVED_EXACT_FINITE_COMPLETE_SHELL_LOCAL_ENTRY_BOUNDARY / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC407_PROVED_EXACT_FINITE_COMPLETE_SHELL_Q_SCALE_LADDER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.200 current：TPC-406 c=1 complete-shell local-entry boundary
+## 0.201 current：TPC-407 c=1 complete-shell Q-scale ladder
+
+项目：papers/tpc-407-c1-complete-shell-q-scale-ladder/
+
+类型：**PROVED_EXACT_FINITE_COMPLETE_SHELL_Q_SCALE_LADDER**。
+
+TPC-407 extends TPC-406 across four even complete shells at
+`Q=4096,8192,16384,32768`, containing `464,872,1612,3030` primes, with
+fixed `H=66,N=264`.  The exact certificate, literal complete-shell CRT replay,
+eight-mutation stress, PDF QA, and Bridge-B normal/optimized checks pass.
+This is finite one-entry synthetic-proxy evidence; full operator, physical
+source, arithmetic sign/L2, fixed-power, Route-B and twin-prime claims remain open.
+
+最强正结果：complete-shell exact finite Q-scale ladder for one proxy entry。
+
+最强 obstruction：the full normalized operator and physical/arithmetic
+identification are absent; no growing or twin-prime claim follows。
+
+开放定理：complete-shell Q-scale extension, normalized growing theorem, strict
+1/400, Route-B reassembly and twin primes remain open/none。
+
+可复用结构：multi-Q complete-shell exact CRT replay、rational certificate、literal
+masked-energy audit 与 strict claim-firewall stress。
+
+ROUND2_CLUE：`TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION`。
+
+~~~text
+TPC407_COMPLETE_SHELL_Q_SCALE_LADDER = PROVED_EXACT_FINITE
+TPC407_Q_SCALES = 4096,8192,16384,32768
+TPC407_SHELL_COUNTS = 464,872,1612,3030
+TPC407_NORMALIZED_GROWING_THEOREM = OPEN
+TPC407_ARITHMETIC_ADVANCE = NO
+TPC407_FIXED_POWER_CREDIT = 0
+TPC407_FULL_GATE_B = OPEN
+TPC407_TWIN_PRIME_RESULT = NONE
+TPC407_ROUND2_CLUE = TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION
+TPC407_STATUS = PROVED EXACT FINITE COMPLETE-SHELL Q-SCALE LADDER
+~~~
+
+## 0.200 previous：TPC-406 c=1 complete-shell local-entry boundary
 
 项目：papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/
 

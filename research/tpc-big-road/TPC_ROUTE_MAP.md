@@ -1,39 +1,40 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-## V259 / TPC-406 current route edge
+## V260 / TPC-407 current route edge
 
-TPC-406 将 TPC-405 的相邻 normalized proxy entry boundary 扩展到
-`Q=8192` 的完整 872-prime shell：五个 H cases、literal CRT replay 与八项
-mutation stress 全部通过。它不是 full operator norm、physical h_0、arithmetic
-L2/sign、fixed-power saving、Route-B closure 或 twin-prime result。下一 route
-edge 为 `TEST_C1_COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION`。
+TPC-407 将 TPC-406 的 complete-shell adjacent normalized proxy entry boundary
+扩展到 `Q=4096,8192,16384,32768` 的四个 even shell scales：shell counts
+`464,872,1612,3030`，literal CRT replay 与八项 mutation stress 全部通过。
+它不是 full operator norm、physical h_0、arithmetic L2/sign、fixed-power
+saving、Route-B closure 或 twin-prime result。下一 route edge 为
+`TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION`。
 
-    YOU ARE HERE = V259 / TPC-406
-    TPC406_COMPLETE_SHELL_LOCAL_ENTRY_BOUND = PROVED_EXACT_FINITE
-    TPC406_COMPLETE_SHELL_PRIME_COUNT = 872
-    TPC406_ARITHMETIC_ADVANCE = NO
-    TPC406_FIXED_POWER_CREDIT = 0
-    TPC406_FULL_GATE_B = OPEN
-    TPC406_ROUND2_CLUE = TEST_C1_COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION
+    YOU ARE HERE = V260 / TPC-407
+    TPC407_COMPLETE_SHELL_Q_SCALE_LADDER = PROVED_EXACT_FINITE
+    TPC407_Q_SCALES = 4096,8192,16384,32768
+    TPC407_SHELL_COUNTS = 464,872,1612,3030
+    TPC407_ARITHMETIC_ADVANCE = NO
+    TPC407_FIXED_POWER_CREDIT = 0
+    TPC407_FULL_GATE_B = OPEN
+    TPC407_ROUND2_CLUE = TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION
 
 更新时间：2026-09-05
 
-当前地图版本：V259 / TPC-406
+当前地图版本：V260 / TPC-407
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-406`（`PROVED_EXACT_FINITE_COMPLETE_SHELL_LOCAL_ENTRY_BOUNDARY`）；
-对应论文目录为 `papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/`。
+当前编号锚点：`TPC-407`（`PROVED_EXACT_FINITE_COMPLETE_SHELL_Q_SCALE_LADDER`）；
+对应论文目录为 `papers/tpc-407-c1-complete-shell-q-scale-ladder/`。
 
-TPC-406 是当前位置：承接 TPC-405 的 CRT proxy，在同一 complete-shell
-selected-prime model 中审计 local diagonal normalization。`Q=8192` 的全部
-872 个 shell primes 被纳入，五个 H/N rows 的 normalized square-root
-observations 为 `0.0217719,0.0108028,0.00521385,0.00268240,0.00133956`。
-这是 finite one-entry boundary audit，不建立 full operator norm、physical
-h_0、normalized growing bound、arithmetic sign/L2 或 twin-prime result。
-下一关为 `TEST_C1_COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION`。
+TPC-407 是当前位置：承接 TPC-406 的 complete-shell CRT proxy，在固定
+`H=66,N=264` 下审计四个 Q scales。全部 shell primes 被纳入，四个
+normalized square-root observations 为 `0.00523244,0.00521385,0.00522052,
+0.00523077`。这是 finite one-entry Q-scale audit，不建立 full operator norm、
+physical h_0、normalized growing bound、arithmetic sign/L2 或 twin-prime result。
+下一关为 `TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION`。
 
-    YOU ARE HERE = V258 / TPC-405
+    YOU ARE HERE = V259 / TPC-406
     TPC404_LOCAL_BOUNDARY_STRUCTURE = PROVED_EXACT_FINITE
     TPC404_NORMALIZED_GROWING_THEOREM = OPEN
     TPC404_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
@@ -11690,6 +11691,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-05 | V260 / TPC-407 | Bridge B / Gate B：c=1 complete-shell Q-scale ladder; normalized growing operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-407 | 承接 TPC-406；固定 `H=66,N=264`，四个 even complete shells `Q=4096,8192,16384,32768` 的 464/872/1612/3030 个 primes 全部纳入，四个 exact rows、literal CRT replay 与八项 mutation stress 全部通过；下一步 TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION |
 | 2026-09-05 | V259 / TPC-406 | Bridge B / Gate B：c=1 complete-shell local-entry boundary; normalized growing operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-406 | 承接 TPC-405；`Q=8192` 的完整 872-prime shell、`H=16,32,66,128,256` 五个 exact rational rows、literal CRT replay 与八项 mutation stress 全部通过；仅证明一个 synthetic adjacent normalized proxy entry，下一步 TEST_C1_COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION |
 | 2026-09-05 | V258 / TPC-405 | Bridge B / Gate B：c=1 local-normalization scale ladder; normalized growing operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-405 | 承接 TPC-404；五个 heights 与四个 selected-prefix multiplicities 的 20-case exact certificate、literal CRT replay 与七项 stress 全部通过；下一步 TEST_C1_LOCAL_NORMALIZATION_COMPLETE_SHELL_ENTRY_BOUNDARY |
 | 2026-09-05 | V257 / TPC-404 | Bridge B / Gate B：c=1 local-normalization boundary; normalized growing operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-404 | 承接 TPC-403；四个 selected-prime multiplicities 的 exact local identities 与 literal CRT replay 完成；下一步 TEST_C1_LOCAL_NORMALIZATION_SCALE_LADDER |

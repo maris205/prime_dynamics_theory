@@ -1,49 +1,54 @@
 # TPC distilled map and bold channel
 
-## V259 / TPC-406 current anchor
+## V260 / TPC-407 current anchor
 
 更新时间：2026-09-05
 
 当前入口：proof 为
-papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/PROOF_PACKAGE.md，checker 为
-research/tpc-big-road/tpc_bridge_b_tpc406_c1_local_normalization_complete_shell_entry_boundary_checker.py，
-编号论文为 papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/。
+papers/tpc-407-c1-complete-shell-q-scale-ladder/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc407_c1_complete_shell_q_scale_ladder_checker.py，
+编号论文为 papers/tpc-407-c1-complete-shell-q-scale-ladder/。
 
-complete-shell finite bound：在 Q=8192 的全部 872 个 shell primes、显式
-even/odd CRT residues 与五个 heights 下，一个相邻 normalized proxy entry
-满足 0<=z<=t1/(a_min sqrt(S0S1))<=4/(a_min H)<=4/H。五个 exact rational
-rows、literal independent CRT replay 与八项 mutation stress 均通过。它只
-约束一个 synthetic proxy entry，不是 full operator norm、physical h_0、
-arithmetic sign/L2、fixed-power saving、Route-B closure 或 twin-prime result。
-下一关为 TEST_C1_COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION。
+complete-shell Q-scale finite bound：在固定 H=66,N=264 下，Q=4096,8192,
+16384,32768 的全部 shell primes、显式 even/odd CRT residues 与四个 exact
+rows 下，一个相邻 normalized proxy entry 满足
+0<=z<=t1/(a_min sqrt(S0S1))<=4/(a_min H)<=4/H。literal independent CRT
+replay 与八项 mutation stress 均通过。它只约束一个 synthetic proxy entry，
+不是 full operator norm、physical h_0、arithmetic sign/L2、fixed-power
+saving、Route-B closure 或 twin-prime result。下一关为
+TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION。
+
+    YOU ARE HERE = V260 / TPC-407
+    TPC407_COMPLETE_SHELL_Q_SCALE_LADDER = PROVED_EXACT_FINITE
+    TPC407_Q_SCALES = 4096,8192,16384,32768
+    TPC407_SHELL_COUNTS = 464,872,1612,3030
+    TPC407_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC407_ARITHMETIC_ADVANCE = NO
+    TPC407_FIXED_POWER_CREDIT = 0
+    TPC407_FULL_GATE_B = OPEN
+    TPC407_TWIN_PRIME_RESULT = NONE
+    TPC407_ROUND2_CLUE = TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION
+
+## V259 / TPC-406 previous anchor
+
+TPC-406 的历史入口为
+papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/，其 Q=8192
+complete-shell five-row exact certificate 先完成了单一 shell 的边界审计。
 
     YOU ARE HERE = V259 / TPC-406
     TPC406_COMPLETE_SHELL_LOCAL_ENTRY_BOUND = PROVED_EXACT_FINITE
     TPC406_COMPLETE_SHELL_PRIME_COUNT = 872
     TPC406_NORMALIZED_GROWING_THEOREM = OPEN
-    TPC406_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
     TPC406_ARITHMETIC_ADVANCE = NO
     TPC406_FIXED_POWER_CREDIT = 0
     TPC406_FULL_GATE_B = OPEN
     TPC406_TWIN_PRIME_RESULT = NONE
     TPC406_ROUND2_CLUE = TEST_C1_COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION
 
-## V258 / TPC-405 previous anchor
+## V258 / TPC-405 historical anchor
 
-TPC-405 的历史入口为
-papers/tpc-405-c1-local-normalization-scale-ladder/，其五个 heights 与四个
-selected-prefix multiplicities 的 20 个 exact cases 先证明了同一 one-entry
-inverse-height bound。
-
-    YOU ARE HERE = V258 / TPC-405
     TPC405_LOCAL_PROXY_ENTRY_BOUND = PROVED_UNIFORM_FINITE
     TPC405_SCALE_LADDER = PROVED_EXACT_FINITE_20_CASES
-    TPC405_NORMALIZED_GROWING_THEOREM = OPEN
-    TPC405_ARITHMETIC_ADVANCE = NO
-    TPC405_FIXED_POWER_CREDIT = 0
-    TPC405_FULL_GATE_B = OPEN
-    TPC405_TWIN_PRIME_RESULT = NONE
-    TPC405_ROUND2_CLUE = TEST_C1_LOCAL_NORMALIZATION_COMPLETE_SHELL_ENTRY_BOUNDARY
 
 ## V257 / TPC-404 previous anchor
 

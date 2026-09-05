@@ -1,54 +1,54 @@
 # TPC HANDOFF
 
-TPC-406 current section: c=1 complete-shell local-entry boundary
+TPC-407 current section: c=1 complete-shell Q-scale ladder
+------------------------------------------------------------
+
+TPC-407 extends TPC-406 across four even complete-shell scales.  At fixed
+`H=66`, `N=264`, and origin lower bound `10^6`, all primes in the shells for
+`Q=4096,8192,16384,32768` are selected; their exact shell counts are
+`464,872,1612,3030`.  The explicit alternating CRT profile gives, at every
+scale, `0<=z<=t_1/(a_min sqrt(S0 S1))<=4/(a_min H)<=4/H`.  The four exact
+rows, literal independent CRT replay, and eight mutation stress cases pass.
+The stored decimals are observations and all structural quantities are exact.
+
+This is still a one-entry synthetic proxy theorem, not a full normalized
+operator bound, physical `h_0` theorem, arithmetic sign or `L2` estimate,
+fixed-power saving, Route-B closure, or twin-prime result.  `Q=65536` is
+excluded because its complete shell has odd cardinality.
+
+    TPC407_COMPLETE_SHELL_Q_SCALE_LADDER = PROVED_EXACT_FINITE
+    TPC407_Q_SCALES = 4096,8192,16384,32768
+    TPC407_SHELL_COUNTS = 464,872,1612,3030
+    TPC407_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC407_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC407_ARITHMETIC_ADVANCE = NO
+    TPC407_FIXED_POWER_CREDIT = 0
+    TPC407_FULL_GATE_B = OPEN
+    TPC407_TWIN_PRIME_RESULT = NONE
+    TPC407_STRONGEST_POSITIVE = COMPLETE_SHELL_EXACT_FINITE_Q_SCALE_LADDER
+    TPC407_STRONGEST_OBSTRUCTION = FULL_OPERATOR_AND_PHYSICAL_IDENTIFICATION_ABSENT
+    TPC407_OPEN_THEOREM = COMPLETE_SHELL_Q_SCALE_EXTENSION
+    TPC407_REUSABLE_STRUCTURE = COMPLETE_SHELL_CRT_REPLAY_WITH_Q_SCALE_BOUND
+    TPC407_ROUND2_CLUE = TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION
+    TPC407_STATUS = PROVED EXACT FINITE COMPLETE-SHELL Q-SCALE LADDER
+
+TPC-407 reproducibility commands:
+
+    python -B papers/tpc-407-c1-complete-shell-q-scale-ladder/code/tpc407_c1_complete_shell_q_scale_ladder.py --check
+    python -O -B papers/tpc-407-c1-complete-shell-q-scale-ladder/code/tpc407_c1_complete_shell_q_scale_ladder.py --check
+    python -B papers/tpc-407-c1-complete-shell-q-scale-ladder/experiments/tpc407_independent_checker.py --check
+    python -O -B papers/tpc-407-c1-complete-shell-q-scale-ladder/experiments/tpc407_independent_checker.py --check
+    python -B papers/tpc-407-c1-complete-shell-q-scale-ladder/experiments/tpc407_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-407-c1-complete-shell-q-scale-ladder/experiments/tpc407_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc407_c1_complete_shell_q_scale_ladder_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc407_c1_complete_shell_q_scale_ladder_checker.py --check
+
+TPC-406 previous section: c=1 complete-shell local-entry boundary
 ------------------------------------------------------------------
 
-TPC-406 closes the finite shell-selection gap after TPC-405.  At `Q=8192`,
-all 872 primes `Q<p<=2Q` are selected, with explicit CRT residues `0` on
-even indices and `-N` on odd indices.  For each `H=16,32,66,128,256` and
-`N=4H`, the complete-shell adjacent normalized proxy entry satisfies
-`0<=z<=t_1/(a_min sqrt(S0 S1))<=4/(a_min H)<=4/H`.  The exact certificate
-has five rows with `m=436`; the independent checker literally replays the
-complete-shell CRT masks and row energies.  Decimals are observations; all
-stored structural quantities and inequalities are exact rationals.
-
-This remains a one-entry synthetic proxy theorem.  It is not a full
-normalized operator bound, a physical `h_0` theorem, an arithmetic sign or
-`L2` estimate, a fixed-power saving, Route-B closure, or a twin-prime result.
-
-    TPC406_COMPLETE_SHELL_LOCAL_ENTRY_BOUND = PROVED_EXACT_FINITE
-    TPC406_COMPLETE_SHELL_PRIME_COUNT = 872
-    TPC406_NORMALIZED_GROWING_THEOREM = OPEN
-    TPC406_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
-    TPC406_ARITHMETIC_ADVANCE = NO
-    TPC406_FIXED_POWER_CREDIT = 0
-    TPC406_FULL_GATE_B = OPEN
-    TPC406_TWIN_PRIME_RESULT = NONE
-    TPC406_STRONGEST_POSITIVE = COMPLETE_SHELL_EXACT_FINITE_ONE_ENTRY_BOUND
-    TPC406_STRONGEST_OBSTRUCTION = FULL_OPERATOR_AND_PHYSICAL_IDENTIFICATION_ABSENT
-    TPC406_OPEN_THEOREM = COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION
-    TPC406_REUSABLE_STRUCTURE = COMPLETE_SHELL_CRT_REPLAY_WITH_EXACT_SCALE_BOUND
-    TPC406_ROUND2_CLUE = TEST_C1_COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION
-    TPC406_STATUS = PROVED EXACT FINITE COMPLETE-SHELL LOCAL ENTRY BOUNDARY
-
-TPC-406 reproducibility commands:
-
-    python -B papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/code/tpc406_c1_local_normalization_complete_shell_entry_boundary.py --check
-    python -O -B papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/code/tpc406_c1_local_normalization_complete_shell_entry_boundary.py --check
-    python -B papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/experiments/tpc406_independent_checker.py --check
-    python -O -B papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/experiments/tpc406_independent_checker.py --check
-    python -B papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/experiments/tpc406_adversarial_certificate_stress.py --check
-    python -O -B papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/experiments/tpc406_adversarial_certificate_stress.py --check
-    python -B research/tpc-big-road/tpc_bridge_b_tpc406_c1_local_normalization_complete_shell_entry_boundary_checker.py --check
-    python -O -B research/tpc-big-road/tpc_bridge_b_tpc406_c1_local_normalization_complete_shell_entry_boundary_checker.py --check
-
-TPC-405 previous section: c=1 local-normalization scale ladder
----------------------------------------------------------------
-
-TPC-405 is the exact finite continuation of TPC-404's selected-prime CRT
-proxy.  Its five-height, four-multiplicity certificate proved the same bound
-for 20 selected-prefix cases.  That result was one-entry evidence only; the
-complete-shell extension is the current TPC-406 section.
+TPC-406 closed the finite shell-selection gap at `Q=8192` with 872 primes
+and five exact heights.  It remains a one-entry synthetic result; TPC-407
+is its finite Q-scale continuation.
 
 TPC-404 previous section: c=1 local-normalization boundary
 ----------------------------------------------------------

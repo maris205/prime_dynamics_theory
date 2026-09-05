@@ -1,18 +1,18 @@
-# TPC big road V259 / TPC-406: c=1 complete-shell local-entry boundary
+# TPC big road V260 / TPC-407: c=1 complete-shell Q-scale ladder
 
-## V259 current anchor: TPC-406
+## V260 current anchor: TPC-407
 
 更新时间：2026-09-05
 
-TPC-406 current anchor: exact finite complete-shell local-entry boundary; next clue is TEST_C1_COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION.
+TPC-407 current anchor: exact finite complete-shell Q-scale ladder; next clue is TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION.
 
-TPC-406 的 872-prime、5-row exact certificate、literal CRT replay、stress suite、PDF 与
+TPC-407 的 4-scale exact certificate、literal CRT replay、stress suite、PDF 与
 Bridge-B 均已封存；结论只适用于一个 synthetic proxy adjacent entry，full
 operator norm、physical h_0、arithmetic L2/sign、fixed-power、Route-B 与 twin
 prime result 仍未支付。
 
-TPC-405 previous proof package 位于
-`../../papers/tpc-405-c1-local-normalization-scale-ladder/`。
+TPC-406 previous proof package 位于
+`../../papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/`。
 
 TPC-404 previous proof package 位于
 `../../papers/tpc-404-c1-local-normalization-boundary/`，checker 为
