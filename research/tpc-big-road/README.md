@@ -1,22 +1,57 @@
-# TPC big road V247 / TPC-394: c=1 origin-uniformity ladder
+# TPC big road V248 / TPC-395: c=1 cross-family origin holdout
 
-## V247 current anchor: TPC-394
+## V248 current anchor: TPC-395
 
 更新时间：2026-09-05
 
-当前 TPC-394 proof package 位于
-`../../papers/tpc-394-c1-origin-uniformity-ladder/`，checker 为
-`tpc_bridge_b_tpc394_c1_origin_uniformity_ladder_checker.py`。在新的
-response-blind affine origin ladder
+当前 TPC-395 proof package 位于
+`../../papers/tpc-395-c1-origin-cross-family-holdout/`，checker 为
+`tpc_bridge_b_tpc395_c1_origin_cross_family_holdout_checker.py`。在第三个
+coordinate-disjoint affine family
+`(5600001,5603209,5606417,5609625,5612833,5616041)` 上，3 个 origins 作
+calibration、3 个作 holdout，全部固定 `N=1024`；固定 `fixed_c3`、`Q=8192`、
+all-plus/alternating 两个 laws 与四种 normalization，形成 48-row、8-cell
+panel。all-plus 的四个 origin-spread cells 均通过 1% 门，alternating 的四个
+均失败（最大 spread `0.068267525703845117`）；跨族 holdout transfer 为
+`8/8`，最大误差 `0.023289195722825839`，within-family transfer 也是 `8/8`。
+spectral failures 为 `24/48`，Schur failures 为 `0/48`。这是有限
+cross-family law-dependent audit，不是 source-valid growing theorem、arithmetic
+`L2` 或 twin-prime result。
+
+    YOU ARE HERE = V248 / TPC-395
+    TPC395_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC395_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC395_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC395_CROSS_FAMILY_PANEL = NUMERICALLY CERTIFIED FINITE_48_ROWS
+    TPC395_CROSS_FAMILY_MEAN_TRANSFER = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC395_WITHIN_FAMILY_ORIGIN_AUDIT = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC395_SPECTRAL_ENVELOPE = REFUTED_ON_DECLARED_FINITE_PANEL
+    TPC395_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE_SCOPED_ONLY
+    TPC395_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC395_GROWING_OPERATOR_BOUND = OPEN
+    TPC395_SOURCE_UNIFORM_L2 = OPEN
+    TPC395_ARITHMETIC_ADVANCE = NO
+    TPC395_FIXED_POWER_CREDIT = 0
+    TPC395_FULL_GATE_B = OPEN
+    TPC395_TWIN_PRIME_RESULT = NONE
+    TPC395_STRONGEST_POSITIVE = ALL_PLUS_CROSS_FAMILY_HOLDOUT_8_OF_8
+    TPC395_STRONGEST_OBSTRUCTION = ALTERNATING_ORIGIN_SPREAD_4_OF_4_AND_24_OF_48_SPECTRAL_FAIL
+    TPC395_OPEN_THEOREM = SOURCE_VALID_SIGNED_LAW_INTERPOLATION_ORIGIN_THEORY
+    TPC395_REUSABLE_STRUCTURE = HASHED_CROSS_FAMILY_CALIBRATION_HOLDOUT_WITH_LAW_CONTROL
+    TPC395_ROUND2_CLUE = TEST_C1_SIGNED_LAW_INTERPOLATION
+    TPC395_STATUS = NUMERICALLY CERTIFIED FINITE C1 ORIGIN CROSS-FAMILY HOLDOUT AUDIT
+
+## V247 previous anchor: TPC-394
+
+TPC-394 在全新的 affine origin ladder
 `(5000001,5002006,5004011,5006016,5008021,5010026,5012031,5014036)` 上，
-5 个 origins 作 calibration、3 个作 holdout，全部固定 `N=1024`；固定
-`fixed_c3`、`Q=8192`、all-plus/alternating 两个 laws 与四种 normalization，
-形成 64-row、8-cell same-count panel。all-plus 的四个 origin-spread cells
-均通过 1% 门，alternating 的四个均失败（最大 spread
-`0.092863374514779065`）；holdout transfer 为 `8/8`。spectral failures
-为 `32/64`，Schur failures 为 `0/64`。这是有限 law-dependent origin
-obstruction audit，不是 source-valid growing theorem、arithmetic `L2` 或
-twin-prime result。
+预先冻结 5 个 calibration 与 3 个 holdout origins，所有 origin 使用同一
+`N=1024`。固定 `fixed_c3`、`Q=8192`、all-plus/alternating 两个 laws 与四种
+normalization，形成 64-row、8-cell same-count panel。all-plus 的四个
+origin-spread cells 均通过 1% 门，alternating 的四个均失败（最大 spread
+`0.092863374514779065`）；holdout transfer 为 `8/8`，spectral failures 为
+`32/64`，Schur failures 为 `0/64`。这是有限 law-dependent origin obstruction
+audit，不是 source-valid growing theorem、arithmetic `L2` 或 twin-prime result。
 
     YOU ARE HERE = V247 / TPC-394
     TPC394_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND

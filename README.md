@@ -9,7 +9,26 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-394 在全新的 affine origin ladder 上直接审计
+当前主线最新位置：TPC-395 在第三个 coordinate-disjoint affine family 上
+执行 `TEST_C1_ORIGIN_CROSS_FAMILY_HOLDOUT`。6 个预先冻结的 origins
+（3 个 calibration、3 个 holdout）全部使用同一 `N=1024`，形成 48-row、8-cell
+panel；固定 `Q=8192`、`fixed_c3`、all-plus/alternating-index 两条 laws 与四种
+normalization。all-plus 在四种 normalization 下均 origin-stable（4/4），
+alternating-index 四种均越过 1% origin-spread 门，最大 spread 为
+`0.068267525703845117`。跨族 calibration/holdout transfer 为 `8/8`，最大
+holdout error 为 `0.023289195722825839`；within-family transfer 也是 `8/8`。
+spectral failures 为 `24/48`（全为 all-plus rows），Schur failures 为 `0/48`。
+这是 finite cross-family law-dependent audit，不是 source-valid growing theorem、
+arithmetic `L2` 或 twin-prime result；`ARITHMETIC_ADVANCE=NO`、
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。当前项目为
+`papers/tpc-395-c1-origin-cross-family-holdout/`，下一关是
+`TEST_C1_SIGNED_LAW_INTERPOLATION`。
+
+papers/tpc-395-c1-origin-cross-family-holdout - TPC-395 current project；含
+48-row/8-cell cross-family holdout certificate、独立 reverse-shell replay、
+25-mutation stress、proof package/PDF 与 local fail-closed Bridge-B checker。
+
+上一位置：TPC-394 在全新的 affine origin ladder 上直接审计
 `TEST_C1_ORIGIN_UNIFORMITY_AFTER_REPLICATION`。8 个预先冻结的 origins
 （5 个 calibration、3 个 holdout）全部使用同一 `N=1024`，形成 64-row、8-cell
 panel；固定 `Q=8192`、`fixed_c3`、all-plus/alternating-index 两条 laws 与四种
@@ -18,11 +37,11 @@ normalization。all-plus 的四种 origin spread 均低于 `4.4e-5`，alternatin
 cells 均通过 3% 门。spectral failures 为 `32/64`（全为 all-plus rows），Schur
 failures 为 `0/64`。这是 finite law-dependent origin obstruction audit，不是
 source-valid growing theorem、arithmetic `L2` 或 twin-prime result；
-`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。当前项目为
+`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。项目为
 `papers/tpc-394-c1-origin-uniformity-ladder/`，下一关是
 `TEST_C1_ORIGIN_CROSS_FAMILY_HOLDOUT`。
 
-papers/tpc-394-c1-origin-uniformity-ladder - TPC-394 current project；含
+papers/tpc-394-c1-origin-uniformity-ladder - TPC-394 previous project；含
 64-row same-count origin-ladder certificate、独立 reverse-shell replay、
 25-mutation stress、proof package/PDF 与 local fail-closed Bridge-B checker。
 

@@ -3,13 +3,75 @@
 
 更新时间：2026-09-05
 
-状态：**TPC394_NUMERICALLY_CERTIFIED_FINITE_C1_ORIGIN_UNIFORMITY_LADDER_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC395_NUMERICALLY_CERTIFIED_FINITE_C1_ORIGIN_CROSS_FAMILY_HOLDOUT_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.188 current：TPC-394 c=1 same-count origin-uniformity ladder
+## 0.189 current：TPC-395 c=1 cross-family origin holdout
+
+项目：papers/tpc-395-c1-origin-cross-family-holdout/
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_C1_ORIGIN_CROSS_FAMILY_HOLDOUT_AUDIT**。
+
+TPC-395 承接 TPC-394 的 `TEST_C1_ORIGIN_CROSS_FAMILY_HOLDOUT`，在第三个
+coordinate-disjoint affine grid `a_j=5600001+401j` 上预先冻结 indices
+`(0,8,16,24,32,40)`。前三个 origins
+`(5600001,5603209,5606417)` 作 calibration，后三个
+`(5609625,5612833,5616041)` 作 holdout；全部使用同一 `N=1024`，固定
+`fixed_c3`、`Q=8192`、all-plus/alternating-index 两条 laws 与四种既有
+normalization，形成 48 rows、8 cells。TPC-394 的 all-origin cell means
+作为 hash-locked、response-blind parent baseline。
+
+最强正结果：跨族 calibration 与 holdout mean transfer 均为 `8/8`，最大
+holdout absolute error 为 `0.023289195722825839`；within-family holdout
+transfer 也是 `8/8`。四个 all-plus cells 的 origin-spread 均通过 1% 门，
+而四个 alternating-index cells 均失败，最大 spread 为
+`0.068267525703845117`。最强 obstruction：`24/48` rows 越过 `0.64`
+spectral cap（全为 all-plus），Schur failures 为 `0/48`。
+
+开放定理：signed-law interpolation 是否能把 all-plus 的稳定分支与
+alternating-index 的 origin obstruction 连接成 source-valid、growing 的
+结构定理；source-uniform arithmetic `L2`、Route-B reassembly 与 twin-prime
+结论仍未支付，本项目 fixed-power credit 为 0。
+
+可复用结构：
+
+    hashed same-count parent means (read-only)
+      -> fresh cross-family six-origin panel
+      -> three calibration / three holdout roles
+      -> all-plus control / alternating target
+      -> four frozen normalizations
+      -> reverse-shell replay + 25-mutation firewall + Bridge-B locks
+
+ROUND2_CLUE：`TEST_C1_SIGNED_LAW_INTERPOLATION`。
+
+~~~text
+TPC395_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC395_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC395_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+TPC395_CROSS_FAMILY_PANEL = NUMERICALLY CERTIFIED FINITE_48_ROWS
+TPC395_CROSS_FAMILY_MEAN_TRANSFER = NUMERICALLY CERTIFIED FINITE_SCOPED
+TPC395_WITHIN_FAMILY_ORIGIN_AUDIT = NUMERICALLY CERTIFIED FINITE_SCOPED
+TPC395_SPECTRAL_ENVELOPE = REFUTED_ON_DECLARED_FINITE_PANEL
+TPC395_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE_SCOPED_ONLY
+TPC395_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+TPC395_GROWING_OPERATOR_BOUND = OPEN
+TPC395_SOURCE_UNIFORM_L2 = OPEN
+TPC395_ARITHMETIC_ADVANCE = NO
+TPC395_FIXED_POWER_CREDIT = 0
+TPC395_FULL_GATE_B = OPEN
+TPC395_TWIN_PRIME_RESULT = NONE
+TPC395_STRONGEST_POSITIVE = ALL_PLUS_CROSS_FAMILY_HOLDOUT_8_OF_8
+TPC395_STRONGEST_OBSTRUCTION = ALTERNATING_ORIGIN_SPREAD_4_OF_4_AND_24_OF_48_SPECTRAL_FAIL
+TPC395_OPEN_THEOREM = SOURCE_VALID_SIGNED_LAW_INTERPOLATION_ORIGIN_THEORY
+TPC395_REUSABLE_STRUCTURE = HASHED_CROSS_FAMILY_CALIBRATION_HOLDOUT_WITH_LAW_CONTROL
+TPC395_ROUND2_CLUE = TEST_C1_SIGNED_LAW_INTERPOLATION
+TPC395_STATUS = NUMERICALLY CERTIFIED FINITE C1 ORIGIN CROSS-FAMILY HOLDOUT AUDIT
+~~~
+
+## 0.188 previous：TPC-394 c=1 same-count origin-uniformity ladder
 
 项目：papers/tpc-394-c1-origin-uniformity-ladder/
 

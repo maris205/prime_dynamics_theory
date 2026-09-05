@@ -1,9 +1,72 @@
 # TPC HANDOFF
 
-TPC-394 current section: c=1 same-count origin-uniformity ladder
----------------------------------------------------------------
+TPC-395 current section: c=1 cross-family origin holdout
+---------------------------------------------------------
 
-TPC-394 is the current finite release.  It directly follows TPC-393's
+TPC-395 is the current finite release.  It follows TPC-394's
+`TEST_C1_ORIGIN_CROSS_FAMILY_HOLDOUT` clue on a third coordinate-disjoint
+affine grid `a_j=5600001+401j`.  Indices `(0,8,16,24,32,40)` are fixed before
+readout.  Origins `(5600001,5603209,5606417)` are calibration and
+`(5609625,5612833,5616041)` are holdout.  Every origin uses the same `N=1024`
+window.  The panel fixes `fixed_c3`, `Q=8192`, beta=2, exponent 1, height 66,
+the all-plus and alternating-index laws, and four predeclared normalizations.
+
+The complete panel has 48 rows and 8 cells.  All four all-plus cells pass the
+one-percent origin-spread rule; all four alternating-index cells fail it, with
+maximum spread `0.068267525703845117`.  Cross-family calibration and holdout
+transfer are `8/8`, with maximum holdout error
+`0.023289195722825839`; within-family holdout transfer is also `8/8`.
+Spectral failures are `24/48` (all-plus rows only), Schur failures are `0/48`.
+
+This is finite cross-family evidence, not a source-valid growing origin-uniform,
+signed-law interpolation, arithmetic `L2`, Route-B, or twin-prime theorem.
+Official Route-A/Route-B evaluator files remain absent; local Bridge-B is
+fail-closed repository evidence.  The exact anchor is `[5600001,5600014)`
+with shell `[11,13]`.
+
+    TPC395_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC395_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC395_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED
+    TPC395_CROSS_FAMILY_PANEL = NUMERICALLY CERTIFIED FINITE_48_ROWS
+    TPC395_CROSS_FAMILY_MEAN_TRANSFER = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC395_WITHIN_FAMILY_ORIGIN_AUDIT = NUMERICALLY CERTIFIED FINITE_SCOPED
+    TPC395_SPECTRAL_ENVELOPE = REFUTED_ON_DECLARED_FINITE_PANEL
+    TPC395_SCHUR_ENVELOPE = NUMERICALLY CERTIFIED FINITE_SCOPED_ONLY
+    TPC395_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC395_GROWING_OPERATOR_BOUND = OPEN
+    TPC395_SOURCE_UNIFORM_L2 = OPEN
+    TPC395_ARITHMETIC_ADVANCE = NO
+    TPC395_FIXED_POWER_CREDIT = 0
+    TPC395_FULL_GATE_B = OPEN
+    TPC395_TWIN_PRIME_RESULT = NONE
+    TPC395_STRONGEST_POSITIVE = ALL_PLUS_CROSS_FAMILY_HOLDOUT_8_OF_8
+    TPC395_STRONGEST_OBSTRUCTION = ALTERNATING_ORIGIN_SPREAD_4_OF_4_AND_24_OF_48_SPECTRAL_FAIL
+    TPC395_OPEN_THEOREM = SOURCE_VALID_SIGNED_LAW_INTERPOLATION_ORIGIN_THEORY
+    TPC395_REUSABLE_STRUCTURE = HASHED_CROSS_FAMILY_CALIBRATION_HOLDOUT_WITH_LAW_CONTROL
+    TPC395_ROUND2_CLUE = TEST_C1_SIGNED_LAW_INTERPOLATION
+    TPC395_STATUS = NUMERICALLY CERTIFIED FINITE C1 ORIGIN CROSS-FAMILY HOLDOUT AUDIT
+
+TPC-395 reproducibility commands:
+
+    export PYTHONDONTWRITEBYTECODE=1
+    export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+    python -B papers/tpc-395-c1-origin-cross-family-holdout/code/tpc395_c1_origin_cross_family_holdout.py --check
+    python -O -B papers/tpc-395-c1-origin-cross-family-holdout/code/tpc395_c1_origin_cross_family_holdout.py --check
+    python -B papers/tpc-395-c1-origin-cross-family-holdout/experiments/tpc395_independent_checker.py --check
+    python -O -B papers/tpc-395-c1-origin-cross-family-holdout/experiments/tpc395_independent_checker.py --check
+    python -B papers/tpc-395-c1-origin-cross-family-holdout/experiments/tpc395_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-395-c1-origin-cross-family-holdout/experiments/tpc395_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc395_c1_origin_cross_family_holdout_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc395_c1_origin_cross_family_holdout_checker.py --check
+
+The next finite question is `TEST_C1_SIGNED_LAW_INTERPOLATION`.  Any
+interpretation remains finite until a genuine source-valid growing argument
+is supplied.
+
+TPC-394 previous section: c=1 same-count origin-uniformity ladder
+------------------------------------------------------------------
+
+TPC-394 is the previous finite release.  It directly follows TPC-393's
 `TEST_C1_ORIGIN_UNIFORMITY_AFTER_REPLICATION` clue on a fresh coordinate-
 disjoint affine grid `a_j=5000001+401j`.  Indices
 `(0,5,10,15,20,25,30,35)` are fixed before readout.  The first five origins
@@ -15119,9 +15182,25 @@ spread 为 `0.092863374514779065`，holdout transfer 为 `8/8`，spectral
 failures 为 `32/64`，Schur failures 为 `0/64`。它不支付 arithmetic `L2`、
 fixed-power credit 或 official Route-A/Route-B gate，下一项响应盲实验为
 `TEST_C1_ORIGIN_CROSS_FAMILY_HOLDOUT`。
+
+随后封存的 TPC-395 也完成了 producer、independent reverse-shell replay、
+25-mutation stress、PDF QA 与 local Bridge-B 的 normal/optimized 审计。其
+48-row、8-cell cross-family panel 在四种 normalization 下均保留 all-plus
+origin stability / alternating origin obstruction 的 law split；最大
+alternating spread 为 `0.068267525703845117`，跨族 holdout transfer 与
+within-family transfer 均为 `8/8`，最大跨族 holdout error 为
+`0.023289195722825839`，spectral failures 为 `24/48`，Schur failures 为
+`0/48`。它不支付 arithmetic `L2`、fixed-power credit 或 official
+Route-A/Route-B gate，下一项响应盲实验为
+`TEST_C1_SIGNED_LAW_INTERPOLATION`。
+
 这些新增 finite audits 不改变 curated historical cascade 的计数，也不支付
-arithmetic `L2`、fixed-power credit 或 official Route-A/Route-B gate；下一项
-响应盲实验为 `TEST_C1_ORIGIN_CROSS_FAMILY_HOLDOUT`。
+arithmetic `L2`、fixed-power credit 或 official Route-A/Route-B gate。
+
+TPC-395 发布后的最新 tail cascade 共 50 对 normal/optimized 命令、100 次
+invocation：此前 49 对 tail audit 加上 TPC-395 新 checker；每对要求零返回码、
+空 stderr 与 byte-identical stdout。该计数与更早的 curated historical
+command-set 计数分开维护。
 
 V184/TPC-331 的新增 4 对由本项目 bridge 与 standalone tail checks 逐项验证；其
 finite decomposition 不代表 source-uniform arithmetic `L2` 或 official Route-A/Route-B
@@ -17089,7 +17168,19 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-TPC-394 current release 入口：
+TPC-395 current release 入口：
+
+papers/tpc-395-c1-origin-cross-family-holdout/README.md
+papers/tpc-395-c1-origin-cross-family-holdout/PAPER_PLAN.md
+papers/tpc-395-c1-origin-cross-family-holdout/DERIVATION_PACKAGE.md
+papers/tpc-395-c1-origin-cross-family-holdout/PROOF_PACKAGE.md
+papers/tpc-395-c1-origin-cross-family-holdout/code/tpc395_c1_origin_cross_family_holdout.py
+papers/tpc-395-c1-origin-cross-family-holdout/experiments/tpc395_independent_checker.py
+papers/tpc-395-c1-origin-cross-family-holdout/experiments/tpc395_adversarial_certificate_stress.py
+papers/tpc-395-c1-origin-cross-family-holdout/results/tpc395_certificate.json
+papers/tpc-395-c1-origin-cross-family-holdout/notes/theorem_ledger.md
+
+TPC-394 previous release 入口：
 
 papers/tpc-394-c1-origin-uniformity-ladder/README.md
 papers/tpc-394-c1-origin-uniformity-ladder/PAPER_PLAN.md
