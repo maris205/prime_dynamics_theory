@@ -9,13 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-405 已将 TPC-404 的 selected-prime CRT proxy 推进为
-一个参数一致的有限 scale-ladder bound。exact certificate 覆盖 H=16,32,66,128,256
-与 m=1,2,3,4 的 20 个 cases，literal independent CRT replay 与七项 mutation
+当前主线最新位置：TPC-406 将 TPC-405 的 selected-prime CRT proxy 推进到
+完整 shell。exact certificate 在 Q=8192 的全部 872 个 shell primes 上覆盖
+H=16,32,66,128,256 五个 cases，literal independent CRT replay 与八项 mutation
 stress 均通过；结论严格限于 synthetic proxy 的一个相邻 normalized entry。
 full operator norm、physical h_0、arithmetic sign/L2、fixed-power credit、Route-B
 与 twin-prime result 仍开放/无。下一关为
-TEST_C1_LOCAL_NORMALIZATION_COMPLETE_SHELL_ENTRY_BOUNDARY。
+TEST_C1_COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION。
 
 历史 TPC-404 位置：在 TPC-403 的 selected-prime CRT proxy 上完成了
 local diagonal normalization 的 exact finite boundary audit。四个 `m=1,2,3,4`
@@ -52,7 +52,11 @@ arithmetic `L2` 或 twin-prime result。`ARITHMETIC_ADVANCE=NO`、
 `papers/tpc-400-c1-endpoint-microgrid-third-family/`；TPC-402 的下一关是
 `TEST_C1_SIGNED_DIAGONAL_TERM_GROWING_OBSTRUCTION`。
 
-papers/tpc-405-c1-local-normalization-scale-ladder - TPC-405 current project；含
+papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary - TPC-406 current project；含
+complete-shell exact finite local-entry theorem、872-prime rational certificate、literal CRT
+replay、stress、proof package/PDF 与 local fail-closed Bridge-B checker。
+
+papers/tpc-405-c1-local-normalization-scale-ladder - TPC-405 previous project；含
 exact uniform finite proxy-entry theorem、20-case rational certificate、literal CRT
 replay、stress、proof package/PDF 与 local fail-closed Bridge-B checker。
 

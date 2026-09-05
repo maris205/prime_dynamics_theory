@@ -1,42 +1,39 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-## V258 / TPC-405 current route edge
+## V259 / TPC-406 current route edge
 
-TPC-405 在 TPC-404 selected-prime CRT proxy 上给出一个相邻 normalized
-proxy entry 的 exact finite uniform bound：20 个 H/m cases、literal CRT
-replay 与七项 mutation stress 全部通过。它不是 full operator norm、physical
-h_0、arithmetic L2/sign、fixed-power saving、Route-B closure 或 twin-prime
-result。下一 route edge 为
-TEST_C1_LOCAL_NORMALIZATION_COMPLETE_SHELL_ENTRY_BOUNDARY。
+TPC-406 将 TPC-405 的相邻 normalized proxy entry boundary 扩展到
+`Q=8192` 的完整 872-prime shell：五个 H cases、literal CRT replay 与八项
+mutation stress 全部通过。它不是 full operator norm、physical h_0、arithmetic
+L2/sign、fixed-power saving、Route-B closure 或 twin-prime result。下一 route
+edge 为 `TEST_C1_COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION`。
 
-    YOU ARE HERE = V258 / TPC-405
-    TPC405_LOCAL_PROXY_ENTRY_BOUND = PROVED_UNIFORM_FINITE
-    TPC405_SCALE_LADDER = PROVED_EXACT_FINITE_20_CASES
-    TPC405_ARITHMETIC_ADVANCE = NO
-    TPC405_FIXED_POWER_CREDIT = 0
-    TPC405_FULL_GATE_B = OPEN
-    TPC405_ROUND2_CLUE = TEST_C1_LOCAL_NORMALIZATION_COMPLETE_SHELL_ENTRY_BOUNDARY
+    YOU ARE HERE = V259 / TPC-406
+    TPC406_COMPLETE_SHELL_LOCAL_ENTRY_BOUND = PROVED_EXACT_FINITE
+    TPC406_COMPLETE_SHELL_PRIME_COUNT = 872
+    TPC406_ARITHMETIC_ADVANCE = NO
+    TPC406_FIXED_POWER_CREDIT = 0
+    TPC406_FULL_GATE_B = OPEN
+    TPC406_ROUND2_CLUE = TEST_C1_COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION
 
 更新时间：2026-09-05
 
-当前地图版本：V258 / TPC-405
+当前地图版本：V259 / TPC-406
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-405`（`PROVED_UNIFORM_FINITE_CRT_PROXY_ADJACENT_ENTRY_BOUND`）；
-对应论文目录为 `papers/tpc-405-c1-local-normalization-scale-ladder/`。
+当前编号锚点：`TPC-406`（`PROVED_EXACT_FINITE_COMPLETE_SHELL_LOCAL_ENTRY_BOUNDARY`）；
+对应论文目录为 `papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/`。
 
-TPC-405 是当前位置：承接 TPC-404 的 CRT proxy，在同一 selected-prime TPC
-model 中审计 local diagonal normalization。定义
-`V_minus=sum_{odd i}a_i^2`、`V_plus=sum_{even i}a_i^2` 后，
-`G(o)=V_minus S0`、`G(o+1)=V_minus S1+V_plus(S1-T1^2)`，且
-`M(o,o+1)=T1P_minus`，四个 exact rational cases 的 normalized square-root
-observations 约为 `0.0136307,0.0136108,0.0135943,0.0135709`。这是 finite
-local boundary audit，不建立 full operator norm upper bound 或 lower bound、
-normalized growing bound、arithmetic sign identification、arithmetic `L2` 或
-twin-prime result。下一关为 `TEST_C1_LOCAL_NORMALIZATION_SCALE_LADDER`。
+TPC-406 是当前位置：承接 TPC-405 的 CRT proxy，在同一 complete-shell
+selected-prime model 中审计 local diagonal normalization。`Q=8192` 的全部
+872 个 shell primes 被纳入，五个 H/N rows 的 normalized square-root
+observations 为 `0.0217719,0.0108028,0.00521385,0.00268240,0.00133956`。
+这是 finite one-entry boundary audit，不建立 full operator norm、physical
+h_0、normalized growing bound、arithmetic sign/L2 或 twin-prime result。
+下一关为 `TEST_C1_COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION`。
 
-    YOU ARE HERE = V257 / TPC-404
+    YOU ARE HERE = V258 / TPC-405
     TPC404_LOCAL_BOUNDARY_STRUCTURE = PROVED_EXACT_FINITE
     TPC404_NORMALIZED_GROWING_THEOREM = OPEN
     TPC404_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
@@ -11693,6 +11690,9 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-09-05 | V259 / TPC-406 | Bridge B / Gate B：c=1 complete-shell local-entry boundary; normalized growing operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-406 | 承接 TPC-405；`Q=8192` 的完整 872-prime shell、`H=16,32,66,128,256` 五个 exact rational rows、literal CRT replay 与八项 mutation stress 全部通过；仅证明一个 synthetic adjacent normalized proxy entry，下一步 TEST_C1_COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION |
+| 2026-09-05 | V258 / TPC-405 | Bridge B / Gate B：c=1 local-normalization scale ladder; normalized growing operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-405 | 承接 TPC-404；五个 heights 与四个 selected-prefix multiplicities 的 20-case exact certificate、literal CRT replay 与七项 stress 全部通过；下一步 TEST_C1_LOCAL_NORMALIZATION_COMPLETE_SHELL_ENTRY_BOUNDARY |
+| 2026-09-05 | V257 / TPC-404 | Bridge B / Gate B：c=1 local-normalization boundary; normalized growing operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-404 | 承接 TPC-403；四个 selected-prime multiplicities 的 exact local identities 与 literal CRT replay 完成；下一步 TEST_C1_LOCAL_NORMALIZATION_SCALE_LADDER |
 | 2026-09-05 | V252 / TPC-399 | Bridge B / Gate B：c=1 finite endpoint microgrid cross-family replication; source-valid endpoint transfer theory、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-399 | 承接 TPC-398 的 cross-family replication clue；第二个 coordinate-disjoint affine family `(7200001,7203209,7206417,7209625,7212833,7216041)`，`N=1024`，四个 exact probes `lambda=7/8,15/16,31/32,1` 与四种 normalization 完成 96-row、16-cell panel；cross-family calibration/holdout 均 per normalization `4/4`，within-family transfer `4/4`，origin-stable `12/16`，endpoint `lambda=1` 四 cell origin failure，最大 spread `0.0625496889`，最大 cross-family holdout error `0.0027174217`，spectral/Schur `0/96`；下一步 TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION |
 | 2026-09-05 | V251 / TPC-398 | Bridge B / Gate B：c=1 finite interpolation endpoint microgrid; source-valid endpoint transfer theory、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-398 | 承接 TPC-397；新的 fresh family `(6800001,6803209,6806417,6809625,6812833,6816041)`，`N=1024`，四个 exact finite matrix probes `lambda=7/8,15/16,31/32,1` 与四种 normalization 完成 96-row、16-cell panel；origin-stable `12/16`，parent calibration/holdout 各 per normalization `3/4`（`31/32` failure），within-family transfer `4/4`，endpoint 四 cell origin failure，最大 spread `0.0756006542`，最大 holdout error `0.0449715230`，spectral/Schur `0/96`；下一步 TEST_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_REPLICATION |
 | 2026-09-05 | V250 / TPC-397 | Bridge B / Gate B：c=1 finite interpolation endpoint localization replication; source-valid interpolation endpoint theory、growing masked operator bound、source-uniform arithmetic L2、fixed-power credit 与 full Gate B open | TPC-397 | 承接 TPC-396；第五个 fresh family `(6400001,6403209,6406417,6409625,6412833,6416041)`，`N=1024`，四个 exact finite matrix probes `lambda=3/4,5/6,11/12,1` 与四种 normalization 完成 96-row、16-cell panel；origin-stable `12/16`，parent calibration/holdout 与 within-family transfer 均 per normalization `4/4`，endpoint `lambda=1` 四 cell origin failure，最大 spread `0.0485567529`，spectral/Schur `0/96`；下一步 TEST_C1_INTERPOLATION_ENDPOINT_MICROGRID |

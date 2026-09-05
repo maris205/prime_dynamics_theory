@@ -3,13 +3,51 @@
 
 更新时间：2026-09-05
 
-状态：**TPC405_PROVED_UNIFORM_FINITE_CRT_PROXY_ADJACENT_ENTRY_BOUND / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC406_PROVED_EXACT_FINITE_COMPLETE_SHELL_LOCAL_ENTRY_BOUNDARY / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.199 current：TPC-405 c=1 local-normalization scale ladder
+## 0.200 current：TPC-406 c=1 complete-shell local-entry boundary
+
+项目：papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/
+
+类型：**PROVED_EXACT_FINITE_COMPLETE_SHELL_LOCAL_ENTRY_BOUNDARY**。
+
+TPC-406 extends the TPC-405 proxy-entry bound to the complete declared shell:
+all 872 primes in `8192<p<=16384`, with five exact heights and `m=436`.
+The exact certificate, literal complete-shell CRT replay, eight-mutation stress,
+PDF QA, and Bridge-B normal/optimized checks pass.  The finite result remains
+one adjacent entry of a synthetic proxy; full operator, physical source,
+arithmetic sign/L2, fixed-power, Route-B and twin-prime claims remain open.
+
+最强正结果：complete-shell exact finite bound for one synthetic proxy entry。
+
+最强 obstruction：the full normalized operator and physical/arithmetic
+identification are absent; no growing or twin-prime claim follows。
+
+开放定理：complete-shell local-entry scale extension, normalized growing theorem,
+strict 1/400, Route-B reassembly and twin primes remain open/none。
+
+可复用结构：complete-shell exact CRT replay、rational certificate、literal masked
+energy audit 与 strict claim-firewall stress。
+
+ROUND2_CLUE：`TEST_C1_COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION`。
+
+~~~text
+TPC406_COMPLETE_SHELL_LOCAL_ENTRY_BOUND = PROVED_EXACT_FINITE
+TPC406_COMPLETE_SHELL_PRIME_COUNT = 872
+TPC406_NORMALIZED_GROWING_THEOREM = OPEN
+TPC406_ARITHMETIC_ADVANCE = NO
+TPC406_FIXED_POWER_CREDIT = 0
+TPC406_FULL_GATE_B = OPEN
+TPC406_TWIN_PRIME_RESULT = NONE
+TPC406_ROUND2_CLUE = TEST_C1_COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION
+TPC406_STATUS = PROVED EXACT FINITE COMPLETE-SHELL LOCAL ENTRY BOUNDARY
+~~~
+
+## 0.199 previous：TPC-405 c=1 local-normalization scale ladder
 
 项目：papers/tpc-405-c1-local-normalization-scale-ladder/
 

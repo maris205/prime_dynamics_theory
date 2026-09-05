@@ -1,47 +1,54 @@
 # TPC HANDOFF
 
-TPC-405 current section: c=1 local-normalization scale ladder
+TPC-406 current section: c=1 complete-shell local-entry boundary
+------------------------------------------------------------------
+
+TPC-406 closes the finite shell-selection gap after TPC-405.  At `Q=8192`,
+all 872 primes `Q<p<=2Q` are selected, with explicit CRT residues `0` on
+even indices and `-N` on odd indices.  For each `H=16,32,66,128,256` and
+`N=4H`, the complete-shell adjacent normalized proxy entry satisfies
+`0<=z<=t_1/(a_min sqrt(S0 S1))<=4/(a_min H)<=4/H`.  The exact certificate
+has five rows with `m=436`; the independent checker literally replays the
+complete-shell CRT masks and row energies.  Decimals are observations; all
+stored structural quantities and inequalities are exact rationals.
+
+This remains a one-entry synthetic proxy theorem.  It is not a full
+normalized operator bound, a physical `h_0` theorem, an arithmetic sign or
+`L2` estimate, a fixed-power saving, Route-B closure, or a twin-prime result.
+
+    TPC406_COMPLETE_SHELL_LOCAL_ENTRY_BOUND = PROVED_EXACT_FINITE
+    TPC406_COMPLETE_SHELL_PRIME_COUNT = 872
+    TPC406_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC406_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC406_ARITHMETIC_ADVANCE = NO
+    TPC406_FIXED_POWER_CREDIT = 0
+    TPC406_FULL_GATE_B = OPEN
+    TPC406_TWIN_PRIME_RESULT = NONE
+    TPC406_STRONGEST_POSITIVE = COMPLETE_SHELL_EXACT_FINITE_ONE_ENTRY_BOUND
+    TPC406_STRONGEST_OBSTRUCTION = FULL_OPERATOR_AND_PHYSICAL_IDENTIFICATION_ABSENT
+    TPC406_OPEN_THEOREM = COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION
+    TPC406_REUSABLE_STRUCTURE = COMPLETE_SHELL_CRT_REPLAY_WITH_EXACT_SCALE_BOUND
+    TPC406_ROUND2_CLUE = TEST_C1_COMPLETE_SHELL_LOCAL_ENTRY_SCALE_EXTENSION
+    TPC406_STATUS = PROVED EXACT FINITE COMPLETE-SHELL LOCAL ENTRY BOUNDARY
+
+TPC-406 reproducibility commands:
+
+    python -B papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/code/tpc406_c1_local_normalization_complete_shell_entry_boundary.py --check
+    python -O -B papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/code/tpc406_c1_local_normalization_complete_shell_entry_boundary.py --check
+    python -B papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/experiments/tpc406_independent_checker.py --check
+    python -O -B papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/experiments/tpc406_independent_checker.py --check
+    python -B papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/experiments/tpc406_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary/experiments/tpc406_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc406_c1_local_normalization_complete_shell_entry_boundary_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc406_c1_local_normalization_complete_shell_entry_boundary_checker.py --check
+
+TPC-405 previous section: c=1 local-normalization scale ladder
 ---------------------------------------------------------------
 
 TPC-405 is the exact finite continuation of TPC-404's selected-prime CRT
-proxy. For integer `H>=1`, `N>=H+2`, `Q>N`, distinct shell primes
-`Q<p_i<=2Q`, and explicit CRT residues `0` on even indices and `-N` on odd
-indices, the adjacent normalized proxy entry satisfies
-`0<=z<=t_1/(a_min sqrt(S0 S1))<=4/(a_min H)<=4/H`. The exact certificate
-audits heights `H=16,32,66,128,256` and multiplicities `m=1,2,3,4`, for 20
-cases; the independent checker literally replays the CRT masks and row
-energies. The stored decimals are observations, while the bound and all
-stored structural quantities are exact rationals.
-
-This is a one-entry synthetic proxy theorem. It is not a full operator norm
-bound, a physical `h_0` theorem, an arithmetic sign theorem, an arithmetic
-`L2` estimate, a fixed-power saving, Route-B closure, or a twin-prime result.
-
-    TPC405_LOCAL_PROXY_ENTRY_BOUND = PROVED_UNIFORM_FINITE
-    TPC405_SCALE_LADDER = PROVED_EXACT_FINITE_20_CASES
-    TPC405_NORMALIZED_GROWING_THEOREM = OPEN
-    TPC405_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
-    TPC405_ARITHMETIC_ADVANCE = NO
-    TPC405_FIXED_POWER_CREDIT = 0
-    TPC405_FULL_GATE_B = OPEN
-    TPC405_TWIN_PRIME_RESULT = NONE
-    TPC405_STRONGEST_POSITIVE = UNIFORM_EXACT_BOUND_FOR_ONE_PROXY_ADJACENT_ENTRY
-    TPC405_STRONGEST_OBSTRUCTION = FULL_OPERATOR_AND_PHYSICAL_IDENTIFICATION_ABSENT
-    TPC405_OPEN_THEOREM = COMPLETE_SHELL_LOCAL_ENTRY_BOUNDARY
-    TPC405_REUSABLE_STRUCTURE = EXACT_SCALE_LADDER_WITH_LITERAL_CRT_REPLAY
-    TPC405_ROUND2_CLUE = TEST_C1_LOCAL_NORMALIZATION_COMPLETE_SHELL_ENTRY_BOUNDARY
-    TPC405_STATUS = PROVED UNIFORM FINITE CRT PROXY ADJACENT ENTRY BOUND
-
-TPC-405 reproducibility commands:
-
-    python -B papers/tpc-405-c1-local-normalization-scale-ladder/code/tpc405_c1_local_normalization_scale_ladder.py --check
-    python -O -B papers/tpc-405-c1-local-normalization-scale-ladder/code/tpc405_c1_local_normalization_scale_ladder.py --check
-    python -B papers/tpc-405-c1-local-normalization-scale-ladder/experiments/tpc405_independent_checker.py --check
-    python -O -B papers/tpc-405-c1-local-normalization-scale-ladder/experiments/tpc405_independent_checker.py --check
-    python -B papers/tpc-405-c1-local-normalization-scale-ladder/experiments/tpc405_adversarial_certificate_stress.py --check
-    python -O -B papers/tpc-405-c1-local-normalization-scale-ladder/experiments/tpc405_adversarial_certificate_stress.py --check
-    python -B research/tpc-big-road/tpc_bridge_b_tpc405_c1_local_normalization_scale_ladder_checker.py --check
-    python -O -B research/tpc-big-road/tpc_bridge_b_tpc405_c1_local_normalization_scale_ladder_checker.py --check
+proxy.  Its five-height, four-multiplicity certificate proved the same bound
+for 20 selected-prefix cases.  That result was one-entry evidence only; the
+complete-shell extension is the current TPC-406 section.
 
 TPC-404 previous section: c=1 local-normalization boundary
 ----------------------------------------------------------
