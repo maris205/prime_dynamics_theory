@@ -1,26 +1,32 @@
-# TPC big road V252 / TPC-399: c=1 endpoint microgrid cross-family replication
+# TPC big road V253 / TPC-400: c=1 endpoint microgrid third-family replication
 
-## V252 current anchor: TPC-399
+## V253 current anchor: TPC-400
 
 更新时间：2026-09-05
 
-当前 TPC-399 proof package 位于
-`../../papers/tpc-399-c1-endpoint-microgrid-cross-family/`，checker 为
-`tpc_bridge_b_tpc399_c1_endpoint_microgrid_cross_family_checker.py`。它在第二个
+当前 TPC-400 proof package 位于
+`../../papers/tpc-400-c1-endpoint-microgrid-third-family/`，checker 为
+`tpc_bridge_b_tpc400_c1_endpoint_microgrid_third_family_checker.py`。它在第三个
 coordinate-disjoint affine family
-`(7200001,7203209,7206417,7209625,7212833,7216041)` 上，使用 3 个
+`(7600001,7603209,7606417,7609625,7612833,7616041)` 上，使用 3 个
 calibration origins 与 3 个 holdout origins、固定 `N=1024`，对四个 exact
 probes `lambda=7/8,15/16,31/32,1` 和四种预声明 normalization 形成 96-row、
 16-cell panel。相对 hash-locked TPC-398 direct same-law all-origin means，
 四种 normalization 的 cross-family calibration 与 holdout 均为 `4/4`，
 within-family transfer 也均为 `4/4`；但当前 family 内 origin-spread 只有
 `12/16` cells 通过 1% 门，`lambda=1` 的四个 cells 全部失败，最大 spread 为
-`0.062549688932650421`。最大 cross-family holdout error 为
-`0.0027174217101944009`，spectral 与 Schur failures 均为 `0/96`。这是一个
+`0.05360449687470719`--`0.053890672705770762`。最大 cross-family holdout error 为
+`0.0024091869655593623`，spectral 与 Schur failures 均为 `0/96` 的可复现 float64 观察。这是一个
 有限、可审计的 cross-family transfer certificate；它不能升级为 source-valid
 growing theorem、arithmetic `L2`、固定幂次 saving 或 twin-prime result。
 
-    YOU ARE HERE = V252 / TPC-399
+    YOU ARE HERE = V253 / TPC-400
+    TPC400_INTERPOLATION_PANEL = NUMERICAL_OBSERVATION_FINITE_FLOAT64_96_ROWS
+    TPC400_ORIGIN_PHASE = NUMERICAL_OBSERVATION_FINITE_FLOAT64_SCOPED
+    TPC400_PARENT_CROSS_FAMILY_TRANSFER = NUMERICAL_OBSERVATION_FINITE_FLOAT64_SCOPED
+    TPC400_ARITHMETIC_ADVANCE = NO
+    TPC400_FIXED_POWER_CREDIT = 0
+    TPC400_FULL_GATE_B = OPEN
     TPC399_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC399_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
     TPC399_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED

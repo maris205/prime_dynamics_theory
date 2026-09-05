@@ -3,13 +3,57 @@
 
 更新时间：2026-09-05
 
-状态：**TPC399_NUMERICALLY_CERTIFIED_FINITE_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC400_NUMERICAL_OBSERVATION_FINITE_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.193 current：TPC-399 c=1 endpoint microgrid cross-family replication
+## 0.194 current：TPC-400 c=1 endpoint microgrid third-family replication
+
+项目：papers/tpc-400-c1-endpoint-microgrid-third-family/
+
+类型：**NUMERICAL_OBSERVATION_FINITE_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_AUDIT**。
+
+TPC-400 在第三个 coordinate-disjoint affine family 上完成 96-row、16-cell
+finite float64 panel。`lambda=7/8,15/16,31/32` 的 12/16 cells 观察到
+origin stability，`lambda=1` 的 4/4 cells 观察到 origin instability，最大
+spread 在 `0.05360449687470719`--`0.053890672705770762`。相对 hash-locked
+TPC-399 same-law all-origin means，cross-family calibration、holdout 与
+within-family transfer 均为 16/16 observed below cap，最大 holdout error 为
+`0.0024091869655593623`；spectral/Schur 为 `0/96` float64 observations。
+
+最强正结果：第三族复现了有限 same-law transfer。
+
+最强 obstruction：endpoint origin spread 持续失败，且端点校准误差接近 3% cap。
+
+开放定理：source-valid growing origin uniformity、arithmetic `L2`、Route-B
+reassembly 与 twin-prime result 仍 OPEN/NONE；fixed-power credit 为 0。
+
+可复用结构：hash-locked same-law interface、all-prior interval disjointness、
+response-blind calibration/holdout、独立 reverse-shell replay 与分离 origin/transfer gates。
+
+ROUND2_CLUE：`TEST_C1_ENDPOINT_MICROGRID_FOURTH_FAMILY_REPLICATION`。
+
+声明说明：谱诊断采用 float64 `eigvalsh`，没有 interval enclosure 或 propagated
+rounding certificate，故记为 `NUMERICAL_OBSERVATION`。
+
+~~~text
+TPC400_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+TPC400_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+TPC400_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED_TPC399
+TPC400_INTERPOLATION_IDENTITY = PROVED_EXACT_FINITE_LINEAR_MATRIX_IDENTITY
+TPC400_INTERPOLATION_PANEL = NUMERICAL_OBSERVATION_FINITE_FLOAT64_96_ROWS
+TPC400_PARENT_CROSS_FAMILY_TRANSFER = NUMERICAL_OBSERVATION_FINITE_FLOAT64_SCOPED
+TPC400_ARITHMETIC_ADVANCE = NO
+TPC400_FIXED_POWER_CREDIT = 0
+TPC400_FULL_GATE_B = OPEN
+TPC400_TWIN_PRIME_RESULT = NONE
+TPC400_ROUND2_CLUE = TEST_C1_ENDPOINT_MICROGRID_FOURTH_FAMILY_REPLICATION
+TPC400_STATUS = NUMERICAL OBSERVATION FINITE C1 ENDPOINT MICROGRID THIRD FAMILY AUDIT
+~~~
+
+## 0.193 previous：TPC-399 c=1 endpoint microgrid cross-family replication
 
 项目：papers/tpc-399-c1-endpoint-microgrid-cross-family/
 

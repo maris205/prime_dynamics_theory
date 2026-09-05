@@ -1,28 +1,28 @@
 # TPC distilled map and bold channel
 
-## V252 / TPC-399 current anchor
+## V253 / TPC-400 current anchor
 
 更新时间：2026-09-05
 
 当前入口：proof 为
-papers/tpc-399-c1-endpoint-microgrid-cross-family/PROOF_PACKAGE.md，checker 为
-research/tpc-big-road/tpc_bridge_b_tpc399_c1_endpoint_microgrid_cross_family_checker.py，
-编号论文为 papers/tpc-399-c1-endpoint-microgrid-cross-family/。
+papers/tpc-400-c1-endpoint-microgrid-third-family/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc400_c1_endpoint_microgrid_third_family_checker.py，
+编号论文为 papers/tpc-400-c1-endpoint-microgrid-third-family/。
 
-TPC-399 在第二个 coordinate-disjoint affine family
-`(7200001,7203209,7206417,7209625,7212833,7216041)` 上复现 TPC-398 的
+TPC-400 在第三个 coordinate-disjoint affine family
+`(7600001,7603209,7606417,7609625,7612833,7616041)` 上复现 TPC-399 的
 endpoint microgrid。3 个 origins 作 calibration、3 个作 holdout，全部使用
 `N=1024`；四个 probes `lambda=7/8,15/16,31/32,1` 与四种 normalization
 形成 96-row、16-cell panel。前三个 probes 的 12/16 cells 通过 1%
 origin-spread 门，endpoint `lambda=1` 的四个 cells 均失败，最大 spread 为
-`0.062549688932650421`。直接相对 hash-locked TPC-398 same-law all-origin
+`0.05360449687470719`--`0.053890672705770762`。直接相对 hash-locked TPC-399 same-law all-origin
 means，cross-family calibration 与 holdout 均为 `4/4` per normalization，
-最大 holdout error 为 `0.0027174217101944009`；within-family transfer 也均为
+最大 holdout error 为 `0.0024091869655593623`；within-family transfer 也均为
 `4/4`。谱与 Schur 均为 `0/96` failures，rational anchor 证明四个插值
-恒等式；这仍不构成 source-valid growing theorem、arithmetic `L2` 或
-twin-prime result。
+恒等式；谱与 Schur 的 `0/96` 是可复现的 float64 数值观察；这仍不构成
+source-valid growing theorem、arithmetic `L2` 或 twin-prime result。
 
-    YOU ARE HERE = V252 / TPC-399
+    YOU ARE HERE = V253 / TPC-400
     TPC399_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC399_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
     TPC399_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED_TPC398

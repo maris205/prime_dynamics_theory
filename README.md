@@ -9,23 +9,28 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-399 在第二个 coordinate-disjoint affine family 上完成
-`TEST_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_REPLICATION`。6 个预先冻结 origins
+当前主线最新位置：TPC-400 在第三个 coordinate-disjoint affine family 上完成
+`TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION`。6 个预先冻结 origins
 （3 个 calibration、3 个 holdout）均使用 `N=1024`，四个精确有限 matrix
 interpolation coefficients `7/8,15/16,31/32,1` 与四种 normalization 形成
 96-row、16-cell panel。前三个 coefficients 的 12 个 cells 通过 1% origin-spread
-门，endpoint `lambda=1` 的 4 个 cells 均失败（最大 spread
-`0.062549688932650421`）。相对 TPC-398 的直接同 law 冻结 all-origin means，
-cross-family calibration 与 holdout 均为 `4/4` per normalization，最大 holdout
-error 为 `0.0027174217101944009`；within-family transfer 均为 `4/4`。rational
-anchor 的插值恒等式是 exact finite；谱与 Schur 诊断均为 `0/96` failures，但仍只
-是在声明的有限 proxy 上的 scoped observation，不是 source-valid growing theorem、
+门，endpoint `lambda=1` 的 4 个 cells 均失败（最大 spread 在
+`0.05360449687470719`--`0.053890672705770762`）。相对 TPC-399 的直接同 law
+冻结 all-origin means，cross-family calibration 与 holdout 均为 `4/4` per
+normalization，最大 holdout error 为 `0.0024091869655593623`；within-family
+transfer 均为 `4/4`。rational anchor 的插值恒等式是 exact finite；谱与 Schur
+诊断均为 `0/96` reproducible float64 observations，但仍只是在声明的有限 proxy 上的 scoped observation，不是 source-valid growing theorem、
 arithmetic `L2` 或 twin-prime result。`ARITHMETIC_ADVANCE=NO`、
 `FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。当前项目为
-`papers/tpc-399-c1-endpoint-microgrid-cross-family/`，下一关是
-`TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION`。
+`papers/tpc-400-c1-endpoint-microgrid-third-family/`，下一关是
+`TEST_C1_ENDPOINT_MICROGRID_FOURTH_FAMILY_REPLICATION`。
 
-papers/tpc-399-c1-endpoint-microgrid-cross-family - TPC-399 current project；含
+papers/tpc-400-c1-endpoint-microgrid-third-family - TPC-400 current project；含
+96-row/16-cell third-family finite float64 observation、hash-locked TPC-399 same-law interface、
+独立 reverse-shell replay、28-mutation stress、proof package/PDF 与 local
+fail-closed Bridge-B checker。
+
+papers/tpc-399-c1-endpoint-microgrid-cross-family - TPC-399 previous project；含
 96-row/16-cell cross-family certificate、hash-locked TPC-398 same-law interface、
 独立 reverse-shell replay、28-mutation stress、proof package/PDF 与 local
 fail-closed Bridge-B checker。

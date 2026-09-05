@@ -2,31 +2,38 @@
 
 更新时间：2026-09-05
 
-当前地图版本：V252 / TPC-399
+当前地图版本：V253 / TPC-400
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-399`（`NUMERICALLY_CERTIFIED_FINITE_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_AUDIT`）；
-对应论文目录为 `papers/tpc-399-c1-endpoint-microgrid-cross-family/`。
+当前编号锚点：`TPC-400`（`NUMERICAL_OBSERVATION_FINITE_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_AUDIT`）；
+对应论文目录为 `papers/tpc-400-c1-endpoint-microgrid-third-family/`。
 
-TPC-399 是当前位置：承接 TPC-398 的 cross-family replication clue，在第二个
+TPC-400 是当前位置：承接 TPC-399 的 third-family replication clue，在第三个
 coordinate-disjoint affine family
-`(7200001,7203209,7206417,7209625,7212833,7216041)` 上预先冻结 3 个
+`(7600001,7603209,7606417,7609625,7612833,7616041)` 上预先冻结 3 个
 calibration 与 3 个 holdout origins，全部使用 `N=1024`。四个有限 matrix
 probes `lambda=7/8,15/16,31/32,1` 与四种 normalization 形成 96-row、16-cell
 panel。前三个 probes 的 12/16 cells 通过 1% origin-spread 门，endpoint
-`lambda=1` 的四个 cells 均失败，最大 spread 为 `0.062549688932650421`。
+`lambda=1` 的四个 cells 均失败，最大 spread 为 `0.05360449687470719`--`0.053890672705770762`。
 相对 hash-locked TPC-398 direct same-law all-origin means，calibration 与
 holdout transfer 均为 `4/4` per normalization，最大 holdout error 为
-`0.0027174217101944009`；within-family transfer 也均为 `4/4`。谱与 Schur
-cap 在此有限面板均无失败。13-point rational anchor 对四个插值恒等式给出
+`0.0024091869655593623`；within-family transfer 也均为 `4/4`。谱与 Schur
+为 `0/96` 的可复现 float64 观察。13-point rational anchor 对四个插值恒等式给出
 exact finite 证明。这是 finite cross-family endpoint-microgrid evidence，不建立
 source-valid origin-uniform theorem、growing operator、arithmetic `L2` 或
 twin-prime endpoint；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
 `FULL_GATE_B=OPEN`。下一关为
-`TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION`。
+`TEST_C1_ENDPOINT_MICROGRID_FOURTH_FAMILY_REPLICATION`。
 
-    YOU ARE HERE = V252 / TPC-399
+    YOU ARE HERE = V253 / TPC-400
+    TPC400_INTERPOLATION_PANEL = NUMERICAL_OBSERVATION_FINITE_FLOAT64_96_ROWS
+    TPC400_ORIGIN_PHASE = NUMERICAL_OBSERVATION_FINITE_FLOAT64_SCOPED
+    TPC400_PARENT_CROSS_FAMILY_TRANSFER = NUMERICAL_OBSERVATION_FINITE_FLOAT64_SCOPED
+    TPC400_ARITHMETIC_ADVANCE = NO
+    TPC400_FIXED_POWER_CREDIT = 0
+    TPC400_FULL_GATE_B = OPEN
+    TPC400_ROUND2_CLUE = TEST_C1_ENDPOINT_MICROGRID_FOURTH_FAMILY_REPLICATION
     TPC399_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC399_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
     TPC399_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED_TPC398
@@ -49,6 +56,17 @@ twin-prime endpoint；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
     TPC399_REUSABLE_STRUCTURE = HASHED_SAME_LAW_INTERFACE_DUAL_GATE_FRESH_FAMILY_PANEL
     TPC399_ROUND2_CLUE = TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION
     TPC399_STATUS = NUMERICALLY CERTIFIED FINITE C1 ENDPOINT MICROGRID CROSS-FAMILY AUDIT
+
+## 5.183 V253 / TPC-400：c=1 endpoint microgrid third-family replication
+
+TPC-400 completes the third-family finite response-blind panel.  Its exact
+selection and disjointness claims are proved; its 96-row/16-cell transfer,
+origin split, and spectral/Schur counts are reproducible float64 numerical
+observations.  The endpoint remains unstable in all four normalizations,
+while the three interior probes retain 12/16 stable cells.  No arithmetic
+advance or growing theorem is paid.  The next map edge is
+`TEST_C1_ENDPOINT_MICROGRID_FOURTH_FAMILY_REPLICATION`, subject to the
+current handoff trigger and finite-only claim ceiling.
 
 ## 5.182 V252 / TPC-399：c=1 endpoint microgrid cross-family replication
 

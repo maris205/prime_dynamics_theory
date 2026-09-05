@@ -1,74 +1,85 @@
 # TPC HANDOFF
 
-TPC-399 current section: c=1 endpoint microgrid cross-family replication
+TPC-400 current section: c=1 endpoint microgrid third-family replication
 -------------------------------------------------------------------------
 
-TPC-399 is the current finite release.  It follows TPC-398's
-TEST_C1_ENDPOINT_MICROGRID_CROSS_FAMILY_REPLICATION clue on the second
-coordinate-disjoint affine grid a_j=7200001+401j.  Indices
+TPC-400 is the current finite release.  It follows TPC-399's
+TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION clue on the third
+coordinate-disjoint affine grid a_j=7600001+401j.  Indices
 (0,8,16,24,32,40) are fixed before readout.  Origins
-(7200001,7203209,7206417) are calibration and
-(7209625,7212833,7216041) are holdout.  Every origin uses the same N=1024
+(7600001,7603209,7606417) are calibration and
+(7609625,7612833,7616041) are holdout.  Every origin uses the same N=1024
 window.  The panel fixes fixed_c3, Q=8192, beta=2, exponent 1, height 66,
 four exact finite matrix probes lambda=7/8,15/16,31/32,1, and four
-predeclared normalizations.  The parent interface is TPC-398's direct same-law
+predeclared normalizations.  The parent interface is TPC-399's direct same-law
 all-origin mean, imported through hash-locked code and certificate before the
 current readout; no segment is refit.
 
 The complete panel has 96 rows and 16 cells.  lambda=7/8,15/16,31/32 pass
 the one-percent origin-spread rule for all four normalizations (12/16 cells);
-lambda=1 fails in all four, with maximum spread 0.062549688932650421.
+lambda=1 fails in all four, with maximum spread between
+0.05360449687470719 and 0.053890672705770762.
 Same-law cross-family calibration and holdout comparisons pass for all four
 laws under every normalization (16/16 cells in each cohort), with maximum
-holdout error 0.0027174217101944009.  Within-family transfer is 4/4 per
-normalization, with no spectral or Schur row failures.  The rational 13-point
+holdout error 0.0024091869655593623.  Within-family transfer is 4/4 per
+normalization, with no spectral or Schur row failures in the reproducible
+float64 computation.  The rational 13-point
 anchor proves all four interpolation identities exactly.
 
 This is finite cross-family replication and obstruction evidence, not a
 source-valid growing origin-uniform theorem, an arithmetic L2 estimate, a
 Route-B closure, or a twin-prime theorem.  Official Route-A/Route-B evaluator
 files remain absent; local Bridge-B is fail-closed repository evidence.  The
-exact anchor is [7200001,7200014) with shell [11,13].
+exact anchor is [7600001,7600014) with shell [11,13].
 
-    TPC399_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
-    TPC399_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
-    TPC399_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED_TPC398
-    TPC399_INTERPOLATION_IDENTITY = PROVED_EXACT_FINITE_LINEAR_MATRIX_IDENTITY
-    TPC399_INTERPOLATION_PANEL = NUMERICALLY CERTIFIED FINITE_96_ROWS
-    TPC399_ORIGIN_PHASE = NUMERICALLY CERTIFIED FINITE_SCOPED
-    TPC399_PARENT_CROSS_FAMILY_TRANSFER = NUMERICALLY CERTIFIED FINITE SCOPED
-    TPC399_SPECTRAL_ENVELOPE = NUMERICALLY_CERTIFIED_FINITE_SCOPED_ONLY
-    TPC399_SCHUR_ENVELOPE = NUMERICALLY_CERTIFIED_FINITE_SCOPED_ONLY
-    TPC399_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
-    TPC399_GROWING_OPERATOR_BOUND = OPEN
-    TPC399_SOURCE_UNIFORM_L2 = OPEN
-    TPC399_ARITHMETIC_ADVANCE = NO
-    TPC399_FIXED_POWER_CREDIT = 0
-    TPC399_FULL_GATE_B = OPEN
-    TPC399_TWIN_PRIME_RESULT = NONE
-    TPC399_STRONGEST_POSITIVE = SAME_LAW_CROSS_FAMILY_CALIBRATION_AND_HOLDOUT_16_OF_16
-    TPC399_STRONGEST_OBSTRUCTION = ENDPOINT_LAMBDA_1_ORIGIN_SPREAD_4_OF_4
-    TPC399_OPEN_THEOREM = SOURCE_VALID_ENDPOINT_MICROGRID_ORIGIN_UNIFORMITY
-    TPC399_REUSABLE_STRUCTURE = HASHED_SAME_LAW_INTERFACE_DUAL_GATE_FRESH_FAMILY_PANEL
-    TPC399_ROUND2_CLUE = TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION
-    TPC399_STATUS = NUMERICALLY CERTIFIED FINITE C1 ENDPOINT MICROGRID CROSS-FAMILY AUDIT
+    TPC400_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
+    TPC400_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
+    TPC400_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED_TPC399
+    TPC400_INTERPOLATION_IDENTITY = PROVED_EXACT_FINITE_LINEAR_MATRIX_IDENTITY
+    TPC400_INTERPOLATION_PANEL = NUMERICAL OBSERVATION FINITE FLOAT64_96_ROWS
+    TPC400_ORIGIN_PHASE = NUMERICAL OBSERVATION FINITE FLOAT64 SCOPED
+    TPC400_PARENT_CROSS_FAMILY_TRANSFER = NUMERICAL OBSERVATION FINITE FLOAT64 SCOPED
+    TPC400_SPECTRAL_ENVELOPE = NUMERICAL_OBSERVATION_FINITE_FLOAT64_SCOPED_ONLY
+    TPC400_SCHUR_ENVELOPE = NUMERICAL_OBSERVATION_FINITE_FLOAT64_SCOPED_ONLY
+    TPC400_SOURCE_NORMALIZATION_VALIDITY = MODELING_CHOICE_OPEN
+    TPC400_GROWING_OPERATOR_BOUND = OPEN
+    TPC400_SOURCE_UNIFORM_L2 = OPEN
+    TPC400_ARITHMETIC_ADVANCE = NO
+    TPC400_FIXED_POWER_CREDIT = 0
+    TPC400_FULL_GATE_B = OPEN
+    TPC400_TWIN_PRIME_RESULT = NONE
+    TPC400_STRONGEST_POSITIVE = SAME_LAW_CROSS_FAMILY_CALIBRATION_AND_HOLDOUT_16_OF_16
+    TPC400_STRONGEST_OBSTRUCTION = ENDPOINT_LAMBDA_1_ORIGIN_SPREAD_4_OF_4
+    TPC400_OPEN_THEOREM = SOURCE_VALID_ENDPOINT_MICROGRID_ORIGIN_UNIFORMITY
+    TPC400_REUSABLE_STRUCTURE = HASHED_SAME_LAW_INTERFACE_ALL_PRIOR_INTERVAL_CHECK
+    TPC400_ROUND2_CLUE = TEST_C1_ENDPOINT_MICROGRID_FOURTH_FAMILY_REPLICATION
+    TPC400_STATUS = NUMERICAL OBSERVATION FINITE C1 ENDPOINT MICROGRID THIRD FAMILY AUDIT
 
-TPC-399 reproducibility commands:
+TPC-400 reproducibility commands:
 
     export PYTHONDONTWRITEBYTECODE=1
     export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
-    python -B papers/tpc-399-c1-endpoint-microgrid-cross-family/code/tpc399_c1_endpoint_microgrid_cross_family.py --check
-    python -O -B papers/tpc-399-c1-endpoint-microgrid-cross-family/code/tpc399_c1_endpoint_microgrid_cross_family.py --check
-    python -B papers/tpc-399-c1-endpoint-microgrid-cross-family/experiments/tpc399_independent_checker.py --check
-    python -O -B papers/tpc-399-c1-endpoint-microgrid-cross-family/experiments/tpc399_independent_checker.py --check
-    python -B papers/tpc-399-c1-endpoint-microgrid-cross-family/experiments/tpc399_adversarial_certificate_stress.py --check
-    python -O -B papers/tpc-399-c1-endpoint-microgrid-cross-family/experiments/tpc399_adversarial_certificate_stress.py --check
-    python -B research/tpc-big-road/tpc_bridge_b_tpc399_c1_endpoint_microgrid_cross_family_checker.py --check
-    python -O -B research/tpc-big-road/tpc_bridge_b_tpc399_c1_endpoint_microgrid_cross_family_checker.py --check
+    python -B papers/tpc-400-c1-endpoint-microgrid-third-family/code/tpc400_c1_endpoint_microgrid_third_family.py --check
+    python -O -B papers/tpc-400-c1-endpoint-microgrid-third-family/code/tpc400_c1_endpoint_microgrid_third_family.py --check
+    python -B papers/tpc-400-c1-endpoint-microgrid-third-family/experiments/tpc400_independent_checker.py --check
+    python -O -B papers/tpc-400-c1-endpoint-microgrid-third-family/experiments/tpc400_independent_checker.py --check
+    python -B papers/tpc-400-c1-endpoint-microgrid-third-family/experiments/tpc400_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-400-c1-endpoint-microgrid-third-family/experiments/tpc400_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc400_c1_endpoint_microgrid_third_family_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc400_c1_endpoint_microgrid_third_family_checker.py --check
 
-The next finite question is TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION.
+The next finite question is TEST_C1_ENDPOINT_MICROGRID_FOURTH_FAMILY_REPLICATION.
 Any interpretation remains finite until a genuine source-valid growing
 argument is supplied.
+
+TPC-399 previous section: c=1 endpoint microgrid cross-family replication
+--------------------------------------------------------------------------
+
+TPC-399 established the same finite 96-row/16-cell interface on the second
+fresh affine family and supplied the hash-locked parent used by TPC-400.  Its
+12/16 interior origin-stable cells and 4/4 endpoint failures were replicated
+by TPC-400.  Its cross-family and within-family transfer results remain a
+finite float64 observation; no arithmetic or growing gate was paid.
 
 TPC-398 previous section: c=1 interpolation endpoint microgrid
 ----------------------------------------------------------------
@@ -15403,9 +15414,9 @@ arithmetic `L2`、fixed-power credit 或 official Route-A/Route-B gate。
 
 TPC-398 发布后的封存 tail cascade 共 53 对 normal/optimized 命令、106 次
 invocation：此前 52 对 tail audit 加上 TPC-398 新 checker；每对要求零返回码、
-空 stderr 与 byte-identical stdout。TPC-399 的新 checker 已在此基础上完成一对
-增量 normal/optimized Bridge-B 审计，因此当前 TPC-399 release tail audit 为
-54 对、108 次 invocation；该计数与更早的 curated historical command-set
+空 stderr 与 byte-identical stdout。TPC-399 与 TPC-400 的新 checker 已在此基础上
+各完成一对增量 normal/optimized Bridge-B 审计，因此当前 TPC-400 release tail
+audit 为 55 对、110 次 invocation；该计数与更早的 curated historical command-set
 计数分开维护。
 
 V184/TPC-331 的新增 4 对由本项目 bridge 与 standalone tail checks 逐项验证；其
