@@ -1,6 +1,49 @@
 # TPC HANDOFF
 
-TPC-404 current section: c=1 local-normalization boundary
+TPC-405 current section: c=1 local-normalization scale ladder
+---------------------------------------------------------------
+
+TPC-405 is the exact finite continuation of TPC-404's selected-prime CRT
+proxy. For integer `H>=1`, `N>=H+2`, `Q>N`, distinct shell primes
+`Q<p_i<=2Q`, and explicit CRT residues `0` on even indices and `-N` on odd
+indices, the adjacent normalized proxy entry satisfies
+`0<=z<=t_1/(a_min sqrt(S0 S1))<=4/(a_min H)<=4/H`. The exact certificate
+audits heights `H=16,32,66,128,256` and multiplicities `m=1,2,3,4`, for 20
+cases; the independent checker literally replays the CRT masks and row
+energies. The stored decimals are observations, while the bound and all
+stored structural quantities are exact rationals.
+
+This is a one-entry synthetic proxy theorem. It is not a full operator norm
+bound, a physical `h_0` theorem, an arithmetic sign theorem, an arithmetic
+`L2` estimate, a fixed-power saving, Route-B closure, or a twin-prime result.
+
+    TPC405_LOCAL_PROXY_ENTRY_BOUND = PROVED_UNIFORM_FINITE
+    TPC405_SCALE_LADDER = PROVED_EXACT_FINITE_20_CASES
+    TPC405_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC405_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC405_ARITHMETIC_ADVANCE = NO
+    TPC405_FIXED_POWER_CREDIT = 0
+    TPC405_FULL_GATE_B = OPEN
+    TPC405_TWIN_PRIME_RESULT = NONE
+    TPC405_STRONGEST_POSITIVE = UNIFORM_EXACT_BOUND_FOR_ONE_PROXY_ADJACENT_ENTRY
+    TPC405_STRONGEST_OBSTRUCTION = FULL_OPERATOR_AND_PHYSICAL_IDENTIFICATION_ABSENT
+    TPC405_OPEN_THEOREM = COMPLETE_SHELL_LOCAL_ENTRY_BOUNDARY
+    TPC405_REUSABLE_STRUCTURE = EXACT_SCALE_LADDER_WITH_LITERAL_CRT_REPLAY
+    TPC405_ROUND2_CLUE = TEST_C1_LOCAL_NORMALIZATION_COMPLETE_SHELL_ENTRY_BOUNDARY
+    TPC405_STATUS = PROVED UNIFORM FINITE CRT PROXY ADJACENT ENTRY BOUND
+
+TPC-405 reproducibility commands:
+
+    python -B papers/tpc-405-c1-local-normalization-scale-ladder/code/tpc405_c1_local_normalization_scale_ladder.py --check
+    python -O -B papers/tpc-405-c1-local-normalization-scale-ladder/code/tpc405_c1_local_normalization_scale_ladder.py --check
+    python -B papers/tpc-405-c1-local-normalization-scale-ladder/experiments/tpc405_independent_checker.py --check
+    python -O -B papers/tpc-405-c1-local-normalization-scale-ladder/experiments/tpc405_independent_checker.py --check
+    python -B papers/tpc-405-c1-local-normalization-scale-ladder/experiments/tpc405_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-405-c1-local-normalization-scale-ladder/experiments/tpc405_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc405_c1_local_normalization_scale_ladder_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc405_c1_local_normalization_scale_ladder_checker.py --check
+
+TPC-404 previous section: c=1 local-normalization boundary
 ----------------------------------------------------------
 
 TPC-404 is the exact finite continuation of TPC-403's CRT-origin proxy.  For
@@ -15586,8 +15629,10 @@ TPC-398 发布后的封存 tail cascade 共 53 对 normal/optimized 命令、106
 invocation：此前 52 对 tail audit 加上 TPC-398 新 checker；每对要求零返回码、
 空 stderr 与 byte-identical stdout。TPC-399、TPC-400、TPC-401、TPC-402、
 TPC-403 与 TPC-404 的新 checker 已在此基础上各完成一对增量 normal/optimized Bridge-B
-审计，因此当前 TPC-404 release tail audit 为 59 对、118 次 invocation；该计数
-与更早的 curated historical command-set 计数分开维护。
+审计，因此当前 TPC-405 release tail audit 为 60 对、120 次 invocation；该计数
+与更早的 curated historical command-set 计数分开维护。TPC-399 曾在 release
+之后发现 stale lock，已以单独 provenance-repair commit 修复；TPC-405 记录的是
+修复后的 scoped tail，不宣称对全部历史链条重新执行。
 
 V184/TPC-331 的新增 4 对由本项目 bridge 与 standalone tail checks 逐项验证；其
 finite decomposition 不代表 source-uniform arithmetic `L2` 或 official Route-A/Route-B

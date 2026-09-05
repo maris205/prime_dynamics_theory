@@ -1,15 +1,32 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
+## V258 / TPC-405 current route edge
+
+TPC-405 在 TPC-404 selected-prime CRT proxy 上给出一个相邻 normalized
+proxy entry 的 exact finite uniform bound：20 个 H/m cases、literal CRT
+replay 与七项 mutation stress 全部通过。它不是 full operator norm、physical
+h_0、arithmetic L2/sign、fixed-power saving、Route-B closure 或 twin-prime
+result。下一 route edge 为
+TEST_C1_LOCAL_NORMALIZATION_COMPLETE_SHELL_ENTRY_BOUNDARY。
+
+    YOU ARE HERE = V258 / TPC-405
+    TPC405_LOCAL_PROXY_ENTRY_BOUND = PROVED_UNIFORM_FINITE
+    TPC405_SCALE_LADDER = PROVED_EXACT_FINITE_20_CASES
+    TPC405_ARITHMETIC_ADVANCE = NO
+    TPC405_FIXED_POWER_CREDIT = 0
+    TPC405_FULL_GATE_B = OPEN
+    TPC405_ROUND2_CLUE = TEST_C1_LOCAL_NORMALIZATION_COMPLETE_SHELL_ENTRY_BOUNDARY
+
 更新时间：2026-09-05
 
-当前地图版本：V257 / TPC-404
+当前地图版本：V258 / TPC-405
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-404`（`PROVED_EXACT_FINITE_LOCAL_NORMALIZATION_BOUNDARY_AUDIT`）；
-对应论文目录为 `papers/tpc-404-c1-local-normalization-boundary/`。
+当前编号锚点：`TPC-405`（`PROVED_UNIFORM_FINITE_CRT_PROXY_ADJACENT_ENTRY_BOUND`）；
+对应论文目录为 `papers/tpc-405-c1-local-normalization-scale-ladder/`。
 
-TPC-404 是当前位置：承接 TPC-403 的 CRT proxy，在同一 selected-prime TPC
+TPC-405 是当前位置：承接 TPC-404 的 CRT proxy，在同一 selected-prime TPC
 model 中审计 local diagonal normalization。定义
 `V_minus=sum_{odd i}a_i^2`、`V_plus=sum_{even i}a_i^2` 后，
 `G(o)=V_minus S0`、`G(o+1)=V_minus S1+V_plus(S1-T1^2)`，且

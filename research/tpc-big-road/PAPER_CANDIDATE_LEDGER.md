@@ -3,13 +3,53 @@
 
 更新时间：2026-09-05
 
-状态：**TPC404_PROVED_EXACT_FINITE_LOCAL_NORMALIZATION_BOUNDARY / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC405_PROVED_UNIFORM_FINITE_CRT_PROXY_ADJACENT_ENTRY_BOUND / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.198 current：TPC-404 c=1 local-normalization boundary
+## 0.199 current：TPC-405 c=1 local-normalization scale ladder
+
+项目：papers/tpc-405-c1-local-normalization-scale-ladder/
+
+类型：**PROVED_UNIFORM_FINITE_CRT_PROXY_ADJACENT_ENTRY_BOUND**。
+
+TPC-405 proves the exact finite bound
+`0<=z<=t1/(a_min sqrt(S0 S1))<=4/(a_min H)<=4/H` for one adjacent entry of
+the TPC-404 selected-prime CRT proxy, under the explicit integer domain,
+selected-prime shell, and even/odd CRT residues.  The exact certificate covers
+20 cases from five heights and four multiplicities.  Literal CRT row-energy
+replay, seven mutation stress cases, PDF QA, and Bridge-B normal/optimized
+checks all pass.  The decimals are observations; the bound and stored
+structural values are exact rationals.
+
+最强正结果：uniform exact finite bound for one synthetic selected-prime proxy entry。
+
+最强 obstruction：the full operator, physical h_0 identification, arithmetic sign
+and source-uniform L2 theorem are absent; no asymptotic or twin-prime claim follows。
+
+开放定理：complete-shell local-entry boundary, normalized growing theorem, strict
+1/400, Route-B reassembly and twin primes remain open/none。
+
+可复用结构：exact scale ladder、literal CRT replay、rational certificate 与
+strict claim-firewall stress。
+
+ROUND2_CLUE：`TEST_C1_LOCAL_NORMALIZATION_COMPLETE_SHELL_ENTRY_BOUNDARY`。
+
+~~~text
+TPC405_LOCAL_PROXY_ENTRY_BOUND = PROVED_UNIFORM_FINITE
+TPC405_SCALE_LADDER = PROVED_EXACT_FINITE_20_CASES
+TPC405_NORMALIZED_GROWING_THEOREM = OPEN
+TPC405_ARITHMETIC_ADVANCE = NO
+TPC405_FIXED_POWER_CREDIT = 0
+TPC405_FULL_GATE_B = OPEN
+TPC405_TWIN_PRIME_RESULT = NONE
+TPC405_ROUND2_CLUE = TEST_C1_LOCAL_NORMALIZATION_COMPLETE_SHELL_ENTRY_BOUNDARY
+TPC405_STATUS = PROVED UNIFORM FINITE CRT PROXY ADJACENT ENTRY BOUND
+~~~
+
+## 0.198 previous：TPC-404 c=1 local-normalization boundary
 
 项目：papers/tpc-404-c1-local-normalization-boundary/
 

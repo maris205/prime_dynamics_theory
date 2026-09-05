@@ -1,10 +1,17 @@
-# TPC big road V257 / TPC-404: c=1 local-normalization boundary
+# TPC big road V258 / TPC-405: c=1 local-normalization scale ladder
 
-## V257 current anchor: TPC-404
+## V258 current anchor: TPC-405
 
 更新时间：2026-09-05
 
-当前 TPC-404 proof package 位于
+TPC-405 current anchor: exact finite uniform selected-prime proxy-entry bound; next clue is TEST_C1_LOCAL_NORMALIZATION_COMPLETE_SHELL_ENTRY_BOUNDARY.
+
+TPC-405 的 20-case exact certificate、literal CRT replay、stress suite、PDF 与
+Bridge-B 均已封存；结论只适用于一个 synthetic proxy adjacent entry，full
+operator norm、physical h_0、arithmetic L2/sign、fixed-power、Route-B 与 twin
+prime result 仍未支付。
+
+TPC-404 previous proof package 位于
 `../../papers/tpc-404-c1-local-normalization-boundary/`，checker 为
 `tpc_bridge_b_tpc404_c1_local_normalization_boundary_checker.py`。它承接
 TPC-403 的 selected-prime CRT proxy，在 local diagonal normalization 下证明
