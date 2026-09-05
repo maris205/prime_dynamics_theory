@@ -1,0 +1,14 @@
+# Claim firewall
+
+```text
+LOCAL_BOUNDARY_STRUCTURE = PROVED_EXACT_FINITE
+NORMALIZED_GROWING_THEOREM = OPEN
+ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+ARITHMETIC_ADVANCE = NO
+FIXED_POWER_CREDIT = 0
+FULL_GATE_B = OPEN
+TWIN_PRIME_RESULT = NONE
+```
+
+The four cases certify only the declared finite synthetic CRT profile.  The
+float64 square roots are `NUMERICAL_OBSERVATION`, not exact values.

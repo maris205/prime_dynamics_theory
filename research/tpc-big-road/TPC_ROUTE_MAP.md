@@ -2,32 +2,37 @@
 
 更新时间：2026-09-05
 
-当前地图版本：V256 / TPC-403
+当前地图版本：V257 / TPC-404
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-403`（`PROVED_EXACT_FINITE_CRT_PROXY_OBSTRUCTION`）；
-对应论文目录为 `papers/tpc-403-c1-crt-origin-proxy-obstruction/`。
+当前编号锚点：`TPC-404`（`PROVED_EXACT_FINITE_LOCAL_NORMALIZATION_BOUNDARY_AUDIT`）；
+对应论文目录为 `papers/tpc-404-c1-local-normalization-boundary/`。
 
-TPC-403 是当前位置：承接 TPC-402 的 signed deletion identity，在同一 TPC
-proxy 中对 synthetic alternating-index law 构造 CRT-generated adversarial
-origins。对任意有限的 `p_0<...<p_{2m-1}` with `p_i>N`，取
-`o=0 (mod p_even)` 与 `o=-N (mod p_odd)`；CRT 给出任意下界以上的 origin，
-并使 `M_sigma(o,o+1)=T_1P_-`。`m=1,2,3,4` 的四个 exact cases 全部通过，
-raw ratio 相对 `|A_sigma|` 约为 `411.13,411.43,514.63,374.42`。这是
-proved exact finite proxy obstruction，不建立 bounded-interval origin theorem、
+TPC-404 是当前位置：承接 TPC-403 的 CRT proxy，在同一 selected-prime TPC
+model 中审计 local diagonal normalization。定义
+`V_minus=sum_{odd i}a_i^2`、`V_plus=sum_{even i}a_i^2` 后，
+`G(o)=V_minus S0`、`G(o+1)=V_minus S1+V_plus(S1-T1^2)`，且
+`M(o,o+1)=T1P_minus`，四个 exact rational cases 的 normalized square-root
+observations 约为 `0.0136307,0.0136108,0.0135943,0.0135709`。这是 finite
+local boundary audit，不建立 full operator norm upper bound 或 lower bound、
 normalized growing bound、arithmetic sign identification、arithmetic `L2` 或
-twin-prime result。下一关为 `TEST_C1_CRT_PROXY_NORMALIZATION_BOUNDARY`。
+twin-prime result。下一关为 `TEST_C1_LOCAL_NORMALIZATION_SCALE_LADDER`。
 
-    YOU ARE HERE = V256 / TPC-403
-    TPC403_CRT_PROXY_OBSTRUCTION = PROVED_EXACT_FINITE
-    TPC403_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
-    TPC403_NORMALIZED_GROWING_OBSTRUCTION = OPEN
-    TPC403_ARITHMETIC_ADVANCE = NO
-    TPC403_FIXED_POWER_CREDIT = 0
-    TPC403_FULL_GATE_B = OPEN
-    TPC403_TWIN_PRIME_RESULT = NONE
-    TPC403_ROUND2_CLUE = TEST_C1_CRT_PROXY_NORMALIZATION_BOUNDARY
+    YOU ARE HERE = V257 / TPC-404
+    TPC404_LOCAL_BOUNDARY_STRUCTURE = PROVED_EXACT_FINITE
+    TPC404_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC404_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC404_ARITHMETIC_ADVANCE = NO
+    TPC404_FIXED_POWER_CREDIT = 0
+    TPC404_FULL_GATE_B = OPEN
+    TPC404_TWIN_PRIME_RESULT = NONE
+    TPC404_ROUND2_CLUE = TEST_C1_LOCAL_NORMALIZATION_SCALE_LADDER
+
+Historical TPC-403 record (not the current claim set):
+TPC-403 previously used `o=0 (mod p_even)` and `o=-N (mod p_odd)` to prove
+the finite raw coefficient `M_sigma(o,o+1)=T_1P_-` in four CRT cases.  Its
+normalized growing boundary and arithmetic sign identification remained open.
 
 Historical TPC-402 record (not the current claim set):
     TPC400_INTERPOLATION_PANEL = NUMERICAL_OBSERVATION_FINITE_FLOAT64_96_ROWS
@@ -46,6 +51,14 @@ Historical TPC-402 record (not the current claim set):
     TPC401_FIXED_POWER_CREDIT = 0
     TPC401_FULL_GATE_B = OPEN
     TPC401_ROUND2_CLUE = TEST_C1_DIAGONAL_DELETION_SIGNED_TERM_AUDIT
+
+## 5.187 V257 / TPC-404：c=1 local-normalization boundary
+
+TPC-404 proves the exact local row-energy identities for the selected-prime
+CRT proxy and independently replays the literal masks at an actual CRT origin.
+The four rational cases show normalized adjacent-entry observations near
+`0.01363`, with no claim about the full operator norm.  The next map edge is
+`TEST_C1_LOCAL_NORMALIZATION_SCALE_LADDER`.
 
 ## 5.186 V256 / TPC-403：c=1 CRT-origin proxy obstruction
 

@@ -1,30 +1,29 @@
-# TPC big road V256 / TPC-403: c=1 CRT-origin proxy obstruction
+# TPC big road V257 / TPC-404: c=1 local-normalization boundary
 
-## V256 current anchor: TPC-403
+## V257 current anchor: TPC-404
 
 更新时间：2026-09-05
 
-当前 TPC-403 proof package 位于
-`../../papers/tpc-403-c1-crt-origin-proxy-obstruction/`，checker 为
-`tpc_bridge_b_tpc403_c1_crt_origin_proxy_obstruction_checker.py`。它在
-TPC-402 production proxy 上固定 `N=1024,Q=8192,H=66` 与 synthetic
-alternating-index signs，使用 `o=0 (mod p_even)`、`o=-N (mod p_odd)` 的
-CRT construction，把正负 mask profile 分离。`m=1,2,3,4` 的四个 cases、
-CRT origins、raw coefficients 与 `M_sigma=T_1P_-` identities 均 exact；raw
-ratio 相对 `|A_sigma|` 约为 `411.13,411.43,514.63,374.42`。这是
-proved exact finite proxy obstruction，不建立 bounded-interval origin theorem、
-normalized growing bound、arithmetic sign identification、arithmetic `L2` 或
-twin-prime result。
+当前 TPC-404 proof package 位于
+`../../papers/tpc-404-c1-local-normalization-boundary/`，checker 为
+`tpc_bridge_b_tpc404_c1_local_normalization_boundary_checker.py`。它承接
+TPC-403 的 selected-prime CRT proxy，在 local diagonal normalization 下证明
+`G(o)=V_minus S0`、`G(o+1)=V_minus S1+V_plus(S1-T1^2)` 与
+`M(o,o+1)=T1P_minus` 的 exact finite identities。`m=1,2,3,4` 的四个 cases
+由 exact rational certificate 与 literal independent CRT replay 验证，
+normalized square-root observations 约为 `0.0136307,0.0136108,0.0135943,0.0135709`。
+这是 finite local boundary audit，不建立 full operator norm bound、normalized
+growing bound、arithmetic sign identification、arithmetic `L2` 或 twin-prime result。
 
-    YOU ARE HERE = V256 / TPC-403
-    TPC403_CRT_PROXY_OBSTRUCTION = PROVED_EXACT_FINITE
-    TPC403_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
-    TPC403_NORMALIZED_GROWING_OBSTRUCTION = OPEN
-    TPC403_ARITHMETIC_ADVANCE = NO
-    TPC403_FIXED_POWER_CREDIT = 0
-    TPC403_FULL_GATE_B = OPEN
-    TPC403_TWIN_PRIME_RESULT = NONE
-    TPC403_ROUND2_CLUE = TEST_C1_CRT_PROXY_NORMALIZATION_BOUNDARY
+    YOU ARE HERE = V257 / TPC-404
+    TPC404_LOCAL_BOUNDARY_STRUCTURE = PROVED_EXACT_FINITE
+    TPC404_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC404_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC404_ARITHMETIC_ADVANCE = NO
+    TPC404_FIXED_POWER_CREDIT = 0
+    TPC404_FULL_GATE_B = OPEN
+    TPC404_TWIN_PRIME_RESULT = NONE
+    TPC404_ROUND2_CLUE = TEST_C1_LOCAL_NORMALIZATION_SCALE_LADDER
 
 Historical TPC-402 record (not the current claim set):
     TPC402_ANALYTIC_STRUCTURE = PROVED_EXACT_FINITE

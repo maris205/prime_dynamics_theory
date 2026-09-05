@@ -9,14 +9,16 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-403 用 CRT 构造了 signed deletion profile 的 exact finite proxy obstruction。
-对 `m=1,2,3,4` 的四个 CRT cases，偶数索引 shell primes 命中窗口位置 0，
-奇数索引 primes 的首个命中点被推到窗口外偏移 `N`；raw adjacent coefficient
-恒等于 `T_1 P_-`，相对 `|A_sigma|` 的四个 ratios 约为 `411.13, 411.43,
-514.63, 374.42`。这证明 mask profile 不能由小的 global signed scalar 单独
-控制，但只针对声明的 TPC proxy 与 synthetic alternating-index law；不支付
-normalized growing bound、arithmetic sign identification、arithmetic `L2`、
-fixed-power credit 或 twin-prime result。TPC-402 对 TPC-401 的 signed
+当前主线最新位置：TPC-404 在 TPC-403 的 selected-prime CRT proxy 上完成了
+local diagonal normalization 的 exact finite boundary audit。四个 `m=1,2,3,4`
+cases 由 exact rational certificate 与 literal independent CRT replay 验证，
+局部能量恒等式为 `G(o)=V_minus S0`、`G(o+1)=V_minus S1+V_plus(S1-T1^2)`，
+相邻系数为 `M(o,o+1)=T1 P_-`；normalized square-root observations 约为
+`0.0136307, 0.0136108, 0.0135943, 0.0135709`。这只是有限 selected-prime
+model 的局部条目审计，不是 full operator norm bound，也不支付 normalized
+growing bound、arithmetic sign identification、arithmetic `L2`、fixed-power
+credit 或 twin-prime result。TPC-403 的 CRT raw-coefficient obstruction 与
+TPC-402 的 signed
 diagonal-deletion coefficient 完成 exact finite audit。
 两种 explicit modeling sign laws 的 240 个 sampled off-diagonal rows、209280 次
 prime-level comparisons 均由 Fraction arithmetic exact 重放；这仍不识别
@@ -42,7 +44,11 @@ arithmetic `L2` 或 twin-prime result。`ARITHMETIC_ADVANCE=NO`、
 `papers/tpc-400-c1-endpoint-microgrid-third-family/`；TPC-402 的下一关是
 `TEST_C1_SIGNED_DIAGONAL_TERM_GROWING_OBSTRUCTION`。
 
-papers/tpc-403-c1-crt-origin-proxy-obstruction - TPC-403 current project；含
+papers/tpc-404-c1-local-normalization-boundary - TPC-404 current project；含
+exact local-normalization identities、literal CRT masked-row replay、four-case
+rational certificate、stress、proof package/PDF 与 local fail-closed Bridge-B checker。
+
+papers/tpc-403-c1-crt-origin-proxy-obstruction - TPC-403 previous project；含
 exact CRT construction、four-case Fraction certificate、reverse replay、stress、proof package/PDF。
 
 papers/tpc-402-c1-signed-diagonal-term-audit - TPC-402 previous project；含

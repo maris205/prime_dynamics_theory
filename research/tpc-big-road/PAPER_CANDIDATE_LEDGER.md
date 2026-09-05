@@ -3,11 +3,52 @@
 
 更新时间：2026-09-05
 
-状态：**TPC403_PROVED_EXACT_FINITE_CRT_PROXY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC404_PROVED_EXACT_FINITE_LOCAL_NORMALIZATION_BOUNDARY / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
+
+## 0.198 current：TPC-404 c=1 local-normalization boundary
+
+项目：papers/tpc-404-c1-local-normalization-boundary/
+
+类型：**PROVED_EXACT_FINITE_LOCAL_NORMALIZATION_BOUNDARY_AUDIT**。
+
+TPC-404 evaluates the TPC-403 CRT-origin proxy after local diagonal
+normalization.  With `V_minus=sum_{odd i}a_i^2` and
+`V_plus=sum_{even i}a_i^2`, the exact selected-prime row energies are
+`G(o)=V_minus*S0` and `G(o+1)=V_minus*S1+V_plus*(S1-T1^2)`, while the adjacent
+coefficient is `T1*P_minus`.  The four exact rational cases yield normalized
+square-root observations near `0.0136307`, `0.0136108`, `0.0135943`, and
+`0.0135709`.  The literal independent checker reconstructs an actual CRT
+origin and both masked row energies.
+
+最强正结果：exact finite local-normalization identity with a literal CRT replay。
+
+最强 obstruction：the raw TPC-403 coefficient is absorbed by the finite local
+geometry in these cases; this neither proves nor disproves a full operator norm
+statement.
+
+开放定理：normalized growing boundary, arithmetic sign identification,
+source-uniform arithmetic `L2`, strict `1/400`, Route-B reassembly and twin
+primes remain open/none。
+
+可复用结构：selected-prime local-energy formulas、exact rational certificate、
+literal CRT masked-row replay 与 five-mutation claim firewall。
+
+ROUND2_CLUE：`TEST_C1_LOCAL_NORMALIZATION_SCALE_LADDER`。
+
+~~~text
+TPC404_LOCAL_BOUNDARY_STRUCTURE = PROVED_EXACT_FINITE
+TPC404_NORMALIZED_GROWING_THEOREM = OPEN
+TPC404_ARITHMETIC_ADVANCE = NO
+TPC404_FIXED_POWER_CREDIT = 0
+TPC404_FULL_GATE_B = OPEN
+TPC404_TWIN_PRIME_RESULT = NONE
+TPC404_ROUND2_CLUE = TEST_C1_LOCAL_NORMALIZATION_SCALE_LADDER
+TPC404_STATUS = PROVED EXACT FINITE LOCAL NORMALIZATION BOUNDARY AUDIT
+~~~
 
 ## 0.197 current：TPC-403 c=1 CRT-origin proxy obstruction
 

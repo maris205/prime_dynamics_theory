@@ -1,6 +1,49 @@
 # TPC HANDOFF
 
-TPC-403 current section: c=1 CRT-origin proxy obstruction
+TPC-404 current section: c=1 local-normalization boundary
+----------------------------------------------------------
+
+TPC-404 is the exact finite continuation of TPC-403's CRT-origin proxy.  For
+the selected-prime alternating profile, with `V_minus=sum_{odd i} a_i^2`,
+`V_plus=sum_{even i} a_i^2`, and `P_minus=sum_{odd i}a_i`, the literal masked
+local row energies at the adjacent pair `(o,o+1)` are
+`G(o)=V_minus*S0` and `G(o+1)=V_minus*S1+V_plus*(S1-T1^2)`, while
+`M(o,o+1)=T1*P_minus`.  Thus the locally normalized square is exactly
+`(T1*P_minus)^2/(G(o)*G(o+1))`.  The exact rational certificate and independent
+literal CRT replay cover `m=1,2,3,4`; the float64 square-root observations are
+`0.013630716999888`, `0.013610790517299`, `0.013594253931078`, and
+`0.013570927022735`.
+
+This is a finite selected-prime normalization boundary audit.  It is not a
+full-operator norm bound, normalized growing theorem, arithmetic sign theorem,
+arithmetic `L2`, Route-B closure, fixed-power saving, or twin-prime result.
+
+    TPC404_LOCAL_BOUNDARY_STRUCTURE = PROVED_EXACT_FINITE
+    TPC404_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC404_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC404_ARITHMETIC_ADVANCE = NO
+    TPC404_FIXED_POWER_CREDIT = 0
+    TPC404_FULL_GATE_B = OPEN
+    TPC404_TWIN_PRIME_RESULT = NONE
+    TPC404_STRONGEST_POSITIVE = EXACT_LOCAL_DIAGONAL_NORMALIZATION_IDENTITY
+    TPC404_STRONGEST_OBSTRUCTION = RAW_CRT_COEFFICIENT_ABSORBED_IN_FINITE_LOCAL_GEOMETRY
+    TPC404_OPEN_THEOREM = SOURCE_VALID_NORMALIZED_GROWING_BOUNDARY
+    TPC404_REUSABLE_STRUCTURE = LOCAL_MASKED_ENERGY_IDENTITY_WITH_LITERAL_CRT_REPLAY
+    TPC404_ROUND2_CLUE = TEST_C1_LOCAL_NORMALIZATION_SCALE_LADDER
+    TPC404_STATUS = PROVED EXACT FINITE LOCAL NORMALIZATION BOUNDARY AUDIT
+
+TPC-404 reproducibility commands:
+
+    python -B papers/tpc-404-c1-local-normalization-boundary/code/tpc404_c1_local_normalization_boundary.py --check
+    python -O -B papers/tpc-404-c1-local-normalization-boundary/code/tpc404_c1_local_normalization_boundary.py --check
+    python -B papers/tpc-404-c1-local-normalization-boundary/experiments/tpc404_independent_checker.py --check
+    python -O -B papers/tpc-404-c1-local-normalization-boundary/experiments/tpc404_independent_checker.py --check
+    python -B papers/tpc-404-c1-local-normalization-boundary/experiments/tpc404_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-404-c1-local-normalization-boundary/experiments/tpc404_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc404_c1_local_normalization_boundary_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc404_c1_local_normalization_boundary_checker.py --check
+
+TPC-403 previous section: c=1 CRT-origin proxy obstruction
 -----------------------------------------------------------
 
 TPC-403 is an exact finite continuation of TPC-402.  In the same declared TPC
@@ -15541,9 +15584,9 @@ arithmetic `L2`、fixed-power credit 或 official Route-A/Route-B gate。
 
 TPC-398 发布后的封存 tail cascade 共 53 对 normal/optimized 命令、106 次
 invocation：此前 52 对 tail audit 加上 TPC-398 新 checker；每对要求零返回码、
-空 stderr 与 byte-identical stdout。TPC-399、TPC-400、TPC-401、TPC-402 与
-TPC-403 的新 checker 已在此基础上各完成一对增量 normal/optimized Bridge-B
-审计，因此当前 TPC-403 release tail audit 为 58 对、116 次 invocation；该计数
+空 stderr 与 byte-identical stdout。TPC-399、TPC-400、TPC-401、TPC-402、
+TPC-403 与 TPC-404 的新 checker 已在此基础上各完成一对增量 normal/optimized Bridge-B
+审计，因此当前 TPC-404 release tail audit 为 59 对、118 次 invocation；该计数
 与更早的 curated historical command-set 计数分开维护。
 
 V184/TPC-331 的新增 4 对由本项目 bridge 与 standalone tail checks 逐项验证；其
