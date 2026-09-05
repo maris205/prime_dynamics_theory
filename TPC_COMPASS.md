@@ -1,29 +1,37 @@
 # TPC distilled map and bold channel
 
-## V254 / TPC-401 current anchor
+## V255 / TPC-402 current anchor
 
 更新时间：2026-09-05
 
 当前入口：proof 为
-papers/tpc-401-c1-diagonal-deletion-decomposition/PROOF_PACKAGE.md，checker 为
-research/tpc-big-road/tpc_bridge_b_tpc401_c1_diagonal_deletion_decomposition_checker.py，
-编号论文为 papers/tpc-401-c1-diagonal-deletion-decomposition/。
+papers/tpc-402-c1-signed-diagonal-term-audit/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc402_c1_signed_diagonal_term_audit_checker.py，
+编号论文为 papers/tpc-402-c1-signed-diagonal-term-audit/。
 
-TPC-401 在 TPC-400 生产域
-`N=1024,Q=8192,H=66` 上完成
-endpoint microgrid。3 个 origins 作 calibration、3 个作 holdout，全部使用
-`N=1024`；四个 probes `lambda=7/8,15/16,31/32,1` 与四种 normalization
-形成 96-row、16-cell panel。前三个 probes 的 12/16 cells 通过 1%
-origin-spread 门，endpoint `lambda=1` 的四个 cells 均失败，最大 spread 为
-`0.05360449687470719`--`0.053890672705770762`。直接相对 hash-locked TPC-399 same-law all-origin
-means，cross-family calibration 与 holdout 均为 `4/4` per normalization，
-最大 holdout error 为 `0.0024091869655593623`；within-family transfer 也均为
-`4/4`。谱与 Schur 均为 `0/96` failures，rational anchor 证明四个插值
-恒等式；对 `N<Q<p` 的 diagonal-deletion identity 给出 exact finite proof，
-并以 active anchor counterexample 标出适用边界；这仍不构成
-source-valid growing theorem、arithmetic `L2` 或 twin-prime result。
+TPC-402 在 TPC-401 的生产域 `N=1024,Q=8192,H=66` 上，把 sign law 保留为
+显式 modeling choice，定义 `A_sigma=sum_p sigma_p a_p` 与
+`b_sigma(u)=sum_{p|u} sigma_p a_p`，并证明 off-diagonal coefficient identity
+`M_sigma(u,v)=T_uv[-A_sigma+b_sigma(u)+b_sigma(v)]`。对 all-plus 与
+alternating-index 两种 laws，六个 TPC-400 origins、五个 positions 和 872 个
+shell primes 的 240 个 sampled law rows（每 law 120）共 209280 次 exact
+prime comparisons 全部通过。`N=13,Q=8,p=11` 的 active anchor boundary
+counterexample 明确标出适用边界。这是 proved exact finite analytic structure；
+它不识别 arithmetic sign law，不支付 arithmetic `L2`、growing uniformity、
+fixed-power saving 或 twin-prime result。
 
-    YOU ARE HERE = V254 / TPC-401
+    YOU ARE HERE = V255 / TPC-402
+    TPC402_ANALYTIC_STRUCTURE = PROVED_EXACT_FINITE
+    TPC402_SIGN_LAW_SOURCE_IDENTIFICATION = OPEN
+    TPC402_SOURCE_UNIFORM_L2 = OPEN
+    TPC402_ARITHMETIC_ADVANCE = NO
+    TPC402_FIXED_POWER_CREDIT = 0
+    TPC402_FULL_GATE_B = OPEN
+    TPC402_TWIN_PRIME_RESULT = NONE
+    TPC402_ROUND2_CLUE = TEST_C1_SIGNED_DIAGONAL_TERM_GROWING_OBSTRUCTION
+
+Historical TPC-399 record (not the current claim set):
+
     TPC399_SELECTION_PROTOCOL = PROVED_EXACT_FINITE_PREDECLARED_RESPONSE_BLIND
     TPC399_COORDINATE_DISJOINTNESS = PROVED_EXACT_FINITE
     TPC399_PARENT_REFERENCE = PROVED_EXACT_FINITE_HASHED_TPC398

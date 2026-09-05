@@ -1,6 +1,51 @@
 # TPC HANDOFF
 
-TPC-401 current section: c=1 exact diagonal-deletion decomposition
+TPC-402 current section: c=1 signed diagonal-deletion term audit
+-----------------------------------------------------------------
+
+TPC-402 continues TPC-401 in the finite production domain `N=1024`,
+`Q=8192`, `H=66`, while keeping the sign law explicit as a modeling choice.
+For either the all-plus or alternating-index law, the off-diagonal coefficient
+has the exact finite form
+`M_sigma(u,v)=T_uv[-A_sigma+b_sigma(u)+b_sigma(v)]`.  The producer and an
+independent reverse replay audit six TPC-400 origins, five positions, and the
+872-prime shell: 240 sampled law rows (120 per law), or 209280 exact
+prime-level comparisons, all pass.  The active anchor `N=13,Q=8,p=11`
+remains a boundary counterexample, so the production-domain hypothesis is
+not dropped.
+
+This is `PROVED_EXACT_FINITE` analytic structure only.  It does not identify
+the arithmetic sign law, pay arithmetic `L2`, growing uniformity, strict
+`1/400`, Route-B reassembly, or prove a twin-prime theorem.  The official
+Route-A/Route-B evaluator files remain absent; local Bridge-B is fail-closed
+repository evidence.
+
+    TPC402_ANALYTIC_STRUCTURE = PROVED_EXACT_FINITE
+    TPC402_ARITHMETIC_ADVANCE = NO
+    TPC402_FIXED_POWER_CREDIT = 0
+    TPC402_SOURCE_UNIFORM_L2 = OPEN
+    TPC402_SIGN_LAW_SOURCE_IDENTIFICATION = OPEN
+    TPC402_FULL_GATE_B = OPEN
+    TPC402_TWIN_PRIME_RESULT = NONE
+    TPC402_STRONGEST_POSITIVE = EXACT_SIGNED_OFF_DIAGONAL_COEFFICIENT_IDENTITY
+    TPC402_STRONGEST_OBSTRUCTION = ACTIVE_ANCHOR_OUTSIDE_PRODUCTION_DOMAIN
+    TPC402_OPEN_THEOREM = SOURCE_VALID_SIGNED_GROWING_REASSEMBLY
+    TPC402_REUSABLE_STRUCTURE = SIGNED_COEFFICIENT_DECOMPOSITION_WITH_BOUNDARY_FIREWALL
+    TPC402_ROUND2_CLUE = TEST_C1_SIGNED_DIAGONAL_TERM_GROWING_OBSTRUCTION
+    TPC402_STATUS = PROVED EXACT FINITE SIGNED DIAGONAL TERM AUDIT
+
+TPC-402 reproducibility commands:
+
+    python -B papers/tpc-402-c1-signed-diagonal-term-audit/code/tpc402_c1_signed_diagonal_term_audit.py --check
+    python -O -B papers/tpc-402-c1-signed-diagonal-term-audit/code/tpc402_c1_signed_diagonal_term_audit.py --check
+    python -B papers/tpc-402-c1-signed-diagonal-term-audit/experiments/tpc402_independent_checker.py --check
+    python -O -B papers/tpc-402-c1-signed-diagonal-term-audit/experiments/tpc402_independent_checker.py --check
+    python -B papers/tpc-402-c1-signed-diagonal-term-audit/experiments/tpc402_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-402-c1-signed-diagonal-term-audit/experiments/tpc402_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc402_c1_signed_diagonal_term_audit_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc402_c1_signed_diagonal_term_audit_checker.py --check
+
+TPC-401 previous section: c=1 exact diagonal-deletion decomposition
 --------------------------------------------------------------------
 
 TPC-401 proves and independently audits the exact finite production-domain
@@ -38,10 +83,10 @@ TPC-401 reproducibility commands:
     python -B papers/tpc-401-c1-diagonal-deletion-decomposition/experiments/tpc401_independent_checker.py --check
     python -B papers/tpc-401-c1-diagonal-deletion-decomposition/experiments/tpc401_adversarial_certificate_stress.py --check
 
-TPC-400 current section: c=1 endpoint microgrid third-family replication
+TPC-400 previous section: c=1 endpoint microgrid third-family replication
 -------------------------------------------------------------------------
 
-TPC-400 is the current finite release.  It follows TPC-399's
+TPC-400 is a previous finite release.  It follows TPC-399's
 TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION clue on the third
 coordinate-disjoint affine grid a_j=7600001+401j.  Indices
 (0,8,16,24,32,40) are fixed before readout.  Origins
@@ -15452,10 +15497,10 @@ arithmetic `L2`、fixed-power credit 或 official Route-A/Route-B gate。
 
 TPC-398 发布后的封存 tail cascade 共 53 对 normal/optimized 命令、106 次
 invocation：此前 52 对 tail audit 加上 TPC-398 新 checker；每对要求零返回码、
-空 stderr 与 byte-identical stdout。TPC-399 与 TPC-400 的新 checker 已在此基础上
-各完成一对增量 normal/optimized Bridge-B 审计，因此当前 TPC-400 release tail
-audit 为 55 对、110 次 invocation；该计数与更早的 curated historical command-set
-计数分开维护。
+空 stderr 与 byte-identical stdout。TPC-399、TPC-400、TPC-401 与 TPC-402 的新
+checker 已在此基础上各完成一对增量 normal/optimized Bridge-B 审计，因此当前
+TPC-402 release tail audit 为 57 对、114 次 invocation；该计数与更早的 curated
+historical command-set 计数分开维护。
 
 V184/TPC-331 的新增 4 对由本项目 bridge 与 standalone tail checks 逐项验证；其
 finite decomposition 不代表 source-uniform arithmetic `L2` 或 official Route-A/Route-B

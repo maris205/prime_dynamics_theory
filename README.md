@@ -9,10 +9,14 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-401 对 TPC-400 生产域完成 exact diagonal-deletion decomposition
-审计。对 `N<Q<p` 的 104640 个抽样 component rows，divisibility indicator
-与 reduced component 恒等式均 exact；anchor `N=13,Q=8,p=11` 在 active masks
-下给出明确边界反例。这是 proved finite analytic structure，不支付 arithmetic
+当前主线最新位置：TPC-402 对 TPC-401 的 signed diagonal-deletion coefficient 完成 exact finite audit。
+两种 explicit modeling sign laws 的 240 个 sampled off-diagonal rows、209280 次
+prime-level comparisons 均由 Fraction arithmetic exact 重放；这仍不识别
+arithmetic sign law，不支付 arithmetic `L2`、growing uniformity、fixed-power
+credit 或 twin-prime result。TPC-401 对 TPC-400 生产域完成 exact diagonal-deletion
+decomposition 审计。对 `N<Q<p` 的 104640 个抽样 component rows，divisibility
+indicator 与 reduced component 恒等式均 exact；anchor `N=13,Q=8,p=11` 在 active
+masks 下给出明确边界反例。这是 proved finite analytic structure，不支付 arithmetic
 `L2`、growing uniformity、fixed-power credit 或 twin-prime result。此前 TPC-400
 在第三个 coordinate-disjoint affine family 上完成
 `TEST_C1_ENDPOINT_MICROGRID_THIRD_FAMILY_REPLICATION`。6 个预先冻结 origins
@@ -26,11 +30,14 @@ normalization，最大 holdout error 为 `0.0024091869655593623`；within-family
 transfer 均为 `4/4`。rational anchor 的插值恒等式是 exact finite；谱与 Schur
 诊断均为 `0/96` reproducible float64 observations，但仍只是在声明的有限 proxy 上的 scoped observation，不是 source-valid growing theorem、
 arithmetic `L2` 或 twin-prime result。`ARITHMETIC_ADVANCE=NO`、
-`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。当前项目为
-`papers/tpc-400-c1-endpoint-microgrid-third-family/`，下一关是
-`TEST_C1_ENDPOINT_MICROGRID_FOURTH_FAMILY_REPLICATION`。
+`FIXED_POWER_CREDIT=0`、`FULL_GATE_B=OPEN`。此前项目为
+`papers/tpc-400-c1-endpoint-microgrid-third-family/`；TPC-402 的下一关是
+`TEST_C1_SIGNED_DIAGONAL_TERM_GROWING_OBSTRUCTION`。
 
-papers/tpc-401-c1-diagonal-deletion-decomposition - TPC-401 current project；含
+papers/tpc-402-c1-signed-diagonal-term-audit - TPC-402 current project；含
+exact signed coefficient identity、two-law Fraction audit、active anchor boundary、独立 reverse replay、stress、proof package/PDF。
+
+papers/tpc-401-c1-diagonal-deletion-decomposition - TPC-401 previous project；含
 exact production-domain decomposition proof、104640-row Fraction audit、active anchor counterexample、独立 reverse replay、stress、proof package/PDF。
 
 papers/tpc-400-c1-endpoint-microgrid-third-family - TPC-400 previous project；含

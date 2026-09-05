@@ -1,27 +1,35 @@
-# TPC big road V254 / TPC-401: c=1 diagonal-deletion decomposition
+# TPC big road V255 / TPC-402: c=1 signed diagonal-deletion term audit
 
-## V254 current anchor: TPC-401
+## V255 current anchor: TPC-402
 
 更新时间：2026-09-05
 
-当前 TPC-401 proof package 位于
-`../../papers/tpc-401-c1-diagonal-deletion-decomposition/`，checker 为
-`tpc_bridge_b_tpc401_c1_diagonal_deletion_decomposition_checker.py`。它在
-TPC-400 的生产域
-coordinate-disjoint affine family
-`N=1024,Q=8192,H=66` 上，使用 TPC-400 的六个 origins
-calibration origins 与 3 个 holdout origins、固定 `N=1024`，对四个 exact
-probes `lambda=7/8,15/16,31/32,1` 和四种预声明 normalization 形成 96-row、
-16-cell panel。相对 hash-locked TPC-398 direct same-law all-origin means，
-四种 normalization 的 cross-family calibration 与 holdout 均为 `4/4`，
-within-family transfer 也均为 `4/4`；但当前 family 内 origin-spread 只有
-`12/16` cells 通过 1% 门，`lambda=1` 的四个 cells 全部失败，最大 spread 为
-`0.05360449687470719`--`0.053890672705770762`。最大 cross-family holdout error 为
-`0.0024091869655593623`，spectral 与 Schur failures 均为 `0/96` 的可复现 float64 观察。这是一个
-有限、可审计的 cross-family transfer certificate；它不能升级为 source-valid
-growing theorem、arithmetic `L2`、固定幂次 saving 或 twin-prime result。
+当前 TPC-402 proof package 位于
+`../../papers/tpc-402-c1-signed-diagonal-term-audit/`，checker 为
+`tpc_bridge_b_tpc402_c1_signed_diagonal_term_audit_checker.py`。它在
+TPC-401 的生产域 coordinate-disjoint affine family `N=1024,Q=8192,H=66` 上，
+保留 sign law 为显式 modeling choice，定义 `A_sigma=sum_p sigma_p a_p` 与
+`b_sigma(u)=sum_{p|u} sigma_p a_p`，并证明 off-diagonal coefficient identity
+`M_sigma(u,v)=T_uv[-A_sigma+b_sigma(u)+b_sigma(v)]`。对 all-plus 与
+alternating-index 两种 laws，六个 TPC-400 origins、五个 positions 和 872 个
+shell primes 的 240 个 sampled law rows（每 law 120）共 209280 次 exact
+prime comparisons 全部通过。`N=13,Q=8,p=11` 的 active anchor boundary
+counterexample 明确标出适用边界。这是 proved exact finite analytic structure；
+它不能升级为 source-valid growing theorem、arithmetic `L2`、固定幂次 saving 或
+twin-prime result。
 
-    YOU ARE HERE = V253 / TPC-400
+    YOU ARE HERE = V255 / TPC-402
+    TPC402_ANALYTIC_STRUCTURE = PROVED_EXACT_FINITE
+    TPC402_SIGN_LAW_SOURCE_IDENTIFICATION = OPEN
+    TPC402_SOURCE_UNIFORM_L2 = OPEN
+    TPC402_ARITHMETIC_ADVANCE = NO
+    TPC402_FIXED_POWER_CREDIT = 0
+    TPC402_FULL_GATE_B = OPEN
+    TPC402_TWIN_PRIME_RESULT = NONE
+    TPC402_ROUND2_CLUE = TEST_C1_SIGNED_DIAGONAL_TERM_GROWING_OBSTRUCTION
+
+Historical TPC-400/TPC-399 records (not the current claim set):
+
     TPC400_INTERPOLATION_PANEL = NUMERICAL_OBSERVATION_FINITE_FLOAT64_96_ROWS
     TPC400_ORIGIN_PHASE = NUMERICAL_OBSERVATION_FINITE_FLOAT64_SCOPED
     TPC400_PARENT_CROSS_FAMILY_TRANSFER = NUMERICAL_OBSERVATION_FINITE_FLOAT64_SCOPED

@@ -3,13 +3,53 @@
 
 更新时间：2026-09-05
 
-状态：**TPC401_PROVED_EXACT_FINITE_PRODUCTION_DOMAIN_DIAGONAL_DELETION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC402_PROVED_EXACT_FINITE_SIGNED_DIAGONAL_TERM_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.195 current：TPC-401 c=1 exact diagonal-deletion decomposition
+## 0.196 current：TPC-402 c=1 signed diagonal-deletion term audit
+
+项目：papers/tpc-402-c1-signed-diagonal-term-audit/
+
+类型：**PROVED_EXACT_FINITE_SIGNED_DIAGONAL_TERM_AUDIT**。
+
+TPC-402 retains two explicit finite modeling laws, all-plus and
+alternating-index, and proves the off-diagonal coefficient identity
+`M_sigma(u,v)=T_uv[-A_sigma+b_sigma(u)+b_sigma(v)]` in the TPC-401
+production domain.  Exact `Fraction` arithmetic audits six TPC-400 origins,
+five positions, and the 872-prime shell: 240 sampled law rows (120 per law)
+and 209280 prime-level comparisons all agree.  The active anchor
+`N=13,Q=8,p=11` remains an explicit boundary counterexample.
+
+最强正结果：the signed deletion coefficient is an exact finite affine
+decomposition for each declared law.
+
+最强 obstruction：the exact identity does not select the arithmetic sign law,
+and the active anchor shows why the production-domain hypothesis cannot be
+dropped.
+
+开放定理：source sign identification, source-uniform arithmetic `L2`,
+growing uniformity, strict `1/400`, Route-B reassembly and twin primes remain
+open/none。
+
+可复用结构：signed coefficient decomposition、boundary firewall、exact
+Fraction certificate、reverse replay 与 mutation stress。
+
+ROUND2_CLUE：`TEST_C1_SIGNED_DIAGONAL_TERM_GROWING_OBSTRUCTION`。
+
+~~~text
+TPC402_ANALYTIC_STRUCTURE = PROVED_EXACT_FINITE
+TPC402_ARITHMETIC_ADVANCE = NO
+TPC402_FIXED_POWER_CREDIT = 0
+TPC402_FULL_GATE_B = OPEN
+TPC402_TWIN_PRIME_RESULT = NONE
+TPC402_ROUND2_CLUE = TEST_C1_SIGNED_DIAGONAL_TERM_GROWING_OBSTRUCTION
+TPC402_STATUS = PROVED EXACT FINITE SIGNED DIAGONAL TERM AUDIT
+~~~
+
+## 0.195 previous：TPC-401 c=1 exact diagonal-deletion decomposition
 
 项目：papers/tpc-401-c1-diagonal-deletion-decomposition/
 

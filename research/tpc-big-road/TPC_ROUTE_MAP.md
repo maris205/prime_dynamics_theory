@@ -2,42 +2,49 @@
 
 更新时间：2026-09-05
 
-当前地图版本：V254 / TPC-401
+当前地图版本：V255 / TPC-402
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-401`（`PROVED_EXACT_FINITE_PRODUCTION_DOMAIN_DIAGONAL_DELETION_AUDIT`）；
-对应论文目录为 `papers/tpc-401-c1-diagonal-deletion-decomposition/`。
+当前编号锚点：`TPC-402`（`PROVED_EXACT_FINITE_SIGNED_DIAGONAL_TERM_AUDIT`）；
+对应论文目录为 `papers/tpc-402-c1-signed-diagonal-term-audit/`。
 
-TPC-401 是当前位置：承接 TPC-400 的 finite analytic clue，在其生产域
-coordinate-disjoint affine family
-`N=1024,Q=8192,H=66` 上审计
-calibration 与 3 个 holdout origins，全部使用 `N=1024`。四个有限 matrix
-probes `lambda=7/8,15/16,31/32,1` 与四种 normalization 形成 96-row、16-cell
-panel。前三个 probes 的 12/16 cells 通过 1% origin-spread 门，endpoint
-`lambda=1` 的四个 cells 均失败，最大 spread 为 `0.05360449687470719`--`0.053890672705770762`。
-相对 hash-locked TPC-398 direct same-law all-origin means，calibration 与
-holdout transfer 均为 `4/4` per normalization，最大 holdout error 为
-`0.0024091869655593623`；within-family transfer 也均为 `4/4`。谱与 Schur
-为 `0/96` 的可复现 float64 观察。13-point rational anchor 对四个插值恒等式给出
-exact finite 证明。这是 finite cross-family endpoint-microgrid evidence，不建立
-source-valid origin-uniform theorem、growing operator、arithmetic `L2` 或
-twin-prime endpoint；`ARITHMETIC_ADVANCE=NO`、`FIXED_POWER_CREDIT=0`、
-`FULL_GATE_B=OPEN`。下一关为
-`TEST_C1_DIAGONAL_DELETION_SIGNED_TERM_AUDIT`。
+TPC-402 是当前位置：承接 TPC-401 的 finite analytic decomposition，在
+`N=1024,Q=8192,H=66` 生产域内保留 all-plus 与 alternating-index 两种显式
+sign laws，证明 `M_sigma(u,v)=T_uv[-A_sigma+b_sigma(u)+b_sigma(v)]`。
+六个 TPC-400 origins、五个 positions、872 个 shell primes 形成 240 个
+sampled law rows 和 209280 次 exact prime comparisons，全部通过；
+`N=13,Q=8,p=11` 的 active anchor 是适用边界反例。这是 proved exact finite
+analytic structure，不识别 arithmetic sign law，不建立 source-valid growing
+theorem、arithmetic `L2`、固定幂次 saving 或 twin-prime result。下一关为
+`TEST_C1_SIGNED_DIAGONAL_TERM_GROWING_OBSTRUCTION`。
 
-    YOU ARE HERE = V254 / TPC-401
+    YOU ARE HERE = V255 / TPC-402
     TPC400_INTERPOLATION_PANEL = NUMERICAL_OBSERVATION_FINITE_FLOAT64_96_ROWS
     TPC400_ORIGIN_PHASE = NUMERICAL_OBSERVATION_FINITE_FLOAT64_SCOPED
     TPC400_PARENT_CROSS_FAMILY_TRANSFER = NUMERICAL_OBSERVATION_FINITE_FLOAT64_SCOPED
     TPC400_ARITHMETIC_ADVANCE = NO
     TPC400_FIXED_POWER_CREDIT = 0
     TPC400_FULL_GATE_B = OPEN
+    TPC402_ANALYTIC_STRUCTURE = PROVED_EXACT_FINITE
+    TPC402_ARITHMETIC_ADVANCE = NO
+    TPC402_FIXED_POWER_CREDIT = 0
+    TPC402_FULL_GATE_B = OPEN
+    TPC402_ROUND2_CLUE = TEST_C1_SIGNED_DIAGONAL_TERM_GROWING_OBSTRUCTION
     TPC401_ANALYTIC_STRUCTURE = PROVED_EXACT_FINITE
     TPC401_ARITHMETIC_ADVANCE = NO
     TPC401_FIXED_POWER_CREDIT = 0
     TPC401_FULL_GATE_B = OPEN
     TPC401_ROUND2_CLUE = TEST_C1_DIAGONAL_DELETION_SIGNED_TERM_AUDIT
+
+## 5.185 V255 / TPC-402：c=1 signed diagonal-deletion term audit
+
+TPC-402 proves and audits the signed coefficient decomposition in the finite
+production domain.  The sign law remains a modeling choice: both all-plus and
+alternating-index laws pass 240 sampled law rows and 209280 exact prime-level
+comparisons.  The active anchor boundary is retained, and no arithmetic or
+growing gate is paid.  The next map edge is
+`TEST_C1_SIGNED_DIAGONAL_TERM_GROWING_OBSTRUCTION`.
 
 ## 5.184 V254 / TPC-401：c=1 diagonal-deletion decomposition
 
