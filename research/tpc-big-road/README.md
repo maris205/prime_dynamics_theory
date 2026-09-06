@@ -1,4 +1,32 @@
-# TPC big road V263 / TPC-410: c=1 odd complete-shell height replication
+# TPC big road V264 / TPC-411: c=1 pooled odd complete shells
+
+## V264 current anchor: TPC-411
+
+更新时间：2026-09-06
+
+TPC-411 is an exact finite pooled odd complete-shell proxy at `Q=65536,131072`:
+all `16458` primes are retained, `H=66,N=264`, shell-local amplitudes are used,
+and pooled alternating CRT has equal parity counts `8229,8229`.  Producer,
+literal independent replay, nine-case stress, PDF and Bridge-B are release-checked.
+Full operator norm, physical h_0, arithmetic L2/sign, fixed-power, Route-B and
+twin-prime result remain open/none.
+
+    YOU ARE HERE = V264 / TPC-411
+    TPC411_POOLED_ODD_COMPLETE_SHELLS = PROVED_EXACT_FINITE
+    TPC411_Q_SCALES = 65536,131072
+    TPC411_SHELL_COUNTS = 5709,10749
+    TPC411_POOLED_SHELL_COUNT = 16458
+    TPC411_H = 66
+    TPC411_N = 264
+    TPC411_PARITY_COUNTS = 8229,8229
+    TPC411_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC411_ARITHMETIC_ADVANCE = NO
+    TPC411_FIXED_POWER_CREDIT = 0
+    TPC411_FULL_GATE_B = OPEN
+    TPC411_TWIN_PRIME_RESULT = NONE
+    TPC411_ROUND2_CLUE = TEST_C1_POOLED_COMPLETE_SHELL_EXTENSION
+
+## V263 historical anchor: TPC-410
 
 ## V263 current anchor: TPC-410
 

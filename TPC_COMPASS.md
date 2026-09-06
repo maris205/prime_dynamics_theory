@@ -1,5 +1,33 @@
 # TPC distilled map and bold channel
 
+## V264 / TPC-411 current anchor
+
+当前入口：proof 为
+papers/tpc-411-c1-pooled-odd-complete-shells/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc411_c1_pooled_odd_complete_shells_checker.py，
+编号论文为 papers/tpc-411-c1-pooled-odd-complete-shells/。
+
+TPC-411 pools the two complete odd shells `Q=65536,131072`, retaining `16458`
+primes with shell-local amplitudes.  At `H=66,N=264`, pooled alternating CRT has
+`m_minus=m_plus=8229`; literal replay and nine-item stress pass.  This is one
+finite synthetic proxy adjacent entry, not a full operator, physical, arithmetic,
+fixed-power, Route-B, or twin-prime result.
+
+    YOU ARE HERE = V264 / TPC-411
+    TPC411_POOLED_ODD_COMPLETE_SHELLS = PROVED_EXACT_FINITE
+    TPC411_Q_SCALES = 65536,131072
+    TPC411_SHELL_COUNTS = 5709,10749
+    TPC411_POOLED_SHELL_COUNT = 16458
+    TPC411_H = 66
+    TPC411_N = 264
+    TPC411_PARITY_COUNTS = 8229,8229
+    TPC411_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC411_ARITHMETIC_ADVANCE = NO
+    TPC411_FIXED_POWER_CREDIT = 0
+    TPC411_FULL_GATE_B = OPEN
+    TPC411_TWIN_PRIME_RESULT = NONE
+    TPC411_ROUND2_CLUE = TEST_C1_POOLED_COMPLETE_SHELL_EXTENSION
+
 ## V263 / TPC-410 current anchor
 
 当前入口：proof 为

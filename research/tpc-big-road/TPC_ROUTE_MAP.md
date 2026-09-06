@@ -1,5 +1,28 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
+## V264 / TPC-411 current route edge
+
+TPC-411 将两个 odd complete shell `Q=65536,131072` pool，完整纳入
+`5709+10749=16458` 个 primes；在固定 `H=66,N=264=4H` 下保留 shell-local
+amplitudes，pooled alternating CRT 给出 `m_minus=m_plus=8229`。exact rational
+certificate、literal pooled replay 与九项 mutation stress 全部通过。这不是
+full operator norm、physical h_0、arithmetic L2/sign、fixed-power saving、
+Route-B closure 或 twin-prime result。下一 route edge 为
+`TEST_C1_POOLED_COMPLETE_SHELL_EXTENSION`。
+
+    YOU ARE HERE = V264 / TPC-411
+    TPC411_POOLED_ODD_COMPLETE_SHELLS = PROVED_EXACT_FINITE
+    TPC411_Q_SCALES = 65536,131072
+    TPC411_SHELL_COUNTS = 5709,10749
+    TPC411_POOLED_SHELL_COUNT = 16458
+    TPC411_H = 66
+    TPC411_N = 264
+    TPC411_PARITY_COUNTS = 8229,8229
+    TPC411_ARITHMETIC_ADVANCE = NO
+    TPC411_FIXED_POWER_CREDIT = 0
+    TPC411_FULL_GATE_B = OPEN
+    TPC411_ROUND2_CLUE = TEST_C1_POOLED_COMPLETE_SHELL_EXTENSION
+
 ## V263 / TPC-410 current route edge
 
 TPC-410 在 `Q=131072` 的 odd complete shell 上复制四高度 adjacent normalized

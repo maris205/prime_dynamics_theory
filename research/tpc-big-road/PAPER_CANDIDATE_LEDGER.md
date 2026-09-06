@@ -5,6 +5,49 @@
 
 状态：**TPC410_PROVED_EXACT_FINITE_ODD_COMPLETE_SHELL_HEIGHT_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
+## 0.205 current：TPC-411 c=1 pooled odd complete shells
+
+项目：papers/tpc-411-c1-pooled-odd-complete-shells/
+
+类型：**PROVED_EXACT_FINITE_POOLED_ODD_COMPLETE_SHELLS**。
+
+TPC-411 pools the two full odd shells at `Q=65536,131072`, retaining `16458`
+primes with shell-local amplitudes.  At `H=66,N=264`, pooled alternating CRT has
+equal parity counts `m_minus=m_plus=8229`; exact certificate, independent literal
+pooled replay, nine-case stress, PDF QA, and Bridge-B normal/optimized checks pass.
+This is finite one-entry synthetic-proxy evidence; full operator, physical source,
+arithmetic sign/L2, fixed-power, Route-B and twin-prime claims remain open/none.
+
+最强正结果：pooled odd complete-shell exact finite adjacent normalized proxy entry。
+
+最强 obstruction：the full normalized operator and physical/arithmetic identification
+are absent; no growing or twin-prime claim follows。
+
+开放定理：normalized growing operator bound, strict 1/400, Route-B reassembly
+and twin primes remain open/none。
+
+可复用结构：pooled shell-local normalization、rational certificate、literal pooled
+mask audit 与 strict claim-firewall stress。
+
+ROUND2_CLUE：`TEST_C1_POOLED_COMPLETE_SHELL_EXTENSION`。
+
+~~~text
+TPC411_POOLED_ODD_COMPLETE_SHELLS = PROVED_EXACT_FINITE
+TPC411_Q_SCALES = 65536,131072
+TPC411_SHELL_COUNTS = 5709,10749
+TPC411_POOLED_SHELL_COUNT = 16458
+TPC411_H = 66
+TPC411_N = 264
+TPC411_PARITY_COUNTS = 8229,8229
+TPC411_NORMALIZED_GROWING_THEOREM = OPEN
+TPC411_ARITHMETIC_ADVANCE = NO
+TPC411_FIXED_POWER_CREDIT = 0
+TPC411_FULL_GATE_B = OPEN
+TPC411_TWIN_PRIME_RESULT = NONE
+TPC411_ROUND2_CLUE = TEST_C1_POOLED_COMPLETE_SHELL_EXTENSION
+TPC411_STATUS = PROVED EXACT FINITE POOLED ODD COMPLETE SHELLS
+~~~
+
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。

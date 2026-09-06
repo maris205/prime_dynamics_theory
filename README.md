@@ -9,6 +9,15 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线最新位置：TPC-411 将 TPC-409 与 TPC-410 的两个 odd complete shell
+pool 到 `Q=65536,131072`，纳入 `5709+10749=16458` 个 primes；固定
+`H=66,N=264`，shell-local amplitudes 与 pooled alternating CRT 给出
+`m_minus=m_plus=8229`。exact certificate、independent literal pooled replay 与
+九项 mutation stress 均通过；结论仍严格限于 synthetic proxy 一个相邻 normalized
+entry，full operator norm、physical h_0、arithmetic sign/L2、fixed-power credit、
+Route-B 与 twin-prime result 仍开放/无。下一关为
+`TEST_C1_POOLED_COMPLETE_SHELL_EXTENSION`。
+
 当前主线最新位置：TPC-410 将 TPC-409 的四高度 odd complete-shell ladder 复制到
 Q=131072 的完整 odd shell，纳入 10749 个 primes，H=16,32,66,128、N=4H，
 `m_minus=5374,m_plus=5375`。exact certificate、independent literal CRT replay 与

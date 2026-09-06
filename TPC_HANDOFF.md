@@ -1,5 +1,50 @@
 # TPC HANDOFF
 
+TPC-411 current section: c=1 pooled odd complete shells
+----------------------------------------------------------
+
+TPC-411 pools the complete shells `Q=65536` and `Q=131072`, retaining all
+`16458=5709+10749` primes.  At fixed `H=66,N=264=4H`, shell-local amplitudes
+and pooled alternating CRT give `m_minus=m_plus=8229`.  The exact pooled local
+proxy satisfies `0<=z<=t_1/(a_min sqrt(S0 S1))<=4/(a_min H)<=4/H`.
+Producer, independent literal pooled replay, nine mutation tests, PDF QA and
+Bridge-B pass in normal and optimized modes.
+
+This remains a finite one-entry synthetic proxy theorem, not a full normalized
+operator bound, physical `h_0` theorem, arithmetic sign or `L2` estimate,
+fixed-power saving, Route-B closure, or twin-prime result.
+
+    TPC411_POOLED_ODD_COMPLETE_SHELLS = PROVED_EXACT_FINITE
+    TPC411_Q_SCALES = 65536,131072
+    TPC411_SHELL_COUNTS = 5709,10749
+    TPC411_POOLED_SHELL_COUNT = 16458
+    TPC411_H = 66
+    TPC411_N = 264
+    TPC411_PARITY_COUNTS = 8229,8229
+    TPC411_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC411_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC411_ARITHMETIC_ADVANCE = NO
+    TPC411_FIXED_POWER_CREDIT = 0
+    TPC411_FULL_GATE_B = OPEN
+    TPC411_TWIN_PRIME_RESULT = NONE
+    TPC411_STRONGEST_POSITIVE = POOLED_ODD_COMPLETE_SHELLS
+    TPC411_STRONGEST_OBSTRUCTION = FULL_OPERATOR_AND_PHYSICAL_IDENTIFICATION_ABSENT
+    TPC411_OPEN_THEOREM = NORMALIZED_GROWING_OPERATOR_BOUND
+    TPC411_REUSABLE_STRUCTURE = POOLED_SHELL_LOCAL_LITERAL_REPLAY
+    TPC411_ROUND2_CLUE = TEST_C1_POOLED_COMPLETE_SHELL_EXTENSION
+    TPC411_STATUS = PROVED EXACT FINITE POOLED ODD COMPLETE SHELLS
+
+TPC-411 reproducibility commands:
+
+    python -B papers/tpc-411-c1-pooled-odd-complete-shells/code/tpc411_c1_pooled_odd_complete_shells.py --check
+    python -O -B papers/tpc-411-c1-pooled-odd-complete-shells/code/tpc411_c1_pooled_odd_complete_shells.py --check
+    python -B papers/tpc-411-c1-pooled-odd-complete-shells/experiments/tpc411_independent_checker.py --check
+    python -O -B papers/tpc-411-c1-pooled-odd-complete-shells/experiments/tpc411_independent_checker.py --check
+    python -B papers/tpc-411-c1-pooled-odd-complete-shells/experiments/tpc411_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-411-c1-pooled-odd-complete-shells/experiments/tpc411_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc411_c1_pooled_odd_complete_shells_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc411_c1_pooled_odd_complete_shells_checker.py --check
+
 TPC-410 current section: c=1 odd complete-shell height replication
 -------------------------------------------------------------------
 
