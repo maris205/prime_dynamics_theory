@@ -1,4 +1,4 @@
-# TPC TeX-to-Markdown conversion batches: 418–360
+# TPC TeX-to-Markdown conversion batches: 418–355
 
 Updated 2026-09-07. This is a maintenance record for the first priority
 conversion batch after the archive inventory. It does not create a paper,
@@ -6,7 +6,7 @@ change the TPC route, or reopen the stopped TPC-418 research line.
 
 ## Batch scope and method
 
-Fifty-nine current route papers in the contiguous range TPC-418–365 were
+Sixty-four current route papers in the contiguous range TPC-418–365 were
 converted from their preserved `paper/main.tex` sources with the same method.
 Batch 7 closes the previously recorded TPC395–398 gap:
 
@@ -155,20 +155,42 @@ Their finite computational boundaries remain unchanged.
 | Paper | Full source Markdown | Provenance/page map/formula audit | Abstract/summary | Proof/application notes | TeX | PDF |
 |---|---|---|---|---|---|---|
 | TPC-364 | [paper/main.md](../../papers/tpc-364-shell-tilt-phase-diagram/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-364-shell-tilt-phase-diagram/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-364-shell-tilt-phase-diagram/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-364-shell-tilt-phase-diagram/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-364-shell-tilt-phase-diagram/notes/claim_firewall.md) | [main.tex](../../papers/tpc-364-shell-tilt-phase-diagram/paper/main.tex) | [main.pdf](../../papers/tpc-364-shell-tilt-phase-diagram/paper/main.pdf) |
-| TPC-363 | [paper/main.md](../../papers/tpc-363-bulk-persistence-localization/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-363-bulk-persistence-localization/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-363-bulk-persistence-localization/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-363-bulk-persistence-localization/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-363-bulk-persistence-localization/notes/claim_firewall.md) | [main.tex](../../papers/tpc-363-bulk-persistence-localization/paper/main.tex) | [main.pdf](../../papers/tpc-363-bulk-persistence-localization/paper/main.pdf) |
-| TPC-362 | [paper/main.md](../../papers/tpc-362-shell-scale-cap-obstruction/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-362-shell-scale-cap-obstruction/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-362-shell-scale-cap-obstruction/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-362-shell-scale-cap-obstruction/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-362-shell-scale-cap-obstruction/notes/claim_firewall.md) | [main.tex](../../papers/tpc-362-shell-scale-cap-obstruction/paper/main.tex) | [main.pdf](../../papers/tpc-362-shell-scale-cap-obstruction/paper/main.pdf) |
-| TPC-361 | [paper/main.md](../../papers/tpc-361-independent-high-origin-tightness-replication/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-361-independent-high-origin-tightness-replication/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-361-independent-high-origin-tightness-replication/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-361-independent-high-origin-tightness-replication/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-361-independent-high-origin-tightness-replication/notes/claim_firewall.md) | [main.tex](../../papers/tpc-361-independent-high-origin-tightness-replication/paper/main.tex) | [main.pdf](../../papers/tpc-361-independent-high-origin-tightness-replication/paper/main.pdf) |
-| TPC-360 | [paper/main.md](../../papers/tpc-360-schur-tightness-law-uniform-audit/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-360-schur-tightness-law-uniform-audit/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-360-schur-tightness-law-uniform-audit/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-360-schur-tightness-law-uniform-audit/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-360-schur-tightness-law-uniform-audit/notes/claim_firewall.md) | [main.tex](../../papers/tpc-360-schur-tightness-law-uniform-audit/paper/main.tex) | [main.pdf](../../papers/tpc-360-schur-tightness-law-uniform-audit/paper/main.pdf) |
+| TPC-363 | [paper/main.md](../../papers/tpc-363-bulk-persistence-localization/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-363-bulk-persistence-localization/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-363-bulk-persistence-localization/README.md) | [protocol.md](../../papers/tpc-363-bulk-persistence-localization/experiments/protocol.md), [route evaluation](../../papers/tpc-363-bulk-persistence-localization/notes/route_evaluation.md) | [main.tex](../../papers/tpc-363-bulk-persistence-localization/paper/main.tex) | [main.pdf](../../papers/tpc-363-bulk-persistence-localization/paper/main.pdf) |
+| TPC-362 | [paper/main.md](../../papers/tpc-362-shell-scale-cap-obstruction/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-362-shell-scale-cap-obstruction/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-362-shell-scale-cap-obstruction/README.md) | [protocol.md](../../papers/tpc-362-shell-scale-cap-obstruction/experiments/protocol.md), [route evaluation](../../papers/tpc-362-shell-scale-cap-obstruction/notes/route_evaluation.md) | [main.tex](../../papers/tpc-362-shell-scale-cap-obstruction/paper/main.tex) | [main.pdf](../../papers/tpc-362-shell-scale-cap-obstruction/paper/main.pdf) |
+| TPC-361 | [paper/main.md](../../papers/tpc-361-independent-high-origin-tightness-replication/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-361-independent-high-origin-tightness-replication/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-361-independent-high-origin-tightness-replication/README.md) | [protocol.md](../../papers/tpc-361-independent-high-origin-tightness-replication/experiments/protocol.md), [route evaluation](../../papers/tpc-361-independent-high-origin-tightness-replication/notes/route_evaluation.md) | [main.tex](../../papers/tpc-361-independent-high-origin-tightness-replication/paper/main.tex) | [main.pdf](../../papers/tpc-361-independent-high-origin-tightness-replication/paper/main.pdf) |
+| TPC-360 | [paper/main.md](../../papers/tpc-360-schur-tightness-law-uniform-audit/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-360-schur-tightness-law-uniform-audit/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-360-schur-tightness-law-uniform-audit/README.md) | [protocol.md](../../papers/tpc-360-schur-tightness-law-uniform-audit/experiments/protocol.md), [route evaluation](../../papers/tpc-360-schur-tightness-law-uniform-audit/notes/route_evaluation.md) | [main.tex](../../papers/tpc-360-schur-tightness-law-uniform-audit/paper/main.tex) | [main.pdf](../../papers/tpc-360-schur-tightness-law-uniform-audit/paper/main.pdf) |
 
 This batch records the finite shell-tilt phase diagram, bulk localization,
 shell-scale obstruction, high-origin replication, and Schur-law uniformity
 manuscripts as source-complete mechanical Markdown. Their finite claim
 boundaries remain unchanged.
 
+### Batch 13: TPC-359 through TPC-355
+
+| Paper | Full source Markdown | Provenance/page map/formula audit | Abstract/summary | Proof/application notes | TeX | PDF |
+|---|---|---|---|---|---|---|
+| TPC-359 | [paper/main.md](../../papers/tpc-359-geometry-adversarial-high-origin-holdout/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-359-geometry-adversarial-high-origin-holdout/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-359-geometry-adversarial-high-origin-holdout/README.md) | [protocol.md](../../papers/tpc-359-geometry-adversarial-high-origin-holdout/experiments/protocol.md), [route evaluation](../../papers/tpc-359-geometry-adversarial-high-origin-holdout/notes/route_evaluation.md) | [main.tex](../../papers/tpc-359-geometry-adversarial-high-origin-holdout/paper/main.tex) | [main.pdf](../../papers/tpc-359-geometry-adversarial-high-origin-holdout/paper/main.pdf) |
+| TPC-358 | [paper/main.md](../../papers/tpc-358-fresh-origin-spectral-holdout/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-358-fresh-origin-spectral-holdout/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-358-fresh-origin-spectral-holdout/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-358-fresh-origin-spectral-holdout/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-358-fresh-origin-spectral-holdout/notes/claim_firewall.md) | [main.tex](../../papers/tpc-358-fresh-origin-spectral-holdout/paper/main.tex) | [main.pdf](../../papers/tpc-358-fresh-origin-spectral-holdout/paper/main.pdf) |
+| TPC-357 | [paper/main.md](../../papers/tpc-357-operator-norm-scale-ladder/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-357-operator-norm-scale-ladder/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-357-operator-norm-scale-ladder/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-357-operator-norm-scale-ladder/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-357-operator-norm-scale-ladder/notes/claim_firewall.md) | [main.tex](../../papers/tpc-357-operator-norm-scale-ladder/paper/main.tex) | [main.pdf](../../papers/tpc-357-operator-norm-scale-ladder/paper/main.pdf) |
+| TPC-356 | [paper/main.md](../../papers/tpc-356-geometry-adversarial-normalization-holdout/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-356-geometry-adversarial-normalization-holdout/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-356-geometry-adversarial-normalization-holdout/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-356-geometry-adversarial-normalization-holdout/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-356-geometry-adversarial-normalization-holdout/notes/claim_firewall.md) | [main.tex](../../papers/tpc-356-geometry-adversarial-normalization-holdout/paper/main.tex) | [main.pdf](../../papers/tpc-356-geometry-adversarial-normalization-holdout/paper/main.pdf) |
+| TPC-355 | [paper/main.md](../../papers/tpc-355-position-aware-mask-energy-normalization/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-355-position-aware-mask-energy-normalization/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-355-position-aware-mask-energy-normalization/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-355-position-aware-mask-energy-normalization/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-355-position-aware-mask-energy-normalization/notes/claim_firewall.md) | [main.tex](../../papers/tpc-355-position-aware-mask-energy-normalization/paper/main.tex) | [main.pdf](../../papers/tpc-355-position-aware-mask-energy-normalization/paper/main.pdf) |
+
+This batch records the finite high-origin, fresh-origin, scale-ladder,
+normalization-holdout, and mask-energy manuscripts as source-complete
+mechanical Markdown. TPC-359 has no separate proof package in the preserved
+directory; its record marks that limitation and audits against the README and
+available notes.
+
 ## Formula and theorem-boundary verification
 
 The audit covered the formulas that carry each finite claim, rather than
 trying to reprove every computational certificate in the Markdown conversion:
+
+- TPC-359: geometry-adversarial high-origin finite holdout.
+- TPC-358: fresh-origin finite operator-norm certificate transfer.
+- TPC-357: finite operator-norm scale ladder.
+- TPC-356: geometry-adversarial position-normalization holdout.
+- TPC-355: position-aware mask-energy normalization.
 
 - TPC-364: the finite prime-shell tilt phase diagram.
 - TPC-363: bulk persistence at the first finite shell-scale failure.
@@ -276,13 +298,13 @@ The archive still contains 823 paper directories: 420 TPC and 403 RH. The
 inventory now records:
 
 ```tex
-full-source-md      59
+full-source-md      64
 reliable-full-md     0
-partial-or-notes   763
+partial-or-notes   758
 source-inaccessible  1
 ```
 
-The remaining 763 `partial-or-notes` entries are the next conversion pool;
+The remaining 758 `partial-or-notes` entries are the next conversion pool;
 they are not silently treated as full manuscripts. TPC-207 remains the single
 source-inaccessible entry. The next batch should continue with the highes
 route relevance or any `not-converted` source, using the same provenance and
