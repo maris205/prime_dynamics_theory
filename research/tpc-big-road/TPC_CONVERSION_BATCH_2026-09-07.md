@@ -1,4 +1,4 @@
-# TPC TeX-to-Markdown conversion batches: 418–399
+# TPC TeX-to-Markdown conversion batches: 418–385 (selected ranges)
 
 Updated 2026-09-07. This is a maintenance record for the first priority
 conversion batch after the archive inventory. It does not create a paper,
@@ -6,9 +6,10 @@ change the TPC route, or reopen the stopped TPC-418 research line.
 
 ## Batch scope and method
 
-The ten current route papers TPC-418 through TPC-409 were converted from
-their preserved `paper/main.tex` sources with the same method in two adjacent
-batches:
+Thirty current route papers in the selected ranges TPC-418–404, TPC-403–399,
+TPC-394–390, and TPC-389–385 were converted from their preserved
+`paper/main.tex` sources with the same method. TPC395–398 remain pending and
+are intentionally not counted as converted:
 
 ```text
 pandoc -f latex -t gfm --wrap=none
@@ -78,6 +79,16 @@ scoped prerequisite audit against the README and proof package.
 | TPC-391 | [paper/main.md](../../papers/tpc-391-c1-recursive-horizon-localization/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-391-c1-recursive-horizon-localization/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-391-c1-recursive-horizon-localization/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-391-c1-recursive-horizon-localization/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-391-c1-recursive-horizon-localization/notes/claim_firewall.md) | [main.tex](../../papers/tpc-391-c1-recursive-horizon-localization/paper/main.tex) | [main.pdf](../../papers/tpc-391-c1-recursive-horizon-localization/paper/main.pdf) |
 | TPC-390 | [paper/main.md](../../papers/tpc-390-c1-recursive-slope-composition/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-390-c1-recursive-slope-composition/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-390-c1-recursive-slope-composition/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-390-c1-recursive-slope-composition/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-390-c1-recursive-slope-composition/notes/claim_firewall.md) | [main.tex](../../papers/tpc-390-c1-recursive-slope-composition/paper/main.tex) | [main.pdf](../../papers/tpc-390-c1-recursive-slope-composition/paper/main.pdf) |
 
+### Batch 6: TPC-389 through TPC-385
+
+| Paper | Full source Markdown | Provenance/page map/formula audit | Abstract/summary | Proof/application notes | TeX | PDF |
+|---|---|---|---|---|---|---|
+| TPC-389 | [paper/main.md](../../papers/tpc-389-c1-long-horizon-slope-stress/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-389-c1-long-horizon-slope-stress/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-389-c1-long-horizon-slope-stress/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-389-c1-long-horizon-slope-stress/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-389-c1-long-horizon-slope-stress/notes/claim_firewall.md) | [main.tex](../../papers/tpc-389-c1-long-horizon-slope-stress/paper/main.tex) | [main.pdf](../../papers/tpc-389-c1-long-horizon-slope-stress/paper/main.pdf) |
+| TPC-388 | [paper/main.md](../../papers/tpc-388-c1-cross-family-slope-transfer/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-388-c1-cross-family-slope-transfer/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-388-c1-cross-family-slope-transfer/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-388-c1-cross-family-slope-transfer/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-388-c1-cross-family-slope-transfer/notes/claim_firewall.md) | [main.tex](../../papers/tpc-388-c1-cross-family-slope-transfer/paper/main.tex) | [main.pdf](../../papers/tpc-388-c1-cross-family-slope-transfer/paper/main.pdf) |
+| TPC-387 | [paper/main.md](../../papers/tpc-387-c1-count-ladder-renormalization/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-387-c1-count-ladder-renormalization/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-387-c1-count-ladder-renormalization/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-387-c1-count-ladder-renormalization/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-387-c1-count-ladder-renormalization/notes/claim_firewall.md) | [main.tex](../../papers/tpc-387-c1-count-ladder-renormalization/paper/main.tex) | [main.pdf](../../papers/tpc-387-c1-count-ladder-renormalization/paper/main.pdf) |
+| TPC-386 | [paper/main.md](../../papers/tpc-386-c1-count-holdout-bandwidth/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-386-c1-count-holdout-bandwidth/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-386-c1-count-holdout-bandwidth/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-386-c1-count-holdout-bandwidth/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-386-c1-count-holdout-bandwidth/notes/claim_firewall.md) | [main.tex](../../papers/tpc-386-c1-count-holdout-bandwidth/paper/main.tex) | [main.pdf](../../papers/tpc-386-c1-count-holdout-bandwidth/paper/main.pdf) |
+| TPC-385 | [paper/main.md](../../papers/tpc-385-c1-bandwidth-origin-holdout/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-385-c1-bandwidth-origin-holdout/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-385-c1-bandwidth-origin-holdout/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-385-c1-bandwidth-origin-holdout/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-385-c1-bandwidth-origin-holdout/notes/claim_firewall.md) | [main.tex](../../papers/tpc-385-c1-bandwidth-origin-holdout/paper/main.tex) | [main.pdf](../../papers/tpc-385-c1-bandwidth-origin-holdout/paper/main.pdf) |
+
 ## Formula and theorem-boundary verification
 
 The audit covered the formulas that carry each finite claim, rather than
@@ -134,6 +145,13 @@ trying to reprove every computational certificate in the Markdown conversion:
   boundary.
 - TPC-391: recursive horizon localization and its finite proof/audit scope.
 - TPC-390: recursive slope composition and the source's finite route boundary.
+- TPC-389: long-horizon slope stress, finite composition diagnostics, and its
+  explicit route boundary.
+- TPC-388: cross-family slope transfer and finite holdout scope.
+- TPC-387: count-ladder renormalization and the source's finite diagnostics.
+- TPC-386: count holdout/bandwidth analysis and its finite claim boundary.
+- TPC-385: bandwidth-origin holdout evidence and the preserved finite-only
+  scope.
 
 For all five papers, the prerequisite audit confirms that finite synthetic
 assumptions, exact-rational/computational evidence, and claim-firewall
@@ -147,9 +165,9 @@ The archive still contains 823 paper directories: 420 TPC and 403 RH. The
 inventory now records:
 
 ```text
-full-source-md      25
+full-source-md      30
 reliable-full-md     0
-partial-or-notes   797
+partial-or-notes   792
 source-inaccessible  1
 ```
 

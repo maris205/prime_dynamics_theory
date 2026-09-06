@@ -1,0 +1,65 @@
+# TPC-388: Cross-Family Count-Ladder Slope Transfer
+
+> This Markdown file is a mechanical TeX-to-GFM conversion of the preserved source manuscript. The TeX and PDF originals remain authoritative; this file does not upgrade the mathematical scope.
+
+- **Source TeX:** [`paper/main.tex`](main.tex)
+- **Source PDF:** [`paper/main.pdf`](main.pdf)
+- **Author:** Liang Wang; School of Mathematics and Statistics, Huazhong University; of Science and Technology (HUST), Wuhan, China
+- **Source date:** September 5, 2026
+- **Repository source commit:** `a8e14036a6516d08a787b6e0af53141e3dc26b13`
+
+## Abstract
+
+TPC-387 learned a logarithmic count slope on one fresh coordinate family. We freeze its 32 cell-wise slopes and transfer them, without refitting, to a second coordinate-disjoint family. Three origins at counts \(512\) and \(768\) are calibration and two later origins at count \(1024\) are holdout. The panel has 256 rows over two bands, two normalizations, four laws, and two \(Q\) values. All 32 parent-slope forecasts and all 32 same-family controls pass a predeclared 3% finite cap; the worst parent-transfer error is \(0.0234026666\). This is finite origin-transfer evidence, not an origin-uniform theorem or an arithmetic result.
+
+# Question and boundary
+
+The preceding TPC-387 result suggested that a two-point count slope can repair the finite \(512\to1024\) comparison. The next minimal question is whether the slope is portable across origins. We therefore freeze the parent slope before reading a new family and retain a local refit only as a control. The current family uses the affine grid \(a_j=2600001+401j\), with selected indices \(0,10,20,30,40\); its origins are \((2600001,2604011,2608021,2612031,2616041)\).
+
+The claim firewall is \[\texttt{ARITHMETIC\_ADVANCE=NO},\qquad
+ \texttt{FIXED\_POWER\_CREDIT=0},\qquad
+ \texttt{FULL\_GATE\_B=OPEN}.\] The official Session evaluator files are absent, so the local Bridge-B is repository evidence only.
+
+# Finite proxy and transfer rule
+
+For \(p\in(Q,2Q]\) we use the finite kernel \[\begin{aligned}
+ K_p(u,v)={}&p(p/Q)^2\frac{66^2}{66^2+(u-v)^2}
+ \left({\bf 1}_{p\mid u-v}-\frac{1}{p-1}\right)\\
+ &\quad\cdot{\bf 1}_{u\ne v}{\bf 1}_{p\nmid u}{\bf 1}_{p\nmid v}.\end{aligned}\] The square-energy geometry is \(G(u)=\sum_{p}\sum_{v\in I}K_p(u,v)^2\). We use local diagonal normalization or a scalar obtained from current-family calibration geometry. Blocks have length 128; the fixed band retains block distance at most three and the full-relative band retains every block pair. The laws are all-plus, alternating-index, mod-\(4\) character, and half-split; \(Q\in\{2048,8192\}\).
+
+For a fixed cell, let \(S_N\) denote the mean band spectral diagnostic. If \(\alpha_{387}\) is the corresponding slope in the locked TPC-387 certificate, the primary forecast and local control are \[\widehat S_{1024}^{\rm parent}=S_{768}(4/3)^{\alpha_{387}},
+ \qquad
+ \widehat S_{1024}^{\rm local}=S_{768}(4/3)^{\alpha_{\rm local}},\] where \[\alpha_{\rm local}=\frac{\log(S_{768}/S_{512})}{\log(768/512)}.\] The endpoint ratio is read only after all roles and slopes are fixed.
+
+# Certification
+
+The canonical certificate contains 256 rows and 32 cells and locks the TPC-387 certificate hash. A separate implementation rebuilds all matrices in descending prime-shell order and compares every numerical field within a fixed tolerance. A 13-point \(Q=8\) anchor has shell \(\{11,13\}\); rational arithmetic verifies positive geometry and symmetry for all four laws. The mutation script rejects 25 changes to roles, hashes, summaries, and firewall fields.
+
+# Results
+
+The stability counts at \(N=512\), \(N=768\), and the \(N=1024\) holdout are \(24/32\), \(24/32\), and \(28/32\). There are 40 rows above the inherited \(0.64\) spectral diagnostic and no Schur failures. The frozen parent transfer and local control each pass all 32 cells under the 3% cap.
+
+| band          | normalization | \(\alpha_{387}\) | parent ratio |  parent error |
+| :------------ | :------------ | ---------------: | -----------: | ------------: |
+| fixed \(c=3\) | local         |         0.105214 |     0.990301 | \(-0.009699\) |
+| fixed \(c=3\) | pooled        |         0.107198 |     0.981212 | \(-0.018788\) |
+| full relative | local         |         0.128235 |     0.993507 | \(-0.006493\) |
+| full relative | pooled        |         0.124306 |     0.985548 | \(-0.014452\) |
+
+All-plus \(Q=8192\) parent-slope forecasts on the new family.
+
+The maximum absolute parent-transfer error over all 32 cells is \(0.023402666610706224\), attained by the fixed-three-block, pooled, mod-\(4\)-character cell at \(Q=8192\). The local-control maximum is \(0.02447192072430493\). The largest difference between parent and local slopes is \(0.0595582579\), so the finite success does not imply that the two mechanisms are asymptotically interchangeable.
+
+# Conclusion and next clue
+
+The strongest positive result is a response-blind finite transfer of a slope between two disjoint origin families. The strongest obstruction is that the raw spectral cap still fails on 40 rows, and no theorem makes either slope uniform in origin or count. The reusable structure is a hashed parent-slope interface with a same-family control. The next clue is \[\texttt{ROUND2\_CLUE=TEST\_C1\_CROSS\_FAMILY\_SLOPE\_STRESS}.\] No arithmetic reassembly or twin-prime conclusion follows.
+
+# Reproduction
+
+The source, certificate, proof package, independent replay, stress test, and local Bridge-B record are in [papers/tpc-388-c1-cross-family-slope-transfer/](../). The release requires ordinary and optimized checks and byte-identical PDF copies.
+
+## Conversion boundary
+
+The source manuscript contains no bibliography or references section. The conversion preserves the source abstract and all numbered and unnumbered manuscript sections; proof-package assumptions and the README claim firewall remain the semantic audit sources.
+
+For source locations and prerequisite checks, see [`CONVERSION_RECORD.md`](../CONVERSION_RECORD.md).

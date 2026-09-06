@@ -6,7 +6,7 @@ Updated: 2026-09-07. Scope: all 823 first-level paper directories currently trac
 
 A directory is marked `reliable-full-md` only when a Markdown file passes the conservative local test of substantial paper-like text containing an abstract and references. `full-source-md` means a source-complete mechanical Markdown conversion of the available TeX/PDF manuscript; it may still lack a bibliography when the source lacks one and it has not received a separate semantic peer review. `partial-or-notes` means Markdown exists alongside TeX/PDF, but no Markdown file passed either full-text test; it may be a README, proof package, plan, ledger, or partial conversion. `notes-only` has Markdown without a TeX/PDF source. `not-converted` has TeX/PDF but no Markdown. `source-inaccessible` has none of these. Counts are file counts inside each directory; they do not certify semantic correctness. TeX/PDF originals are retained.
 
-Summary: `{"full-source-md":25,"partial-or-notes":797,"reliable-full-md":0,"source-inaccessible":1}`. Twenty-five current TPC manuscripts now have source-complete mechanical Markdown conversions, while the conservative reliable-full test still finds zero manuscripts with an abstract, references, and separate semantic review. Therefore the repository does not support the claim that all papers have been converted to Markdown. Most entries have a searchable project reading layer, but it is not a replacement for the original manuscript.
+Summary: `{"full-source-md":30,"partial-or-notes":792,"reliable-full-md":0,"source-inaccessible":1}`. Thirty current TPC manuscripts now have source-complete mechanical Markdown conversions, while the conservative reliable-full test still finds zero manuscripts with an abstract, references, and separate semantic review. Therefore the repository does not support the claim that all papers have been converted to Markdown. Most entries have a searchable project reading layer, but it is not a replacement for the original manuscript.
 
 | Program | Paper directory | PDF | TeX | MD | Status | Representative Markdown |
 |---|---|---:|---:|---:|---|---|
@@ -731,11 +731,11 @@ Summary: `{"full-source-md":25,"partial-or-notes":797,"reliable-full-md":0,"sour
 | TPC | `tpc-382-c1-origin-family-magnitude-audit` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
 | TPC | `tpc-383-c1-pooled-normalization-audit` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
 | TPC | `tpc-384-c1-bandwidth-normalization-phase-diagram` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-385-c1-bandwidth-origin-holdout` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-386-c1-count-holdout-bandwidth` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-387-c1-count-ladder-renormalization` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-388-c1-cross-family-slope-transfer` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-389-c1-long-horizon-slope-stress` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
+| TPC | `tpc-385-c1-bandwidth-origin-holdout` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-386-c1-count-holdout-bandwidth` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-387-c1-count-ladder-renormalization` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-388-c1-cross-family-slope-transfer` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-389-c1-long-horizon-slope-stress` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-39-additive-quotient-tomography` | 1 | 12 | 1 | `partial-or-notes` | `README.md` |
 | TPC | `tpc-390-c1-recursive-slope-composition` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-391-c1-recursive-horizon-localization` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |

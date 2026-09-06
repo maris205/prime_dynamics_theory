@@ -49,8 +49,9 @@ current claims remain in this handoff and the active paper's proof package.
 
 ## 2026-09-07 source-to-Markdown maintenance batch
 
-The first four priority conversion batches are complete for TPC-418 through
-TPC-399. Each preserved `paper/main.tex` was mechanically
+The first six priority conversion batches are complete for the selected ranges
+TPC-418–404, TPC-403–399, TPC-394–390, and TPC-389–385; TPC395–398 remain
+pending. Each preserved `paper/main.tex` in those batches was mechanically
 converted with Pandoc to `paper/main.md`, with the original title, author,
 date, abstract, and all numbered/unnumbered source sections retained. The
 per-paper [batch record](research/tpc-big-road/TPC_CONVERSION_BATCH_2026-09-07.md)
@@ -64,7 +65,7 @@ The manuscripts contain no bibliography/reference section. Accordingly the
 inventory uses `full-source-md` for these five source-complete mechanical
 conversions, while `reliable-full-md` remains zero pending the conservative
 abstract-plus-references and semantic-review test. Current coverage is
-`full-source-md=25`, `reliable-full-md=0`, `partial-or-notes=797`, and
+`full-source-md=30`, `reliable-full-md=0`, `partial-or-notes=792`, and
 `source-inaccessible=1` across 823 directories. This maintenance changes no
 theorem, certificate, route edge, or claim grade; original TeX/PDF and existing
 hand-edited materials remain authoritative.
