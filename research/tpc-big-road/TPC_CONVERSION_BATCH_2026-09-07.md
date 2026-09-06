@@ -1,4 +1,4 @@
-# TPC TeX-to-Markdown conversion batches: 418–404
+# TPC TeX-to-Markdown conversion batches: 418–399
 
 Updated 2026-09-07. This is a maintenance record for the first priority
 conversion batch after the archive inventory. It does not create a paper,
@@ -58,6 +58,16 @@ scoped prerequisite audit against the README and proof package.
 | TPC-405 | [paper/main.md](../../papers/tpc-405-c1-local-normalization-scale-ladder/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-405-c1-local-normalization-scale-ladder/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-405-c1-local-normalization-scale-ladder/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-405-c1-local-normalization-scale-ladder/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-405-c1-local-normalization-scale-ladder/notes/claim_firewall.md) | [main.tex](../../papers/tpc-405-c1-local-normalization-scale-ladder/paper/main.tex) | [main.pdf](../../papers/tpc-405-c1-local-normalization-scale-ladder/paper/main.pdf) |
 | TPC-404 | [paper/main.md](../../papers/tpc-404-c1-local-normalization-boundary/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-404-c1-local-normalization-boundary/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-404-c1-local-normalization-boundary/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-404-c1-local-normalization-boundary/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-404-c1-local-normalization-boundary/notes/claim_firewall.md) | [main.tex](../../papers/tpc-404-c1-local-normalization-boundary/paper/main.tex) | [main.pdf](../../papers/tpc-404-c1-local-normalization-boundary/paper/main.pdf) |
 
+### Batch 4: TPC-403 through TPC-399
+
+| Paper | Full source Markdown | Provenance/page map/formula audit | Abstract/summary | Proof/application notes | TeX | PDF |
+|---|---|---|---|---|---|---|
+| TPC-403 | [paper/main.md](../../papers/tpc-403-c1-crt-origin-proxy-obstruction/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-403-c1-crt-origin-proxy-obstruction/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-403-c1-crt-origin-proxy-obstruction/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-403-c1-crt-origin-proxy-obstruction/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-403-c1-crt-origin-proxy-obstruction/notes/claim_firewall.md) | [main.tex](../../papers/tpc-403-c1-crt-origin-proxy-obstruction/paper/main.tex) | [main.pdf](../../papers/tpc-403-c1-crt-origin-proxy-obstruction/paper/main.pdf) |
+| TPC-402 | [paper/main.md](../../papers/tpc-402-c1-signed-diagonal-term-audit/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-402-c1-signed-diagonal-term-audit/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-402-c1-signed-diagonal-term-audit/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-402-c1-signed-diagonal-term-audit/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-402-c1-signed-diagonal-term-audit/notes/claim_firewall.md) | [main.tex](../../papers/tpc-402-c1-signed-diagonal-term-audit/paper/main.tex) | [main.pdf](../../papers/tpc-402-c1-signed-diagonal-term-audit/paper/main.pdf) |
+| TPC-401 | [paper/main.md](../../papers/tpc-401-c1-diagonal-deletion-decomposition/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-401-c1-diagonal-deletion-decomposition/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-401-c1-diagonal-deletion-decomposition/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-401-c1-diagonal-deletion-decomposition/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-401-c1-diagonal-deletion-decomposition/notes/claim_firewall.md) | [main.tex](../../papers/tpc-401-c1-diagonal-deletion-decomposition/paper/main.tex) | [main.pdf](../../papers/tpc-401-c1-diagonal-deletion-decomposition/paper/main.pdf) |
+| TPC-400 | [paper/main.md](../../papers/tpc-400-c1-endpoint-microgrid-third-family/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-400-c1-endpoint-microgrid-third-family/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-400-c1-endpoint-microgrid-third-family/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-400-c1-endpoint-microgrid-third-family/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-400-c1-endpoint-microgrid-third-family/notes/claim_firewall.md) | [main.tex](../../papers/tpc-400-c1-endpoint-microgrid-third-family/paper/main.tex) | [main.pdf](../../papers/tpc-400-c1-endpoint-microgrid-third-family/paper/main.pdf) |
+| TPC-399 | [paper/main.md](../../papers/tpc-399-c1-endpoint-microgrid-cross-family/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-399-c1-endpoint-microgrid-cross-family/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-399-c1-endpoint-microgrid-cross-family/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-399-c1-endpoint-microgrid-cross-family/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-399-c1-endpoint-microgrid-cross-family/notes/claim_firewall.md) | [main.tex](../../papers/tpc-399-c1-endpoint-microgrid-cross-family/paper/main.tex) | [main.pdf](../../papers/tpc-399-c1-endpoint-microgrid-cross-family/paper/main.pdf) |
+
 ## Formula and theorem-boundary verification
 
 The audit covered the formulas that carry each finite claim, rather than
@@ -97,6 +107,16 @@ trying to reprove every computational certificate in the Markdown conversion:
   normalization scope.
 - TPC-404: the initial local-normalization boundary and the exact finite
   adjacent-entry claim recorded by the source package.
+- TPC-403: the finite CRT-origin proxy obstruction, exact certificate, and
+  explicit route limitation.
+- TPC-402: the signed diagonal-term identity, finite audit, and anchor
+  obstruction recorded by the source.
+- TPC-401: the diagonal-deletion decomposition, exact production identity,
+  and finite boundary counterexample.
+- TPC-400: the endpoint microgrid's third-family finite construction,
+  diagnostics, and route ledger.
+- TPC-399: the cross-family endpoint microgrid construction, frozen parent
+  interface, diagnostics, and finite claim boundary.
 
 For all five papers, the prerequisite audit confirms that finite synthetic
 assumptions, exact-rational/computational evidence, and claim-firewall
@@ -110,9 +130,9 @@ The archive still contains 823 paper directories: 420 TPC and 403 RH. The
 inventory now records:
 
 ```text
-full-source-md      15
+full-source-md      20
 reliable-full-md     0
-partial-or-notes   807
+partial-or-notes   802
 source-inaccessible  1
 ```
 
