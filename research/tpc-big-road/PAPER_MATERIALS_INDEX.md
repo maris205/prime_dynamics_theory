@@ -6,7 +6,7 @@ Updated: 2026-09-07. Scope: all 823 first-level paper directories currently trac
 
 A directory is marked `reliable-full-md` only when a Markdown file passes the conservative local test of substantial paper-like text containing an abstract and references. `full-source-md` means a source-complete mechanical Markdown conversion of the available TeX/PDF manuscript; it may still lack a bibliography when the source lacks one and it has not received a separate semantic peer review. `partial-or-notes` means Markdown exists alongside TeX/PDF, but no Markdown file passed either full-text test; it may be a README, proof package, plan, ledger, or partial conversion. `notes-only` has Markdown without a TeX/PDF source. `not-converted` has TeX/PDF but no Markdown. `source-inaccessible` has none of these. Counts are file counts inside each directory; they do not certify semantic correctness. TeX/PDF originals are retained.
 
-Summary: `{"full-source-md":30,"partial-or-notes":792,"reliable-full-md":0,"source-inaccessible":1}`. Thirty current TPC manuscripts now have source-complete mechanical Markdown conversions, while the conservative reliable-full test still finds zero manuscripts with an abstract, references, and separate semantic review. Therefore the repository does not support the claim that all papers have been converted to Markdown. Most entries have a searchable project reading layer, but it is not a replacement for the original manuscript.
+Summary: `{"full-source-md":34,"partial-or-notes":788,"reliable-full-md":0,"source-inaccessible":1}`. Thirty-four current TPC manuscripts now have source-complete mechanical Markdown conversions, while the conservative reliable-full test still finds zero manuscripts with an abstract, references, and separate semantic review. Therefore the repository does not support the claim that all papers have been converted to Markdown. Most entries have a searchable project reading layer, but it is not a replacement for the original manuscript.
 
 | Program | Paper directory | PDF | TeX | MD | Status | Representative Markdown |
 |---|---|---:|---:|---:|---|---|
@@ -742,10 +742,10 @@ Summary: `{"full-source-md":30,"partial-or-notes":792,"reliable-full-md":0,"sour
 | TPC | `tpc-392-c1-normalization-phase-diagram` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-393-c1-normalization-adversarial-holdout` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-394-c1-origin-uniformity-ladder` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
-| TPC | `tpc-395-c1-origin-cross-family-holdout` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-396-c1-signed-law-interpolation` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-397-c1-interpolation-transition-replication` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-398-c1-interpolation-endpoint-microgrid` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
+| TPC | `tpc-395-c1-origin-cross-family-holdout` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-396-c1-signed-law-interpolation` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-397-c1-interpolation-transition-replication` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-398-c1-interpolation-endpoint-microgrid` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-399-c1-endpoint-microgrid-cross-family` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-4-low-conductor-suppression-power-short-rough-boxes` | 1 | 6 | 2 | `partial-or-notes` | `README.md` |
 | TPC | `tpc-40-recovery-decorrelation-uncertainty` | 1 | 13 | 1 | `partial-or-notes` | `README.md` |

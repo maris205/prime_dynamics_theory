@@ -36,12 +36,12 @@ and a scoped formula/prerequisite audit. The source manuscripts have no
 bibliography, so the five entries are `full-source-md`, not
 `reliable-full-md`; the latter remains zero.
 
-The archive inventory is now `full-source-md=30`,
-`reliable-full-md=0`, `partial-or-notes=792`, and
+The archive inventory is now `full-source-md=34`,
+`reliable-full-md=0`, `partial-or-notes=788`, and
 `source-inaccessible=1` across 823 directories. This is a searchable
 source-layer and provenance improvement, not a scientific result. The next
 batch must preserve original TeX/PDF and hand-edited files, distinguish
-partial or inaccessible sources, address pending TPC395–398, and keep the
+partial or inaccessible sources and keep the
 TPC-418 STOP boundary unchanged.
 
 ## Route history by phase

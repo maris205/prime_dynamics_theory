@@ -65,7 +65,7 @@ The manuscripts contain no bibliography/reference section. Accordingly the
 inventory uses `full-source-md` for these five source-complete mechanical
 conversions, while `reliable-full-md` remains zero pending the conservative
 abstract-plus-references and semantic-review test. Current coverage is
-`full-source-md=30`, `reliable-full-md=0`, `partial-or-notes=792`, and
+`full-source-md=34`, `reliable-full-md=0`, `partial-or-notes=788`, and
 `source-inaccessible=1` across 823 directories. This maintenance changes no
 theorem, certificate, route edge, or claim grade; original TeX/PDF and existing
 hand-edited materials remain authoritative.
