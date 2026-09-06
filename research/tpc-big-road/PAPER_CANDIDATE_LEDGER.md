@@ -3,13 +3,54 @@
 
 更新时间：2026-09-05
 
-状态：**TPC407_PROVED_EXACT_FINITE_COMPLETE_SHELL_Q_SCALE_LADDER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC408_PROVED_EXACT_FINITE_COMPLETE_SHELL_Q_SCALE_EXTENSION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.201 current：TPC-407 c=1 complete-shell Q-scale ladder
+## 0.202 current：TPC-408 c=1 complete-shell Q-scale extension
+
+项目：papers/tpc-408-c1-complete-shell-q-scale-extension/
+
+类型：**PROVED_EXACT_FINITE_COMPLETE_SHELL_Q_SCALE_EXTENSION**。
+
+TPC-408 extends the complete-shell proxy to the full odd shells at
+`Q=65536,131072`, containing `5709,10749` primes.  Fixed `H=66,N=264`
+uses `m_minus=floor(r/2)` and `m_plus=ceil(r/2)` so no prime is deleted.
+The exact certificate, independent literal CRT replay, nine-mutation stress,
+PDF QA, and Bridge-B normal/optimized checks pass.  This remains finite
+one-entry synthetic-proxy evidence; full operator, physical source,
+arithmetic sign/L2, fixed-power, Route-B and twin-prime claims remain open.
+
+最强正结果：odd complete-shell exact finite Q-scale extension for one proxy entry。
+
+最强 obstruction：the full normalized operator and physical/arithmetic
+identification are absent; no growing or twin-prime claim follows。
+
+开放定理：normalized growing operator bound, strict 1/400, Route-B reassembly
+and twin primes remain open/none。
+
+可复用结构：odd-cardinality complete-shell exact CRT replay、rational certificate、
+literal masked-energy audit 与 strict claim-firewall stress。
+
+ROUND2_CLUE：`TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION`。
+
+~~~text
+TPC408_COMPLETE_SHELL_Q_SCALE_EXTENSION = PROVED_EXACT_FINITE
+TPC408_Q_SCALES = 65536,131072
+TPC408_SHELL_COUNTS = 5709,10749
+TPC408_ODD_SHELL_RETENTION = PROVED_EXACT_FINITE
+TPC408_NORMALIZED_GROWING_THEOREM = OPEN
+TPC408_ARITHMETIC_ADVANCE = NO
+TPC408_FIXED_POWER_CREDIT = 0
+TPC408_FULL_GATE_B = OPEN
+TPC408_TWIN_PRIME_RESULT = NONE
+TPC408_ROUND2_CLUE = TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION
+TPC408_STATUS = PROVED EXACT FINITE COMPLETE-SHELL Q-SCALE EXTENSION
+~~~
+
+## 0.201 previous：TPC-407 c=1 complete-shell Q-scale ladder
 
 项目：papers/tpc-407-c1-complete-shell-q-scale-ladder/
 

@@ -1,5 +1,34 @@
 # TPC big road V260 / TPC-407: c=1 complete-shell Q-scale ladder
 
+## V261 current anchor: TPC-408
+
+更新时间：2026-09-05
+
+TPC-408 current anchor: exact finite complete-shell Q-scale extension; next clue
+is TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION.  It retains the full odd shells
+at `Q=65536,131072`, with `5709,10749` primes and explicit unequal parity
+counts.  Producer, literal independent replay, stress suite, PDF and Bridge-B
+are release-checked.  The result remains one synthetic proxy adjacent entry;
+full operator norm, physical h_0, arithmetic L2/sign, fixed-power, Route-B and
+twin-prime result remain open/none.
+
+    YOU ARE HERE = V261 / TPC-408
+    TPC408_COMPLETE_SHELL_Q_SCALE_EXTENSION = PROVED_EXACT_FINITE
+    TPC408_Q_SCALES = 65536,131072
+    TPC408_SHELL_COUNTS = 5709,10749
+    TPC408_ODD_SHELL_RETENTION = PROVED_EXACT_FINITE
+    TPC408_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC408_ARITHMETIC_ADVANCE = NO
+    TPC408_FIXED_POWER_CREDIT = 0
+    TPC408_FULL_GATE_B = OPEN
+    TPC408_TWIN_PRIME_RESULT = NONE
+    TPC408_ROUND2_CLUE = TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION
+
+TPC-407 previous proof package 位于
+`../../papers/tpc-407-c1-complete-shell-q-scale-ladder/`。
+
+## V260 historical anchor: TPC-407
+
 ## V260 current anchor: TPC-407
 
 更新时间：2026-09-05

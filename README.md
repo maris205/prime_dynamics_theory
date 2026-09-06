@@ -9,6 +9,14 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线最新位置：TPC-408 将 TPC-407 的 complete-shell Q-scale ladder 延伸到
+Q=65536,131072 的两个 odd complete shells，完整纳入 5709 与 10749 个 primes，
+并以 `m_minus=floor(r/2), m_plus=ceil(r/2)` 明确处理奇数 shell。exact rational
+certificate、independent literal CRT replay 与九项 mutation stress 均通过；结论
+仍严格限于 synthetic proxy 的一个相邻 normalized entry。full operator norm、
+physical h_0、arithmetic sign/L2、fixed-power credit、Route-B 与 twin-prime result
+仍开放/无。下一关仍为 `TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION`。
+
 当前主线最新位置：TPC-407 将 TPC-406 的 complete-shell proxy 推进到
 Q=4096,8192,16384,32768 的四尺度 ladder。exact certificate 覆盖全部
 464,872,1612,3030 个 shell primes，literal independent CRT replay 与八项
@@ -54,6 +62,10 @@ arithmetic `L2` 或 twin-prime result。`ARITHMETIC_ADVANCE=NO`、
 
 papers/tpc-407-c1-complete-shell-q-scale-ladder - TPC-407 current project；含
 complete-shell Q-scale exact finite theorem、four-shell rational certificate、literal CRT
+replay、stress、proof package/PDF 与 local fail-closed Bridge-B checker。
+
+papers/tpc-408-c1-complete-shell-q-scale-extension - TPC-408 current project；含
+odd complete-shell Q-scale extension、two-shell rational certificate、literal CRT
 replay、stress、proof package/PDF 与 local fail-closed Bridge-B checker。
 
 papers/tpc-406-c1-local-normalization-complete-shell-entry-boundary - TPC-406 previous project；含

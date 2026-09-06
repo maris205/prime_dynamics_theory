@@ -1,5 +1,31 @@
 # TPC distilled map and bold channel
 
+## V261 / TPC-408 current anchor
+
+当前入口：proof 为
+papers/tpc-408-c1-complete-shell-q-scale-extension/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc408_c1_complete_shell_q_scale_extension_checker.py，
+编号论文为 papers/tpc-408-c1-complete-shell-q-scale-extension/。
+
+complete-shell Q-scale extension：固定 H=66,N=264，将 Q=65536,131072 的完整
+odd shells（5709、10749 primes）全部保留，采用 m_minus=floor(r/2)、
+m_plus=ceil(r/2) 的显式 alternating CRT profile。两个 exact rows、literal
+independent replay 与九项 mutation stress 均通过。它只约束一个 synthetic proxy
+adjacent entry，不是 full operator norm、physical h_0、arithmetic sign/L2、
+fixed-power saving、Route-B closure 或 twin-prime result。
+
+    YOU ARE HERE = V261 / TPC-408
+    TPC408_COMPLETE_SHELL_Q_SCALE_EXTENSION = PROVED_EXACT_FINITE
+    TPC408_Q_SCALES = 65536,131072
+    TPC408_SHELL_COUNTS = 5709,10749
+    TPC408_ODD_SHELL_RETENTION = PROVED_EXACT_FINITE
+    TPC408_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC408_ARITHMETIC_ADVANCE = NO
+    TPC408_FIXED_POWER_CREDIT = 0
+    TPC408_FULL_GATE_B = OPEN
+    TPC408_TWIN_PRIME_RESULT = NONE
+    TPC408_ROUND2_CLUE = TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION
+
 ## V260 / TPC-407 current anchor
 
 更新时间：2026-09-05

@@ -1,5 +1,48 @@
 # TPC HANDOFF
 
+TPC-408 current section: c=1 complete-shell Q-scale extension
+---------------------------------------------------------------
+
+TPC-408 extends TPC-407 to the next two full prime shells, `Q=65536` and
+`Q=131072`, with exact counts `5709` and `10749`.  Both shells are odd and
+are retained in full; the explicit alternating CRT profile uses
+`m_minus=floor(r/2)` and `m_plus=ceil(r/2)`.  At fixed `H=66,N=264` and origin
+lower bound `10^6`, the exact adjacent proxy entry satisfies
+`0<=z<=t_1/(a_min sqrt(S0 S1))<=4/(a_min H)<=4/H`.  Producer, independent
+literal replay, and nine mutation tests pass in normal and optimized modes.
+
+This is still a finite one-entry synthetic proxy theorem, not a full
+normalized operator bound, physical `h_0` theorem, arithmetic sign or `L2`
+estimate, fixed-power saving, Route-B closure, or twin-prime result.
+
+    TPC408_COMPLETE_SHELL_Q_SCALE_EXTENSION = PROVED_EXACT_FINITE
+    TPC408_Q_SCALES = 65536,131072
+    TPC408_SHELL_COUNTS = 5709,10749
+    TPC408_ODD_SHELL_RETENTION = PROVED_EXACT_FINITE
+    TPC408_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC408_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC408_ARITHMETIC_ADVANCE = NO
+    TPC408_FIXED_POWER_CREDIT = 0
+    TPC408_FULL_GATE_B = OPEN
+    TPC408_TWIN_PRIME_RESULT = NONE
+    TPC408_STRONGEST_POSITIVE = COMPLETE_SHELL_Q_SCALE_EXTENSION
+    TPC408_STRONGEST_OBSTRUCTION = FULL_OPERATOR_AND_PHYSICAL_IDENTIFICATION_ABSENT
+    TPC408_OPEN_THEOREM = NORMALIZED_GROWING_OPERATOR_BOUND
+    TPC408_REUSABLE_STRUCTURE = ODD_COMPLETE_SHELL_CRT_REPLAY
+    TPC408_ROUND2_CLUE = TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION
+    TPC408_STATUS = PROVED EXACT FINITE COMPLETE-SHELL Q-SCALE EXTENSION
+
+TPC-408 reproducibility commands:
+
+    python -B papers/tpc-408-c1-complete-shell-q-scale-extension/code/tpc408_c1_complete_shell_q_scale_extension.py --check
+    python -O -B papers/tpc-408-c1-complete-shell-q-scale-extension/code/tpc408_c1_complete_shell_q_scale_extension.py --check
+    python -B papers/tpc-408-c1-complete-shell-q-scale-extension/experiments/tpc408_independent_checker.py --check
+    python -O -B papers/tpc-408-c1-complete-shell-q-scale-extension/experiments/tpc408_independent_checker.py --check
+    python -B papers/tpc-408-c1-complete-shell-q-scale-extension/experiments/tpc408_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-408-c1-complete-shell-q-scale-extension/experiments/tpc408_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc408_c1_complete_shell_q_scale_extension_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc408_c1_complete_shell_q_scale_extension_checker.py --check
+
 TPC-407 current section: c=1 complete-shell Q-scale ladder
 ------------------------------------------------------------
 

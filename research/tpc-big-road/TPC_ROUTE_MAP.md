@@ -1,5 +1,25 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
+## V261 / TPC-408 current route edge
+
+TPC-408 将 TPC-407 的 complete-shell adjacent normalized proxy entry extension
+推进到 `Q=65536,131072` 的两个 odd complete shells；完整 shell counts 为
+`5709,10749`，literal CRT replay 与九项 mutation stress 全部通过。odd
+cardinality 由 `m_minus=floor(r/2), m_plus=ceil(r/2)` 显式处理。这不是 full
+operator norm、physical h_0、arithmetic L2/sign、fixed-power saving、Route-B
+closure 或 twin-prime result。下一 route edge 仍为
+`TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION`。
+
+    YOU ARE HERE = V261 / TPC-408
+    TPC408_COMPLETE_SHELL_Q_SCALE_EXTENSION = PROVED_EXACT_FINITE
+    TPC408_Q_SCALES = 65536,131072
+    TPC408_SHELL_COUNTS = 5709,10749
+    TPC408_ODD_SHELL_RETENTION = PROVED_EXACT_FINITE
+    TPC408_ARITHMETIC_ADVANCE = NO
+    TPC408_FIXED_POWER_CREDIT = 0
+    TPC408_FULL_GATE_B = OPEN
+    TPC408_ROUND2_CLUE = TEST_C1_COMPLETE_SHELL_Q_SCALE_EXTENSION
+
 ## V260 / TPC-407 current route edge
 
 TPC-407 将 TPC-406 的 complete-shell adjacent normalized proxy entry boundary
