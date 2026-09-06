@@ -5,6 +5,50 @@
 
 状态：**TPC410_PROVED_EXACT_FINITE_ODD_COMPLETE_SHELL_HEIGHT_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
+## 0.208 current：TPC-414 c=1 three-shell pooled extension
+
+项目：papers/tpc-414-c1-three-shell-pooled-extension/
+
+类型：**PROVED_EXACT_FINITE_THREE_SHELL_POOLED_EXTENSION**。
+
+TPC-414 adds the complete `Q=262144` shell to the pooled profile, retaining
+`5709+10749+20390=36848` primes.  At `H=66,N=264`, shell-local amplitudes and
+pooled alternating CRT give `m_minus=m_plus=18424`. Exact certificate,
+independent literal replay, 9-case stress, PDF QA, and Bridge-B normal/optimized
+checks pass. This is finite one-entry synthetic-proxy evidence; full operator,
+physical source, arithmetic sign/L2, fixed-power, Route-B and twin-prime claims
+remain open/none.
+
+最强正结果：three-shell pooled exact finite adjacent normalized proxy entry。
+
+最强 obstruction：the full normalized operator and physical/arithmetic identification
+are absent; no growing or twin-prime claim follows。
+
+开放定理：normalized growing operator bound, strict 1/400, Route-B reassembly
+and twin primes remain open/none。
+
+可复用结构：three-shell shell-local normalization、literal mask audit 与 strict
+claim-firewall stress。
+
+ROUND2_CLUE：`TEST_C1_THREE_SHELL_POOLED_EXTENSION`。
+
+~~~text
+TPC414_THREE_SHELL_POOLED_EXTENSION = PROVED_EXACT_FINITE
+TPC414_Q_SCALES = 65536,131072,262144
+TPC414_SHELL_COUNTS = 5709,10749,20390
+TPC414_POOLED_SHELL_COUNT = 36848
+TPC414_H = 66
+TPC414_N = 264
+TPC414_PARITY_COUNTS = 18424,18424
+TPC414_NORMALIZED_GROWING_THEOREM = OPEN
+TPC414_ARITHMETIC_ADVANCE = NO
+TPC414_FIXED_POWER_CREDIT = 0
+TPC414_FULL_GATE_B = OPEN
+TPC414_TWIN_PRIME_RESULT = NONE
+TPC414_ROUND2_CLUE = TEST_C1_THREE_SHELL_POOLED_EXTENSION
+TPC414_STATUS = PROVED EXACT FINITE THREE-SHELL POOLED EXTENSION
+~~~
+
 ## 0.207 current：TPC-413 c=1 pooled CRT-origin replication
 
 项目：papers/tpc-413-c1-pooled-origin-replication/

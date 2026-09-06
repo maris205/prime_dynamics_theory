@@ -1,5 +1,32 @@
 # TPC distilled map and bold channel
 
+## V267 / TPC-414 current anchor
+
+当前入口：proof 为
+papers/tpc-414-c1-three-shell-pooled-extension/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc414_c1_three_shell_pooled_extension_checker.py，
+编号论文为 papers/tpc-414-c1-three-shell-pooled-extension/。
+
+TPC-414 adds the complete `Q=262144` shell to the pooled profile, giving 36848
+primes and equal parity counts `18424,18424` at `H=66,N=264`. Literal replay
+and 9-item stress pass. This remains a finite synthetic adjacent entry, not a
+full operator, physical, arithmetic, fixed-power, Route-B, or twin-prime result.
+
+    YOU ARE HERE = V267 / TPC-414
+    TPC414_THREE_SHELL_POOLED_EXTENSION = PROVED_EXACT_FINITE
+    TPC414_Q_SCALES = 65536,131072,262144
+    TPC414_SHELL_COUNTS = 5709,10749,20390
+    TPC414_POOLED_SHELL_COUNT = 36848
+    TPC414_H = 66
+    TPC414_N = 264
+    TPC414_PARITY_COUNTS = 18424,18424
+    TPC414_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC414_ARITHMETIC_ADVANCE = NO
+    TPC414_FIXED_POWER_CREDIT = 0
+    TPC414_FULL_GATE_B = OPEN
+    TPC414_TWIN_PRIME_RESULT = NONE
+    TPC414_ROUND2_CLUE = TEST_C1_THREE_SHELL_POOLED_EXTENSION
+
 ## V266 / TPC-413 current anchor
 
 当前入口：proof 为

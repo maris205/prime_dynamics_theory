@@ -1,4 +1,32 @@
-# TPC big road V266 / TPC-413: c=1 pooled CRT-origin replication
+# TPC big road V267 / TPC-414: c=1 three-shell pooled extension
+
+## V267 current anchor: TPC-414
+
+更新时间：2026-09-06
+
+TPC-414 adds complete shell `Q=262144` to the pooled profile, retaining
+`36848=5709+10749+20390` primes.  At `H=66,N=264`, shell-local amplitudes and
+pooled alternating CRT have equal parity counts `18424,18424`. Producer,
+literal independent replay, 9-case stress, PDF and Bridge-B are release-checked.
+Full operator norm, physical h_0, arithmetic L2/sign, fixed-power, Route-B and
+twin-prime result remain open/none.
+
+    YOU ARE HERE = V267 / TPC-414
+    TPC414_THREE_SHELL_POOLED_EXTENSION = PROVED_EXACT_FINITE
+    TPC414_Q_SCALES = 65536,131072,262144
+    TPC414_SHELL_COUNTS = 5709,10749,20390
+    TPC414_POOLED_SHELL_COUNT = 36848
+    TPC414_H = 66
+    TPC414_N = 264
+    TPC414_PARITY_COUNTS = 18424,18424
+    TPC414_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC414_ARITHMETIC_ADVANCE = NO
+    TPC414_FIXED_POWER_CREDIT = 0
+    TPC414_FULL_GATE_B = OPEN
+    TPC414_TWIN_PRIME_RESULT = NONE
+    TPC414_ROUND2_CLUE = TEST_C1_THREE_SHELL_POOLED_EXTENSION
+
+## V266 historical anchor: TPC-413
 
 ## V266 current anchor: TPC-413
 

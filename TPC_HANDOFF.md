@@ -1,5 +1,50 @@
 # TPC HANDOFF
 
+TPC-414 current section: c=1 three-shell pooled extension
+------------------------------------------------------------
+
+TPC-414 adds the complete shell `Q=262144` to the pooled profile, retaining
+`36848=5709+10749+20390` primes.  At fixed `H=66,N=264=4H`, shell-local
+amplitudes and pooled alternating CRT give `m_minus=m_plus=18424`; the exact
+local proxy obeys `0<=z<=t_1/(a_min sqrt(S0 S1))<=4/(a_min H)<=4/H`.
+Producer, independent literal replay, 9 mutation tests, PDF QA and Bridge-B
+pass in normal and optimized modes.
+
+This remains a finite one-entry synthetic proxy theorem, not a full normalized
+operator bound, physical `h_0` theorem, arithmetic sign or `L2` estimate,
+fixed-power saving, Route-B closure, or twin-prime result.
+
+    TPC414_THREE_SHELL_POOLED_EXTENSION = PROVED_EXACT_FINITE
+    TPC414_Q_SCALES = 65536,131072,262144
+    TPC414_SHELL_COUNTS = 5709,10749,20390
+    TPC414_POOLED_SHELL_COUNT = 36848
+    TPC414_H = 66
+    TPC414_N = 264
+    TPC414_PARITY_COUNTS = 18424,18424
+    TPC414_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC414_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC414_ARITHMETIC_ADVANCE = NO
+    TPC414_FIXED_POWER_CREDIT = 0
+    TPC414_FULL_GATE_B = OPEN
+    TPC414_TWIN_PRIME_RESULT = NONE
+    TPC414_STRONGEST_POSITIVE = THREE_SHELL_POOLED_EXTENSION
+    TPC414_STRONGEST_OBSTRUCTION = FULL_OPERATOR_AND_PHYSICAL_IDENTIFICATION_ABSENT
+    TPC414_OPEN_THEOREM = NORMALIZED_GROWING_OPERATOR_BOUND
+    TPC414_REUSABLE_STRUCTURE = THREE_SHELL_LOCAL_LITERAL_REPLAY
+    TPC414_ROUND2_CLUE = TEST_C1_THREE_SHELL_POOLED_EXTENSION
+    TPC414_STATUS = PROVED EXACT FINITE THREE-SHELL POOLED EXTENSION
+
+TPC-414 reproducibility commands:
+
+    python -B papers/tpc-414-c1-three-shell-pooled-extension/code/tpc414_c1_three_shell_pooled_extension.py --check
+    python -O -B papers/tpc-414-c1-three-shell-pooled-extension/code/tpc414_c1_three_shell_pooled_extension.py --check
+    python -B papers/tpc-414-c1-three-shell-pooled-extension/experiments/tpc414_independent_checker.py --check
+    python -O -B papers/tpc-414-c1-three-shell-pooled-extension/experiments/tpc414_independent_checker.py --check
+    python -B papers/tpc-414-c1-three-shell-pooled-extension/experiments/tpc414_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-414-c1-three-shell-pooled-extension/experiments/tpc414_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc414_c1_three_shell_pooled_extension_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc414_c1_three_shell_pooled_extension_checker.py --check
+
 TPC-413 current section: c=1 pooled CRT-origin replication
 ------------------------------------------------------------
 
