@@ -1,4 +1,32 @@
-# TPC big road V268 / TPC-415: c=1 three-shell height extension
+# TPC big road V269 / TPC-416: c=1 four-shell odd pooled extension
+
+## V269 current anchor: TPC-416
+
+更新时间：2026-09-06
+
+TPC-416 adds complete shell `Q=524288` to the pooled profile, retaining
+`75483=5709+10749+20390+38635` primes.  At `H=66,N=264`, shell-local
+amplitudes and pooled alternating CRT give odd parity counts `37741,37742`.
+Producer, literal independent replay, 10-case stress, PDF and Bridge-B are
+release-checked. Full operator norm, physical h_0, arithmetic L2/sign,
+fixed-power, Route-B and twin-prime result remain open/none.
+
+    YOU ARE HERE = V269 / TPC-416
+    TPC416_FOUR_SHELL_ODD_POOLED_EXTENSION = PROVED_EXACT_FINITE
+    TPC416_Q_SCALES = 65536,131072,262144,524288
+    TPC416_SHELL_COUNTS = 5709,10749,20390,38635
+    TPC416_POOLED_SHELL_COUNT = 75483
+    TPC416_H = 66
+    TPC416_N = 264
+    TPC416_PARITY_COUNTS = 37741,37742
+    TPC416_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC416_ARITHMETIC_ADVANCE = NO
+    TPC416_FIXED_POWER_CREDIT = 0
+    TPC416_FULL_GATE_B = OPEN
+    TPC416_TWIN_PRIME_RESULT = NONE
+    TPC416_ROUND2_CLUE = TEST_C1_FOUR_SHELL_ODD_POOLED_EXTENSION
+
+## V268 historical anchor: TPC-415
 
 ## V268 current anchor: TPC-415
 

@@ -1,5 +1,51 @@
 # TPC HANDOFF
 
+TPC-416 current section: c=1 four-shell odd pooled extension
+---------------------------------------------------------------
+
+TPC-416 adds the complete `Q=524288` shell, retaining
+`75483=5709+10749+20390+38635` primes.  At `H=66,N=264=4H`, shell-local
+amplitudes and pooled alternating CRT give the explicit odd counts
+`m_minus=37741,m_plus=37742`; the exact proxy obeys
+`0<=z<=t_1/(a_min sqrt(S0 S1))<=4/(a_min H)<=4/H`.
+Producer, independent literal replay, 10 mutation tests, PDF QA and Bridge-B
+pass in normal and optimized modes.
+
+This remains a finite one-entry synthetic proxy theorem, not a full normalized
+operator bound, physical `h_0` theorem, arithmetic sign or `L2` estimate,
+fixed-power saving, Route-B closure, or twin-prime result.
+
+    TPC416_FOUR_SHELL_ODD_POOLED_EXTENSION = PROVED_EXACT_FINITE
+    TPC416_Q_SCALES = 65536,131072,262144,524288
+    TPC416_SHELL_COUNTS = 5709,10749,20390,38635
+    TPC416_POOLED_SHELL_COUNT = 75483
+    TPC416_H = 66
+    TPC416_N = 264
+    TPC416_PARITY_COUNTS = 37741,37742
+    TPC416_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC416_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC416_ARITHMETIC_ADVANCE = NO
+    TPC416_FIXED_POWER_CREDIT = 0
+    TPC416_FULL_GATE_B = OPEN
+    TPC416_TWIN_PRIME_RESULT = NONE
+    TPC416_STRONGEST_POSITIVE = FOUR_SHELL_ODD_POOLED_EXTENSION
+    TPC416_STRONGEST_OBSTRUCTION = FULL_OPERATOR_AND_PHYSICAL_IDENTIFICATION_ABSENT
+    TPC416_OPEN_THEOREM = NORMALIZED_GROWING_OPERATOR_BOUND
+    TPC416_REUSABLE_STRUCTURE = ODD_PARITY_SHELL_LOCAL_LITERAL_REPLAY
+    TPC416_ROUND2_CLUE = TEST_C1_FOUR_SHELL_ODD_POOLED_EXTENSION
+    TPC416_STATUS = PROVED EXACT FINITE FOUR-SHELL ODD POOLED EXTENSION
+
+TPC-416 reproducibility commands:
+
+    python -B papers/tpc-416-c1-four-shell-odd-pooled-extension/code/tpc416_c1_four_shell_odd_pooled_extension.py --check
+    python -O -B papers/tpc-416-c1-four-shell-odd-pooled-extension/code/tpc416_c1_four_shell_odd_pooled_extension.py --check
+    python -B papers/tpc-416-c1-four-shell-odd-pooled-extension/experiments/tpc416_independent_checker.py --check
+    python -O -B papers/tpc-416-c1-four-shell-odd-pooled-extension/experiments/tpc416_independent_checker.py --check
+    python -B papers/tpc-416-c1-four-shell-odd-pooled-extension/experiments/tpc416_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-416-c1-four-shell-odd-pooled-extension/experiments/tpc416_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc416_c1_four_shell_odd_pooled_extension_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc416_c1_four_shell_odd_pooled_extension_checker.py --check
+
 TPC-415 current section: c=1 three-shell height extension
 ------------------------------------------------------------
 

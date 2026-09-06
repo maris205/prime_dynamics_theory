@@ -1,5 +1,27 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
+## V269 / TPC-416 current route edge
+
+TPC-416 将 pooled profile 扩至第四个完整 shell `Q=524288`，四个 shell 共纳入
+`75483` 个 primes；在固定 `H=66,N=264=4H` 下保留 shell-local amplitudes，
+pooled alternating CRT 显式给出 `m_minus=37741,m_plus=37742`。exact certificate、
+literal replay 与 10 项 mutation stress 全部通过。这不是 full operator norm、
+physical h_0、arithmetic L2/sign、fixed-power saving、Route-B closure 或 twin-prime
+result。下一 route edge 为 `TEST_C1_FOUR_SHELL_ODD_POOLED_EXTENSION`。
+
+    YOU ARE HERE = V269 / TPC-416
+    TPC416_FOUR_SHELL_ODD_POOLED_EXTENSION = PROVED_EXACT_FINITE
+    TPC416_Q_SCALES = 65536,131072,262144,524288
+    TPC416_SHELL_COUNTS = 5709,10749,20390,38635
+    TPC416_POOLED_SHELL_COUNT = 75483
+    TPC416_H = 66
+    TPC416_N = 264
+    TPC416_PARITY_COUNTS = 37741,37742
+    TPC416_ARITHMETIC_ADVANCE = NO
+    TPC416_FIXED_POWER_CREDIT = 0
+    TPC416_FULL_GATE_B = OPEN
+    TPC416_ROUND2_CLUE = TEST_C1_FOUR_SHELL_ODD_POOLED_EXTENSION
+
 ## V268 / TPC-415 current route edge
 
 TPC-415 将 three-shell pooled profile 延伸到 `H=16,32,66,128`、`N=4H`，

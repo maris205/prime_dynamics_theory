@@ -1,5 +1,33 @@
 # TPC distilled map and bold channel
 
+## V269 / TPC-416 current anchor
+
+当前入口：proof 为
+papers/tpc-416-c1-four-shell-odd-pooled-extension/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc416_c1_four_shell_odd_pooled_extension_checker.py，
+编号论文为 papers/tpc-416-c1-four-shell-odd-pooled-extension/。
+
+TPC-416 adds the fourth complete shell `Q=524288`, giving 75483 pooled primes
+at `H=66,N=264`; the explicit odd parity counts are `37741,37742`.
+Literal replay and 10-item stress pass. This remains a finite synthetic
+adjacent entry, not a full operator, physical, arithmetic, fixed-power,
+Route-B, or twin-prime result.
+
+    YOU ARE HERE = V269 / TPC-416
+    TPC416_FOUR_SHELL_ODD_POOLED_EXTENSION = PROVED_EXACT_FINITE
+    TPC416_Q_SCALES = 65536,131072,262144,524288
+    TPC416_SHELL_COUNTS = 5709,10749,20390,38635
+    TPC416_POOLED_SHELL_COUNT = 75483
+    TPC416_H = 66
+    TPC416_N = 264
+    TPC416_PARITY_COUNTS = 37741,37742
+    TPC416_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC416_ARITHMETIC_ADVANCE = NO
+    TPC416_FIXED_POWER_CREDIT = 0
+    TPC416_FULL_GATE_B = OPEN
+    TPC416_TWIN_PRIME_RESULT = NONE
+    TPC416_ROUND2_CLUE = TEST_C1_FOUR_SHELL_ODD_POOLED_EXTENSION
+
 ## V268 / TPC-415 current anchor
 
 当前入口：proof 为

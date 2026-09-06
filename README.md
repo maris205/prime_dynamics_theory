@@ -9,6 +9,14 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线最新位置：TPC-416 将 pooled profile 扩至第四个完整 shell
+`Q=524288`，共纳入 `75483` 个 primes；固定 `H=66,N=264`，shell-local
+amplitudes 与 pooled alternating CRT 显式给出 `m_minus=37741,m_plus=37742`。
+exact certificate、independent literal replay 与 10 项 mutation stress 均通过；
+结论仍限于 synthetic proxy 一个相邻 normalized entry，full operator norm、physical
+h_0、arithmetic sign/L2、fixed-power credit、Route-B 与 twin-prime result 仍开放/无。
+下一关为 `TEST_C1_FOUR_SHELL_ODD_POOLED_EXTENSION`。
+
 当前主线最新位置：TPC-415 将 three-shell pooled profile 延伸到
 `H=16,32,66,128`、`N=4H`，完整保留 `36848` 个 primes、shell-local amplitudes
 与 equal parity `18424/18424`。exact certificate、independent literal replay

@@ -5,6 +5,50 @@
 
 状态：**TPC410_PROVED_EXACT_FINITE_ODD_COMPLETE_SHELL_HEIGHT_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
+## 0.210 current：TPC-416 c=1 four-shell odd pooled extension
+
+项目：papers/tpc-416-c1-four-shell-odd-pooled-extension/
+
+类型：**PROVED_EXACT_FINITE_FOUR_SHELL_ODD_POOLED_EXTENSION**。
+
+TPC-416 adds the complete `Q=524288` shell, retaining `75483` primes across
+four shells.  At `H=66,N=264`, shell-local amplitudes and pooled alternating
+CRT give explicit odd parity counts `m_minus=37741,m_plus=37742`. Exact
+certificate, independent literal replay, 10-case stress, PDF QA, and Bridge-B
+normal/optimized checks pass. This is finite one-entry synthetic-proxy evidence;
+full operator, physical source, arithmetic sign/L2, fixed-power, Route-B and
+twin-prime claims remain open/none.
+
+最强正结果：four-shell odd-pooled exact finite adjacent normalized proxy entry。
+
+最强 obstruction：the full normalized operator and physical/arithmetic identification
+are absent; no growing or twin-prime claim follows。
+
+开放定理：normalized growing operator bound, strict 1/400, Route-B reassembly
+and twin primes remain open/none。
+
+可复用结构：explicit odd parity handling、shell-local normalization 与 literal
+mask audit。
+
+ROUND2_CLUE：`TEST_C1_FOUR_SHELL_ODD_POOLED_EXTENSION`。
+
+~~~text
+TPC416_FOUR_SHELL_ODD_POOLED_EXTENSION = PROVED_EXACT_FINITE
+TPC416_Q_SCALES = 65536,131072,262144,524288
+TPC416_SHELL_COUNTS = 5709,10749,20390,38635
+TPC416_POOLED_SHELL_COUNT = 75483
+TPC416_H = 66
+TPC416_N = 264
+TPC416_PARITY_COUNTS = 37741,37742
+TPC416_NORMALIZED_GROWING_THEOREM = OPEN
+TPC416_ARITHMETIC_ADVANCE = NO
+TPC416_FIXED_POWER_CREDIT = 0
+TPC416_FULL_GATE_B = OPEN
+TPC416_TWIN_PRIME_RESULT = NONE
+TPC416_ROUND2_CLUE = TEST_C1_FOUR_SHELL_ODD_POOLED_EXTENSION
+TPC416_STATUS = PROVED EXACT FINITE FOUR-SHELL ODD POOLED EXTENSION
+~~~
+
 ## 0.209 current：TPC-415 c=1 three-shell height extension
 
 项目：papers/tpc-415-c1-three-shell-height-extension/
