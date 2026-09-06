@@ -1,5 +1,47 @@
 # TPC HANDOFF
 
+TPC-409 current section: c=1 odd complete-shell height ladder
+---------------------------------------------------------------
+
+TPC-409 fixes the odd complete shell at `Q=65536` (all `5709` primes) and
+extends the local proxy across `H=16,32,66,128`, with `N=4H`.  The explicit
+alternating CRT profile has `m_minus=2854` and `m_plus=2855`; no prime is
+discarded.  At every height the exact adjacent entry satisfies
+`0<=z<=t_1/(a_min sqrt(S0 S1))<=4/(a_min H)<=4/H`.  Producer, independent
+literal replay, and nine mutation tests pass in normal and optimized modes.
+
+This is still a finite one-entry synthetic proxy theorem, not a full
+normalized operator bound, physical `h_0` theorem, arithmetic sign or `L2`
+estimate, fixed-power saving, Route-B closure, or twin-prime result.
+
+    TPC409_ODD_COMPLETE_SHELL_HEIGHT_LADDER = PROVED_EXACT_FINITE
+    TPC409_Q = 65536
+    TPC409_HEIGHTS = 16,32,66,128
+    TPC409_SHELL_COUNT = 5709
+    TPC409_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC409_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC409_ARITHMETIC_ADVANCE = NO
+    TPC409_FIXED_POWER_CREDIT = 0
+    TPC409_FULL_GATE_B = OPEN
+    TPC409_TWIN_PRIME_RESULT = NONE
+    TPC409_STRONGEST_POSITIVE = ODD_COMPLETE_SHELL_HEIGHT_LADDER
+    TPC409_STRONGEST_OBSTRUCTION = FULL_OPERATOR_AND_PHYSICAL_IDENTIFICATION_ABSENT
+    TPC409_OPEN_THEOREM = NORMALIZED_GROWING_OPERATOR_BOUND
+    TPC409_REUSABLE_STRUCTURE = ODD_COMPLETE_SHELL_HEIGHT_REPLAY
+    TPC409_ROUND2_CLUE = TEST_C1_ODD_COMPLETE_SHELL_HEIGHT_EXTENSION
+    TPC409_STATUS = PROVED EXACT FINITE ODD COMPLETE-SHELL HEIGHT LADDER
+
+TPC-409 reproducibility commands:
+
+    python -B papers/tpc-409-c1-odd-complete-shell-height-ladder/code/tpc409_c1_odd_complete_shell_height_ladder.py --check
+    python -O -B papers/tpc-409-c1-odd-complete-shell-height-ladder/code/tpc409_c1_odd_complete_shell_height_ladder.py --check
+    python -B papers/tpc-409-c1-odd-complete-shell-height-ladder/experiments/tpc409_independent_checker.py --check
+    python -O -B papers/tpc-409-c1-odd-complete-shell-height-ladder/experiments/tpc409_independent_checker.py --check
+    python -B papers/tpc-409-c1-odd-complete-shell-height-ladder/experiments/tpc409_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-409-c1-odd-complete-shell-height-ladder/experiments/tpc409_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc409_c1_odd_complete_shell_height_ladder_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc409_c1_odd_complete_shell_height_ladder_checker.py --check
+
 TPC-408 current section: c=1 complete-shell Q-scale extension
 ---------------------------------------------------------------
 

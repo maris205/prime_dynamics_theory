@@ -1,5 +1,30 @@
 # TPC distilled map and bold channel
 
+## V262 / TPC-409 current anchor
+
+当前入口：proof 为
+papers/tpc-409-c1-odd-complete-shell-height-ladder/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc409_c1_odd_complete_shell_height_ladder_checker.py，
+编号论文为 papers/tpc-409-c1-odd-complete-shell-height-ladder/。
+
+固定 Q=65536 的 5709-prime odd complete shell，测试 H=16,32,66,128、N=4H
+四个 exact rows。全部 shell primes 保留，显式 profile 的 m_minus=2854、
+m_plus=2855；literal independent replay 与九项 stress 均通过。它只约束一个
+synthetic proxy adjacent entry，不是 full operator norm、physical h_0、arithmetic
+sign/L2、fixed-power saving、Route-B closure 或 twin-prime result。
+
+    YOU ARE HERE = V262 / TPC-409
+    TPC409_ODD_COMPLETE_SHELL_HEIGHT_LADDER = PROVED_EXACT_FINITE
+    TPC409_Q = 65536
+    TPC409_HEIGHTS = 16,32,66,128
+    TPC409_SHELL_COUNT = 5709
+    TPC409_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC409_ARITHMETIC_ADVANCE = NO
+    TPC409_FIXED_POWER_CREDIT = 0
+    TPC409_FULL_GATE_B = OPEN
+    TPC409_TWIN_PRIME_RESULT = NONE
+    TPC409_ROUND2_CLUE = TEST_C1_ODD_COMPLETE_SHELL_HEIGHT_EXTENSION
+
 ## V261 / TPC-408 current anchor
 
 当前入口：proof 为

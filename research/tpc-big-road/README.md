@@ -1,3 +1,31 @@
+# TPC big road V262 / TPC-409: c=1 odd complete-shell height ladder
+
+## V262 current anchor: TPC-409
+
+更新时间：2026-09-06
+
+TPC-409 current anchor: exact finite odd complete-shell height ladder at
+`Q=65536`.  All `5709` shell primes are retained and the four heights
+`H=16,32,66,128` use `N=4H`; the unequal parity counts are explicit.
+Producer, literal independent replay, stress suite, PDF and Bridge-B are
+release-checked.  The result remains one synthetic proxy adjacent entry;
+full operator norm, physical h_0, arithmetic L2/sign, fixed-power, Route-B
+and twin-prime result remain open/none.
+
+    YOU ARE HERE = V262 / TPC-409
+    TPC409_ODD_COMPLETE_SHELL_HEIGHT_LADDER = PROVED_EXACT_FINITE
+    TPC409_Q = 65536
+    TPC409_HEIGHTS = 16,32,66,128
+    TPC409_SHELL_COUNT = 5709
+    TPC409_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC409_ARITHMETIC_ADVANCE = NO
+    TPC409_FIXED_POWER_CREDIT = 0
+    TPC409_FULL_GATE_B = OPEN
+    TPC409_TWIN_PRIME_RESULT = NONE
+    TPC409_ROUND2_CLUE = TEST_C1_ODD_COMPLETE_SHELL_HEIGHT_EXTENSION
+
+## V261 historical anchor: TPC-408
+
 # TPC big road V260 / TPC-407: c=1 complete-shell Q-scale ladder
 
 ## V261 current anchor: TPC-408

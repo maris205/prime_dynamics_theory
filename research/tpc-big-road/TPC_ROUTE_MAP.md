@@ -1,5 +1,23 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
+## V262 / TPC-409 current route edge
+
+TPC-409 在 `Q=65536` 的 odd complete shell 上将 adjacent normalized proxy entry
+扩展到 `H=16,32,66,128`、`N=4H` 四个 heights；5709 个 primes 全部保留，
+literal replay 与九项 mutation stress 全部通过。它不是 full operator norm、
+physical h_0、arithmetic L2/sign、fixed-power saving、Route-B closure 或 twin-prime
+result。下一 route edge 为 `TEST_C1_ODD_COMPLETE_SHELL_HEIGHT_EXTENSION`。
+
+    YOU ARE HERE = V262 / TPC-409
+    TPC409_ODD_COMPLETE_SHELL_HEIGHT_LADDER = PROVED_EXACT_FINITE
+    TPC409_Q = 65536
+    TPC409_HEIGHTS = 16,32,66,128
+    TPC409_SHELL_COUNT = 5709
+    TPC409_ARITHMETIC_ADVANCE = NO
+    TPC409_FIXED_POWER_CREDIT = 0
+    TPC409_FULL_GATE_B = OPEN
+    TPC409_ROUND2_CLUE = TEST_C1_ODD_COMPLETE_SHELL_HEIGHT_EXTENSION
+
 ## V261 / TPC-408 current route edge
 
 TPC-408 将 TPC-407 的 complete-shell adjacent normalized proxy entry extension
