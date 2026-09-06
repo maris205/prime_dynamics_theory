@@ -1,5 +1,19 @@
 # TPC big road V271 / TPC-418: c=1 finite-family shell-parity envelope
 
+## Archive and new-session navigation
+
+- [TPC history summary](TPC_HISTORY_SUMMARY.md): route phases, blockers, and
+  authoritative reading order.
+- [Paper materials inventory](PAPER_MATERIALS_INDEX.md): all 823 RH/TPC paper
+  directories and conservative Markdown coverage status.
+- [Paper materials links](PAPER_MATERIALS_LINKS.md): per-paper links to the
+  preserved Markdown, TeX, and PDF artifacts.
+- [PrimeGaps186 reference review](REFERENCE_PRIMEGAPS186.md): external
+  conditional-formalization and certificate audit.
+
+These archive documents do not change the current TPC theorem state or reopen
+any `STOP_SCOPED` route.
+
 ## V271 current anchor: TPC-418
 
 更新时间：2026-09-07

@@ -1,5 +1,51 @@
 # TPC HANDOFF
 
+## 2026-09-07 maintenance and new-session entry
+
+This maintenance pass audited the repository instruction surface against the
+official GPT-6 Astra model guidance and Codex guidance for `AGENTS.md` and
+skills. The repository contains one root `AGENTS.md`; no repository-local
+`skill.md`, `SKILL.md`, or standalone workflow file was found. The root policy
+was tightened to make user precedence, autonomous completion of authorized
+work, progressive disclosure, bounded delegation, and risk-calibrated testing
+explicit. Redundant handoff-contract text was removed, and the TPC startup
+commands were made POSIX-compatible while preserving synchronization,
+preservation, mathematical-boundary, and release requirements. Sources:
+<https://developers.openai.com/api/docs/guides/latest-model>,
+<https://learn.chatgpt.com/docs/agent-configuration/agents-md>, and
+<https://learn.chatgpt.com/docs/build-skills>. These sources do provide
+GPT-6 Astra-specific guidance; no additional private “Astra” specification was
+found or assumed.
+
+The archive inventory is [PAPER_MATERIALS_INDEX.md](research/tpc-big-road/PAPER_MATERIALS_INDEX.md)
+and the route handoff is [TPC_HISTORY_SUMMARY.md](research/tpc-big-road/TPC_HISTORY_SUMMARY.md).
+It covers 823 paper directories (420 TPC, 403 RH): 822 have Markdown alongside
+TeX/PDF but no conservative reliable-full-paper Markdown file, and one TPC
+directory (`tpc-207-moving-hole-bdh-translation-compiler`) has no local
+Markdown, TeX, or PDF source. Thus “all papers are already converted to MD” is
+not supported by the repository. Originals remain in place.
+
+The external PrimeGaps186 review is
+[REFERENCE_PRIMEGAPS186.md](research/tpc-big-road/REFERENCE_PRIMEGAPS186.md).
+It records source commit `61340d0b74163003b32756bb16e91d9209a5e330`, the three
+explicit analytic/numerical Lean inputs, the conditional theorem boundary,
+the certificate/comparator separation, and the local dependency gap. Its
+bounded-gap-186 result is not a twin-prime result and supplies no TPC physical
+identification or L2 credit.
+
+This maintenance and reference review do not alter the current mathematical
+state. In particular:
+
+```text
+TPC418_ROUND2_CLUE = NONE_UNTIL_GROWING_OR_PHYSICAL_GATE_CHANGES
+TPC418_ARITHMETIC_ADVANCE = NO
+TPC418_FIXED_POWER_CREDIT = 0
+TPC418_FULL_GATE_B = OPEN
+```
+
+The new-session reading order is in `TPC_HISTORY_SUMMARY.md`; authoritative
+current claims remain in this handoff and the active paper's proof package.
+
 TPC-418 current section: c=1 finite-family shell-parity envelope
 -------------------------------------------------------------------
 
