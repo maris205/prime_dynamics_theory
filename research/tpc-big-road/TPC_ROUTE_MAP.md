@@ -1,5 +1,28 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
+## V266 / TPC-413 current route edge
+
+TPC-413 将 pooled complete-shell 四高度 profile 在三个不同 CRT representative
+`o_s=r+sL`（`s=1,2,3`）上复制，共 12 个 exact rows。由于代表元相差 CRT
+period，所有 prime residues、literal masks 与 normalized values 精确不变；
+`16458` primes 与 `m_minus=m_plus=8229` 保持。这不是 full operator norm、physical
+h_0、arithmetic L2/sign、fixed-power saving、Route-B closure 或 twin-prime result。
+下一 route edge 为 `TEST_C1_POOLED_ORIGIN_REPLICATION`。
+
+    YOU ARE HERE = V266 / TPC-413
+    TPC413_POOLED_ORIGIN_REPLICATION = PROVED_EXACT_FINITE
+    TPC413_Q_SCALES = 65536,131072
+    TPC413_SHELL_COUNTS = 5709,10749
+    TPC413_POOLED_SHELL_COUNT = 16458
+    TPC413_HEIGHTS = 16,32,66,128
+    TPC413_ORIGIN_SHIFTS = 1,2,3
+    TPC413_CASES = 12
+    TPC413_PARITY_COUNTS = 8229,8229
+    TPC413_ARITHMETIC_ADVANCE = NO
+    TPC413_FIXED_POWER_CREDIT = 0
+    TPC413_FULL_GATE_B = OPEN
+    TPC413_ROUND2_CLUE = TEST_C1_POOLED_ORIGIN_REPLICATION
+
 ## V265 / TPC-412 current route edge
 
 TPC-412 将 pooled odd complete-shell proxy 从 `H=66` 延伸到

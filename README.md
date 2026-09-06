@@ -9,6 +9,14 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线最新位置：TPC-413 将 pooled complete-shell 四高度 profile 在三个不同
+CRT representative `o_s=r+sL`（`s=1,2,3`）上复制，共 12 个 exact rows；所有
+16458 个 primes、shell-local amplitudes 与 `m_minus=m_plus=8229` 保持不变。
+exact certificate、independent literal replay 与 12 项 mutation stress 均通过；
+结论仍限于 CRT-period invariance 的 finite synthetic proxy，full operator norm、
+physical h_0、arithmetic sign/L2、fixed-power credit、Route-B 与 twin-prime result
+仍开放/无。下一关为 `TEST_C1_POOLED_ORIGIN_REPLICATION`。
+
 当前主线最新位置：TPC-412 将 pooled odd complete-shell proxy 从 `H=66` 延伸到
 `H=16,32,66,128`，始终 `N=4H`；两个完整 shells 共纳入 `16458` 个 primes，
 shell-local amplitudes 与 pooled alternating CRT 给出 `m_minus=m_plus=8229`。

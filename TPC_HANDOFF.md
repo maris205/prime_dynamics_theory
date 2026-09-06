@@ -1,5 +1,50 @@
 # TPC HANDOFF
 
+TPC-413 current section: c=1 pooled CRT-origin replication
+------------------------------------------------------------
+
+TPC-413 repeats the pooled TPC-412 four-height profile at three distinct CRT
+representatives `o_s=r+sL`, `s=1,2,3`, giving 12 exact rows.  The representatives
+have identical prime residues and masks; all `16458` primes remain shell-local,
+with `m_minus=m_plus=8229` and `N=4H`.  Producer, independent literal replay,
+12 mutation tests, PDF QA and Bridge-B pass in normal and optimized modes.
+
+This remains a finite CRT-period invariance audit of a synthetic proxy, not a
+full normalized operator bound, physical `h_0` theorem, arithmetic sign or
+`L2` estimate, fixed-power saving, Route-B closure, or twin-prime result.
+
+    TPC413_POOLED_ORIGIN_REPLICATION = PROVED_EXACT_FINITE
+    TPC413_Q_SCALES = 65536,131072
+    TPC413_SHELL_COUNTS = 5709,10749
+    TPC413_POOLED_SHELL_COUNT = 16458
+    TPC413_HEIGHTS = 16,32,66,128
+    TPC413_ORIGIN_SHIFTS = 1,2,3
+    TPC413_CASES = 12
+    TPC413_PARITY_COUNTS = 8229,8229
+    TPC413_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC413_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC413_ARITHMETIC_ADVANCE = NO
+    TPC413_FIXED_POWER_CREDIT = 0
+    TPC413_FULL_GATE_B = OPEN
+    TPC413_TWIN_PRIME_RESULT = NONE
+    TPC413_STRONGEST_POSITIVE = POOLED_CRT_ORIGIN_REPLICATION
+    TPC413_STRONGEST_OBSTRUCTION = FULL_OPERATOR_AND_PHYSICAL_IDENTIFICATION_ABSENT
+    TPC413_OPEN_THEOREM = NORMALIZED_GROWING_OPERATOR_BOUND
+    TPC413_REUSABLE_STRUCTURE = CRT_PERIOD_INVARIANCE_LITERAL_REPLAY
+    TPC413_ROUND2_CLUE = TEST_C1_POOLED_ORIGIN_REPLICATION
+    TPC413_STATUS = PROVED EXACT FINITE POOLED ORIGIN REPLICATION
+
+TPC-413 reproducibility commands:
+
+    python -B papers/tpc-413-c1-pooled-origin-replication/code/tpc413_c1_pooled_origin_replication.py --check
+    python -O -B papers/tpc-413-c1-pooled-origin-replication/code/tpc413_c1_pooled_origin_replication.py --check
+    python -B papers/tpc-413-c1-pooled-origin-replication/experiments/tpc413_independent_checker.py --check
+    python -O -B papers/tpc-413-c1-pooled-origin-replication/experiments/tpc413_independent_checker.py --check
+    python -B papers/tpc-413-c1-pooled-origin-replication/experiments/tpc413_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-413-c1-pooled-origin-replication/experiments/tpc413_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc413_c1_pooled_origin_replication_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc413_c1_pooled_origin_replication_checker.py --check
+
 TPC-412 current section: c=1 pooled complete-shell extension
 ---------------------------------------------------------------
 

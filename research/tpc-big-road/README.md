@@ -1,4 +1,33 @@
-# TPC big road V265 / TPC-412: c=1 pooled complete-shell extension
+# TPC big road V266 / TPC-413: c=1 pooled CRT-origin replication
+
+## V266 current anchor: TPC-413
+
+更新时间：2026-09-06
+
+TPC-413 replicates the pooled complete-shell four-height profile at three
+representatives `o_s=r+sL`, `s=1,2,3`, yielding 12 exact rows.  CRT-period
+invariance preserves all `16458` primes, shell-local amplitudes, masks, and
+parity counts `8229,8229`.  Producer, literal independent replay, 12-case
+stress, PDF and Bridge-B are release-checked. Full operator norm, physical
+h_0, arithmetic L2/sign, fixed-power, Route-B and twin-prime result remain open/none.
+
+    YOU ARE HERE = V266 / TPC-413
+    TPC413_POOLED_ORIGIN_REPLICATION = PROVED_EXACT_FINITE
+    TPC413_Q_SCALES = 65536,131072
+    TPC413_SHELL_COUNTS = 5709,10749
+    TPC413_POOLED_SHELL_COUNT = 16458
+    TPC413_HEIGHTS = 16,32,66,128
+    TPC413_ORIGIN_SHIFTS = 1,2,3
+    TPC413_CASES = 12
+    TPC413_PARITY_COUNTS = 8229,8229
+    TPC413_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC413_ARITHMETIC_ADVANCE = NO
+    TPC413_FIXED_POWER_CREDIT = 0
+    TPC413_FULL_GATE_B = OPEN
+    TPC413_TWIN_PRIME_RESULT = NONE
+    TPC413_ROUND2_CLUE = TEST_C1_POOLED_ORIGIN_REPLICATION
+
+## V265 historical anchor: TPC-412
 
 ## V265 current anchor: TPC-412
 

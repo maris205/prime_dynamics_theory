@@ -1,5 +1,34 @@
 # TPC distilled map and bold channel
 
+## V266 / TPC-413 current anchor
+
+当前入口：proof 为
+papers/tpc-413-c1-pooled-origin-replication/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc413_c1_pooled_origin_replication_checker.py，
+编号论文为 papers/tpc-413-c1-pooled-origin-replication/。
+
+TPC-413 replicates the pooled four-height profile at CRT representatives
+`o_s=r+sL`, `s=1,2,3`, producing 12 exact rows.  CRT-period invariance gives
+identical masks and values; 16458 primes and parity counts `8229,8229` remain.
+This is finite synthetic proxy invariance, not a full operator, physical,
+arithmetic, fixed-power, Route-B, or twin-prime result.
+
+    YOU ARE HERE = V266 / TPC-413
+    TPC413_POOLED_ORIGIN_REPLICATION = PROVED_EXACT_FINITE
+    TPC413_Q_SCALES = 65536,131072
+    TPC413_SHELL_COUNTS = 5709,10749
+    TPC413_POOLED_SHELL_COUNT = 16458
+    TPC413_HEIGHTS = 16,32,66,128
+    TPC413_ORIGIN_SHIFTS = 1,2,3
+    TPC413_CASES = 12
+    TPC413_PARITY_COUNTS = 8229,8229
+    TPC413_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC413_ARITHMETIC_ADVANCE = NO
+    TPC413_FIXED_POWER_CREDIT = 0
+    TPC413_FULL_GATE_B = OPEN
+    TPC413_TWIN_PRIME_RESULT = NONE
+    TPC413_ROUND2_CLUE = TEST_C1_POOLED_ORIGIN_REPLICATION
+
 ## V265 / TPC-412 current anchor
 
 当前入口：proof 为

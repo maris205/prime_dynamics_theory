@@ -5,6 +5,50 @@
 
 状态：**TPC410_PROVED_EXACT_FINITE_ODD_COMPLETE_SHELL_HEIGHT_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
+## 0.207 current：TPC-413 c=1 pooled CRT-origin replication
+
+项目：papers/tpc-413-c1-pooled-origin-replication/
+
+类型：**PROVED_EXACT_FINITE_POOLED_ORIGIN_REPLICATION**。
+
+TPC-413 repeats the pooled four-height profile at `o_s=r+sL`, `s=1,2,3`,
+for 12 exact rows.  CRT-period invariance preserves all `16458` primes,
+shell-local amplitudes, masks, and `m_minus=m_plus=8229`. Exact certificate,
+independent literal replay, 12-case stress, PDF QA, and Bridge-B normal/optimized
+checks pass. This is finite synthetic proxy invariance; full operator, physical
+source, arithmetic sign/L2, fixed-power, Route-B and twin-prime claims remain open/none.
+
+最强正结果：pooled CRT-origin exact finite four-height replication。
+
+最强 obstruction：the full normalized operator and physical/arithmetic identification
+are absent; no growing or twin-prime claim follows。
+
+开放定理：normalized growing operator bound, strict 1/400, Route-B reassembly
+and twin primes remain open/none。
+
+可复用结构：CRT-period invariance、three-representative literal replay 与 strict
+claim-firewall stress。
+
+ROUND2_CLUE：`TEST_C1_POOLED_ORIGIN_REPLICATION`。
+
+~~~text
+TPC413_POOLED_ORIGIN_REPLICATION = PROVED_EXACT_FINITE
+TPC413_Q_SCALES = 65536,131072
+TPC413_SHELL_COUNTS = 5709,10749
+TPC413_POOLED_SHELL_COUNT = 16458
+TPC413_HEIGHTS = 16,32,66,128
+TPC413_ORIGIN_SHIFTS = 1,2,3
+TPC413_CASES = 12
+TPC413_PARITY_COUNTS = 8229,8229
+TPC413_NORMALIZED_GROWING_THEOREM = OPEN
+TPC413_ARITHMETIC_ADVANCE = NO
+TPC413_FIXED_POWER_CREDIT = 0
+TPC413_FULL_GATE_B = OPEN
+TPC413_TWIN_PRIME_RESULT = NONE
+TPC413_ROUND2_CLUE = TEST_C1_POOLED_ORIGIN_REPLICATION
+TPC413_STATUS = PROVED EXACT FINITE POOLED ORIGIN REPLICATION
+~~~
+
 ## 0.206 current：TPC-412 c=1 pooled complete-shell extension
 
 项目：papers/tpc-412-c1-pooled-complete-shell-extension/
