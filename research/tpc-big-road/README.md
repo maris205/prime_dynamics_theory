@@ -1,3 +1,31 @@
+# TPC big road V271 / TPC-418: c=1 finite-family shell-parity envelope
+
+## V271 current anchor: TPC-418
+
+更新时间：2026-09-07
+
+TPC-418 proves a finite-family parity-aware shell envelope for disjoint ordered
+complete prime shells.  The actual alternating block sign is
+`sigma_j=epsilon_j*(-1)^(n_j+1)`; a mixed odd/even regression confirms that
+grouping by `epsilon_j` alone is invalid.  Exact replay covers the fixed
+TPC-417 four-shell family, a small multi-shell family, and the counterexample.
+The resulting finite synthetic operator bound is
+`||Z||_2 <= 2/(a_min sqrt(H))+16B_*/V_minus`, with coarse envelope
+`B_*<3E+4ceil(O/2)<=3K+1`.  Growing operator uniformity, physical `h_0`,
+arithmetic sign/L2, fixed-power, Route-B and twin primes remain open/none.
+
+    YOU ARE HERE = V271 / TPC-418
+    TPC418_FINITE_FAMILY_SHELL_PARITY_ENVELOPE = PROVED_EXACT_FINITE
+    TPC418_SIGMA_CORRECTION = PROVED_AND_STRESS_TESTED
+    TPC418_FIXED_FOUR_SHELL_REPLAY = PASS
+    TPC418_MIXED_PARITY_COUNTEREXAMPLE = CONFIRMED
+    TPC418_GROWING_UNIFORM_THEOREM = OPEN_UNASSUMED
+    TPC418_ARITHMETIC_ADVANCE = NO
+    TPC418_FIXED_POWER_CREDIT = 0
+    TPC418_FULL_GATE_B = OPEN
+    TPC418_TWIN_PRIME_RESULT = NONE
+    TPC418_ROUND2_CLUE = NONE_UNTIL_GROWING_OR_PHYSICAL_GATE_CHANGES
+
 # TPC big road V270 / TPC-417: c=1 four-shell finite full-operator bound
 
 ## V270 current anchor: TPC-417

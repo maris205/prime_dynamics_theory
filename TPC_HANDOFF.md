@@ -1,5 +1,55 @@
 # TPC HANDOFF
 
+TPC-418 current section: c=1 finite-family shell-parity envelope
+-------------------------------------------------------------------
+
+TPC-418 generalizes the TPC-417 endpoint-star/interior-bulk bound from the
+fixed four-shell certificate to any finite family of disjoint ordered complete
+prime shells.  For shell $j$, the local amplitudes are increasing, but an
+even-cardinality shell reverses the sign of its alternating block.  With
+`epsilon_j=(-1)^(sum_{ell<j} n_ell)`, the actual block sign is
+`sigma_j=epsilon_j*(-1)^(n_j+1)`.  If `b_j=alpha_last-alpha_first` for an even
+shell and `b_j=alpha_last` for an odd shell, then
+`|A|<=B_*:=max(sum_{sigma_j=+1}b_j,sum_{sigma_j=-1}b_j)` and
+`B_*<3E+4ceil(O/2)<=3K+1` for `Q_j>=2`.  Reusing the exact TPC-417 matrix
+decomposition gives
+`||Z||_2 <= 2/(a_min sqrt(H))+16B_*/V_minus
+ < 2/sqrt(H)+16(3K+1)/m_minus`, `m_minus=floor(L/2)`.
+
+This is a proved finite-family synthetic envelope.  The mixed-parity
+counterexample records why grouping by `epsilon_j` alone is invalid.  No
+growing uniform theorem, physical `h_0` identification, arithmetic sign or
+`L2` result, fixed-power credit, Route-B closure, or twin-prime result follows.
+
+    TPC418_FINITE_FAMILY_SHELL_PARITY_ENVELOPE = PROVED_EXACT_FINITE
+    TPC418_DOMAIN = K_DISJOINT_ORDERED_COMPLETE_SHELLS_Q_GE_2_L_GE_2
+    TPC418_SIGMA_CORRECTION = PROVED_AND_STRESS_TESTED
+    TPC418_FIXED_FOUR_SHELL_REPLAY = PASS
+    TPC418_MIXED_PARITY_COUNTEREXAMPLE = CONFIRMED
+    TPC418_GROWING_UNIFORM_THEOREM = OPEN_UNASSUMED
+    TPC418_PHYSICAL_H0 = OPEN
+    TPC418_ARITHMETIC_ADVANCE = NO
+    TPC418_FIXED_POWER_CREDIT = 0
+    TPC418_FULL_GATE_B = OPEN
+    TPC418_TWIN_PRIME_RESULT = NONE
+    TPC418_STRONGEST_POSITIVE = FINITE_FAMILY_PARITY_AWARE_OPERATOR_ENVELOPE
+    TPC418_STRONGEST_OBSTRUCTION = GROWING_AND_PHYSICAL_IDENTIFICATION_ABSENT
+    TPC418_OPEN_THEOREM = GROWING_OPERATOR_BOUND_OR_ARITHMETIC_BULK_CANCELLATION
+    TPC418_REUSABLE_STRUCTURE = ACTUAL_SIGMA_PARITY_BLOCK_LEDGER
+    TPC418_ROUND2_CLUE = NONE_UNTIL_GROWING_OR_PHYSICAL_GATE_CHANGES
+    TPC418_STATUS = PROVED EXACT FINITE-FAMILY SHELL-PARITY ENVELOPE
+
+TPC-418 reproducibility commands:
+
+    python -B papers/tpc-418-c1-shell-parity-envelope/code/tpc418_c1_shell_parity_envelope.py --check
+    python -O -B papers/tpc-418-c1-shell-parity-envelope/code/tpc418_c1_shell_parity_envelope.py --check
+    python -B papers/tpc-418-c1-shell-parity-envelope/experiments/tpc418_independent_checker.py --check
+    python -O -B papers/tpc-418-c1-shell-parity-envelope/experiments/tpc418_independent_checker.py --check
+    python -B papers/tpc-418-c1-shell-parity-envelope/experiments/tpc418_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-418-c1-shell-parity-envelope/experiments/tpc418_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc418_c1_shell_parity_envelope_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc418_c1_shell_parity_envelope_checker.py --check
+
 TPC-417 current section: c=1 four-shell finite full-operator bound
 ---------------------------------------------------------------------
 

@@ -1,5 +1,30 @@
 # TPC distilled map and bold channel
 
+## V271 / TPC-418 current anchor
+
+Current entry: `papers/tpc-418-c1-shell-parity-envelope/`, with proof
+`PROOF_PACKAGE.md` and checker
+`research/tpc-big-road/tpc_bridge_b_tpc418_c1_shell_parity_envelope_checker.py`.
+TPC-418 proves a finite-family parity-aware envelope for disjoint ordered
+complete shells.  The actual block sign is
+`sigma_j=epsilon_j*(-1)^(n_j+1)`, and the mixed-parity regression rejects the
+old start-sign grouping.  Combined with the TPC-417 decomposition,
+`||Z||_2 <= 2/(a_min sqrt(H))+16B_*/V_minus`; the coarse finite bound is
+`<2/sqrt(H)+16(3K+1)/m_minus`.  Growing, physical, arithmetic, fixed-power,
+Route-B and twin-prime results remain absent.
+
+    YOU ARE HERE = V271 / TPC-418
+    TPC418_FINITE_FAMILY_SHELL_PARITY_ENVELOPE = PROVED_EXACT_FINITE
+    TPC418_SIGMA_CORRECTION = PROVED_AND_STRESS_TESTED
+    TPC418_FIXED_FOUR_SHELL_REPLAY = PASS
+    TPC418_MIXED_PARITY_COUNTEREXAMPLE = CONFIRMED
+    TPC418_GROWING_UNIFORM_THEOREM = OPEN_UNASSUMED
+    TPC418_ARITHMETIC_ADVANCE = NO
+    TPC418_FIXED_POWER_CREDIT = 0
+    TPC418_FULL_GATE_B = OPEN
+    TPC418_TWIN_PRIME_RESULT = NONE
+    TPC418_ROUND2_CLUE = NONE_UNTIL_GROWING_OR_PHYSICAL_GATE_CHANGES
+
 ## V270 / TPC-417 current anchor
 
 Current entry: `papers/tpc-417-c1-four-shell-finite-operator-bound/`, with

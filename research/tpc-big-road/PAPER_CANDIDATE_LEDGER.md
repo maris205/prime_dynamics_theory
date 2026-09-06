@@ -1,6 +1,40 @@
 
 # TPC big-road paper candidate ledger
 
+## 0.212 current：TPC-418 c=1 finite-family shell-parity envelope
+
+项目：`papers/tpc-418-c1-shell-parity-envelope/`。
+
+类型：**PROVED_EXACT_FINITE_FAMILY_SHELL_PARITY_ENVELOPE**。
+
+TPC-418 generalizes the TPC-417 endpoint-star/interior-bulk finite matrix
+bound to any finite family of disjoint ordered complete shells.  The exact
+block sign is `sigma_j=epsilon_j*(-1)^(n_j+1)`; the mixed-parity regression is
+an explicit counterexample to the old `epsilon_j` grouping.  The theorem gives
+`|A|<=B_*<3E+4ceil(O/2)<=3K+1` and
+`||Z||_2<=2/(a_min sqrt(H))+16B_*/V_minus` under the declared finite synthetic
+normalization.  Fixed-family replay, independent exact replay, mutation stress,
+PDF QA, and Bridge-B normal/optimized checks pass.  No growing, physical,
+arithmetic, fixed-power, Route-B, or twin-prime conclusion follows.
+
+~~~text
+TPC418_FINITE_FAMILY_SHELL_PARITY_ENVELOPE = PROVED_EXACT_FINITE
+TPC418_SIGMA_CORRECTION = PROVED_AND_STRESS_TESTED
+TPC418_FIXED_FOUR_SHELL_REPLAY = PASS
+TPC418_MIXED_PARITY_COUNTEREXAMPLE = CONFIRMED
+TPC418_GROWING_UNIFORM_THEOREM = OPEN_UNASSUMED
+TPC418_ARITHMETIC_ADVANCE = NO
+TPC418_FIXED_POWER_CREDIT = 0
+TPC418_FULL_GATE_B = OPEN
+TPC418_TWIN_PRIME_RESULT = NONE
+TPC418_ROUND2_CLUE = NONE_UNTIL_GROWING_OR_PHYSICAL_GATE_CHANGES
+TPC418_STATUS = PROVED EXACT FINITE-FAMILY SHELL-PARITY ENVELOPE
+~~~
+
+更新时间：2026-09-07
+
+状态：**TPC418_PROVED_EXACT_FINITE_FAMILY_SHELL_PARITY_ENVELOPE / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+
 ## 0.211 current：TPC-417 c=1 four-shell finite full-operator bound
 
 项目：`papers/tpc-417-c1-four-shell-finite-operator-bound/`。

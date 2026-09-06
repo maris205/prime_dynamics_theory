@@ -9,6 +9,17 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线最新位置：TPC-418 将 TPC-417 的 endpoint-star/interior-bulk 有限矩阵界
+推广为任意有限个、按顺序排列且互不相交的完整 prime shells 的 parity-aware
+envelope。实际 block sign 为
+`sigma_j=epsilon_j*(-1)^(n_j+1)`；混合奇偶反例确认只按 `epsilon_j` 分组会失效。
+精确证书包含 fixed four-shell replay、small multi-shell replay 与 mixed-parity
+regression，证明 `|A|<=B_*<3E+4ceil(O/2)<=3K+1`，并给出
+`||Z||_2 <= 2/(a_min sqrt(H))+16B_*/V_minus`。该结果仍是 finite synthetic
+family envelope；growing uniformity、physical `h_0`、arithmetic sign/L2、
+fixed-power、Route-B 与 twin-prime result 仍开放/无。项目入口为
+`papers/tpc-418-c1-shell-parity-envelope/`。
+
 当前主线最新位置：TPC-417 将四-shell pooled synthetic proxy 从单一相邻
 entry 提升到完整 locally normalized finite matrix，在 `H=16,32,66,128`、
 `N=4H` 下保留 `75483` 个 primes，并证明

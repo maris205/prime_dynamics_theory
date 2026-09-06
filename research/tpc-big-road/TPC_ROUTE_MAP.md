@@ -1,5 +1,27 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
+## V271 / TPC-418 current route edge
+
+TPC-418 将 TPC-417 的完整有限矩阵界推广到有限个互不相交、按顺序排列的
+complete prime shells，并修正 mixed-parity 情形的实际 block sign：
+`sigma_j=epsilon_j*(-1)^(n_j+1)`。由 shell 内 amplitude 单调性，
+`|A|<=B_*<3E+4ceil(O/2)<=3K+1`；结合 endpoint-star/interior-bulk 分解，
+`||Z||_2<=2/(a_min sqrt(H))+16B_*/V_minus`。这是 finite synthetic
+family theorem，不是 growing operator、physical `h_0`、arithmetic L2/sign、
+fixed-power、Route-B 或 twin-prime result。
+
+    YOU ARE HERE = V271 / TPC-418
+    TPC418_FINITE_FAMILY_SHELL_PARITY_ENVELOPE = PROVED_EXACT_FINITE
+    TPC418_SIGMA_CORRECTION = PROVED_AND_STRESS_TESTED
+    TPC418_FIXED_FOUR_SHELL_REPLAY = PASS
+    TPC418_MIXED_PARITY_COUNTEREXAMPLE = CONFIRMED
+    TPC418_GROWING_UNIFORM_THEOREM = OPEN_UNASSUMED
+    TPC418_ARITHMETIC_ADVANCE = NO
+    TPC418_FIXED_POWER_CREDIT = 0
+    TPC418_FULL_GATE_B = OPEN
+    TPC418_TWIN_PRIME_RESULT = NONE
+    TPC418_ROUND2_CLUE = NONE_UNTIL_GROWING_OR_PHYSICAL_GATE_CHANGES
+
 ## V270 / TPC-417 current route edge
 
 TPC-417 将四-shell pooled synthetic proxy 从单一相邻 entry 提升到完整的
