@@ -97,6 +97,16 @@ scoped prerequisite audit against the README and proof package.
 | TPC-396 | [paper/main.md](../../papers/tpc-396-c1-signed-law-interpolation/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-396-c1-signed-law-interpolation/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-396-c1-signed-law-interpolation/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-396-c1-signed-law-interpolation/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-396-c1-signed-law-interpolation/notes/claim_firewall.md) | [main.tex](../../papers/tpc-396-c1-signed-law-interpolation/paper/main.tex) | [main.pdf](../../papers/tpc-396-c1-signed-law-interpolation/paper/main.pdf) |
 | TPC-395 | [paper/main.md](../../papers/tpc-395-c1-origin-cross-family-holdout/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-395-c1-origin-cross-family-holdout/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-395-c1-origin-cross-family-holdout/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-395-c1-origin-cross-family-holdout/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-395-c1-origin-cross-family-holdout/notes/claim_firewall.md) | [main.tex](../../papers/tpc-395-c1-origin-cross-family-holdout/paper/main.tex) | [main.pdf](../../papers/tpc-395-c1-origin-cross-family-holdout/paper/main.pdf) |
 
+### Batch 8: TPC-384 through TPC-380
+
+| Paper | Full source Markdown | Provenance/page map/formula audit | Abstract/summary | Proof/application notes | TeX | PDF |
+|---|---|---|---|---|---|---|
+| TPC-384 | [paper/main.md](../../papers/tpc-384-c1-bandwidth-normalization-phase-diagram/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-384-c1-bandwidth-normalization-phase-diagram/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-384-c1-bandwidth-normalization-phase-diagram/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-384-c1-bandwidth-normalization-phase-diagram/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-384-c1-bandwidth-normalization-phase-diagram/notes/claim_firewall.md) | [main.tex](../../papers/tpc-384-c1-bandwidth-normalization-phase-diagram/paper/main.tex) | [main.pdf](../../papers/tpc-384-c1-bandwidth-normalization-phase-diagram/paper/main.pdf) |
+| TPC-383 | [paper/main.md](../../papers/tpc-383-c1-pooled-normalization-audit/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-383-c1-pooled-normalization-audit/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-383-c1-pooled-normalization-audit/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-383-c1-pooled-normalization-audit/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-383-c1-pooled-normalization-audit/notes/claim_firewall.md) | [main.tex](../../papers/tpc-383-c1-pooled-normalization-audit/paper/main.tex) | [main.pdf](../../papers/tpc-383-c1-pooled-normalization-audit/paper/main.pdf) |
+| TPC-382 | [paper/main.md](../../papers/tpc-382-c1-origin-family-magnitude-audit/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-382-c1-origin-family-magnitude-audit/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-382-c1-origin-family-magnitude-audit/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-382-c1-origin-family-magnitude-audit/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-382-c1-origin-family-magnitude-audit/notes/claim_firewall.md) | [main.tex](../../papers/tpc-382-c1-origin-family-magnitude-audit/paper/main.tex) | [main.pdf](../../papers/tpc-382-c1-origin-family-magnitude-audit/paper/main.pdf) |
+| TPC-381 | [paper/main.md](../../papers/tpc-381-c1-origin-family-replay/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-381-c1-origin-family-replay/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-381-c1-origin-family-replay/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-381-c1-origin-family-replay/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-381-c1-origin-family-replay/notes/claim_firewall.md) | [main.tex](../../papers/tpc-381-c1-origin-family-replay/paper/main.tex) | [main.pdf](../../papers/tpc-381-c1-origin-family-replay/paper/main.pdf) |
+| TPC-380 | [paper/main.md](../../papers/tpc-380-c1-law-control-count-replay/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-380-c1-law-control-count-replay/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-380-c1-law-control-count-replay/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-380-c1-law-control-count-replay/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-380-c1-law-control-count-replay/notes/claim_firewall.md) | [main.tex](../../papers/tpc-380-c1-law-control-count-replay/paper/main.tex) | [main.pdf](../../papers/tpc-380-c1-law-control-count-replay/paper/main.pdf) |
+
 ## Formula and theorem-boundary verification
 
 The audit covered the formulas that carry each finite claim, rather than
@@ -166,6 +176,11 @@ trying to reprove every computational certificate in the Markdown conversion:
   comparison scope.
 - TPC-396: signed-law interpolation identities and finite diagnostic scope.
 - TPC-395: origin cross-family holdout and its finite claim boundary.
+- TPC-384: bandwidth/normalization phase diagram and finite diagnostic scope.
+- TPC-383: pooled normalization audit and finite model-relative observations.
+- TPC-382: origin-family magnitude audit and finite stability boundary.
+- TPC-381: origin-family replay and finite holdout scope.
+- TPC-380: count-replay law control and its explicit finite claim boundary.
 
 For all five papers, the prerequisite audit confirms that finite synthetic
 assumptions, exact-rational/computational evidence, and claim-firewall
@@ -179,9 +194,9 @@ The archive still contains 823 paper directories: 420 TPC and 403 RH. The
 inventory now records:
 
 ```text
-full-source-md      34
+full-source-md      39
 reliable-full-md     0
-partial-or-notes   788
+partial-or-notes   783
 source-inaccessible  1
 ```
 
