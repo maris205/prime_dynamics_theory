@@ -6,7 +6,7 @@ Updated: 2026-09-07. Scope: all 823 first-level paper directories currently trac
 
 A directory is marked `reliable-full-md` only when a Markdown file passes the conservative local test of substantial paper-like text containing an abstract and references. `full-source-md` means a source-complete mechanical Markdown conversion of the available TeX/PDF manuscript; it may still lack a bibliography when the source lacks one and it has not received a separate semantic peer review. `partial-or-notes` means Markdown exists alongside TeX/PDF, but no Markdown file passed either full-text test; it may be a README, proof package, plan, ledger, or partial conversion. `notes-only` has Markdown without a TeX/PDF source. `not-converted` has TeX/PDF but no Markdown. `source-inaccessible` has none of these. Counts are file counts inside each directory; they do not certify semantic correctness. TeX/PDF originals are retained.
 
-Summary: `{"full-source-md":39,"partial-or-notes":783,"reliable-full-md":0,"source-inaccessible":1}`. Thirty-nine current TPC manuscripts now have source-complete mechanical Markdown conversions, while the conservative reliable-full test still finds zero manuscripts with an abstract, references, and separate semantic review. Therefore the repository does not support the claim that all papers have been converted to Markdown. Most entries have a searchable project reading layer, but it is not a replacement for the original manuscript.
+Summary: `{"full-source-md":44,"partial-or-notes":778,"reliable-full-md":0,"source-inaccessible":1}`. Forty-four current TPC manuscripts now have source-complete mechanical Markdown conversions, while the conservative reliable-full test still finds zero manuscripts with an abstract, references, and separate semantic review. Therefore the repository does not support the claim that all papers have been converted to Markdown. Most entries have a searchable project reading layer, but it is not a replacement for the original manuscript.
 
 | Program | Paper directory | PDF | TeX | MD | Status | Representative Markdown |
 |---|---|---:|---:|---:|---|---|
@@ -720,11 +720,11 @@ Summary: `{"full-source-md":39,"partial-or-notes":783,"reliable-full-md":0,"sour
 | TPC | `tpc-372-full-window-offblock-decomposition` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
 | TPC | `tpc-373-eigenmode-block-separation` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
 | TPC | `tpc-374-near-block-band-truncation` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-375-bandwidth-stability-minimal-cutoff` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-376-bandwidth-holdout-replication` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-377-c1-window-scale-holdout` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-378-c1-scale-origin-crossholdout` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-379-c1-crossholdout-law-control` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
+| TPC | `tpc-375-bandwidth-stability-minimal-cutoff` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-376-bandwidth-holdout-replication` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-377-c1-window-scale-holdout` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-378-c1-scale-origin-crossholdout` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-379-c1-crossholdout-law-control` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-38-target-coupled-identity-bucket` | 1 | 10 | 1 | `partial-or-notes` | `README.md` |
 | TPC | `tpc-380-c1-law-control-count-replay` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-381-c1-origin-family-replay` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |

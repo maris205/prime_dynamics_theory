@@ -20,7 +20,7 @@ found or assumed.
 The archive inventory is [PAPER_MATERIALS_INDEX.md](research/tpc-big-road/PAPER_MATERIALS_INDEX.md)
 and the route handoff is [TPC_HISTORY_SUMMARY.md](research/tpc-big-road/TPC_HISTORY_SUMMARY.md).
 It covers 823 paper directories (420 TPC, 403 RH): 822 have Markdown alongside
-TeX/PDF but no conservative reliable-full-paper Markdown file; five of those
+TeX/PDF but no conservative reliable-full-paper Markdown file; ten of those
 are now explicitly marked `full-source-md` for source-complete mechanical
 conversions. One TPC directory (`tpc-207-moving-hole-bdh-translation-compiler`)
 has no local Markdown, TeX, or PDF source. Thus “all papers are already
@@ -50,7 +50,7 @@ current claims remain in this handoff and the active paper's proof package.
 ## 2026-09-07 source-to-Markdown maintenance batch
 
 The first eight priority conversion batches are complete for the contiguous
-range TPC-418–380. Each preserved `paper/main.tex` in those batches was mechanically
+range TPC-418–375. Each preserved `paper/main.tex` in those batches was mechanically
 converted with Pandoc to `paper/main.md`, with the original title, author,
 date, abstract, and all numbered/unnumbered source sections retained. The
 per-paper [batch record](research/tpc-big-road/TPC_CONVERSION_BATCH_2026-09-07.md)
@@ -64,7 +64,7 @@ The manuscripts contain no bibliography/reference section. Accordingly the
 inventory uses `full-source-md` for these five source-complete mechanical
 conversions, while `reliable-full-md` remains zero pending the conservative
 abstract-plus-references and semantic-review test. Current coverage is
-`full-source-md=39`, `reliable-full-md=0`, `partial-or-notes=783`, and
+`full-source-md=44`, `reliable-full-md=0`, `partial-or-notes=778`, and
 `source-inaccessible=1` across 823 directories. This maintenance changes no
 theorem, certificate, route edge, or claim grade; original TeX/PDF and existing
 hand-edited materials remain authoritative.

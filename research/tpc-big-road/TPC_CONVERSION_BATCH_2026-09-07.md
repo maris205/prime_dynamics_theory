@@ -1,4 +1,4 @@
-# TPC TeX-to-Markdown conversion batches: 418–385
+# TPC TeX-to-Markdown conversion batches: 418–375
 
 Updated 2026-09-07. This is a maintenance record for the first priority
 conversion batch after the archive inventory. It does not create a paper,
@@ -6,11 +6,11 @@ change the TPC route, or reopen the stopped TPC-418 research line.
 
 ## Batch scope and method
 
-Thirty-four current route papers in the contiguous range TPC-418–385 were
+Thirty-nine current route papers in the contiguous range TPC-418–375 were
 converted from their preserved `paper/main.tex` sources with the same method.
 Batch 7 closes the previously recorded TPC395–398 gap:
 
-```text
+```tex
 pandoc -f latex -t gfm --wrap=none
 ```
 
@@ -107,10 +107,31 @@ scoped prerequisite audit against the README and proof package.
 | TPC-381 | [paper/main.md](../../papers/tpc-381-c1-origin-family-replay/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-381-c1-origin-family-replay/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-381-c1-origin-family-replay/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-381-c1-origin-family-replay/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-381-c1-origin-family-replay/notes/claim_firewall.md) | [main.tex](../../papers/tpc-381-c1-origin-family-replay/paper/main.tex) | [main.pdf](../../papers/tpc-381-c1-origin-family-replay/paper/main.pdf) |
 | TPC-380 | [paper/main.md](../../papers/tpc-380-c1-law-control-count-replay/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-380-c1-law-control-count-replay/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-380-c1-law-control-count-replay/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-380-c1-law-control-count-replay/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-380-c1-law-control-count-replay/notes/claim_firewall.md) | [main.tex](../../papers/tpc-380-c1-law-control-count-replay/paper/main.tex) | [main.pdf](../../papers/tpc-380-c1-law-control-count-replay/paper/main.pdf) |
 
+### Batch 9: TPC-379 through TPC-375
+
+| Paper | Full source Markdown | Provenance/page map/formula audit | Abstract/summary | Proof/application notes | TeX | PDF |
+|---|---|---|---|---|---|---|
+| TPC-379 | [paper/main.md](../../papers/tpc-379-c1-crossholdout-law-control/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-379-c1-crossholdout-law-control/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-379-c1-crossholdout-law-control/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-379-c1-crossholdout-law-control/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-379-c1-crossholdout-law-control/notes/claim_firewall.md) | [main.tex](../../papers/tpc-379-c1-crossholdout-law-control/paper/main.tex) | [main.pdf](../../papers/tpc-379-c1-crossholdout-law-control/paper/main.pdf) |
+| TPC-378 | [paper/main.md](../../papers/tpc-378-c1-scale-origin-crossholdout/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-378-c1-scale-origin-crossholdout/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-378-c1-scale-origin-crossholdout/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-378-c1-scale-origin-crossholdout/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-378-c1-scale-origin-crossholdout/notes/claim_firewall.md) | [main.tex](../../papers/tpc-378-c1-scale-origin-crossholdout/paper/main.tex) | [main.pdf](../../papers/tpc-378-c1-scale-origin-crossholdout/paper/main.pdf) |
+| TPC-377 | [paper/main.md](../../papers/tpc-377-c1-window-scale-holdout/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-377-c1-window-scale-holdout/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-377-c1-window-scale-holdout/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-377-c1-window-scale-holdout/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-377-c1-window-scale-holdout/notes/claim_firewall.md) | [main.tex](../../papers/tpc-377-c1-window-scale-holdout/paper/main.tex) | [main.pdf](../../papers/tpc-377-c1-window-scale-holdout/paper/main.pdf) |
+| TPC-376 | [paper/main.md](../../papers/tpc-376-bandwidth-holdout-replication/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-376-bandwidth-holdout-replication/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-376-bandwidth-holdout-replication/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-376-bandwidth-holdout-replication/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-376-bandwidth-holdout-replication/notes/claim_firewall.md) | [main.tex](../../papers/tpc-376-bandwidth-holdout-replication/paper/main.tex) | [main.pdf](../../papers/tpc-376-bandwidth-holdout-replication/paper/main.pdf) |
+| TPC-375 | [paper/main.md](../../papers/tpc-375-bandwidth-stability-minimal-cutoff/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-375-bandwidth-stability-minimal-cutoff/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-375-bandwidth-stability-minimal-cutoff/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-375-bandwidth-stability-minimal-cutoff/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-375-bandwidth-stability-minimal-cutoff/notes/claim_firewall.md) | [main.tex](../../papers/tpc-375-bandwidth-stability-minimal-cutoff/paper/main.tex) | [main.pdf](../../papers/tpc-375-bandwidth-stability-minimal-cutoff/paper/main.pdf) |
+
+This batch extends the contiguous TeX-first reading layer through TPC-375. The
+five source manuscripts remain finite computational or finite synthetic
+claims; the conversion adds no theorem, arithmetic advance, fixed-power
+credit, physical identification, Route-B closure, or twin-prime conclusion.
+
 ## Formula and theorem-boundary verification
 
 The audit covered the formulas that carry each finite claim, rather than
 trying to reprove every computational certificate in the Markdown conversion:
+
+- TPC-379: the finite four-law control panel and law-dependence obstruction.
+- TPC-378: coordinate-disjoint origin transfer at the declared finite counts and scales.
+- TPC-377: the nested count holdout and finite c=1 support profile.
+- TPC-376: bandwidth holdout replication with the frozen normalization and finite scope.
+- TPC-375: the nested bandwidth census and first matching finite cutoff.
 
 - TPC-418: shell amplitude monotonicity, the alternating-block sign correction
   `sigma_j = epsilon_j * (-1)^(n_j+1)`, the `B_*` envelope, and the finite
@@ -136,7 +157,7 @@ trying to reprove every computational certificate in the Markdown conversion:
   and the finite `4/H` envelope.
 - TPC-409: the first odd-shell four-height theorem, explicit parity counts,
   and the finite `4/H` envelope.
-- TPC-408: the complete-shell `Q`-scale extension and its finite adjacent
+- TPC-408: the complete-shell `Q`-scale extension and its finite adjacen
   normalized proxy claim, with the route boundary preserved.
 - TPC-407: the complete-shell `Q`-scale ladder, exact finite observations,
   and the source's stated proof/scope boundary.
@@ -154,7 +175,7 @@ trying to reprove every computational certificate in the Markdown conversion:
   and finite boundary counterexample.
 - TPC-400: the endpoint microgrid's third-family finite construction,
   diagnostics, and route ledger.
-- TPC-399: the cross-family endpoint microgrid construction, frozen parent
+- TPC-399: the cross-family endpoint microgrid construction, frozen paren
   interface, diagnostics, and finite claim boundary.
 - TPC-394: the origin-uniformity ladder and its finite diagnostic/provenance
   boundary.
@@ -193,16 +214,16 @@ the source, or promote any conditional/open statement.
 The archive still contains 823 paper directories: 420 TPC and 403 RH. The
 inventory now records:
 
-```text
-full-source-md      39
+```tex
+full-source-md      44
 reliable-full-md     0
-partial-or-notes   783
+partial-or-notes   778
 source-inaccessible  1
 ```
 
-The remaining 817 `partial-or-notes` entries are the next conversion pool;
+The remaining 778 `partial-or-notes` entries are the next conversion pool;
 they are not silently treated as full manuscripts. TPC-207 remains the single
-source-inaccessible entry. The next batch should continue with the highest
+source-inaccessible entry. The next batch should continue with the highes
 route relevance or any `not-converted` source, using the same provenance and
 scope-preservation protocol.
 
@@ -210,6 +231,6 @@ scope-preservation protocol.
 
 The scientific handoff remains
 `TPC418_ROUND2_CLUE = NONE_UNTIL_GROWING_OR_PHYSICAL_GATE_CHANGES`.
-This conversion batch supplies a searchable source layer only. It does not
-create TPC-419, change arithmetic advance (`NO`), change fixed-power credit
+This conversion batch supplies a searchable source layer only. It does no
+create TPC-419, change arithmetic advance (`NO`), change fixed-power credi
 (`0`), or close the full gate (`OPEN`).

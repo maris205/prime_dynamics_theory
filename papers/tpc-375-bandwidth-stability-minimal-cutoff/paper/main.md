@@ -1,0 +1,80 @@
+# Bandwidth Stability and the Minimal Finite Cutoff for a Count-2048 Prime-Shell Operator
+
+> This Markdown file is a mechanical TeX-to-GFM conversion of the preserved source manuscript. The TeX and PDF originals remain authoritative; this file does not upgrade the mathematical scope.
+
+- **Source TeX:** [`paper/main.tex`](main.tex)
+- **Source PDF:** [`paper/main.pdf`](main.pdf)
+- **Author:** Liang Wang; School of Mathematics and Statistics, Huazhong University of Science and Technology (HUST), Wuhan, China
+- **Source date:** September 3, 2026
+- **Repository source commit:** `ddfb775a88bced9a1bcafff5c65b13e6df441e55`
+
+## Abstrac
+
+We refine a finite near-block reduction of a response-blind prime-shell operator. The preceding audit showed that block distances at most three reproduce six beta=2 spectral-cap failures. Here we freeze beta equal to 2, the all-plus law, all three inherited origins and all three shell anchors, and compare the nested cutoffs (c=0,1,2,3) on the complete nine-row panel. The block-diagonal cutoff (c=0) has no failure, whereas each of (c=1,2,3) has exactly the six high-(Q) failure keys. Thus (c=1) is the first matching cutoff in the declared finite list. This is a finite bandwidth census under common normalization, not a global bandwidth optimum, a uniform operator theorem, an arithmetic estimate, or a twin-prime result.
+
+# Motivation and frozen panel
+
+TPC-374 tested the predeclared band of block distances at most three and found exact agreement with the parent beta=2 failure support. That result left open whether the observed width was merely conservative. We therefore test the smallest natural nested cutoffs while keeping every other modeling choice fixed.
+
+The origins are (1010001,1018021,1026041). Each row is a consecutive window of 2048 integers, divided into eight contiguous blocks of length 256. We freeze \(Q\in\{512,2048,8192\}\), exponent one, the all-plus law, and \(\beta=2\). This is the complete \(3\times3\) origin-by-\(Q\) panel; no row is selected after inspection. The spectral and Schur caps are 0.64 and 0.83.
+
+# Operator and nested bands
+
+For \(Q<p\le 2Q\), define \[B_p(u,t)=p\frac{66^2}{66^2+(u-t)^2}
+\left({\bf1}_{p\mid u-t}-\frac{1}{p-1}\right)
+{\bf1}_{u\ne t}{\bf1}_{p\nmid u}{\bf1}_{p\nmid t}.\] With \(w_p=(p/Q)^2\), put \[A(u,t)=\sum_p w_pB_p(u,t),\qquad
+G(u)=\sum_p\sum_{s\in I}(w_pB_p(u,s))^2,
+\qquad T(u,t)=\frac{A(u,t)}{\sqrt{G(u)G(t)}}.\] The geometry (G) is always computed on the full 2048-point window and is shared by every comparison.
+
+Let \(b(i)=\lfloor i/256\rfloor\). For \(c=0,1,2,3\), freeze \[B_c(i,j)={\bf1}_{|b(i)-b(j)|\leq c}T(i,j),\qquad R_c=T-B_c.\] The masks are nested and symmetric, and the exact finite identity \[T=B_c+R_c                         \tag{1}\] holds entrywise. If \(Tv=\lambda v\) for the selected unit eigenvector, then \[v^{\mathsf T}B_cv+v^{\mathsf T}R_cv=\lambda.                 \tag{2}\] The extremal mode is the eigenvalue of greatest absolute value, with the minimum eigenvalue winning an exact tie. Equations (1)–(2) are identities; they do not assign causal responsibility to the band.
+
+# Certification
+
+The producer accumulates the prime shell in ascending order. The independent checker has its own sieve and accumulates in descending order, reconstructing the full matrix, each band, the full extremal mode, and all Rayleigh terms. Cutoff zero is eigensolved block by block, which is exactly valid because its matrix is block diagonal. An adversarial suite mutates the protocol, parent locks, band list, rows, metrics, phase counts, anchor, firewall, and clue. Local Bridge-B repeats producer, independent replay, and stress in normal and optimized Python modes, requiring empty standard error and byte-identical output. The official Route-A/Route-B evaluator files are absent from this checkout; no official route pass is asserted.
+
+The separate exact anchor is (\[1010346,1010359)) at (Q=4), exponent one, beta two, with shell (<span>5,7</span>). It checks rational symmetry and positive geometry and does not choose a main-panel row.
+
+# Finite bandwidth census
+
+Table [1](#tab:census) gives the complete result. The first cutoff matching the inherited six-key parent support is (c=1).
+
+<div id="tab:census">
+
+| cutoff (c) | spectral failures | Schur failures | first-hit rows | support       |
+| ---------: | ----------------: | -------------: | -------------: | :------------ |
+|          0 |               0/9 |            0/9 |              0 | none          |
+|          1 |               6/9 |            0/9 |              6 | parent match  |
+|          2 |               6/9 |            0/9 |              0 | same six keys |
+|          3 |               6/9 |            0/9 |              0 | same six keys |
+
+Failure census over the complete nine-row beta=2 panel.
+
+</div>
+
+The six (c=1) failures are the three origins at (Q=2048) and (Q=8192). The (Q=512) rows never cross the spectral cap. The cutoff-specific selected-full-mode absolute-Rayleigh retention ranges are \[\begin{array}{c|c|c}
+c&\text{retention range}&\text{largest tail fraction}\\ \hline
+0&0.6558460776\text{--}0.6905441296&0.3441539224
+1&0.9375991303\text{--}0.9769476322&0.0624008697
+2&0.9781988663\text{--}1.0059123454&0.0218011337
+3&0.9915711764\text{--}1.0016823597&0.0084288236
+\end{array}\] The retention can exceed one because the omitted tail Rayleigh term may have the opposite sign to the selected negative eigenvalue. It is therefore a diagnostic profile, not a monotone approximation guarantee.
+
+At (Q=2048), the (c=1) band spectral values lie in 0.6656211315–0.6656365242; at (Q=8192), they lie in 0.6669433367–0.6669438011. At (Q=512), they lie in 0.5028260527–0.5028333713, below the cap. The cutoff-one result is thus not caused by a single origin.
+
+# Interpretation and limits
+
+This finite census identifies a narrower structural candidate: once the within-block layer is supplemented by adjacent-block interactions, the six high-(Q) beta=2 failure keys already appear. It gives a useful reduction for the next holdout and removes the need to carry cutoff three as the minimal candidate on this panel.
+
+The result does not prove that adjacent blocks cause the excess. It does not give an operator-norm bound for \(B_1\) as the window grows, nor transfer to new origins or counts. The fact that (c=0) is sub-cap and (c=1) is super-cap on the six high-(Q) rows is a finite obstruction to a purely block-local explanation, not an asymptotic theorem.
+
+The next finite question is an independently declared origin/window holdout using (c=1), with the same full-window normalization and caps.
+
+    TPC375_FAILURE_CUTOFF_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC375_PARENT_SUPPORT_REPRODUCTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC375_MINIMAL_CUTOFF = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC375_BANDWIDTH_UNIFORMITY = OPEN
+    TPC375_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC375_ARITHMETIC_ADVANCE = NO
+    TPC375_FIXED_POWER_CREDIT = 0
+    TPC375_FULL_GATE_B = OPEN
+    TPC375_TWIN_PRIME_RESULT = NONE
