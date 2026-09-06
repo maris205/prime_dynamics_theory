@@ -16,9 +16,9 @@
 | Source section | TeX line | PDF page (inferred from section text) | Match score |
 |---|---:|---:|---:|
 | `Scope and model` | 24 | 1 | 3 |
-| `\hspace{0.2em` | 54 | 1 | 0 |
-| `\hspace{0.2em` | 83 | 1 | 0 |
-| `\hspace{0.2em` | 109 | 1 | 0 |
+| `Uniform adjacent-entry theorem` | 54 | 2 | 3 |
+| `Exact scale ladder` | 83 | 2 | 3 |
+| `Route boundary` | 109 | 2 | 2 |
 | `Reproduction` | 134 | 3 | 1 |
 
 The abstract begins before the first section in the front matter. PDF page numbers refer to the preserved compiled `main.pdf`; TeX line numbers refer to the exact source hash above.
