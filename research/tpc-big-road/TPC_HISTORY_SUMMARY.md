@@ -24,8 +24,8 @@ package.
 
 ## 2026-09-07 conversion batch
 
-The first eleven source-priority batches converted the contiguous range
-TPC-418–365 from
+The first twelve source-priority batches converted the contiguous range
+TPC-418–360 from
 their preserved TeX manuscripts into source-complete Markdown at each
 `paper/main.md`. The batch record
 [TPC_CONVERSION_BATCH_2026-09-07.md](TPC_CONVERSION_BATCH_2026-09-07.md) links
@@ -36,8 +36,8 @@ and a scoped formula/prerequisite audit. The source manuscripts have no
 bibliography, so these entries are `full-source-md`, not
 `reliable-full-md`; the latter remains zero.
 
-The archive inventory is now `full-source-md=54`,
-`reliable-full-md=0`, `partial-or-notes=768`, and
+The archive inventory is now `full-source-md=59`,
+`reliable-full-md=0`, `partial-or-notes=763`, and
 `source-inaccessible=1` across 823 directories. This is a searchable
 source-layer and provenance improvement, not a scientific result. The next
 batch must preserve original TeX/PDF and hand-edited files, distinguish
