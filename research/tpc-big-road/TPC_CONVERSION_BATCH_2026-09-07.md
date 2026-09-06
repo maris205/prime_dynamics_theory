@@ -1,4 +1,4 @@
-# TPC TeX-to-Markdown conversion batches: 418–375
+# TPC TeX-to-Markdown conversion batches: 418–365
 
 Updated 2026-09-07. This is a maintenance record for the first priority
 conversion batch after the archive inventory. It does not create a paper,
@@ -6,7 +6,7 @@ change the TPC route, or reopen the stopped TPC-418 research line.
 
 ## Batch scope and method
 
-Forty-four current route papers in the contiguous range TPC-418–375 were
+Fifty-four current route papers in the contiguous range TPC-418–365 were
 converted from their preserved `paper/main.tex` sources with the same method.
 Batch 7 closes the previously recorded TPC395–398 gap:
 
@@ -136,10 +136,30 @@ This batch records the finite count-2048 window, block-phase, decomposition,
 eigenmode-layer, and near-block truncation manuscripts as source-complete
 mechanical Markdown. Their finite computational boundaries remain unchanged.
 
+### Batch 11: TPC-369 through TPC-365
+
+| Paper | Full source Markdown | Provenance/page map/formula audit | Abstract/summary | Proof/application notes | TeX | PDF |
+|---|---|---|---|---|---|---|
+| TPC-369 | [paper/main.md](../../papers/tpc-369-third-origin-family-audit/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-369-third-origin-family-audit/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-369-third-origin-family-audit/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-369-third-origin-family-audit/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-369-third-origin-family-audit/notes/claim_firewall.md) | [main.tex](../../papers/tpc-369-third-origin-family-audit/paper/main.tex) | [main.pdf](../../papers/tpc-369-third-origin-family-audit/paper/main.pdf) |
+| TPC-368 | [paper/main.md](../../papers/tpc-368-predeclared-origin-replication/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-368-predeclared-origin-replication/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-368-predeclared-origin-replication/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-368-predeclared-origin-replication/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-368-predeclared-origin-replication/notes/claim_firewall.md) | [main.tex](../../papers/tpc-368-predeclared-origin-replication/paper/main.tex) | [main.pdf](../../papers/tpc-368-predeclared-origin-replication/paper/main.pdf) |
+| TPC-367 | [paper/main.md](../../papers/tpc-367-predeclared-long-window-obstruction/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-367-predeclared-long-window-obstruction/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-367-predeclared-long-window-obstruction/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-367-predeclared-long-window-obstruction/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-367-predeclared-long-window-obstruction/notes/claim_firewall.md) | [main.tex](../../papers/tpc-367-predeclared-long-window-obstruction/paper/main.tex) | [main.pdf](../../papers/tpc-367-predeclared-long-window-obstruction/paper/main.pdf) |
+| TPC-366 | [paper/main.md](../../papers/tpc-366-beta2-higher-q-ladder/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-366-beta2-higher-q-ladder/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-366-beta2-higher-q-ladder/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-366-beta2-higher-q-ladder/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-366-beta2-higher-q-ladder/notes/claim_firewall.md) | [main.tex](../../papers/tpc-366-beta2-higher-q-ladder/paper/main.tex) | [main.pdf](../../papers/tpc-366-beta2-higher-q-ladder/paper/main.pdf) |
+| TPC-365 | [paper/main.md](../../papers/tpc-365-beta2-fresh-holdout/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-365-beta2-fresh-holdout/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-365-beta2-fresh-holdout/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-365-beta2-fresh-holdout/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-365-beta2-fresh-holdout/notes/claim_firewall.md) | [main.tex](../../papers/tpc-365-beta2-fresh-holdout/paper/main.tex) | [main.pdf](../../papers/tpc-365-beta2-fresh-holdout/paper/main.pdf) |
+
+This batch records the finite prime-shell tilt, higher-`Q`, long-window, and
+origin-family holdout manuscripts as source-complete mechanical Markdown.
+Their finite computational boundaries remain unchanged.
+
 ## Formula and theorem-boundary verification
 
 The audit covered the formulas that carry each finite claim, rather than
 trying to reprove every computational certificate in the Markdown conversion:
+
+- TPC-369: the third predeclared origin-family audit and finite obstruction.
+- TPC-368: the second predeclared origin-family replication.
+- TPC-367: the predeclared long-window finite obstruction.
+- TPC-366: the higher-`Q` finite scale audit of the fixed tilt.
+- TPC-365: the response-blind finite fresh holdout.
 
 - TPC-374: the finite near-block truncation and exact failure-census reproduction.
 - TPC-373: block-distance Rayleigh-layer separation of the finite extremal mode.
@@ -235,13 +255,13 @@ The archive still contains 823 paper directories: 420 TPC and 403 RH. The
 inventory now records:
 
 ```tex
-full-source-md      49
+full-source-md      54
 reliable-full-md     0
-partial-or-notes   773
+partial-or-notes   768
 source-inaccessible  1
 ```
 
-The remaining 773 `partial-or-notes` entries are the next conversion pool;
+The remaining 768 `partial-or-notes` entries are the next conversion pool;
 they are not silently treated as full manuscripts. TPC-207 remains the single
 source-inaccessible entry. The next batch should continue with the highes
 route relevance or any `not-converted` source, using the same provenance and
