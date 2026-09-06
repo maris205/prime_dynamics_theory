@@ -1,5 +1,25 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
+## V270 / TPC-417 current route edge
+
+TPC-417 将四-shell pooled synthetic proxy 从单一相邻 entry 提升到完整的
+`N`-by-`N` locally normalized finite matrix，在 `H=16,32,66,128`、`N=4H`
+保留全部 `75483` 个 primes。endpoint-star/interior-bulk 分解给出精确有限上界
+`||Z||_2 <= 2/(a_min sqrt(H))+16|A|/V_minus`。这仍不是 growing operator、
+physical `h_0`、arithmetic sign/L2、fixed-power、Route-B 或 twin-prime 结果。
+
+    YOU ARE HERE = V270 / TPC-417
+    TPC417_FINITE_FULL_OPERATOR_BOUND = PROVED_EXACT_FINITE
+    TPC417_Q_SCALES = 65536,131072,262144,524288
+    TPC417_HEIGHTS = 16,32,66,128
+    TPC417_POOLED_SHELL_COUNT = 75483
+    TPC417_FULL_OPERATOR_GROWING_THEOREM = OPEN
+    TPC417_ARITHMETIC_ADVANCE = NO
+    TPC417_FIXED_POWER_CREDIT = 0
+    TPC417_FULL_GATE_B = OPEN
+    TPC417_TWIN_PRIME_RESULT = NONE
+    TPC417_ROUND2_CLUE = TEST_C1_FOUR_SHELL_FINITE_OPERATOR_BOUND
+
 ## V269 / TPC-416 current route edge
 
 TPC-416 将 pooled profile 扩至第四个完整 shell `Q=524288`，四个 shell 共纳入

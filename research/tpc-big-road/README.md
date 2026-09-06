@@ -1,4 +1,32 @@
-# TPC big road V269 / TPC-416: c=1 four-shell odd pooled extension
+# TPC big road V270 / TPC-417: c=1 four-shell finite full-operator bound
+
+## V270 current anchor: TPC-417
+
+更新时间：2026-09-06
+
+TPC-417 upgrades the four-shell pooled proxy to its full locally normalized
+finite matrix at `H=16,32,66,128`, `N=4H`, retaining all `75483` primes.
+The endpoint-star/interior-bulk proof gives
+`||Z||_2 <= 2/(a_min sqrt(H))+16|A|/V_minus`. The exact certificate stores
+the Cauchy--Schwarz envelope, not an exact spectral norm. Reproduction covers
+producer, independent aggregate replay, 14 mutation tests plus two malformed
+JSON tests, PDF QA, and Bridge-B normal/optimized checks. Growing operator
+uniformity, physical `h_0`, arithmetic sign/L2, fixed-power, Route-B and twin
+primes remain open/none.
+
+    YOU ARE HERE = V270 / TPC-417
+    TPC417_FINITE_FULL_OPERATOR_BOUND = PROVED_EXACT_FINITE
+    TPC417_Q_SCALES = 65536,131072,262144,524288
+    TPC417_HEIGHTS = 16,32,66,128
+    TPC417_POOLED_SHELL_COUNT = 75483
+    TPC417_FULL_OPERATOR_GROWING_THEOREM = OPEN
+    TPC417_ARITHMETIC_ADVANCE = NO
+    TPC417_FIXED_POWER_CREDIT = 0
+    TPC417_FULL_GATE_B = OPEN
+    TPC417_TWIN_PRIME_RESULT = NONE
+    TPC417_ROUND2_CLUE = TEST_C1_FOUR_SHELL_FINITE_OPERATOR_BOUND
+
+## V269 historical anchor: TPC-416
 
 ## V269 current anchor: TPC-416
 

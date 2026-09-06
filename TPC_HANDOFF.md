@@ -1,5 +1,45 @@
 # TPC HANDOFF
 
+TPC-417 current section: c=1 four-shell finite full-operator bound
+---------------------------------------------------------------------
+
+TPC-417 upgrades the four-shell pooled synthetic proxy from one adjacent entry
+to the complete locally normalized `N`-by-`N` matrix. For `H=16,32,66,128`
+and `N=4H`, the exact endpoint-star/interior-bulk decomposition proves
+`||Z||_2 <= 2/(a_min sqrt(H)) + 16|A|/V_minus`, retaining all `75483`
+primes. The certificate records the exact Cauchy--Schwarz envelope, not an
+exact spectral norm. This is finite and synthetic; growing uniformity,
+physical `h_0`, arithmetic sign/L2, fixed-power, Route-B and twin-prime
+conclusions remain open or absent.
+
+    TPC417_FINITE_FULL_OPERATOR_BOUND = PROVED_EXACT_FINITE
+    TPC417_Q_SCALES = 65536,131072,262144,524288
+    TPC417_HEIGHTS = 16,32,66,128
+    TPC417_POOLED_SHELL_COUNT = 75483
+    TPC417_FULL_OPERATOR_GROWING_THEOREM = OPEN
+    TPC417_PHYSICAL_H0 = OPEN
+    TPC417_ARITHMETIC_ADVANCE = NO
+    TPC417_FIXED_POWER_CREDIT = 0
+    TPC417_FULL_GATE_B = OPEN
+    TPC417_TWIN_PRIME_RESULT = NONE
+    TPC417_STRONGEST_POSITIVE = FINITE_FULL_OPERATOR_BOUND
+    TPC417_STRONGEST_OBSTRUCTION = GROWING_AND_PHYSICAL_IDENTIFICATION_ABSENT
+    TPC417_OPEN_THEOREM = NORMALIZED_GROWING_OPERATOR_BOUND
+    TPC417_REUSABLE_STRUCTURE = ENDPOINT_STAR_INTERIOR_BULK_DECOMPOSITION
+    TPC417_ROUND2_CLUE = TEST_C1_FOUR_SHELL_FINITE_OPERATOR_BOUND
+    TPC417_STATUS = PROVED EXACT FINITE FULL OPERATOR BOUND
+
+TPC-417 reproducibility commands:
+
+    python -B papers/tpc-417-c1-four-shell-finite-operator-bound/code/tpc417_c1_four_shell_finite_operator_bound.py --check
+    python -O -B papers/tpc-417-c1-four-shell-finite-operator-bound/code/tpc417_c1_four_shell_finite_operator_bound.py --check
+    python -B papers/tpc-417-c1-four-shell-finite-operator-bound/experiments/tpc417_independent_checker.py --check
+    python -O -B papers/tpc-417-c1-four-shell-finite-operator-bound/experiments/tpc417_independent_checker.py --check
+    python -B papers/tpc-417-c1-four-shell-finite-operator-bound/experiments/tpc417_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-417-c1-four-shell-finite-operator-bound/experiments/tpc417_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc417_c1_four_shell_finite_operator_bound_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc417_c1_four_shell_finite_operator_bound_checker.py --check
+
 TPC-416 current section: c=1 four-shell odd pooled extension
 ---------------------------------------------------------------
 

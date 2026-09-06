@@ -1,5 +1,27 @@
 # TPC distilled map and bold channel
 
+## V270 / TPC-417 current anchor
+
+Current entry: `papers/tpc-417-c1-four-shell-finite-operator-bound/`, with
+`PROOF_PACKAGE.md` and checker
+`research/tpc-big-road/tpc_bridge_b_tpc417_c1_four_shell_finite_operator_bound_checker.py`.
+TPC-417 proves the full finite matrix bound
+`||Z||_2 <= 2/(a_min sqrt(H)) + 16|A|/V_minus` for the four-shell pooled
+synthetic proxy at `H=16,32,66,128`, retaining `75483` primes. Growing,
+physical, arithmetic, fixed-power, Route-B and twin-prime results remain absent.
+
+    YOU ARE HERE = V270 / TPC-417
+    TPC417_FINITE_FULL_OPERATOR_BOUND = PROVED_EXACT_FINITE
+    TPC417_Q_SCALES = 65536,131072,262144,524288
+    TPC417_HEIGHTS = 16,32,66,128
+    TPC417_POOLED_SHELL_COUNT = 75483
+    TPC417_FULL_OPERATOR_GROWING_THEOREM = OPEN
+    TPC417_ARITHMETIC_ADVANCE = NO
+    TPC417_FIXED_POWER_CREDIT = 0
+    TPC417_FULL_GATE_B = OPEN
+    TPC417_TWIN_PRIME_RESULT = NONE
+    TPC417_ROUND2_CLUE = TEST_C1_FOUR_SHELL_FINITE_OPERATOR_BOUND
+
 ## V269 / TPC-416 current anchor
 
 当前入口：proof 为

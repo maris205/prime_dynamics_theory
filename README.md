@@ -9,7 +9,15 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线最新位置：TPC-416 将 pooled profile 扩至第四个完整 shell
+当前主线最新位置：TPC-417 将四-shell pooled synthetic proxy 从单一相邻
+entry 提升到完整 locally normalized finite matrix，在 `H=16,32,66,128`、
+`N=4H` 下保留 `75483` 个 primes，并证明
+`||Z||_2 <= 2/(a_min sqrt(H))+16|A|/V_minus`。精确证书记载证明所需的
+Cauchy--Schwarz 包络，不声称计算了精确 spectral norm；growing operator、
+physical `h_0`、arithmetic sign/L2、fixed-power、Route-B 与 twin-prime result
+仍开放/无。项目入口为 `papers/tpc-417-c1-four-shell-finite-operator-bound/`。
+
+当前主线历史位置：TPC-416 将 pooled profile 扩至第四个完整 shell
 `Q=524288`，共纳入 `75483` 个 primes；固定 `H=66,N=264`，shell-local
 amplitudes 与 pooled alternating CRT 显式给出 `m_minus=37741,m_plus=37742`。
 exact certificate、independent literal replay 与 10 项 mutation stress 均通过；

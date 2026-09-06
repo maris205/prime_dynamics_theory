@@ -1,9 +1,37 @@
 
 # TPC big-road paper candidate ledger
 
-更新时间：2026-09-05
+## 0.211 current：TPC-417 c=1 four-shell finite full-operator bound
 
-状态：**TPC410_PROVED_EXACT_FINITE_ODD_COMPLETE_SHELL_HEIGHT_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+项目：`papers/tpc-417-c1-four-shell-finite-operator-bound/`。
+
+类型：**PROVED_EXACT_FINITE_FULL_OPERATOR_BOUND**。
+
+TPC-417 proves an upper bound for the complete locally normalized four-shell
+synthetic matrix at four fixed heights, retaining `75483` primes. The block
+proof gives `||Z||_2<=2/(a_min sqrt(H))+16|A|/V_minus`. This changes the
+finite object from one entry to the full matrix. The exact certificate stores
+a Cauchy--Schwarz envelope, not an exact spectral norm. Growing uniformity,
+physical identification, arithmetic sign/L2, fixed-power payment, Route-B
+closure and twin-prime results remain absent.
+
+~~~text
+TPC417_FINITE_FULL_OPERATOR_BOUND = PROVED_EXACT_FINITE
+TPC417_Q_SCALES = 65536,131072,262144,524288
+TPC417_HEIGHTS = 16,32,66,128
+TPC417_POOLED_SHELL_COUNT = 75483
+TPC417_FULL_OPERATOR_GROWING_THEOREM = OPEN
+TPC417_ARITHMETIC_ADVANCE = NO
+TPC417_FIXED_POWER_CREDIT = 0
+TPC417_FULL_GATE_B = OPEN
+TPC417_TWIN_PRIME_RESULT = NONE
+TPC417_ROUND2_CLUE = TEST_C1_FOUR_SHELL_FINITE_OPERATOR_BOUND
+TPC417_STATUS = PROVED EXACT FINITE FULL OPERATOR BOUND
+~~~
+
+更新时间：2026-09-06
+
+状态：**TPC417_PROVED_EXACT_FINITE_FULL_OPERATOR_BOUND / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 ## 0.210 current：TPC-416 c=1 four-shell odd pooled extension
 
