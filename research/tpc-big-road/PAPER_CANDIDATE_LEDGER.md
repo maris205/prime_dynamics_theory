@@ -5,6 +5,49 @@
 
 状态：**TPC410_PROVED_EXACT_FINITE_ODD_COMPLETE_SHELL_HEIGHT_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
+## 0.206 current：TPC-412 c=1 pooled complete-shell extension
+
+项目：papers/tpc-412-c1-pooled-complete-shell-extension/
+
+类型：**PROVED_EXACT_FINITE_POOLED_COMPLETE_SHELL_EXTENSION**。
+
+TPC-412 extends the pooled complete-shell proxy to `H=16,32,66,128`, with
+`N=4H`, retaining all `16458` primes from `Q=65536,131072` and keeping
+shell-local amplitudes. Pooled alternating CRT has `m_minus=m_plus=8229`.
+Exact certificate, independent literal replay, 11-case stress, PDF QA, and
+Bridge-B normal/optimized checks pass. This is finite one-entry synthetic
+evidence; full operator, physical source, arithmetic sign/L2, fixed-power,
+Route-B and twin-prime claims remain open/none.
+
+最强正结果：pooled complete-shell exact finite four-height extension。
+
+最强 obstruction：the full normalized operator and physical/arithmetic identification
+are absent; no growing or twin-prime claim follows。
+
+开放定理：normalized growing operator bound, strict 1/400, Route-B reassembly
+and twin primes remain open/none。
+
+可复用结构：pooled shell-local normalization、four-height literal mask audit
+与 strict claim-firewall stress。
+
+ROUND2_CLUE：`TEST_C1_POOLED_COMPLETE_SHELL_EXTENSION`。
+
+~~~text
+TPC412_POOLED_COMPLETE_SHELL_EXTENSION = PROVED_EXACT_FINITE
+TPC412_Q_SCALES = 65536,131072
+TPC412_SHELL_COUNTS = 5709,10749
+TPC412_POOLED_SHELL_COUNT = 16458
+TPC412_HEIGHTS = 16,32,66,128
+TPC412_PARITY_COUNTS = 8229,8229
+TPC412_NORMALIZED_GROWING_THEOREM = OPEN
+TPC412_ARITHMETIC_ADVANCE = NO
+TPC412_FIXED_POWER_CREDIT = 0
+TPC412_FULL_GATE_B = OPEN
+TPC412_TWIN_PRIME_RESULT = NONE
+TPC412_ROUND2_CLUE = TEST_C1_POOLED_COMPLETE_SHELL_EXTENSION
+TPC412_STATUS = PROVED EXACT FINITE POOLED COMPLETE-SHELL EXTENSION
+~~~
+
 ## 0.205 current：TPC-411 c=1 pooled odd complete shells
 
 项目：papers/tpc-411-c1-pooled-odd-complete-shells/

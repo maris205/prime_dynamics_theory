@@ -1,4 +1,30 @@
-# TPC big road V264 / TPC-411: c=1 pooled odd complete shells
+# TPC big road V265 / TPC-412: c=1 pooled complete-shell extension
+
+## V265 current anchor: TPC-412
+
+更新时间：2026-09-06
+
+TPC-412 extends the pooled two-shell exact finite proxy to `H=16,32,66,128`,
+with `N=4H`, all `16458` primes retained, shell-local amplitudes, and equal
+pooled parity counts `8229,8229`. Producer, literal independent replay, 11-case
+stress, PDF and Bridge-B are release-checked. Full operator norm, physical
+h_0, arithmetic L2/sign, fixed-power, Route-B and twin-prime result remain open/none.
+
+    YOU ARE HERE = V265 / TPC-412
+    TPC412_POOLED_COMPLETE_SHELL_EXTENSION = PROVED_EXACT_FINITE
+    TPC412_Q_SCALES = 65536,131072
+    TPC412_SHELL_COUNTS = 5709,10749
+    TPC412_POOLED_SHELL_COUNT = 16458
+    TPC412_HEIGHTS = 16,32,66,128
+    TPC412_PARITY_COUNTS = 8229,8229
+    TPC412_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC412_ARITHMETIC_ADVANCE = NO
+    TPC412_FIXED_POWER_CREDIT = 0
+    TPC412_FULL_GATE_B = OPEN
+    TPC412_TWIN_PRIME_RESULT = NONE
+    TPC412_ROUND2_CLUE = TEST_C1_POOLED_COMPLETE_SHELL_EXTENSION
+
+## V264 historical anchor: TPC-411
 
 ## V264 current anchor: TPC-411
 

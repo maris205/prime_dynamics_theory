@@ -1,5 +1,49 @@
 # TPC HANDOFF
 
+TPC-412 current section: c=1 pooled complete-shell extension
+---------------------------------------------------------------
+
+TPC-412 extends the TPC-411 pooled two-shell profile to `H=16,32,66,128`, with
+`N=4H`. All `16458=5709+10749` primes remain, shell-local amplitudes are used,
+and pooled alternating CRT gives `m_minus=m_plus=8229`. Every exact adjacent
+proxy row satisfies `0<=z<=t_1/(a_min sqrt(S0 S1))<=4/(a_min H)<=4/H`.
+Producer, independent literal replay, 11 mutation tests, PDF QA and Bridge-B
+pass in normal and optimized modes.
+
+This remains a finite four-height synthetic proxy theorem, not a full normalized
+operator bound, physical `h_0` theorem, arithmetic sign or `L2` estimate,
+fixed-power saving, Route-B closure, or twin-prime result.
+
+    TPC412_POOLED_COMPLETE_SHELL_EXTENSION = PROVED_EXACT_FINITE
+    TPC412_Q_SCALES = 65536,131072
+    TPC412_SHELL_COUNTS = 5709,10749
+    TPC412_POOLED_SHELL_COUNT = 16458
+    TPC412_HEIGHTS = 16,32,66,128
+    TPC412_PARITY_COUNTS = 8229,8229
+    TPC412_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC412_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC412_ARITHMETIC_ADVANCE = NO
+    TPC412_FIXED_POWER_CREDIT = 0
+    TPC412_FULL_GATE_B = OPEN
+    TPC412_TWIN_PRIME_RESULT = NONE
+    TPC412_STRONGEST_POSITIVE = POOLED_COMPLETE_SHELL_EXTENSION
+    TPC412_STRONGEST_OBSTRUCTION = FULL_OPERATOR_AND_PHYSICAL_IDENTIFICATION_ABSENT
+    TPC412_OPEN_THEOREM = NORMALIZED_GROWING_OPERATOR_BOUND
+    TPC412_REUSABLE_STRUCTURE = POOLED_SHELL_LOCAL_HEIGHT_REPLAY
+    TPC412_ROUND2_CLUE = TEST_C1_POOLED_COMPLETE_SHELL_EXTENSION
+    TPC412_STATUS = PROVED EXACT FINITE POOLED COMPLETE-SHELL EXTENSION
+
+TPC-412 reproducibility commands:
+
+    python -B papers/tpc-412-c1-pooled-complete-shell-extension/code/tpc412_c1_pooled_complete_shell_extension.py --check
+    python -O -B papers/tpc-412-c1-pooled-complete-shell-extension/code/tpc412_c1_pooled_complete_shell_extension.py --check
+    python -B papers/tpc-412-c1-pooled-complete-shell-extension/experiments/tpc412_independent_checker.py --check
+    python -O -B papers/tpc-412-c1-pooled-complete-shell-extension/experiments/tpc412_independent_checker.py --check
+    python -B papers/tpc-412-c1-pooled-complete-shell-extension/experiments/tpc412_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-412-c1-pooled-complete-shell-extension/experiments/tpc412_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc412_c1_pooled_complete_shell_extension_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc412_c1_pooled_complete_shell_extension_checker.py --check
+
 TPC-411 current section: c=1 pooled odd complete shells
 ----------------------------------------------------------
 

@@ -1,5 +1,32 @@
 # TPC distilled map and bold channel
 
+## V265 / TPC-412 current anchor
+
+当前入口：proof 为
+papers/tpc-412-c1-pooled-complete-shell-extension/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc412_c1_pooled_complete_shell_extension_checker.py，
+编号论文为 papers/tpc-412-c1-pooled-complete-shell-extension/。
+
+TPC-412 extends the pooled two-shell exact proxy to `H=16,32,66,128`, with
+`N=4H`, `16458` retained primes, shell-local amplitudes, and pooled parity
+counts `8229,8229`. Literal replay and 11-item stress pass. It remains a
+finite synthetic adjacent entry, not a full operator, physical, arithmetic,
+fixed-power, Route-B, or twin-prime result.
+
+    YOU ARE HERE = V265 / TPC-412
+    TPC412_POOLED_COMPLETE_SHELL_EXTENSION = PROVED_EXACT_FINITE
+    TPC412_Q_SCALES = 65536,131072
+    TPC412_SHELL_COUNTS = 5709,10749
+    TPC412_POOLED_SHELL_COUNT = 16458
+    TPC412_HEIGHTS = 16,32,66,128
+    TPC412_PARITY_COUNTS = 8229,8229
+    TPC412_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC412_ARITHMETIC_ADVANCE = NO
+    TPC412_FIXED_POWER_CREDIT = 0
+    TPC412_FULL_GATE_B = OPEN
+    TPC412_TWIN_PRIME_RESULT = NONE
+    TPC412_ROUND2_CLUE = TEST_C1_POOLED_COMPLETE_SHELL_EXTENSION
+
 ## V264 / TPC-411 current anchor
 
 当前入口：proof 为
