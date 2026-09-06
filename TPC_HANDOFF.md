@@ -20,10 +20,11 @@ found or assumed.
 The archive inventory is [PAPER_MATERIALS_INDEX.md](research/tpc-big-road/PAPER_MATERIALS_INDEX.md)
 and the route handoff is [TPC_HISTORY_SUMMARY.md](research/tpc-big-road/TPC_HISTORY_SUMMARY.md).
 It covers 823 paper directories (420 TPC, 403 RH): 822 have Markdown alongside
-TeX/PDF but no conservative reliable-full-paper Markdown file, and one TPC
-directory (`tpc-207-moving-hole-bdh-translation-compiler`) has no local
-Markdown, TeX, or PDF source. Thus “all papers are already converted to MD” is
-not supported by the repository. Originals remain in place.
+TeX/PDF but no conservative reliable-full-paper Markdown file; five of those
+are now explicitly marked `full-source-md` for source-complete mechanical
+conversions. One TPC directory (`tpc-207-moving-hole-bdh-translation-compiler`)
+has no local Markdown, TeX, or PDF source. Thus “all papers are already
+converted to MD” is not supported by the repository. Originals remain in place.
 
 The external PrimeGaps186 review is
 [REFERENCE_PRIMEGAPS186.md](research/tpc-big-road/REFERENCE_PRIMEGAPS186.md).
@@ -45,6 +46,33 @@ TPC418_FULL_GATE_B = OPEN
 
 The new-session reading order is in `TPC_HISTORY_SUMMARY.md`; authoritative
 current claims remain in this handoff and the active paper's proof package.
+
+## 2026-09-07 source-to-Markdown maintenance batch
+
+The first three priority conversion batches are complete for TPC-418 through
+TPC-404. Each preserved `paper/main.tex` was mechanically
+converted with Pandoc to `paper/main.md`, with the original title, author,
+date, abstract, and all numbered/unnumbered source sections retained. The
+per-paper [batch record](research/tpc-big-road/TPC_CONVERSION_BATCH_2026-09-07.md)
+links the source-complete Markdown, exact provenance record, README summary,
+proof package, application notes, TeX, and PDF. The conversion records contain
+source/PDF SHA-256 values, TeX line and PDF page maps, displayed-equation
+counts, and a scoped formula/prerequisite audit against the README and proof
+package.
+
+The manuscripts contain no bibliography/reference section. Accordingly the
+inventory uses `full-source-md` for these five source-complete mechanical
+conversions, while `reliable-full-md` remains zero pending the conservative
+abstract-plus-references and semantic-review test. Current coverage is
+`full-source-md=15`, `reliable-full-md=0`, `partial-or-notes=807`, and
+`source-inaccessible=1` across 823 directories. This maintenance changes no
+theorem, certificate, route edge, or claim grade; original TeX/PDF and existing
+hand-edited materials remain authoritative.
+
+Continue future conversion batches from
+`research/tpc-big-road/PAPER_MATERIALS_INDEX.md`, using the batch record's
+provenance and scope protocol. Do not create TPC-419 or alter
+`TPC418_ROUND2_CLUE = NONE_UNTIL_GROWING_OR_PHYSICAL_GATE_CHANGES`.
 
 TPC-418 current section: c=1 finite-family shell-parity envelope
 -------------------------------------------------------------------

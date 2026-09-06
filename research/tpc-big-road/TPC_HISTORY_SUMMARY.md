@@ -22,6 +22,26 @@ package.
 7. [REFERENCE_PRIMEGAPS186.md](REFERENCE_PRIMEGAPS186.md): external reference
    review and conditional-formalization crosswalk.
 
+## 2026-09-07 conversion batch
+
+The first three source-priority batches converted TPC-418 through TPC-404 from
+their preserved TeX manuscripts into source-complete Markdown at each
+`paper/main.md`. The batch record
+[TPC_CONVERSION_BATCH_2026-09-07.md](TPC_CONVERSION_BATCH_2026-09-07.md) links
+each Markdown file, conversion record, README summary, proof/application
+notes, TeX original, and PDF original. Each conversion record includes source
+and PDF hashes, TeX line/PDF page section mapping, displayed-equation counts,
+and a scoped formula/prerequisite audit. The source manuscripts have no
+bibliography, so the five entries are `full-source-md`, not
+`reliable-full-md`; the latter remains zero.
+
+The archive inventory is now `full-source-md=15`,
+`reliable-full-md=0`, `partial-or-notes=807`, and
+`source-inaccessible=1` across 823 directories. This is a searchable
+source-layer and provenance improvement, not a scientific result. The next
+batch must preserve original TeX/PDF and hand-edited files, distinguish
+partial or inaccessible sources, and keep the TPC-418 STOP boundary unchanged.
+
 ## Route history by phase
 
 The repository contains 420 TPC paper directories. The ledger and route map
