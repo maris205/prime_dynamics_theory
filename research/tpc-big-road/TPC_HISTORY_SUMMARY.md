@@ -35,8 +35,8 @@ and a scoped formula/prerequisite audit. The source manuscripts have no
 bibliography, so the five entries are `full-source-md`, not
 `reliable-full-md`; the latter remains zero.
 
-The archive inventory is now `full-source-md=20`,
-`reliable-full-md=0`, `partial-or-notes=802`, and
+The archive inventory is now `full-source-md=25`,
+`reliable-full-md=0`, `partial-or-notes=797`, and
 `source-inaccessible=1` across 823 directories. This is a searchable
 source-layer and provenance improvement, not a scientific result. The next
 batch must preserve original TeX/PDF and hand-edited files, distinguish

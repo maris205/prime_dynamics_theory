@@ -737,11 +737,11 @@ Summary: `{"full-source-md":25,"partial-or-notes":797,"reliable-full-md":0,"sour
 | TPC | `tpc-388-c1-cross-family-slope-transfer` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
 | TPC | `tpc-389-c1-long-horizon-slope-stress` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
 | TPC | `tpc-39-additive-quotient-tomography` | 1 | 12 | 1 | `partial-or-notes` | `README.md` |
-| TPC | `tpc-390-c1-recursive-slope-composition` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-391-c1-recursive-horizon-localization` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-392-c1-normalization-phase-diagram` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-393-c1-normalization-adversarial-holdout` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-394-c1-origin-uniformity-ladder` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
+| TPC | `tpc-390-c1-recursive-slope-composition` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-391-c1-recursive-horizon-localization` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-392-c1-normalization-phase-diagram` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-393-c1-normalization-adversarial-holdout` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-394-c1-origin-uniformity-ladder` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-395-c1-origin-cross-family-holdout` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
 | TPC | `tpc-396-c1-signed-law-interpolation` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
 | TPC | `tpc-397-c1-interpolation-transition-replication` | 2 | 1 | 8 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |

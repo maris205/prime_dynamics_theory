@@ -68,6 +68,16 @@ scoped prerequisite audit against the README and proof package.
 | TPC-400 | [paper/main.md](../../papers/tpc-400-c1-endpoint-microgrid-third-family/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-400-c1-endpoint-microgrid-third-family/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-400-c1-endpoint-microgrid-third-family/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-400-c1-endpoint-microgrid-third-family/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-400-c1-endpoint-microgrid-third-family/notes/claim_firewall.md) | [main.tex](../../papers/tpc-400-c1-endpoint-microgrid-third-family/paper/main.tex) | [main.pdf](../../papers/tpc-400-c1-endpoint-microgrid-third-family/paper/main.pdf) |
 | TPC-399 | [paper/main.md](../../papers/tpc-399-c1-endpoint-microgrid-cross-family/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-399-c1-endpoint-microgrid-cross-family/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-399-c1-endpoint-microgrid-cross-family/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-399-c1-endpoint-microgrid-cross-family/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-399-c1-endpoint-microgrid-cross-family/notes/claim_firewall.md) | [main.tex](../../papers/tpc-399-c1-endpoint-microgrid-cross-family/paper/main.tex) | [main.pdf](../../papers/tpc-399-c1-endpoint-microgrid-cross-family/paper/main.pdf) |
 
+### Batch 5: TPC-394 through TPC-390
+
+| Paper | Full source Markdown | Provenance/page map/formula audit | Abstract/summary | Proof/application notes | TeX | PDF |
+|---|---|---|---|---|---|---|
+| TPC-394 | [paper/main.md](../../papers/tpc-394-c1-origin-uniformity-ladder/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-394-c1-origin-uniformity-ladder/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-394-c1-origin-uniformity-ladder/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-394-c1-origin-uniformity-ladder/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-394-c1-origin-uniformity-ladder/notes/claim_firewall.md) | [main.tex](../../papers/tpc-394-c1-origin-uniformity-ladder/paper/main.tex) | [main.pdf](../../papers/tpc-394-c1-origin-uniformity-ladder/paper/main.pdf) |
+| TPC-393 | [paper/main.md](../../papers/tpc-393-c1-normalization-adversarial-holdout/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-393-c1-normalization-adversarial-holdout/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-393-c1-normalization-adversarial-holdout/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-393-c1-normalization-adversarial-holdout/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-393-c1-normalization-adversarial-holdout/notes/claim_firewall.md) | [main.tex](../../papers/tpc-393-c1-normalization-adversarial-holdout/paper/main.tex) | [main.pdf](../../papers/tpc-393-c1-normalization-adversarial-holdout/paper/main.pdf) |
+| TPC-392 | [paper/main.md](../../papers/tpc-392-c1-normalization-phase-diagram/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-392-c1-normalization-phase-diagram/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-392-c1-normalization-phase-diagram/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-392-c1-normalization-phase-diagram/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-392-c1-normalization-phase-diagram/notes/claim_firewall.md) | [main.tex](../../papers/tpc-392-c1-normalization-phase-diagram/paper/main.tex) | [main.pdf](../../papers/tpc-392-c1-normalization-phase-diagram/paper/main.pdf) |
+| TPC-391 | [paper/main.md](../../papers/tpc-391-c1-recursive-horizon-localization/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-391-c1-recursive-horizon-localization/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-391-c1-recursive-horizon-localization/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-391-c1-recursive-horizon-localization/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-391-c1-recursive-horizon-localization/notes/claim_firewall.md) | [main.tex](../../papers/tpc-391-c1-recursive-horizon-localization/paper/main.tex) | [main.pdf](../../papers/tpc-391-c1-recursive-horizon-localization/paper/main.pdf) |
+| TPC-390 | [paper/main.md](../../papers/tpc-390-c1-recursive-slope-composition/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-390-c1-recursive-slope-composition/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-390-c1-recursive-slope-composition/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-390-c1-recursive-slope-composition/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-390-c1-recursive-slope-composition/notes/claim_firewall.md) | [main.tex](../../papers/tpc-390-c1-recursive-slope-composition/paper/main.tex) | [main.pdf](../../papers/tpc-390-c1-recursive-slope-composition/paper/main.pdf) |
+
 ## Formula and theorem-boundary verification
 
 The audit covered the formulas that carry each finite claim, rather than
@@ -117,6 +127,13 @@ trying to reprove every computational certificate in the Markdown conversion:
   diagnostics, and route ledger.
 - TPC-399: the cross-family endpoint microgrid construction, frozen parent
   interface, diagnostics, and finite claim boundary.
+- TPC-394: the origin-uniformity ladder and its finite diagnostic/provenance
+  boundary.
+- TPC-393: the adversarial normalization holdout and finite robustness scope.
+- TPC-392: the normalization phase diagram, finite observations, and route
+  boundary.
+- TPC-391: recursive horizon localization and its finite proof/audit scope.
+- TPC-390: recursive slope composition and the source's finite route boundary.
 
 For all five papers, the prerequisite audit confirms that finite synthetic
 assumptions, exact-rational/computational evidence, and claim-firewall
@@ -130,9 +147,9 @@ The archive still contains 823 paper directories: 420 TPC and 403 RH. The
 inventory now records:
 
 ```text
-full-source-md      20
+full-source-md      25
 reliable-full-md     0
-partial-or-notes   802
+partial-or-notes   797
 source-inaccessible  1
 ```
 
