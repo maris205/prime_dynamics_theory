@@ -1,4 +1,29 @@
-# TPC big road V262 / TPC-409: c=1 odd complete-shell height ladder
+# TPC big road V263 / TPC-410: c=1 odd complete-shell height replication
+
+## V263 current anchor: TPC-410
+
+更新时间：2026-09-06
+
+TPC-410 current anchor: exact finite odd complete-shell height replication at
+`Q=131072`.  All `10749` shell primes are retained and the four heights
+`H=16,32,66,128` use `N=4H`; the explicit parity counts are `5374,5375`.
+Producer, literal independent replay, stress suite, PDF and Bridge-B are
+release-checked.  Full operator norm, physical h_0, arithmetic L2/sign,
+fixed-power, Route-B and twin-prime result remain open/none.
+
+    YOU ARE HERE = V263 / TPC-410
+    TPC410_ODD_COMPLETE_SHELL_HEIGHT_REPLICATION = PROVED_EXACT_FINITE
+    TPC410_Q = 131072
+    TPC410_HEIGHTS = 16,32,66,128
+    TPC410_SHELL_COUNT = 10749
+    TPC410_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC410_ARITHMETIC_ADVANCE = NO
+    TPC410_FIXED_POWER_CREDIT = 0
+    TPC410_FULL_GATE_B = OPEN
+    TPC410_TWIN_PRIME_RESULT = NONE
+    TPC410_ROUND2_CLUE = TEST_C1_ODD_COMPLETE_SHELL_HEIGHT_REPLICATION
+
+## V262 historical anchor: TPC-409
 
 ## V262 current anchor: TPC-409
 

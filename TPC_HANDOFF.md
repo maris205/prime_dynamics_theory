@@ -1,5 +1,47 @@
 # TPC HANDOFF
 
+TPC-410 current section: c=1 odd complete-shell height replication
+-------------------------------------------------------------------
+
+TPC-410 replicates the TPC-409 four-height ladder on the second odd complete
+shell, `Q=131072`, retaining all `10749` primes.  At fixed heights
+`H=16,32,66,128` with `N=4H`, the explicit alternating profile has
+`m_minus=5374` and `m_plus=5375`.  Every exact adjacent proxy entry satisfies
+`0<=z<=t_1/(a_min sqrt(S0 S1))<=4/(a_min H)<=4/H`.  Producer, independent
+literal replay, and nine mutation tests pass in normal and optimized modes.
+
+This remains a finite one-entry synthetic proxy theorem, not a full normalized
+operator bound, physical `h_0` theorem, arithmetic sign or `L2` estimate,
+fixed-power saving, Route-B closure, or twin-prime result.
+
+    TPC410_ODD_COMPLETE_SHELL_HEIGHT_REPLICATION = PROVED_EXACT_FINITE
+    TPC410_Q = 131072
+    TPC410_HEIGHTS = 16,32,66,128
+    TPC410_SHELL_COUNT = 10749
+    TPC410_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC410_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC410_ARITHMETIC_ADVANCE = NO
+    TPC410_FIXED_POWER_CREDIT = 0
+    TPC410_FULL_GATE_B = OPEN
+    TPC410_TWIN_PRIME_RESULT = NONE
+    TPC410_STRONGEST_POSITIVE = ODD_COMPLETE_SHELL_HEIGHT_REPLICATION
+    TPC410_STRONGEST_OBSTRUCTION = FULL_OPERATOR_AND_PHYSICAL_IDENTIFICATION_ABSENT
+    TPC410_OPEN_THEOREM = NORMALIZED_GROWING_OPERATOR_BOUND
+    TPC410_REUSABLE_STRUCTURE = ODD_COMPLETE_SHELL_HEIGHT_REPLAY
+    TPC410_ROUND2_CLUE = TEST_C1_ODD_COMPLETE_SHELL_HEIGHT_REPLICATION
+    TPC410_STATUS = PROVED EXACT FINITE ODD COMPLETE-SHELL HEIGHT REPLICATION
+
+TPC-410 reproducibility commands:
+
+    python -B papers/tpc-410-c1-odd-complete-shell-height-replication/code/tpc410_c1_odd_complete_shell_height_replication.py --check
+    python -O -B papers/tpc-410-c1-odd-complete-shell-height-replication/code/tpc410_c1_odd_complete_shell_height_replication.py --check
+    python -B papers/tpc-410-c1-odd-complete-shell-height-replication/experiments/tpc410_independent_checker.py --check
+    python -O -B papers/tpc-410-c1-odd-complete-shell-height-replication/experiments/tpc410_independent_checker.py --check
+    python -B papers/tpc-410-c1-odd-complete-shell-height-replication/experiments/tpc410_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-410-c1-odd-complete-shell-height-replication/experiments/tpc410_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc410_c1_odd_complete_shell_height_replication_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc410_c1_odd_complete_shell_height_replication_checker.py --check
+
 TPC-409 current section: c=1 odd complete-shell height ladder
 ---------------------------------------------------------------
 

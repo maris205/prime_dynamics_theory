@@ -9,6 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线最新位置：TPC-410 将 TPC-409 的四高度 odd complete-shell ladder 复制到
+Q=131072 的完整 odd shell，纳入 10749 个 primes，H=16,32,66,128、N=4H，
+`m_minus=5374,m_plus=5375`。exact certificate、independent literal CRT replay 与
+九项 mutation stress 均通过；结论仍限于 synthetic proxy 一个相邻 normalized entry，
+full operator norm、physical h_0、arithmetic sign/L2、fixed-power credit、Route-B 与
+twin-prime result 仍开放/无。下一关为 `TEST_C1_ODD_COMPLETE_SHELL_HEIGHT_REPLICATION`。
+
 当前主线最新位置：TPC-409 在 Q=65536 的 odd complete shell（5709 个 primes）上
 完成 H=16,32,66,128、N=4H 的四高度 ladder；所有 primes 保留，
 `m_minus=2854,m_plus=2855`。exact certificate、independent literal CRT replay 与
