@@ -1,4 +1,30 @@
-# TPC big road V267 / TPC-414: c=1 three-shell pooled extension
+# TPC big road V268 / TPC-415: c=1 three-shell height extension
+
+## V268 current anchor: TPC-415
+
+更新时间：2026-09-06
+
+TPC-415 extends the three-shell pooled proxy to `H=16,32,66,128`, with `N=4H`,
+all 36848 primes retained, shell-local amplitudes, and parity counts 18424/18424.
+Producer, literal independent replay, 11-case stress, PDF and Bridge-B are
+release-checked. Full operator norm, physical h_0, arithmetic L2/sign,
+fixed-power, Route-B and twin-prime result remain open/none.
+
+    YOU ARE HERE = V268 / TPC-415
+    TPC415_THREE_SHELL_HEIGHT_EXTENSION = PROVED_EXACT_FINITE
+    TPC415_Q_SCALES = 65536,131072,262144
+    TPC415_SHELL_COUNTS = 5709,10749,20390
+    TPC415_POOLED_SHELL_COUNT = 36848
+    TPC415_HEIGHTS = 16,32,66,128
+    TPC415_PARITY_COUNTS = 18424,18424
+    TPC415_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC415_ARITHMETIC_ADVANCE = NO
+    TPC415_FIXED_POWER_CREDIT = 0
+    TPC415_FULL_GATE_B = OPEN
+    TPC415_TWIN_PRIME_RESULT = NONE
+    TPC415_ROUND2_CLUE = TEST_C1_THREE_SHELL_HEIGHT_EXTENSION
+
+## V267 historical anchor: TPC-414
 
 ## V267 current anchor: TPC-414
 

@@ -5,6 +5,47 @@
 
 状态：**TPC410_PROVED_EXACT_FINITE_ODD_COMPLETE_SHELL_HEIGHT_REPLICATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
+## 0.209 current：TPC-415 c=1 three-shell height extension
+
+项目：papers/tpc-415-c1-three-shell-height-extension/
+
+类型：**PROVED_EXACT_FINITE_THREE_SHELL_HEIGHT_EXTENSION**。
+
+TPC-415 extends the three-shell pooled proxy to `H=16,32,66,128`, `N=4H`.
+All 36848 primes remain, amplitudes stay shell-local, and pooled parity is
+18424/18424. Exact certificate, independent literal replay, 11-case stress,
+PDF QA, and Bridge-B normal/optimized checks pass. This is finite one-entry
+synthetic-proxy evidence; full operator, physical source, arithmetic sign/L2,
+fixed-power, Route-B and twin-prime claims remain open/none.
+
+最强正结果：three-shell exact finite four-height extension。
+
+最强 obstruction：the full normalized operator and physical/arithmetic identification
+are absent; no growing or twin-prime claim follows。
+
+开放定理：normalized growing operator bound, strict 1/400, Route-B reassembly
+and twin primes remain open/none。
+
+可复用结构：three-shell height literal replay 与 strict claim-firewall stress。
+
+ROUND2_CLUE：`TEST_C1_THREE_SHELL_HEIGHT_EXTENSION`。
+
+~~~text
+TPC415_THREE_SHELL_HEIGHT_EXTENSION = PROVED_EXACT_FINITE
+TPC415_Q_SCALES = 65536,131072,262144
+TPC415_SHELL_COUNTS = 5709,10749,20390
+TPC415_POOLED_SHELL_COUNT = 36848
+TPC415_HEIGHTS = 16,32,66,128
+TPC415_PARITY_COUNTS = 18424,18424
+TPC415_NORMALIZED_GROWING_THEOREM = OPEN
+TPC415_ARITHMETIC_ADVANCE = NO
+TPC415_FIXED_POWER_CREDIT = 0
+TPC415_FULL_GATE_B = OPEN
+TPC415_TWIN_PRIME_RESULT = NONE
+TPC415_ROUND2_CLUE = TEST_C1_THREE_SHELL_HEIGHT_EXTENSION
+TPC415_STATUS = PROVED EXACT FINITE THREE-SHELL HEIGHT EXTENSION
+~~~
+
 ## 0.208 current：TPC-414 c=1 three-shell pooled extension
 
 项目：papers/tpc-414-c1-three-shell-pooled-extension/

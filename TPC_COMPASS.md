@@ -1,5 +1,32 @@
 # TPC distilled map and bold channel
 
+## V268 / TPC-415 current anchor
+
+当前入口：proof 为
+papers/tpc-415-c1-three-shell-height-extension/PROOF_PACKAGE.md，checker 为
+research/tpc-big-road/tpc_bridge_b_tpc415_c1_three_shell_height_extension_checker.py，
+编号论文为 papers/tpc-415-c1-three-shell-height-extension/。
+
+TPC-415 extends the three-shell pooled profile to `H=16,32,66,128`, with
+`N=4H`, 36848 retained primes, shell-local amplitudes, and parity `18424,18424`.
+Literal replay and 11-item stress pass. This remains a finite synthetic adjacent
+entry, not a full operator, physical, arithmetic, fixed-power, Route-B, or
+twin-prime result.
+
+    YOU ARE HERE = V268 / TPC-415
+    TPC415_THREE_SHELL_HEIGHT_EXTENSION = PROVED_EXACT_FINITE
+    TPC415_Q_SCALES = 65536,131072,262144
+    TPC415_SHELL_COUNTS = 5709,10749,20390
+    TPC415_POOLED_SHELL_COUNT = 36848
+    TPC415_HEIGHTS = 16,32,66,128
+    TPC415_PARITY_COUNTS = 18424,18424
+    TPC415_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC415_ARITHMETIC_ADVANCE = NO
+    TPC415_FIXED_POWER_CREDIT = 0
+    TPC415_FULL_GATE_B = OPEN
+    TPC415_TWIN_PRIME_RESULT = NONE
+    TPC415_ROUND2_CLUE = TEST_C1_THREE_SHELL_HEIGHT_EXTENSION
+
 ## V267 / TPC-414 current anchor
 
 当前入口：proof 为

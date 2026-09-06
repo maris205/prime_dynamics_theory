@@ -1,5 +1,26 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
+## V268 / TPC-415 current route edge
+
+TPC-415 将 three-shell pooled profile 延伸到 `H=16,32,66,128`、`N=4H`，
+完整保留 36848 primes、shell-local amplitudes 与 equal parity 18424/18424。
+exact certificate、literal replay 与 11 项 mutation stress 全部通过。这不是
+full operator norm、physical h_0、arithmetic L2/sign、fixed-power saving、
+Route-B closure 或 twin-prime result。下一 route edge 为
+`TEST_C1_THREE_SHELL_HEIGHT_EXTENSION`。
+
+    YOU ARE HERE = V268 / TPC-415
+    TPC415_THREE_SHELL_HEIGHT_EXTENSION = PROVED_EXACT_FINITE
+    TPC415_Q_SCALES = 65536,131072,262144
+    TPC415_SHELL_COUNTS = 5709,10749,20390
+    TPC415_POOLED_SHELL_COUNT = 36848
+    TPC415_HEIGHTS = 16,32,66,128
+    TPC415_PARITY_COUNTS = 18424,18424
+    TPC415_ARITHMETIC_ADVANCE = NO
+    TPC415_FIXED_POWER_CREDIT = 0
+    TPC415_FULL_GATE_B = OPEN
+    TPC415_ROUND2_CLUE = TEST_C1_THREE_SHELL_HEIGHT_EXTENSION
+
 ## V267 / TPC-414 current route edge
 
 TPC-414 将 pooled profile 扩至第三个完整 shell `Q=262144`，三个 shell 共纳入

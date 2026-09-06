@@ -1,5 +1,49 @@
 # TPC HANDOFF
 
+TPC-415 current section: c=1 three-shell height extension
+------------------------------------------------------------
+
+TPC-415 extends the three-shell pooled profile to `H=16,32,66,128`, `N=4H`.
+All `36848` primes remain, amplitudes are shell-local, and pooled alternating
+CRT has `m_minus=m_plus=18424`. Each exact row obeys
+`0<=z<=t_1/(a_min sqrt(S0 S1))<=4/(a_min H)<=4/H`. Producer, independent
+literal replay, 11 mutation tests, PDF QA and Bridge-B pass in normal and
+optimized modes.
+
+This remains a finite four-height synthetic proxy theorem, not a full normalized
+operator bound, physical `h_0` theorem, arithmetic sign or `L2` estimate,
+fixed-power saving, Route-B closure, or twin-prime result.
+
+    TPC415_THREE_SHELL_HEIGHT_EXTENSION = PROVED_EXACT_FINITE
+    TPC415_Q_SCALES = 65536,131072,262144
+    TPC415_SHELL_COUNTS = 5709,10749,20390
+    TPC415_POOLED_SHELL_COUNT = 36848
+    TPC415_HEIGHTS = 16,32,66,128
+    TPC415_PARITY_COUNTS = 18424,18424
+    TPC415_NORMALIZED_GROWING_THEOREM = OPEN
+    TPC415_ARITHMETIC_SIGN_IDENTIFICATION = OPEN
+    TPC415_ARITHMETIC_ADVANCE = NO
+    TPC415_FIXED_POWER_CREDIT = 0
+    TPC415_FULL_GATE_B = OPEN
+    TPC415_TWIN_PRIME_RESULT = NONE
+    TPC415_STRONGEST_POSITIVE = THREE_SHELL_HEIGHT_EXTENSION
+    TPC415_STRONGEST_OBSTRUCTION = FULL_OPERATOR_AND_PHYSICAL_IDENTIFICATION_ABSENT
+    TPC415_OPEN_THEOREM = NORMALIZED_GROWING_OPERATOR_BOUND
+    TPC415_REUSABLE_STRUCTURE = THREE_SHELL_HEIGHT_LITERAL_REPLAY
+    TPC415_ROUND2_CLUE = TEST_C1_THREE_SHELL_HEIGHT_EXTENSION
+    TPC415_STATUS = PROVED EXACT FINITE THREE-SHELL HEIGHT EXTENSION
+
+TPC-415 reproducibility commands:
+
+    python -B papers/tpc-415-c1-three-shell-height-extension/code/tpc415_c1_three_shell_height_extension.py --check
+    python -O -B papers/tpc-415-c1-three-shell-height-extension/code/tpc415_c1_three_shell_height_extension.py --check
+    python -B papers/tpc-415-c1-three-shell-height-extension/experiments/tpc415_independent_checker.py --check
+    python -O -B papers/tpc-415-c1-three-shell-height-extension/experiments/tpc415_independent_checker.py --check
+    python -B papers/tpc-415-c1-three-shell-height-extension/experiments/tpc415_adversarial_certificate_stress.py --check
+    python -O -B papers/tpc-415-c1-three-shell-height-extension/experiments/tpc415_adversarial_certificate_stress.py --check
+    python -B research/tpc-big-road/tpc_bridge_b_tpc415_c1_three_shell_height_extension_checker.py --check
+    python -O -B research/tpc-big-road/tpc_bridge_b_tpc415_c1_three_shell_height_extension_checker.py --check
+
 TPC-414 current section: c=1 three-shell pooled extension
 ------------------------------------------------------------
 
