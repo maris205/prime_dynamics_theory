@@ -6,7 +6,7 @@ change the TPC route, or reopen the stopped TPC-418 research line.
 
 ## Batch scope and method
 
-Thirty-nine current route papers in the contiguous range TPC-418–375 were
+Forty-four current route papers in the contiguous range TPC-418–375 were
 converted from their preserved `paper/main.tex` sources with the same method.
 Batch 7 closes the previously recorded TPC395–398 gap:
 
@@ -122,10 +122,30 @@ five source manuscripts remain finite computational or finite synthetic
 claims; the conversion adds no theorem, arithmetic advance, fixed-power
 credit, physical identification, Route-B closure, or twin-prime conclusion.
 
+### Batch 10: TPC-374 through TPC-370
+
+| Paper | Full source Markdown | Provenance/page map/formula audit | Abstract/summary | Proof/application notes | TeX | PDF |
+|---|---|---|---|---|---|---|
+| TPC-374 | [paper/main.md](../../papers/tpc-374-near-block-band-truncation/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-374-near-block-band-truncation/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-374-near-block-band-truncation/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-374-near-block-band-truncation/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-374-near-block-band-truncation/notes/claim_firewall.md) | [main.tex](../../papers/tpc-374-near-block-band-truncation/paper/main.tex) | [main.pdf](../../papers/tpc-374-near-block-band-truncation/paper/main.pdf) |
+| TPC-373 | [paper/main.md](../../papers/tpc-373-eigenmode-block-separation/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-373-eigenmode-block-separation/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-373-eigenmode-block-separation/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-373-eigenmode-block-separation/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-373-eigenmode-block-separation/notes/claim_firewall.md) | [main.tex](../../papers/tpc-373-eigenmode-block-separation/paper/main.tex) | [main.pdf](../../papers/tpc-373-eigenmode-block-separation/paper/main.pdf) |
+| TPC-372 | [paper/main.md](../../papers/tpc-372-full-window-offblock-decomposition/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-372-full-window-offblock-decomposition/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-372-full-window-offblock-decomposition/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-372-full-window-offblock-decomposition/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-372-full-window-offblock-decomposition/notes/claim_firewall.md) | [main.tex](../../papers/tpc-372-full-window-offblock-decomposition/paper/main.tex) | [main.pdf](../../papers/tpc-372-full-window-offblock-decomposition/paper/main.pdf) |
+| TPC-371 | [paper/main.md](../../papers/tpc-371-block-phase-localization/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-371-block-phase-localization/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-371-block-phase-localization/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-371-block-phase-localization/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-371-block-phase-localization/notes/claim_firewall.md) | [main.tex](../../papers/tpc-371-block-phase-localization/paper/main.tex) | [main.pdf](../../papers/tpc-371-block-phase-localization/paper/main.pdf) |
+| TPC-370 | [paper/main.md](../../papers/tpc-370-count-2048-window-audit/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-370-count-2048-window-audit/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-370-count-2048-window-audit/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-370-count-2048-window-audit/PROOF_PACKAGE.md), [claim firewall note](../../papers/tpc-370-count-2048-window-audit/notes/claim_firewall.md) | [main.tex](../../papers/tpc-370-count-2048-window-audit/paper/main.tex) | [main.pdf](../../papers/tpc-370-count-2048-window-audit/paper/main.pdf) |
+
+This batch records the finite count-2048 window, block-phase, decomposition,
+eigenmode-layer, and near-block truncation manuscripts as source-complete
+mechanical Markdown. Their finite computational boundaries remain unchanged.
+
 ## Formula and theorem-boundary verification
 
 The audit covered the formulas that carry each finite claim, rather than
 trying to reprove every computational certificate in the Markdown conversion:
+
+- TPC-374: the finite near-block truncation and exact failure-census reproduction.
+- TPC-373: block-distance Rayleigh-layer separation of the finite extremal mode.
+- TPC-372: common-normalization block/off-block decomposition and finite lower bound.
+- TPC-371: block-local phase localization for the finite count-2048 audit.
+- TPC-370: the predeclared count-2048 four-law finite-window audit.
 
 - TPC-379: the finite four-law control panel and law-dependence obstruction.
 - TPC-378: coordinate-disjoint origin transfer at the declared finite counts and scales.
@@ -215,13 +235,13 @@ The archive still contains 823 paper directories: 420 TPC and 403 RH. The
 inventory now records:
 
 ```tex
-full-source-md      44
+full-source-md      49
 reliable-full-md     0
-partial-or-notes   778
+partial-or-notes   773
 source-inaccessible  1
 ```
 
-The remaining 778 `partial-or-notes` entries are the next conversion pool;
+The remaining 773 `partial-or-notes` entries are the next conversion pool;
 they are not silently treated as full manuscripts. TPC-207 remains the single
 source-inaccessible entry. The next batch should continue with the highes
 route relevance or any `not-converted` source, using the same provenance and

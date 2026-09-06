@@ -1,0 +1,89 @@
+# A finite near-block band reproduces the spectral failure census of a prime-shell operator
+
+> This Markdown file is a mechanical TeX-to-GFM conversion of the preserved source manuscript. The TeX and PDF originals remain authoritative; this file does not upgrade the mathematical scope.
+
+- **Source TeX:** [`paper/main.tex`](main.tex)
+- **Source PDF:** [`paper/main.pdf`](main.pdf)
+- **Author:** Liang Wang; School of Mathematics and Statistics, Huazhong University of Science and Technology (HUST), Wuhan, China
+- **Source date:** September 3, 2026
+- **Repository source commit:** `11cec020855d42e47f2e61a386f7a97665edb398`
+
+## Abstract
+
+We test a predeclared near-block truncation suggested by the preceding eigenmode profile audit. A count-2048 response-blind prime-shell operator is split into eight contiguous blocks of length 256, and the band of block distances at most three is retained under the same full-window square-energy normalization as the parent matrix. On the complete panel of three origins, three shell scales, two beta values, and 18 rows, the band reproduces exactly the six beta=2 spectral-cap failure keys of the full matrix. On those six rows the selected full-mode absolute Rayleigh retention is at least 0.9915711764, while the omitted tail contributes at most 0.0084288236 in absolute Rayleigh fraction. The result is a finite, independently replayed near-block reduction; it is not a causality theorem, a bandwidth-uniform estimate, an arithmetic gain, or a twin-prime result.
+
+# Question and frozen panel
+
+The previous audit decomposed the selected extremal eigenmode into fixed block-distance layers. On the six beta=2 rows that exceeded the working spectral cap, distances zero through three carried at least 99.157 percent of the absolute Rayleigh mass. The next smallest operator-level question is whether the corresponding fixed band reproduces the parent failure census.
+
+The interval origins are \(1010001,1018021,1026041\). Each interval has 2048 consecutive integers, partitioned into eight contiguous blocks of length 256. We use \(Q\in\{512,2048,8192\}\), kernel exponent one, the all-plus law, and \(\beta\in\{0,2\}\), giving 18 rows. The complete Cartesian panel is materialized before any spectral result is read. The working caps are 0.64 for the spectral norm and 0.83 for the Schur row-sum envelope.
+
+# Operator and exact truncation identity
+
+For \(Q<p\leq 2Q\), define \[B_p(u,t)=p\frac{66^2}{66^2+(u-t)^2}
+\left({\bf1}_{p\mid u-t}-\frac{1}{p-1}\right)
+{\bf1}_{u\ne t}{\bf1}_{p\nmid u}{\bf1}_{p\nmid t}.\] With \(w_p=(p/Q)^\beta\), let \[A(u,t)=\sum_p w_pB_p(u,t),\qquad
+G(u)=\sum_p\sum_{s\in I}(w_pB_p(u,s))^2,
+\qquad T(u,t)=\frac{A(u,t)}{\sqrt{G(u)G(t)}}.\] The geometry \(G\) is always computed on the full window, including for the truncated matrix.
+
+Writing \(b(i)=\lfloor i/256\rfloor\), freeze \[B_3(i,j)={\bf1}_{|b(i)-b(j)|\leq3}T(i,j),\qquad
+R_3=T-B_3.\] The mask and its complement are disjoint and exhaustive, hence \[T=B_3+R_3                                      \tag{1}\] entrywise on every finite row. Both matrices are symmetric. If \(v\) is the unit eigenvector of \(T\) selected by the largest absolute eigenvalue rule (the minimum mode wins an exact tie), then \[v^{\mathsf T}B_3v+v^{\mathsf T}R_3v
+ =v^{\mathsf T}Tv=\lambda.                                      \tag{2}\] Equation (2) is an exact finite identity, not an attribution statement.
+
+# Certification protocol
+
+The producer sums the prime shell in ascending order and writes canonical JSON containing all 18 rows. A separate checker has its own sieve, sums the shell in descending order, rebuilds the full and band eigensystems, and checks metrics, mode residuals, the Rayleigh identity, failure keys, and the inherited rational anchor. An adversarial checker mutates protocol, provenance, row census, band definition, numerical fields, audit counts, anchor, firewall, and clue fields; every mutation must be rejected.
+
+The anchor is the exact interval \([1010346,1010359)\), at \(Q=4\), exponent one, where the shell is \(\{5,7\}\). It checks rational symmetry and positive geometry and does not select a main-panel row. Local Bridge-B repeats the producer, independent checker, and stress suite in normal and optimized Python modes, requiring empty standard error and byte-identical output. The official Route-A/Route-B evaluator files named by the Session are absent from this checkout, so no official route pass is asserted.
+
+# Results
+
+Table [1](#tab:census) gives the full and band cap-failure census. The band preserves the six beta=2 failures exactly: all three origins at \(Q=2048,8192\). It also preserves the absence of beta=2 Schur failures.
+
+<div id="tab:census">
+
+|          |          |       |          |       |          |       |
+| :------- | -------: | ----: | -------: | ----: | -------: | ----: |
+|          |          |       |          |       |          |       |
+| quantity | spectral | Schur | spectral | Schur | spectral | Schur |
+| rows     |        9 |     9 |        9 |     9 |        9 |     9 |
+| failures |        9 |     9 |        6 |     0 |        6 |     0 |
+
+Finite cap census on the complete 18-row panel.
+
+</div>
+
+For beta=2, the band spectral values at \(Q=512\) are 0.5152073962–0.5152083701, at \(Q=2048\) are 0.7037611538–0.7037762222, and at \(Q=8192\) are 0.7051585288–0.7051589866. Thus the fixed band is below the cap at the smallest scale and above it at the same six high-scale settings as the full matrix. At \(Q=512\), its value is slightly larger than the full value, so truncation is not a monotone norm-repair operation.
+
+<div id="tab:retention">
+
+| quantity                         |      minimum |      maximum |
+| :------------------------------- | -----------: | -----------: |
+| absolute band Rayleigh retention | 0.9915711764 | 0.9915735754 |
+| absolute tail Rayleigh fraction  | 0.0084264246 | 0.0084288236 |
+| tail Schur norm                  | 0.0119462342 | 0.0119686969 |
+| tail Frobenius norm              | 0.0141458319 | 0.0141740682 |
+
+Selected full-mode retention on the six beta=2 failure rows.
+
+</div>
+
+For comparison, over all nine beta=2 rows the band absolute retention ranges from 0.9915711764 to 1.0016823597. The value above one is possible because the tail Rayleigh term can have the opposite sign to the selected negative eigenvalue; it is another reason not to interpret the band as a monotone approximation theorem. The finite eigensystem residual and norm checks are below the declared certificate tolerances, and the exact band/tail identity holds by construction.
+
+# Interpretation and claim boundary
+
+The main positive result is an operator-level finite reproduction: a band chosen before the panel is evaluated has the same beta=2 spectral failure keys as the full matrix. Together with the preceding mode profile, this locates the finite excess in a near-block subspace at this partition scale. It does not show that the near-block entries cause the excess. In particular, a Rayleigh quotient of a full-matrix eigenvector is not an operator-norm estimate for \(B_3\), and the small tail on this panel does not imply a decay law for growing windows or other origins.
+
+The next finite question is bandwidth stability: test smaller predeclared cutoffs, retaining the same full-window normalization and caps, before any asymptotic interpretation.
+
+    TPC374_BAND_REPLAY = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+    TPC374_BAND_FAILURE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC374_PARENT_FAILURE_REPRODUCTION = NUMERICALLY_CERTIFIED_FINITE_SCOPED
+    TPC374_BAND_OPERATOR_UNIFORMITY = OPEN
+    TPC374_CROSS_BLOCK_CAUSALITY = OPEN
+    TPC374_ARITHMETIC_ADVANCE = NO
+    TPC374_FIXED_POWER_CREDIT = 0
+    TPC374_FULL_GATE_B = OPEN
+    TPC374_TWIN_PRIME_RESULT = NONE
+
+No source-uniform arithmetic \(L^2\) estimate, growing operator bound, prime-shell reassembly, official Route-A/Route-B closure, or twin-prime theorem is claimed.
