@@ -19,8 +19,8 @@ found or assumed.
 
 The archive inventory is [PAPER_MATERIALS_INDEX.md](research/tpc-big-road/PAPER_MATERIALS_INDEX.md)
 and the route handoff is [TPC_HISTORY_SUMMARY.md](research/tpc-big-road/TPC_HISTORY_SUMMARY.md).
-It covers 823 paper-directory entries (420 TPC, 403 RH): 89 have verified
-mechanical full-source Markdown, 733 have partial/notes layers, and none has
+It covers 823 paper-directory entries (420 TPC, 403 RH): 94 have verified
+mechanical full-source Markdown, 728 have partial/notes layers, and none has
 the independent full-content/semantic review required for `reliable-full-md`.
 One TPC directory (`tpc-207-moving-hole-bdh-translation-compiler`) has other
 artifacts but no local Markdown, TeX, or PDF manuscript. Thus “all papers are
@@ -49,12 +49,12 @@ current claims remain in this handoff and the active paper's proof package.
 
 ## 2026-09-07 source-to-Markdown maintenance batch
 
-The contiguous range TPC-418–330 now has 89 full-source mechanical reading
+The contiguous range TPC-418–325 now has 94 full-source mechanical reading
 layers at `paper/main.md`. The repair covered 64 previous conversions and
-added TPC350–354; subsequent batches add TPC330–349. The [batch record](research/tpc-big-road/TPC_CONVERSION_BATCH_2026-09-07.md)
+added TPC350–354; subsequent batches add TPC325–349. The [batch record](research/tpc-big-road/TPC_CONVERSION_BATCH_2026-09-07.md)
 links each full text, provenance record, original summary, available package
-materials, TeX, and PDF. All 89 abstract/body formula-sequence and normalized
-plain-text roundtrips pass (3,874 math nodes total). Source/PDF hashes are
+materials, TeX, and PDF. All 94 abstract/body formula-sequence and normalized
+plain-text roundtrips pass (4,151 math nodes total). Source/PDF hashes are
 locked; source section lines map to actual extracted PDF heading hits.
 The ambiguous TPC402 match remains explicit rather than receiving a guessed page.
 
@@ -97,8 +97,16 @@ window-overlap/disjoint-from-parent wording issues without changing sources.
 TPC330–333 external bibliographies are preserved and hash-locked. All five
 new manuscripts have unique section/page heading matches.
 
-Current coverage is `full-source-md=89`, `reliable-full-md=0`,
-`partial-or-notes=733`, and `source-inaccessible=1` across 823 entries.
+The [TPC325–329 scope audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC325_329.md)
+distinguishes trace-normalized shape, finite envelope summaries, and the
+source-coordinate Gram diagonal after shell reassembly. It records the
+incorrect TPC328 twin label at composite 20009 and TPC329's contradiction
+between its every-law-positive-row prose and its own actual-law census.
+Original sources and split reproduction-command lines remain preserved;
+all five section/page maps are unique and external BibTeX is hash-locked.
+
+Current coverage is `full-source-md=94`, `reliable-full-md=0`,
+`partial-or-notes=728`, and `source-inaccessible=1` across 823 entries.
 Mechanical preservation is not independent mathematical verification; the
 remaining accessible originals still require conversion and per-paper review.
 This maintenance changes no theorem, certificate, route edge, or claim grade;
