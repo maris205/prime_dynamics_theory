@@ -1,0 +1,158 @@
+# Fresh-Source Replication and Weight-Order Obstruction in a Finite Prime–Shell Diagnostic
+
+> Mechanical reading layer generated from the preserved TeX. Original TeX/PDF and hand-edited package materials remain authoritative. This conversion does not certify a proof or upgrade any finite, conditional, synthetic, or open claim.
+
+- Source TeX: [main.tex](main.tex)
+- Preserved PDF: [main.pdf](main.pdf)
+- Bibliography source: [references.bib](references.bib)
+- Conversion and audit scope: [CONVERSION_RECORD.md](../CONVERSION_RECORD.md)
+- Author metadata: Liang Wang; School of Mathematics and Statistics; Huazhong University of Science and Technology (HUST); Wuhan, China
+- Source date: 30 August 2026
+- Source repository commit: `b9723facc6f4c261e20e0d86513230e5351dfe4d`
+- Converter: `source-markdown-audit-v2`
+
+## Abstract
+
+We test whether a finite prime–shell separation class survives a source change when its weighting menu is fixed in advance. The three-law menu is locked from the preceding release: counting weight $1$, reduced-residue weight $1/(p-1)$, and prime von-Mangoldt weight $\log p$. We then move the same literal rational physical engine to the fresh interval $I=\{641,\ldots,1280\}$, recompute every Gram minimum and all-positive control, and audit all weighted forms with directed rational intervals. The logarithm uses a range-reduced 120-term atanh enclosure and every operation is rounded outward on a $10^{-36}$ decimal grid. Across eight source–shell rows and 48 law/target cases, all 24 fresh minima lie strictly below the normalized level one and all 24 positive controls lie strictly above it. The fine amplitude order is not stable: minimum orders have three strict types and positive controls have two. This is a finite same-engine holdout and a weight-order obstruction, not an external physical validation, an asymptotic theorem, an arithmetic $L^2$ estimate, or a twin-prime result.
+
+<!-- SOURCE_BODY_BEGIN -->
+
+# Question and route position
+
+TPC-314 found that three arithmetically recognizable positive laws preserved a finite below/above-one class, but its target labels came from the same physical panel and its amplitude order depended on the law. The smallest useful next question is therefore procedural: if the menu is frozen before new target readout, does the class survive on a new source interval, and does the law order become reproducible?
+
+This paper answers that question only at the declared finite scale. The word holdout refers to the new source interval relative to TPC-314. The physical engine and source-coefficient rule remain the same locked local engine, so no claim of external physical independence is made.
+
+# Fresh physical panel and locked menu
+
+Let $I=\{641,\ldots,1280\}$, $H=66$, and $S_Q=\{p: p\text{ prime},\ Q<p\leq 2Q\}$ for $Q\in\{24,36,54,80\}$. For $s\in\{1,2\}$, the locked rational source rule gives coefficients $\beta_t$ and the deleted-diagonal output $$g_p(u)=\sum_{\substack{t\in I,\ t\ne u\\p\nmid ut}}
+ p\frac{H^{2s}}{(H^2+(u-t)^2)^s}
+ \left({\bf1}_{u\equiv t\pmod p}-\frac1{p-1}\right)\beta_t .
+ \label{eq:output}$$ The exact Gram matrix is $$G_{p,q}=\sum_{u\in I}g_p(u)g_q(u).
+ \label{eq:gram}$$ All quantities in ([\[eq:output\]](main.tex#L64){reference-type="ref" reference="eq:output"})–([\[eq:gram\]](main.tex#L69){reference-type="ref" reference="eq:gram"}) are rational and are evaluated with exact integer fractions.
+
+Before computing the fresh Gram extrema, the protocol verifies the released TPC-314 menu and materializes $$w_p^{\rm C}=1,\qquad
+ w_p^{\rm R}=\frac1{p-1}=\frac1{\varphi(p)},\qquad
+ w_p^{\rm L}=\log p .
+ \label{eq:laws}$$ The labels C, R, and L stand for counting, reduced-residue, and logarithmic laws. Their arithmetic motivation does not make any one of them canonical. Prime-tuple notation provides a natural context for the von-Mangoldt label, while coprimality-density notation provides context for the reduced-residue label; these conventions are used here only to name a finite menu `\cite{cantarini2018,revesz2021,banksfordtao2023}`.
+
+For a sign vector $c$, define the fresh target $c^-$ to be the exact minimum of $c^T Gc/\operatorname{tr}(G)$ modulo global sign, with the first sign fixed to $+1$. The control $c^+$ is the all-positive vector; exhaustive enumeration verifies that it is the maximum on every declared row. Thus the target is genuinely recomputed, although it remains selected from the same Gram matrix later used in the weighted audit.
+
+# Exact identities and interval protocol
+
+> **Lemma: Weighted Gram identity** For every finite sign vector $c$ and weight vector $w$, $$E_w(c)=\sum_{p,q}c_pc_qw_pG_{p,q}w_q
+>        =\left\|\sum_p c_pw_pg_p\right\|_2^2 .
+>  \label{eq:weighted}$$ Consequently $E_w(c)\geq0$.
+
+> **Proof** Substitute $G_{p,q}=\langle g_p,g_q\rangle$ and expand the finite squared norm. No limiting or floating-point argument is used.
+
+> **Lemma: Positive normalizer and scale invariance** Put $D_w=\sum_p w_p^2G_{p,p}$. If a physical component is nonzero and all $w_p>0$, then $D_w>0$; moreover $R_{aw}(c)=R_w(c)$ for every $a>0$, where $R_w(c)=E_w(c)/D_w$.
+
+> **Proof** The diagonal terms are $w_p^2\|g_p\|_2^2$, so one is positive. A common positive scale multiplies both $E_w$ and $D_w$ by $a^2$.
+
+> **Proposition: Exact finite sign enumeration** For a shell of size $m$, fixing the first sign to $+1$ and traversing the binary reflected Gray code visits exactly $2^{m-1}$ sign classes. The one-bit update used by the certificate preserves the exact value of $c^TGc$.
+
+> **Proof** The Gray code is a bijection on the remaining $m-1$ signs. Flipping coordinate $i$ changes the quadratic form by $-4c_i\sum_{j\ne i}G_{i,j}c_j$; updating the corresponding fields gives this quantity exactly. Induction proves the invariant at every visited state.
+
+> **Proposition: Rational enclosure for $\log p$** Let $k=\lfloor\log_2p\rfloor$, $y=p/2^k$, and $z=(y-1)/(y+1)$. For $N\geq1$, $$\log p=k\log2+2\sum_{j=0}^{N-1}\frac{z^{2j+1}}{2j+1}+\mathcal E_N(z),
+>  \qquad
+>  0\leq\mathcal E_N(z)\leq
+>  \frac{2z^{2N+1}}{(2N+1)(1-z^2)} .
+>  \label{eq:log}$$ For the declared shells $0\leq z\leq1/3$.
+
+> **Proof** Range reduction gives $1\leq y<2$. The positive series for $2\operatorname{atanh}z$ gives the lower endpoint, and replacing every remaining denominator by $2N+1$ and summing the geometric powers gives the upper endpoint. The same construction at $z=1/3$ encloses $\log2$.
+
+The implementation fixes $N=120$. It stores rational endpoints and rounds the lower endpoint down and the upper endpoint up after each operation on the grid $10^{-36}$. Four-endpoint multiplication and quotienting by an interval strictly above zero preserve containment. The producer and the independent checker both verify every stored endpoint and digest.
+
+# Finite results
+
+The shell cardinalities for $Q=24,36,54,80$ are $6,9,12,15$; each occurs for both exponents, giving eight rows. Table [1](main.tex#L174){reference-type="ref" reference="tab:ratios"} displays decimal centers (six decimal places) of the certified ratios. C and R entries are exact rational values; L entries are centers of directed intervals. All classifications and order comparisons use interval endpoints.
+
+<div id="tab:ratios">
+
+|  $Q$|  $s$|     $C^-$|     $R^-$|     $L^-$|     $C^+$|     $R^+$|     $L^+$|
+|----:|----:|---------:|---------:|---------:|---------:|---------:|---------:|
+|   24|    1|  0.612094|  0.636432|  0.608400|  1.798821|  1.791440|  1.791417|
+|   24|    2|  0.592454|  0.659056|  0.577298|  1.698869|  1.649790|  1.703920|
+|   36|    1|  0.575552|  0.625007|  0.573790|  2.293269|  2.282705|  2.274375|
+|   36|    2|  0.494598|  0.437548|  0.517471|  2.405438|  2.263145|  2.421767|
+|   54|    1|  0.475445|  0.525761|  0.469491|  2.968358|  2.811750|  2.982166|
+|   54|    2|  0.347354|  0.412958|  0.338906|  4.263758|  3.725289|  4.366547|
+|   80|    1|  0.421584|  0.429118|  0.424877|  4.134034|  3.861824|  4.162378|
+|   80|    2|  0.225849|  0.281494|  0.216268|  9.144555|  8.002959|  9.320816|
+
+: Fresh weighted ratios. A minus superscript denotes the exact fresh Gram minimum and a plus superscript the all-positive control.
+
+</div>
+
+The certificate proves that all 24 minimum intervals have upper endpoint below one and all 24 positive-control intervals have lower endpoint above one. The independent replay recomputes the fresh sign extrema rather than reading target labels from the producer.
+
+The fine order is less stable than the class. In ascending order, the minimum ratios have the following three strict types: $$\begin{aligned}
+ L<C<R &\quad\text{on 6 rows},\\
+ R<C<L &\quad\text{on 1 row},\\
+ C<L<R &\quad\text{on 1 row}.\end{aligned}$$ The positive controls have two types: $$\begin{aligned}
+ R<C<L &\quad\text{on 6 rows},\\
+ L<R<C &\quad\text{on 2 rows}.\end{aligned}$$ Every adjacent interval comparison is strict and disjoint. In particular, the source change does not select a canonical amplitude law; it exposes a finite order obstruction while preserving the coarse class.
+
+# Interpretation and route firewall
+
+The strongest positive result is a source-first finite replication: after the menu is locked, all eight fresh rows retain the same strict class under all three laws. This is stronger procedurally than reusing the TPC-314 labels, but it is still a same-engine experiment and each minimum target is selected from its own Gram matrix.
+
+The strongest negative result is the law-order shift. A statement of the form “the most natural law gives the canonical amplitude” is not supported by these data: the order changes across rows and differs from the preceding panel. The finite result therefore supports a class-level diagnostic, not a choice of arithmetic normalization.
+
+Nothing here pays the literal arithmetic $L^2$ interface or controls a growing family of source intervals and shells. The release assigns zero fixed-power credit, leaves full Route-B Gate B open, and makes no statement about the twin-prime conjecture. The Session-named Route-A and Route-B evaluator files were absent from the checkout; the included route note and Bridge-B checker are local fail-closed fallbacks and make no official evaluator-pass claim.
+
+# Conclusion and next gate
+
+TPC-315 establishes a finite fresh-source holdout under a pre-locked three-law menu. Exact rational physical construction, exhaustive sign enumeration, rational logarithm intervals, and independent replay certify 48 cases with a $24+24$ strict separation class. The same certificate records three minimum-order types and two positive-order types, a reusable obstruction to canonical amplitude claims.
+
+The next minimal route gate is literal rather than asymptotic: formulate and audit an arithmetic $L^2$ interface for the fresh physical outputs, while keeping any growing claim explicitly open until that interface is paid.
+
+#### Status.
+
+This manuscript is a finite diagnostic release by Liang Wang (HUST). It does not prove the twin-prime conjecture or any equivalent asymptotic statement.
+
+# References (preserved BibTeX)
+
+Bibliography source: paper/references.bib
+
+``` {.bibtex}
+@article{cantarini2018,
+  author       = {Marco Cantarini},
+  title        = {Explicit formula for the average of Goldbach and prime tuples representations},
+  journal      = {arXiv preprint arXiv:1801.08475},
+  year         = {2018},
+  url          = {https://arxiv.org/abs/1801.08475}
+}
+
+@article{revesz2021,
+  author       = {Szil{\'a}rd Gy. R{\'e}v{\'e}sz},
+  title        = {A Riemann-von Mangoldt-type formula for the distribution of Beurling primes},
+  journal      = {Mathematica Pannonica New Series},
+  volume       = {27},
+  number       = {1},
+  pages        = {204--232},
+  year         = {2021},
+  url          = {https://arxiv.org/abs/2110.11463}
+}
+
+@article{banksfordtao2023,
+  author       = {William Banks and Kevin Ford and Terence Tao},
+  title        = {Large prime gaps and probabilistic models},
+  journal      = {Inventiones Mathematicae},
+  volume       = {233},
+  pages        = {1471--1518},
+  year         = {2023},
+  doi          = {10.1007/s00222-023-01199-0},
+  url          = {https://doi.org/10.1007/s00222-023-01199-0}
+}
+
+@misc{tpc314,
+  author       = {Liang Wang},
+  title        = {Externally Motivated Weight Laws on a Finite Prime--Shell Diagnostic},
+  year         = {2026},
+  note         = {TPC-314 project release, Huazhong University of Science and Technology}
+}
+```
+
+<!-- SOURCE_BODY_END -->
