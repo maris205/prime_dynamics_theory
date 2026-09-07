@@ -1,0 +1,80 @@
+# Control Covariance of Masked Signed-Gram Responses\ A Finite Stability Test for Twin and Background Components
+
+> Mechanical reading layer generated from the preserved TeX. Original TeX/PDF and hand-edited package materials remain authoritative. This conversion does not certify a proof or upgrade any finite, conditional, synthetic, or open claim.
+
+- Source TeX: [main.tex](main.tex)
+- Preserved PDF: [main.pdf](main.pdf)
+
+- Conversion and audit scope: [CONVERSION_RECORD.md](../CONVERSION_RECORD.md)
+- Author metadata: Liang Wang; School of Mathematics and Statistics; Huazhong University of Science and Technology (HUST), Wuhan, China
+- Source date: September 2, 2026
+- Source repository commit: `024fd8d535671c377bc5714346cb3c1b3136c9d5`
+- Converter: `source-markdown-audit-v2`
+
+## Abstract
+
+TPC-336 showed that source-mask gains can be reordered by a fixed signed-Gram operator and that output cross terms are strongly destructive. We now apply five predeclared coordinate bijections to each of its four source masks before the same operator. For every class we split the output orbit into a coherent mean and a centered covariance component, and we retain the full four-by-four covariance Gram matrix. On two origins and three scales, the centered part accounts for 78.50–85.53 percent of the full output energy, whereas the coherent part accounts for 14.47–21.50 percent. Twin–zero and background–zero centered covariances are negative in all six rows. The identities and positive semidefiniteness are finite algebraic facts; the numerical census is a scoped obstruction, not a growing arithmetic theorem.
+
+<!-- SOURCE_BODY_BEGIN -->
+
+# Question and finite model
+
+Let $$I_{o,N}=\{o,\ldots,o+N/2-1\},\qquad
+ \beta(t)=\Lambda(t+2)-b^{(2)}(t),$$ where $(o,N)$ ranges over $\{42001,44001\}\times\{2048,4096,8192\}$. The four disjoint source masks are denoted by $T,B,P,Z$: twin prime, non-twin prime shift, higher prime power, and zero cross-support. Thus $$\beta=\sum_{C\in\{T,B,P,Z\}}\beta_C,
+ \qquad \beta_C=\beta\mathbf 1_C.$$
+
+The operator is the literal all-plus shell matrix $$A=\sum_{54<p\leq108}B_{p,54,1},$$ with height $H=66$, deleted diagonal, and the residue masks inherited from TPC-336. We use the five bijections $$i,\quad (3i+11)\bmod M,\quad (5i+17)\bmod M,\quad
+ (7i+29)\bmod M,\quad M-1-i,$$ where $M=N/2$. For class $C$ and control $j$, put $$y_{C,j}=A P_j\beta_C,\qquad
+ \bar y_C=\frac15\sum_jy_{C,j},\qquad z_{C,j}=y_{C,j}-\bar y_C.$$
+
+# Exact covariance structure
+
+Because $\sum_jz_{C,j}=0$, finite expansion gives $$\label{eq:class}
+ \frac15\sum_j\|y_{C,j}\|_2^2
+ =\|\bar y_C\|_2^2+\frac15\sum_j\|z_{C,j}\|_2^2.$$ For two classes define $$K_{CD}=\frac15\sum_j\langle z_{C,j},z_{D,j}\rangle.$$ Then $$\label{eq:pair}
+ \frac15\sum_j\langle y_{C,j},y_{D,j}\rangle
+ =\langle\bar y_C,\bar y_D\rangle+K_{CD}.$$ The matrix $K$ is positive semidefinite, since for any $a\in\mathbb R^4$, $$a^TKa=\frac15\sum_j\left\|\sum_Ca_Cz_{C,j}\right\|_2^2\geq0.$$ Applying [\[eq:class\]](main.tex#L68){reference-type="eqref" reference="eq:class"} to the sum of classes also yields $$\label{eq:full}
+ \frac15\sum_j\left\|\sum_Cy_{C,j}\right\|_2^2
+ =\left\|\sum_C\bar y_C\right\|_2^2
+ +\frac15\sum_j\left\|\sum_Cz_{C,j}\right\|_2^2.$$
+
+These identities isolate a useful warning: a small coherent mean does not imply a small response. Variation among placements can carry most of the energy, and its cross-class terms may be signed even though $K$ is PSD.
+
+# Certificate and checks
+
+The producer rebuilds the parent-locked source, masks, and matrix, then records the class means, centered energies, all pair covariance entries, and the eigenvalues of $K$. An independent checker uses trial factorisation and reverse shell accumulation. A mutation suite tests row geometry, control count, sign census, exact anchor, and claim firewall. The response identities are checked with a relative $5\times10^{-6}$ numerical guard; the algebraic statement itself is supported by a rational anchor.
+
+For that anchor, take two controls with class orbits $$y_T=((1,0),(0,1)),\qquad y_B=((1,1),(1,-1)).$$ The average cross term is $0$, while the coherent and centered cross terms are $1/2$ and $-1/2$, respectively. Hence equation [\[eq:pair\]](main.tex#L77){reference-type="eqref" reference="eq:pair"} holds exactly in rational arithmetic.
+
+# Finite readout
+
+<div id="tab:fractions">
+
+| quantity                       |    minimum   |    maximum   |
+|:-------------------------------|:------------:|:------------:|
+| full coherent fraction         | 0.1447017832 | 0.2149677452 |
+| full centered fraction         | 0.7850322548 | 0.8552982168 |
+| twin centered fraction         | 0.6115723683 | 0.6937370120 |
+| background centered fraction   | 0.3476363325 | 0.3847105734 |
+| zero-support centered fraction | 0.1856357072 | 0.1950996303 |
+
+: Control-orbit energy fractions over the six finite windows.
+
+</div>
+
+The full centered fraction exceeds $0.75$ in all six rows, while the coherent fraction is below $0.25$ in all six. The covariance sign census is $$K_{T,B}>0\ (6/6),\qquad K_{T,Z}<0\ (6/6),\qquad
+ K_{B,Z}<0\ (6/6).$$ The remaining class pairs are zero when the prime-power mask is empty in the smaller windows or change sign in the finite panel. The smallest recorded covariance-Gram eigenvalue is zero up to the numerical guard, as expected for empty or linearly dependent class orbits. The trace of $K$ is larger than the full centered energy because the negative cross-class covariance terms subtract from the sum of class-centered energies.
+
+# Interpretation and firewall
+
+The strongest positive result is a reusable finite structure: source masks, coordinate controls, output means, and a PSD covariance Gram matrix fit into one auditable ledger. The strongest obstruction is equally concrete: control averaging does not make the full response coherent. It moves the dominant contribution into a position-sensitive covariance term, with stable negative interactions involving the zero-support complement.
+
+The identities are `PROVED_EXACT_FINITE_DECLARED_MODEL`; the six-row replay, energy dominance, and selected signs are `NUMERICALLY_CERTIFIED_FINITE`. The transfer of these signs or fractions to growing intervals is `OPEN`. There is no arithmetic advance, fixed-power credit, official evaluator pass, or twin-prime conclusion: $$\texttt{ARITHMETIC\_ADVANCE=NO},\qquad
+ \texttt{FIXED\_POWER\_CREDIT=0},\qquad
+ \texttt{FULL\_GATE\_B=OPEN}.$$ The Session-named evaluator files are absent from this checkout, so the local Bridge-B check is explicitly fail-closed.
+
+# Next question
+
+The centered term is too large to dismiss as a five-control accident. The next minimal test is to enlarge the same affine orbit and compare its spectrum with the five-control spectrum, keeping the source and operator fixed.
+
+<!-- SOURCE_BODY_END -->
