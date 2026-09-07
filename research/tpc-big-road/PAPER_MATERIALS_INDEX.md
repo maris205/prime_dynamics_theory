@@ -6,7 +6,7 @@ Updated: 2026-09-07. Scope: 823 paper-directory entries in the preserved invento
 
 `full-source-md` means a complete mechanical reading layer of the available manuscript with a per-paper provenance record and passing conversion checks; it is not an independent verification of the source mathematics. `reliable-full-md` requires explicit full-content and semantic review evidence; an abstract, bibliography, README, or proof-package filename alone does not establish it. A source without references is preserved as such, not completed with invented references. `partial-or-notes` means Markdown exists with TeX/PDF but no verified full conversion is recorded. `notes-only` has Markdown without TeX/PDF; `not-converted` has TeX/PDF without Markdown; `source-inaccessible` has no local Markdown/TeX/PDF manuscript, though its directory may contain other artifacts.
 
-Summary: `full-source-md=149`, `reliable-full-md=0`, `partial-or-notes=673`, `source-inaccessible=1`. The archive is not fully converted or independently reviewed. The full-source rows link to mechanical conversions, including source issues explicitly preserved in the [repair audit](TPC_MAINTENANCE_REPAIR_2026-09-07.md). Original TeX/PDF and hand-edited materials remain authoritative. File counts are actual current files under each inventoried directory, including preserved build artifacts, not fixed package-size assumptions or mathematical correctness checks.
+Summary: `full-source-md=154`, `reliable-full-md=0`, `partial-or-notes=668`, `source-inaccessible=1`. The archive is not fully converted or independently reviewed. The full-source rows link to mechanical conversions, including source issues explicitly preserved in the [repair audit](TPC_MAINTENANCE_REPAIR_2026-09-07.md). Original TeX/PDF and hand-edited materials remain authoritative. File counts are actual current files under each inventoried directory, including preserved build artifacts, not fixed package-size assumptions or mathematical correctness checks.
 
 | Program | Paper directory | PDF | TeX | MD | Status | Representative Markdown |
 |---|---|---:|---:|---:|---|---|
@@ -598,11 +598,11 @@ Summary: `full-source-md=149`, `reliable-full-md=0`, `partial-or-notes=673`, `so
 | TPC | `tpc-262-literal-mode-zero-cross-gram` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
 | TPC | `tpc-263-rank-three-physical-cross-gram` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
 | TPC | `tpc-264-orthogonal-residual-schur-firewall` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-265-schur-endpoint-budget-compiler` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-266-end-to-end-claim-firewall` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-267-literal-v59-residual-radius-census` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-268-finite-cutoff-sensitivity-obstruction` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-269-growing-cutoff-profile-transfer` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
+| TPC | `tpc-265-schur-endpoint-budget-compiler` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-266-end-to-end-claim-firewall` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-267-literal-v59-residual-radius-census` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-268-finite-cutoff-sensitivity-obstruction` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-269-growing-cutoff-profile-transfer` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-27-calibrated-base-closure` | 1 | 9 | 1 | `partial-or-notes` | `README.md` |
 | TPC | `tpc-270-cross-scale-radius-normalization` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-271-phase-radius-decoupling` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
