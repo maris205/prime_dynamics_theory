@@ -40,6 +40,20 @@ def normalize_eof(value):
     return "\n".join(line.rstrip(" \t") for line in value.splitlines()).rstrip("\n") + "\n"
 
 
+def preserved_pdf(paper, source_commit="HEAD"):
+    """Choose a versioned original, never an ignored local build or new alias."""
+    for name in ("main.pdf", "paper.pdf"):
+        candidate = paper / "paper" / name
+        saved = subprocess.run(["git", "cat-file", "-e",
+                                f"{source_commit}:{candidate.relative_to(ROOT)}"],
+                               cwd=ROOT, capture_output=True)
+        if saved.returncode == 0:
+            if not candidate.is_file():
+                raise ValueError(f"versioned PDF missing locally: {candidate}")
+            return candidate
+    raise ValueError(f"no preserved paper/main.pdf or paper/paper.pdf: {paper}")
+
+
 def nodes(value, kind):
     if isinstance(value, dict):
         if value.get("t") == kind:
@@ -247,7 +261,6 @@ def convert(number, *, source_commit=None, scope_audit=None):
     scope_line = ("\n- Supplemental prerequisite audit: [bounded source review](" +
                   os.path.relpath(scope_audit, paper) + ").") if scope_audit else ""
     tex_path = paper / "paper/main.tex"
-    pdf_path = paper / "paper/main.pdf"
     tex = tex_path.read_text()
     if re.search(r"\\(?:input|include|addbibresource)\b", tex):
         raise ValueError(f"{number}: external TeX dependency needs explicit handling")
@@ -263,6 +276,7 @@ def convert(number, *, source_commit=None, scope_audit=None):
         existing = paper / "CONVERSION_RECORD.md"
         prior = re.search(r"Repository source commit: `([0-9a-f]{40})`", existing.read_text()) if existing.is_file() else None
         source_commit = prior[1] if prior else run(["git", "rev-parse", "HEAD"])[0].strip()
+    pdf_path = preserved_pdf(paper, source_commit)
     for locked in [tex_path, pdf_path] + bib_files:
         original = subprocess.run(["git", "show", f"{source_commit}:{locked.relative_to(ROOT)}"],
                                   cwd=ROOT, capture_output=True, check=True).stdout
@@ -339,7 +353,7 @@ def convert(number, *, source_commit=None, scope_audit=None):
 > Mechanical reading layer generated from the preserved TeX. Original TeX/PDF and hand-edited package materials remain authoritative. This conversion does not certify a proof or upgrade any finite, conditional, synthetic, or open claim.
 
 - Source TeX: [main.tex](main.tex)
-- Preserved PDF: [main.pdf](main.pdf)
+- Preserved PDF: [{pdf_path.name}]({pdf_path.name})
 {chr(10).join('- Bibliography source: [' + b.name + '](' + b.name + ')' for b in bib_files)}
 - Conversion and audit scope: [CONVERSION_RECORD.md](../CONVERSION_RECORD.md)
 - Author metadata: {'; '.join(author.splitlines())}
@@ -375,7 +389,7 @@ def convert(number, *, source_commit=None, scope_audit=None):
 - Repository source commit: `{source_commit}`.
 - TeX: [paper/main.tex](paper/main.tex), SHA-256 `{tex_hash}`.
 {chr(10).join('- Bibliography: [' + str(b.relative_to(paper)) + '](' + str(b.relative_to(paper)) + '), SHA-256 `' + digest(b.read_bytes()) + '`.' for b in bib_files)}
-- Preserved PDF: [paper/main.pdf](paper/main.pdf), SHA-256 `{pdf_hash}`; {len(pages)} extracted pages. PDF is preserved, not recompiled or certified to match the TeX.
+- Preserved PDF: [{pdf_path.relative_to(paper)}]({pdf_path.relative_to(paper)}), SHA-256 `{pdf_hash}`; {len(pages)} extracted pages. PDF is preserved, not recompiled or certified to match the TeX.
 - Reading layer: [paper/main.md](paper/main.md), SHA-256 `{digest(output)}`.
 - Conversion status: `{status}`.
 - Semantic review: `NOT_INDEPENDENTLY_REPROVED`; automated preservation checks are not theorem or certificate validation.{scope_line}

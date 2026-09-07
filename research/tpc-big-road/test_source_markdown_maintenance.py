@@ -9,6 +9,15 @@ class ConversionHelpers(unittest.TestCase):
     def test_terminal_letters_are_not_whitespace(self):
         self.assertEqual(m.normalize_eof("text  \nhighest\t\nt\n\n"), "text\nhighest\nt\n")
 
+    def test_original_main_pdf_has_priority(self):
+        paper = m.ROOT / 'papers/tpc-308-adversarial-exclusive-completion-envelope'
+        self.assertTrue((paper / 'paper/paper.pdf').is_file())
+        self.assertEqual(m.preserved_pdf(paper), paper / 'paper/main.pdf')
+
+    def test_no_known_original_pdf_fails_closed(self):
+        with self.assertRaisesRegex(ValueError, "no preserved"):
+            m.preserved_pdf(m.ROOT / 'DOES_NOT_EXIST_TEST_ONLY')
+
     def test_balanced_nested_title(self):
         raw = r"{A $L^{2}$ title}ignored"
         self.assertEqual(m.balanced_group(raw, 0)[0], "A $L^{2}$ title")
@@ -47,6 +56,14 @@ class ConversionHelpers(unittest.TestCase):
 
 
 class ConversionIntegration(unittest.TestCase):
+    def test_original_paper_pdf_fallback_keeps_provenance(self):
+        paper, md, record, report = m.convert(305, source_commit="ed725e6537012bd17a32d061d9d8e6dd3b253613")
+        self.assertEqual(m.preserved_pdf(paper), paper / 'paper/paper.pdf')
+        self.assertIn("Preserved PDF: [paper.pdf](paper.pdf)", md)
+        self.assertIn("Preserved PDF: [paper/paper.pdf](paper/paper.pdf)", record)
+        self.assertEqual(report['pdf_sha256'], m.digest((paper / 'paper/paper.pdf').read_bytes()))
+        self.assertTrue(report['text_roundtrip'])
+
     def test_supplemental_scope_persists(self):
         _, md, record, report = m.convert(349, source_commit="1de1964aa411aa631587da690524beadf1127d3c")
         self.assertIn("Supplemental prerequisite audit:", record)

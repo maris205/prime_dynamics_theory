@@ -5,7 +5,7 @@ from collections import Counter
 import difflib
 import re
 
-from maintain_source_markdown import ROOT, digest, normalize_eof
+from maintain_source_markdown import ROOT, digest, normalize_eof, preserved_pdf
 
 BASE = ROOT / "research/tpc-big-road"
 INDEX = BASE / "PAPER_MATERIALS_INDEX.md"
@@ -153,7 +153,7 @@ the original short summary. Available package files are listed, not certified.
         number = int(paper.name.split('-')[1])
         package = ", ".join(link(paper / rel, rel) for rel in package_paths if (paper / rel).is_file()) or "—"
         batch += (f"| TPC-{number} | {link(paper / 'paper/main.md')} | {link(paper / 'CONVERSION_RECORD.md')} | "
-                  f"{link(paper / 'README.md')} | {package} | {link(paper / 'paper/main.tex')} | {link(paper / 'paper/main.pdf')} |\n")
+                  f"{link(paper / 'README.md')} | {package} | {link(paper / 'paper/main.tex')} | {link(preserved_pdf(paper))} |\n")
     batch += f"""
 ## Coverage and next work
 
