@@ -6,6 +6,37 @@ import maintain_source_markdown as m
 
 
 class ConversionHelpers(unittest.TestCase):
+    def test_numeric_math_boundary_is_whitespace_only_and_idempotent(self):
+        blocks = [{"t": "Para", "c": [{"t": "Str", "c": "64"},
+                  {"t": "Math", "c": [{"t": "InlineMath"}, r"\to"]},
+                  {"t": "Str", "c": "128"}]}]
+        before = m.math_signature(blocks)
+        self.assertEqual(m.separate_math_from_digits(blocks), 1)
+        self.assertEqual(blocks[0]["c"][2], {"t": "Space"})
+        self.assertEqual(m.math_signature(blocks), before)
+        self.assertEqual(m.separate_math_from_digits(blocks), 0)
+
+    def test_safe_math_boundaries_unchanged(self):
+        for kind, following in [("InlineMath", "x"), ("DisplayMath", "128")]:
+            blocks = [{"t": "Math", "c": [{"t": kind}, "a"]},
+                      {"t": "Str", "c": following}]
+            before = json.dumps(blocks)
+            self.assertEqual(m.separate_math_from_digits(blocks), 0)
+            self.assertEqual(json.dumps(blocks), before)
+
+    def test_numeric_math_boundary_roundtrip_in_quote_table(self):
+        tex = (r"\begin{quote}\begin{tabular}{cc}"
+               r"pair & value\\64\(\to\)128 & \(x\)\\"
+               r"96\(\to\)192 & \(y\)\end{tabular}\end{quote}")
+        ast = json.loads(m.run(["pandoc", "-f", "latex", "-t", "json"], data=tex)[0])
+        before_math = m.math_signature(ast["blocks"])
+        before_text = m.text_signature(ast, ast["blocks"])
+        self.assertEqual(m.separate_math_from_digits(ast["blocks"]), 2)
+        md = m.write_ast(ast, ast["blocks"])
+        reread = json.loads(m.run(["pandoc", "-f", m.FORMAT, "-t", "json"], data=md)[0])
+        self.assertEqual(m.math_signature(reread["blocks"]), before_math)
+        self.assertEqual(m.text_signature(ast, reread["blocks"]), before_text)
+
     def test_document_tail_is_not_deleted_or_parsed(self):
         tex = "body\n" + r"\end{document}" + "\n`broken_token`\n"
         document, tail = m.split_document_tail(tex)
@@ -70,6 +101,14 @@ class ConversionHelpers(unittest.TestCase):
 
 
 class ConversionIntegration(unittest.TestCase):
+    def test_numeric_table_arrows_preserved(self):
+        _, md, record, report = m.convert(270, source_commit="6be994e34a06fda0de2ed0bcaa42ff3db716ffef")
+        self.assertEqual(report["math_nodes"], 67)
+        self.assertTrue(report["text_roundtrip"])
+        self.assertEqual(report["status"], "FULL_TEX_TO_MARKDOWN_MECHANICAL")
+        self.assertIn(r"64$\to$ 128", md)
+        self.assertIn("4 whitespace separator(s)", record)
+
     def test_post_document_source_retained_with_scope(self):
         paper, md, record, report = m.convert(294, source_commit="7bba57e68d04514ee33ab2192a507a1f4edfebab")
         _, tail = m.split_document_tail((paper / 'paper/main.tex').read_text())

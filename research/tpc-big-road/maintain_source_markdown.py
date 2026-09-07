@@ -152,6 +152,32 @@ def math_signature(blocks):
             for node in nodes(blocks, "Math")]
 
 
+def separate_math_from_digits(value):
+    r"""Keep dollar-math closing delimiters parseable before numeric prose.
+
+    Pandoc writes adjacent TeX inlines such as 64\\(\\to\\)128 as
+    64$\\to$128, but its Markdown reader rejects a closing dollar followed
+    immediately by a digit. Insert only a whitespace AST node; do not alter
+    the formula, numeric text, table cells, or source TeX.
+    """
+    count = 0
+    if isinstance(value, dict):
+        for child in value.values():
+            count += separate_math_from_digits(child)
+    elif isinstance(value, list):
+        for child in value:
+            count += separate_math_from_digits(child)
+        for i in range(len(value) - 2, -1, -1):
+            left, right = value[i:i + 2]
+            if (isinstance(left, dict) and left.get("t") == "Math"
+                    and left["c"][0]["t"] == "InlineMath"
+                    and isinstance(right, dict) and right.get("t") == "Str"
+                    and re.match(r"[0-9]", right["c"])):
+                value.insert(i + 1, {"t": "Space"})
+                count += 1
+    return count
+
+
 def text_signature(ast, blocks):
     plain = write_ast(ast, blocks, "plain")
     plain = re.sub(r"(?m)^[ \t]*[-+|: ][-+|: ]{2,}[ \t]*$", "", plain)
@@ -328,6 +354,7 @@ def convert(number, *, source_commit=None, scope_audit=None):
     link_changes = remap_links(abstract + body, paper, tex)
     all_blocks = abstract + body
     raw_retained = preserve_raw_tex(all_blocks)
+    math_spacing = separate_math_from_digits(all_blocks)
     abstract_md = write_ast(ast, abstract)
     body_md = write_ast(ast, body)
     # Preserve hard line breaks without trailing-space lint errors. Backslash
@@ -360,6 +387,9 @@ def convert(number, *, source_commit=None, scope_audit=None):
     tex_hash = digest(tex_path.read_bytes())
     pdf_hash = digest(pdf_path.read_bytes())
     limitations = []
+    if math_spacing:
+        limitations.append(f"{math_spacing} whitespace separator(s) inserted after inline math before numeric prose "
+                            "to preserve dollar-delimiter parsing; formulas and original TeX are unchanged.")
     if trailing_source:
         limitations.append("Post-document source is retained in an explicit uninterpreted code block; "
                             "its meaning and PDF inclusion are not inferred. See the formula-scope entry for provenance.")
