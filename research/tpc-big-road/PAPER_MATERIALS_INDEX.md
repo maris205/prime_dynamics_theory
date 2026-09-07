@@ -6,7 +6,7 @@ Updated: 2026-09-07. Scope: 823 paper-directory entries in the preserved invento
 
 `full-source-md` means a complete mechanical reading layer of the available manuscript with a per-paper provenance record and passing conversion checks; it is not an independent verification of the source mathematics. `reliable-full-md` requires explicit full-content and semantic review evidence; an abstract, bibliography, README, or proof-package filename alone does not establish it. A source without references is preserved as such, not completed with invented references. `partial-or-notes` means Markdown exists with TeX/PDF but no verified full conversion is recorded. `notes-only` has Markdown without TeX/PDF; `not-converted` has TeX/PDF without Markdown; `source-inaccessible` has no local Markdown/TeX/PDF manuscript, though its directory may contain other artifacts.
 
-Summary: `full-source-md=74`, `reliable-full-md=0`, `partial-or-notes=748`, `source-inaccessible=1`. The archive is not fully converted or independently reviewed. The full-source rows link to mechanical conversions, including source issues explicitly preserved in the [repair audit](TPC_MAINTENANCE_REPAIR_2026-09-07.md). Original TeX/PDF and hand-edited materials remain authoritative. File counts are actual current files under each inventoried directory, including preserved build artifacts, not fixed package-size assumptions or mathematical correctness checks.
+Summary: `full-source-md=79`, `reliable-full-md=0`, `partial-or-notes=743`, `source-inaccessible=1`. The archive is not fully converted or independently reviewed. The full-source rows link to mechanical conversions, including source issues explicitly preserved in the [repair audit](TPC_MAINTENANCE_REPAIR_2026-09-07.md). Original TeX/PDF and hand-edited materials remain authoritative. File counts are actual current files under each inventoried directory, including preserved build artifacts, not fixed package-size assumptions or mathematical correctness checks.
 
 | Program | Paper directory | PDF | TeX | MD | Status | Representative Markdown |
 |---|---|---:|---:|---:|---|---|
@@ -682,11 +682,11 @@ Summary: `full-source-md=74`, `reliable-full-md=0`, `partial-or-notes=748`, `sou
 | TPC | `tpc-338-growing-control-covariance-spectrum` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
 | TPC | `tpc-339-mask-aware-frobenius-envelope` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
 | TPC | `tpc-34-orbit-sliced-gram-energy` | 1 | 9 | 1 | `partial-or-notes` | `README.md` |
-| TPC | `tpc-340-schur-frobenius-hybrid-envelope` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-341-fresh-holdout-nuisance-orthogonalization` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-342-independent-fresh-holdout-reproduction` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-343-cross-panel-meta-certificate` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-344-panel-contrast-nuisance-basis` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
+| TPC | `tpc-340-schur-frobenius-hybrid-envelope` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-341-fresh-holdout-nuisance-orthogonalization` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-342-independent-fresh-holdout-reproduction` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-343-cross-panel-meta-certificate` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-344-panel-contrast-nuisance-basis` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-345-principal-angle-grassmann-audit` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-346-third-panel-hostile-replication` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-347-convolution-mask-defect-interface` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |

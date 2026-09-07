@@ -1,0 +1,117 @@
+# Cross-Panel Shared-Nuisance Meta-Certification for a Finite Twin-Prime Response Model
+
+> Mechanical reading layer generated from the preserved TeX. Original TeX/PDF and hand-edited package materials remain authoritative. This conversion does not certify a proof or upgrade any finite, conditional, synthetic, or open claim.
+
+- Source TeX: [main.tex](main.tex)
+- Preserved PDF: [main.pdf](main.pdf)
+
+- Conversion and audit scope: [CONVERSION_RECORD.md](../CONVERSION_RECORD.md)
+- Author metadata: Liang Wang; School of Mathematics and Statistics, Huazhong University of Science and Technology; Wuhan, China
+- Source date: 2 September 2026
+- Source repository commit: `e848dbf1895cb067bad6665654a7c992406bcf65`
+- Converter: `source-markdown-audit-v2`
+
+## Abstract
+
+We perform a finite, protocol-locked meta-audit of two independent panels in a twin-prime response model. The first panel is the TPC-341 fresh holdout experiment and the second is its disjoint TPC-342 reproduction. A row-block nuisance projection, which permits one coefficient vector per source row, retains only $0.2325429101$ of the pooled in-sample energy. In contrast, a single shared nuisance coefficient vector retains $0.3198013104$ under raw energy weighting and $0.3549335801$ after equal-row normalization, both above the inherited $0.30$ guard. Nine shared cross-panel leave-one-control-out tests retain $0.6408306196$–$0.9090948298$. These results certify a scoped finite obstruction to one particular shared nuisance law, while preserving the distinction between exact finite linear algebra and the still-open source-uniform arithmetic estimates required by the twin-prime route.
+
+<!-- SOURCE_BODY_BEGIN -->
+
+# Question and scope
+
+The preceding TPC-341 experiment projected a nine-control twin-prime mean onto the span of three nuisance means (non-twin prime shift, prime-power shift, and zero support). Its TPC-342 successor repeated the same protocol on a new disjoint source panel. Both experiments showed a strong in-sample fit and a much weaker omitted-control fit. The next minimal question is whether the two panels nevertheless share one nuisance coefficient law.
+
+This paper answers only that finite model-comparison question. The words “nuisance” and “twin” label declared masks and vectors; they do not assert that the nuisance directions are arithmetic noise. No asymptotic estimate, probability statement, or twin-prime theorem is claimed.
+
+# Frozen finite protocol
+
+The all-plus deleted-diagonal operator has $Q=54$, kernel exponent one, and height $H=66$. Each source row has length $512$ and is formed from a window of scale $1024$. The nine coordinate controls are the identity, reversal, and the seven stated affine permutations from the TPC-338/TPC-340 orbit. The two panels are $$\begin{aligned}
+ \mathcal P_{341}&:\ [48097,48608], [48609,49120], [49217,49728],\\
+ \mathcal P_{342}&:\ [40097,40608], [40609,41120], [41121,41632].\end{aligned}$$ All shifted source arguments are below the locked cutoff $50000$. The six rows produce $6\cdot9\cdot4=216$ raw records, of which $171$ are nonempty, and $6\cdot9=54$ omitted-control records.
+
+For row $r$, let $y_r\in\mathbb{R}^{512}$ denote the twin-prime mean output and let $N_r=(n_{r,1},n_{r,2},n_{r,3})$ denote the nuisance means. We compare:
+
+1.  the row-block model, whose nuisance matrix is the orthogonal direct sum of the six $N_r$;
+
+2.  the shared model, whose three columns are the vertical concatenations $(n_{1,j},\ldots,n_{6,j})$ for $j=1,2,3$.
+
+The first model has row-specific coefficients. The second forces one coefficient vector across the whole panel. To test sensitivity to scale, the shared model is also evaluated after dividing each row’s target and all of its nuisance columns by $\lVert y_r\rVert_2$.
+
+# Finite identities
+
+Let $N$ be any finite real matrix and let $P_N$ be the Euclidean orthogonal projector onto its column space.
+
+> **Proposition: stacked Pythagorean identity** For every finite vector $Y$, $$\lVert Y\rVert_2^2=\lVert P_NY\rVert_2^2+\lVert (I-P_N)Y\rVert_2^2.
+>  \label{eq:stacked}$$
+
+> **Proof** The two terms on the right are in the column space of $N$ and its orthogonal complement, respectively, and their sum is $Y$.
+
+For the row-block matrix, the column supports of different rows are disjoint. Thus its projector is the direct sum of the row projectors, and both projected and residual energies add exactly. This is why the row-block pooled retention is an energy-weighted finite average of the six row retentions. The shared matrix has only three global columns and is a different declared span. The equal-row transformation changes only the meta weight, not the within-row projection geometry.
+
+As a small exact anchor, take $$Y=(1,1,1,1)^T,\qquad n=(1,0,1,0)^T.$$ The projection of $Y$ onto $\operatorname{span}\{n\}$ has energy $2$, as does the residual; hence $\lVert Y\rVert_2^2=2+2$ and the residual retention is exactly $1/2$. This anchor is independent of the numerical source calculation.
+
+# Independent computational audit
+
+The producer uses the hash-locked TPC-340 source/operator implementation. A separate reverse-shell checker uses the hash-locked TPC-340 independent engine and reimplements source classification, all nine permutations, the two leave-one-control-out loops, and both stacking constructions. The TPC-341 and TPC-342 producer and certificate hashes are checked before either panel is read. A seven-mutation stress suite rejects changes to row geometry, meta guards, identity metadata, and the arithmetic firewall.
+
+The exact finite census is summarized in Table [1](main.tex#L130){reference-type="ref" reference="tab:census"}.
+
+<div id="tab:census">
+
+| quantity                              |           value|
+|:--------------------------------------|---------------:|
+| panels / rows                         |         $2 / 6$|
+| raw / nonempty records                |     $216 / 171$|
+| in-sample projections                 |             $6$|
+| leave-one-control-out projections     |            $54$|
+| row-block raw retention               |  $0.2325429101$|
+| row-block equal-row retention         |  $0.2502856954$|
+| shared raw retention                  |  $0.3198013104$|
+| shared equal-row retention            |  $0.3549335801$|
+| weighted individual holdout retention |  $0.6669022118$|
+
+: Frozen census and pooled finite readout.
+
+</div>
+
+The row-block model passes the inherited in-sample guard $\rho<0.30$. Both shared variants fail that guard. The failure is not caused by a single outlying row: the panel-specific shared retentions are
+
+<div id="tab:panels">
+
+| panel    |     row-block|    shared raw|  shared equal-row|
+|:---------|-------------:|-------------:|-----------------:|
+| TPC-341  |  0.2106754608|  0.2537762890|      0.2748728968|
+| TPC-342  |  0.2735950585|  0.3758972339|      0.3624284431|
+| combined |  0.2325429101|  0.3198013104|      0.3549335801|
+
+: Panel-specific in-sample meta retentions.
+
+</div>
+
+The shared raw and equal-row singular-value condition diagnostics are about $192.25$ and $320.17$, respectively. They are reported to make the finite coordinate choice visible; they are not a conditioning theorem.
+
+For each omitted control, we stack the six held-out twin outputs and the corresponding eight-control nuisance means. The shared raw residual retention lies in $[0.6408306196,0.9090948298]$. The individual, row-local held-out range across all $54$ records is $$[0.4435267486,0.9429165296].$$ The holdout guard is therefore satisfied in the declared direction, while it does not rescue the failed shared in-sample law.
+
+# Interpretation and claim firewall
+
+The strongest positive result is a reproducible finite distinction: row-local nuisance projection remains strong after pooling two panels, but the same three coordinates do not support one shared coefficient vector under either of two declared weightings. The strongest obstruction is thus a cross-panel coefficient-stability failure, not a failure of the orthogonal projection identity.
+
+The status of the claims is:
+
+    TPC343_STACKED_IDENTITY = PROVED_EXACT_FINITE_DECLARED_MODEL
+    TPC343_ROW_BLOCK_META = NUMERICALLY_CERTIFIED_FINITE_6_ROW_POOLED_PROJECTION
+    TPC343_SHARED_COEFFICIENT_STABILITY = REFUTED_SCOPED
+    TPC343_HOLDOUT_META = NUMERICALLY_CERTIFIED_FINITE_54_RECORDS
+    TPC343_ARITHMETIC_ADVANCE = NO
+    TPC343_FIXED_POWER_CREDIT = 0
+    TPC343_SOURCE_UNIFORM_L2 = OPEN
+    TPC343_FULL_GATE_B = OPEN
+    TPC343_TWIN_PRIME_RESULT = NONE
+
+The scoped refutation concerns only this shared basis and these two panels. It does not refute an alternative nuisance basis, and it cannot be promoted to a source-uniform arithmetic $L^2$ estimate or to an official Route-A/Route-B pass. The session-named evaluator files are absent in this checkout, so the repository records only a local fail-closed Bridge-B audit.
+
+# Next finite question
+
+The natural next experiment is geometric rather than arithmetic: compare the principal angles of the row nuisance spans and test a predeclared alternative basis (or cross-fit basis) on a fresh panel. Any such result must retain the same finite/asymptotic firewall and earns zero fixed-power credit until an independent growing arithmetic estimate is supplied.
+
+<!-- SOURCE_BODY_END -->

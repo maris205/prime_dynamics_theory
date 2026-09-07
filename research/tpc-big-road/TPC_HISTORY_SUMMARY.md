@@ -24,9 +24,9 @@ package.
 
 ## 2026-09-07 conversion batch
 
-The contiguous range TPC-418–345 has 74 mechanical full-source Markdown
+The contiguous range TPC-418–340 has 79 mechanical full-source Markdown
 reading layers at `paper/main.md`. This pass repaired the previous 64
-conversions and added TPC350–354, then converted TPC345–349. The batch record
+conversions and added TPC350–354, then converted TPC340–349. The batch record
 [TPC_CONVERSION_BATCH_2026-09-07.md](TPC_CONVERSION_BATCH_2026-09-07.md) links
 each Markdown file, conversion record, README summary, available proof/application
 notes, TeX original, and PDF original. Each record includes source and PDF
@@ -49,8 +49,15 @@ TPC347, and the limited multiple-divisibility coverage of TPC349's anchor.
 The automatic TPC346 appendix map is supplemented by a direct page-4
 extraction; TPC347's ambiguous heading match remains explicit.
 
-The archive inventory is now `full-source-md=74`,
-`reliable-full-md=0`, `partial-or-notes=748`, and
+The [TPC340–344 prerequisite audit](TPC_CONVERSION_SCOPE_TPC340_344.md)
+checks the Schur/Frobenius and projection/model identities with their exact
+symmetry, nonzero-denominator, and common-weighting requirements. Source
+notation, interval-direction, and holdout-product discrepancies are flagged,
+not silently corrected. All five new manuscripts have unique section/page
+heading matches and retain their finite-only scope.
+
+The archive inventory is now `full-source-md=79`,
+`reliable-full-md=0`, `partial-or-notes=743`, and
 `source-inaccessible=1` across 823 directories. This is a searchable
 source-layer and provenance improvement, not a scientific result. The next
 batch must preserve original TeX/PDF and hand-edited files, distinguish
