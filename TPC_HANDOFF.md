@@ -19,8 +19,8 @@ found or assumed.
 
 The archive inventory is [PAPER_MATERIALS_INDEX.md](research/tpc-big-road/PAPER_MATERIALS_INDEX.md)
 and the route handoff is [TPC_HISTORY_SUMMARY.md](research/tpc-big-road/TPC_HISTORY_SUMMARY.md).
-It covers 823 paper-directory entries (420 TPC, 403 RH): 69 have verified
-mechanical full-source Markdown, 753 have partial/notes layers, and none has
+It covers 823 paper-directory entries (420 TPC, 403 RH): 74 have verified
+mechanical full-source Markdown, 748 have partial/notes layers, and none has
 the independent full-content/semantic review required for `reliable-full-md`.
 One TPC directory (`tpc-207-moving-hole-bdh-translation-compiler`) has other
 artifacts but no local Markdown, TeX, or PDF manuscript. Thus “all papers are
@@ -49,12 +49,12 @@ current claims remain in this handoff and the active paper's proof package.
 
 ## 2026-09-07 source-to-Markdown maintenance batch
 
-The contiguous range TPC-418–350 now has 69 full-source mechanical reading
-layers at `paper/main.md`. This pass repairs the previous 64 conversions and
-adds TPC350–354. The [batch record](research/tpc-big-road/TPC_CONVERSION_BATCH_2026-09-07.md)
+The contiguous range TPC-418–345 now has 74 full-source mechanical reading
+layers at `paper/main.md`. The repair covered 64 previous conversions and
+added TPC350–354; a subsequent batch adds TPC345–349. The [batch record](research/tpc-big-road/TPC_CONVERSION_BATCH_2026-09-07.md)
 links each full text, provenance record, original summary, available package
-materials, TeX, and PDF. All 69 abstract/body formula-sequence and normalized
-plain-text roundtrips pass (2,881 math nodes total). Source/PDF hashes are
+materials, TeX, and PDF. All 74 abstract/body formula-sequence and normalized
+plain-text roundtrips pass (3,217 math nodes total). Source/PDF hashes are
 locked; source section lines map to actual extracted PDF heading hits.
 The ambiguous TPC402 match remains explicit rather than receiving a guessed page.
 
@@ -67,8 +67,16 @@ is silently corrected and no numerical certificate or production cascade is
 rerun. TPC359–363 have no separate proof package. TPC350–358 do contain source
 references/BibTeX, contrary to the earlier blanket no-bibliography statement.
 
-Current coverage is `full-source-md=69`, `reliable-full-md=0`,
-`partial-or-notes=753`, and `source-inaccessible=1` across 823 entries.
+The [TPC345–349 scope audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC345_349.md)
+records nonzero-target and nonempty-hit-set requirements, the distinction
+between projection and held-out prediction, the integer-cutoff qualification
+for TPC347's tail proof, and TPC349's anchor coverage limitation. TPC346's
+appendix maps manually to PDF page 4 while the automatic match stays
+unmapped; TPC347's multiple page hits remain explicit. Original source
+statements are retained, not silently repaired or numerically revalidated.
+
+Current coverage is `full-source-md=74`, `reliable-full-md=0`,
+`partial-or-notes=748`, and `source-inaccessible=1` across 823 entries.
 Mechanical preservation is not independent mathematical verification; the
 remaining accessible originals still require conversion and per-paper review.
 This maintenance changes no theorem, certificate, route edge, or claim grade;

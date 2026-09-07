@@ -96,11 +96,19 @@ Summary: {summary}. The archive is not fully converted or independently reviewed
                 "[PAPER_MATERIALS_INDEX.md](PAPER_MATERIALS_INDEX.md). These links do not imply independent "
                 "semantic review. Source originals and hand-edited files are preserved.")
     numbers = [int(p.name.split('-')[1]) for p in full]
+    supplemental = set()
+    for paper in full:
+        match = re.search(r"Supplemental prerequisite audit: \[[^]]+\]\(([^)]+)\)",
+                          (paper / 'CONVERSION_RECORD.md').read_text())
+        if match:
+            supplemental.add((paper / match[1]).resolve())
+    audit_links = "\n".join('- ' + link(p, p.stem) for p in sorted(supplemental)) or 'No additional scope notes recorded.'
     batch = f"""# TPC source-Markdown conversion coverage: {max(numbers)}–{min(numbers)}
 
 Updated 2026-09-07. {len(full)} preserved manuscripts have source-complete mechanical
-Markdown. The repair covers the prior 64 conversions (TPC355–418) plus the
-new five-paper batch TPC350–354. This record supersedes older inconsistent
+Markdown. The repair covered the prior 64 conversions (TPC355–418) plus
+TPC350–354; subsequent existing-source batches are included in the links
+below. This record supersedes older inconsistent
 counts and generic review claims; it creates no paper or route edge.
 
 ## Method and explicit limits
@@ -113,8 +121,8 @@ catalogues raw displayed equations, and maps source section lines to actual
 extracted PDF heading matches. Missing or multiple page hits remain explicit.
 No PDF is recompiled or claimed to be proven synchronized with its TeX.
 
-References present in TPC350–358 are retained (including full external
-BibTeX for TPC356–358). The sources without references are not supplied with
+References present in TPC348–358 are retained (including full external
+BibTeX for TPC348 and TPC356–358). The sources without references are not supplied with
 invented entries. Theorem/proof names and boundaries remain; printed numbering
 and unresolved citation formatting are not reconstructed. A separate proof
 package is absent in TPC359–363, so only existing notes are linked below.
@@ -125,6 +133,10 @@ per-paper TPC350–354 prerequisite checks, the unresolved TPC352 manuscript/
 producer operator mismatch, TPC353–354 notation issues, and the TPC402
 ambiguous page match. Automated preservation is not theorem validation.
 Numerical certificates and the production cascade were not rerun.
+
+## Supplemental per-batch prerequisite audits
+
+{audit_links}
 
 ## Per-paper reading and evidence links
 

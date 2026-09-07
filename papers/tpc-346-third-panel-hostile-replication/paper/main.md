@@ -1,0 +1,144 @@
+# **TPC-346: Third-Panel Hostile Replication\ and a Finite Freeze of the Panel-Adaptive Route**
+
+> Mechanical reading layer generated from the preserved TeX. Original TeX/PDF and hand-edited package materials remain authoritative. This conversion does not certify a proof or upgrade any finite, conditional, synthetic, or open claim.
+
+- Source TeX: [main.tex](main.tex)
+- Preserved PDF: [main.pdf](main.pdf)
+
+- Conversion and audit scope: [CONVERSION_RECORD.md](../CONVERSION_RECORD.md)
+- Author metadata: Liang Wang; School of Mathematics and Statistics, Huazhong University of Science and Technology (HUST); Wuhan, China
+- Source date: September 2, 2026
+- Source repository commit: `1de1964aa411aa631587da690524beadf1127d3c`
+- Converter: `source-markdown-audit-v2`
+
+## Abstract
+
+Recent finite audits of a twin-prime dynamical response model found that a single nuisance coefficient vector did not transfer between two disjoint panels, while a panel-specific relaxation produced a narrow crossing under one row weighting. This paper performs the next hostile test: a third panel at the disjoint origins $(44097,44609,45217)$ is declared before the calculation and is compared with the two locked parent panels. With the all-plus $Q=54$ operator, nine controls, and four source categories, the fresh panel has pooled residual retention $0.3159173453$ (raw) and $0.3294074741$ (equal-row). A three-panel block-adaptive model reaches $0.2999630726$ under raw weighting but $0.3222362713$ after equal-row normalization. All six directed panel predictions, all three leave-one-panel-out predictions, and all eighteen fresh control-LOO projections exceed $0.30$. Thus the raw crossing is a finite, weighting-sensitive observation and the declared panel-adaptive branch is frozen. No arithmetic $L^2$ estimate, asymptotic saving, or twin-prime conclusion follows.
+
+<!-- SOURCE_BODY_BEGIN -->
+
+# Introduction
+
+The current twin-prime route studies finite response vectors produced by a fixed all-plus operator. Earlier releases provide a useful sequence of increasingly adversarial tests. TPC-341 and TPC-342 established two protocol-compatible panels. TPC-343 showed that a single shared nuisance coefficient does not meet the inherited residual guard on either of two weightings. TPC-344 added signed panel contrasts and obtained a narrow raw weighted partial repair, while TPC-345 compared the nuisance column spaces through principal angles and found that the leading angle moves substantially under row weighting.
+
+The natural question is whether the extra panel-specific degrees of freedom are a transferable structure or merely a two-panel fit. We answer only this finite question. A fresh panel is selected inside the same cutoff, with no change to the source masks, operator, controls, or scale. The experiment is hostile in the precise sense that the fresh panel is not used to choose the parent geometry, and that both raw and equal-row weightings are required.
+
+#### Claim class.
+
+The exact linear-algebra statements below are `PROVED_EXACT_FINITE_DECLARED_MODEL`. Numerical values are `NUMERICALLY_CERTIFIED_FINITE`. Threshold failures are `REFUTED_SCOPED`; they are not universal impossibility theorems. The arithmetic status is `NO`, the fixed-power credit is $0$, and Route-B Gate B remains `OPEN`.
+
+# Frozen protocol and models
+
+For each origin $o$, the source interval is $$I_o=[o,o+511]\cap\mathbb Z,\qquad \text{scale}=1024.$$ The operator is the all-plus law with $Q=54$, kernel exponent one, and height $H=66$. Nine fixed bijective controls act on each source vector. The four source categories are twin-prime, non-twin prime shift, prime-power shift, and zero support; the last three are nuisance categories.
+
+| panel   | origins             | role                |
+|:--------|:--------------------|:--------------------|
+| TPC-341 | $48097,48609,49217$ | locked parent       |
+| TPC-342 | $40097,40609,41121$ | locked parent       |
+| TPC-346 | $44097,44609,45217$ | fresh hostile panel |
+
+: Declared panels. All intervals satisfy the cutoff condition $\max(I_o)+2<50000$.
+
+Let $Y_p\in\mathbb{R}^{1536}$ be the concatenation of the three row-mean twin-prime response vectors for panel $p$, and let $N_p\in\mathbb{R}^{1536\times 3}$ contain the corresponding nuisance means. The shared and panel-adaptive matrices are $$N_{\mathrm{sh}}=
+ \begin{bmatrix}N_1\\N_2\\N_3\end{bmatrix},
+\qquad
+ N_{\mathrm{ad}}=\operatorname{diag}(N_1,N_2,N_3),
+\quad
+ Y=\begin{bmatrix}Y_1\\Y_2\\Y_3\end{bmatrix}.$$ The shared model has three nuisance coefficients; the adaptive model has three coefficients per panel. Raw weighting stacks the rows directly. Equal-row weighting divides every row target and nuisance column by the positive Euclidean norm of that row’s twin target before stacking.
+
+The primary guard is $$\operatorname{ret}(Y,N)=\frac{\|(I-P_N)Y\|_2^2}{\|Y\|_2^2}<0.30.$$ For transfer, coefficients are fitted on one or two panels and evaluated on a held-out panel. This produces a prediction residual, not a projection identity. The fresh control-LOO diagnostic omits one control, uses its twin output as target, and uses the mean of the other eight controls for each nuisance column.
+
+# Finite identities
+
+> **Proposition: Projection identity** For a finite matrix $N$ and its orthogonal projector $P_N$, every finite target $Y$ satisfies $$\|Y\|_2^2=\|P_NY\|_2^2+\|(I-P_N)Y\|_2^2.$$
+
+> **Proof** The two summands are orthogonal because $P_N$ is self-adjoint and idempotent, and their sum is $Y$.
+
+> **Proposition: Nested model** The shared column space is contained in the panel-adaptive column space. Consequently, $$\|(I-P_{\mathrm{ad}})Y\|_2
+>  \leq \|(I-P_{\mathrm{sh}})Y\|_2.$$
+
+> **Proof** For any shared coefficient vector $c\in\mathbb{R}^3$, $$N_{\mathrm{sh}}c=N_{\mathrm{ad}}(c,c,c).$$ Thus every shared fitted vector is an adaptive fitted vector. Orthogonal projection onto the larger finite subspace cannot increase the residual norm.
+
+These propositions are exact finite facts. They do not identify an arithmetic nuisance object. In particular, the extra six adaptive coordinates are a modeling choice, not a source-uniform theorem.
+
+# Hostile finite readout
+
+## Own fit and model complexity
+
+Table [1](main.tex#L176){reference-type="ref" reference="tab:models"} gives the principal residual readout. The fresh panel fails its own guard under both weightings. The adaptive model gains enough degrees of freedom to cross the raw threshold by only $3.69\times 10^{-5}$, but the same declared model fails after equal-row normalization.
+
+<div id="tab:models">
+
+| model                          |           raw|     equal-row|
+|:-------------------------------|-------------:|-------------:|
+| fresh TPC-346 own fit          |  0.3159173453|  0.3294074741|
+| shared three-panel fit         |  0.3419067441|  0.3564123507|
+| panel-adaptive three-panel fit |  0.2999630726|  0.3222362713|
+
+: Pooled finite residual retentions.
+
+</div>
+
+The certificate contains nine rows and 324 control/category records, of which 261 have nonzero source norm. The observed nuisance ranks are 3 for TPC-341, 2 for TPC-342, and 3 for the fresh TPC-346 panel; the adaptive three-panel matrix has rank 8 because one inherited nuisance column is identically zero on TPC-342.
+
+## Transfer and hostile controls
+
+The six directed single-panel predictions have minimum retention $0.3543123948$ (raw) and $0.3416324137$ (equal-row). Training on the two other panels and predicting each held-out panel gives minima $0.3712128254$ and $0.3783318336$. Hence no direction in the declared panel family satisfies the prediction guard.
+
+<div id="tab:transfer">
+
+| diagnostic                        |           raw|     equal-row|
+|:----------------------------------|-------------:|-------------:|
+| six directed predictions: minimum |  0.3543123948|  0.3416324137|
+| six directed predictions: maximum |  0.7145024682|  0.6559045191|
+| leave-one-panel-out: minimum      |  0.3712128254|  0.3783318336|
+| leave-one-panel-out: maximum      |  0.5135837026|  0.4016991437|
+| fresh control-LOO: minimum        |  0.7435404822|  0.7574228742|
+| fresh control-LOO: maximum        |  0.9303609692|  0.9360592005|
+
+: Minimum and maximum prediction residual retentions.
+
+</div>
+
+The fresh control-LOO minimum is particularly hostile: all nine omitted controls retain at least $0.7435404822$ under raw weighting and at least $0.7574228742$ under equal-row weighting. This tests whether one control alone accounts for the fresh-panel obstruction; it does not.
+
+## Pairwise geometry
+
+The fresh panel remains geometrically close to a dominant direction of each parent in raw coordinates, but the alignment is not a stable common law. For TPC-341 versus TPC-346, the raw principal cosines are $$(0.9968572419,\ 0.1620463946,\ 0.03856023954),$$ whereas equal-row weighting gives $$(0.9350969661,\ 0.2484090871,\ 0.02402578867).$$ For TPC-342 versus TPC-346, the corresponding lists are
+
+$$(0.9959223573,\ 0.1977226624),\qquad
+ (0.8934968094,\ 0.1546177793).$$ These finite subspace comparisons are consistent with TPC-345’s weighting sensitivity, while avoiding a claim of universal principal-angle behavior.
+
+# Route evaluation and limitations
+
+#### Strongest positive.
+
+The shared-to-adaptive nesting identity is exact, and the complete fresh panel calculation is independently reproducible. A narrow raw three-panel adaptive crossing is recorded rather than discarded.
+
+#### Strongest obstruction.
+
+The fresh panel fails its own pooled guard in both weightings; equal-row weighting removes the adaptive crossing; every directed and leave-one-panel-out prediction fails; and all eighteen fresh control-LOO tests fail. Together these observations justify the finite scoped decision $$\texttt{FREEZE\_PANEL\_ADAPTIVE\_ROUTE\_FINITE\_SCOPED}.$$
+
+#### Open theorem.
+
+The central unpaid mathematical interface remains a source-uniform arithmetic $L^2$ estimate (and the associated uniform masked-operator bound). No finite panel fit supplies fixed-power credit or the strict $1/400$ payment.
+
+#### Scope.
+
+The Session-named Route-A and Route-B evaluator files are absent in this checkout. The local Bridge-B checker is fail-closed and is not an official evaluator pass. The finite freeze concerns only the declared panel-adaptive branch; it is not a universal no-go theorem for every future nuisance model.
+
+# Conclusion
+
+The third-panel hostile replication closes the most tempting short interpretation of the TPC-344 repair: it is not a weighting-stable, transferable finite law on the declared panel family. The route map should therefore return to the arithmetic $L^2$ interface while preserving the panel geometry as a reusable diagnostic. All numerical claims in this paper are backed by the canonical certificate, a reverse-shell independent checker, a ten-mutation stress suite, and the local Bridge-B wrapper.
+
+# Reproducibility record
+
+The project records the producer, independent checker, stress suite, proof package, theorem ledger, claim firewall, route evaluation, and the canonical JSON certificate. The main commands are:
+
+    python -B code/tpc346_third_panel_hostile_replication.py --check
+    python -B experiments/tpc346_independent_checker.py
+    python -B experiments/tpc346_hostile_stress.py
+
+The source/operator lineage is hash-locked to TPC-340 and the immediate TPC-345 geometry release. The certificate labels arithmetic advance as `NO`, fixed-power credit as `0`, full Gate B as `OPEN`, and the twin-prime result as `NONE`.
+
+<!-- SOURCE_BODY_END -->

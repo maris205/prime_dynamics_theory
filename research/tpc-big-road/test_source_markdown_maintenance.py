@@ -47,6 +47,12 @@ class ConversionHelpers(unittest.TestCase):
 
 
 class ConversionIntegration(unittest.TestCase):
+    def test_supplemental_scope_persists(self):
+        _, md, record, report = m.convert(349, source_commit="1de1964aa411aa631587da690524beadf1127d3c")
+        self.assertIn("Supplemental prerequisite audit:", record)
+        self.assertIn("TPC_CONVERSION_SCOPE_TPC345_349.md", record)
+        self.assertTrue(report['text_roundtrip'])
+
     def test_source_bibliography_retained(self):
         _, md, record, report = m.convert(350, source_commit="388a605cbc0ce49256310c2efc1f2df77edafadd")
         self.assertTrue(report["text_roundtrip"])

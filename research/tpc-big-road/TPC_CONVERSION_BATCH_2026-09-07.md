@@ -1,8 +1,9 @@
-# TPC source-Markdown conversion coverage: 418–350
+# TPC source-Markdown conversion coverage: 418–345
 
-Updated 2026-09-07. 69 preserved manuscripts have source-complete mechanical
-Markdown. The repair covers the prior 64 conversions (TPC355–418) plus the
-new five-paper batch TPC350–354. This record supersedes older inconsistent
+Updated 2026-09-07. 74 preserved manuscripts have source-complete mechanical
+Markdown. The repair covered the prior 64 conversions (TPC355–418) plus
+TPC350–354; subsequent existing-source batches are included in the links
+below. This record supersedes older inconsistent
 counts and generic review claims; it creates no paper or route edge.
 
 ## Method and explicit limits
@@ -15,8 +16,8 @@ catalogues raw displayed equations, and maps source section lines to actual
 extracted PDF heading matches. Missing or multiple page hits remain explicit.
 No PDF is recompiled or claimed to be proven synchronized with its TeX.
 
-References present in TPC350–358 are retained (including full external
-BibTeX for TPC356–358). The sources without references are not supplied with
+References present in TPC348–358 are retained (including full external
+BibTeX for TPC348 and TPC356–358). The sources without references are not supplied with
 invented entries. Theorem/proof names and boundaries remain; printed numbering
 and unresolved citation formatting are not reconstructed. A separate proof
 package is absent in TPC359–363, so only existing notes are linked below.
@@ -27,6 +28,10 @@ per-paper TPC350–354 prerequisite checks, the unresolved TPC352 manuscript/
 producer operator mismatch, TPC353–354 notation issues, and the TPC402
 ambiguous page match. Automated preservation is not theorem validation.
 Numerical certificates and the production cascade were not rerun.
+
+## Supplemental per-batch prerequisite audits
+
+- [TPC_CONVERSION_SCOPE_TPC345_349](../../research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC345_349.md)
 
 ## Per-paper reading and evidence links
 
@@ -104,11 +109,16 @@ the original short summary. Available package files are listed, not certified.
 | TPC-352 | [main.md](../../papers/tpc-352-reciprocal-shell-adversarial-holdout/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-352-reciprocal-shell-adversarial-holdout/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-352-reciprocal-shell-adversarial-holdout/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-352-reciprocal-shell-adversarial-holdout/PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](../../papers/tpc-352-reciprocal-shell-adversarial-holdout/DERIVATION_PACKAGE.md), [notes/claim_firewall.md](../../papers/tpc-352-reciprocal-shell-adversarial-holdout/notes/claim_firewall.md), [notes/route_evaluation.md](../../papers/tpc-352-reciprocal-shell-adversarial-holdout/notes/route_evaluation.md) | [main.tex](../../papers/tpc-352-reciprocal-shell-adversarial-holdout/paper/main.tex) | [main.pdf](../../papers/tpc-352-reciprocal-shell-adversarial-holdout/paper/main.pdf) |
 | TPC-351 | [main.md](../../papers/tpc-351-reciprocal-shell-contrast/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-351-reciprocal-shell-contrast/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-351-reciprocal-shell-contrast/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-351-reciprocal-shell-contrast/PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](../../papers/tpc-351-reciprocal-shell-contrast/DERIVATION_PACKAGE.md), [notes/claim_firewall.md](../../papers/tpc-351-reciprocal-shell-contrast/notes/claim_firewall.md), [notes/route_evaluation.md](../../papers/tpc-351-reciprocal-shell-contrast/notes/route_evaluation.md) | [main.tex](../../papers/tpc-351-reciprocal-shell-contrast/paper/main.tex) | [main.pdf](../../papers/tpc-351-reciprocal-shell-contrast/paper/main.pdf) |
 | TPC-350 | [main.md](../../papers/tpc-350-fresh-growth-signed-incidence/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-350-fresh-growth-signed-incidence/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-350-fresh-growth-signed-incidence/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-350-fresh-growth-signed-incidence/PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](../../papers/tpc-350-fresh-growth-signed-incidence/DERIVATION_PACKAGE.md), [notes/claim_firewall.md](../../papers/tpc-350-fresh-growth-signed-incidence/notes/claim_firewall.md), [notes/route_evaluation.md](../../papers/tpc-350-fresh-growth-signed-incidence/notes/route_evaluation.md) | [main.tex](../../papers/tpc-350-fresh-growth-signed-incidence/paper/main.tex) | [main.pdf](../../papers/tpc-350-fresh-growth-signed-incidence/paper/main.pdf) |
+| TPC-349 | [main.md](../../papers/tpc-349-prime-balanced-signed-defect-witness/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-349-prime-balanced-signed-defect-witness/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-349-prime-balanced-signed-defect-witness/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-349-prime-balanced-signed-defect-witness/PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](../../papers/tpc-349-prime-balanced-signed-defect-witness/DERIVATION_PACKAGE.md), [notes/claim_firewall.md](../../papers/tpc-349-prime-balanced-signed-defect-witness/notes/claim_firewall.md), [notes/route_evaluation.md](../../papers/tpc-349-prime-balanced-signed-defect-witness/notes/route_evaluation.md) | [main.tex](../../papers/tpc-349-prime-balanced-signed-defect-witness/paper/main.tex) | [main.pdf](../../papers/tpc-349-prime-balanced-signed-defect-witness/paper/main.pdf) |
+| TPC-348 | [main.md](../../papers/tpc-348-position-aware-mask-defect-lower-witness/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-348-position-aware-mask-defect-lower-witness/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-348-position-aware-mask-defect-lower-witness/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-348-position-aware-mask-defect-lower-witness/PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](../../papers/tpc-348-position-aware-mask-defect-lower-witness/DERIVATION_PACKAGE.md), [notes/claim_firewall.md](../../papers/tpc-348-position-aware-mask-defect-lower-witness/notes/claim_firewall.md), [notes/route_evaluation.md](../../papers/tpc-348-position-aware-mask-defect-lower-witness/notes/route_evaluation.md) | [main.tex](../../papers/tpc-348-position-aware-mask-defect-lower-witness/paper/main.tex) | [main.pdf](../../papers/tpc-348-position-aware-mask-defect-lower-witness/paper/main.pdf) |
+| TPC-347 | [main.md](../../papers/tpc-347-convolution-mask-defect-interface/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-347-convolution-mask-defect-interface/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-347-convolution-mask-defect-interface/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-347-convolution-mask-defect-interface/PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](../../papers/tpc-347-convolution-mask-defect-interface/DERIVATION_PACKAGE.md), [notes/claim_firewall.md](../../papers/tpc-347-convolution-mask-defect-interface/notes/claim_firewall.md), [notes/route_evaluation.md](../../papers/tpc-347-convolution-mask-defect-interface/notes/route_evaluation.md) | [main.tex](../../papers/tpc-347-convolution-mask-defect-interface/paper/main.tex) | [main.pdf](../../papers/tpc-347-convolution-mask-defect-interface/paper/main.pdf) |
+| TPC-346 | [main.md](../../papers/tpc-346-third-panel-hostile-replication/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-346-third-panel-hostile-replication/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-346-third-panel-hostile-replication/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-346-third-panel-hostile-replication/PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](../../papers/tpc-346-third-panel-hostile-replication/DERIVATION_PACKAGE.md), [notes/claim_firewall.md](../../papers/tpc-346-third-panel-hostile-replication/notes/claim_firewall.md), [notes/route_evaluation.md](../../papers/tpc-346-third-panel-hostile-replication/notes/route_evaluation.md) | [main.tex](../../papers/tpc-346-third-panel-hostile-replication/paper/main.tex) | [main.pdf](../../papers/tpc-346-third-panel-hostile-replication/paper/main.pdf) |
+| TPC-345 | [main.md](../../papers/tpc-345-principal-angle-grassmann-audit/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-345-principal-angle-grassmann-audit/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-345-principal-angle-grassmann-audit/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-345-principal-angle-grassmann-audit/PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](../../papers/tpc-345-principal-angle-grassmann-audit/DERIVATION_PACKAGE.md), [notes/claim_firewall.md](../../papers/tpc-345-principal-angle-grassmann-audit/notes/claim_firewall.md), [notes/route_evaluation.md](../../papers/tpc-345-principal-angle-grassmann-audit/notes/route_evaluation.md) | [main.tex](../../papers/tpc-345-principal-angle-grassmann-audit/paper/main.tex) | [main.pdf](../../papers/tpc-345-principal-angle-grassmann-audit/paper/main.pdf) |
 
 ## Coverage and next work
 
-Across 823 entries: `full-source-md=69`, `reliable-full-md=0`, `partial-or-notes=753`, `source-inaccessible=1`.
-The 753 partial/notes entries remain the accessible conversion pool;
+Across 823 entries: `full-source-md=74`, `reliable-full-md=0`, `partial-or-notes=748`, `source-inaccessible=1`.
+The 748 partial/notes entries remain the accessible conversion pool;
 the source-inaccessible entry is specifically the moving-hole translation-
 compiler directory for TPC207, not the separate critical-moving-hole paper.
 Continue from the inventory, preserving original sources and hand edits and

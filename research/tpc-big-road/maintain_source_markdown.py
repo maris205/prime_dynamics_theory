@@ -230,11 +230,22 @@ def patch_for(path, new):
     return f"*** Add File: {path}\n" + "\n".join("+" + line for line in new.splitlines()) + "\n"
 
 
-def convert(number, *, source_commit=None):
+def convert(number, *, source_commit=None, scope_audit=None):
     found = list((ROOT / "papers").glob(f"tpc-{number}-*"))
     if len(found) != 1:
         raise ValueError(f"paper {number}: expected one existing directory")
     paper = found[0]
+    if scope_audit is None and (paper / "CONVERSION_RECORD.md").is_file():
+        saved = re.search(r"Supplemental prerequisite audit: \[[^]]+\]\(([^)]+)\)",
+                          (paper / "CONVERSION_RECORD.md").read_text())
+        if saved:
+            scope_audit = (paper / saved[1]).resolve()
+    if scope_audit:
+        scope_audit = (ROOT / scope_audit).resolve()
+        if not scope_audit.is_relative_to(ROOT) or not scope_audit.is_file():
+            raise ValueError("supplemental scope audit must be an existing repository file")
+    scope_line = ("\n- Supplemental prerequisite audit: [bounded source review](" +
+                  os.path.relpath(scope_audit, paper) + ").") if scope_audit else ""
     tex_path = paper / "paper/main.tex"
     pdf_path = paper / "paper/main.pdf"
     tex = tex_path.read_text()
@@ -367,7 +378,7 @@ def convert(number, *, source_commit=None):
 - Preserved PDF: [paper/main.pdf](paper/main.pdf), SHA-256 `{pdf_hash}`; {len(pages)} extracted pages. PDF is preserved, not recompiled or certified to match the TeX.
 - Reading layer: [paper/main.md](paper/main.md), SHA-256 `{digest(output)}`.
 - Conversion status: `{status}`.
-- Semantic review: `NOT_INDEPENDENTLY_REPROVED`; automated preservation checks are not theorem or certificate validation.
+- Semantic review: `NOT_INDEPENDENTLY_REPROVED`; automated preservation checks are not theorem or certificate validation.{scope_line}
 - Repair history and bounded manual source audit: [maintenance audit](../../research/tpc-big-road/TPC_MAINTENANCE_REPAIR_2026-09-07.md). Known manuscript issues remain preserved, not silently corrected.
 - Available package materials: {', '.join(package_links)}.
 - Separate proof package: `{'PRESENT (availability only)' if proofs.exists() else 'ABSENT'}`.
@@ -417,10 +428,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--paper", type=int, required=True)
     parser.add_argument("--source-commit")
+    parser.add_argument("--scope-audit", help="existing repository-relative supplemental review note")
     parser.add_argument("--patch", action="store_true")
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
-    paper, markdown, record, report = convert(args.paper, source_commit=args.source_commit)
+    paper, markdown, record, report = convert(args.paper, source_commit=args.source_commit, scope_audit=args.scope_audit)
     if args.patch:
         for path in [paper / "paper/main.md", paper / "CONVERSION_RECORD.md"]:
             if path.exists():
