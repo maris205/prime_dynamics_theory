@@ -121,9 +121,10 @@ catalogues raw displayed equations, and maps source section lines to actual
 extracted PDF heading matches. Missing or multiple page hits remain explicit.
 No PDF is recompiled or claimed to be proven synchronized with its TeX.
 
-References present in TPC348–358 are retained (including full external
-BibTeX for TPC348 and TPC356–358). The sources without references are not supplied with
-invented entries. Theorem/proof names and boundaries remain; printed numbering
+Every detected source bibliography is retained, including the complete
+external BibTeX files when present. Per-paper records identify and hash-lock
+these dependencies; sources without references are not supplied with invented
+entries. Theorem/proof names and boundaries remain; printed numbering
 and unresolved citation formatting are not reconstructed. A separate proof
 package is absent in TPC359–363, so only existing notes are linked below.
 

@@ -1,0 +1,96 @@
+# Cross-Term Support in a Finite Twin-Prime Source Model\ Twins, Prime Powers, and the Odd Background
+
+> Mechanical reading layer generated from the preserved TeX. Original TeX/PDF and hand-edited package materials remain authoritative. This conversion does not certify a proof or upgrade any finite, conditional, synthetic, or open claim.
+
+- Source TeX: [main.tex](main.tex)
+- Preserved PDF: [main.pdf](main.pdf)
+
+- Conversion and audit scope: [CONVERSION_RECORD.md](../CONVERSION_RECORD.md)
+- Author metadata: Liang Wang; School of Mathematics and Statistics; Huazhong University of Science and Technology (HUST), Wuhan, China
+- Source date: September 2, 2026
+- Source repository commit: `ba1fb3efe59e51e62f64f4dcb607bd390b4b4062`
+- Converter: `source-markdown-audit-v2`
+
+## Abstract
+
+The preceding source-polarization audit found a substantial finite cross term between a von Mangoldt component $\Lambda(t+2)$ and a comparison component $b(t)$. We now attribute that cross term by support. In the declared model, the nonzero coordinates split exactly into twin-prime coordinates, non-twin prime shifts, and higher prime-power shifts. On two disjoint origins and three nested scales, the six resulting ledgers show a twin-prime mass share between $5.4296754\%$ and $7.1734300\%$, while the non-twin prime-shift share is between $92.8265700\%$ and $94.4195720\%$. Higher prime powers contribute at most $0.2865191\%$. This is a finite support obstruction to using the raw polarization cross term as a twin-prime proxy. It neither proves nor refutes the twin-prime conjecture, gives no asymptotic estimate, and earns no route power credit.
+
+<!-- SOURCE_BODY_BEGIN -->
+
+# Question and scope
+
+TPC-333 isolated the identity $$\|\Lambda-b\|_2^2=\|\Lambda\|_2^2+\|b\|_2^2-2\langle\Lambda,b\rangle$$ and found that its cross term is neither negligible nor close to complete cancellation on six finite windows. Its next clue was to determine whether that cross term is genuinely concentrated on twin pairs. This paper answers that narrower question by a coordinate-level partition.
+
+The distinction matters. A large value of $\langle\Lambda,b\rangle$ can be consistent with many prime values of $t+2$ even when $t$ is composite. Such coordinates are relevant to the finite source norm, but they are not twin primes. We therefore report masses, not a prime-pair theorem.
+
+# Declared finite source
+
+For $o\in\{42001,44001\}$ and $N\in\{2048,4096,8192\}$, let $$I_{o,N}=\{o,o+1,\ldots,o+N/2-1\}.$$ The source is the parent-locked finite model $$\label{eq:source}
+ \beta_o^{(2)}(t)=\Lambda(t+2)-b_o^{(2)}(t),\qquad
+ b_o^{(2)}(t)=2C_2\mathbf 1_{2\nmid t}
+ \prod_{\substack{p\mid t\\p>2}}\frac{p-1}{p-2}.$$ Here $\Lambda(p^k)=\log p$ and is zero otherwise. The finite comparison constant inherits the cutoff $50000$ and the midpoint/tail enclosure from TPC-333. All shifted values $t+2$ in this paper remain below that cutoff.
+
+The cross term is the finite sum $$X_o(N)=\langle\Lambda,b\rangle
+       =\sum_{t\in I_{o,N}}\Lambda(t+2)b_o^{(2)}(t).$$ All summands are nonnegative in this model. The producer records each class mass and count, as well as the zero-support coordinates.
+
+# Exact support partition
+
+The comparison factor in [\[eq:source\]](main.tex#L58){reference-type="eqref" reference="eq:source"} vanishes for even $t$. The von Mangoldt factor vanishes unless $t+2=p^k$. Thus every nonzero summand has $t$ odd and $t+2$ a prime power. We partition it as follows: $$\begin{aligned}
+ \mathsf T&=\{t:t\text{ and }t+2\text{ are prime}\},\\
+ \mathsf B&=\{t:t+2\text{ is prime and }t\text{ is not prime}\},\\
+ \mathsf P&=\{t:t+2=p^k,\ k\ge2\}.\end{aligned}$$ The sets are disjoint. For $C\in\{\mathsf T,\mathsf B,\mathsf P\}$ write $$X_C=\sum_{t\in C\cap I_{o,N}}\Lambda(t+2)b_o^{(2)}(t).$$ Then finite additivity gives $$\label{eq:partition}
+ X_o(N)=X_{\mathsf T}+X_{\mathsf B}+X_{\mathsf P},$$ while all coordinates outside these classes have zero summand. The label “background” below refers to $\mathsf B$, the odd composite predecessors of a prime shift, not to all composite integers in the window.
+
+# Protocol and finite certificate
+
+The six rows are the Cartesian product of two origins and three scales. For each row we independently test primality of $t$ and prime-power status of $t+2$, then sum the three class masses. The machine-readable certificate stores counts, masses, mass fractions, the partition residual, and the inherited source norms. A rational support anchor uses four labeled coordinates with $$\Lambda=(2,3,1,4),\qquad b=(5,1,2,0),$$ so the class masses are $10,3,2,0$ and sum to $15$ exactly. This anchor is only a finite additivity check.
+
+The independent checker uses a separate trial sieve, reverse factorization, and reverse finite-tail product order. A stress suite mutates row geometry, a support mass, the census, the firewall, and the anchor; all five mutations are rejected. These controls establish a finite certificate, not a global prime-distribution estimate.
+
+# Results
+
+Table [1](main.tex#L124){reference-type="ref" reference="tab:range"} reports the ranges over all six rows. Percentages are shown as fractions in the certificate and rounded here only for readability.
+
+<div id="tab:range">
+
+| class                      | coordinate-count range | cross-mass fraction range |
+|:---------------------------|:----------------------:|:-------------------------:|
+| twin prime $\mathsf T$     |          11–43         | 0.0542967544–0.0717343002 |
+| non-twin shift $\mathsf B$ |         87–334         | 0.9282656998–0.9441957198 |
+| prime power $\mathsf P$    |           0–1          |       0–0.0028651912      |
+| zero support               |        919–3721        |             0             |
+
+: Support counts and cross-mass fractions over six windows.
+
+</div>
+
+All six rows have twin fraction below $0.10$ and background fraction above $0.90$. The exact extrema are $$\min f_{\mathsf T}=0.054296754369378503,
+ \quad \max f_{\mathsf T}=0.071734300218214184,$$ and $$\min f_{\mathsf B}=0.92826569978178597,
+ \quad \max f_{\mathsf B}=0.94419571979139760.$$ The largest prime-power fraction is $0.0028651911963981512$. The class masses sum to the independently computed cross term with a residual below $2\times10^{-10}$ in every row.
+
+The finite observation is therefore specific and useful: the raw source cross term mostly measures the availability of prime shifts $t+2$ weighted by the odd comparison background, not the event that both $t$ and $t+2$ are prime. This does not say that the twin class is unimportant in a different functional or normalization; it says that this unfiltered ledger cannot be read as a twin-prime statistic.
+
+# Interpretation and firewall
+
+The strongest positive result is an exact, reusable support interface: the source cross term can be separated before it is fed into the signed-Gram operator. The strongest obstruction is the six-row mass imbalance, which rules out the simplest interpretation of the polarization cross term as a twin-specific signal on this panel.
+
+The release labels are:
+
+-   `PROVED_EXACT_FINITE`: the support implication and additive partition in [\[eq:partition\]](main.tex#L90){reference-type="eqref" reference="eq:partition"};
+
+-   `NUMERICALLY_CERTIFIED_FINITE`: six rows, four categories, independent replay, and five mutation rejections;
+
+-   `NUMERICAL_OBSERVATION`: the percentage ranges and count ranges;
+
+-   `OPEN`: a twin-isolated source theorem, source-uniform $L^2$, strict $1/400$ payment, Route-B Gate B, and the twin-prime conjecture.
+
+Consequently, $$\texttt{ARITHMETIC\_ADVANCE=NO},\qquad
+ \texttt{FIXED\_POWER\_CREDIT=0},\qquad
+ \texttt{FULL\_GATE\_B=OPEN},\qquad
+ \texttt{TWIN\_PRIME\_RESULT=NONE}.$$ The Session-named Route-A and Route-B evaluator files are absent from this checkout; the local Bridge-B check is fail-closed and not an official route pass.
+
+# Next question
+
+The next minimal experiment is to form an explicitly twin-isolated source (or an exactly compensated source that removes the non-twin shift class), then compare its norm and signed-Gram response with the full source. That test will reveal whether the operator sees a twin-specific component after the dominant background has been removed.
+
+<!-- SOURCE_BODY_END -->

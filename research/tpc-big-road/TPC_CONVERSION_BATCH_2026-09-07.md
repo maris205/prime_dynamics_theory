@@ -1,6 +1,6 @@
-# TPC source-Markdown conversion coverage: 418–335
+# TPC source-Markdown conversion coverage: 418–330
 
-Updated 2026-09-07. 84 preserved manuscripts have source-complete mechanical
+Updated 2026-09-07. 89 preserved manuscripts have source-complete mechanical
 Markdown. The repair covered the prior 64 conversions (TPC355–418) plus
 TPC350–354; subsequent existing-source batches are included in the links
 below. This record supersedes older inconsistent
@@ -16,9 +16,10 @@ catalogues raw displayed equations, and maps source section lines to actual
 extracted PDF heading matches. Missing or multiple page hits remain explicit.
 No PDF is recompiled or claimed to be proven synchronized with its TeX.
 
-References present in TPC348–358 are retained (including full external
-BibTeX for TPC348 and TPC356–358). The sources without references are not supplied with
-invented entries. Theorem/proof names and boundaries remain; printed numbering
+Every detected source bibliography is retained, including the complete
+external BibTeX files when present. Per-paper records identify and hash-lock
+these dependencies; sources without references are not supplied with invented
+entries. Theorem/proof names and boundaries remain; printed numbering
 and unresolved citation formatting are not reconstructed. A separate proof
 package is absent in TPC359–363, so only existing notes are linked below.
 
@@ -31,6 +32,7 @@ Numerical certificates and the production cascade were not rerun.
 
 ## Supplemental per-batch prerequisite audits
 
+- [TPC_CONVERSION_SCOPE_TPC330_334](../../research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC330_334.md)
 - [TPC_CONVERSION_SCOPE_TPC335_339](../../research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC335_339.md)
 - [TPC_CONVERSION_SCOPE_TPC340_344](../../research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC340_344.md)
 - [TPC_CONVERSION_SCOPE_TPC345_349](../../research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC345_349.md)
@@ -126,11 +128,16 @@ the original short summary. Available package files are listed, not certified.
 | TPC-337 | [main.md](../../papers/tpc-337-control-covariance-masked-response/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-337-control-covariance-masked-response/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-337-control-covariance-masked-response/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-337-control-covariance-masked-response/PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](../../papers/tpc-337-control-covariance-masked-response/DERIVATION_PACKAGE.md), [notes/claim_firewall.md](../../papers/tpc-337-control-covariance-masked-response/notes/claim_firewall.md), [notes/route_evaluation.md](../../papers/tpc-337-control-covariance-masked-response/notes/route_evaluation.md) | [main.tex](../../papers/tpc-337-control-covariance-masked-response/paper/main.tex) | [main.pdf](../../papers/tpc-337-control-covariance-masked-response/paper/main.pdf) |
 | TPC-336 | [main.md](../../papers/tpc-336-masked-signed-gram-response/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-336-masked-signed-gram-response/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-336-masked-signed-gram-response/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-336-masked-signed-gram-response/PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](../../papers/tpc-336-masked-signed-gram-response/DERIVATION_PACKAGE.md), [notes/claim_firewall.md](../../papers/tpc-336-masked-signed-gram-response/notes/claim_firewall.md), [notes/route_evaluation.md](../../papers/tpc-336-masked-signed-gram-response/notes/route_evaluation.md) | [main.tex](../../papers/tpc-336-masked-signed-gram-response/paper/main.tex) | [main.pdf](../../papers/tpc-336-masked-signed-gram-response/paper/main.pdf) |
 | TPC-335 | [main.md](../../papers/tpc-335-twin-isolated-source-norm/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-335-twin-isolated-source-norm/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-335-twin-isolated-source-norm/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-335-twin-isolated-source-norm/PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](../../papers/tpc-335-twin-isolated-source-norm/DERIVATION_PACKAGE.md), [notes/claim_firewall.md](../../papers/tpc-335-twin-isolated-source-norm/notes/claim_firewall.md), [notes/route_evaluation.md](../../papers/tpc-335-twin-isolated-source-norm/notes/route_evaluation.md) | [main.tex](../../papers/tpc-335-twin-isolated-source-norm/paper/main.tex) | [main.pdf](../../papers/tpc-335-twin-isolated-source-norm/paper/main.pdf) |
+| TPC-334 | [main.md](../../papers/tpc-334-cross-term-support-ledger/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-334-cross-term-support-ledger/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-334-cross-term-support-ledger/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-334-cross-term-support-ledger/PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](../../papers/tpc-334-cross-term-support-ledger/DERIVATION_PACKAGE.md), [notes/claim_firewall.md](../../papers/tpc-334-cross-term-support-ledger/notes/claim_firewall.md), [notes/route_evaluation.md](../../papers/tpc-334-cross-term-support-ledger/notes/route_evaluation.md) | [main.tex](../../papers/tpc-334-cross-term-support-ledger/paper/main.tex) | [main.pdf](../../papers/tpc-334-cross-term-support-ledger/paper/main.pdf) |
+| TPC-333 | [main.md](../../papers/tpc-333-source-polarization-cross-term/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-333-source-polarization-cross-term/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-333-source-polarization-cross-term/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-333-source-polarization-cross-term/PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](../../papers/tpc-333-source-polarization-cross-term/DERIVATION_PACKAGE.md), [notes/claim_firewall.md](../../papers/tpc-333-source-polarization-cross-term/notes/claim_firewall.md), [notes/route_evaluation.md](../../papers/tpc-333-source-polarization-cross-term/notes/route_evaluation.md) | [main.tex](../../papers/tpc-333-source-polarization-cross-term/paper/main.tex) | [main.pdf](../../papers/tpc-333-source-polarization-cross-term/paper/main.pdf) |
+| TPC-332 | [main.md](../../papers/tpc-332-growing-control-average-ensemble/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-332-growing-control-average-ensemble/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-332-growing-control-average-ensemble/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-332-growing-control-average-ensemble/PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](../../papers/tpc-332-growing-control-average-ensemble/DERIVATION_PACKAGE.md), [notes/claim_firewall.md](../../papers/tpc-332-growing-control-average-ensemble/notes/claim_firewall.md), [notes/route_evaluation.md](../../papers/tpc-332-growing-control-average-ensemble/notes/route_evaluation.md) | [main.tex](../../papers/tpc-332-growing-control-average-ensemble/paper/main.tex) | [main.pdf](../../papers/tpc-332-growing-control-average-ensemble/paper/main.pdf) |
+| TPC-331 | [main.md](../../papers/tpc-331-control-average-centered-response-decomposition/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-331-control-average-centered-response-decomposition/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-331-control-average-centered-response-decomposition/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-331-control-average-centered-response-decomposition/PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](../../papers/tpc-331-control-average-centered-response-decomposition/DERIVATION_PACKAGE.md), [notes/claim_firewall.md](../../papers/tpc-331-control-average-centered-response-decomposition/notes/claim_firewall.md), [notes/route_evaluation.md](../../papers/tpc-331-control-average-centered-response-decomposition/notes/route_evaluation.md) | [main.tex](../../papers/tpc-331-control-average-centered-response-decomposition/paper/main.tex) | [main.pdf](../../papers/tpc-331-control-average-centered-response-decomposition/paper/main.pdf) |
+| TPC-330 | [main.md](../../papers/tpc-330-multi-permutation-response-spectrum/paper/main.md) | [CONVERSION_RECORD.md](../../papers/tpc-330-multi-permutation-response-spectrum/CONVERSION_RECORD.md) | [README.md](../../papers/tpc-330-multi-permutation-response-spectrum/README.md) | [PROOF_PACKAGE.md](../../papers/tpc-330-multi-permutation-response-spectrum/PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](../../papers/tpc-330-multi-permutation-response-spectrum/DERIVATION_PACKAGE.md), [notes/claim_firewall.md](../../papers/tpc-330-multi-permutation-response-spectrum/notes/claim_firewall.md), [notes/route_evaluation.md](../../papers/tpc-330-multi-permutation-response-spectrum/notes/route_evaluation.md) | [main.tex](../../papers/tpc-330-multi-permutation-response-spectrum/paper/main.tex) | [main.pdf](../../papers/tpc-330-multi-permutation-response-spectrum/paper/main.pdf) |
 
 ## Coverage and next work
 
-Across 823 entries: `full-source-md=84`, `reliable-full-md=0`, `partial-or-notes=738`, `source-inaccessible=1`.
-The 738 partial/notes entries remain the accessible conversion pool;
+Across 823 entries: `full-source-md=89`, `reliable-full-md=0`, `partial-or-notes=733`, `source-inaccessible=1`.
+The 733 partial/notes entries remain the accessible conversion pool;
 the source-inaccessible entry is specifically the moving-hole translation-
 compiler directory for TPC207, not the separate critical-moving-hole paper.
 Continue from the inventory, preserving original sources and hand edits and
