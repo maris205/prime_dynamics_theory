@@ -1,0 +1,100 @@
+# Amplitude–Shape Decoupling in Signed Prime–Shell Reassembly\ A Finite Profile-Majorization Audit
+
+> Mechanical reading layer generated from the preserved TeX. Original TeX/PDF and hand-edited package materials remain authoritative. This conversion does not certify a proof or upgrade any finite, conditional, synthetic, or open claim.
+
+- Source TeX: [main.tex](main.tex)
+- Preserved PDF: [main.pdf](main.pdf)
+
+- Conversion and audit scope: [CONVERSION_RECORD.md](../CONVERSION_RECORD.md)
+- Author metadata: Liang Wang; School of Mathematics and Statistics; Huazhong University of Science and Technology (HUST), Wuhan, China
+- Source date: 1 September 2026
+- Source repository commit: `88c46824c79e9c202a698cf4db36fcaf98260537`
+- Converter: `source-markdown-audit-v2`
+
+## Abstract
+
+We study the next finite interface in a twin-prime research route based on a literal deleted-diagonal, centered prime–shell operator. The preceding project introduced a sign-labelled projector and found both contracting and amplifying unnormalised reassembly energies. Here we separate that amplitude coordinate from the spectral-shape coordinate. For the direct Gram $G_{\mathrm{direct}}=\sum_p B_p^{\mathsf T}B_p$ and the coherent signed Gram $G_e=(\sum_p e_pB_p)^{\mathsf T}(\sum_p e_pB_p)$, we prove the exact trace/profile factorisation and positive-scalar invariance. On the frozen panel $X\in\{640,1280,2560\}$, $Q\in\{24,36,54,80\}$, and $s\in\{1,2\}$, the all-plus signed profile majorizes the direct profile on all 24 rows. Nevertheless its energy ratio is below one on 3 rows and above one on 21 rows. Index alternation, the mod-4 character, and a half split have respectively 7, 3, and 6 mixed profile rows. Thus finite profile selection and energy amplification are distinct tests. The result is a numerical operator-level certificate with an independent reverse/einsum replay; it is not an arithmetic cancellation theorem, a power saving, or a twin-prime proof.
+
+<!-- SOURCE_BODY_BEGIN -->
+
+# Question and scope
+
+This paper remains inside one dynamical-system family: the literal centered prime–shell blocks used in the preceding TPC-318–322 releases. TPC-322 made the output-space typing explicit. If $B_p$ is the block attached to a prime $p$, a sign vector $e=(e_p)_p$ produces the coherent operator $C_e=\sum_pe_pB_p$. Its finite energy ratio can be either below or above the direct-sum energy. That observation leaves a separate question:
+
+> After each Gram matrix is normalised by its own trace, does a declared sign law select a stable spectral shape?
+
+The distinction matters. An energy ratio measures total amplitude, whereas a normalised eigenvalue profile measures how that amplitude is distributed over rank. We test four laws already declared in TPC-322: all-plus, alternating by prime index, the mod-4 character, and a half split. “Unique” below always means unique among those four laws on the declared finite panel.
+
+# Operator and two profile coordinates
+
+Let $I_X=(X/2,X]\cap\mathbb Z$, let $\mathcal S_Q=\{p:Q<p\leq 2Q,\ p\text{ prime}\}$, and set $H=66$. For $s\in\{1,2\}$, the literal block is $$B_{p,s}(u,t)=\mathbf 1_{u\ne t}\mathbf 1_{p\nmid u}\mathbf 1_{p\nmid t}
+ \frac{pH^{2s}}{(H^2+(u-t)^2)^s}
+ \left(\mathbf 1_{u\equiv t\pmod p}-\frac1{p-1}\right).
+ \label{eq:block}$$ All matrices below are finite real matrices on $\ell^2(I_X)$. Define $$A_{\oplus}v=(B_pv)_{p\in\mathcal S_Q},\qquad
+ G_{\mathrm{direct}}=\sum_{p\in\mathcal S_Q}B_p^{\mathsf T}B_p,\qquad
+ G_e=C_e^{\mathsf T}C_e,
+ \quad C_e=\sum_{p\in\mathcal S_Q}e_pB_p.
+ \label{eq:grams}$$ Both Gram matrices are positive semidefinite. Write their eigenvalues in decreasing order and define, for any positive-trace Gram matrix $G$, $$T(G)=\operatorname{tr}(G),\qquad
+ \pi(G)=\left(\frac{\lambda_1(G)}{T(G)},\ldots,
+                  \frac{\lambda_N(G)}{T(G)}\right).
+ \label{eq:profile}$$ The two coordinates used in the experiment are $$\rho_e=\frac{T(G_e)}{T(G_{\mathrm{direct}})},
+ \qquad \pi_e=\pi(G_e),
+ \qquad \pi_\oplus=\pi(G_{\mathrm{direct}}).
+ \label{eq:coordinates}$$
+
+> **Proposition: exact amplitude–shape factorisation** For every finite block family with positive traces, $$T(G_{\mathrm{direct}})=\sum_p\|B_p\|_F^2,\qquad
+>  T(G_e)=\left\|\sum_pe_pB_p\right\|_F^2,$$ and $\pi(cG)=\pi(G)$ for every positive scalar $c$. Consequently the energy ratio $\rho_e$ and the profile $\pi_e$ are separate coordinates; knowledge of one does not determine the other.
+
+> **Proof** The first identities follow by expanding the Frobenius norms and the Gram definitions. The spectral theorem writes $G=V\operatorname{diag}(\lambda_1,\ldots,\lambda_N)V^{\mathsf T}$. Multiplication by $c>0$ multiplies both every eigenvalue and the trace by $c$, which proves the profile invariance. The two displayed coordinates therefore retain different information about the same coherent operator.
+
+For two probability profiles $p,q$ of the same dimension, put $$d_r(p,q)=\sum_{j=1}^r(p_j-q_j),\qquad 1\leq r<N.$$ We say that $p$ majorizes $q$ when all these partial differences are nonnegative. The numerical label *signed-majorizes-direct* uses tolerance $10^{-10}$; a mixed label means that both signs occur beyond that tolerance. We also record $$D_{\mathrm{TV}}(p,q)=\frac12\sum_j|p_j-q_j|,\qquad
+ D_{\mathrm{K}}(p,q)=\max_{r<N}|d_r(p,q)|,\qquad
+ D_{\mathrm{int}}(p,q)=\frac1{N-1}\sum_{r<N}|d_r(p,q)|.$$
+
+# Finite protocol and certification
+
+The frozen panel is $$X\in\{640,1280,2560\},\qquad Q\in\{24,36,54,80\},\qquad s\in\{1,2\},$$ giving 24 rows. At each row the producer accumulates the blocks in forward and reverse prime order. SciPy and NumPy symmetric eigensolvers retain three profiles: SciPy-forward, NumPy-forward, and NumPy-reverse. For every law we compare its signed profile with the direct profile at the same path. The stored scalar intervals expand the observed extrema by $10^{-12}$.
+
+The independent checker does not import the producer. It rebuilds the literal blocks in reverse prime order, forms each Gram with an explicit `einsum` contraction, and recomputes the NumPy spectrum. It verifies the metric values, interval containment, profile labels, exact small rational anchor, row geometry, and aggregate census. Long floating profiles also carry producer digests; the independent check intentionally treats last-bit digests as provenance hints rather than as a mathematical equality across different LAPACK reductions.
+
+# Results
+
+Table [1](main.tex#L168){reference-type="ref" reference="tab:law"} reports the complete finite census. The first number in the profile column is the number of rows where the signed profile majorizes the direct profile; the second is the number of mixed rows. No row in this panel has the reverse-only label.
+
+<div id="tab:law">
+
+| Sign law          | profile M/Mixed | $D_{\mathrm{TV}}$ range | $D_{\mathrm{K}}$ range | energy $\rho<1/>1$ |
+|:------------------|:---------------:|:-----------------------:|:----------------------:|:------------------:|
+| All-plus          |      24 / 0     |     .170112–.587810     |     .170112–.587810    |       3 / 21       |
+| Index alternating |      17 / 7     |     .245122–.490886     |     .245122–.362618    |       21 / 3       |
+| Mod-4 character   |      21 / 3     |     .229014–.423204     |     .212434–.423204    |       19 / 5       |
+| Half split        |      18 / 6     |     .229685–.416525     |     .197442–.416525    |       21 / 3       |
+
+: Signed profile versus direct profile on 24 literal rows.
+
+</div>
+
+The all-plus result is strict at every tested interior rank. The smallest outward lower endpoint of its cumulative prefix difference is $1.651764289\times10^{-5}$, and the three source-scale slices each contain 8 of the 8 all-plus majorization rows. Its profile distance from the direct profile is never below $0.1701$. Thus the finite shape signal is not a single top-eigenvalue coincidence.
+
+The energy and shape coordinates visibly decouple. For the all-plus law the three rows $(Q,s)=(24,1)$ have energy ratios $$0.9578172556\quad (X=640),\qquad
+ 0.9493790914\quad (X=1280),\qquad
+ 0.9457238894\quad (X=2560),$$ yet all three signed profiles majorize their direct profiles. At other shell choices the same profile label coexists with a substantially larger energy ratio; the label is therefore not an energy-threshold restatement.
+
+The alternatives provide an adversarial control. Alternation becomes mixed on the three high-shell, exponent-two rows at $Q=80$ and on the corresponding $Q=54,s=2$ rows; the mod-4 law is mixed on the three $Q=80,s=2$ rows; and the half split is mixed on six $Q=54$ or $Q=80$, $s=2$ rows. The all-plus law is the only predeclared law with a uniform profile label on the full panel. This is a panel observation, not a canonical arithmetic selection theorem.
+
+As a small exact anchor, the interval $[17,32]$ with shell $\{5,7\}$ and $s=1$ gives direct energy $1476.201999985143$ and index-alternating signed energy $1613.337756768249$ by exact rational summation before decimal display. The corresponding rational digests are stored in the certificate. This anchor checks the trace expansion independently of the large spectral panel.
+
+# Interpretation and route status
+
+The strongest positive result is an operator-level finite profile readout: all-plus coherent reassembly has a uniform majorization relation to the direct profile on the declared panel, while the exact factorisation explains why this relation can persist when total energy contracts. The strongest obstruction is equally important: the other named laws develop mixed prefix-sign patterns, so finite profile geometry alone does not choose a general sign law.
+
+Nothing in the calculation supplies a source-native Möbius or von Mangoldt weight. The PSD Gram and finite sign laws do not reassemble the arithmetic bilinear form, and no growing estimate has been proved. Accordingly, $$\begin{array}{ll}
+\texttt{TPC323\_ARITHMETIC\_ADVANCE} &= \texttt{NO},\\
+\texttt{TPC323\_FIXED\_POWER\_CREDIT} &= 0,\\
+\texttt{TPC323\_FULL\_GATE\_B} &= \texttt{OPEN},\\
+\texttt{TPC323\_TWIN\_PRIME\_RESULT} &= \texttt{NONE}.
+\end{array}$$ The next smallest meaningful test is a fresh source-panel holdout for the profile-majorization selection, followed in parallel by a source-native arithmetic $L^2$ interface. Neither should be inferred from this finite certificate.
+
+The Session-named Route-A and Route-B evaluator files are absent from the checkout. The local proof package, independent replay, stress suite, and Bridge-B checker are consequently a fail-closed local record rather than an official evaluator pass.
+
+<!-- SOURCE_BODY_END -->

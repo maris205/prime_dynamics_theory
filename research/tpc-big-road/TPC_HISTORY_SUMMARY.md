@@ -24,9 +24,9 @@ package.
 
 ## 2026-09-07 conversion batch
 
-The contiguous range TPC-418–325 has 94 mechanical full-source Markdown
+The contiguous range TPC-418–320 has 99 mechanical full-source Markdown
 reading layers at `paper/main.md`. This pass repaired the previous 64
-conversions and added TPC350–354, then converted TPC325–349. The batch record
+conversions and added TPC350–354, then converted TPC320–349. The batch record
 [TPC_CONVERSION_BATCH_2026-09-07.md](TPC_CONVERSION_BATCH_2026-09-07.md) links
 each Markdown file, conversion record, README summary, available proof/application
 notes, TeX original, and PDF original. Each record includes source and PDF
@@ -75,8 +75,15 @@ source-coordinate versus shell decompositions, and permutation prerequisites.
 It flags the TPC328 composite-coordinate twin label and TPC329's
 every-law-positive-row prose/table contradiction, with originals preserved.
 
-The archive inventory is now `full-source-md=94`,
-`reliable-full-md=0`, `partial-or-notes=728`, and
+The [TPC320–324 prerequisite audit](TPC_CONVERSION_SCOPE_TPC320_324.md)
+checks trace/dimension and projector conditions, metric normalization, and
+the sufficient common-divisibility translation control. It flags the TPC321
+README denominator mismatch, TPC323's missing reference scale if its
+reconstruction sentence is read standalone, and TPC324's coherent-trace
+qualification. Numerical path guards remain source-reported, not re-proved.
+
+The archive inventory is now `full-source-md=99`,
+`reliable-full-md=0`, `partial-or-notes=723`, and
 `source-inaccessible=1` across 823 directories. This is a searchable
 source-layer and provenance improvement, not a scientific result. The next
 batch must preserve original TeX/PDF and hand-edited files, distinguish
