@@ -19,8 +19,8 @@ found or assumed.
 
 The archive inventory is [PAPER_MATERIALS_INDEX.md](research/tpc-big-road/PAPER_MATERIALS_INDEX.md)
 and the route handoff is [TPC_HISTORY_SUMMARY.md](research/tpc-big-road/TPC_HISTORY_SUMMARY.md).
-It covers 823 paper-directory entries (420 TPC, 403 RH): 154 have verified
-mechanical full-source Markdown, 668 have partial/notes layers, and none has
+It covers 823 paper-directory entries (420 TPC, 403 RH): 159 have verified
+mechanical full-source Markdown, 663 have partial/notes layers, and none has
 the independent full-content/semantic review required for `reliable-full-md`.
 One TPC directory (`tpc-207-moving-hole-bdh-translation-compiler`) has other
 artifacts but no local Markdown, TeX, or PDF manuscript. Thus “all papers are
@@ -49,12 +49,12 @@ current claims remain in this handoff and the active paper's proof package.
 
 ## 2026-09-07 source-to-Markdown maintenance batch
 
-The contiguous range TPC-418–265 now has 154 full-source mechanical reading
+The contiguous range TPC-418–260 now has 159 full-source mechanical reading
 layers at `paper/main.md`. The repair covered 64 previous conversions and
-added TPC350–354; subsequent batches add TPC265–349. The [batch record](research/tpc-big-road/TPC_CONVERSION_BATCH_2026-09-07.md)
+added TPC350–354; subsequent batches add TPC260–349. The [batch record](research/tpc-big-road/TPC_CONVERSION_BATCH_2026-09-07.md)
 links each full text, provenance record, original summary, available package
-materials, TeX, and PDF. All 154 abstract/body formula-sequence and normalized
-plain-text roundtrips pass (8,339 math nodes total). Source/PDF hashes are
+materials, TeX, and PDF. All 159 abstract/body formula-sequence and normalized
+plain-text roundtrips pass (8,721 math nodes total). Source/PDF hashes are
 locked; source section lines map to actual extracted PDF heading hits.
 The ambiguous TPC402 match remains explicit rather than receiving a guessed page.
 
@@ -207,8 +207,16 @@ off-by-one divisor-cutoff metadata, separately from the correct beta loop.
 Saved threshold counts match, but no true-real enclosure or physical replay
 is re-proved. All five new page maps are unique; originals remain unchanged.
 
-Current coverage is `full-source-md=154`, `reliable-full-md=0`,
-`partial-or-notes=668`, and `source-inaccessible=1` across 823 entries.
+The [TPC260–264 scope audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC260_264.md)
+checks weighted Haar/DFT identities, fixed finite-lane budgets, signed versus
+positive operators, phase-character typing, and Schur dimension conditions.
+It records TPC260's one-side polygon proof gap, scalar/energy transfer limits,
+and TPC264's missing center payment in its sufficient-input corollary.
+TPC263's inherited source contracts are located, not independently re-proved.
+All five new page maps are unique; sources and certificates are unchanged.
+
+Current coverage is `full-source-md=159`, `reliable-full-md=0`,
+`partial-or-notes=663`, and `source-inaccessible=1` across 823 entries.
 Mechanical preservation is not independent mathematical verification; the
 remaining accessible originals still require conversion and per-paper review.
 This maintenance changes no theorem, certificate, route edge, or claim grade;

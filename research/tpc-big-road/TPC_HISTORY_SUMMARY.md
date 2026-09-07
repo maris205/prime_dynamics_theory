@@ -24,9 +24,9 @@ package.
 
 ## 2026-09-07 conversion batch
 
-The contiguous range TPC-418–265 has 154 mechanical full-source Markdown
+The contiguous range TPC-418–260 has 159 mechanical full-source Markdown
 reading layers at `paper/main.md`. This pass repaired the previous 64
-conversions and added TPC350–354, then converted TPC265–349. The batch record
+conversions and added TPC350–354, then converted TPC260–349. The batch record
 [TPC_CONVERSION_BATCH_2026-09-07.md](TPC_CONVERSION_BATCH_2026-09-07.md) links
 each Markdown file, conversion record, README summary, available proof/application
 notes, TeX original, and PDF original. Each record includes source and PDF
@@ -170,8 +170,16 @@ cutoff metadata without changing beta computations or certificates. Saved
 threshold counts agree; this is not a physical interval replay. All five
 new source/page maps are unique and all original materials are preserved.
 
-The archive inventory is now `full-source-md=154`,
-`reliable-full-md=0`, `partial-or-notes=668`, and
+The [TPC260–264 prerequisite audit](TPC_CONVERSION_SCOPE_TPC260_264.md)
+checks polygon/DFT normalization, finite-lane quantifiers, phase characters,
+and complex Schur geometry. It distinguishes scalar coupling from squared
+output energy and records the unpaid-center gap in TPC264's proof-package
+corollary. TPC263's source-input excerpts are located without re-proving
+their analytic assumptions. All five new page maps are unique; no original
+scientific source, certificate, or TPC418 route condition is changed.
+
+The archive inventory is now `full-source-md=159`,
+`reliable-full-md=0`, `partial-or-notes=663`, and
 `source-inaccessible=1` across 823 directories. This is a searchable
 source-layer and provenance improvement, not a scientific result. The next
 batch must preserve original TeX/PDF and hand-edited files, distinguish
