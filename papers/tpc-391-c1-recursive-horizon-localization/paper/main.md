@@ -1,77 +1,78 @@
 # TPC-391: Localizing a Recursive Horizon Obstruction
 
-> This Markdown file is a mechanical TeX-to-GFM conversion of the preserved source manuscript. The TeX and PDF originals remain authoritative; this file does not upgrade the mathematical scope.
+> Mechanical reading layer generated from the preserved TeX. Original TeX/PDF and hand-edited package materials remain authoritative. This conversion does not certify a proof or upgrade any finite, conditional, synthetic, or open claim.
 
-- **Source TeX:** [`paper/main.tex`](main.tex)
-- **Source PDF:** [`paper/main.pdf`](main.pdf)
-- **Author:** Liang Wang; School of Mathematics and Statistics, Huazhong University; of Science and Technology (HUST), Wuhan, China
-- **Source date:** September 5, 2026
-- **Repository source commit:** `95c85091ce74cf431bccd00631bae57dd1ca3833`
+- Source TeX: [main.tex](main.tex)
+- Preserved PDF: [main.pdf](main.pdf)
+
+- Conversion and audit scope: [CONVERSION_RECORD.md](../CONVERSION_RECORD.md)
+- Author metadata: Liang Wang; School of Mathematics and Statistics, Huazhong University; of Science and Technology (HUST), Wuhan, China
+- Source date: September 5, 2026
+- Source repository commit: `388a605cbc0ce49256310c2efc1f2df77edafadd`
+- Converter: `source-markdown-audit-v2`
 
 ## Abstract
 
-TPC-390 located a finite recursive forecast failure but did not identify its first horizon. TPC-391 makes that question explicit. A fresh coordinate-disjoint family is measured on a predeclared ladder from \(N=1024\) through \(N=1408\), and on two fixed holdout origins at \(N=1536\). The frozen parent slope from TPC-390 is compared with a same-family \(1024\mathbin{\to}1280\) local control in all 32 band/law/normalization cells. All 32 parent cells stay within the \(3\%\) transfer cap through \(N=1408\); exactly nine first cross the cap at \(N=1536\). The local control stays within the cap in every cell and at every horizon. The recursive/direct composition identity has residual at most \(4.44\times10^{-16}\). This is a finite horizon-localization and obstruction audit for a \(c=1\) proxy, not an asymptotic, arithmetic, or twin-prime theorem.
+TPC-390 located a finite recursive forecast failure but did not identify its first horizon. TPC-391 makes that question explicit. A fresh coordinate-disjoint family is measured on a predeclared ladder from $N=1024$ through $N=1408$, and on two fixed holdout origins at $N=1536$. The frozen parent slope from TPC-390 is compared with a same-family $1024\mathbin{\to}1280$ local control in all 32 band/law/normalization cells. All 32 parent cells stay within the $3\%$ transfer cap through $N=1408$; exactly nine first cross the cap at $N=1536$. The local control stays within the cap in every cell and at every horizon. The recursive/direct composition identity has residual at most $4.44\times10^{-16}$. This is a finite horizon-localization and obstruction audit for a $c=1$ proxy, not an asymptotic, arithmetic, or twin-prime theorem.
+
+<!-- SOURCE_BODY_BEGIN -->
 
 # Question and claim boundary
 
-TPC-390 showed that a frozen count-slope interface can miss its \(3\%\) cap after a second composition, but its endpoint-only design left the onset unresolved. We therefore predeclare a denser count ladder and freeze the TPC-390 interface before reading any current response. The new affine grid is \[a_j=3400001+401j,\qquad 0\leq j<41,\] with retained indices \(0,10,20,30,40\). Origins \(0,10,20\) are calibration origins at all four lengths \(1024,1152,1280,1408\). Origins \(30,40\) are holdouts read only at \(N=1536\). Thus the intermediate trajectory is calibration-only, while the terminal readout has a fixed holdout role. The parent slopes are read from the hashed TPC-390 certificate and are not refit on this family.
+TPC-390 showed that a frozen count-slope interface can miss its $3\%$ cap after a second composition, but its endpoint-only design left the onset unresolved. We therefore predeclare a denser count ladder and freeze the TPC-390 interface before reading any current response. The new affine grid is $$a_j=3400001+401j,\qquad 0\leq j<41,$$ with retained indices $0,10,20,30,40$. Origins $0,10,20$ are calibration origins at all four lengths $1024,1152,1280,1408$. Origins $30,40$ are holdouts read only at $N=1536$. Thus the intermediate trajectory is calibration-only, while the terminal readout has a fixed holdout role. The parent slopes are read from the hashed TPC-390 certificate and are not refit on this family.
 
-The claim firewall is \[\texttt{ARITHMETIC\_ADVANCE=NO},\qquad
+The claim firewall is $$\texttt{ARITHMETIC\_ADVANCE=NO},\qquad
  \texttt{FIXED\_POWER\_CREDIT=0},\qquad
- \texttt{FULL\_GATE\_B=OPEN}.\] The official Session evaluator files are absent in this checkout; the local Bridge-B is fail-closed repository evidence only.
+ \texttt{FULL\_GATE\_B=OPEN}.$$ The official Session evaluator files are absent in this checkout; the local Bridge-B is fail-closed repository evidence only.
 
 # Finite proxy
 
-For \(p\in(Q,2Q]\) and \(H=66\), define \[\begin{aligned}
+For $p\in(Q,2Q]$ and $H=66$, define $$\begin{aligned}
  K_p(u,v)={}&p(p/Q)^2\frac{H^2}{H^2+(u-v)^2}
  \left({\bf 1}_{p\mid u-v}-\frac{1}{p-1}\right)\\
- &\quad\cdot\mathbf{1}_{u\ne v}\mathbf{1}_{p\nmid u}\mathbf{1}_{p\nmid v}.\end{aligned}\] The row geometry is the finite square energy \(G(u)=\sum_{p}\sum_{v\in I}K_p(u,v)^2\). For each of four sign laws \(\ell\), the matrix is \(M_\ell(u,v)=\sum_p s_\ell(p)K_p(u,v)\). We report local-diagonal normalization \(M_\ell(u,v)/\sqrt{G(u)G(v)}\) and a pooled scalar normalization based only on calibration-origin geometry. The fixed band keeps block distance at most three; the full-relative band keeps all block pairs. We use \(Q\in\{2048,8192\}\) and block length 128.
+ &\quad\cdot\mathbf{1}_{u\ne v}\mathbf{1}_{p\nmid u}\mathbf{1}_{p\nmid v}.\end{aligned}$$ The row geometry is the finite square energy $G(u)=\sum_{p}\sum_{v\in I}K_p(u,v)^2$. For each of four sign laws $\ell$, the matrix is $M_\ell(u,v)=\sum_p s_\ell(p)K_p(u,v)$. We report local-diagonal normalization $M_\ell(u,v)/\sqrt{G(u)G(v)}$ and a pooled scalar normalization based only on calibration-origin geometry. The fixed band keeps block distance at most three; the full-relative band keeps all block pairs. We use $Q\in\{2048,8192\}$ and block length 128.
 
 # Forecast trajectory
 
-For a cell, let \(S_N\) be the mean band spectral diagnostic over the relevant origins at length \(N\). The parent exponent \(\alpha_{\rm P}\) is frozen from TPC-390. The local exponent uses only the current calibration pair: \[\alpha_{\rm L}=
- \frac{\log(S_{1280}/S_{1024})}{\log(1280/1024)}.\] For each \(N\in\{1152,1280,1408,1536\}\), the direct parent and local forecasts anchored at \(1024\) are \[\widehat S_{N}^{\rm P}
+For a cell, let $S_N$ be the mean band spectral diagnostic over the relevant origins at length $N$. The parent exponent $\alpha_{\rm P}$ is frozen from TPC-390. The local exponent uses only the current calibration pair: $$\alpha_{\rm L}=
+ \frac{\log(S_{1280}/S_{1024})}{\log(1280/1024)}.$$ For each $N\in\{1152,1280,1408,1536\}$, the direct parent and local forecasts anchored at $1024$ are $$\widehat S_{N}^{\rm P}
    =S_{1024}(N/1024)^{\alpha_{\rm P}},\qquad
  \widehat S_{N}^{\rm L}
-   =S_{1024}(N/1024)^{\alpha_{\rm L}}.\] For \(N\geq1280\), the recursive forecast is explicitly composed in two stages: \[\widehat S_{1280}^{(1)}=S_{1024}(1280/1024)^{\alpha_{\rm P}},\qquad
+   =S_{1024}(N/1024)^{\alpha_{\rm L}}.$$ For $N\geq1280$, the recursive forecast is explicitly composed in two stages: $$\widehat S_{1280}^{(1)}=S_{1024}(1280/1024)^{\alpha_{\rm P}},\qquad
  \widehat S_{N}^{(2)}=
- \widehat S_{1280}^{(1)}(N/1280)^{\alpha_{\rm P}}.\] The direct expression \(S_{1024}(N/1024)^{\alpha_{\rm P}}\) is retained as a composition identity control. The trajectory error is observed divided by its declared forecast, minus one. A finite pass requires absolute error at most \(0.03\); the first horizon with a failure is recorded without post-hoc removal of a cell.
+ \widehat S_{1280}^{(1)}(N/1280)^{\alpha_{\rm P}}.$$ The direct expression $S_{1024}(N/1024)^{\alpha_{\rm P}}$ is retained as a composition identity control. The trajectory error is observed divided by its declared forecast, minus one. A finite pass requires absolute error at most $0.03$; the first horizon with a failure is recorded without post-hoc removal of a cell.
 
 # Certification and finite result
 
-The canonical certificate contains 448 rows and 32 cells. The producer sums the prime shell in ascending order. An independent implementation rebuilds the same finite matrices in descending shell order, recomputes row metrics, and reconstructs each trajectory from the rows. A rational 13-point \(Q=8\) anchor at \([3400001,3400014)\) checks positive geometry and symmetry for all four laws. A 25-mutation stress suite rejects altered provenance, roles, rows, summaries, and firewall values.
+The canonical certificate contains 448 rows and 32 cells. The producer sums the prime shell in ascending order. An independent implementation rebuilds the same finite matrices in descending shell order, recomputes row metrics, and reconstructs each trajectory from the rows. A rational 13-point $Q=8$ anchor at $[3400001,3400014)$ checks positive geometry and symmetry for all four laws. A 25-mutation stress suite rejects altered provenance, roles, rows, summaries, and firewall values.
 
 The exact numerical census below is copied from the sealed canonical certificate; all decimal values are finite diagnostics, not claimed limits.
 
-| quantity                                      |                                                           result |
-| :-------------------------------------------- | ---------------------------------------------------------------: |
-| parent pass at \(N=1152,1280,1408,1536\)      |                                       32/32, 32/32, 32/32, 23/32 |
-| local pass at \(N=1152,1280,1408,1536\)       |                                       32/32, 32/32, 32/32, 32/32 |
-| recursive pass at \(N=1280,1408,1536\)        |                                              32/32, 32/32, 23/32 |
-| maximum parent error by horizon               |           0.0097231600, 0.0197998607, 0.0291714614, 0.0517335284 |
-| maximum local error by horizon                | 0.0013662092, \(2.22\times10^{-16}\), 0.0026116447, 0.0166412350 |
-| first parent cap crossing                     |                              9 cells at \(N=1536\); none earlier |
-| stable cells (\(N=1024,1152,1280,1408,1536\)) |                                24/32, 24/32, 24/32, 24/32, 30/32 |
-| spectral failures / Schur failures            |                                                   112/448, 0/448 |
-| maximum composition-identity residual         |                                           \(4.44\times10^{-16}\) |
+| quantity                                    |                                                          result|
+|:--------------------------------------------|---------------------------------------------------------------:|
+| parent pass at $N=1152,1280,1408,1536$      |                                      32/32, 32/32, 32/32, 23/32|
+| local pass at $N=1152,1280,1408,1536$       |                                      32/32, 32/32, 32/32, 32/32|
+| recursive pass at $N=1280,1408,1536$        |                                             32/32, 32/32, 23/32|
+| maximum parent error by horizon             |          0.0097231600, 0.0197998607, 0.0291714614, 0.0517335284|
+| maximum local error by horizon              |  0.0013662092, $2.22\times10^{-16}$, 0.0026116447, 0.0166412350|
+| first parent cap crossing                   |                               9 cells at $N=1536$; none earlier|
+| stable cells ($N=1024,1152,1280,1408,1536$) |                               24/32, 24/32, 24/32, 24/32, 30/32|
+| spectral failures / Schur failures          |                                                  112/448, 0/448|
+| maximum composition-identity residual       |                                            $4.44\times10^{-16}$|
 
-TPC-391 finite horizon-localization census.
+: TPC-391 finite horizon-localization census.
 
-The decisive localization is temporal: no cell crosses the parent \(3\%\) cap at \(1152\), \(1280\), or \(1408\), while nine cells cross for the first time at the fixed terminal holdout horizon \(1536\). The local control has no crossing, and its terminal maximum error is \(0.0166412350\). Thus the finite evidence separates a frozen-interface horizon mismatch from the local count trajectory on this family. It does not identify a universal source of the mismatch: band, law, normalization, and origin uniformity remain open questions.
+The decisive localization is temporal: no cell crosses the parent $3\%$ cap at $1152$, $1280$, or $1408$, while nine cells cross for the first time at the fixed terminal holdout horizon $1536$. The local control has no crossing, and its terminal maximum error is $0.0166412350$. Thus the finite evidence separates a frozen-interface horizon mismatch from the local count trajectory on this family. It does not identify a universal source of the mismatch: band, law, normalization, and origin uniformity remain open questions.
 
-The composition identity has residual at most \(4.4408920985006262\times10^{-16}\), so the observed localization is not an associativity artifact. The largest terminal parent error is the fixed-three-block, pooled, alternating-index \(Q=8192\) cell. The finite spectral and Schur counts are diagnostic envelope counts only.
+The composition identity has residual at most $4.4408920985006262\times10^{-16}$, so the observed localization is not an associativity artifact. The largest terminal parent error is the fixed-three-block, pooled, alternating-index $Q=8192$ cell. The finite spectral and Schur counts are diagnostic envelope counts only.
 
 # Conclusion and next clue
 
-TPC-391’s reusable object is a predeclared multi-horizon trajectory with a frozen parent interface and a first-crossing statistic. The strongest positive result is the \(32/32\) local-control pass at every horizon. The strongest obstruction is terminal-only failure in \(9/32\) cells, with maximum parent error \(0.0517335284\). The next clue is \[\texttt{ROUND2\_CLUE=TEST\_C1\_NORMALIZATION\_PHASE\_DIAGRAM}.\] No arithmetic power credit is assigned, and Route-A/Route-B reassembly and the twin-prime endpoint remain open.
+TPC-391’s reusable object is a predeclared multi-horizon trajectory with a frozen parent interface and a first-crossing statistic. The strongest positive result is the $32/32$ local-control pass at every horizon. The strongest obstruction is terminal-only failure in $9/32$ cells, with maximum parent error $0.0517335284$. The next clue is $$\texttt{ROUND2\_CLUE=TEST\_C1\_NORMALIZATION\_PHASE\_DIAGRAM}.$$ No arithmetic power credit is assigned, and Route-A/Route-B reassembly and the twin-prime endpoint remain open.
 
 # Reproduction
 
-All source, certificate, proof, experiment, and Bridge-B files are stored under `papers/tpc-391-c1-`
+All source, certificate, proof, experiment, and Bridge-B files are stored under `papers/tpc-391-c1-`\
 `recursive-horizon-localization/`. Run the ordinary and optimized producer, independent checker, mutation stress, and local Bridge-B commands listed in the project README. The release uses `paper/main.pdf` and `paper/paper.pdf` as byte-identical copies.
 
-## Conversion boundary
-
-The source manuscript contains no bibliography or references section. The conversion preserves the source abstract and all numbered and unnumbered manuscript sections; proof-package assumptions and the README claim firewall remain the semantic audit sources.
-
-For source locations and prerequisite checks, see [`CONVERSION_RECORD.md`](../CONVERSION_RECORD.md).
+<!-- SOURCE_BODY_END -->

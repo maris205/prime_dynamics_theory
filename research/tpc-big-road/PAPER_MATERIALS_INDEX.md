@@ -1,12 +1,12 @@
 # TPC/RH paper-materials inventory
 
-Updated: 2026-09-07. Scope: all 823 first-level paper directories currently tracked in this repository (420 TPC, 403 RH). This is an archive inventory, not a mathematical result.
+Updated: 2026-09-07. Scope: 823 paper-directory entries in the preserved inventory (420 TPC, 403 RH). This is an archive inventory, not a mathematical result.
 
 ## Reading-status rule
 
-A directory is marked `reliable-full-md` only when a Markdown file passes the conservative local test of substantial paper-like text containing an abstract and references. `full-source-md` means a source-complete mechanical Markdown conversion of the available TeX/PDF manuscript; it may still lack a bibliography when the source lacks one and it has not received a separate semantic peer review. `partial-or-notes` means Markdown exists alongside TeX/PDF, but no Markdown file passed either full-text test; it may be a README, proof package, plan, ledger, or partial conversion. `notes-only` has Markdown without a TeX/PDF source. `not-converted` has TeX/PDF but no Markdown. `source-inaccessible` has none of these. Counts are file counts inside each directory; they do not certify semantic correctness. TeX/PDF originals are retained.
+`full-source-md` means a complete mechanical reading layer of the available manuscript with a per-paper provenance record and passing conversion checks; it is not an independent verification of the source mathematics. `reliable-full-md` requires explicit full-content and semantic review evidence; an abstract, bibliography, README, or proof-package filename alone does not establish it. A source without references is preserved as such, not completed with invented references. `partial-or-notes` means Markdown exists with TeX/PDF but no verified full conversion is recorded. `notes-only` has Markdown without TeX/PDF; `not-converted` has TeX/PDF without Markdown; `source-inaccessible` has no local Markdown/TeX/PDF manuscript, though its directory may contain other artifacts.
 
-Summary: `{"full-source-md":64,"partial-or-notes":758,"reliable-full-md":0,"source-inaccessible":1}`. Sixty-four current TPC manuscripts now have source-complete mechanical Markdown conversions, while the conservative reliable-full test still finds zero manuscripts with an abstract, references, and separate semantic review. Therefore the repository does not support the claim that all papers have been converted to Markdown. Most entries have a searchable project reading layer, but it is not a replacement for the original manuscript.
+Summary: `full-source-md=69`, `reliable-full-md=0`, `partial-or-notes=753`, `source-inaccessible=1`. The archive is not fully converted or independently reviewed. The full-source rows link to mechanical conversions, including source issues explicitly preserved in the [repair audit](TPC_MAINTENANCE_REPAIR_2026-09-07.md). Original TeX/PDF and hand-edited materials remain authoritative. File counts are actual current files under each inventoried directory, including preserved build artifacts, not fixed package-size assumptions or mathematical correctness checks.
 
 | Program | Paper directory | PDF | TeX | MD | Status | Representative Markdown |
 |---|---|---:|---:|---:|---|---|
@@ -693,21 +693,21 @@ Summary: `{"full-source-md":64,"partial-or-notes":758,"reliable-full-md":0,"sour
 | TPC | `tpc-348-position-aware-mask-defect-lower-witness` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
 | TPC | `tpc-349-prime-balanced-signed-defect-witness` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
 | TPC | `tpc-35-critical-crt-coefficient-gate` | 1 | 11 | 1 | `partial-or-notes` | `README.md` |
-| TPC | `tpc-350-fresh-growth-signed-incidence` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-351-reciprocal-shell-contrast` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-352-reciprocal-shell-adversarial-holdout` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-353-source-native-masked-l2-polarization` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-354-higher-origin-masked-l2-holdout` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-355-position-aware-mask-energy-normalization` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
-| TPC | `tpc-356-geometry-adversarial-normalization-holdout` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
-| TPC | `tpc-357-operator-norm-scale-ladder` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
-| TPC | `tpc-358-fresh-origin-spectral-holdout` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
-| TPC | `tpc-359-geometry-adversarial-high-origin-holdout` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-350-fresh-growth-signed-incidence` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-351-reciprocal-shell-contrast` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-352-reciprocal-shell-adversarial-holdout` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-353-source-native-masked-l2-polarization` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-354-higher-origin-masked-l2-holdout` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-355-position-aware-mask-energy-normalization` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-356-geometry-adversarial-normalization-holdout` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-357-operator-norm-scale-ladder` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-358-fresh-origin-spectral-holdout` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-359-geometry-adversarial-high-origin-holdout` | 2 | 1 | 5 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-36-soft-projective-mask-reassembly` | 1 | 10 | 1 | `partial-or-notes` | `README.md` |
-| TPC | `tpc-360-schur-tightness-law-uniform-audit` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
-| TPC | `tpc-361-independent-high-origin-tightness-replication` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
-| TPC | `tpc-362-shell-scale-cap-obstruction` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
-| TPC | `tpc-363-bulk-persistence-localization` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-360-schur-tightness-law-uniform-audit` | 2 | 1 | 5 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-361-independent-high-origin-tightness-replication` | 2 | 1 | 5 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-362-shell-scale-cap-obstruction` | 2 | 1 | 5 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-363-bulk-persistence-localization` | 2 | 1 | 5 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-364-shell-tilt-phase-diagram` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-365-beta2-fresh-holdout` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-366-beta2-higher-q-ladder` | 2 | 1 | 10 | `full-source-md` | `paper/main.md` |
@@ -833,10 +833,3 @@ Summary: `{"full-source-md":64,"partial-or-notes":758,"reliable-full-md":0,"sour
 | TPC | `tpc-98-long-constant-phase-orbit-sparsity` | 1 | 10 | 1 | `partial-or-notes` | `README.md` |
 | TPC | `tpc-99-multiplicative-resonance-incidence` | 1 | 11 | 1 | `partial-or-notes` | `README.md` |
 | TPC | `tpc-mvp1-fixed-shift-proof-architecture` | 1 | 13 | 1 | `partial-or-notes` | `README.md` |
-
-## Interpretation and follow-up
-
-The index distinguishes presence from source completeness and reliability. A future conversion batch should prioritize entries with `not-converted`, then entries whose Markdown is only a project summary, and should preserve page/section locators when converting from TeX or PDF. It must not overwrite original TeX/PDF or upgrade a conditional, computational, or conjectural statement into a theorem. TPC current state remains in [TPC_HANDOFF.md](../../TPC_HANDOFF.md); the current TPC route is [TPC_ROUTE_MAP.md](TPC_ROUTE_MAP.md), and paper-level proof packages remain authoritative for their declared finite claims.
-
-Use [PAPER_MATERIALS_LINKS.md](PAPER_MATERIALS_LINKS.md) for per-directory
-links to the preserved Markdown reading layer, TeX original, and PDF original.

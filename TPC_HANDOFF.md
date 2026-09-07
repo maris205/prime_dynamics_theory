@@ -19,12 +19,12 @@ found or assumed.
 
 The archive inventory is [PAPER_MATERIALS_INDEX.md](research/tpc-big-road/PAPER_MATERIALS_INDEX.md)
 and the route handoff is [TPC_HISTORY_SUMMARY.md](research/tpc-big-road/TPC_HISTORY_SUMMARY.md).
-It covers 823 paper directories (420 TPC, 403 RH): 822 have Markdown alongside
-TeX/PDF but no conservative reliable-full-paper Markdown file; ten of those
-are now explicitly marked `full-source-md` for source-complete mechanical
-conversions. One TPC directory (`tpc-207-moving-hole-bdh-translation-compiler`)
-has no local Markdown, TeX, or PDF source. Thus “all papers are already
-converted to MD” is not supported by the repository. Originals remain in place.
+It covers 823 paper-directory entries (420 TPC, 403 RH): 69 have verified
+mechanical full-source Markdown, 753 have partial/notes layers, and none has
+the independent full-content/semantic review required for `reliable-full-md`.
+One TPC directory (`tpc-207-moving-hole-bdh-translation-compiler`) has other
+artifacts but no local Markdown, TeX, or PDF manuscript. Thus “all papers are
+already converted and verified” is not supported. Originals remain in place.
 
 The external PrimeGaps186 review is
 [REFERENCE_PRIMEGAPS186.md](research/tpc-big-road/REFERENCE_PRIMEGAPS186.md).
@@ -49,25 +49,30 @@ current claims remain in this handoff and the active paper's proof package.
 
 ## 2026-09-07 source-to-Markdown maintenance batch
 
-The first thirteen priority conversion batches are complete for the contiguous
-range TPC-418–355. Each preserved `paper/main.tex` in those batches was mechanically
-converted with Pandoc to `paper/main.md`, with the original title, author,
-date, abstract, and all numbered/unnumbered source sections retained. The
-per-paper [batch record](research/tpc-big-road/TPC_CONVERSION_BATCH_2026-09-07.md)
-links the source-complete Markdown, exact provenance record, README summary,
-proof package, application notes, TeX, and PDF. The conversion records contain
-source/PDF SHA-256 values, TeX line and PDF page maps, displayed-equation
-counts, and a scoped formula/prerequisite audit against the README and proof
-package.
+The contiguous range TPC-418–350 now has 69 full-source mechanical reading
+layers at `paper/main.md`. This pass repairs the previous 64 conversions and
+adds TPC350–354. The [batch record](research/tpc-big-road/TPC_CONVERSION_BATCH_2026-09-07.md)
+links each full text, provenance record, original summary, available package
+materials, TeX, and PDF. All 69 abstract/body formula-sequence and normalized
+plain-text roundtrips pass (2,881 math nodes total). Source/PDF hashes are
+locked; source section lines map to actual extracted PDF heading hits.
+The ambiguous TPC402 match remains explicit rather than receiving a guessed page.
 
-The manuscripts contain no bibliography/reference section. Accordingly the
-inventory uses `full-source-md` for these source-complete mechanical
-conversions, while `reliable-full-md` remains zero pending the conservative
-abstract-plus-references and semantic-review test. Current coverage is
-`full-source-md=64`, `reliable-full-md=0`, `partial-or-notes=758`, and
-`source-inaccessible=1` across 823 directories. This maintenance changes no
-theorem, certificate, route edge, or claim grade; original TeX/PDF and existing
-hand-edited materials remain authoritative.
+The [repair and bounded manual audit](research/tpc-big-road/TPC_MAINTENANCE_REPAIR_2026-09-07.md)
+records the fixed terminal-letter corruption, superseded generic `PASS`
+wording, TPC350–354 prerequisite checks, and unresolved source issues.
+In particular, TPC352's printed operator differs from its inspected producer;
+TPC353–354 have preserved source-notation issues. No original scientific file
+is silently corrected and no numerical certificate or production cascade is
+rerun. TPC359–363 have no separate proof package. TPC350–358 do contain source
+references/BibTeX, contrary to the earlier blanket no-bibliography statement.
+
+Current coverage is `full-source-md=69`, `reliable-full-md=0`,
+`partial-or-notes=753`, and `source-inaccessible=1` across 823 entries.
+Mechanical preservation is not independent mathematical verification; the
+remaining accessible originals still require conversion and per-paper review.
+This maintenance changes no theorem, certificate, route edge, or claim grade;
+original TeX/PDF and existing hand-edited materials remain authoritative.
 
 Continue future conversion batches from
 `research/tpc-big-road/PAPER_MATERIALS_INDEX.md`, using the batch record's

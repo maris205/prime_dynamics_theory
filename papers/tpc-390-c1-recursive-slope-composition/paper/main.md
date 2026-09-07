@@ -1,77 +1,78 @@
 # TPC-390: Recursive Composition of a Frozen Count Slope
 
-> This Markdown file is a mechanical TeX-to-GFM conversion of the preserved source manuscript. The TeX and PDF originals remain authoritative; this file does not upgrade the mathematical scope.
+> Mechanical reading layer generated from the preserved TeX. Original TeX/PDF and hand-edited package materials remain authoritative. This conversion does not certify a proof or upgrade any finite, conditional, synthetic, or open claim.
 
-- **Source TeX:** [`paper/main.tex`](main.tex)
-- **Source PDF:** [`paper/main.pdf`](main.pdf)
-- **Author:** Liang Wang; School of Mathematics and Statistics, Huazhong University; of Science and Technology (HUST), Wuhan, China
-- **Source date:** September 5, 2026
-- **Repository source commit:** `95c85091ce74cf431bccd00631bae57dd1ca3833`
+- Source TeX: [main.tex](main.tex)
+- Preserved PDF: [main.pdf](main.pdf)
+
+- Conversion and audit scope: [CONVERSION_RECORD.md](../CONVERSION_RECORD.md)
+- Author metadata: Liang Wang; School of Mathematics and Statistics, Huazhong University; of Science and Technology (HUST), Wuhan, China
+- Source date: September 5, 2026
+- Source repository commit: `388a605cbc0ce49256310c2efc1f2df77edafadd`
+- Converter: `source-markdown-audit-v2`
 
 ## Abstract
 
-TPC-389 found a finite long-horizon transfer of a frozen count slope through \(N=1280\) on a fresh coordinate family. TPC-390 tests the next minimal composition: a fourth coordinate-disjoint family is calibrated at \(N=1024,1280\) and evaluated at two holdout origins of length \(N=1536\). The 256-row, 32-cell panel separates a one-step parent forecast, a same-family local control, and a two-step application of the frozen parent slope. The recursive branch is deliberately judged against the same predeclared 3% finite cap. The one-step parent and local-control forecasts pass \(30/32\) and \(32/32\) cells, but recursive composition passes only \(23/32\), with maximum error \(0.0490741652\). The resulting finite pass/failure census is an obstruction audit, not an asymptotic law, an arithmetic estimate, or a twin-prime result.
+TPC-389 found a finite long-horizon transfer of a frozen count slope through $N=1280$ on a fresh coordinate family. TPC-390 tests the next minimal composition: a fourth coordinate-disjoint family is calibrated at $N=1024,1280$ and evaluated at two holdout origins of length $N=1536$. The 256-row, 32-cell panel separates a one-step parent forecast, a same-family local control, and a two-step application of the frozen parent slope. The recursive branch is deliberately judged against the same predeclared 3% finite cap. The one-step parent and local-control forecasts pass $30/32$ and $32/32$ cells, but recursive composition passes only $23/32$, with maximum error $0.0490741652$. The resulting finite pass/failure census is an obstruction audit, not an asymptotic law, an arithmetic estimate, or a twin-prime result.
+
+<!-- SOURCE_BODY_BEGIN -->
 
 # Question and claim boundary
 
-The previous releases transferred a finite logarithmic count-slope interface across disjoint origin families. The next natural question is whether that interface composes over another count layer. We choose, before reading any current response, the affine grid \[a_j=3000001+401j,\qquad 0\leq j<41,\] and retain indices \(0,10,20,30,40\). The first three origins are calibration origins at counts \(1024\) and \(1280\); the last two are holdouts at count \(1536\). The parent slopes are read from the hashed TPC-389 certificate and are not refit on this family.
+The previous releases transferred a finite logarithmic count-slope interface across disjoint origin families. The next natural question is whether that interface composes over another count layer. We choose, before reading any current response, the affine grid $$a_j=3000001+401j,\qquad 0\leq j<41,$$ and retain indices $0,10,20,30,40$. The first three origins are calibration origins at counts $1024$ and $1280$; the last two are holdouts at count $1536$. The parent slopes are read from the hashed TPC-389 certificate and are not refit on this family.
 
-The claim firewall is \[\texttt{ARITHMETIC\_ADVANCE=NO},\qquad
+The claim firewall is $$\texttt{ARITHMETIC\_ADVANCE=NO},\qquad
  \texttt{FIXED\_POWER\_CREDIT=0},\qquad
- \texttt{FULL\_GATE\_B=OPEN}.\] The official Session evaluator files are absent in this checkout; the local Bridge-B is fail-closed repository evidence only.
+ \texttt{FULL\_GATE\_B=OPEN}.$$ The official Session evaluator files are absent in this checkout; the local Bridge-B is fail-closed repository evidence only.
 
 # Finite proxy
 
-For \(p\in(Q,2Q]\) and \(H=66\), define \[\begin{aligned}
+For $p\in(Q,2Q]$ and $H=66$, define $$\begin{aligned}
  K_p(u,v)={}&p(p/Q)^2\frac{H^2}{H^2+(u-v)^2}
  \left({\bf 1}_{p\mid u-v}-\frac{1}{p-1}\right)\\
- &\quad\cdot\mathbf{1}_{u\ne v}\mathbf{1}_{p\nmid u}\mathbf{1}_{p\nmid v}.\end{aligned}\] The row geometry is the finite square energy \(G(u)=\sum_{p}\sum_{v\in I}K_p(u,v)^2\). For each of four sign laws \(\ell\), the matrix is \(M_\ell(u,v)=\sum_p s_\ell(p)K_p(u,v)\). We report local-diagonal normalization \(M_\ell(u,v)/\sqrt{G(u)G(v)}\) and a pooled scalar normalization based only on calibration-origin geometry. The fixed band keeps block distance at most three; the full-relative band keeps all block pairs. We use \(Q\in\{2048,8192\}\) and block length 128.
+ &\quad\cdot\mathbf{1}_{u\ne v}\mathbf{1}_{p\nmid u}\mathbf{1}_{p\nmid v}.\end{aligned}$$ The row geometry is the finite square energy $G(u)=\sum_{p}\sum_{v\in I}K_p(u,v)^2$. For each of four sign laws $\ell$, the matrix is $M_\ell(u,v)=\sum_p s_\ell(p)K_p(u,v)$. We report local-diagonal normalization $M_\ell(u,v)/\sqrt{G(u)G(v)}$ and a pooled scalar normalization based only on calibration-origin geometry. The fixed band keeps block distance at most three; the full-relative band keeps all block pairs. We use $Q\in\{2048,8192\}$ and block length 128.
 
 # Forecast interface
 
-For a cell, let \(S_N\) be the mean band spectral diagnostic over its relevant origins. The parent exponent \(\alpha_{\rm P}\) is frozen from TPC-389. The local exponent uses only the current calibration pair: \[\alpha_{\rm L}=
- \frac{\log(S_{1280}/S_{1024})}{\log(1280/1024)}.\] The one-step parent and local forecasts are \[\widehat S_{1536}^{\rm P}
+For a cell, let $S_N$ be the mean band spectral diagnostic over its relevant origins. The parent exponent $\alpha_{\rm P}$ is frozen from TPC-389. The local exponent uses only the current calibration pair: $$\alpha_{\rm L}=
+ \frac{\log(S_{1280}/S_{1024})}{\log(1280/1024)}.$$ The one-step parent and local forecasts are $$\widehat S_{1536}^{\rm P}
    =S_{1280}(1536/1280)^{\alpha_{\rm P}},\qquad
  \widehat S_{1536}^{\rm L}
-   =S_{1280}(1536/1280)^{\alpha_{\rm L}}.\] The recursive forecast is explicitly composed in two stages: \[\widehat S_{1280}^{(1)}=S_{1024}(1280/1024)^{\alpha_{\rm P}},\qquad
+   =S_{1280}(1536/1280)^{\alpha_{\rm L}}.$$ The recursive forecast is explicitly composed in two stages: $$\widehat S_{1280}^{(1)}=S_{1024}(1280/1024)^{\alpha_{\rm P}},\qquad
  \widehat S_{1536}^{(2)}=
- \widehat S_{1280}^{(1)}(1536/1280)^{\alpha_{\rm P}}.\] The direct expression \(S_{1024}(1536/1024)^{\alpha_{\rm P}}\) is retained as a composition identity control. Each holdout ratio is the observed \(S_{1536}\) divided by its declared forecast, minus one; a finite pass requires absolute error at most \(0.03\).
+ \widehat S_{1280}^{(1)}(1536/1280)^{\alpha_{\rm P}}.$$ The direct expression $S_{1024}(1536/1024)^{\alpha_{\rm P}}$ is retained as a composition identity control. Each holdout ratio is the observed $S_{1536}$ divided by its declared forecast, minus one; a finite pass requires absolute error at most $0.03$.
 
 # Certification and finite result
 
-The canonical certificate contains 256 rows and 32 cells. The producer sums the prime shell in ascending order. An independent implementation rebuilds the same finite matrices in descending shell order, recomputes the row metrics, and reconstructs every forecast cell from the rows. A rational 13-point \(Q=8\) anchor at \([3000001,3000014)\) checks positive geometry and symmetry for all four laws. A 25-mutation stress suite rejects altered provenance, roles, rows, summaries, and firewall values.
+The canonical certificate contains 256 rows and 32 cells. The producer sums the prime shell in ascending order. An independent implementation rebuilds the same finite matrices in descending shell order, recomputes the row metrics, and reconstructs every forecast cell from the rows. A rational 13-point $Q=8$ anchor at $[3000001,3000014)$ checks positive geometry and symmetry for all four laws. A 25-mutation stress suite rejects altered provenance, roles, rows, summaries, and firewall values.
 
 The exact numerical census below is copied from the sealed canonical certificate; all decimal values are finite diagnostics, not claimed limits.
 
-| quantity                              |                 result |
-| :------------------------------------ | ---------------------: |
-| parent one-step pass                  |                  30/32 |
-| local-control pass                    |                  32/32 |
-| recursive-composition pass            |                  23/32 |
-| maximum parent one-step error         |           0.0363375462 |
-| maximum local-control error           |           0.0258044386 |
-| maximum recursive-composition error   |           0.0490741652 |
-| maximum composition-identity residual | \(3.33\times10^{-16}\) |
-| stable cells (\(N=1024,1280,1536\))   |    28/32, 25/32, 26/32 |
-| spectral failures / Schur failures    |          64/256, 0/256 |
+| quantity                              |                result|
+|:--------------------------------------|---------------------:|
+| parent one-step pass                  |                 30/32|
+| local-control pass                    |                 32/32|
+| recursive-composition pass            |                 23/32|
+| maximum parent one-step error         |          0.0363375462|
+| maximum local-control error           |          0.0258044386|
+| maximum recursive-composition error   |          0.0490741652|
+| maximum composition-identity residual |  $3.33\times10^{-16}$|
+| stable cells ($N=1024,1280,1536$)     |   28/32, 25/32, 26/32|
+| spectral failures / Schur failures    |         64/256, 0/256|
 
-TPC-390 finite recursive-composition census.
+: TPC-390 finite recursive-composition census.
 
-The composition identity itself has residual at most \(3.3306690738754696\times 10^{-16}\), so the obstruction is not an associativity artifact. The largest recursive failure is fixed-three-block, pooled, alternating-index at \(Q=2048\). Recursive failures also occur in the fixed-three-block pooled all-plus, mod-\(4\), and half-split cells, and for alternating-index at \(Q=2048\) under local-diagonal and full-relative normalizations. The one-step parent failures are concentrated in the fixed-three-block pooled and full-relative pooled alternating-index \(Q=2048\) cells.
+The composition identity itself has residual at most $3.3306690738754696\times 10^{-16}$, so the obstruction is not an associativity artifact. The largest recursive failure is fixed-three-block, pooled, alternating-index at $Q=2048$. Recursive failures also occur in the fixed-three-block pooled all-plus, mod-$4$, and half-split cells, and for alternating-index at $Q=2048$ under local-diagonal and full-relative normalizations. The one-step parent failures are concentrated in the fixed-three-block pooled and full-relative pooled alternating-index $Q=2048$ cells.
 
 The interpretation is intentionally conditional on this finite panel. A recursive cap failure identifies a horizon-dependent obstruction for this declared proxy and normalization; it does not refute a different source-valid theorem. Conversely, a finite pass would not establish count or origin uniformity. In either case the inherited spectral diagnostic and the open arithmetic gates remain separate.
 
 # Conclusion and next clue
 
-TPC-390’s reusable object is a frozen parent slope with an explicit two-stage composition audit on a fresh family. The strongest positive result is the local \(32/32\) control and the numerically exact composition identity; the strongest obstruction is the \(23/32\) recursive pass census and its \(4.91\%\) maximum error. The next clue is \[\texttt{ROUND2\_CLUE=LOCALIZE\_C1\_RECURSIVE\_HORIZON\_OBSTRUCTION}.\] No arithmetic power credit is assigned, and Route-A/Route-B reassembly and the twin-prime endpoint remain open.
+TPC-390’s reusable object is a frozen parent slope with an explicit two-stage composition audit on a fresh family. The strongest positive result is the local $32/32$ control and the numerically exact composition identity; the strongest obstruction is the $23/32$ recursive pass census and its $4.91\%$ maximum error. The next clue is $$\texttt{ROUND2\_CLUE=LOCALIZE\_C1\_RECURSIVE\_HORIZON\_OBSTRUCTION}.$$ No arithmetic power credit is assigned, and Route-A/Route-B reassembly and the twin-prime endpoint remain open.
 
 # Reproduction
 
-All source, certificate, proof, experiment, and Bridge-B files are stored under `papers/tpc-390-c1-`
+All source, certificate, proof, experiment, and Bridge-B files are stored under `papers/tpc-390-c1-`\
 `recursive-slope-composition/`. Run the ordinary and optimized producer, independent checker, mutation stress, and local Bridge-B commands listed in the project README. The release uses `paper/main.pdf` and `paper/paper.pdf` as byte-identical copies.
 
-## Conversion boundary
-
-The source manuscript contains no bibliography or references section. The conversion preserves the source abstract and all numbered and unnumbered manuscript sections; proof-package assumptions and the README claim firewall remain the semantic audit sources.
-
-For source locations and prerequisite checks, see [`CONVERSION_RECORD.md`](../CONVERSION_RECORD.md).
+<!-- SOURCE_BODY_END -->

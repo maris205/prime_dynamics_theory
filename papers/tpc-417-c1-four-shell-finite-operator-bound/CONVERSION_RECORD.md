@@ -1,43 +1,68 @@
 # TPC-417 conversion record
 
-## Conversion identity
+## Provenance and status
 
-- **Repository source commit:** `dd326323c19356e401d293c1831495ba69e90e9b`
-- **TeX:** [`paper/main.tex`](paper/main.tex), SHA-256 `f92f1bd23b6c5738216ebbb91f1336f133346e4c3e3f28333ba0d560ec0fb780`
-- **PDF:** [`paper/main.pdf`](paper/main.pdf), SHA-256 `7484892d443c4115bbb7329ac9408d4aec3aef7fd46da83136f1acd5faa9e842`
-- **Converted Markdown:** [`paper/main.md`](paper/main.md)
-- **Conversion tool:** `pandoc -f latex -t gfm --wrap=none` plus a metadata/abstract preface
-- **Conversion status:** `FULL_TEX_TO_MARKDOWN_MECHANICAL`
-- **Semantic review status:** `SCOPED_REVIEW_AGAINST_README_AND_PROOF_PACKAGE`
-- **References:** no bibliography/reference section is present in the source TeX; the inventory therefore remains conservative.
+- Converter: `source-markdown-audit-v2`; Pandoc `pandoc 2.9.2.1`.
+- Repository source commit: `388a605cbc0ce49256310c2efc1f2df77edafadd`.
+- TeX: [paper/main.tex](paper/main.tex), SHA-256 `f92f1bd23b6c5738216ebbb91f1336f133346e4c3e3f28333ba0d560ec0fb780`.
 
-## Source location map
+- Preserved PDF: [paper/main.pdf](paper/main.pdf), SHA-256 `7484892d443c4115bbb7329ac9408d4aec3aef7fd46da83136f1acd5faa9e842`; 2 extracted pages. PDF is preserved, not recompiled or certified to match the TeX.
+- Reading layer: [paper/main.md](paper/main.md), SHA-256 `87b771b925f208782a6acde77f210d8add4b6c991bef72046113fe4ef92104c3`.
+- Conversion status: `FULL_TEX_TO_MARKDOWN_MECHANICAL`.
+- Semantic review: `NOT_INDEPENDENTLY_REPROVED`; automated preservation checks are not theorem or certificate validation.
+- Repair history and bounded manual source audit: [maintenance audit](../../research/tpc-big-road/TPC_MAINTENANCE_REPAIR_2026-09-07.md). Known manuscript issues remain preserved, not silently corrected.
+- Available package materials: [README.md](README.md), [PROOF_PACKAGE.md](PROOF_PACKAGE.md), [DERIVATION_PACKAGE.md](DERIVATION_PACKAGE.md), [notes/claim_firewall.md](notes/claim_firewall.md), [notes/route_evaluation.md](notes/route_evaluation.md).
+- Separate proof package: `PRESENT (availability only)`.
+- Bibliography/reference section detected: `NO`. A source bibliography receives an explicit References heading; its entries are preserved, not externally verified.
 
-| Source section | TeX line | PDF page (inferred from section text) | Match score |
-|---|---:|---:|---:|
-| `Finite model` | 20 | 1 | 2 |
-| `Exact matrix identities` | 29 | 1 | 3 |
-| `Bound` | 45 | 1 | 1 |
-| `Scope and audit` | 62 | 2 | 3 |
-| `Reproduction` | 77 | 2 | 1 |
+## Source section / PDF location map
 
-The abstract begins before the first section in the front matter. PDF page numbers refer to the preserved compiled `main.pdf`; the TeX line numbers refer to the exact source hash above.
+| Source heading | TeX line | PDF page(s) | Mapping evidence |
+|---|---:|---|---|
+| `Finite model` | 20 | 1 | `HEADING_TEXT_MATCH` |
+| `Exact matrix identities` | 29 | 1 | `HEADING_TEXT_MATCH` |
+| `Bound` | 45 | 2 | `HEADING_TEXT_MATCH` |
+| `Scope and audit` | 62 | 2 | `HEADING_TEXT_MATCH` |
+| `Reproduction` | 77 | 2 | `HEADING_TEXT_MATCH` |
 
-## Formula and theorem-prerequisite audit
+PDF mapping uses heading-text matches at extracted line boundaries; an ambiguous or absent match is explicitly unmapped. TeX line numbers refer to the hashed original above.
 
-- Source has `5` displayed-equation environment markers before conversion; the Markdown retains the corresponding TeX math as Pandoc inline/display math.
-- The converted claim was checked against the paper README and `PROOF_PACKAGE.md`; no stronger theorem, asymptotic conclusion, physical identification, arithmetic advance, fixed-power credit, Route-B closure, or twin-prime conclusion was added.
-- proof package present: `PASS`.
-- README scope boundary present: `PASS`.
-- source proof/claim symbols represented: `PASS`.
-- finite-only boundary preserved: `PASS` (source and proof package both state the finite synthetic scope).
+## Formula preservation checks
 
-### Declared prerequisites
+- Source-to-reader scope: full document body and complete abstract, with TeX macros interpreted by Pandoc; title/author/date retained separately.
+- Pandoc math-node sequence: `42` before writing and `42` after Markdown parsing; normalized TeX expressions and inline/display kinds: `PASS`.
+- Whitespace-normalized plain-text roundtrip: `PASS`.
+- Explicit source display blocks: `5`; complete catalog below. This raw-source count is not assumed equal to AST display count (e.g. align rows).
+- Math sequence SHA-256: `a4875acd1dde9509721fe73ceb4588eac0485e1d9bcaa13d2b89ec35893a7670`.
+- Source theorem/proof environment starts: none.
 
-- **Domain/premises:** use the finite synthetic assumptions stated in the source manuscript and its proof package; do not silently generalize them.
-- **Exact/computational evidence:** certificate, independent replay, and stress commands remain linked by the package README; this conversion does not reclassify computation as an arithmetic proof.
-- **Scope gate:** the source’s finite-only and open-gate language is preserved verbatim in substance.
+| Source display | Environment | TeX lines | Raw block SHA-256 |
+|---|---|---:|---|
+| D01 | \[...\] | 31–34 | `18052ab3b3833cdfa78f31da46321ef9aa9d54554d131583931dc13446413936` |
+| D02 | \[...\] | 36–38 | `e7867b0d238f1939079545024a632e049ba19dee049dec89757dbcc6c1ab1709` |
+| D03 | \[...\] | 40–44 | `5d947628f4c3841540513e28260cbac951ec1dcb588b7daed92a5e48313958ab` |
+| D04 | \[...\] | 49–51 | `eb82948b02d9819a5cd7e9b279119e18d78e090f837958cb6c98f100110ccece` |
+| D05 | \[...\] | 56–58 | `c65ae0735ce8347b41af7905f6c5684dd3007c61f4bd8198cff08fed1cd574ca` |
 
-## Audit note
+## Prerequisite / claim-boundary audit scope
 
-This record audits provenance and theorem-boundary preservation. It is not an independent proof certificate; the TeX manuscript, proof package, code, certificate, and Bridge-B checks remain the authoritative release chain.
+The automated check verifies expression retention, not mathematical implication. It does not prove the source assumptions, reproduce numerical certificates, check uniform constants, identify a physical operator, or supply arithmetic L2/fixed-power credit. The original package and current TPC418 STOP remain authoritative. Generic historical `PASS` labels have been superseded by the explicit checks above.
+
+The following are source-located keyword excerpts for manual review, not a semantic verdict (first 32 matches; the linked TeX contains the full scope):
+
+- TeX line 4: `\title{TPC-417: A Finite Full-Operator Bound for the Four-Shell C1 Proxy}`
+- TeX line 10: `finite window matrix.  For four complete prime shells and each of`
+- TeX line 13: `finite, explicit bound is obtained:`
+- TeX line 16: `$75483$ primes.  This is a finite synthetic-operator theorem only: it does`
+- TeX line 20: `\section{Finite model}`
+- TeX line 59: `The star certificate records the exact Cauchy--Schwarz envelope, not an exact`
+- TeX line 67: `modes.  The result is a full finite matrix bound for the declared synthetic`
+- TeX line 68: `proxy, not a bound uniform in growing $H,Q,N$ and not a statement about the`
+- TeX line 71: `finite full matrix bound & \texttt{PROVED\_EXACT\_FINITE}\\`
+- TeX line 72: `growing operator theorem & \texttt{OPEN}\\`
+- TeX line 73: `physical $h_0$/arithmetic sign & \texttt{OPEN}\\`
+- TeX line 75: `Route-B / twin-prime result & \texttt{OPEN} / \texttt{NONE}\\\bottomrule`
+
+## Conversion limitations
+
+- No reader warning or automated roundtrip discrepancy detected. Independent proof/semantic review is still not claimed.

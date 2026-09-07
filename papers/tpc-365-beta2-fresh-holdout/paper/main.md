@@ -1,82 +1,87 @@
 # A Response-Blind Fresh Holdout for a Finite Prime-Shell Tilt
 
-> This Markdown file is a mechanical TeX-to-GFM conversion of the preserved source manuscript. The TeX and PDF originals remain authoritative; this file does not upgrade the mathematical scope.
+> Mechanical reading layer generated from the preserved TeX. Original TeX/PDF and hand-edited package materials remain authoritative. This conversion does not certify a proof or upgrade any finite, conditional, synthetic, or open claim.
 
-- **Source TeX:** [`paper/main.tex`](main.tex)
-- **Source PDF:** [`paper/main.pdf`](main.pdf)
-- **Author:** Liang Wang; School of Mathematics and Statistics, Huazhong University of Science and Technology (HUST), Wuhan, China
-- **Source date:** September 2026
-- **Repository source commit:** `5bebbda8ae9cf0a92b28c03272f89c43e28cfbc5`
+- Source TeX: [main.tex](main.tex)
+- Preserved PDF: [main.pdf](main.pdf)
+
+- Conversion and audit scope: [CONVERSION_RECORD.md](../CONVERSION_RECORD.md)
+- Author metadata: Liang Wang; School of Mathematics and Statistics; Huazhong University of Science and Technology (HUST); Wuhan, China
+- Source date: September 2026
+- Source repository commit: `388a605cbc0ce49256310c2efc1f2df77edafadd`
+- Converter: `source-markdown-audit-v2`
 
 ## Abstract
 
 TPC-364 identified beta=2 as the only zero-failure member of a finite prime-shell tilt menu, but that phase point was measured on a reused panel. We freeze beta=2 and test it on a response-blind fresh panel. Fifty-one candidate origins are scored using only unsigned weighted square geometry on 256-point pilots; a declared greedy separation rule selects $(413342,410258,416940)$. Only then do we evaluate signed matrices. The complete replay contains 384 rows: two betas, three origins, two counts, four shell anchors, two kernel exponents, and four fixed sign laws. The inherited finite spectral cap $0.64$ is exceeded in 30 of 192 beta=0 rows and in zero of 192 beta=2 rows. The beta=2 maximum normalized spectrum is $0.61633188509480319$, differing from the TPC-364 value by only $4.4345466941875245\times10^{-5}$. This is finite, geometry-selected transfer evidence. It is not an asymptotic operator estimate, a source-valid arithmetic normalization, a Route-A/Route-B pass, or a twin-prime result.
 
+<!-- SOURCE_BODY_BEGIN -->
+
 # Question and scope
 
-The preceding TPC-362 shell ladder found that the inherited normalized cap \(0.64\) first failed at larger shell scales. TPC-363 showed that the failure survived two targeted five-percent restrictions. TPC-364 then introduced the explicit prime weight \[w_{p,\beta}=\left(\frac pQ\right)^\beta\] and found a finite beta=2 phase point on a reused panel. The present paper asks the smallest follow-up question: does the predeclared beta=2 rule remain below the same working cap on new origins?
+The preceding TPC-362 shell ladder found that the inherited normalized cap $0.64$ first failed at larger shell scales. TPC-363 showed that the failure survived two targeted five-percent restrictions. TPC-364 then introduced the explicit prime weight $$w_{p,\beta}=\left(\frac pQ\right)^\beta$$ and found a finite beta=2 phase point on a reused panel. The present paper asks the smallest follow-up question: does the predeclared beta=2 rule remain below the same working cap on new origins?
 
 The word “holdout” is qualified here. The signed response and sign laws are held out from the selection, but the origins are deliberately selected by an unsigned geometry functional. Thus this is response-blind finite transfer evidence, not a probabilistic independent-sample or uniform-in- origin theorem. No source vector, adaptive sign, or arithmetic reassembly is used. The official Session-named Route-A and Route-B evaluator files are absent from this checkout; the local Bridge-B checker is fail-closed evidence only.
 
 # Finite operator and selection rule
 
-For \(I=[x,x+N-1]\cap\mathbb Z\), let \(Q<p\leq 2Q\) range over the literal prime shell and define \[B_p(u,t)=p\frac{66^{2s}}{(66^2+(u-t)^2)^s}
+For $I=[x,x+N-1]\cap\mathbb Z$, let $Q<p\leq 2Q$ range over the literal prime shell and define $$B_p(u,t)=p\frac{66^{2s}}{(66^2+(u-t)^2)^s}
 \left({\bf1}_{p\mid u-t}-\frac1{p-1}\right)
 {\mathbf 1}_{u\ne t}{\mathbf 1}_{p\nmid u}{\mathbf 1}_{p\nmid t}.
-\label{eq:block}\] For a fixed sign law \(\varepsilon\), set \[A_{\beta,\varepsilon}=\sum_{Q<p\leq2Q}\varepsilon_p w_{p,\beta}B_p,
+\label{eq:block}$$ For a fixed sign law $\varepsilon$, set $$A_{\beta,\varepsilon}=\sum_{Q<p\leq2Q}\varepsilon_p w_{p,\beta}B_p,
 \qquad
 G_{\beta,u}=\sum_{Q<p\leq2Q}\sum_{t\in I}
                  (w_{p,\beta}B_p(u,t))^2,
-\label{eq:weighted}\] and normalize by the symmetric congruence \[A_{\beta,\varepsilon}^{\#}=
+\label{eq:weighted}$$ and normalize by the symmetric congruence $$A_{\beta,\varepsilon}^{\#}=
 D_{G_\beta}^{-1/2}A_{\beta,\varepsilon}D_{G_\beta}^{-1/2},
 \qquad D_{G_\beta}=\operatorname{diag}(G_{\beta,u}).
-\label{eq:norm}\] The geometry is a sum of rational squares in the exact finite model. Once it is positive, the two elementary finite envelopes are \[\lVert\,\cdot\,\rVert_2{T}\leq\max_u\sum_t|T(u,t)|,
+\label{eq:norm}$$ The geometry is a sum of rational squares in the exact finite model. Once it is positive, the two elementary finite envelopes are $$\lVert\,\cdot\,\rVert_2{T}\leq\max_u\sum_t|T(u,t)|,
 \qquad
 \lVert\,\cdot\,\rVert_2{T}\leq\left(\sum_{u,t}|T(u,t)|^2\right)^{1/2}.
-\label{eq:envelopes}\]
+\label{eq:envelopes}$$
 
-The response-blind selection uses candidate origins \(a_j=410001+257j\) for \(0\leq j<51\). On the pilot interval \([a_j,a_j+255]\), calculate beta=2 geometry for each \((Q,s)\in\{80,128,256,512\}\times\{1,2\}\) and define \[S(a_j)=\max_{Q,s}\frac{\max_uG_{2,u}}{\min_uG_{2,u}}.
-\label{eq:score}\] Candidates are sorted by decreasing score, with increasing origin as the tie-break, and greedily retained when at least 2048 away from every retained origin. The resulting ordered triple is \[(413342,410258,416940).\] The rule reads no signed matrix or source response. After the triple is frozen, beta=0 is added as a control and all four laws are evaluated.
+The response-blind selection uses candidate origins $a_j=410001+257j$ for $0\leq j<51$. On the pilot interval $[a_j,a_j+255]$, calculate beta=2 geometry for each $(Q,s)\in\{80,128,256,512\}\times\{1,2\}$ and define $$S(a_j)=\max_{Q,s}\frac{\max_uG_{2,u}}{\min_uG_{2,u}}.
+\label{eq:score}$$ Candidates are sorted by decreasing score, with increasing origin as the tie-break, and greedily retained when at least 2048 away from every retained origin. The resulting ordered triple is $$(413342,410258,416940).$$ The rule reads no signed matrix or source response. After the triple is frozen, beta=0 is added as a control and all four laws are evaluated.
 
 # Finite audit
 
-The protocol uses counts \(256,512\), shell anchors \(80,128,256,512\), exponents \(1,2\), and the four fixed laws all-plus, alternating shell index, the prime modulo-four character, and a half-shell split. There are \(2\cdot3\cdot2\cdot4\cdot2\cdot4=384\) rows, with a true spectrum recorded for every law. The value \(0.64\) is an inherited finite working threshold, not a claim uniform in \(Q\).
+The protocol uses counts $256,512$, shell anchors $80,128,256,512$, exponents $1,2$, and the four fixed laws all-plus, alternating shell index, the prime modulo-four character, and a half-shell split. There are $2\cdot3\cdot2\cdot4\cdot2\cdot4=384$ rows, with a true spectrum recorded for every law. The value $0.64$ is an inherited finite working threshold, not a claim uniform in $Q$.
 
 <div id="tab:beta">
 
-| \(\beta\) | max spectrum | cap failures |    max Schur | min effective fraction |
-| --------: | -----------: | -----------: | -----------: | ---------------------: |
-|     \(0\) | 1.6398827540 |           30 | 1.7173737389 |           1.0000000000 |
-|     \(2\) | 0.6163318851 |            0 | 0.6454484064 |           0.6693830009 |
+|  $\beta$|  max spectrum|  cap failures|     max Schur|  min effective fraction|
+|--------:|-------------:|-------------:|-------------:|-----------------------:|
+|      $0$|  1.6398827540|            30|  1.7173737389|            1.0000000000|
+|      $2$|  0.6163318851|             0|  0.6454484064|            0.6693830009|
 
-Beta comparison on the fresh finite panel (192 rows per beta).
+: Beta comparison on the fresh finite panel (192 rows per beta).
 
 </div>
 
-Table [2](#tab:q) shows the shell-scale comparison. Each entry aggregates three origins, two counts, two exponents, and four laws.
+Table [2](main.tex#L141){reference-type="ref" reference="tab:q"} shows the shell-scale comparison. Each entry aggregates three origins, two counts, two exponents, and four laws.
 
 <div id="tab:q">
 
-|       |              |          |              |          |
-| ----: | -----------: | -------: | -----------: | -------: |
-|       |              |          |              |          |
-| \(Q\) | max spectrum | failures | max spectrum | failures |
-|    80 | 0.6265534342 |        0 | 0.3253837005 |        0 |
-|   128 | 1.3238303046 |        6 | 0.5444783639 |        0 |
-|   256 | 1.5433463891 |       12 | 0.5820069388 |        0 |
-|   512 | 1.6398827540 |       12 | 0.6163318851 |        0 |
+|     |              |          |              |          |
+|----:|-------------:|---------:|-------------:|---------:|
+|     |              |          |              |          |
+|  $Q$|  max spectrum|  failures|  max spectrum|  failures|
+|   80|  0.6265534342|         0|  0.3253837005|         0|
+|  128|  1.3238303046|         6|  0.5444783639|         0|
+|  256|  1.5433463891|        12|  0.5820069388|         0|
+|  512|  1.6398827540|        12|  0.6163318851|         0|
 
-Maximum normalized spectrum by shell anchor.
+: Maximum normalized spectrum by shell anchor.
 
 </div>
 
-The beta=2 maximum is below the working cap and its maximum Schur value is below the finite working Schur threshold \(0.83\). Its minimum effective shell fraction is \(0.66938300094026681\), a diagnostic showing that the finite observation is not being described as a one-prime truncation. Relative to the TPC-364 beta=2 maximum \(0.61628753962786131\), the fresh-panel difference is \(0.000044345466941875245\), below the predeclared tolerance \(0.001\).
+The beta=2 maximum is below the working cap and its maximum Schur value is below the finite working Schur threshold $0.83$. Its minimum effective shell fraction is $0.66938300094026681$, a diagnostic showing that the finite observation is not being described as a one-prime truncation. Relative to the TPC-364 beta=2 maximum $0.61628753962786131$, the fresh-panel difference is $0.000044345466941875245$, below the predeclared tolerance $0.001$.
 
 The beta=0 failures remain visible on the same origins and settings. This paired control is useful evidence that the transfer is not merely a change in the row census, but it does not identify the source-valid normalization.
 
 # Exact and independent verification
 
-At \(Q=4\), exponent one, the half-open exact interval \([413372,413385)\) has shell \(\{5,7\}\). For beta=0 and beta=2, the package stores exact rational matrix and geometry digests. Symmetry is checked by exact equality and every geometry entry is positive.
+At $Q=4$, exponent one, the half-open exact interval $[413372,413385)$ has shell $\{5,7\}$. For beta=0 and beta=2, the package stores exact rational matrix and geometry digests. Symmetry is checked by exact equality and every geometry entry is positive.
 
 The producer accumulates prime blocks in increasing shell order. An independently written checker rebuilds the prime sieve, the response-blind selection, the masks, weights, four laws, geometry, Schur/Frobenius envelopes, and all 384 true spectra while traversing each shell in reverse order. It compares row keys, weights, geometry extrema, matrix metrics, phase counts, and exact anchors. A separate adversarial checker rejects 19 mutations of protocol fields, selection, row counts, phase counts, and claim firewall values while preserving the baseline digest. Normal and optimized executions are required to have empty stderr and byte-identical stdout by the local Bridge-B checker.
 
@@ -96,10 +101,12 @@ The producer accumulates prime blocks in increasing shell order. An independentl
     TPC365_FULL_GATE_B = OPEN
     TPC365_TWIN_PRIME_RESULT = NONE
 
-The strongest positive result is a fixed-rule, response-blind finite transfer on three new origins. The strongest obstruction is that the origins are still geometry-selected and the result has no growing-scale or source arithmetic control. Therefore no Route-A or Route-B gate is closed, no fixed power is credited, and no twin-prime conclusion follows. The next minimal test is to keep beta=2 fixed and extend the shell ladder beyond \(Q=512\) on a new declared scale panel. A failure should be retained as a scale obstruction rather than repaired by refitting beta.
+The strongest positive result is a fixed-rule, response-blind finite transfer on three new origins. The strongest obstruction is that the origins are still geometry-selected and the result has no growing-scale or source arithmetic control. Therefore no Route-A or Route-B gate is closed, no fixed power is credited, and no twin-prime conclusion follows. The next minimal test is to keep beta=2 fixed and extend the shell ladder beyond $Q=512$ on a new declared scale panel. A failure should be retained as a scale obstruction rather than repaired by refitting beta.
 
 # Conclusion
 
-TPC-365 removes one immediate objection to the TPC-364 phase point: the predeclared beta=2 rule survives a fresh response-blind finite panel, while the beta=0 control retains the inherited high-shell failures. The result maps a more promising branch of the finite route, but it does not bridge the arithmetic source problem. Growing-\(Q\) control, source-uniform \(L^2\), reassembly, and the twin-prime endpoint remain open.
+TPC-365 removes one immediate objection to the TPC-364 phase point: the predeclared beta=2 rule survives a fresh response-blind finite panel, while the beta=0 control retains the inherited high-shell failures. The result maps a more promising branch of the finite route, but it does not bridge the arithmetic source problem. Growing-$Q$ control, source-uniform $L^2$, reassembly, and the twin-prime endpoint remain open.
 
 `TPC365_ARITHMETIC_ADVANCE=NO`, `TPC365_FIXED_POWER_CREDIT=0`, `TPC365_FULL_GATE_B=OPEN`.
+
+<!-- SOURCE_BODY_END -->
