@@ -24,9 +24,9 @@ package.
 
 ## 2026-09-07 conversion batch
 
-The contiguous range TPC-418–295 has 124 mechanical full-source Markdown
+The contiguous range TPC-418–290 has 129 mechanical full-source Markdown
 reading layers at `paper/main.md`. This pass repaired the previous 64
-conversions and added TPC350–354, then converted TPC295–349. The batch record
+conversions and added TPC350–354, then converted TPC290–349. The batch record
 [TPC_CONVERSION_BATCH_2026-09-07.md](TPC_CONVERSION_BATCH_2026-09-07.md) links
 each Markdown file, conversion record, README summary, available proof/application
 notes, TeX original, and PDF original. Each record includes source and PDF
@@ -120,8 +120,16 @@ prefix versus its all-17 prose. The saved-prefix recount does not reproduce
 budgets, and target-image saturation is not source-budget saturation.
 The existing ridge/KKT erratum remains linked; originals are preserved.
 
-The archive inventory is now `full-source-md=124`,
-`reliable-full-md=0`, `partial-or-notes=698`, and
+The [TPC290–294 prerequisite audit](TPC_CONVERSION_SCOPE_TPC290_294.md)
+checks weighted Gram and Schur identities, nonzero normalized quantities,
+sign parity and switching, and finite sign enumeration. It qualifies TPC290's
+sparse-only wording and TPC294's tie-selected max-cut comparison. Post-document
+TPC294 source is explicitly retained, with all 124 earlier conversion pairs
+byte-identical. TPC292–293 ambiguous heading maps retain manual page-2
+supplements; no physical computation or original manuscript is rewritten.
+
+The archive inventory is now `full-source-md=129`,
+`reliable-full-md=0`, `partial-or-notes=693`, and
 `source-inaccessible=1` across 823 directories. This is a searchable
 source-layer and provenance improvement, not a scientific result. The next
 batch must preserve original TeX/PDF and hand-edited files, distinguish

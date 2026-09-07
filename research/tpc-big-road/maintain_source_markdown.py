@@ -54,6 +54,17 @@ def preserved_pdf(paper, source_commit="HEAD"):
     raise ValueError(f"no preserved paper/main.pdf or paper/paper.pdf: {paper}")
 
 
+def split_document_tail(tex):
+    """Keep material after an unambiguous document terminator as literal source."""
+    endings = list(re.finditer(r"(?m)^[ \t]*\\end\{document\}[ \t]*\r?$", tex))
+    if len(endings) > 1:
+        raise ValueError("multiple document terminators need manual source handling")
+    if not endings or not tex[endings[0].end():].strip():
+        return tex, ""
+    end = endings[0].end()
+    return tex[:end], tex[end:]
+
+
 def nodes(value, kind):
     if isinstance(value, dict):
         if value.get("t") == kind:
@@ -282,8 +293,9 @@ def convert(number, *, source_commit=None, scope_audit=None):
                                   cwd=ROOT, capture_output=True, check=True).stdout
         if digest(original) != digest(locked.read_bytes()):
             raise ValueError(f"source differs from declared commit: {locked}")
-    has_bibliography = r"\begin{thebibliography}" in tex
-    input_tex, environment_catalog = preserve_environments(tex)
+    document_tex, trailing_source = split_document_tail(tex)
+    has_bibliography = r"\begin{thebibliography}" in document_tex
+    input_tex, environment_catalog = preserve_environments(document_tex)
     input_tex = input_tex.replace(r"\begin{thebibliography}",
                             r"\section*{References}" + "\n" + r"\begin{thebibliography}")
     raw_ast, warnings = run(["pandoc", "-f", "latex", "-t", "json"],
@@ -294,6 +306,20 @@ def convert(number, *, source_commit=None, scope_audit=None):
     if not abstract:
         raise ValueError(f"{number}: abstract metadata missing; manual extraction required")
     body = copy.deepcopy(ast["blocks"])
+    tail_scope = ""
+    if trailing_source:
+        tail_line = document_tex.count("\n") + 2
+        tail_scope = (f"\n- Post-document material begins at TeX line {tail_line}; "
+                      f"suffix SHA-256 `{digest(trailing_source)}`. Retained as literal code, "
+                      "not interpreted as manuscript prose or counted as document math nodes.")
+        body.extend([
+            {"t": "Header", "c": [1, ["post-document-source", [], []],
+                                      [{"t": "Str", "c": "Post-document source (uninterpreted)"}]]},
+            {"t": "Para", "c": [{"t": "Str", "c":
+                f"The following source follows the document terminator at original TeX line {tail_line - 1}. "
+                "It is preserved literally, not silently removed or interpreted as part of the compiled manuscript."}]},
+            {"t": "CodeBlock", "c": [["", ["latex"], []], trailing_source.strip("\r\n")]},
+        ])
     if bib_files:
         body.append({"t": "Header", "c": [1, ["references", [], []], [{"t": "Str", "c": "References (preserved BibTeX)"}]]})
         for bib in bib_files:
@@ -315,7 +341,7 @@ def convert(number, *, source_commit=None, scope_audit=None):
     text_ok = text_signature(ast, all_blocks) == text_signature(ast, roundtrip["blocks"])
     if not math_ok:
         raise ValueError(f"{number}: math roundtrip mismatch ({len(expected_math)} vs {len(recovered_math)})")
-    sections = list(headings(tex))
+    sections = list(headings(document_tex))
     if has_bibliography:
         start = tex.index(r"\begin{thebibliography}")
         sections.append({"tex": "References (thebibliography)", "plain": "References",
@@ -328,12 +354,15 @@ def convert(number, *, source_commit=None, scope_audit=None):
     if pages and not pages[-1].strip():
         pages.pop()
     pdf_page_map(sections, pages)
-    displays = list(display_blocks(tex))
+    displays = list(display_blocks(document_tex))
     proofs = paper / "PROOF_PACKAGE.md"
     readme = paper / "README.md"
     tex_hash = digest(tex_path.read_bytes())
     pdf_hash = digest(pdf_path.read_bytes())
     limitations = []
+    if trailing_source:
+        limitations.append("Post-document source is retained in an explicit uninterpreted code block; "
+                            "its meaning and PDF inclusion are not inferred. See the formula-scope entry for provenance.")
     if warnings.strip():
         limitations.append("Pandoc reader warnings: " + warnings.strip())
     if not text_ok:
@@ -408,7 +437,7 @@ PDF mapping uses heading-text matches at extracted line boundaries; an ambiguous
 
 ## Formula preservation checks
 
-- Source-to-reader scope: full document body and complete abstract, with TeX macros interpreted by Pandoc; title/author/date retained separately.
+- Source-to-reader scope: full document body and complete abstract, with TeX macros interpreted by Pandoc; title/author/date retained separately.{tail_scope}
 - Pandoc math-node sequence: `{len(expected_math)}` before writing and `{len(recovered_math)}` after Markdown parsing; normalized TeX expressions and inline/display kinds: `{'PASS' if math_ok else 'FAIL'}`.
 - Whitespace-normalized plain-text roundtrip: `{'PASS' if text_ok else 'DIFF_REVIEW_REQUIRED'}`.
 - Explicit source display blocks: `{len(displays)}`; complete catalog below. This raw-source count is not assumed equal to AST display count (e.g. align rows).

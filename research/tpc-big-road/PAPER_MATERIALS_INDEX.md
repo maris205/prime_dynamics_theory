@@ -6,7 +6,7 @@ Updated: 2026-09-07. Scope: 823 paper-directory entries in the preserved invento
 
 `full-source-md` means a complete mechanical reading layer of the available manuscript with a per-paper provenance record and passing conversion checks; it is not an independent verification of the source mathematics. `reliable-full-md` requires explicit full-content and semantic review evidence; an abstract, bibliography, README, or proof-package filename alone does not establish it. A source without references is preserved as such, not completed with invented references. `partial-or-notes` means Markdown exists with TeX/PDF but no verified full conversion is recorded. `notes-only` has Markdown without TeX/PDF; `not-converted` has TeX/PDF without Markdown; `source-inaccessible` has no local Markdown/TeX/PDF manuscript, though its directory may contain other artifacts.
 
-Summary: `full-source-md=124`, `reliable-full-md=0`, `partial-or-notes=698`, `source-inaccessible=1`. The archive is not fully converted or independently reviewed. The full-source rows link to mechanical conversions, including source issues explicitly preserved in the [repair audit](TPC_MAINTENANCE_REPAIR_2026-09-07.md). Original TeX/PDF and hand-edited materials remain authoritative. File counts are actual current files under each inventoried directory, including preserved build artifacts, not fixed package-size assumptions or mathematical correctness checks.
+Summary: `full-source-md=129`, `reliable-full-md=0`, `partial-or-notes=693`, `source-inaccessible=1`. The archive is not fully converted or independently reviewed. The full-source rows link to mechanical conversions, including source issues explicitly preserved in the [repair audit](TPC_MAINTENANCE_REPAIR_2026-09-07.md). Original TeX/PDF and hand-edited materials remain authoritative. File counts are actual current files under each inventoried directory, including preserved build artifacts, not fixed package-size assumptions or mathematical correctness checks.
 
 | Program | Paper directory | PDF | TeX | MD | Status | Representative Markdown |
 |---|---|---:|---:|---:|---|---|
@@ -626,11 +626,11 @@ Summary: `full-source-md=124`, `reliable-full-md=0`, `partial-or-notes=698`, `so
 | TPC | `tpc-288-growing-shell-gram-obstruction` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
 | TPC | `tpc-289-cross-prime-gram-coherence` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
 | TPC | `tpc-29-content-rich-sparse-fibers` | 1 | 10 | 1 | `partial-or-notes` | `README.md` |
-| TPC | `tpc-290-adaptive-shell-weighting-obstruction` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-291-signed-schur-cancellation-atlas` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-292-three-prime-sign-frustration-atlas` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-293-signed-shell-maxcut-atlas` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
-| TPC | `tpc-294-magnitude-weighted-signed-rayleigh-atlas` | 2 | 1 | 9 | `partial-or-notes` | `DERIVATION_PACKAGE.md` |
+| TPC | `tpc-290-adaptive-shell-weighting-obstruction` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-291-signed-schur-cancellation-atlas` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-292-three-prime-sign-frustration-atlas` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-293-signed-shell-maxcut-atlas` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
+| TPC | `tpc-294-magnitude-weighted-signed-rayleigh-atlas` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-295-source-correlation-image-audit` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-296-source-norm-budget-interface` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |
 | TPC | `tpc-297-literal-source-profile-span-audit` | 2 | 1 | 11 | `full-source-md` | `paper/main.md` |

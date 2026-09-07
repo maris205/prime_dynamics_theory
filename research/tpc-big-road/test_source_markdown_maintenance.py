@@ -6,6 +6,20 @@ import maintain_source_markdown as m
 
 
 class ConversionHelpers(unittest.TestCase):
+    def test_document_tail_is_not_deleted_or_parsed(self):
+        tex = "body\n" + r"\end{document}" + "\n`broken_token`\n"
+        document, tail = m.split_document_tail(tex)
+        self.assertEqual(document + tail, tex)
+        self.assertEqual(tail, "\n`broken_token`\n")
+
+    def test_empty_document_tail_is_byte_unchanged(self):
+        tex = "body\n" + r"\end{document}" + "\n\n"
+        self.assertEqual(m.split_document_tail(tex), (tex, ""))
+
+    def test_ambiguous_document_terminators_fail_closed(self):
+        with self.assertRaisesRegex(ValueError, "multiple document terminators"):
+            m.split_document_tail((r"\end{document}" + "\n") * 2)
+
     def test_terminal_letters_are_not_whitespace(self):
         self.assertEqual(m.normalize_eof("text  \nhighest\t\nt\n\n"), "text\nhighest\nt\n")
 
@@ -56,6 +70,16 @@ class ConversionHelpers(unittest.TestCase):
 
 
 class ConversionIntegration(unittest.TestCase):
+    def test_post_document_source_retained_with_scope(self):
+        paper, md, record, report = m.convert(294, source_commit="7bba57e68d04514ee33ab2192a507a1f4edfebab")
+        _, tail = m.split_document_tail((paper / 'paper/main.tex').read_text())
+        self.assertIn(tail.strip("\r\n"), md)
+        self.assertIn("Post-document source (uninterpreted)", md)
+        self.assertIn("begins at TeX line 252", record)
+        self.assertIn(m.digest(tail), record)
+        self.assertTrue(report['text_roundtrip'])
+        self.assertEqual(report['status'], 'FULL_TEX_TO_MARKDOWN_MECHANICAL')
+
     def test_original_paper_pdf_fallback_keeps_provenance(self):
         paper, md, record, report = m.convert(305, source_commit="ed725e6537012bd17a32d061d9d8e6dd3b253613")
         self.assertEqual(m.preserved_pdf(paper), paper / 'paper/paper.pdf')
