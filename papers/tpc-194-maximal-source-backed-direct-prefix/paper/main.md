@@ -1,0 +1,100 @@
+# **The Maximal Source-Backed Direct Prefix: Per-Packet Phase Completion and Formula-Type Separation**
+
+> Mechanical reading layer generated from the preserved TeX. Original TeX/PDF and hand-edited package materials remain authoritative. This conversion does not certify a proof or upgrade any finite, conditional, synthetic, or open claim.
+
+- Source TeX: [main.tex](../main.tex)
+- Preserved PDF: [tpc-194-maximal-source-backed-direct-prefix.pdf](../tpc-194-maximal-source-backed-direct-prefix.pdf)
+- Bibliography source: [references.bib](../references.bib)
+- Conversion and audit scope: [CONVERSION_RECORD.md](../CONVERSION_RECORD.md)
+- Author metadata: Liang Wang; Huazhong University of Science and Technology
+- Source date: July 2026
+- Source repository commit: `ab23455ba941e5a14ded27d49de0e874aee811ac`
+- Converter: `source-markdown-audit-v2`
+
+## Abstract
+
+The physical determinant-two summand and additive atom can be written without placeholders for each resolved packet key. This does not freeze a production packet schedule, uniform constant, positive exponent, common parameter range, or complete loss ledger. The classification is `FORMULA_RECONSTRUCTION_L1` and the verdict is `FORMULA_COMPLETE_PER_PACKET_L1`. No program-positive L2 claim or endpoint exponent credit is made.
+
+<!-- SOURCE_BODY_BEGIN -->
+
+# Target contract and source boundary
+
+The target has six simultaneous axes: actual fixed-$h_0$ packet, source-locked named physical atom, every deterministic prefix, every deterministic scale, a fixed-$X$ power at that atom, and actual active support. The value $h_0=2$ is source-backed data only. Repository hashes are integrity locks, not theorem evidence. TPC-193’s declared seven-source corpus remains <span class="smallcaps">stop-scoped</span> `\citep{WangTPC193}`.
+
+# Resolved packet and physical coefficient
+
+Fix a resolved key $\xi=(\theta,c,\kappa,r)$, its source-backed interval $I_{\xi,X}$, and the literal affine pair $$D_\xi(z)=d_\xi+s_\xi z,\qquad
+ V_\xi(z)=u_\xi+a_\xi z,\qquad
+ s_\xi u_\xi-a_\xi d_\xi=2.$$ Write $b=c\kappa$, $B_\xi:=B_{\theta,b}$, and let $\widetilde r$ be the source-defined signed lift of $r$. Define $$\Omega_\xi:=\ell_\theta v_\theta\sigma_\theta B_{\theta,b}.$$ Retain, without renaming, the locked fields $\varepsilon_\theta,\ell_\theta,v_\theta,\sigma_\theta$ and $\tau_\xi,\zeta_{\xi,X}$ attached to this resolved key `\citep{WangTPC93,WangTPC94,WangTPC108,WangTPC127}`. The maximal coefficient recoverable from the locked formula chain is $$A_{\xi,X}(z)=
+ \mu(D_\xi(z))\mu(V_\xi(z))
+ \mathbf 1_{(B_\xi,V_\xi(z))=1}
+ \chi_\theta(\tau_\xi+B_\xi z)
+ W_{\theta,X}(\tau_\xi+B_\xi z).$$ No factor in this display is deleted or absorbed into an unnamed weight. The corresponding symbolic packet atom is $$\alpha_{\xi,X}\equiv
+ \frac{\varepsilon_\theta\widetilde r\,\Omega_\xi}{c q_X}\pmod 1,$$ and the outer physical multiplier is $$\mathfrak c_{\xi,X}
+ =c_{\theta,X}\mu(\kappa)\mu(B_\xi)
+  \mathfrak m_{K,X}(r)\zeta_{\xi,X}.$$
+
+# The maximal per-packet contribution
+
+For every $T\in I_{\xi,X}$, the source-backed decorated inner prefix is $$\label{eq:physical-prefix}
+ S_{\xi,X}^{\leq T}
+ =\sum_{\substack{z\in I_{\xi,X}\\z\leq T}}
+ A_{\xi,X}(z)\mathrm{e}(-\alpha_{\xi,X}z).$$ The complete per-key physical contribution is $$\label{eq:physical-contribution}
+ P_{\xi,X}^{\leq T}
+ =\mathfrak c_{\xi,X}S_{\xi,X}^{\leq T}.$$ Equation [\[eq:physical-prefix\]](../main.tex#L75){reference-type="eqref" reference="eq:physical-prefix"} supplies a literal domain, prefix index, physical coefficient and symbolic atom for a *fixed resolved packet*. Equation [\[eq:physical-contribution\]](../main.tex#L81){reference-type="eqref" reference="eq:physical-contribution"} restores the outer multiplier. Together they are the strongest formula completion proved here.
+
+# Three noninterchangeable formula types
+
+The repository also contains $$F_N^{\rm blk}=\frac{q}{N}\sum_{N<t(z)\leq2N}
+ c_z \mathrm{e}(-\alpha z)
+\quad\hbox{and}\quad
+ F_T^{\rm cum}=\frac{q}{T}\sum_{0<t(z)\leq T}
+ c_z \mathrm{e}(-\alpha z).$$ These are respectively a terminal block and a cumulative prefix. Neither is definitionally equal to [\[eq:physical-prefix\]](../main.tex#L75){reference-type="eqref" reference="eq:physical-prefix"}. In particular, we do not set $N=T$, replace $q_X$ by $a_\xi s_\xi$, identify an archive key with a production schedule, or absorb the physical decorations into $c_z$.
+
+> **Theorem: Maximal source-backed completion** The fields domain, prefix variable, decorated determinant-two coefficient, symbolic packet atom, outer multiplier and their per-key product are complete for each resolved packet. The direct production target is not formula-complete: its named production atom, exact packet schedule, common $X/N/q$ range, uniform constant $C$, positive $\sigma$, chosen normalization and full physical loss ledger are not jointly source-locked.
+
+> **Proof** The first assertion is direct substitution through the locked affine export, phase-conductor and pullback formulas. The second is a type check against the production registry: no locked row supplies the missing crosswalk, and the three displayed sum types have different domains and normalizations. Explanatory renaming cannot create any absent field.
+
+# Loss, level and scope ledger
+
+The smallest missing literal theorem is $$\texttt{SOURCE\_\allowbreak{}LOCKED\_\allowbreak{}PRODUCTION\_\allowbreak{}PACKET\_\allowbreak{}PREFIX\_\allowbreak{}CROSSWALK}.$$ The next route is `DIRECT_FORMULA_TO_PRODUCTION_CROSSWALK`. No new method cell is stopped in this paper.
+
+The named-atom exponent credit is $0$, while the endpoint requires a strict budget greater than $1/400$; the ledger is unpaid. Block sums are not cumulative prefixes, symbolic packet atoms are not named production atoms, phase $L^2$ and almost-everywhere statements are not pointwise evaluation, and scoped method failures are not theorem or architecture failures.
+
+# Machine certificate
+
+The adjacent canonical payload freezes the formula or finite witness, exact repository-source hashes, any explicitly non-hashed external locator record, six target axes, scoped stop, route state and claim firewall. Its recursive exact schema has closed objects, exact array positions and constant leaves. The checker recomputes the finite certificate and executes ten adversarial mutations.
+
+# References (preserved BibTeX)
+
+Bibliography source: references.bib
+
+``` {.bibtex}
+@misc{WangTPC93,
+  author={Wang, Liang}, title={Literal Low-Window Affine Export}, year={2026}}
+@misc{WangTPC94,
+  author={Wang, Liang}, title={Exact Content Resonance Ledger}, year={2026}}
+@misc{WangTPC108,
+  author={Wang, Liang}, title={Literal Generic Affine Mobius Dispersion}, year={2026}}
+@misc{WangTPC127,
+  author={Wang, Liang}, title={Determinant-Two Liouville Pullback}, year={2026}}
+@misc{WangTPC130,
+  author={Wang, Liang}, title={Fejer Four-Sign H3 Gate}, year={2026}}
+@misc{WangTPC157,
+  author={Wang, Liang}, title={Literal Weight Periodic Approximation}, year={2026}}
+@misc{WangTPC159,
+  author={Wang, Liang}, title={Dyadic Shadow Prefix Lifting}, year={2026}}
+@misc{WangTPC192,
+  author={Wang, Liang}, title={MVP9 Pointwise Frontier Route Decision}, year={2026}}
+@misc{WangTPC193,
+  author={Wang, Liang}, title={Literal Fixed-Atom Candidate Mechanism Gate}, year={2026}}
+@misc{WangTPC200,
+  author={Wang, Liang}, title={Four-Form Determinant Resonance Refinement}, year={2026}}
+@misc{Menon2026,
+  author={Menon, Siddarth},
+  title={Improved Bounds for Multiplicative Functions in Almost All Short Intervals},
+  year={2026}, eprint={2607.15574}, archivePrefix={arXiv},
+  primaryClass={math.NT}}
+```
+
+<!-- SOURCE_BODY_END -->

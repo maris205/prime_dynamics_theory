@@ -1,11 +1,51 @@
 """Read-only regression tests for archival conversion; no source/build writes."""
 import json
 import unittest
+from unittest.mock import patch
 
 import maintain_source_markdown as m
 
 
 class ConversionHelpers(unittest.TestCase):
+    def test_no_font_input_is_byte_unchanged(self):
+        tex = r"\begin{document} $x$ \end{document}"
+        self.assertEqual(m.prepare_font_mapping_input(tex, m.ROOT), (tex, []))
+
+    def test_unknown_or_body_input_fails_closed(self):
+        for tex in [r"\input{body}", r"\include{body}", r"\addbibresource{refs.bib}",
+                    "\\begin{document}\n\\input{glyphtounicode}\n",
+                    "\\input{glyphtounicode}\n\\input{body}\n\\begin{document}\n",
+                    "\\input{glyphtounicode}\n\\input{glyphtounicode}\n\\begin{document}\n"]:
+            with self.subTest(tex=tex), self.assertRaisesRegex(ValueError, "external TeX"):
+                m.prepare_font_mapping_input(tex, m.ROOT)
+
+    def test_font_input_retains_lines_and_dependency_hash(self):
+        tex = "% header\n\\input{glyphtounicode}\n\\begin{document}\n$x$\n"
+        prepared, entries = m.prepare_font_mapping_input(tex, m.ROOT)
+        self.assertEqual(prepared.count("\n"), tex.count("\n"))
+        self.assertEqual(prepared.splitlines()[2:], tex.splitlines()[2:])
+        self.assertEqual(entries[0]["line"], 2)
+        self.assertEqual(entries[0]["sha256"], m.GLYPH_MAPPING_SHA256)
+        self.assertEqual(entries[0]["command"], r"\input{glyphtounicode}")
+
+    def test_shadowed_font_mapping_fails_closed(self):
+        tex = "\\input{glyphtounicode}\n\\begin{document}\n$x$\n"
+        with patch.object(m.Path, "read_bytes", return_value=b"unexpected manuscript text"):
+            with self.assertRaisesRegex(ValueError, "differs from audited SHA-256"):
+                m.prepare_font_mapping_input(tex, m.ROOT)
+
+    def test_unresolved_font_mapping_fails_closed(self):
+        tex = "\\input{glyphtounicode}\n\\begin{document}\n$x$\n"
+        with patch.object(m, "run", return_value=("", "")):
+            with self.assertRaisesRegex(ValueError, "cannot be resolved uniquely"):
+                m.prepare_font_mapping_input(tex, m.ROOT)
+
+    def test_font_mapping_primitive_redefinition_fails_closed(self):
+        tex = ("\\def\\pdfglyphtounicode#1#2{unexpected}\n"
+               "\\input{glyphtounicode}\n\\begin{document}\n$x$\n")
+        with self.assertRaisesRegex(ValueError, "external TeX"):
+            m.prepare_font_mapping_input(tex, m.ROOT)
+
     def test_numeric_math_boundary_is_whitespace_only_and_idempotent(self):
         blocks = [{"t": "Para", "c": [{"t": "Str", "c": "64"},
                   {"t": "Math", "c": [{"t": "InlineMath"}, r"\to"]},
@@ -101,6 +141,15 @@ class ConversionHelpers(unittest.TestCase):
 
 
 class ConversionIntegration(unittest.TestCase):
+    def test_glyph_map_is_scoped_not_manuscript_content(self):
+        _, md, record, report = m.convert(250, source_commit="ab23455ba941e5a14ded27d49de0e874aee811ac")
+        self.assertEqual(report["status"], "FULL_TEX_TO_MARKDOWN_MECHANICAL")
+        self.assertTrue(report["text_roundtrip"])
+        self.assertIn(r"\input{glyphtounicode}", md)
+        self.assertIn(m.GLYPH_MAPPING_SHA256, md)
+        self.assertNotIn(r"\pdfglyphtounicode{A}{0041}", md)
+        self.assertIn("non-content mapping table was not expanded", record)
+
     def test_numeric_table_arrows_preserved(self):
         _, md, record, report = m.convert(270, source_commit="6be994e34a06fda0de2ed0bcaa42ff3db716ffef")
         self.assertEqual(report["math_nodes"], 67)

@@ -38,8 +38,12 @@ skill guidance when they conflict.
 - Only one release-owning primary session may stage, commit, rebase, or push in
   this shared repository at a time.  Preserve unrelated RH work during TPC runs
   and unrelated TPC work during RH runs.
-- Across both programs, the primary may use at most three concurrent subagents;
-  the primary occupies the fourth session slot.
+- Across both programs, share one budget of at most 30 concurrently open spawned
+  agents, subject to any lower effective runtime ceiling. This user-authorized
+  ceiling is capacity, not a target. Count all open descendants and completed but
+  unclosed agents; do not multiply the budget through nested delegation. RH keeps
+  its scoped three-subagent limit below; TPC uses the adaptive allocation below.
+  Do not infer available quota or active capacity from an account-plan label.
 - Never auto-stash, reset, checkout, clean, delete, overwrite, or silently stage
   pre-existing work.  Stop when synchronization is unsafe.
 - A user-authorized root-policy reconciliation may be committed locally before
@@ -189,6 +193,34 @@ artifacts.
 - Never hard-code the current endpoint, next paper number, active STOP_SCOPED cell, or
   provenance range into durable agent configuration. Re-read them from the handoff.
 
+### TPC island-map orientation
+
+The user's seven-island/two-bridge map is the shared conceptual coordinate system
+for the TPC program, not a completion certificate or a replacement for the handoff.
+
+- Before TPC route selection, progress reporting, or roadmap discussion, read the
+  [island-map guide](research/tpc-big-road/TPC_ISLAND_MAP_GUIDE.md). It links the
+  original image and provides a text equivalent for agents without image access.
+- Keep island numbers stable: 1 arithmetic baseline; 2 analytic cancellation;
+  3 fixed atom; 4 pair-native/H1 structure; 5 nonautonomous dynamics;
+  6 the twin-prime endpoint; 7 Hénon/geometric auxiliary lifting.
+- Image **Bridge A** is the analytic collective-saving bridge from island 2 to
+  island 6; repository **Gate A and Gate B both belong inside it**. Image
+  **Bridge B** is the distinguished-arithmetic-seed genericity bridge from island 5
+  to island 6, corresponding to the repository's dynamics/C reserve. A checker or
+  release file named `Bridge-B` is not evidence that either mathematical bridge
+  or Gate B is closed.
+- Locate proposed work by island, bridge, and applicable repository gate. In route
+  summaries, distinguish a proved scoped result, an exact structural interface,
+  finite/model evidence, and the missing transfer to the physical target. Do not
+  describe every local advance as crossing a bridge or completing an island.
+- Obtain the active route, current paper, open/closed state, and reopen trigger
+  from the current handoff entry and its source artifacts. Historical map labels,
+  red crosses, drawn solid paths, and the image footer do not set current status
+  or authorize a route. Do not duplicate dynamic status in this policy or the guide.
+- Map orientation does not authorize new mathematics, publication, or reopening a
+  stopped route. Keep maintenance tasks within their requested scope.
+
 ### TPC primary-agent startup
 
 The primary agent owns repository synchronization. At the start of TPC mathematical,
@@ -224,13 +256,31 @@ passes, continue through the next finite audit, paper, validation, and release w
 asking for per-paper permission again. This authorization never supplies missing
 mathematics, expands destructive authority, or creates a paper number by itself.
 
-Use at most three spawned agents concurrently:
+Use workload-adaptive parallelism within the shared capacity limit. For a large
+TPC task with genuinely independent subtasks, prefer an initial 6--10 subagents;
+use fewer for small or tightly coupled work. Expand larger independent batches
+only when each extra agent has a distinct deliverable and the primary can review
+the results. Respect runtime limits and available compute; never fill slots merely
+because they exist. More agents do not reopen a stopped mathematical route.
+
+Core roles (not a fixed number of slots):
 
 1. `tpc_source_lock`: read-only theorem, packet, and provenance research.
 2. `tpc_proof_auditor`: independent read-only adversarial proof and schema review.
 3. `tpc_paper_writer`: the sole writer for one primary-agent-approved paper directory.
 4. `tpc_release_qa`: a post-writing release gate; schedule it only after the writer has
-   stopped, reusing one of the three subagent slots.
+   stopped. Independent read-only QA scopes may run in parallel.
+
+- Split source-lock or audit work by disjoint source ranges, exact proof obligations,
+  normalization/identification checks, or other separately reviewable outputs. Keep
+  each task bounded, source-locked, and tied to the seven-island/two-bridge map when
+  mathematical route work is involved. Do not send many agents the same vague goal.
+- Keep the critical-path decision and integration with the primary. Parallelize
+  independent side tasks without duplicating delegated work. Additional agents do
+  not authorize concurrent dependent papers or multiple writers on a shared file.
+- Close completed agents promptly after retaining their results. If runtime capacity
+  or compute is lower than expected, queue remaining tasks rather than bypassing
+  limits, increasing fan-out, or changing account settings.
 
 - Keep the main thread to conclusions, route decisions, first blockers, and final audit
   summaries. Delegate long formula checks, source scans, schema exploit reviews, build

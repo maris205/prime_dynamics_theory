@@ -1,5 +1,737 @@
 # TPC HANDOFF
 
+## 2026-09-09 continuous physical-return research: reviewed scoped results
+
+The user's follow-up authorized parent-directed continued research. This
+unnumbered cycle completed four bounded review rounds using nine delegated
+agents; all are now closed. Start with the
+[physical-return synthesis](research/tpc-big-road/research-rounds/2026-09-09-physical-return-loop/README.md)
+and [full review log](AUTO_REVIEW.md). The formal release endpoint remains
+TPC418, and the eight startup command/mode forms under its current section
+below remain authoritative. Existing papers and the earlier handoff body
+are preserved.
+
+The recovered source lock now includes the complete literal hybrid,
+\(x=2X\), exact physical interval, fixed \(h_0=2\), and inherited nonnegative
+compact Fourier profile. The profile need not be even. This resolves the
+earlier working source-definition gap, not the missing arithmetic estimate.
+
+- [Exact physical operator and row energy](research/tpc-big-road/research-rounds/2026-09-09-physical-return-loop/PROOF_PACKAGE.md):
+  \(A=T-R-\Delta\), \(0\le A+\Delta\le T\),
+  \((3/2+o(1))Q^2/\log Q\le\|A\|\ll Q^2\), and
+  \(G(u)\asymp HQ^2/\log Q\) uniformly on the full physical interval.
+  The [literal lane norms](research/tpc-big-road/research-rounds/2026-09-09-physical-return-loop/LANE_NORM_PROOF.md)
+  show why a coefficient-blind norm-product bound, including ordinary row
+  normalization, does not certify the required full-scalar fixed-power saving.
+- [Growing-rank complex theorem](research/tpc-big-road/research-rounds/2026-09-09-physical-return-loop/GROWING_RANK_PROOF.md)
+  and [separate real-witness theorem](research/tpc-big-road/research-rounds/2026-09-09-physical-return-loop/REAL_GROWING_RANK_ADDENDUM.md):
+  there are at least \(k_x=Q^2/4-x^{11/32}+O(1)\) negative directions
+  at scale \(Q^2/(2\log Q)\). Corrections of rank below \(k_x\) retain
+  that norm obstruction in the precisely stated complex- or real-rank
+  convention. No actual arithmetic lane is identified with these directions,
+  and the real quadratic identity does not replace the mixed scalar by
+  \(\operatorname{Re}A\).
+- [Exact Kloosterman emitter](research/tpc-big-road/research-rounds/2026-09-09-physical-return-loop/LOCAL_EMITTER_PROOF.md):
+  the full emitted arrays have length \(q-1\) and retain exact positive-packet
+  saturation. The [one-sided interface proof](research/tpc-big-road/research-rounds/2026-09-09-physical-return-loop/NEXT_ARITHMETIC_OBLIGATION.md)
+  shows that even two first coordinates and a complete centered second array
+  have generic Kloosterman norm \(q\). One-sided shortening alone does not
+  supply the two-critical-array theorem.
+- [Constructive partition and boundary bound](research/tpc-big-road/research-rounds/2026-09-09-physical-return-loop/CONSTRUCTIVE_PARTITION_PROOF.md):
+  an explicitly chosen admissible partition supplies uniform scaled
+  derivatives for interior cutoffs. Its weighted boundary-pair contribution
+  is bounded collectively by \(xQ^2x^{-11/64+o(1)}\), paying this particular
+  remainder within the critical-array benchmark. This is a proved scoped
+  physical support estimate, not a saving for the whole scalar or a statement
+  about an arbitrary previously chosen partition.
+- The [finite-attachment erratum](research/tpc-big-road/research-rounds/2026-09-09-physical-return-loop/FINITE_ATTACHMENT_ERRATUM.md)
+  preserves the old raw report while correcting kernel orientation and scope.
+  The conditional adaptive-prefix lemma remains conditional; its premise
+  already contains arithmetic cancellation.
+
+Map position remains island 2, toward image Bridge A / repository Gate B.
+The exact open task is a literal signed interior estimate, or a paid two-sided
+compression/residual theorem, giving
+\[
+ |\mathfrak C_x|\ll xQ^2x^{-\delta+o(1)},\qquad \delta>1/400.
+\]
+The critical-array route still owes total additional loss
+\(\ell<19/2400\), with \(\delta=1/96-\ell\); Gate A remains separately
+open. In general boundary reassembly caps the proved full saving at
+\(\min(\delta_{\rm int},11/64)\). The terminal division by
+\(x^{2/3+o(1)}\), physical error exponent \(79/96\), and strict margin
+\(0<\eta<\min\{\eta_A,\delta-1/400,419/2400\}\) remain in force.
+
+    PHYSICAL_RETURN_20260909_SOURCE_LOCK = RECOVERED_EXACT
+    PHYSICAL_RETURN_20260909_OPERATOR_RESULTS = VERIFIED_SCOPED
+    PHYSICAL_RETURN_20260909_COMPLEX_AND_REAL_RANK_BARRIER = VERIFIED_SCOPED
+    PHYSICAL_RETURN_20260909_BOUNDARY_SAVING = 11/64_SCOPED_ONLY
+    PHYSICAL_RETURN_20260909_SIGNED_INTERIOR_ESTIMATE = OPEN_UNPROVED
+    PHYSICAL_RETURN_20260909_FULL_SCALAR_FIXED_POWER_CREDIT = 0
+    PHYSICAL_RETURN_20260909_GATE_A = OPEN
+    PHYSICAL_RETURN_20260909_GATE_B = OPEN
+    PHYSICAL_RETURN_20260909_PUBLICATION_GO = NONE
+    PHYSICAL_RETURN_20260909_STATUS = STOP_SCOPED_GENERIC_NORM_REPAIRS
+
+Reopening these stopped norm methods requires an identified coefficient-sensitive
+input, a paid two-sided arithmetic decomposition, or another exact physical
+theorem that addresses the missing signed estimate. A new matrix certificate,
+rank relabeling, one-sided support bound, or reviewer score alone is not a
+trigger. This does not assert global impossibility or close unrelated routes.
+
+[Current finite diagnostics](research/tpc-big-road/research-rounds/2026-09-09-physical-return-loop/DIAGNOSTIC_RECEIPT_ROUND4.md)
+passed normal and optimized modes with identical output. The diagnostic Gaussian
+is not the source profile, and the exact one-scale prerequisite check is not a
+uniform asymptotic threshold. Raw audits remain verbatim, including one
+[source-link typo with a separate erratum](research/tpc-big-road/research-rounds/2026-09-09-physical-return-loop/SOURCE_LINK_ERRATA.md).
+The existing dirty worktree prevented safe rebase; no numbered paper, release,
+commit, push, or scientific expected-artifact rewrite was performed.
+
+
+## 2026-09-09 bounded multi-agent research reconnaissance
+
+The user explicitly authorized this research round after the maintenance-only
+work below. Eight read-only scouts and two independent proof auditors have
+completed and been closed. This entry records an unnumbered research outcome,
+not a new release or a retrospective change to TPC418's published artifacts.
+
+Start with the [ranked parent report](IDEA_REPORT.md) and
+[ten-report archive](research/tpc-big-road/research-rounds/2026-09-09-multi-agent-recon/README.md).
+The formal release endpoint remains TPC418; the current startup commands remain
+the eight command/mode forms under its current section below.
+
+- A [short-window uniform corollary](research/tpc-big-road/research-rounds/2026-09-09-multi-agent-recon/SHORT_WINDOW_COROLLARY.md)
+  of the TPC417/418 model now has an independently audited proof: for complete
+  integer shells, inherited alternating signs and CRT masks, the bound is
+  `2/sqrt(min(H,floor(R0/2))) + 192 log(4H)/H`, uniformly over complete-shell
+  prefixes and locally renormalized coordinate prefixes `R >= R0`, for one
+  absolute sufficiently-large-H threshold. Both `H` and `R0` must grow for
+  vanishing. This is a scoped positive growth consequence, not merely a finite replay.
+- A separate [long-window proof](PROOF_PACKAGE.md), with
+  [full-kernel derivation](DERIVATION_PACKAGE.md), is independently verified:
+  `H >= p_max`, full row-square energy `D`, and `mu=min_p(a_p p)` give
+  `||D^(-1/2) M D^(-1/2)|| <= 144 pi/mu < 576/mu`, uniformly over origins
+  and the declared model sign laws. Its gain comes from the denominator and
+  absolute row domination. It is not the short-window theorem on a new clock.
+- The physical-source scout supplies a restricted finite attachment with
+  explicit reweighting and kernel-multiplier costs; those costs cancel the
+  alternating-bulk gain in the proposed norm transfer. Global coverage,
+  weighted physical lanes, and the strict `delta > 1/400` budget remain unpaid.
+- The actual folded-Mobius diagonal obstruction, conditional adaptive-prefix
+  lemma, sign/CRT adversaries, and distinguished-seed obstruction remain
+  scoped as recorded in their reports. They are not general impossibility theorems.
+  The recent-literature search found no checked new direct physical input.
+
+The old TPC418 tags below describe the unchanged release/source record; do not
+use its old "growing absent" wording to deny the new scoped working corollary.
+Conversely, the corollary does not establish a new arithmetic cancellation
+mechanism or publication-level novelty. Neither analytic Gate A nor Gate B,
+nor the dynamics/C distinguished-seed bridge, is closed.
+
+    RECON_20260909_GROWING_MODEL = VERIFIED_SCOPED_TWO_REGIMES
+    RECON_20260909_PHYSICAL_TRANSFER = UNPAID
+    RECON_20260909_ARITHMETIC_ADVANCE = NO
+    RECON_20260909_FIXED_POWER_CREDIT = 0
+    RECON_20260909_PUBLICATION_GO = NONE
+    RECON_20260909_STATUS = STOP_SCOPED_PHYSICAL_TRANSFER_AND_NOVELTY_UNPAID
+
+The startup suite passed all eight required forms via two wrapper invocations
+and twelve child executions. The QA report qualifies inherited four-shell
+recomputation, standalone stress-validator coverage, and PDF-hash-only checks.
+No scientific expected artifact was rewritten to obtain a PASS.
+HEAD and fetched origin/main started at `ab23455ba941e5a14ded27d49de0e874aee811ac`;
+existing dirty work prevented safe rebase, so this round made no commit, push,
+new paper directory, or release. The earlier handoff body is preserved below.
+Reopening requires a specific source-backed physical attachment/loss theorem,
+new actual-prefix control, or signed arithmetic input; more finite certificates
+or a renamed model norm do not meet that requirement.
+
+## 2026-09-08 reconciliation of the three existing maintenance tasks
+
+This entry implements the clarified maintenance-only request. It reuses
+completed work, extends existing-paper coverage, and does not resume research
+or authorize a new paper number.
+
+| Original maintenance task | Current status | Evidence and remaining boundary |
+|---|---|---|
+| 1. Official-guidance audit/optimization of repository AGENTS.md, skill.md/SKILL.md, and workflow | `DONE_REUSED` | The policy audit and changes are already in commit `dd326323c19356e401d293c1831495ba69e90e9b`; AGENTS.md is unchanged since that audit. The repository still has one root AGENTS.md and no local skill.md/SKILL.md or standalone workflow file. Official instruction/skill guidance was rechecked for this reconciliation; no redundant policy rewrite was made. |
+| 2. Full inventory, completion, verification, indexing, and handoff of historical/paper Markdown | `IN_PROGRESS` | All 823 existing directories are inventoried. Mechanical full-source coverage now reaches TPC140–418; the latest existing-source batches are TPC140–142, TPC143–146 and TPC147–149. TPC207 includes only the critical-moving-hole manuscript. Full reliable semantic verification is not complete. The per-directory checklist below records every remaining item. |
+| 3. PrimeGaps186 reference review | `DONE_SCOPED_REUSED` | The existing review is unchanged since the same audit commit and remains pinned to source `61340d0b74163003b32756bb16e91d9209a5e330`. Its structural/source review is complete at the stated scope; full numerical and Lean/Comparator reproduction was not performed. Missing dependencies in that review are limitations, not passing receipts. |
+
+The original policy/reference evidence is retained below and in
+[REFERENCE_PRIMEGAPS186.md](research/tpc-big-road/REFERENCE_PRIMEGAPS186.md).
+The official recheck used the
+[AGENTS.md guidance](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
+and [customization overview](https://learn.chatgpt.com/docs/customization/overview),
+including scoped repository instructions and progressive skill loading.
+
+### Remaining maintenance checklist
+
+The [full per-directory checklist](research/tpc-big-road/PAPER_MATERIALS_REMAINING.md)
+enumerates all 823 directories exactly once, with status and next action.
+
+- Mechanical conversion is complete for 279 existing manuscripts, TPC140–418,
+  with TPC207 selecting only the critical-moving-hole manuscript.
+  Another 543 accessible directories need conversion: 140 TPC and 403 RH.
+- One specific source remains inaccessible:
+  [tpc-207-moving-hole-bdh-translation-compiler](papers/tpc-207-moving-hole-bdh-translation-compiler).
+  The separate critical-moving-hole paper is not this missing source.
+- `reliable-full-md=0`: all 823 entries still lack the required reliable
+  full-content/semantic review evidence, including the 279 converted entries
+  and the inaccessible source. Bounded audits do not close that requirement.
+- Resolve source wording/domain and PDF-location issues by an explicit future
+  reconciliation, preserving the originals. The batch audits retain the
+  outstanding cases; mechanical roundtrips do not adjudicate them.
+- Keep the completed policy audit and scoped PrimeGaps186 review closed unless
+  their source or task boundary changes. Optional future reproduction must use
+  the pinned toolchain and record actual outputs, not inherit a historical PASS.
+
+### Verification and preservation — completed TPC240–249 continuation
+
+TPC240–249 add 1,019 math nodes and 198 raw displayed-equation blocks over
+56 existing PDF pages. Local static TeX inputs now retain an ordered,
+commit-locked dependency ledger and original child-file/line links. The
+independent converter audit initially found three defects: conditional-input
+content loss, in-tree dependency rebinding, and non-LF line-map corruption.
+All three were repaired with fail-closed checks and independently re-tested
+in normal and optimized modes; the follow-up verdict was `ACCEPT_SCOPED`.
+That verdict covers the reported defects, not arbitrary TeX interpretation.
+
+The 58 focused maintenance tests pass in both normal and `-O` modes. Because
+the converter changed, all 169 prior Markdown/provenance pairs were replayed
+in memory and remained byte-identical, preserving 9,850 math nodes. The new
+inventory/checklist checks keep mechanical conversion separate from semantic
+review. No scientific producer/certificate, Bridge-B release cascade, TeX
+build, or PDF rendering was run or claimed by this maintenance pass.
+
+The integrated new-ten-paper check passes all 10 source locks/roundtrips and
+6,999 local-link checks across 28 documents, with no reported local path or
+source-line-link issue. Cross-document non-line fragments remain outside
+that check. All 362 pre-existing untracked files retain their original
+SHA-256 values. The entire mathematical current-section/history suffix
+retains SHA-256 `dd66286aa0d776dca879a8ee9edd650a473425b9066796049091d3df3db4c373`.
+
+### Further maintenance continuation — TPC230–239
+
+The next two existing-source batches add 1,051 math nodes and 182 displayed-
+equation blocks over 49 existing PDF pages. The
+[TPC230–234 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC230_234.md)
+records source domains, fixed-family/clock limitations, upper-versus-lower
+frame scope, and TPC230's confirmed bare-CR/malformed-subscript issue. The
+[TPC235–239 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC235_239.md)
+records the physical/model clock distinction, collision/reassembly domains,
+and TPC235's inadmissible printed fixture and wrong stated cutoffs. No
+original source is silently corrected, and neither review earns reliable
+full semantic status.
+
+TPC230's compact root input forms are expanded with ordered original-line
+provenance. Explicit CR/CRLF normalization affects only reader whitespace;
+the visible reading-layer notice and separator ledger retain the malformed
+source, raw-byte hashes, and original LF-delimited source lines. The default
+reader and source-link bounds were independently found to mishandle that
+boundary, repaired, and re-audited with verdict `ACCEPT_SCOPED`. The complete
+74-test maintenance suite passes in both normal and `-O` modes, independently
+repeated by the reviewer. The actual TPC230 line map and both CR-affected
+display hashes were checked separately. This is not arbitrary-TeX safety or
+rendered-PDF certification.
+
+All 179 previously completed TPC240–418 Markdown/provenance pairs remain
+byte-identical after the conversion extension. The parent also checked
+TPC230's direct-source versus expanded-reader formula/text agreement and
+the PDF filenames: TPC230–236's versioned main.pdf files are byte-identical
+to the reviewed paper.pdf files; TPC237–239 use preserved paper.pdf files.
+Ambiguous TPC238/239 heading matches stay explicit with manual supplements.
+
+The integrated TPC230–239 check passes 10 source locks and formula/text
+roundtrips, plus 7,145 local-link checks across 28 documents with no reported
+issue. Cross-document non-line anchors remain outside that check. Of 388
+pre-existing untracked files, 385 retain identical hashes; the only updated
+three are the explicitly extended input helper, its tests, and the refreshed
+remaining-work checklist. No pre-existing paper artifact changed. The
+mathematical current-section/history suffix retains the same SHA-256 recorded
+above, and the index remains empty.
+
+The original policy audit and scoped PrimeGaps186 review remain reused, not
+repeated. At that continuation's close, 633 accessible conversion tasks and
+all 823 reliable-review requirements remained. This maintenance
+does not run scientific producers, the Bridge-B release cascade, TeX builds,
+or PDF rendering, and creates no scientific progress or new paper number.
+
+### Further maintenance continuation — TPC220–229
+
+Ten more existing manuscripts now have complete mechanical reading layers,
+adding 716 math nodes and 111 raw display blocks over 37 preserved PDF pages.
+The [TPC220–224 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC220_224.md)
+and [TPC225–229 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC225_229.md)
+retain exact premise/convention qualifications, source discrepancies, and
+manual page locators. Ambiguous automatic headings in TPC223 and TPC226
+remain explicitly unresolved. Original sources are preserved; bounded
+source reading does not earn reliable full semantic-review status.
+
+TPC228–229's exact compact root abstract wrappers initially failed closed.
+The narrowly extended wrapper support passed all 77 focused maintenance
+tests in normal and optimized modes. Independent QA returned `ACCEPT_SCOPED`
+after 49 selected tests and 99 additional boundary/rejection probes in each
+mode. Its direct-source versus expanded-input checks preserved both ASTs,
+100 math nodes, 328 original line mappings, and 14 ordered input edges.
+Plain-writer fallback warnings were identical on both paths and are recorded
+explicitly in the audit; no rendering certification follows.
+
+The final integrated batch check passes all 10 source locks and formula/text
+roundtrips, and 6,494 local links across 28 documents with no reported issue.
+Cross-document non-line fragments remain outside that check. Both bounded
+source reviews are closed; together they read 69 original text files and
+checked 89 committed text/PDF files, including the ten byte-identical PDF
+alias pairs. Original formula/reference/table issues remain recorded, not
+silently repaired or promoted to reliable semantic status.
+
+All 189 prior TPC230–418 Markdown/provenance pairs were regenerated in memory
+and remained byte-identical, retaining 11,920 math nodes. Of the 411 existing
+untracked files, only the explicitly extended input helper, its tests, and
+the remaining-work checklist changed; the other 408 retained their hashes.
+No pre-existing paper artifact was changed. The mathematical current-section/
+history suffix retains SHA-256
+`dd66286aa0d776dca879a8ee9edd650a473425b9066796049091d3df3db4c373`.
+
+The policy audit and scoped PrimeGaps186 review remain reused. At that
+continuation's close, the checklist retained 623 accessible conversion tasks, one inaccessible source, and
+all 823 reliable full-review requirements. This is still maintenance in
+progress, with no scientific-producer run, Bridge-B release cascade, TeX
+build, PDF rendering, new theorem, or new paper number.
+
+### Further maintenance continuation — TPC210–219
+
+Ten existing manuscripts add 1,099 math nodes and 233 raw display blocks
+over 60 preserved PDF pages. The
+[TPC210–214 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC210_214.md)
+and [TPC215–219 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC215_219.md)
+record source premises, normalization/conjugation/wording discrepancies,
+missing proof packages in TPC210–212, and manual PDF locators. TPC214's
+one ambiguous automatic heading remains explicit. Both bounded source
+reviews are closed: 49 text files, 7,087 original LF lines, 63 original
+text/PDF hashes checked against baseline. TPC210–215 use paper.pdf;
+TPC216–219's committed main.pdf/paper.pdf aliases are byte-identical.
+
+The current-coverage guard detected stale counts in this handoff's later
+maintenance paragraph. It now checks the two explicitly current status
+paragraphs in this handoff and the history summary against the generated
+inventory, without rewriting historical receipts. Independent QA initially
+found that malformed duplicate fields were ignored. Counting all declared
+status assignments before numeric validation repaired that boundary; the
+follow-up verdict is ACCEPT_SCOPED. All 24 focused tests and 40 independent
+mocked-main probes pass in each of normal and optimized modes. The first
+independent harness had 10 false accepts per mode; all are now rejected.
+One follow-up hash-reconstruction diagnostic missed a blank line and was
+corrected in memory; no product or source repair followed from that error.
+This guard is not an arbitrary-Markdown parser or full semantic review.
+
+The source converter and input helper are unchanged. Existing conversions
+are preserved without unnecessary regeneration. Of 433 pre-existing
+untracked files, only the authorized remaining-work checklist is refreshed;
+the other 432 retain their hashes. No pre-existing paper artifact changed.
+TPC418's mathematical current-section/history suffix retains SHA-256
+`dd66286aa0d776dca879a8ee9edd650a473425b9066796049091d3df3db4c373`.
+At that continuation's close, the checklist had 613 accessible conversions, one inaccessible source,
+and all 823 reliable-review requirements still outstanding. The two completed
+policy/reference tasks remain reused. No scientific producer, release
+cascade, TeX build, PDF render, new theorem or new paper number is claimed.
+
+The final integrated check passes 10 source locks and formula/text roundtrips,
+6,368 local links across 28 documents, and both explicit current-coverage
+paragraph checks. No link or current-count issue remains. Cross-document
+non-line fragments are still outside the link check. The earlier integrated
+run correctly exited 1 while stale paragraphs remained; after reconciliation
+it exits 0. Mechanical conversion does not establish reliable full semantics.
+
+### Further maintenance continuation — TPC200–209
+
+Ten existing manuscripts add 683 math nodes and 149 raw display blocks
+over 46 preserved PDF pages. The
+[TPC200–204 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC200_204.md)
+and [TPC205–209 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC205_209.md)
+record 39 fully read original text files, 4,963 LF lines, and 49 original
+text/PDF files checked against baseline Git blobs. All ten lack a separate
+proof package; nine existing source/theorem/route notes in TPC207-critical
+through TPC209 provide bounded context, not substitute proof receipts.
+Every PDF page has a manual extraction-based locator. Source qualifications
+include determinant/averaging domains, separate production/fixture branches,
+TPC207's amplitude-growth premise, TPC208's terminology and TPC209's typo.
+Original sources remain unchanged, with no reliable semantic-review credit.
+
+TPC200–206 use root main.tex, references.bib and exact directory-basename
+PDFs. The converter now supports that versioned layout, retaining reading
+layers at paper/main.md with relative links back to originals. Competing
+local layouts, missing/rebound sources, and unversioned PDF fallbacks fail
+closed. Duplicate numbers require an exact --paper-dir selection; this
+batch selects tpc-207-critical-moving-hole-bdh-defect. The separate
+translation-compiler directory stays source-inaccessible and is not filled
+by another manuscript's content.
+
+All 111 named maintenance tests pass in normal and optimized modes.
+Independent QA returned ACCEPT_SCOPED after 46 selected tests and 11
+additional in-memory QA groups in each mode, covering source/PDF selection,
+directory and CLI identity, malformed overrides and inventory sibling
+isolation. Real TPC200/TPC207-critical checks retain 201 math nodes, both
+BibTeX payloads and all 21 actual critical-source labels. The verdict is
+limited to archival conversion wiring, not mathematics or rendered-PDF QA.
+
+All 209 prior TPC210–418 Markdown/provenance pairs were replayed in memory
+and remained byte-identical, with 13,735 math nodes and passing source/text
+roundtrips. The source-input helper is unchanged. Of 456 pre-existing
+untracked files, only the authorized remaining-work checklist is refreshed;
+the other 455 retain their original hashes. The new outputs are 20 reading-
+layer/provenance files, two scope audits and one layout-test file. No
+pre-existing paper artifact changed, and the index remains empty.
+
+At that continuation close, the checklist had 603 accessible conversions,
+one inaccessible source,
+and all 823 reliable full-review requirements. The completed policy audit
+and scoped PrimeGaps186 review remain reused. No scientific producer,
+release cascade, TeX build, PDF render, theorem or new paper number is
+created. The mathematical current-section/history suffix retains SHA-256
+`dd66286aa0d776dca879a8ee9edd650a473425b9066796049091d3df3db4c373`.
+
+The final live batch check exits 0: all ten source locks and formula/text
+roundtrips pass, all automatic section matches are unique, and 6,350 local
+links across 28 documents have no reported issue. Generated inventories and
+both explicitly current coverage paragraphs agree on 219 full-source,
+603 partial/notes, one inaccessible and zero reliable-reviewed entries.
+Cross-document non-line fragments remain outside that link check; no
+semantic review or rendered-PDF certification is inferred.
+
+### Further maintenance continuation — TPC190–199
+
+Ten existing manuscripts add 228 math nodes and 47 raw display blocks
+over 25 preserved PDF pages. The
+[TPC190–194 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC190_194.md)
+and [TPC195–199 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC195_199.md)
+record 30 fully read original text files, 1,904 raw LF characters, and 40
+original text/PDF files checked against baseline Git blobs. All ten use
+the supported root main.tex, references.bib and exact-basename PDF layout;
+none has a separate proof package. Every PDF page has a manual extraction-
+based locator, including subsection continuations. Bibliographies remain
+complete source payloads, not externally verified references.
+
+The source audits qualify TPC190's normalized-versus-unnormalized kernel
+wording, TPC191–192's interface/physical distinction, TPC193's distinct
+block/cumulative and external theorem branches, and TPC194's decorated
+physical prefix versus resolved packet. TPC195's real-clock tail condition,
+TPC196's determinant-two/odd-modulus domain, TPC197's nonzero atom and
+external corridor, TPC198's synthetic shared phase, and TPC199's finite
+fixture/production boundary remain explicit. No original is silently
+corrected; these bounded audits do not earn reliable semantic-review credit.
+
+The converter, input helper, batch checker and inventory generator are
+unchanged. All 24 targeted coverage, inventory and source-link tests pass
+in normal and optimized modes. The existing 219 conversion pairs were not
+regenerated or replayed in this unchanged-logic continuation. Of 479
+pre-existing untracked files, only the authorized remaining-work checklist
+is refreshed; the other 478 retain their original hashes. The new outputs
+are 20 reading-layer/provenance files and two scope audits. The index remains
+empty, and no pre-existing paper artifact is changed.
+
+At that continuation close, the checklist had 593 accessible conversions,
+one inaccessible source, and all 823 reliable full-review requirements. The completed policy
+audit and scoped PrimeGaps186 review remain reused. No scientific producer,
+release cascade, TeX build, PDF render, theorem or new paper number is
+created. The mathematical current-section/history suffix retains SHA-256
+`dd66286aa0d776dca879a8ee9edd650a473425b9066796049091d3df3db4c373`.
+
+The integrated batch check exits 0: all ten source locks and formula/text
+roundtrips pass, every automatic section match is unique, and 6,345 local
+links across 28 documents have no reported issue. Generated inventories and
+both explicitly current coverage paragraphs agree on 229 full-source,
+593 partial/notes, one inaccessible and zero reliable-reviewed entries.
+Cross-document non-line fragments remain outside that link check; neither
+mathematical verification nor rendered-PDF certification is inferred.
+
+### Further maintenance continuation — TPC180–189
+
+Ten existing manuscripts add 197 math nodes and 43 raw display blocks over
+29 preserved PDF pages. The
+[TPC180–184 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC180_184.md)
+and [TPC185–189 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC185_189.md)
+record 30 fully read original text files, 2,277 raw LF characters and 40
+original text/PDF files matching baseline Git blobs. All ten use root
+main.tex, invoked references.bib and exact-basename PDFs; none has a
+separate proof package. Complete manual extraction-based maps include
+section/reference continuations and the distinct TPC183/TPC184 page break.
+
+Source qualifications preserve the local TPC180 coprimality omission,
+TPC181's normalized schedule-dependent metric statement, TPC182's frozen-
+corpus and synthetic-fixture limits, TPC183's undisplayed common summand/
+domain, and TPC184's imported shadow/strictness wording. TPC185's finite
+indices, TPC186's separate boundary control, TPC187's synthetic comparator,
+TPC188's historical method scope and TPC189's point-evaluation domain are
+recorded without source repairs or reliable semantic-review credit.
+
+The initial link check rejected TPC181's multi-target reference: Pandoc
+had emitted one nonexistent combined anchor. A narrow converter repair
+preserves visible labels and order while linking all three to original
+lines 208, 246 and 331. It requires canonical reference metadata/text and
+unique source labels; literal comma-containing labels retain priority.
+Independent QA then found extra-payload loss in a malformed in-memory AST,
+not the real manuscript. Exact node/outer/target shape guards now reject
+those inputs without content loss.
+
+All 126 named maintenance tests pass in normal and optimized modes,
+including 15 new reference tests. Independent follow-up returned
+ACCEPT_SCOPED after 26 selected tests and 10 additional case groups passed
+in each mode. Real TPC181 retained all 61 math nodes and its 32 local links
+passed. The acceptance covers converter wiring, not mathematics or PDF
+rendering. The input helper, batch checker and inventory generator are
+unchanged.
+
+After the final guard, all 229 prior TPC190–418 Markdown/provenance pairs
+were replayed in memory: all remain byte-identical, retaining 14,646 math
+nodes with passing source/text checks. Of 501 pre-existing untracked
+files, only the authorized remaining-work checklist is refreshed; the
+other 500 retain their original hashes. New outputs are 20 reading-layer/
+provenance files, two scope audits and one reference-test file. No prior
+paper artifact changed, and the index remains empty.
+
+That batch's checklist retained 583 accessible conversions, one inaccessible
+source, and all 823 reliable full-review requirements. The completed policy
+audit and scoped PrimeGaps186 review remain reused. No scientific producer,
+release cascade, TeX build, PDF render, theorem or paper number is created.
+The mathematical current-section/history suffix retains SHA-256
+`dd66286aa0d776dca879a8ee9edd650a473425b9066796049091d3df3db4c373`.
+
+The integrated batch check exits 0: all ten source locks and formula/text
+roundtrips pass, every automatic section match is unique, and 6,401 local
+links across 28 documents have no reported issue. Generated inventories
+and both explicitly current coverage paragraphs agree on 239 full-source,
+583 partial/notes, one inaccessible and zero reliable-reviewed entries.
+Cross-document non-line fragments are not independently checked; no
+mathematical verification or rendered-PDF certification is inferred.
+
+### Further maintenance continuation — TPC170–179
+
+Ten existing manuscripts add 423 math nodes and 111 raw display blocks
+over 37 preserved PDF pages. The
+[TPC170–174 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC170_174.md)
+and [TPC175–179 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC175_179.md)
+record 30 completely read original text files, 3,874 raw LF characters
+and 40 original text/PDF files matching baseline Git blobs. All ten use
+root main.tex, invoked references.bib and exact-basename PDFs, with no
+separate proof or derivation package. Manual extraction-based maps cover
+every original section, TPC179's three subsections, floating tables,
+reference pages and page-crossing continuations.
+
+Source qualifications retain TPC170's empty-packet/domain and README
+premise omissions; TPC171's incompletely restated prefix/Abel conditions;
+TPC172's missing physical quantifier bridges; TPC173's seven-item versus
+nine-field wording; and TPC174's local-only, nonzero-rational witness
+contract. TPC175's frozen-corpus scope, TPC176's distinct coverage ledgers,
+TPC177's conditional support partition, TPC178's selector-domain wording
+and TPC179's compressed substrate scope remain explicit. Bibliographic
+title/attribution discrepancies and imported historical counts are not
+silently corrected, independently reproduced or given theorem credit.
+
+The converter, input helper, batch checker and inventory generator retain
+their starting hashes. All 24 targeted coverage/inventory/source-link
+tests pass in normal and optimized modes. The prior 239 conversion pairs
+remain preserved; neither their regeneration nor a repeat of the 126-test
+full maintenance suite is claimed. No scientific producer, release
+cascade, TeX build, PDF render or external theorem verification is run.
+
+Of 524 pre-existing untracked files, only the authorized remaining-work
+checklist is refreshed; the other 523 retain their original hashes. The
+22 new outputs are 20 reading-layer/provenance files and two scope audits.
+Original paper artifacts and the policy/reference audit remain unchanged,
+with the index empty. That batch's checklist retained 573 accessible
+conversions, one inaccessible source and all 823 reliable full-review
+requirements. The first and third maintenance tasks remain completed
+at their recorded scopes; the archive-wide second task is still in progress.
+
+No new paper number or mathematical result is created. The mathematical
+current-section/history suffix retains SHA-256
+`dd66286aa0d776dca879a8ee9edd650a473425b9066796049091d3df3db4c373`.
+The integrated batch check exits 0: all ten source locks and formula/text
+roundtrips pass, every automatic section match is unique, and 6,462 local
+links across 28 documents have no reported issue. Generated inventories
+and both explicitly current coverage paragraphs agree on 249 full-source,
+573 partial/notes, one inaccessible and zero reliable-reviewed entries.
+Cross-document non-line fragments remain outside that link check; no
+mathematical verification or rendered-PDF certification is inferred.
+
+### Further maintenance continuation — TPC160–169
+
+Ten existing manuscripts add 612 math nodes and 183 raw display blocks
+over 48 preserved PDF pages. The
+[TPC160–164 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC160_164.md)
+and [TPC165–169 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC165_169.md)
+record 30 completely read original text files, 4,959 raw LF characters
+and 40 original text/PDF files matching baseline Git blobs. All ten use
+root main.tex, invoked references.bib and exact-basename PDFs, with no
+separate proof or derivation package or invoked local TeX child.
+
+Manual extraction-based maps include every section, subsection, paragraph
+heading, reference page and cross-page continuation. They locate TPC161's
+reference section on p7 and TPC162's Endpoint V3 section on p5 while
+preserving their automatic ambiguous matches. TPC164's flattened
+exponent in extracted text is not treated as a rendered-PDF defect.
+
+Source qualifications retain TPC160's imported Abel prerequisites;
+TPC161's undefined bare-L scale and bibliography version/title conflict;
+TPC162's incompletely restated arithmetic/variation conditions; and
+TPC163–164's frozen-corpus and dictionary-relative key claims. TPC165's
+finite nonempty gluing premises, TPC166's sub-DAG scope, TPC167's block
+grid convention, TPC168's finite-registry selector limit and TPC169's
+empty-fibre/fixed-terminal scope remain explicit. Source conditions,
+phase-sign bookkeeping and citation discrepancies are recorded, not
+silently repaired or treated as independent theorem verification.
+
+The converter, input helper, batch checker and inventory generator retain
+their starting hashes. All 24 targeted coverage/inventory/source-link
+tests pass in normal and optimized modes. The prior 249 conversion pairs
+remain preserved; neither their regeneration nor a repeat of the full
+126-test maintenance suite is claimed. No scientific producer, release
+cascade, TeX build, PDF render or external theorem verification is run.
+
+Of 546 pre-existing untracked files, only the authorized remaining-work
+checklist is refreshed; the other 545 retain their original hashes. The
+22 new outputs are 20 reading-layer/provenance files and two scope audits.
+Original paper artifacts and the policy/reference audit remain unchanged,
+with the index empty. That batch's checklist retained 563 accessible
+conversions, one inaccessible source and all 823 reliable full-review
+requirements. The first and third maintenance tasks remain completed
+at their recorded scopes; the archive-wide second task is still in progress.
+
+No new paper number or mathematical result is created. The mathematical
+current-section/history suffix retains SHA-256
+`dd66286aa0d776dca879a8ee9edd650a473425b9066796049091d3df3db4c373`.
+The integrated batch check exits 0: all ten source locks and formula/text
+roundtrips pass, with the two TPC161/162 automatic ambiguities retained
+alongside manual supplements. All 6,544 local links across 28 documents
+have no reported issue. Generated inventories and both explicitly current
+coverage paragraphs agree on 259 full-source, 563 partial/notes, one
+inaccessible and zero reliable-reviewed entries. Cross-document non-line
+fragments remain outside that link check; no mathematical verification or
+rendered-PDF certification is inferred.
+
+### Further maintenance continuation — TPC150–159
+
+Ten existing manuscripts add 687 math nodes and 160 raw display blocks
+over 51 preserved PDF pages. The
+[TPC150–152 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC150_152.md),
+[TPC153–156 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC153_156.md)
+and [TPC157–159 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC157_159.md)
+record 30 completely read original text files, 5,302 raw LF characters
+and 40 original text/PDF files matching baseline Git blobs. All ten use
+root main.tex, invoked references.bib and exact-basename PDFs, without
+separate proof/derivation packages or invoked local TeX children.
+
+Complete manual extraction-based maps include every section, subsection,
+paragraph/description heading, reference page and continuation. TPC152's
+gate table floats to p5, TPC155's synthetic table sits above its p6
+section, and TPC156's explicit page break is retained. All automatic
+section-heading matches in this batch are unique; no visual or source/PDF
+synchronization certification is inferred.
+
+Source qualifications preserve TPC150's terminal-window/atomic distinction,
+TPC151's sufficient-route/biconditional wording, TPC152's split endpoint
+certificates, TPC153–154's conditional/formal-completion limits and
+TPC155–156's contract, source-range and export-namespace differences.
+TPC157's coupled approximation penalty, TPC158's containing-interval/
+good-scale and uniform minor-arc hypotheses, and TPC159's restricted
+shadow measure and interval-normalization wording remain explicit.
+Literal arithmetic-core results are not relabeled synthetic or promoted
+to full physical positive L2. Bibliography variants and source omissions
+are retained without silent corrections or independent theorem judgments.
+
+The converter, input helper, batch checker and inventory generator retain
+their starting hashes. All 24 targeted coverage/inventory/source-link
+tests pass in normal and optimized modes. The prior 259 conversion pairs
+remain preserved; neither their regeneration nor a repeat of the full
+126-test maintenance suite is claimed. No scientific producer, release
+cascade, TeX build, PDF render or external theorem verification is run.
+
+Of 568 pre-existing untracked files, only the authorized remaining-work
+checklist is refreshed; the other 567 retain their original hashes.
+The 23 new outputs are 20 reading-layer/provenance files and three scope
+audits. Original paper artifacts and the policy/reference audit remain
+unchanged, with the index empty. That batch's historical checklist retained 553
+accessible conversions, one inaccessible source and all 823 reliable
+full-review requirements. Tasks one and three remain completed at their
+recorded scopes; the archive-wide second task remains in progress.
+
+No new paper number or mathematical result is created. The mathematical
+current-section/history suffix retains SHA-256
+`dd66286aa0d776dca879a8ee9edd650a473425b9066796049091d3df3db4c373`.
+The integrated batch check exits 0: all ten source locks and formula/text
+roundtrips pass, all automatic section matches are unique, and 6,587 local
+links across 29 documents have no reported issue. Generated inventories
+and both explicitly current coverage paragraphs agree on 269 full-source,
+553 partial/notes, one inaccessible and zero reliable-reviewed entries.
+Cross-document non-line fragments remain outside that link check; neither
+mathematical verification nor rendered-PDF certification is inferred.
+
+### Further maintenance continuation — TPC140–149
+
+Ten existing manuscripts add 833 math nodes and 161 raw display blocks
+over 48 preserved PDF pages. The
+[TPC140–142 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC140_142.md),
+[TPC143–146 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC143_146.md)
+and [TPC147–149 audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC147_149.md)
+record 30 completely read original text files, 5,344 raw LF characters
+and 40 original text/PDF files matching baseline Git blobs. All ten use
+root main.tex, invoked references.bib and exact-basename original PDFs,
+with no invoked local TeX children or original proof/derivation packages.
+
+Complete manual extraction-based maps include all sections, TPC141/142's
+Established/Not established paragraphs, references and continuations.
+TPC142's table floats to p5; its actual Conclusion is on p6, while the
+automatic pp1/6 ambiguity stays visible. Full text extraction is not
+rendered-PDF QA or a source/PDF synchronization certificate.
+
+Source qualifications preserve TPC140's selector/window and distinct
+power/logarithmic ledgers, TPC141's conditional eligible synthesis and
+residual namespaces, and TPC142's frozen scope and unnumbered-equation
+cross-reference issue. TPC143–146's missing literal maps, restricted-range
+quotients and aggregate-versus-occurrence criteria remain qualified.
+TPC147's local exceptional-set corridor, TPC148's exact Mobius lift/
+sourced distance input and TPC149's admissible-pair/good-scale restrictions
+are retained without claiming the missing physical return. Bibliography
+variants and incomplete wording are not silently repaired. Literal
+arithmetic-core results are not relabeled synthetic or promoted to full
+physical L2, paid strict-1/400 losses or reliable full semantic status.
+
+The converter, input helper, batch checker and inventory generator retain
+their starting hashes. All 24 targeted coverage/inventory/source-link
+tests pass in normal and optimized modes. The prior 269 conversion pairs
+remain preserved; neither their regeneration nor a repeat of the full
+126-test maintenance suite is claimed. No scientific producer, release
+cascade, TeX build, PDF render or external theorem verification is run.
+
+Of 591 pre-existing untracked files, only the authorized remaining-work
+checklist is refreshed; the other 590 retain their starting hashes.
+The 23 new outputs are 20 reading-layer/provenance files and three scope
+audits. Original paper artifacts and the policy/reference audit remain
+unchanged, with the index empty. The current checklist retains 543
+accessible conversions, one inaccessible source and all 823 reliable
+full-review requirements. Tasks one and three remain completed at their
+recorded scopes; the archive-wide second task remains in progress.
+
+No new paper number or mathematical result is created. The mathematical
+current-section/history suffix retains SHA-256
+`dd66286aa0d776dca879a8ee9edd650a473425b9066796049091d3df3db4c373`.
+
+The integrated batch check exits 0: all ten source locks and formula/text
+roundtrips pass, TPC142's automatic ambiguity is retained with its manual
+supplement, and 6,678 local links across 29 documents have no reported
+issue. Generated inventories and both explicitly current coverage
+paragraphs agree on 279 full-source, 543 partial/notes, one inaccessible
+and zero reliable-reviewed entries. Cross-document non-line fragments
+remain outside that link check; no mathematical or rendered-PDF
+certification is inferred.
+
+All changes are maintenance worktree changes; no commit, rebase, or push was
+performed. The pre-existing dirty worktree was preserved, not auto-stashed
+or silently staged. The mathematical current section and its history below
+remain unchanged, including TPC418's stop, arithmetic advance `NO`, fixed-power
+credit `0`, and full Gate B `OPEN`.
+
 ## 2026-09-07 maintenance and new-session entry
 
 This maintenance pass audited the repository instruction surface against the
@@ -19,8 +751,8 @@ found or assumed.
 
 The archive inventory is [PAPER_MATERIALS_INDEX.md](research/tpc-big-road/PAPER_MATERIALS_INDEX.md)
 and the route handoff is [TPC_HISTORY_SUMMARY.md](research/tpc-big-road/TPC_HISTORY_SUMMARY.md).
-It covers 823 paper-directory entries (420 TPC, 403 RH): 164 have verified
-mechanical full-source Markdown, 658 have partial/notes layers, and none has
+It covers 823 paper-directory entries (420 TPC, 403 RH): 279 have verified
+mechanical full-source Markdown, 543 have partial/notes layers, and none has
 the independent full-content/semantic review required for `reliable-full-md`.
 One TPC directory (`tpc-207-moving-hole-bdh-translation-compiler`) has other
 artifacts but no local Markdown, TeX, or PDF manuscript. Thus “all papers are
@@ -49,12 +781,14 @@ current claims remain in this handoff and the active paper's proof package.
 
 ## 2026-09-07 source-to-Markdown maintenance batch
 
-The contiguous range TPC-418–255 now has 164 full-source mechanical reading
+The number range TPC-418–140 now has 279 full-source mechanical reading
 layers at `paper/main.md`. The repair covered 64 previous conversions and
-added TPC350–354; subsequent batches add TPC255–349. The [batch record](research/tpc-big-road/TPC_CONVERSION_BATCH_2026-09-07.md)
+added TPC350–354; subsequent batches add TPC140–349. TPC207 selects only the
+critical-moving-hole manuscript; its missing translation-compiler sibling
+is not included. The [batch record](research/tpc-big-road/TPC_CONVERSION_BATCH_2026-09-07.md)
 links each full text, provenance record, original summary, available package
-materials, TeX, and PDF. All 164 abstract/body formula-sequence and normalized
-plain-text roundtrips pass (9,305 math nodes total). Source/PDF hashes are
+materials, TeX, and PDF. Per-paper records retain passing abstract/body formula
+and normalized-text roundtrips (17,398 math nodes total). Source/PDF hashes are
 locked; source section lines map to actual extracted PDF heading hits.
 The ambiguous TPC402 match remains explicit rather than receiving a guessed page.
 
@@ -223,8 +957,37 @@ sum/mean discrepancy, TPC256's exponent punctuation, and admissible frame
 domains. All five new page maps are unique; the H2/PNT/Poisson inputs remain
 inherited, and no original source or numerical certificate is rewritten.
 
-Current coverage is `full-source-md=164`, `reliable-full-md=0`,
-`partial-or-notes=658`, and `source-inaccessible=1` across 823 entries.
+The [TPC250–254 scope audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC250_254.md),
+completed 2026-09-08, checks active coherence, strict margins, fixed-family
+refinement, real-clock endpoints, and H2 extraction. It qualifies TPC250's
+marginal obstruction and TPC254's two-dimensional equality wording. A narrow
+hash-checked PDF glyph-map input allowance passes 31 tests and preserves all
+164 previous conversion pairs byte-for-byte. TPC250's page-2/page-5 heading
+ambiguity remains recorded, with manual location on page 2; other new maps
+are unique. No original scientific source or certificate is changed.
+
+The [TPC240–244 scope audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC240_244.md)
+records profilewise versus profile-class uniformity, top-only versus full
+kernels, common phase-offset prerequisites, near-isometry envelopes, and
+coefficient-space attachment. It preserves the local TPC244 domain omission
+and manual PDF-page supplements. The
+[TPC245–249 scope audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC245_249.md)
+records dimension/zero-radius cases, product versus physical feasible sets,
+Gram conjugation, and weighted/global budgets. It flags TPC246's arrow-count
+wording and TPC248's README zero-radius exception. Original sources are not
+rewritten; neither audit is full semantic verification.
+
+The [TPC230–234 scope audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC230_234.md)
+preserves the compact-input and CR-byte source anomaly, original LF-line
+mapping, and fixed-family/mass/upper-frame qualifications. The
+[TPC235–239 scope audit](research/tpc-big-road/TPC_CONVERSION_SCOPE_TPC235_239.md)
+preserves the printed TPC235 fixture discrepancy, convention/clock limits,
+unsigned envelope scope, and TPC238–239 manual page supplements. Original
+PDF aliases were checked byte-for-byte; source errors are not repaired by
+mechanical conversion.
+
+Current coverage is `full-source-md=279`, `reliable-full-md=0`,
+`partial-or-notes=543`, and `source-inaccessible=1` across 823 entries.
 Mechanical preservation is not independent mathematical verification; the
 remaining accessible originals still require conversion and per-paper review.
 This maintenance changes no theorem, certificate, route edge, or claim grade;

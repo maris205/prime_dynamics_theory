@@ -1,6 +1,6 @@
 # TPC historical route summary and new-session entry
 
-Updated 2026-09-07 from the current repository, [TPC_HANDOFF.md](../../TPC_HANDOFF.md),
+Updated 2026-09-08 from the current repository, [TPC_HANDOFF.md](../../TPC_HANDOFF.md),
 [TPC_ROUTE_MAP.md](TPC_ROUTE_MAP.md), and the complete candidate ledger
 [PAPER_CANDIDATE_LEDGER.md](PAPER_CANDIDATE_LEDGER.md). This is an archival
 navigation layer; it does not create a theorem or replace a paper's proof
@@ -16,7 +16,8 @@ package.
 4. [PAPER_CANDIDATE_LEDGER.md](PAPER_CANDIDATE_LEDGER.md): paper-by-paper
    summaries and provenance notes.
 5. [PAPER_MATERIALS_INDEX.md](PAPER_MATERIALS_INDEX.md): material inventory and
-   Markdown coverage status.
+   Markdown coverage status; [PAPER_MATERIALS_REMAINING.md](PAPER_MATERIALS_REMAINING.md)
+   enumerates the remaining conversion/reliable-review work for all directories.
 6. The active paper directory's `README.md`, `PROOF_PACKAGE.md`, certificate,
    independent checker, and Bridge-B record, in that order.
 7. [REFERENCE_PRIMEGAPS186.md](REFERENCE_PRIMEGAPS186.md): external reference
@@ -24,9 +25,11 @@ package.
 
 ## 2026-09-07 conversion batch
 
-The contiguous range TPC-418–255 has 164 mechanical full-source Markdown
+The number range TPC-418–140 has 279 mechanical full-source Markdown
 reading layers at `paper/main.md`. This pass repaired the previous 64
-conversions and added TPC350–354, then converted TPC255–349. The batch record
+conversions and added TPC350–354, then converted TPC140–349. TPC207 here is
+the critical-moving-hole paper only; its separate translation-compiler
+directory remains source-inaccessible. The batch record
 [TPC_CONVERSION_BATCH_2026-09-07.md](TPC_CONVERSION_BATCH_2026-09-07.md) links
 each Markdown file, conversion record, README summary, available proof/application
 notes, TeX original, and PDF original. Each record includes source and PDF
@@ -186,8 +189,295 @@ the exponent comma, and conditional-rate labels. The five new maps are unique;
 finite checks and inherited analytic inputs do not certify full semantics
 or promote a single suppressed channel to a full-output estimate.
 
-The archive inventory is now `full-source-md=164`,
-`reliable-full-md=0`, `partial-or-notes=658`, and
+The [TPC250–254 prerequisite audit](TPC_CONVERSION_SCOPE_TPC250_254.md),
+completed 2026-09-08, checks coherence domains, external margins, refinement
+indexing, rational projectors, and fixed-parameter hybrid extraction. It
+records the marginal-data and two-dimensional Cauchy-equality qualifications,
+plus TPC253's endpoint-column label. The PDF glyph-map dependency is allowed
+only with an audited hash; 31 tests pass and all 164 previous conversion
+pairs remain byte-identical. TPC250's ambiguous heading has a manual page-2
+location, while the automated record retains both page candidates.
+
+The [TPC240–244 prerequisite audit](TPC_CONVERSION_SCOPE_TPC240_244.md) and
+[TPC245–249 prerequisite audit](TPC_CONVERSION_SCOPE_TPC245_249.md) extend the
+maintenance coverage by ten existing manuscripts: 1,019 math nodes, 198 raw
+display blocks, and 56 preserved PDF pages. Static input expansion now locks
+each original child file and retains its original line/PDF locators. Three
+independently found input-boundary defects were repaired and re-audited;
+58 focused tests pass in both modes, and all 169 earlier conversion pairs
+remain byte-identical. Known notation/domain/README wording and ambiguous
+PDF extraction issues are retained in the new scope notes, not silently fixed.
+
+The three-task reconciliation is in the handoff: reuse the completed official-
+guidance audit and scoped PrimeGaps186 reference review; continue unfinished
+Markdown work. No complete semantic review or new reference reproduction is
+claimed. The [remaining checklist](PAPER_MATERIALS_REMAINING.md) lists every
+existing directory and keeps those requirements separate.
+
+The [TPC230–234 prerequisite audit](TPC_CONVERSION_SCOPE_TPC230_234.md) and
+[TPC235–239 prerequisite audit](TPC_CONVERSION_SCOPE_TPC235_239.md) add ten
+further existing manuscripts: 1,051 math nodes, 182 raw display blocks, and
+49 preserved PDF pages. TPC230's compact inputs retain original line order;
+its two bare CR bytes and malformed subscripts are disclosed, not repaired.
+The explicit reader-normalization path and original-LF source-link bounds
+were independently audited and repaired. All 74 focused tests pass in both
+modes, and all 179 earlier conversion pairs remain byte-identical.
+
+The new scope notes also preserve TPC235's inadmissible printed fixture and
+cutoff discrepancy, clock/convention/primitive-domain distinctions, and
+TPC238–239 manual page supplements. Versioned main.pdf aliases in TPC230–236
+match the reviewed paper.pdf bytes; the subsequent three use paper.pdf.
+Policy/reference reviews are reused. Reliable full semantic review remains
+unearned, and TPC418's scientific stop is unchanged.
+
+The [TPC220–224 prerequisite audit](TPC_CONVERSION_SCOPE_TPC220_224.md) and
+[TPC225–229 prerequisite audit](TPC_CONVERSION_SCOPE_TPC225_229.md) accompany
+ten further reading layers: 716 math nodes, 111 raw display blocks, and
+37 preserved PDF pages. The compact root abstract form used in TPC228–229
+now retains its original-line provenance. All 77 focused maintenance tests
+pass in both modes, and all 189 prior conversion pairs remain byte-identical.
+TPC223 and TPC226 retain explicit ambiguous heading matches. Mechanical
+preservation does not certify source mathematics or physical attachment.
+
+The new source notes preserve complex-conjugation qualifications in TPC221
+and TPC228, inherited interface/normalization wording, and TPC229's literal
+cutoff and matched-only energy conditions. Independent converter QA accepts
+only the compact-wrapper extension: its source/expanded ASTs, 328 original
+line mappings, and 14 input edges agree. All ten papers' committed main.pdf
+and paper.pdf aliases are byte-identical. Original sources, historical
+scientific receipts, and the TPC418 stop are not modified or upgraded.
+
+The [TPC210–214 prerequisite audit](TPC_CONVERSION_SCOPE_TPC210_214.md) and
+[TPC215–219 prerequisite audit](TPC_CONVERSION_SCOPE_TPC215_219.md) accompany
+ten further existing manuscripts: 1,099 math nodes, 233 raw display blocks,
+and 60 preserved PDF pages. TPC210–212 lack a separate proof package;
+available source/theorem/route notes are not promoted to proof-review
+receipts. TPC214 retains one ambiguous automatic heading match.
+
+The source notes retain complete-period versus finite-window normalization,
+literal masks and profile weights, fixed-family/packet-vector conditions,
+and unverified physical identification. TPC215's formula typos, TPC217's
+suppressed logarithmic constant, TPC218's all-h/active-h proof wording, and
+TPC219's unresolved fixture label remain preserved rather than silently
+corrected. Scientific certificates and the TPC418 route are not rerun or
+upgraded by these archive checks.
+
+This continuation also adds an explicit current-coverage guard. It detected
+the handoff's stale 189/633 paragraph, which disagreed with its newer front
+entry, and now compares the selected current paragraphs in the handoff and
+this summary with the generated inventory. Historical receipts remain
+historical. All 24 focused coverage/inventory/source-link tests pass in both
+normal and optimized modes. The source converter and input helper remain
+unchanged; old conversions are preserved, not unnecessarily regenerated.
+
+The [TPC200–204 prerequisite audit](TPC_CONVERSION_SCOPE_TPC200_204.md) and
+[TPC205–209 prerequisite audit](TPC_CONVERSION_SCOPE_TPC205_209.md) accompany
+ten further existing manuscripts: 683 math nodes, 149 raw display blocks,
+and 46 preserved PDF pages. TPC200–206 use original root main.tex and
+directory-basename PDFs; the reading layers link back from paper/main.md,
+without copying or moving sources. TPC207 explicitly selects only the
+critical-moving-hole directory and does not fill its missing sibling.
+
+The source-layout and directory-identity extension passes all 111 focused
+maintenance tests in normal and optimized modes. Replaying all 209 prior
+Markdown/provenance pairs in memory gives byte-identical outputs, with
+13,735 math nodes and passing source/text roundtrips. The input-expansion
+helper is unchanged. Mechanical preservation does not certify the original
+mathematics or earn reliable full semantic-review status.
+
+The two source reviews retain 39 fully read original text files, 4,963 LF
+lines and 49 baseline-matching text/PDF originals. Their notes preserve
+TPC200's determinant-two domain, TPC201's inherited coefficient definitions,
+TPC202's unverified external theorem record, and the distinct TPC203–206
+symbolic/production/fixture branches. TPC207-critical's amplitude-growth
+premise, TPC208's annihilator/frequency labels, and TPC209's literal typo and
+lineage naming remain qualified, not silently repaired. All 46 PDF pages
+have manual extraction-based locators; no rendered-PDF or mathematical
+verification follows.
+
+The [TPC190–194 prerequisite audit](TPC_CONVERSION_SCOPE_TPC190_194.md) and
+[TPC195–199 prerequisite audit](TPC_CONVERSION_SCOPE_TPC195_199.md) accompany
+ten further existing manuscripts: 228 math nodes, 47 raw display blocks,
+and 25 preserved PDF pages. All use the already supported root-source
+layout. Complete original BibTeX is retained; absent proof packages are
+not replaced by invented proof-review receipts.
+
+The converter, input helper, batch checker and inventory generator are
+unchanged. The 24 targeted coverage/inventory/source-link tests pass in
+normal and optimized modes. Previous conversions remain preserved; their
+mathematics is not reclassified and no unnecessary regeneration is claimed.
+
+The two independent source reviews read 30 complete original text files
+with 1,904 raw LF characters and checked 40 text/PDF originals against
+baseline Git blobs. All 25 PDF pages have extraction-based manual locators,
+including the TPC193 and TPC199 subsection continuations. Qualifications
+retain TPC190's kernel-normalization wording, TPC191–192's interface and
+selected-physical distinction, TPC193's separate block/cumulative objects
+and external theorem branches, and TPC194's decorated physical prefix.
+TPC195's real-clock tail premise, TPC196's determinant-two/odd-modulus
+domain, TPC197's nonzero-atom corridor, TPC198's synthetic shared phase and
+TPC199's finite-fixture limit are kept explicit. Original statements and
+bibliographies are preserved rather than silently repaired; no external
+theorem, scientific computation, rendered PDF or full semantics is certified.
+
+The [TPC180–184 prerequisite audit](TPC_CONVERSION_SCOPE_TPC180_184.md) and
+[TPC185–189 prerequisite audit](TPC_CONVERSION_SCOPE_TPC185_189.md) accompany
+ten further existing manuscripts: 197 math nodes, 43 raw display blocks,
+and 29 preserved PDF pages. All use the supported root-source layout,
+with complete original BibTeX preserved. Absent separate proof packages
+are not replaced by invented proof-review receipts.
+
+TPC181's multi-target source reference initially failed the new-batch link
+check. The converter now preserves its original visible labels and order
+while linking each label to its own original source line. Only the exact
+supported Pandoc reference shape is split; missing or duplicate labels fail
+closed. The input helper, batch checker and inventory generator remain
+unchanged. All 126 named maintenance tests pass in normal and optimized
+modes, including 15 new reference tests. An independent malformed-AST
+probe exposed extra-payload loss; exact shape rejection was added without
+changing the real manuscript output. No scientific producer is run.
+
+The independent follow-up returned ACCEPT_SCOPED after 26 targeted tests
+and 10 additional in-memory case groups passed in each mode. All 229 prior
+TPC190–418 reading-layer/provenance pairs remained byte-identical on the
+parent's final in-memory replay, retaining 14,646 math nodes and passing
+source/text checks. This is converter evidence, not source-proof approval.
+
+The two independent source reviews cover 30 complete original text files,
+2,277 raw LF characters and 40 baseline-matching text/PDF originals. All
+29 PDF pages have manual extraction-based locators, including section and
+reference continuations. Their qualifications retain TPC180's local
+coprimality omission; TPC181's normalized, schedule-dependent metric scope;
+TPC182's frozen-corpus and synthetic-fixture limits; TPC183's unstated
+literal common summand/domain; and TPC184's imported shadow and strictness
+wording. TPC185's finite indices, TPC186's separate boundary control,
+TPC187's synthetic normalization limits, TPC188's historical method scope
+and TPC189's point-evaluation domain remain explicit. No original source
+is silently repaired or promoted into reliable semantic-review evidence.
+
+The [TPC170–174 prerequisite audit](TPC_CONVERSION_SCOPE_TPC170_174.md) and
+[TPC175–179 prerequisite audit](TPC_CONVERSION_SCOPE_TPC175_179.md) accompany
+ten further existing manuscripts: 423 math nodes, 111 raw display blocks
+and 37 preserved PDF pages. All use the supported root-source layout;
+complete original BibTeX is retained, and absent proof packages are not
+replaced by invented proof-review receipts.
+
+The converter, input helper, batch checker and inventory generator are
+unchanged. All 24 targeted coverage/inventory/source-link tests pass in
+normal and optimized modes. The prior 239 conversions are preserved; no
+unnecessary regeneration or full prior-batch replay is performed.
+
+The two independent reviews read 30 complete original text files with
+3,874 raw LF characters and checked 40 text/PDF originals against baseline
+Git blobs. All 37 PDF pages have manual extraction-based locators,
+including TPC179's three subsections and all section/reference continuations.
+TPC170's domain/README omissions, TPC171's incompletely restated prefix/
+Abel conditions, TPC172's missing physical bridges, TPC173's seven-item/
+nine-field wording and TPC174's local-only witness scope remain explicit.
+TPC175's frozen corpus, TPC176's separate coverage ledgers, TPC177's
+conditional support partition, TPC178's selector-domain mismatch and
+TPC179's compressed substrate scope remain qualified. Title/attribution
+discrepancies are preserved, not silently normalized. Neither imported
+historical counts nor synthetic/empty-domain claims certify physical
+coefficients, named atoms or a paid strict-1/400 loss ledger. No original
+proof, external theorem or rendered PDF is independently certified.
+
+The [TPC160–164 prerequisite audit](TPC_CONVERSION_SCOPE_TPC160_164.md) and
+[TPC165–169 prerequisite audit](TPC_CONVERSION_SCOPE_TPC165_169.md) accompany
+ten further existing manuscripts: 612 math nodes, 183 raw display blocks
+and 48 preserved PDF pages. The supported root-source layout retains
+complete original BibTeX and links back to unchanged originals. TPC161
+and TPC162 each retain one nonunique automatic section-heading match;
+no guessed page or absent proof-package review is substituted.
+
+The converter, input helper, batch checker and inventory generator are
+unchanged. All 24 targeted coverage/inventory/source-link tests pass in
+normal and optimized modes. The prior 249 conversions remain preserved;
+neither unnecessary regeneration nor a full prior-batch replay is claimed.
+
+The independent reviews completely read 30 original text files with
+4,959 raw LF characters and all 48 PDF pages; 40 original text/PDF files
+match baseline Git blobs. Manual supplements locate TPC161 references
+on p7 and TPC162 Endpoint V3 on p5 while retaining both automatic
+ambiguities. TPC160's imported Abel envelope, TPC161's undefined bare-L
+major-arc scale, TPC162's incompletely restated source conditions and
+TPC163–164's frozen-corpus/key limits remain explicit. TPC165's finite
+nonempty gluing assumptions, TPC166's sub-DAG-only scope, TPC167's block
+grid domain, TPC168's finite-registry selector boundary and TPC169's
+empty-fibre/fixed-terminal qualifications are preserved. Bibliographic
+title/version conflicts, inherited determinant restrictions and phase-sign
+bookkeeping omissions are retained without silent corrections or
+independent theorem judgments. No production witness, named atom, physical loss payment,
+scientific reproduction or full reliable semantic review is certified.
+
+The [TPC150–152 prerequisite audit](TPC_CONVERSION_SCOPE_TPC150_152.md),
+[TPC153–156 prerequisite audit](TPC_CONVERSION_SCOPE_TPC153_156.md) and
+[TPC157–159 prerequisite audit](TPC_CONVERSION_SCOPE_TPC157_159.md) accompany
+ten further existing manuscripts: 687 math nodes, 160 raw display blocks
+and 51 preserved PDF pages. The supported root-source layout retains
+complete original BibTeX and links back to unchanged originals. All
+automatic source-section heading matches in this batch are unique;
+this is location evidence, not source/PDF synchronization certification.
+
+The converter, input helper, batch checker and inventory generator are
+unchanged. All 24 targeted coverage/inventory/source-link tests pass in
+normal and optimized modes. The prior 259 conversions remain preserved;
+neither unnecessary regeneration nor a full prior-batch replay is claimed.
+
+Three independent original-source reviews completely read 30 text files
+with 5,302 raw LF characters and all 51 PDF pages; 40 originals match
+baseline Git blobs. Manual maps retain TPC152/TPC155 floating tables,
+TPC156's explicit page break and all section/reference continuations.
+TPC150's terminal-window/atom boundary, TPC151's sufficient-route versus
+biconditional wording, TPC152's split loss certificates, TPC153–154's
+conditional/formal scope and TPC155–156's contract/export differences
+remain explicit. TPC157's coupled approximation penalty, TPC158's
+containing-interval/good-scale and uniform minor-arc premises, and
+TPC159's shadow-domain/interval-normalization wording remain qualified.
+Source omissions and bibliography variants are preserved, not silently
+repaired. Actual arithmetic-core results are neither relabeled synthetic
+nor promoted to full physical L2. No scientific reproduction, original-
+proof correctness or reliable full semantic-review credit is inferred.
+
+The [TPC140–142 prerequisite audit](TPC_CONVERSION_SCOPE_TPC140_142.md),
+[TPC143–146 prerequisite audit](TPC_CONVERSION_SCOPE_TPC143_146.md) and
+[TPC147–149 prerequisite audit](TPC_CONVERSION_SCOPE_TPC147_149.md) accompany
+ten further existing manuscripts: 833 math nodes, 161 raw display blocks
+and 48 preserved PDF pages. The supported root-source layout retains
+complete original BibTeX and links back to unchanged originals. TPC142
+retains one ambiguous automatic Conclusion heading match, on pp1 and 6;
+manual location evidence is recorded separately from the automatic result.
+
+The converter, input helper, batch checker and inventory generator remain
+unchanged. All 24 targeted coverage/inventory/source-link tests pass in
+normal and optimized modes. The prior 269 conversions remain preserved;
+neither their regeneration nor repetition of the full maintenance suite
+is claimed. No scientific producer, TeX build or PDF render is run.
+
+Three independent source reviews completely read 30 original text files,
+with 5,344 raw LF characters, and compared all 40 text/PDF originals
+against baseline Git blobs. Full manual extraction-based maps cover
+all 48 pages, every section, TPC141/142's Established/Not established
+paragraphs, reference continuations and TPC142's floating table. Its
+Conclusion is on p6, retained alongside the automatic pp1/6 ambiguity.
+
+TPC140's selector/window/power versus logarithmic ledgers, TPC141's
+conditional eligible return and separate residual namespaces, and
+TPC142's frozen decision/nonnumbered equation reference remain qualified.
+TPC143's missing occurrence descent, TPC144's surjective/restricted-range
+and literal-map criteria, TPC145's aggregate-versus-edgewise distinction
+and TPC146's compressed compatibility language are not promoted to
+completed physical maps. TPC147 retains the local exceptional-set/modulus
+envelope, TPC148 its exact Mobius lift and sourced distance input, and
+TPC149 the admissible-pair union, good-scale range and missing physical
+return. Actual-core arithmetic statements are neither relabeled synthetic
+nor promoted to full physical L2 or paid strict-1/400 credit. Bibliography
+variants and source wording issues are recorded without silent repairs;
+original proofs, imported theorems and reliable full semantic correctness
+remain independently unverified.
+
+The archive inventory is now `full-source-md=279`,
+`reliable-full-md=0`, `partial-or-notes=543`, and
 `source-inaccessible=1` across 823 directories. This is a searchable
 source-layer and provenance improvement, not a scientific result. The next
 batch must preserve original TeX/PDF and hand-edited files, distinguish
